@@ -1,0 +1,1047 @@
+- "# C#：初学者 C# 编程，2019. (C# 编程)\n\n\n\n![](img/image8.jpg)\n\n\n\n\n\n\n![](img/image176.jpg)\
+  \ # C# - 入学者指南 初学者教程\n\nC# 是一种简单、现代、通用面向对象的编程语言，由微软在其 Anders Hejberg 领导的 .Net 中开发。本教程将教你基础\
+  \ C# 编程，并带你了解与 C# 编程相关的各种高级概念。\n\n本教程将帮助你建立 C# 基础。\n\n## 适用对象：\n本教程为初学者准备，帮助他们理解基础\
+  \ C# 编程。\n\n## 先决条件：\nC# 编程很大程度上基于 C 和 C++ 编程语言，因此如果你对 C 或 C++ 编程有基础了解，那么学习 C# 将会非常有趣。\n\
+  \n\n\n\n\n* 它是一种现代的、通用编程语言\n* 它是面向对象的。\n* 它是面向组件的。\n* 它很容易学习。\n* 它是一门结构化语言。\n* 它能生成高效程序。\n\
+  * 可以在多种计算机平台上编译。\n* 它是 `.Net Framework` 的一部分。\n\n# C# 的强大编程特性\n尽管 `C#` 的构造紧密遵循传统的高级语言（`C`\
+  \ 和 `C++`），并且作为一种面向对象的编程语言，它与 `Java` 有许多相似之处，但它具有许多强大的编程特性，使其深受全球程序员的喜爱。以下是 `C#`\
+  \ 的一些特性列表——\n\n* 布尔条件\n* 自动垃圾收集\n* 标准库\n* 程序集版本控制\n* 属性和事件\n* 委托和事件管理\n* 易用的泛型\n\
+  * 索引器\n* 条件编译\n* 简单的多线程支持\n* LINQ 和 Lambda 表达式\n* 与 Windows 的集成\n\n# C# 环境\n\n##\
+  \ .Net Framework\n`.Net framework` 是一个革命性的平台，可以帮助你编写以下类型的应用程序——\n\n* Windows 应用程序\n\
+  * Web 应用程序\n* Web 服务\n\n`.Net framework` 应用程序是多平台的应用程序。该框架的设计使其可以使用任何以下语言：`C#`、`C++`、`Visual\
+  \ Basic`、`Jscript`、`COBOL` 等。所有这些语言都可以访问该框架并相互通信。`.Net framework` 由一个供如 `C#` 等客户端语言使用的巨大代码库组成。以下是\
+  \ `.Net framework` 的某些组件——\n\n* 通用运行时 (`CLR`)\n* .Net Framework 类库\n* 通用语言规范 (CLS)\n\
+  * 通用类型系统 (CTS)\n* 元数据和程序集\n* Windows Forms\n* ASP.Net 和 ASP.Net AJAX\n* ADO.Net\n\
+  * Windows Workflow Foundation (WF)\n* Windows Presentation Foundation\n* Windows\
+  \ Communication Foundation (WCF)\n* LINQ\n\n## C# 的集成开发环境 (IDE)\n微软为 `C#` 编程提供了以下开发工具——\n\
+  \n* Visual Studio 2019 (VS)\n* Visual C# 2019 快捷版 (VCE)\n* Visual Web Developer\n\
+  \n后两个工具可以在微软官方网站免费获取。使用这些工具，你可以编写各种 `C#` 程序，从简单的命令行应用程序到更复杂的应用程序。你也可以使用基础文本编辑器（如\
+  \ `Notepad`）编写 `C#` 源文件，并使用命令行编译器将代码编译为程序集，这也是 `.NET Framework` 的一部分。`Visual C#\
+  \ Express` 和 `Visual Web Developer Express` 版是 `Visual Studio` 的精简版，外观相同。它们保留了 `Visual\
+  \ Studio` 的大部分功能。你可以从 [Microsoft Visual Studio](https://www.microsoft.com/visualstudio/eng/downloads)\
+  \ 下载。它会自动安装在你的机器上。注意：安装快捷版需要活跃的互联网连接。\n\n# 在 Linux 或 Mac OS 上编写 C# 程序\n尽管 `.NET\
+  \ Framework` 运行在 Windows 操作系统上，但也有可以在其他操作系统上的替代版本。`Mono` 是 `.Net Framework` 的开源版本，包含\
+  \ `C#` 编译器，并运行在多个操作系统上，包括各种版本的 `Linux` 和 `Mac OS`。请查看 [Go Mono](http://www.go-mono.com/mono-downloads/download.html)。`Mono`\
+  \ 的目的不仅是为了跨平台运行微软 `.NET` 应用程序，还为了为 `Linux` 开发者带来更好的开发工具。`Mono` 可以运行在许多操作系统上，包括 `Android`、`BSD`、`iOS`、`Linux`、`OS\
+  \ X`、`Windows`、`Solaris` 和 `UNIX`。\n\n# C# 程序结构\n在学习 `C#` 编程语言的基础构建块之前，让我们来看简单的\
+  \ `C#` 程序结构，以便在后续章节中参考。\n\n## 创建 Hello World 程序\n一个 `C#` 程序由以下部分组成：\n\n* 命名空间声明\n\
+  * 类\n* 类方法\n* 类属性\n* Main 方法\n* 语句和表达式\n* 注释\n\n让我们来看打印“Hello World”的简单代码：\n\n```\n\
+  using System;\nnamespace HelloWorldApplication {\n    class HelloWorld {\n     \
+  \   static void Main ( string [] args ) {\n            /* 我的第一个 C# 程序 */\n     \
+  \       Console.WriteLine(\"Hello World\");\n            Console.ReadKey();\n  \
+  \      }\n    }\n}\n```\n\n当这段代码被编译并执行时，它会产生以下结果：Hello World\n\n让我们来看给定程序的各个部分：\n\
+  \n* 程序的的第一行 `using System;` —— `using` 关键字用于在程序包含 `System` 命名空间。程序通常有多个 `using`\
+  \ 语句。\n* 下一行是命名空间声明。`namespace` 是类的集合。`HelloWorldApplication` 命名空间包含类 `HelloWorld`。\n\
+  * 下一行是 `class` 声明，`HelloWorld` 类包含了你的程序所使用的数据和方法定义。类通常包含多个方法。方法定义了类的行为。然而，`HelloWorld`\
+  \ 类只有一个方法 `Main`。\n* 下一行定义了 `Main` 方法，它是所有 `C#` 程序的入口点。`Main` 方法说明了类在执行时执行的操作。\n\
+  * 下一行 `/*...*/` 被编译器忽略，用于添加注释。\n* `Main` 方法通过语句 `Console.WriteLine(\"Hello World\"\
+  );` 指定了它的行为。`WriteLine` 是定义在 `System` 命名空间中的 `Console` 类的一个方法。该语句会导致屏幕上显示消息“Hello\
+  \ World!”。\n* 最后一行 `Console.ReadKey();` 是给 VS.NET 用户使用的。这会让程序等待按键，并防止程序在从 Visual\
+  \ Studio 启动时屏幕直接运行并关闭。\n\n值得注意以下几点：\n\n* `C#` 是大小敏感的。\n* 所有语句和表达式必须以分号 (`;`) 结束。\n\
+  * 程序执行从 `Main` 方法开始。\n* 与 `Java` 不同，文件名可以与类名不同。\n\n# 编译和执行程序\n如果你使用 `Visual.Net`\
+  \ 来编译和执行 `C#` 程序，请采取以下步骤：\n\n* 启动 `Visual Studio`。\n* 在菜单栏上，选择 `File -> New -> Project`。\n\
+  * 从模板中选择 `Visual C#`，然后选择 `Windows`。\n* 选择 `Console Application`。\n* 为你的项目指定名称并点击\
+  \ OK 按钮。\n* 这将在解决方案管理器（Solution Explorer）中创建一个新项目。\n* 在编辑器中编写代码。\n* 点击 `Run` 按钮或按\
+  \ `F5` 键执行项目。会出现包含 Hello World 行的命令提示符窗口。\n\n你可以使用命令行而不是 `Visual Studio IDE` 来编译\
+  \ `C#` 程序：\n\n* 打开文本编辑器并添加上述代码。\n* 将文件保存为 `helloworld.cs`。\n* 打开命令行提示符工具并进入保存文件的目录。\n\
+  * 输入 `csc helloworld.cs` 并按回车编译你的代码。\n* 如果代码中没有错误，命令行提示符将带你下一行并生成 `helloworld.exe`\
+  \ 可执行文件。\n* 输入 `helloworld` 执行你的程序。\n* 你可以看到屏幕上打印的 Hello World。\n\n\n\n\n\n# C#\
+  \ - 基础语法\n\n`C#` 是一种面向对象的编程语言。在面向对象编程方法论中，程序由各种对象组成，这些对象通过动作相互作用。对象可以执行的操作被称为方法。相同类型的对象被认为具有相同的类型，或者说处于同一个类中。\n\
+  \n例如，让我们考虑一个 `Rectangle` 对象。它具有如 `length` 和 `width` 等属性。根据设计，它可能需要接收这些属性值的方法、计算面积的方法以及显示详情的方法。让我们来看\
+  \ `Rectangle` 类实现并讨论 `C#` 基础语法：\n\n```csharp\nusing System ;\nnamespace RectangleApplication\
+  \ {\nclass Rectangle {\n    // member variables\n    double length ;\n    double\
+  \ width ;\n    public void Acceptdetails () {\n        length = 4.5 ;\n        width\
+  \ = 3.5 ;\n    }\n    public double GetArea () {\n        return length * width\
+  \ ;\n    }\n    public void Display () {\n        Console . WriteLine ( \"Length:\
+  \ {0}\" , length );\n        Console . WriteLine ( \"Width: {0}\" , width );\n \
+  \       Console . WriteLine ( \"Area: {0}\" , GetArea ());\n    }\n}\nclass ExecuteRectangle\
+  \ {\n    static void Main ( string [] args ) {\n        Rectangle r = new Rectangle\
+  \ ();\n        r . Acceptdetails ();\n        r . Display ();\n        Console .\
+  \ ReadLine ();\n    }\n}\n```\n\n当上述代码编译并执行时，会产生以下结果 ——：\nLength: 4.5\nWidth: 3.5\n\
+  Area: 15.75\n\n## using 关键字\n\n任何 `C#`程序的第一个语句都是 `using System;`。`using` 关键字用于在程序中包含命名空间。程序可以包含多个\
+  \ `using` 语句。\n\n## C# 中的注释\n\n注释用于解释代码。编译器会忽略注释内容。`C#` 程序中的多行注释以 `/*` 开始，并字符 `*/`\
+  \ 结束，如下所示：\n\n```csharp\n/* This program demonstrates\nThe basic syntax of C# programming\n\
+  Language */\n```\n\n单行注释用 `//` 符号表示。例如：\n\n```csharp\n} //end class Rectangle\n\
+  ```\n\n## 成员变量\n\n变量是类的属性或数据成员，用于存储数据。在前面的程序中，`Rectangle` 类有两个名为 `length` 和 `width`\
+  \ 的成员变量。\n\n## 成员函数\n\n函数是执行特定任务的语句集合。类的成员函数声明在类内部。我们的示例类 `Rectangle` 包含三个成员函数：`AcceptDetails`、`GetArea`\
+  \ 和 `Display`。\n\n## 类实例化\n\n在前面的程序中，`ExecuteRectangle` 类包含 `Main()` 方法并实例化 `Rectangle`\
+  \ 类。\n\n## 标识符\n\n标识符是用于标识类、变量、函数或任何用户定义项目的名称。在 `C#` 中命名类的基本规则如下：\n\n- 名称必须以字母开始，字母后面可以跟跟随字母、数字\
+  \ (0 - 9) 或下划线。标识符的第一个字符不能是数字。\n- 它不能包含任何嵌入的空格或符号，如 `? - + ! @ # % ^ & * ( ) [ ]\
+  \ { } . ; : \" ' /` 和 `\\`。然而，可以使用下划线 (`_`）。\n- 它不应该是 `C#` 关键字。\n\n## C# 关键字\n\n\
+  关键字是为 `C#` 编译器预定义的保留字。这些关键字不能用作标识符。然而，如果你想将这些关键字用作标识符，可以在关键字前加上 `@` 字符。在 `C#` 中，某些标识符在上下文具有特殊含义，例如\
+  \ `get` 和 `set` 被称为上下文关键字。下表列出了 `C#` 中的保留关键字和上下文关键字：\n\n| 保留关键字 | | | | |\n| :---\
+  \ | :--- | :--- | :--- | :--- |\n| `abstract` | `as` | `base` | `bool` | `break`\
+  \ |\n| `catch` | `char` | `checked` | `class` | `continue` |\n| `default` | `delegate`\
+  \ | `do` | `double` | `else` |\n| `explicit` | `extern` | `false` | `finally` |\
+  \ `fixed` |\n| `foreach` | `goto` | `if` | `implicit` | `in` |\n| `interface` |\
+  \ `internal` | `is` | `lock` | `long` |\n| `null` | `object` | `operator` | `out`\
+  \ | `override` |\n| `private` | `protected` | `public` | `readonly` | `ref` |\n\
+  | `sealed` | `short` | `sizeof` | `stackalloc` | `static` |\n| `switch` | `this`\
+  \ | `throw` | `true` | `typeof` |\n| `ulong` | `unchecked` | `ushort` | `using`\
+  \ | `virtual` |\n| `volatile` | `while` | | | |\n| 上下文关键字 | | | | |\n| `add` | `alias`\
+  \ | `ascending` | `descending` | `dynamic` |\n| `from` | `get` | `global` | `group`\
+  \ | `into` |\n| `let` | `join` | `remove` | `select` | `set` |\n| | | | |\n\n# C#\
+  \ - 数据类型\n\n`C#` 中的变量分为以下类型：\n\n- 值类型\n- 引用类型\n- 指针类型\n\n## 值类型\n\n值类型可以被赋值。它们派自\
+  \ `System.ValueType`。值类型直接包含数据。示例包括 `int`、`char` 和 `float`，它们分别存储数字、字母和浮点数。当你声明一个\
+  \ `int` 类型时，系统分配内存来存储值。下表列出了 `C#` 中可用的值类型：\n\n| 类型 | 表示 | 范围 | 默认值 |\n| :--- | :---\
+  \ | :--- | :--- |\n| `bool` | 布尔值 | True 或 False | False |\n| `byte` | 8 位无符号整数\
+  \ | 0 to 255 | 0 |\n| `char` | 16 位 Unicode 字符 | U+0000 to U+ffff | '\\0' |\n| `decimal`\
+  \ | 128 位高精度小数值 | (-7.9 x 10²⁸ 到 7.9 x 10²⁸) | 0.0M |\n| `double` | 64 位双精度浮点类型\
+  \ | (+/-)5.0 x 10^-324 到 (+/-)1.7 x 10³⁰⁸ | 0.0D |\n| `float` | 32 位单精度浮点类型 | -3.4\
+  \ x 10³⁸ 到 +3.4 x 10³⁸ | 0.0F |\n| `int` | 32 位有符号整数类型 | -2,147,483,648 to 2,147,483,647\
+  \ | 0 |\n| `long` | 64 位有符号整数类型 | -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807\
+  \ | 0L |\n| `sbyte` | 8 位有符号整数 | -128 to 127 | 0 |\n| `short` | 16 位有符号整数 | -32,768\
+  \ to 32,767 | 0 |\n| `uint` | 32 位无符号整数类型 | 0 to 4,294,967,295 | 0 |\n| `ulong`\
+  \ | 64 位无符号整数类型 | 0 to 18,446,744,073,709,551,615 | 0 |\n| `ushort` | 16 位无符号整数类型\
+  \ | 0 to 65,535 | 0 |\n\n\n\n\n要获取特定平台上类型或变量的确切大小，你可以使用 `sizeof` 方法。表达式 `sizeof(type)`\
+  \ 生成对象或类型以字节为单位的存储大小。以下是在任何机器上获取 `int` 类型大小的示例：\n\n```csharp\nusing System;\nnamespace\
+  \ DataTypeApplication {\n    class Program {\n        static void Main(string []\
+  \ args) {\n            Console.WriteLine(\"Size of int: {0}\", sizeof(int));\n \
+  \           Console.ReadLine();\n        }\n    }\n}\n```\n当编译并执行上述代码时，它产生以下结果：Size\
+  \ of int: 4。\n\n## 引用类型 (Reference Type)\n引用类型不包含变量存储的实际数据，而是包含对变量的引用。换句话说，它们引用内存位置。通过使用多个变量，引用类型可以引用内存位置。如果内存位置中的数据被其中一个变量更改，另一个变量将自动反映此值的变化。内置引用类型的示例有：`object`、`dynamic`\
+  \ 和 `string`。\n\n## 对象类型 (Object Type)\n`Object Type` 是 C# 通用类型系统 (CTS) 中所有数据类型的终极基类。`Object`\
+  \ 是 `System.Object` 类的别名。对象类型可以分配任何其他类型的值，包括值类型、引用类型、预定义或自定义类型。然而，在赋值之前，需要进行类型转换。当值类型转换为对象类型时，称为`装箱\
+  \ (boxing)`；另一方面，当对象类型转换为值类型时，称为`拆箱 (unboxing)`。\n\n```csharp\nobject obj;\nobj\
+  \ = 100; // this is boxing\n```\n\n## 动态类型 (Dynamic Type)\n你可以在 `dynamic` 数据类型变量中存储任何类型的值。这些类型变量的类型检查发生在运行时。声明动态类型的语法为\
+  \ `-dynamic <variable_name> = value;`。\n例如：\n```csharp\ndynamic d = 20;\n```\n动态类型与对象类型相似，区别在于对象类型变量的类型检查在编译时进行，而动态类型变量的检查在运行时。\n\
+  \n## 字符串类型 (String Type)\n`String Type` 允许你为变量分配任何字符串值。字符串类型是 `System.String` 类的别名。它派自对象类型。可以使用两种形式的字符串字面量为字符串类型赋值：带引号的和\
+  \ @ 带引号的。\n例如：\n```csharp\nString str = \"C Sharp\";\n```\n@ 带引号的字符串字面量如下：\n```csharp\n\
+  @ \"C Sharp\";\n```\n用户定义的引用类型是：`class`、`interface` 或 `delegate`。我们将在后面的章节中讨论这些类型。\n\
+  \n## 指针类型 (Pointer Type)\n指针类型变量存储另一种类型的内存地址。C# 中的指针具有与 C 或 C++ 中的指针相同的能力。声明指针类型的语法为\
+  \ `-type * identifier;`。\n例如：\n```csharp\nchar * cptr;\nint * iptr;\n```\n\n## C#\
+  \ 类型转换 (C# Type Conversion)\n类型转换是将一种数据类型转换为另一种类型。它也被称为类型转换 (Type Casting)。在 C#\
+  \ 中，类型转换有两种形式：\n\n- **隐式类型转换**：这些转换由 C# 以类型的方式执行。例如，从较小的整数类型较大的整数类型的转换，以及从派生类到基类的转换。\n\
+  - **显式类型转换**：这些转换由用户使用预定义函数显式完成。显式转换需要强制转换操作符。\n\n以下示例显示了显式类型转换：\n\n```csharp\n\
+  using System;\nnamespace TypeConversionApplication {\n    class ExplicitConversion\
+  \ {\n        static void Main(string [] args) {\n            double d = 5673.74;\n\
+  \            int i;\n            // 将 double 转换为 int。\n            i = (int ) d;\n\
+  \            Console.WriteLine(i);\n            Console.ReadLine();\n        }\n\
+  \    }\n}\n```\n当编译并执行上述代码时，它产生以下结果：-5673\n\n## C# - 类型转换方法 (C# - Type Conversion\
+  \ Methods)\nC# 提供了以下内置类型转换方法：\n\n| 序号 (Sr.No.) | 方法与描述 (Methods & Description) |\n\
+  | :--- | :--- |\n| 1 | `ToBoolean` - 在的情况下将类型转换为布尔值。 |\n| 2 | `ToByte` - 将类型转换为字节\
+  \ (byte)。 |\n| 3 | `ToChar` - 在可能的情况下将类型转换为单个 Unicode 字符。 |\n| 4 | `ToDateTime`\
+  \ - 将类型（整数或字符串类型）转换为日期时间结构。 |\n| 5 | `ToDecimal` - 将浮点型或整数类型转换为小数类型 (decimal)。 |\n\
+  | 6 | `ToDouble` - 将类型转换为 double 类型。 |\n| 7 | `ToInt16` - 将类型转换为 16 位整数。 |\n| 8\
+  \ | `ToInt32` - 将类型转换为 32 位整数。 |\n| 9 | `ToInt64` - 将类型转换为 64 位整数。 |\n| 10 | `ToSByte`\
+  \ - 将类型转换为有符号字节类型。 |\n| 11 | `ToSingle` - 将类型转换为单精度浮点数类型。 |\n| 12 | `ToString` -\
+  \ 将类型转换为字符串。 |\n| 13 | `ToType` - 将类型转换为指定的类型。 |\n| 14 | `ToUInt16` - 将类型转换为无符号\
+  \ int 类型。 |\n| 15 | `ToUInt32` - 将类型转换为无符号 long 类型。 |\n| 16 | `ToUInt64` - 将类型转换为无符号大整数。\
+  \ |\n\n以下示例将各种值类型转换为字符串：\n\n```csharp\nusing System;\nnamespace TypeConversionApplication\
+  \ {\n    class StringConversion {\n        static void Main(string [] args) {\n\
+  \            int i = 75;\n            float f = 53.005f;\n            double d =\
+  \ 2345.7652;\n            bool b = true;\n            Console.WriteLine(i.ToString());\n\
+  \            Console.WriteLine(f.ToString());\n            Console.WriteLine(d.ToString());\n\
+  \            Console.WriteLine(b.ToString());\n            Console.ReadLine();\n\
+  \        }\n    }\n}\n```\n当编译并执行上述代码时，它产生以下结果：7553.0052345.7652True\n\n## C# -\
+  \ 变量 (C# - Variables)\n变量只是程序可以操作的存储区域的名称。C# 中的每个变量都有特定的类型，该类型决定了变量内存的大小和布局、内存中可以存储的值的范围以及可以应用于变量的操作\
+  \ set。\n\nC# 提供的基本值类型可以分类为：\n\n| 类型 (Type) | 示例 (Example) |\n| :--- | :--- |\n|\
+  \ 整数类型 | `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong` 和 `char`\
+  \ |\n| 浮点类型 | `float` 和 `double` |\n| 小数类型 | `decimal` |\n| 布尔类型 | 如分配的 `true` 或\
+  \ `false` 值 |\n| 可空类型 | 可空数据类型 s |\n\n\n\n\n\nC# 还允许定义变量的其他值类型，如 `enum` 以及变量的引用类型如\
+  \ `class`，我们将在后续章节中介绍这些内容。\n\n## 定义变量\n\nC# 中变量定义的语法格式为 -`<data_type> <variable_list>;`。\n\
+  \n在这里，`data_type` 必须是有效的 C# 数据类型，包括 `char`、`int`、`float`、`double` 或任何用户定义的数据类型，`variable_list`\
+  \ 可以由一个或多个由逗号分隔的标识符组成。\n\n这里是一些有效的变量定义：\n```csharp\nint i, j, k;\nchar c, ch;\n\
+  float f, salary;\ndouble d;\n```\n你可以在定义时初始化变量，例如 `-int i = 100;`。\n\n## 初始化变量\n\
+  \n变量通过等号后跟常量表达式来初始化（赋值值）。初始化的通用形式为 `-variable_name = value;`。变量可以在声明时初始化。初始化器由等号和一个常量表达式组成，如\
+  \ `-<data_type> <variable_name> = value;`。\n\n以下是一些示例：\n```csharp\nint d = 3 , f\
+  \ = 5 ;   /* 初始化 d 和 f. */\nbyte z = 22 ;         /* 初始化 z. */\ndouble pi = 3.14159\
+  \ ; /*  pi 的近似值。 */\nchar x = 'x'         /* 变量 x 的值为 'x'。 */\n```\n正确初始化变量是一个良好的编程习惯，否则程序可能会产生意想不到的结果。\n\
+  \n下面的示例使用了不同类型的变量：\n```csharp\nusing System;\nnamespace VariableDefinition {\n \
+  \   class Program {\n        static void Main(string [] args) {\n            short\
+  \ a;\n            int b;\n            double c;\n            /* 实际初始化 */\n     \
+  \       a = 10;\n            b = 20;\n            c = a + b;\n            Console.WriteLine(\"\
+  a = {0}, b = {1}, c = {2}\", a, b, c);\n            Console.ReadLine();\n      \
+  \  }\n    }\n}\n```\n当编译并执行上述代码时，它产生以下结果 -`a = 10, b = 20, c = 30`。\n\n## 接收用户输入\n\
+  \n`System` 命名空间中的 `Console` 类提供了一个 `ReadLine()` 函数用于接收用户输入并将其存储到变量中\n\n例如：\n```csharp\n\
+  int num;\nnum = Convert.ToInt32(Console.ReadLine());\n```\n`Convert.ToInt32()` 函数将用户输入的数据转换为\
+  \ `int` 数据类型，因为 `Console.ReadLine()` 接受字符串格式的数据。\n\n## C# 中的 lvalue 和 rvalue 表达式\n\
+  \nC# 中有两种表达式：\n\n- `lvalue`（左值）：作为 `lvalue` 的表达式可以出现在赋值的左侧或右侧。\n- `rvalue`（右值）：作为\
+  \ `rvalue` 的表达式可以出现在赋值的右侧，但不能出现在左侧。\n\n变量是 `lvalues`，因此它们可以出现在赋值的左侧。数字字面量是 `rvalues`，因此它们不能被赋值，且不能出现在左侧。\n\
+  \n以下以下是一个有效的 C# 语句 -`int g = 20;`。\n但以下不是有效语句，会产生编译时错误 -`-10 = 20;`。\n\n# C# - 运算符\n\
+  \n运算符是告诉编译器执行特定数学或逻辑操作的符号。C# 拥有丰富的内置运算符集合，并提供了以下类型的运算符：\n\n- 算术运算符\n- 关系运算符\n- 逻辑运算符\n\
+  - 位运算运算符\n- 赋值运算符\n- 其他运算符\n\n本教程将逐一解释算术、关系、逻辑、位运算、赋值和其他运算符。\n\n## 算术运算符\n\n下表显示了\
+  \ C# 支持的所有算术运算符。假设变量 `A` 存储 10，变量 `B` 存储 20，则：\n\n| 运算符 | 说明 | 示例 |\n| :--- | :---\
+  \ | :--- |\n| `+` | 将两个操作数加 | `A + B = 30` |\n| `-` | 从第一个操作数中减去第二个 | `A - B = -10`\
+  \ |\n| `*` | 两个操作数相乘 | `A * B = 200` |\n| `/` | 被除数除以除数 | `B / A = 2` |\n| `%` |\
+  \ 取模运算符和整数除法后的余数 | `B % A = 0` |\n| `++` | 增运算符将整数值加一 | `A++ = 11` |\n| `--` | 递减运算符将整数值减一\
+  \ | `A-- = 9` |\n\n示例：下面的示例演示了 C# 中所有可用的算术运算符\n```csharp\nusing System;\nnamespace\
+  \ OperatorsAppl {\n    class Program {\n        static void Main(string [] args)\
+  \ {\n            int a = 21;\n            int b = 10;\n            int c;\n    \
+  \        c = a + b;\n            Console.WriteLine(\"Line 1 - Value of c is {0}\"\
+  , c);\n            c = a - b;\n            Console.WriteLine(\"Line 2 - Value of\
+  \ c is {0}\", c);\n            c = a * b;\n            Console.WriteLine(\"Line\
+  \ 3 - Value of c is {0}\", c);\n            c = a / b;\n            Console.WriteLine(\"\
+  Line 4 - Value of c is {0}\", c);\n            c = a % b;\n            Console.WriteLine(\"\
+  Line 5 - Value of c is {0}\", c);\n            a++;\n            Console.WriteLine(\"\
+  Line 6 - Value of a is {0}\", a);\n            a--;\n            Console.WriteLine(\"\
+  Line 7 - Value of a is {0}\", a);\n            Console.ReadLine();\n        }\n\
+  \    }\n}\n```\n（注：此处根据原文逻辑对代码进行了微调以确保示例完整，保持翻译逻辑一致）\n\n## 关系运算符\n\n下表显示了 C# 支持的所有关系运算符。假设变量\
+  \ `A` 存储 10，变量 `B` 存储 20，则：\n\n| 运算符 | 说明 | 示例 |\n| :--- | :--- | :--- |\n| `==`\
+  \ | 检查两个操作数相等 | `A == B` |\n| `!=` | 检查两个操作数不相等 | `A != B` |\n| `>` | 检查左侧大于右侧 |\
+  \ `A > B` |\n| `<` | 检查左侧小于右侧 | `A < B` |\n| `>=` | 检查左侧大于等于右侧 | `A >= B` |\n| `<=`\
+  \ | 检查左侧小于等于右侧 | `A <= B` |\n\n示例：下面的示例演示了 C# 中所有的关系运算符\n```csharp\nusing System;\n\
+  class Program {\n    static void Main(string [] args) {\n        int a = 21;\n \
+  \       int b = 10;\n        if (a == b) {\n            Console.WriteLine(\"Line\
+  \ 1 - a is equal to b\");\n        } else {\n            Console.WriteLine(\"Line\
+  \ 1 - a is not equal to b\");\n        }\n        if (a < b) {\n            Console.WriteLine(\"\
+  Line 2 - a is less than b\");\n        } else {\n            Console.WriteLine(\"\
+  Line 2 - a is not less than b\");\n        }\n        if (a > b) {\n           \
+  \ Console.WriteLine(\"Line 3 - a is greater than b\");\n        } else {\n     \
+  \       Console.WriteLine(\"Line 3 - a is not greater than b\");\n        }\n  \
+  \      a = 5;\n        b = 20;\n        if (a <= b) {\n            Console.WriteLine(\"\
+  Line 4 - a is less than or equal to b\");\n        } else {\n            Console.WriteLine(\"\
+  Line 4 - a is not less than or equal to b\");\n        }\n        if (b >= a) {\n\
+  \            Console.WriteLine(\"Line 5 - b is greater than or equal to a\");\n\
+  \        } else {\n            Console.WriteLine(\"Line 5 - b is not greater than\
+  \ or equal to\");\n        }\n    }\n}\n```\n当上述代码编译并执行时，它产生以下结果 -`Line 1 - a is\
+  \ not equal to b`, `Line 2 - a is not less than b`, `Line 3 - a is greater than\
+  \ b`, `Line 4 - a is less than or equal to b`, `Line 5 - b is greater than or equal\
+  \ to a`。\n\n## 逻辑运算符\n\n下表显示了 C# 支持的所有逻辑运算符。假设变量 `A` 持有布尔值 true，变量 `B` 持有布尔值 false，则\n\
+  \n| 运算符 | 说明 | 示例 |\n| :--- | :--- | :--- |\n| `&&` | 逻辑与运算符。如果两个操作数都非零则条件为真。 |\
+  \ `(A && B)` 为 false. |\n| `||` | 逻辑或运算符。如果两个操作数中任一非零则条件为真。 | `(A || B)` 为 true.\
+  \ |\n| `!` | 逻辑非运算符。用于反转其操作数的逻辑状态。如果条件为真，逻辑非运算符将使其为假。 | `!(A && B)` 为 true. |\n\n\
+  \n\n\n\n# 示例：逻辑运算符\n\n以下示例演示了 C# 中所有可用的逻辑运算符 -\n\n```csharp\nusing System;\nnamespace\
+  \ OperatorsAppl {\n    class Program {\n        static void Main(string [] args)\
+  \ {\n            bool a = true;\n            bool b = true;\n            if (a &&\
+  \ b) {\n                Console.WriteLine(\"Line 1 - Condition is true\");\n   \
+  \         }\n            if (a || b) {\n                Console.WriteLine(\"Line\
+  \ 2 - Condition is true\");\n            }\n            /* lets change the value\
+  \ of a and b */\n            a = false;\n            b = true;\n            if (a\
+  \ && b) {\n                Console.WriteLine(\"Line 3 - Condition is true\");\n\
+  \            } else {\n                Console.WriteLine(\"Line 3 - Condition is\
+  \ not true\");\n            }\n            if (!(a && b)) {\n                Console.WriteLine(\"\
+  Line 4 - Condition is true\");\n            }\n            Console.ReadLine();\n\
+  \        }\n    }\n}\n```\n\n当上述代码被编译并执行时，会产生以下结果 −\n- Line 1 - Condition is true\n\
+  - Line 2 - Condition is true\n- Line 3 - Condition is not true\n- Line 4 - Condition\
+  \ is true\n\n## 位运算符\n\n位运算符对位（bits）操作并执行逐位操作。`&`、`|` 和 `^` 的真值表如下 −\n\n| p | q\
+  \ | p & q | p \\| q | p ^ q |\n| :--- | :--- | :--- | :--- | :--- |\n| 0 | 0 | 0\
+  \ | 0 | 0 |\n| 0 | 1 | 0 | 1 | 1 |\n| 1 | 1 | 1 | 1 | 0 |\n| 1 | 0 | 0 | 1 | 1 |\n\
+  \n假设 `A = 60;` 且 `B = 13;`，那么在二进制格式下如下 −\n- `A = 0011 1100`\n- `B = 0000 1101`\n\
+  - `A&B = 0000 1100`\n- `A|B = 0011 1101`\n- `A^B = 0011 0001`\n- `~A = 1100 0011`\n\
+  \nC# 支持的位运算符如表所示。假设变量 `A` 存储 60 变量 `B` 存储 13，则 −\n\n| Operator | Description | Example\
+  \ |\n| :--- | :--- | :--- |\n| `&` | 二进制与运算符。如果位在两个操作数中都存在，则将其复制到结果中。 | `(A & B)\
+  \ = 12`，即 `0000 1100` |\n| `\\|` | 二进制或运算符。如果位在任一操作数中存在，则将其复制。 | `(A \\| B) = 61`，即\
+  \ `0011 1101` |\n| `^` | 二进制异或运算符。如果位在其中一个操作数中设置但不同不同，则复制该位。 | `(A ^ B) = 49`，即\
+  \ `0011 0001` |\n| `~` | 二进制取反运算符。是单元运算符，具有“翻转”位的效果。 | `(~A ) = -61`，由于是有符号二进制数，在补码表示法中为\
+  \ `1100 0011`。 |\n| `<<` | 二进制左移运算符。左操作数的值根据右操作数指定的位数向左移动。 | `A << 2 = 240`，即 `1111\
+  \ 0000` |\n| `>>` | 二进制右移运算符。左操作数的值根据右操作数指定的位数向右移动。 | `A >> 2 = 15`，即 `0000 1111`\
+  \ |\n\n### 示例：位运算符\n\n以下示例演示了 C# 中所有可用的位运算符 −\n\n```csharp\nusing System;\nnamespace\
+  \ OperatorsAppl {\n    class Program {\n        static void Main(string [] args)\
+  \ {\n            int a = 60;             /* 60 = 0011 1100 */\n            int b\
+  \ = 13;             /* 13 = 0000 1101 */\n            int c = 0;\n            c\
+  \ = a & b;              /* 12 = 0000 1100 */\n            Console.WriteLine(\"Line\
+  \ 1 - Value of c is {0}\", c);\n            c = a | b;              /* 61 = 0011\
+  \ 1101 */\n            Console.WriteLine(\"Line 2 - Value of c is {0}\", c);\n \
+  \           c = a ^ b;              /* 49 = 0011 0001 */\n            Console.WriteLine(\"\
+  Line 3 - Value of c is {0}\", c);\n            c = ~ a;                /* -61 =\
+  \ 1100 0011 */\n            Console.WriteLine(\"Line 4 - Value of c is {0}\", c);\n\
+  \            c = a << 2;             /* 240 = 1111 0000 */\n            Console.WriteLine(\"\
+  Line 5 - Value of c is {0}\", c);\n            c = a >> 2;             /* 15 = 0000\
+  \ 1111 */\n            Console.WriteLine(\"Line 6 - Value of c is {0}\", c);\n \
+  \           Console.ReadLine();\n        }\n    }\n}\n```\n\n上述代码被编译并执行时，产生以下结果\
+  \ −\n- Line 1 - Value of c is 12\n- Line 2 - Value of c is 61\n- Line 3 - Value\
+  \ of c is 49\n- Line 4 - Value of c is -61\n- Line 5 - Value of c is 240\n- Line\
+  \ 6 - Value of c is 15\n\n## 赋值运算符\n\nC# 支持以下赋值运算符：\n\n| Operator | Description\
+  \ | Example |\n| :--- | :--- | :--- |\n| `=` | 简单赋值运算符。将右操作数的值赋给左操作数。 | `C = A +\
+  \ B` 将值赋值给 `C` |\n| `+=` | 加赋值运算符。将右操作数加到左操作数并将结果赋给左操作数。 | `C += A` 等于 `C = C +\
+  \ A` |\n| `-=` | 减赋值运算符。从左操作数减去右操作数并将结果赋给左操作数。 | `C -= A` 等于 `C = C - A` |\n| `*=`\
+  \ | 乘赋值运算符。将左操作数乘以右操作数并将结果赋给左操作数。 | `C *= A` 等于 `C = C * A` |\n| `/=` | 除赋值运算符。将左操作数除以右操作数并将结果赋给左操作数。\
+  \ | `C /= A` 等于 `C = C / A` |\n| `%=` | 取模赋值运算符。对两个操作数取模并将结果赋给左操作数。 | `C %= A` 等于\
+  \ `C = C % A` |\n| `<<=` | 左移赋值运算符。 | `C <<= 2` 等于 `C = C << 2` |\n| `>>=` | 右移赋值运算符。\
+  \ | `C >>= 2` 等于 `C = C >> 2` |\n| `&=` | 位与赋值运算符。 | `C &= 2` 等于 `C = C & 2` |\n\
+  | `^=` | 位异或赋值运算符。 | `C ^= 2` 等于 `C = C ^ 2` |\n| `\\|=` | 位或赋值运算符。 | `C \\|= 2`\
+  \ 等于 `C = C \\| 2` |\n\n### 示例：赋值运算符\n\n以下示例演示了 C# 中所有可用的赋值运算符 −\n\n```csharp\n\
+  using System;\nnamespace OperatorsAppl {\n    class Program {\n        static void\
+  \ Main(string [] args) {\n            int a = 21;\n            int c;\n        \
+  \    c = a;\n            Console.WriteLine(\"Line 1 - Value of c is {0}\", c);\n\
+  \            c += a;\n            Console.WriteLine(\"Line 2 - Value of c is {0}\"\
+  , c);\n            c -= a;\n            Console.WriteLine(\"Line 3 - Value of c\
+  \ is {0}\", c);\n            c *= a;\n            Console.WriteLine(\"Line 4 - Value\
+  \ of c is {0}\", c);\n            c /= a;\n            Console.WriteLine(\"Line\
+  \ 5 - Value of c is {0}\", c);\n            c %= 200;\n            Console.WriteLine(\"\
+  Line 6 - Value of c is {0}\", c);\n            c <<= 2;\n            Console.WriteLine(\"\
+  Line 7 - Value of c is {0}\", c);\n            c >>= 2;\n            Console.WriteLine(\"\
+  Line 8 - Value of c is {0}\", c);\n            c &= 2;\n            Console.WriteLine(\"\
+  Line 9 - Value of c is {0}\", c);\n            c ^= 2;\n            Console.WriteLine(\"\
+  Line 10 - Value of c is {0}\", c);\n            c \\|= 2;\n            Console.WriteLine(\"\
+  Line 11 - Value of c is {0}\", c);\n            Console.ReadLine();\n        }\n\
+  \    }\n}\n```\n\n上述代码被编译并执行时，会产生以下结果 −\n- Line 1 - Value of c is 21\n- Line 2 -\
+  \ Value of c is 42\n- Line 3 - Value of c is 21\n- Line 4 - Value of c is 441\n\
+  - Line 5 - Value of c is 21\n- Line 6 - Value of c is 21\n- Line 7 - Value of c\
+  \ is 84\n- Line 8 - Value of c is 21\n- Line 9 - Value of c is 0\n- Line 10 - Value\
+  \ of c is 2\n- Line 11 - Value of c is 2\n\n## 杂运算符\n\nC# 还支持其他重要的运算符，包括 `sizeof`、`typeof`\
+  \ 和 `? :`。\n\n| Operator | Description | Example |\n| :--- | :--- | :--- |\n| `sizeof()`\
+  \ | 返回数据类型的大小。 | `sizeof(int)`, 返回 4。 |\n| `typeof()` | 返回类的类型。 | `typeof(StreamReader)`\
+  \ |\n| `&` | 返回变量的地址。 | `&a` 返回变量的实际地址。 |\n| `*` | 变量指针。 | `*a` 创建一个指向变量 `a` 的指针。\
+  \ |\n| `? :` | 条件表达式 | 如果条件为真？返回值 X：否则返回值 Y |\n| `is` | 判断对象是否属于特定类型。 | `If( Ford\
+  \ is Car)` // 检查 Ford 是否是 Car 类的对象。 |\n| `as` | 转换失败时不抛出异常。 | `Object obj = new\
+  \ StringReader(\"Hello\");StringReader r = obj as StringReader;` |\n\n\n\n\n\n#\
+  \ \n\n```csharp\nusing System;namespace OperatorsAppl {\nclass Program {\n    static\
+  \ void Main ( string [] args ) {\n        /* example of sizeof operator */\n   \
+  \     Console . WriteLine ( \"The size of int is {0}\" , sizeof ( int ));\n    \
+  \    Console . WriteLine ( \"The size of short is {0}\" , sizeof ( short ));\n \
+  \       Console . WriteLine ( \"The size of double is {0}\" , sizeof ( double ));\n\
+  \        /* example of ternary operator */\n        int a , b ;\n        a = 10\
+  \ ;\n        b = ( a == 1 ) ? 20 : 30 ;\n        Console . WriteLine ( \"Value of\
+  \ b is {0}\" , b );\n        b = ( a == 10 ) ? 20 : 30 ;\n        Console . WriteLine\
+  \ ( \"Value of b is {0}\" , b );\n        Console . ReadLine ();\n    }\n}}\n```\n\
+  \n当上述代码编译并执行时，它产生以下结果：\n−The size of int is 4\nThe size of short is 2\nThe size\
+  \ of double is 8\nValue of b is 30\nValue of b is 20\n\n# C# 中的运算符优先级\n\n运算符优先级决定表达式中项的分组。这影响表达式的求值。某些运算符的优先级高于运算符；例如，乘法运算符的优先级高于加法运算符。\n\
+  \n例如 `x = 7 + 3 * 2;`；在这里，`x` 被赋值为 13 而不是 20，因为运算符 `*` 的优先级高于 `+`，所以首先求值 `3*2`，然后将\
+  \ `7` 加到其中。\n\n在这里，优先级最高的运算符出现在表格顶部，优先级最低的出现在底部。在表达式中，高优先级的运算符先求值。\n\n| 类别 | 运算符\
+  \ | 结合性 |\n| :--- | :--- | :--- |\n| 后置 | `() [] -> . ++ - -` | 从左到右 |\n| 一元 | `+\
+  \ - ! ~ ++ - - (type)* & sizeof` | 从右到左 |\n| 乘法 | `* / %` | 从左到右 |\n| 加法 | `+ -`\
+  \ | 从左到右 |\n| 移位 | `<< >>` | 从左到右 |\n| 关系 | `< <= > >=` | 从左到右 |\n| 等于 | `== !=`\
+  \ | 从左到右 |\n| 按位与 | `&` | 从左到右 |\n| 按位异异 | `^` | 从左到右 |\n| 按位或 | `|` | 从左到右 |\n\
+  | 逻辑与 | `&&` | 从左到右 |\n| 逻辑或 | `||` | 从左到右 |\n| 条件 | `?:` | 从右到左 |\n| 赋值 | `= +=\
+  \ -= *= /= %= >>= <<= &= ^= |==` | 从右到左 |\n| 逗号 | `,` | 从左到右 |\n\n## 示例\n\n```csharp\n\
+  using System;namespace OperatorsAppl {\nclass Program {\n    static void Main (\
+  \ string [] args ) {\n        int a = 20 ;\n        int b = 10 ;\n        int c\
+  \ = 15 ;\n        int d = 5 ;\n        int e ;\n        e = ( a + b ) * c / d ;\
+  \ // ( 30 * 15 ) / 5\n        Console . WriteLine ( \"Value of (a + b) * c / d is\
+  \ : {0}\" , e );\n        e = (( a + b ) * c ) / d ; // ( 30 * 15 ) / 5\n      \
+  \  Console . WriteLine ( \"Value of ((a + b) * c) / d is  : {0}\" , e );\n     \
+  \   e = ( a + b ) * ( c / d ); // ( 30 ) * (15/5)\n        Console . WriteLine (\
+  \ \"{0}\", e);\n        e = a + ( b * c ) / d ; // 20 + (150/5)\n        Console\
+  \ . WriteLine ( \"{0}\", e);\n        Console . ReadLine ();\n    }\n}}\n```\n\n\
+  当上述代码编译并执行时，它产生以下结果：\nValue of (a + b) * c / d is : 90\nValue of ((a + b) * c) /\
+  \ d is  : 90\n\n# C# - 决策判断\n\n决策结构要求程序员指定一个或多个条件，由程序进行求值或测试，并在条件被确定为真时执行一条或多条语句，可选，如果条件被确定为假，则执行其他语句。\n\
+  \n以下是大多数编程语言中常见的典型决策结构的通用形式：\n![Decision making statements in C#](img/image2607.jpg)\n\
+  \nC# 提供了以下类型的决策语句。点击以下链接查看详细信息。\n\n| 序号 | 语句与描述 |\n| :--- | :--- |\n| 1 | if 语句\
+  \ | `if` 语句由一个布尔表达式后跟一个或多个语句组成。 |\n| 2 | if...else 语句 | `if` 语句后面可以跟一个可选的 `else`\
+  \ 语句，该语句在布尔表达式为假时执行。 |\n| 3 | 嵌套 if 语句 | 你可以在另一个 `if` 或 `else if` 语句内部使用一个 `if`\
+  \ 或 `else if` 语句。 |\n| 4 | switch 语句 | `switch` 语句允许对变量与一组值进行等性测试。 |\n| 5 | 嵌套 switch\
+  \ 语句 | 你可以在另一个 `switch` 语句内部使用一个 `switch` 语句。 |\n\n## If 语句\n\n`if` 语句由一个布尔表达式后跟一个或多个语句组成。\n\
+  \n### 语法\nC# 中 `if` 语句的语法为：\n`if(boolean_expression) {/* 如果布尔表达式为真，则执行语句(s) */}`\n\
+  \n如果布尔表达式求值为 `true`，则执行 `if` 语句内部的代码块将被执行。如果布尔表达式求值为 `false`，则在 `if` 语句结束处（右大括号之后）后的第一组代码将被执行。\n\
+  \n### 流程图：\n![C# if statement](img/image2675.jpg)\n\n## 示例\n```csharp\nusing System;namespace\
+  \ DecisionMaking {\nclass Program {\n    static void Main ( string [] args ) {\n\
+  \        /* 局部变量定义 */\n        int a = 10 ;\n        /* 使用 if 语句检查布尔条件 */\n    \
+  \    if ( a < 20 ) {\n            /* 如果条件为真则打印以下内容 */\n            Console . WriteLine\
+  \ ( \"a is less than 20\" );\n        }\n        Console . WriteLine ( \"value of\
+  \ a is : {0}\" , a );\n        Console . ReadLine ();\n    }\n}}\n```\n当上述代码编译并执行时，它产生以下结果：\n\
+  a is less than 20\nvalue of a is : 10\n\n## if...else 语句\n\n`if` 语句后面可以跟一个可选的 `else`\
+  \ 语句，它在布尔表达式为假时执行。\n\n### 语法\nC# 中 `if...else` 语句的语法为：\n`if(boolean_expression)\
+  \ {/* 如果布尔表达式为真，则执行语句(s) */} else {/* 如果布尔表达式为假，则执行语句(s) */}`\n\n如果布尔表达式求值为 `true`，则执行\
+  \ `if` 代码块，否则执行 `else` 代码块。\n\n### 流程图：\n![C# if...else statement](img/image2740.jpg)\n\
+  \n## 示例\n```csharp\nusing System;namespace DecisionMaking {\nclass Program {\n \
+  \   static void Main ( string [] args ) {\n        /* 局部变量定义 */\n        int a =\
+  \ 100 ;\n        /* 检查布尔条件 */\n        if ( a < 20 ) {\n            /* 如果条件为真则打印以下内容\
+  \ */\n            Console . WriteLine ( \"a is less than 20\" );\n        } else\
+  \ {\n            /* 如果条件为假则打印以下内容 */\n            Console . WriteLine ( \"a is not\
+  \ less than 20\" );\n        }\n        Console . WriteLine ( \"value of a is :\
+  \ {0}\" , a );\n        Console . ReadLine ();\n    }\n}}\n```\n当上述代码编译并执行时，它产生以下结果：\n\
+  a is not less than 20\nvalue of a is : 100\n\n## if...else if...else 语句\n\n`if`\
+  \ 语句后面可以跟一个可选的 `else if...else` 语句，这对于使用单个 `if...else if` 语句测试各种条件非常有用。在使用 `if`、`else\
+  \ if`、`else` 语句有几点需要注意：\n\n- `if` 可以有零或一个 `else`，它必须位于任何 `else if` 之后。\n- `if` 可以有零到多个\
+  \ `else if`，它们必须位于 `else` 之前。\n- 一旦某个 `else if` 成功，剩余的 `else if` 或 `else` 将不再被测试。\n\
+  \n\n\n\n\n## if...else if...else 语句\n\nC# 中 `if...else if...else` 语句的语法如下：\n\n```csharp\n\
+  if(boolean_expression 1) {/* 当布尔表达式 1 为真时执行 %}\nelse if( boolean_expression 2) {/*\
+  \ 当布尔表达式 2 为真时执行 %}\nelse if( boolean_expression 3) {/* 当布尔表达式 3 为真时执行 %}\nelse\
+  \ {/* 当上述条件均为假时执行 %}\n```\n\n示例：\n```csharp\nusing System ;\nnamespace DecisionMaking\
+  \ {\nclass Program {\n    static void Main ( string [] args ) {\n        /* 局部变量定义\
+  \ */\n        int a = 100 ;\n        /* 检查布尔条件 */\n        if ( a == 10 ) {/* if\
+  \ 条件为真则打印以下内容 */\n            Console . WriteLine ( \"Value of a is 10\" );\n  \
+  \      }else if ( a == 20 ) {/* if else if 条件为真 */\n            Console . WriteLine\
+  \ ( \"Value of a is 20\" );\n        }else if ( a == 30 ) {/* if else if 条件为真  */\n\
+  \            Console . WriteLine ( \"Value of a is 30\" );\n        } else {/* 如果没有条件为真\
+  \ */\n            Console . WriteLine ( \"None of the values is matching\" );\n\
+  \        }\n        Console . WriteLine ( \"Exact value of a is: {0}\" , a );\n\
+  \        Console . ReadLine ();\n    }\n}\n```\n\n当上述代码编译并执行时，将产生以下结果：\nNone of\
+  \ the values is matching\nExact value of a is: 100\n\n## 嵌套 if 语句\n\n在 C# 中嵌套 `if-else`\
+  \ 语句总是合法的，这意味着你可以在一个 `if` 或 `else if` 语句内部嵌套另一个 `if` 或 `else if` 语句。\n\n语法：\n`嵌套\
+  \ if` 语句的语法如下：\n\n```csharp\nif( boolean_expression 1) {/* 当布尔表达式 1 为真时执行 %}\n \
+  \   if(boolean_expression 2) {/* 当布尔表达式 2 为真时执行 %}\n}\n```\n你可以以嵌套 `if` 语句类似的方式嵌套\
+  \ `else if...else`。\n\n示例：\n```csharp\nusing System ;\nnamespace DecisionMaking\
+  \ {\nclass Program {\n    static void Main ( string [] args ) {\n        //* 局部变量定义\
+  \ */\n        int a = 100 ;\n        int b = 200 ;\n        /* 检查布尔条件 */\n     \
+  \   if ( a == 100 ) {/* if 条件为真则检查以下内容 */\n            if ( b == 200 ) {/* if 条件为真则打印以下内容\
+  \ */\n                Console . WriteLine ( \"Value of a is 100 and b is 200\" );\n\
+  \            }\n        }\n        Console . WriteLine ( \"Exact value of a is :\
+  \ {0}\" , a );\n        Console . WriteLine ( \"Exact value of b is : {0}\" , b\
+  \ );\n        Console . ReadLine ();\n    }\n}\n```\n当上述代码编译并执行时，将产生以下结果：\nValue\
+  \ of a is 100 and b is 200\nExact value of a is : 100\nExact value of b is : 200\n\
+  \n## switch 语句\n\n`switch` 语句允许对变量与一组值进行等值测试。每个值被称为一个 `case`，被切换的变量会在每个 `switch\
+  \ case` 中进行检查。\n\n语法：\nC# 中 `switch` 语句的语法如下所示：\n\n```csharp\nswitch(expression)\
+  \ {\n    case constant-expression1 : statement(s);\n    break;\n    case constant-expression2\
+  \ :\n    case constant-expression3 : statement(s);\n    break;\n    /* 你可以有任意数量的\
+  \ case 语句 */\n    default : /* 可选 */\n    statement(s);\n}\n```\n\n以下规则适用于 `switch`\
+  \ 语句：\n\n- `switch` 语句中使用的 `expression` 具有整型或枚举类型，或者是一个类类型且该类具有转换为整型或枚举类型的单一转换函数。\n\
+  - 你可以在 `switch` 中包含任意数量的 `case` 语句。每个 `case` 后面都跟着要比较的值和一个冒号。\n- `case` 的 `constant-expression`\
+  \ 必须与 `switch` 中的变量具有相同的数据类型，并且它必须是常量或字面量。\n- 当被切换的变量等于某个 `case` 时，该 case 后的语句将执行，直到遇到\
+  \ `break` 语句。\n- 当遇到 `break` 语句时，`switch` 终止，控制流跳转到 `switch` 语句之后的下一行。\n- 并不是每个\
+  \ `case` 都需要包含 `break`。如果没有出现 `break`，将会引起编译错误。\n- `switch` 语句可以有一个可选的 `default`\
+  \ `case`，它必须出现在 `switch` 的末尾。`default` case 可用于在没有任何 `cases` 为真时执行某项任务。\n\n流程图：\n\
+  ![switch statement in C#](img/image3022.jpg)\n\n示例：\n```csharp\nusing System ;\n\
+  namespace DecisionMaking {\nclass Program {\n    static void Main ( string [] args\
+  \ ) {\n        /* 局部变量定义 */\n        char grade = 'B' ;\n        switch ( grade\
+  \ ) {\n            case 'A' : Console . WriteLine ( \"Excellent!\" ); break ;\n\
+  \            case 'B' :\n            case 'C' : Console . WriteLine ( \"Well done\"\
+  \ ); break ;\n            case 'D' : Console . WriteLine ( \"You passed\" ); break\
+  \ ;\n            case 'F' : Console . WriteLine ( \"Better try again\" ); break\
+  \ ;\n            default : Console . WriteLine ( \"Invalid grade\" ); break ;\n\
+  \        }\n        Console . WriteLine ( \"Your grade is {0}\" , grade );\n   \
+  \     Console . ReadLine ();\n    }\n}\n```\n当上述代码编译并执行时，将产生以下结果：\nWell done\nYour\
+  \ grade is B\n\n## 嵌套 switch 语句\n\n可以将一个 `switch` 作为外部 `switch` 语句语句序列的一部分。即使内部和外部\
+  \ `switch` 的 `case` 常量包含共同的值，也不会产生冲突。\n\n语法：\n`嵌套 switch` 语句的语法如下：\n\n```csharp\n\
+  switch(ch1) {\n    case 'A':\n        Console.WriteLine(\"This A is part of outer\
+  \ switch\" );\n        switch(ch2) {\n            case 'A': Console.WriteLine(\"\
+  This A is part of inner switch\" ); break;\n            case 'B': /* 内部 B case */\
+  \ break;\n        }\n    case 'B': /* 外部 B case */\n}\n```\n\n示例：\n```csharp\nusing\
+  \ System ;\nnamespace DecisionMaking {\nclass Program {\n    static void Main (\
+  \ string [] args ) {\n        int a = 100 ;\n        int b = 200 ;\n        switch\
+  \ ( a ) {\n            case 100 :\n                Console . WriteLine ( \"This\
+  \ is part of outer switch\" );\n                switch ( b ) {\n               \
+  \     case 200 : Console . WriteLine ( \"This is part of inner switch\" ); break;\n\
+  \                }\n                break;\n        }\n    }\n}\n```\n当上述代码编译并执行时，将产生以下结果：\n\
+  This is part of outer switch\nThis is part of inner switch\n\n# C# - 循环\n\n在某些情况下，你需要多次执行一段代码块。通常情况下，语句是按顺序执行的：函数中的第一个语句首先执行，然后是第二个，依此类推。编程语言提供了各种控制结构允许允许复杂的执行路径。循环语句允许我们多次执行语句或一组语句，以下是大多数编程语言中循环语句的形式：\n\
+  \n![Loop Architecture](img/image3205.jpg)\n\nC# 提供了以下类型的循环来处理循环需求。点击以下链接查看详细信息。\n\
+  \n| 序号 | 循环类型与描述 |\n| :--- | :--- |\n| 1 | while 循环在给定条件为真时重复执行语句或一组语句。它在执行循环体之前测试条件。\
+  \ |\n| 2 | for 循环多次执行语句序列，并缩短了管理循环变量的代码。 |\n| 3 | do...while 循环与 while 语句相似，但它在循环体末尾测试条件。\
+  \ |\n| 4 | 嵌套循环你可以在另一个 while、for 或 do..while 循环内部嵌套一个或多个循环。 |\n\n\n\n\n\n## while\
+  \ 循环\nC# 中的 `while` 循环语句在给定条件为真时，会重复执行目标语句。\n\n### 语法\nC# 中 `while` 循环的语法如下：\n```csharp\n\
+  while(condition) {statement(s);}\n```\n在这里，`statement(s)` 可以是一个单独语句，也可以是一个语句块。`condition`\
+  \ 可以是任何表达式，而 `true` 是任何非零值。当条件为真时，循环进行迭代。当条件变为假时，程序控制将传递到紧接在循环之后的行。\n\n### 流程图\n\
+  ![while loop in C#](img/image3257.jpg)\n在这里，`while` 循环的关键点在于循环可能永远不会运行。当测试 `condition`\
+  \ 的结果为假时，将跳过循环体，并执行 `while` 循环后的第一个语句。\n\n## 示例\n```csharp\nusing System ;\nnamespace\
+  \ Loops {\n    class Program {\n        static void Main ( string [] args ) {\n\
+  \            /* 局部变量定义 */\n            int a = 10 ;\n            /* while 循环执行 */\n\
+  \            while ( a < 20 ) {\n                Console . WriteLine ( \"value of\
+  \ a: {0}\" , a );\n                a ++;\n            }\n            Console . ReadLine\
+  \ ();\n        }\n    }\n}\n```\n当上述代码编译并执行时，将产生以下结果：\nvalue of a: 10\nvalue of\
+  \ a: 11\nvalue of a: 12\nvalue of a: 13\nvalue of a: 14\nvalue of a: 15\nvalue of\
+  \ a: 16\nvalue of a: 17\nvalue of a: 18\nvalue of a: 19\n\n## for 循环\n`for` 循环是一种重复控制结构，允许你高效地编写需要执行特定次数的循环。\n\
+  \n### 语法\nC# 中 `for` 循环的语法如下：\n```csharp\nfor ( init; condition; increment ) {statement(s);}\n\
+  ```\n以下是 `for` 循环中的控制流：\n- 首先执行 `init` 步骤，且只执行一次。此步骤允许你声明并初始化任何循环控制变量。只要出现分号，就不强制要求在这里放置语句。\n\
+  - 接下来评估 `condition`。如果为真，则执行循环体。如果为假，则不执行循环体，控制流跳转到 `for` 循环之后的紧邻语句。\n- 在执行 `for`\
+  \ 循环体后，控制流跳转回 `increment` 语句。该语句允许你更新任何循环控制变量。只要在条件之后出现分号，该语句可以留空。\n- 现在再次评估 `condition`。如果为真，则执行循环并重复该过程（循环体、然后是增量步骤，然后再次测试条件）。在条件变为假后，`for`\
+  \ 循环终止。\n\n### 流程图\n![for loop in C#](img/image3342.jpg)\n\n## 示例\n```csharp\nusing\
+  \ System ;\nnamespace Loops {\n    class Program {\n        static void Main ( string\
+  \ [] args ) {\n            /* for 循环执行 */\n            for ( int a = 10 ; a < 20\
+  \ ; a = a + 1 ) {\n                Console . WriteLine ( \"value of a: {0}\" , a\
+  \ );\n            }\n            Console . ReadLine ();\n        }\n    }\n}\n```\n\
+  当上述代码编译并执行时，将产生以下结果：\nvalue of a: 10\nvalue of a: 11\nvalue of a: 12\nvalue of a:\
+  \ 13\nvalue of a: 14\nvalue of a: 15\nvalue of a: 16\nvalue of a: 17\nvalue of a:\
+  \ 18\nvalue of a: 19\n\n## do...While 循环\n与在循环开始时测试条件的 `for` 和 `while` 循环不同，`do...while`\
+  \ 循环在循环结束时检查其条件。`do...while` 循环类似于 `while` 循环，不同在于 `do...while` 循环保证至少执行一次。\n\n\
+  ### 语法\nC# 中 `do...while` 循环的语法如下：\n```csharp\ndo {statement(s);} while( condition\
+  \ );\n```\n注意条件表达式出现在循环的末尾，因此循环中的 `statement(s)` 在测试条件之前会执行一次。如果条件为真，控制流跳转回 `do`，循环中的\
+  \ `statement(s)` 再次执行。此过程不断重复直到给定条件变为假。\n\n### 流程图\n![do...while loop in C#](img/image3416.jpg)\n\
+  \n## 示例\n```csharp\nusing System ;\nnamespace Loops {\n    class Program {\n   \
+  \     static void Main ( string [] args ) {\n            /* 局部变量定义 */\n        \
+  \    int a = 10 ;\n            /* do 循环执行 */\n            do {\n               \
+  \ Console . WriteLine ( \"value of a: {0}\" , a );\n                a = a + 1 ;\n\
+  \            } while ( a < 20 );\n            Console . ReadLine ();\n        }\n\
+  \    }\n}\n```\n当上述代码编译并执行时，将产生以下结果：\nvalue of a: 10\nvalue of a: 11\nvalue of a:\
+  \ 12\nvalue of a: 13\nvalue of a: 14\nvalue of a: 15\nvalue of a: 16\nvalue of a:\
+  \ 17\nvalue of a: 18\nvalue of a: 19\n\n## 嵌套 for 循环\nC# 允许在一个另一个内部使用循环。本节展示了几个示例来说明这一概念。\n\
+  \n### 语法\nC# 中 `嵌套 for 循环`语句的语法为：\n```csharp\nfor ( init; condition; increment )\
+  \ {for ( init; condition; increment ) {statement(s);}statement(s);}\n```\nC# 中 `嵌套\
+  \ while 循环`语句的语法为：\n```csharp\nwhile(condition) {while(condition) {statement(s);}statement(s);}\n\
+  ```\nC# 中 `嵌套 do...while 循环`语句的语法为：\n```csharp\ndo {statement(s);do {statement(s);}while(\
+  \ condition );}while( condition );\n```\n关于循环嵌套的最后一点是，你可以将任何类型的循环放在任何类型的循环内部。例如，`for`\
+  \ 循环可以放在 `while` 循环内部，反之亦然。\n\n## 示例\n以下程序使用嵌套 for 循环寻找 2 到 100 之间的质数：\n```csharp\n\
+  using System ;\nnamespace Loops {\n    class Program {\n        static void Main\
+  \ ( string [] args ) {\n            /* 局部变量定义 */\n            int i , j ;\n    \
+  \        for ( i = 2 ; i < 100 ; i ++) {\n                for ( j = 2 ; j <= ( i\
+  \ / j ); j ++)\n                    if (( i % j ) == 0 ) break ; // 如果找到因数，则不是质数\n\
+  \                if ( j > ( i / j )) Console . WriteLine ( \"{0} is prime\" , i\
+  \ );\n            }\n            Console . ReadLine ();\n        }\n    }\n}\n```\n\
+  当上述代码编译并执行时，将产生以下结果：\n2 is prime\n3 is prime\n5 is prime\n7 is prime\n11 is prime\n\
+  13 is prime\n17 is prime\n19 is prime\n23 is prime\n29 is prime\n31 is prime\n37\
+  \ is prime\n41 is prime\n43 is prime\n47 is prime\n53 is prime\n59 is prime\n61\
+  \ is prime\n67 is prime\n71 is prime\n73 is prime\n79 is prime\n83 is prime\n89\
+  \ is prime\n97 is prime\n\n## 循环控制语句\n循环控制语句改变了其正常执行顺序。当执行离开作用范围时，在该作用范围内创建的所有自动对象都会被销毁。C#\
+  \ 提供了以下控制语句。\n\n| 序号 | 控制语句及描述 |\n| :--- | :--- |\n| 1 | `break` 语句：终止 `循环` 或 `switch`\
+  \ 语句，并将执行转移到循环或 switch 之后的后续语句。 |\n| 2 | `continue` 语句：导致循环跳过其主体的剩余部分，并在迭代之前立即重新测试其条件。\
+  \ |\n\n### break 语句\nC# 中的 `break` 语句有以下两种用法：\n- 当在循环内部遇到 `break` 语句时，循环立即终止，程序控制从循环后的下一个语句开始恢复。\n\
+  - 它可以用于终止 `switch` 语句中的某个 `case`。\n\n\n\n\n\n如果你在使用嵌套循环（即在一个循环内部另一个循环），`break` 语句将停止最内层循环的执行，并开始执行块之后的下一行代码。\n\
+  \n### break 语句\n\n### 语法\nC# 中 `break` 语句的语法如下 —\n`break;`\n\n### 流程图\n![c# break\
+  \ statement](img/image3653.jpg)\n\n## 示例\n```csharp\nusing System ;\nnamespace Loops\
+  \ {\nclass Program {\n    static void Main ( string [] args ) {\n        /* local\
+  \ variable definition */\n        int a = 10 ;\n        /* while loop execution\
+  \ */\n        while ( a < 20 ) {\n            Console . WriteLine ( \"value of a:\
+  \ {0}\" , a );\n            a ++;\n            if ( a > 15 ) {\n               \
+  \ /* terminate the loop using break statement */\n                break ;\n    \
+  \        }\n        }\n        Console . ReadLine ();\n    }\n}\n```\n当上述代码编译并执行时，会产生以下结果\
+  \ —\nvalue of a: 10\nvalue of a: 11\nvalue of a: 12\nvalue of a: 13\nvalue of a:\
+  \ 14\nvalue of a: 15\n\n### continue 语句\n\nC# 中的 `continue` 语句的作用与 `break` 语句相似。然而，`continue`\
+  \ 并不是强制终止，而是强制执行循环的下次迭代，跳过中间的任何代码。\n\n对于 `for` 循环，`continue` 语句会导致循环的条件测试和增量部分执行。对于\
+  \ `while` 和 `do...while` 循环，`continue` 语句会导致程序控制传递到条件测试。\n\n### 语法\nC# 中 `continue`\
+  \ 语句的语法如下 —\n`continue;`\n\n### 流程图\n![C# continue statement](img/image3723.jpg)\n\
+  \n## 示例\n```csharp\nusing System ;\nnamespace Loops {\nclass Program {\n    static\
+  \ void Main ( string [] args ) {\n        /* local variable definition */\n    \
+  \    int a = 10 ;\n        /* do loop execution */\n        do {\n            if\
+  \ ( a == 15 ) {\n                /* skip the iteration */\n                a = a\
+  \ + 1 ;\n                continue ;\n            }\n            Console . WriteLine\
+  \ ( \"value of a: {0}\" , a );\n            a ++;\n        }while ( a < 20 );\n\
+  \        Console . ReadLine ();\n    }\n}\n```\n当上述代码编译并执行时，会产生以下结果 —\nvalue of\
+  \ a: 10\nvalue of a: 11\nvalue of a: 12\nvalue of a: 13\nvalue of a: 14\nvalue of\
+  \ a: 16\nvalue of a: 17\nvalue of a: 18\nvalue of a: 19\n\n### 死循环\n\n如果一个条件永远不变为假，循环就会变成死循环。`for`\
+  \ 循环传统上用于此目的。由于构成 `for` 循环的三个表达式都不是必需的，你可以通过让条件表达式为空来创建一个无限循环。\n\n## 示例\n```csharp\n\
+  using System ;\nnamespace Loops {\nclass Program {\n    static void Main ( string\
+  \ [] args ) {\n        for (; ; ) {\n            Console . WriteLine ( \"Hey! I\
+  \ am Trapped\" );\n        }\n    }\n}\n```\n当条件表达式缺失时，它被假设为真。你可以拥有初始化和增量表达式，但程序员更常见地使用\
+  \ `for(;;)` 结构来表示死循环。\n\n# C# - 封装\n\n封装被定义为“将一个或多个项目封装在物理或逻辑包内部的过程”。在面向对象的编程方法论中，封装防止了对实现细节的访问。抽象和封装是面向对象编程中相关的特性。抽象允许使相关信息可见，而封装使程序员能够实现所需的抽象级别。\n\
+  \n封装通过使用访问修饰符来实现。`访问修饰符`定义了类成员的范围和可见性。C# 支持以下访问修饰符 —\n\n- Public（公共）\n- Private（私有）\n\
+  - Protected（保护）\n- Internal（内部）\n- Protected internal（内部保护）\n\n\n\n\n\n## 公共修饰符\n\
+  公共访问修饰符允许类将其成员变量和成员函数暴露给其他函数和其他对象任何公共成员都可以从类的外部访问。下面的示例说明了这一点：\n\n```csharp\nusing\
+  \ System;\nnamespace RectangleApplication {\n    class Rectangle {\n        //member\
+  \ variables\n        public double length;\n        public double width;\n     \
+  \   public double GetArea() {\n            return length * width;\n        }\n \
+  \       public void Display() {\n            Console.WriteLine(\"Length: {0}\",\
+  \ length);\n            Console.WriteLine(\"Width: {0}\", width);\n            Console.WriteLine(\"\
+  Area: {0}\", GetArea());\n        }\n    } //end class Rectangle\n    class ExecuteRectangle\
+  \ {\n        static void Main(string [] args) {\n            Rectangle r = new Rectangle();\n\
+  \            r.length = 4.5;\n            r.width = 3.5;\n            r.Display();\n\
+  \            Console.ReadLine();\n        }\n    }\n}\n```\n当上述代码编译并执行时，会产生以下结果：\n\
+  Length: 4.5\nWidth: 3.5\nArea: 15.75\n\n在前面的示例中，成员变量 `length` 和 `width` 被声明为 `public`，因此可以使用命名为\
+  \ `r` 的 `Rectangle` 类实例从 `Main()` 函数访问。成员函数 `Display()` 和 `GetArea()` 也可以直接访问这些变量，而无需使用类的实例。成员函数\
+  \ `Display()` 也被声明为 `public`，因此也可以可以使用命名为 `r` 的 `Rectangle` 类实例从 `Main()`访问。\n\n\
+  ## 私有修饰符\n私有访问修饰符允许类将其成员变量和成员函数从其他函数和其他对象隐藏。只有同一类的函数可以访问其私有成员。即使是类的实例无法访问其私有成员。下面的示例说明了这一点：\n\
+  \n```csharp\nusing System;\nnamespace RectangleApplication {\n    class Rectangle\
+  \ {\n        //member variables\n        private double length;\n        private\
+  \ double width;\n        public void Acceptdetails() {\n            Console.WriteLine(\"\
+  Enter Length: \");\n            length = Convert.ToDouble(Console.ReadLine());\n\
+  \            Console.WriteLine(\"Enter Width: \");\n            width = Convert.ToDouble(Console.ReadLine());\n\
+  \        }\n        public double GetArea() {\n            return length * width;\n\
+  \        }\n        public void Display() {\n            Console.WriteLine(\"Length:\
+  \ {0}\", length);\n            Console.WriteLine(\"Width: {0}\", width);\n     \
+  \       Console.WriteLine(\"Area: {0}\", GetArea());\n        }\n    } //end class\
+  \ Rectangle\n    class ExecuteRectangle {\n        static void Main(string [] args)\
+  \ {\n            Rectangle r = new Rectangle();\n            r.Acceptdetails();\n\
+  \            r.Display();\n            Console.ReadLine();\n        }\n    }\n}\n\
+  ```\n当上述代码编译并执行时，会产生以下结果：\nEnter Length: 4.4\nEnter Width: 3.3\nLength: 4.4\nWidth:\
+  \ 3.3\nArea: 14.52\n\n在前面的示例中，成员变量 `length` 和 `width` 被声明为 `private`，因此无法从 `Main()`\
+  \ 函数访问。成员函数 `AcceptDetails()` 和 `Display()` 可以访问这些变量。由于成员函数 `AcceptDetails()` 和\
+  \ `Display()` 被声明为 `public`，因此可以使用命名为 `r` 的 `Rectangle` 类实例从 `Main()` 访问。\n\n##\
+  \ 保护修饰符\n保护访问修饰符允许子类访问其基类的成员变量和成员函数。这有助于实现继承。我们将在继承章节中详细讨论此。\n\n## 内部修饰符\n内部访问修饰符允许类将其成员变量和成员函数暴露给当前程序集中的其他函数和其他对象。换句话说，任何具有内部修饰符的成员都可以从定义该成员的应用程序中的任何类或方法访问。下面的程序说明了这一点：\n\
+  \n```csharp\nusing System;\nnamespace RectangleApplication {\n    class Rectangle\
+  \ {\n        //member variables\n        internal double length;\n        internal\
+  \ double width;\n        double GetArea() {\n            return length * width;\n\
+  \        }\n        public void Display() {\n            Console.WriteLine(\"Length:\
+  \ {0}\", length);\n            Console.WriteLine(\"Width: {0}\", width);\n     \
+  \       Console.WriteLine(\"Area: {0}\", GetArea());\n        }\n    } //end class\
+  \ Rectangle\n    class ExecuteRectangle {\n        static void Main(string [] args)\
+  \ {\n            Rectangle r = new Rectangle();\n            r.length = 4.5;\n \
+  \           r.width = 3.5;\n            r.Display();\n            Console.ReadLine();\n\
+  \        }\n    }\n}\n```\n当上述代码编译并执行时，会产生以下结果：\nLength: 4.5\nWidth: 3.5\nArea:\
+  \ 15.75\n\n在前面的示例中，注意成员函数 `GetArea()` 没有声明任何访问修饰符。那么，如果不提到任何修饰符，类成员的默认访问修饰符是什么呢？它是\
+  \ `private`。\n\n## 保护内部修饰符\n保护内部访问修饰符允许类将其成员变量和成员函数从其他类对象和函数隐藏，同一应用程序内的子类除外。这在实现继承时也会使用。\n\
+  \n# C# - 方法\n方法是共同执行任务的语句组。每个 C# 程序至少有一个带有名为 `Main` 方法的类。要使用方法，你需要：\n- 定义方法\n- 调用方法\n\
+  \n## 在 C# 中定义方法\n定义方法基本上是在声明其结构的元素。在 C# 中定义方法的语法如下：\n`<Access Specifier> <Return\
+  \ Type> <Method Name>(Parameter List) {Method Body}`\n\n以下是方法的各种元素：\n- **访问修饰符**：它决定了从另一个类访问变量或方法的可见性。\n\
+  - **返回类型**：方法可以返回一个值。返回类型是方法返回的值的数据类型。如果方法不返回任何值，则返回类型为 `void`。\n- **方法名**：方法名是一个唯一标识符，并且区分大小写。它不能与类中定义的任何其他标识符相同。\n\
+  - **参数列表**：参数封装在括号之间，用于从方法传递和接收数据。参数列表指的是方法参数的类型、顺序和数量。参数是可选的；也就是说，方法可以不包含参数。\n\
+  - **方法体**：它包含完成所需活动所需的指令集。\n\n\n\n\n\n## 示例\n下面的代码段展示了一个名为 `FindMax` 函数，它接收两个整数值并返回两者中较大的一个。它具有公共访问修符，因此可以使用该类的实例从类外部访问。\n\
+  \n```csharp\nclass NumberManipulator {\n    public int FindMax ( int num1 , int\
+  \ num2 ) {\n        /* local variable declaration */\n        int result ;\n   \
+  \     if ( num1 > num2 )\n            result = num1 ;\n        else\n          \
+  \  result = num2 ;\n        return result ;\n    }\n}\n```\n\n## 在 C# 中调用方法\n你可以使用方法的名称来调用方法。下面的示例阐述了这一点：\n\
+  \n```csharp\nusing System ;\nnamespace CalculatorApplication {\n    class NumberManipulator\
+  \ {\n        public int FindMax ( int num1 , int num2 ) {\n            /* local\
+  \ variable declaration */\n            int result ;\n            if ( num1 > num2\
+  \ )\n                result = num1 ;\n            else\n                result =\
+  \ num2 ;\n            return result ;\n        }\n        static void Main ( string\
+  \ [] args ) {\n            /* local variable definition */\n            int a =\
+  \ 100 ;\n            int b = 200 ;\n            int ret ;\n            NumberManipulator\
+  \ n = new NumberManipulator ();\n            //calling the FindMax method\n    \
+  \        ret = n . FindMax ( a , b );\n            Console . WriteLine ( \"Max value\
+  \ is : {0}\" , ret );\n            Console . ReadLine ();\n        }\n    }\n}\n\
+  ```\n\n当上述代码编译并执行时，将产生以下结果：\nMax value is : 200\n\n你也可以通过使用类的实例从其他类调用公共方法。例如，`FindMax`\
+  \ 方法属于 `NumberManipulator` 类，你可以从另一个类 `Test` 中调用它。\n\n```csharp\nusing System ;\n\
+  namespace CalculatorApplication {\n    class NumberManipulator {\n        public\
+  \ int FindMax ( int num1 , int num2 ) {\n            /* local variable declaration\
+  \ */\n            int result ;\n            if ( num1 > num2 )\n               \
+  \ result = num1 ;\n            else\n                result = num2 ;\n         \
+  \   return result ;\n        }\n    }\n    class Test {\n        static void Main\
+  \ ( string [] args ) {\n            /* local variable definition */\n          \
+  \  int a = 100 ;\n            int b = 200 ;\n            int ret ;\n           \
+  \ NumberManipulator n = new NumberManipulator ();\n            //calling the FindMax\
+  \ method\n            ret = n . FindMax ( a , b );\n            Console . WriteLine\
+  \ ( \"Max value is : {0}\" , ret );\n            Console . ReadLine ();\n      \
+  \  }\n    }\n}\n```\n\n当上述代码编译并执行时，将产生以下结果：\nMax value is : 200\n\n## 递归方法调用\n方法可以调用自己。这被称为\
+  \ `recursion`。下面的示例是一个使用递归函数计算给定数字的阶乘：\n\n```csharp\nusing System ;\nnamespace CalculatorApplication\
+  \ {\n    class NumberManipulator {\n        public int factorial ( int num ) {\n\
+  \            /* local variable declaration */\n            int result ;\n      \
+  \      if ( num == 1 )\n                return 1 ;\n            else\n         \
+  \       result = factorial ( num - 1 ) * num ;\n            return result ;\n  \
+  \      }\n        static void Main ( string [] args ) {\n            NumberManipulator\
+  \ n = new NumberManipulator ();\n            //calling the factorial method\n  \
+  \          Console . WriteLine ( \"Factorial of 6 is : {0}\", n.factorial(6) );\n\
+  \            Console . WriteLine ( \"Factorial of 7 is : {0}\" , n . factorial (\
+  \ 7 ));\n            Console . ReadLine ();\n        }\n    }\n}\n```\n\n当上述代码编译并执行时，将产生以下结果：\n\
+  Factorial of 6 is: 720\nFactorial of 7 is: 5040\nFactorial of 8 is: 40320\n\n##\
+  \ 向方法传递参数\n当调用带有参数的方法时，你需要传递参数。有三种方式可以将参数传递给方法：\n\n| 序号 | 机制 | 描述 |\n| :--- | :---\
+  \ | :--- |\n| 1 | 值参数 | 该方法将参数的实际值复制到函数的形式参数中。在这种情况下，函数内部对参数的更改对实际参数没有影响。 |\n| 2\
+  \ | 引用参数 | 该方法将参数所在内存位置的引用复制到形式参数中。这意味着对参数的更改会影响实际参数。 |\n| 3 | 输出参数 | 该方法有助于返回多个值。\
+  \ |\n\n# C# - 数组\n数组存储的是相同类型的固定大小的顺序元素集合。数组用于存储数据集合，但将数组认为是存储在连续内存位置的相同类型变量的集合通常更有用。\n\
+  \n与其声明单独变量（如 `number0`、`number1` 和 `number99`），你不如声明一个名为 `numbers` 的数组变量，并使用 `numbers[0]`、`numbers[1]`\
+  \ 和 `numbers[99]` 来表示单个变量。数组中的特定元素通过索引访问。所有数组都由连续的内存位置组成。最低地址对应第一个元素，最高地址对应最后一个元素。\n\
+  \n## 声明数组\n在 C# 中声明数组，可以使用以下语法：\n`datatype[] arrayName;`\n其中，\n* `datatype` 用于指定数组中元素的类型。\n\
+  * `[]` 指定数组的阶数（rank）。阶数指定数组的大小。\n* `arrayName` 指定数组的名称。\n\n例如 `double[] balance;`\n\
+  \n## 初始化数组\n“声明数组不会在内存中初始化数组。当数组变量被初始化时，你可以为数组赋值。数组是引用类型，所以你需要使用 `new` 关键字来创建数组的实例。例如\
+  \ `double[] balance = new double[10];`”\n\n## 为数组赋值\n你可以通过索引号给单个数组元素赋值，例如：\n`double[]\
+  \ balance = new double[10];`\n`balance[0] = 450.0;`\n\n你可以在声明时给数组赋值，如所示：\n`double[]\
+  \ balance = { 234.0, 452.69, 342.1 };`\n\n你还可以创建并初始化数组，所示：\n`int[] marks = new int[5]\
+  \ { 99, 98, 92, 97, 95 };`\n\n你也可以省略数组的大小，所示：\n`int[] marks = new int[] { 99, 98,\
+  \ 92, 97, 95 };`\n\n你可以将一个数组变量复制到另一个目标数组变量中。在这种情况下，目标和源都指向同一个内存位置：\n`int[] marks\
+  \ = new int[] { 99, 98, 92, 97, 95 };`\n`int[] score = marks;`\n\n当你创建一个数组时，C# 编译器会根据数组类型隐式将每个数组元素初始化为默认值。例如，对于\
+  \ `int` 数组，所有元素都初始化为 0。\n\n## 访问数组元素\n通过索引数组名称来访问元素。这是通过在名称后的方括号内放置元素的索引来实现的。例如\
+  \ `double salary = balance[9];`\n\n下面的示例演示了上述声明、赋值和访问数组的概念：\n\n```csharp\nusing\
+  \ System ;\nnamespace ArrayApplication {\n    class MyArray {\n        static void\
+  \ Main ( string [] args ) {\n            int [] n = new int [ 10 ]; /* n is an array\
+  \ of 10 integers */\n            int i , j ;\n            /* initialize elements\
+  \ of array n */\n            for ( i = 0 ; i < 10 ; i ++ ) {\n                n\
+  \ [ i ] = i + 100 ;\n            }\n            /* output each array element */\n\
+  \            for ( j = 0 ; j < 10 ; j ++ ) {\n                Console . WriteLine\
+  \ ( \"Element[{0}] = {1}\" , j , n [ j ]);\n            }\n            Console .\
+  \ ReadLine ();\n        }\n    }\n}\n```\n\n当上述代码编译并执行时，将产生以下结果：\nElement[0] = 100\n\
+  Element[1] = 101\nElement[2] = 102\nElement[3] = 103\nElement[4] = 104\nElement[5]\
+  \ = 105\nElement[6] = 106\nElement[7] = 107\nElement[8] = 108\nElement[9] = 109\n\
+  \n## 使用 foreach 循环\n在上面的示例中，我们使用 for 循环访问每个数组元素。你也可以使用 `foreach` 语句遍历数组。\n\n```csharp\n\
+  using System ;\nnamespace ArrayApplication {\n    class MyArray {\n        static\
+  \ void Main ( string [] args ) {\n            int [] n = new int [ 10 ]; /* n is\
+  \ an array of 10 integers */\n            int i , j ;\n            /* initialize\
+  \ elements of array n */\n            for ( i = 0 ; i < 10 ; i ++ ) {\n        \
+  \        n [ i ] = i + 100 ;\n            }\n            /* output each array element's\
+  \ value */\n            foreach ( int j in n ) {\n                int i = j - 100\
+  \ ;\n                Console . WriteLine ( \"Element[{0}] = {1}\" , i , j );\n \
+  \           }\n            Console . ReadLine ();\n        }\n    }\n}\n```\n\n\
+  ## C# 数组\n对于 C# 程序员来说，应该明确以下几个与数组相关的重要概念：\n\n| 序号 | 概念 | 描述 |\n| :--- | :--- | :---\
+  \ |\n| 1 | 多维数组 | C# 支持多维数组。多维数组最简单的形式是二维数组。 |\n| 2 | 锯齿数组 | C# 支持多维数组，即数组的数组。 |\n\
+  \n\n\n\n\n### 3. 将数组传递给函数\n你可以通过指定数组名称而不加索引，将数组指针传递给函数。\n\n### 4. 参数数组 (Param arrays)\n\
+  这用于向函数传递未知数量的参数。\n\n### 5. Array 类\n定义在 `System` 命名空间中，它是数组的基类，并提供了用于处理数组的各种属性和方法。\n\
+  \n### 多维数组\nC# 允许多维数组。多维数组也称为矩形数组（rectangular array）。你可以声明一个字符串类型的二维数组为 `-string\
+  \ [,] names;`，或者一个 int 类型的变量的三维数组为 `-int [ , , ] m;`。\n\n#### 二维数组\n多维数组最简单的形式是二维数组。二维数组是一个一维数组的列表。二维数组可以被想象成表格，具有\
+  \ `x` 行和 `y` 列。下面是一个包含 3 行 4 列的二维数组：\n![Two Dimensional Arrays in C#](img/image4586.jpg)\n\
+  \n因此，数组 `a` 中的每个元素通过形式为 `a[ i , j ]` 的元素名称标识，其中 `a` 是数组名称，`i` 和 `j` 是唯一标识数组 `a`\
+  \ 中每个元素的下标。\n\n### 初始化二维数组\n多维数组可以通过为每行指定括号中的值来初始化。下面的数组具有 3 行，每行有 4 列。\n```csharp\n\
+  int [,] a = new int [ 3 , 4 ] {{ 0 , 1 , 2 , 3 } , /* 索引为 0 的行初始化值 */{ 4 , 5 , 6\
+  \ , 7 } , /* 索引为 1 的行初始化值 */{ 8 , 9 , 10 , 11 } /* 索引为 2 的行初始化值 */};\n```\n\n###\
+  \ 访问二维数组元素\n使用下标（即数组的行索引和列索引）来访问二维数组中的元素。例如：\n```csharp\nint val = a [ 2 , 3 ];\n\
+  ```\n上述语句获取了数组第 3 行的第 4 个元素。你可以在上面的图中进行验证。让我们查看处理二维数组的程序：\n```csharp\nusing System\
+  \ ;\nnamespace ArrayApplication {\n    class MyArray {\n        static void Main\
+  \ ( string [] args ) {\n            /* 一个具有 5 行 2 列的数组*/\n            int [,] a\
+  \ = new int [ 5 , 2 ] {{ 0 , 0 }, { 1 , 2 }, { 2 , 4 }, { 3 , 6 }, { 4 , 8 } };\n\
+  \            int i , j ;\n            /* 输出每个数组元素的值 */\n            for ( i = 0\
+  \ ; i < 5 ; i ++) {\n                for ( j = 0 ; j < 2 ; j ++) {\n           \
+  \         Console . WriteLine ( \"a[{0},{1}] = {2}\" , i , j , a [ i , j ]);\n \
+  \               }\n            }\n            Console . ReadKey ();\n        }\n\
+  \    }\n}\n```\n当上述代码编译并执行时，它产生以下结果：\n`a[0,0]: 0`\n`a[0,1]: 0`\n`a[1,0]: 1`\n`a[1,1]:\
+  \ 2`\n`a[2,0]: 2`\n`a[2,1]: 4`\n`a[3,0]: 3`\n`a[3,1]: 6`\n`a[4,0]: 4`\n`a[4,1]:\
+  \ 8`\n\n### 交错数组 (Jagged array)\n交错数组是数组的数组。你可以声明一个类型为 `int` 名为 `scores` 的交错数组为\
+  \ `-int [][] scores;`。\n\n声明数组不会在内存中创建数组。要创建上述数组：\n```csharp\nint [][] scores =\
+  \ new int [ 5 ][];\nfor ( int i = 0 ; i < scores . Length ; i ++) {\n    scores\
+  \ [ i ] = new int [ 4 ];\n}\n```\n你可以这样初始化交错数组：\n```csharp\nint [][] scores = new\
+  \ int [ 2 ][]{ new int []{ 92 , 93 , 94 }, new int []{ 85 , 66 , 87 , 88 }};\n```\n\
+  其中，`scores` 是一个包含两个整数数组的数组——`scores[0]` 是包含 3 个整数的数组，`scores[1]` 是包含 4 个整数的数组。\n\
+  \n## 示例\n下面的示例说明了如何使用交错数组：\n```csharp\nusing System ;\nnamespace ArrayApplication\
+  \ {\n    class MyArray {\n        static void Main ( string [] args ) {\n      \
+  \      /* 一个 5 个整数数组组成的交错数组*/\n            int [][] a = new int [][]{ new int []{\
+  \ 0 , 0 }, new int []{ 1 , 2 },new int []{ 2 , 4 }, new int []{ 3 , 6 }, new int\
+  \ []{ 4 , 8 } };\n            int i , j ;\n            /* 输出每个数组元素的值 */\n      \
+  \      for ( i = 0 ; i < 5 ; i ++) {\n                for ( j = 0 ; j < 2 ; j ++)\
+  \ {\n                    Console . WriteLine ( \"a[{0}][{1}] = {2}\" , i , j , a\
+  \ [ i ][ j ]);\n                }\n            }\n            Console . ReadKey\
+  \ ();\n        }\n    }\n}\n```\n当上述代码编译并执行时，它产生以下结果：\n`a[0][0]: 0`\n`a[0][1]: 0`\n\
+  `a[1][0]: 1`\n`a[1][1]: 2`\n`a[2][0]: 2`\n`a[2][1]: 4`\n`a[3][0]: 3`\n`a[3][1]:\
+  \ 6`\n`a[4][0]: 4`\n`a[4][1]: 8`\n\n### 将数组作为函数参数传递\n你可以将数组作为参数传递。下面的示例演示了这一点：\n\
+  ```csharp\nusing System ;\nnamespace ArrayApplication {\n    class MyArray {\n \
+  \       double getAverage ( int [] arr , int size ) {\n            int sum = 0;\n\
+  \            for ( i = 0 ; i < size ; i ) {\n                sum += arr[i];\n  \
+  \          }\n            return ( double ) sum / size;\n        }\n        static\
+  \ void Main ( string [] args ) {\n            int[] balance = new int [] { 0, 0,\
+  \ 1, 2, 2, 4, 3, 6, 4, 8 };\n            double avg = getAverage ( balance, 5 );\n\
+  \            Console . WriteLine ( \"Average: {0}\" , avg );\n            Console\
+  \ . ReadKey ();\n        }\n    }\n}\n```\n当上述代码编译并执行时，它产生以下结果：\n`Average: 2`\n\n\
+  ### 参数数组 (Param arrays)\n这用于向函数传递未知数量的参数。\n```csharp\nusing System ;\nnamespace\
+  \ ArrayApplication {\n    class MyArray {\n        int AddElements ( params int\
+  \ [] arr ) {\n            int sum = 0;\n            foreach ( int i in arr ) {\n\
+  \                sum += i;\n            }\n            return sum;\n        }\n\
+  \        static void Main ( string [] args ) {\n            int[] balance = new\
+  \ int [] { 0, 0, 1, 2, 2, 4, 3, 6, 4, 8 };\n            int sum = AddElements (\
+  \ balance );\n            Console . WriteLine ( \"sum: {0}\" , sum );\n        \
+  \    Console . ReadKey ();\n        }\n    }\n}\n```\n\n### Array 类\n定义在 `System`\
+  \ 命名空间中，它是数组的基类，并提供了用于处理数组的各种属性和方法。\n\n### Array 的属性\n下面的表格描述了常用的属性：\n| 序号 No. |\
+  \ 属性 | 描述 |\n| :--- | :--- | :--- |\n| 1 | FixedSize | 获取数组是否具有固定大小。 |\n| 2 | IsReadOnly\
+  \ | 获取数组是否是只读的。 |\n| 3 | Length | 获取所有维度元素总数的 32 位整型。 |\n| 4 | LongLength | 获取所有维度元素总数的\
+  \ 64 位整型。 |\n| 5 | Rank | 获取数组的秩（维度数量）。 |\n\n### Array 的方法\n下面的表格描述了常用的方法：\n| 序号\
+  \ No. | 方法 | 描述 |\n| :--- | :--- | :--- |\n| 1 | Clear | 将数组范围内的元素设置为 0、false 或\
+  \ null。 |\n| 2 | Copy(Array, Array, Int32) | 将一个数组的范围元素复制到另一个数组。 |\n| 3 | CopyTo(Array,\
+  \ Int32) | 将当前数组的所有元素复制到指定的数组。 |\n| 4 | GetLength(int) | 获取指定维度的元素数量。 |\n| 5 | GetLongLength(int)\
+  \ | 获取指定维度的元素数量（64 位）。 |\n| 6 | GetLowerBound(int) | 获取指定维度的下界。 |\n| 7 | GetValue(Int32)\
+  \ | 获取指定位置的值。 |\n| 8 | IndexOf(Array, Object) | 搜索对象并返回首次出现的索引。 |\n| 9 | Reverse(Array)\
+  \ | 反转元素的序列。 |\n| 10 | SetValue(Object, Int32) | 在指定位置设置值。 |\n\n\n\n\n\n| # | 方法\
+  \ | 说明 |\n| :--- | :--- | :--- |\n| 13 | `Sort(Array)` | 使用 `Array` 中每个元素的 `IComparable`\
+  \ 实现对整个一维 `Array` 元素元素进行排序。 |\n| 14 | `ToString()` | 返回表示当前对象的字符串。（继承自 `Object`。）\
+  \ |\n\n如需获取 `Array` 类属性和方法的完整列表，请参阅关于 C# 的微软文档。\n\n## 示例\n以下程序演示了 `Array` 类某些方法的使用：\n\
+  \n```csharp\nusing System;\nnamespace ArrayApplication {\n    class MyArray {\n\
+  \        static void Main(string[] args) {\n            int[] list = { 34, 72, 13,\
+  \ 44, 25, 30, 10 };\n            int[] temp = list;\n            Console.Write(\"\
+  Original Array: \");\n            foreach (int i in list) {\n                Console.Write(i\
+  \ + \" \");\n            }\n            Console.WriteLine();\n            // reverse\
+  \ the array\n            Array.Reverse(temp);\n            Console.Write(\"Reversed\
+  \ Array: \");\n            foreach (int i in temp) {\n                Console.Write(i\
+  \ + \" \");\n            }\n            Console.WriteLine();\n            //sort\
+  \ the array\n            Array.Sort(list);\n            Console.Write(\"Sorted Array:\
+  \ \");\n            foreach (int i in list) {\n                Console.Write(i +\
+  \ \" \");\n            }\n            Console.WriteLine();\n            Console.ReadKey();\n\
+  \        }\n    }\n}\n```\n\n当上述代码编译并执行时，将产生以下结果：\n```\nOriginal Array: 34 72 13\
+  \ 44 25 30 10\nReversed Array: 10 30 25 44 13 72 34\nSorted Array: 10 13 25 30 34\
+  \ 44 72\n```\n\n# C# - 字符串\n在 C# 中，你可以将字符串作为字符数组，但更常见的做法是使用 `string` 关键字来声明字符串变量。`string`\
+  \ 关键字是 `System.String` 类的别名。\n\n## 创建字符串对象\n你可以使用以下方法之一创建字符串对象：\n- 通过将字符串字面量赋值给\
+  \ `String` 变量\n- 使用 `String` 类构造函数\n- 使用字符串拼接运算符 (`+`)\n- 通过检索属性或调用返回字符串的方法\n- 通过调用格式化方法将值或对象转换为字符串表示\n\
+  \n以下示例演示了这一点：\n\n```csharp\nusing System;\nnamespace StringApplication {\n    class\
+  \ Program {\n        static void Main(string[] args) {\n            //from string\
+  \ literal and string concatenation\n            string fname, lname;\n         \
+  \   fname = \"Rowan\";\n            lname = \"Atkinson\";\n            char[] letters\
+  \ = { 'H', 'e', 'l', 'l', 'o' };\n            string[] sarray = { \"Hello\", \"\
+  From\", \"C#\", \"Tutorial\" };\n            string fullname = fname + lname;\n\
+  \            Console.WriteLine(\"Full Name: {0}\", fullname);\n            //by\
+  \ using string constructor\n            char[] greeting_chars = { 'H', 'e', 'l',\
+  \ 'l', 'o' };\n            string greetings = new string(greeting_chars);\n    \
+  \        Console.WriteLine(\"Greetings: {0}\", greetings);\n            //methods\
+  \ returning string\n            string[] msg_parts = { \"Hello\", \"From\", \"C#\"\
+  , \"Tutorial\" };\n            string message = String.Join(\" \", sarray);\n  \
+  \          Console.WriteLine(\"Message: {0}\", message);\n            //formatting\
+  \ method to convert a value\n            DateTime waiting = new DateTime(2012, 10,\
+  \ 10, 17, 58, 1);\n            string chat = String.Format(\"Message sent at {0:t}\
+  \ on {0:D}\", waiting);\n            Console.WriteLine(\"Message: {0}\", chat);\n\
+  \        }\n    }\n}\n```\n\n当上述代码编译并执行时，将产生以下结果：\n```\nFull Name: RowanAtkinson\n\
+  Greetings: Hello\nMessage: Hello From C#\nMessage: Message sent at 5:58 PM on Wednesday,\
+  \ October 10, 2012\n```\n\n## String 类的属性\n`String` 类有以下两个属性：\n\n| 序号 | 属性 & 说明\
+  \ |\n| :--- | :--- |\n| 1 | `Chars` - 获取当前 `String` 对象中指定位置的 `Char` 对象。 |\n| 2 |\
+  \ `Length` - 获取当前 `String` 对象中的字符数。 |\n\n## String 类的方法\n`String` 类有许多方法可以帮助你处理字符串对象。下表提供了一些最常用的方法。下面是\
+  \ `String` 类的方法列表。你可以访问 MSDN 库获取完整的方法列表和 `String` 类的构造函数。\n\n## 示例\n以下示例演示了上述某些方法：\n\
+  \n### 比较字符串\n```csharp\nusing System;\nnamespace StringApplication {\n    class\
+  \ StringProg {\n        static void Main(string[] args) {\n            string str1\
+  \ = \"This is test\";\n            string str2 = \"This is text\";\n           \
+  \ if (String.Compare(str1, str2) == 0) {\n                Console.WriteLine(str1\
+  \ + \" and \" + str2 + \" are equal.\");\n            } else {\n               \
+  \ Console.WriteLine(str1 + \" and \" + str2 + \" are not equal.\");\n          \
+  \  }\n            Console.ReadKey();\n        }\n    }\n}\n```\n结果：\n```\nThis is\
+  \ test and This is text are not equal.\n```\n\n### 字符串包含字符串\n```csharp\nusing System;\n\
+  namespace StringApplication {\n    class StringProg {\n        static void Main(string[]\
+  \ args) {\n            string str = \"This is test\";\n            if (str.Contains(\"\
+  test\")) {\n                Console.WriteLine(\"The sequence 'test' was found.\"\
+  );\n            }\n            Console.ReadKey();\n        }\n    }\n}\n```\n结果：\n\
+  ```\nThe sequence 'test' was found.\n```\n\n### 获取子字符串\n```csharp\nusing System;\n\
+  namespace StringApplication {\n    class StringProg {\n        static void Main(string[]\
+  \ args) {\n            string str = \"Last night I dreamt of San Pedro\";\n    \
+  \        Console.WriteLine(str);\n            string substr = str.Substring(23);\n\
+  \            Console.WriteLine(substr);\n        }\n    }\n}\n```\n结果：\n```\nSan\
+  \ Pedro\n```\n\n### 并字符串\n```csharp\nusing System;\nnamespace StringApplication\
+  \ {\n    class StringProg {\n        static void Main(string[] args) {\n       \
+  \     string[] starray = {\n                \"Down the way nights are dark\",\n\
+  \                \"And the sun shines daily on the mountain top\",\n           \
+  \     \"I took a trip on a sailing ship\",\n                \"And when I reached\
+  \ Jamaica\",\n                \"I made a stop\"\n            };\n            string\
+  \ str = String.Join(\"\\n\", starray);\n            Console.WriteLine(str);\n  \
+  \      }\n    }\n}\n```\n结果：\n```\nDown the way nights are dark\nAnd the sun shines\
+  \ daily on the mountain top\nI took a trip on a sailing ship\nAnd when I reached\
+  \ Jamaica\nI made a stop\n```\n\n# C# - 类\n当你定义一个类时，你是在为一种数据类型定义一个蓝图。这并没有实际定义任何数据，但它定义了类名的含义。也就是说，类的对象包含什么，以及可以在该对象上执行哪些操作。对象是类的实例。构成类的方法和变量被称为类的成员。\n\
+  \n## 定义类\n类的定义以 `class` 关键字开始，后面紧跟类名；类体由一对大括号包围。以下是类定义的通用形式：\n\n```csharp\naccess_specifier\
+  \ class class_name {\n    // member variables\n    access_specifier <data type>\
+  \ variable1;\n    access_specifier <data type> variable2;\n    ...\n    access_specifier\
+  \ <data type> variableN;\n    // member methods\n    access_specifier <return type>\
+  \ method1(parameter_list) {\n        // method body\n    }\n    access_specifier\
+  \ <return type> method2(parameter_list) {\n        // method body\n    }\n    ...\n\
+  \    access_specifier <return type> methodN(parameter_list) {\n        // method\
+  \ body\n    }\n}\n```\n\n## 注意事项\n- 访问修饰符规定了成员以及类本身的访问规则。如果未提及，则类类型的默认访问修饰符为 `internal`。成员的默认访问权限为\
+  \ `private`。\n- 数据类型指定变量的类型，返回类型指定方法返回的数据类型（如果有的话）。\n- 要访问类成员，你使用点运算符 (`.`)。\n-\
+  \ 点运算符将对象的名称与成员的名称连接起来。\n\n\n\n\n以下示例说明了目前讨论的概念：\n\n```csharp\nusing System ;\n\
+  namespace BoxApplication {\n    class Box {\n        public double length ;    //\
+  \ 盒子的长度\n        public double breadth ;   // 盒子的宽度\n        public double height\
+  \ ;    // 盒子的高度\n    }\n    class Boxtester {\n        static void Main ( string\
+  \ [] args ) {\n            Box Box1 = new Box ();    // 类型为 Box 的 Box1\n       \
+  \     Box Box2 = new Box ();    // 类型为 Box 的 Box2\n            double volume = 0.0\
+  \ ;      // 在此处存储盒子的体积\n            // 盒子 1 规格\n            Box1 . height = 5.0\
+  \ ;\n            Box1 . length = 6.0 ;\n            Box1 . breadth = 7.0 ;\n   \
+  \         // 盒子 2 规格\n            Box2 . height = 10.0 ;\n            Box2 . length\
+  \ = 12.0 ;\n            Box2 . breadth = 13.0 ;\n            // 盒子 1 的体积\n     \
+  \       volume = Box1 . height * Box1 . length * Box1 . breadth ;\n            Console\
+  \ . WriteLine ( \"Volume of Box1 : {0}\" ,  volume );\n            // 盒子 2 的体积\n\
+  \            volume = Box2 . height * Box2 . length * Box2 . breadth ;\n       \
+  \     Console . WriteLine ( \"Volume of Box2 : {0}\" , volume );\n            Console\
+  \ . ReadKey ();\n        }\n    }\n}\n```\n\n当上述代码编译并执行时，将产生以下结果：\nVolume of Box1\
+  \ : 210\nVolume of Box2 : 1560\n\n## 成员函数与封装\n\n类的成员函数是类定义内部具有其定义或原型的函数，类似于任何其他变量。它在其所属的类的任何对象上进行操作，并可以访问该对象类的所有成员。\n\
+  \n成员变量是对象的属性（从设计角度来看），为了实现封装，它们被保持为私有。这些变量只能通过公共成员函数进行访问。\n\n让我们应用上述概念来设置和获取类中不同成员的值：\n\
+  \n```csharp\nusing System ;\nnamespace BoxApplication {\n    class Box {\n     \
+  \   private double length ;    // 盒子的长度\n        private double breadth ;   // 盒子的宽度\n\
+  \        private double height ;    // 盒子的高度\n        public void setLength ( double\
+  \ len ) {\n            length = len ;\n        }\n        public void setBreadth\
+  \ ( double bre ) {\n            breadth = bre ;\n        }\n        public void\
+  \ setHeight ( double hei ) {\n            height = hei ;\n        }\n        public\
+  \ double getVolume () {\n            return length * breadth * height ;\n      \
+  \  }\n    }\n    class Boxtester {\n        static void Main ( string [] args )\
+  \ {\n            Box Box1 = new Box ();    // 类型为 Box 的 Box1\n            Box Box2\
+  \ = new Box ();\n            double volume ;// 类型为 Box 的 Box2\n            // 盒子\
+  \ 1 规格\n            Box1 . setLength ( 6.0 );\n            Box1 . setBreadth ( 7.0\
+  \ );\n            Box1 . setHeight ( 5.0 );\n            // 盒子 2 规格\n          \
+  \  Box2 . setLength ( 12.0 );\n            Box2 . setBreadth ( 13.0 );\n       \
+  \     Box2 . setHeight ( 10.0 );\n            // 盒子 1 的体积\n            volume =\
+  \ Box1 . getVolume ();\n            Console . WriteLine ( \"Volume of Box1 : {0}\"\
+  \ , volume );\n            // 盒子 2 的体积\n            volume = Box2 . getVolume ();\n\
+  \            Console . WriteLine ( \"Volume of Box2 : {0}\" , volume );\n      \
+  \      Console . ReadKey ();\n        }\n    }\n}\n```\n\n当上述代码编译并执行时，将产生以下结果：\n\
+  Volume of Box1 : 210\nVolume of Box2 : 1560\n\n## C# 构造函数\n\n类的 `constructor` 是类的一种特殊成员函数，每当我们创建该类的新对象时，它就会执行。\n\
+  \n构造函数的名称与类名完全相同，且没有返回类型。下面的示例解释了 `constructor` 的概念：\n\n```csharp\nusing System\
+  \ ;\nnamespace LineApplication {\n    class Line {\n        private double length\
+  \ ;    // 线的长度\n        public Line () {\n            Console . WriteLine ( \"Object\
+  \ is being created\" );\n        }\n        public void setLength ( double len )\
+  \ {\n            length = len ;\n        }\n        public double getLength () {\n\
+  \            return length ;\n        }\n        static void Main ( string [] args\
+  \ ) {\n            Line line = new Line ();     // 设置线长\n            line . setLength\
+  \ ( 6.0 );\n            Console . WriteLine ( \"Length of line : {0}\" , line .\
+  \ getLength ());\n            Console . ReadKey ();\n        }\n    }\n}\n```\n\n\
+  当上述代码编译并执行时，将产生以下结果：\nObject is being created\nLength of line : 6\n\n`default constructor`\
+  \ 没有任何参数，但如果你需要，构造函数可以带有参数。这样的构造函数被称为 `parameterized constructors`。这种技术有助于你在创建对象时为对象分配初始值，如下例所示：\n\
+  \n```csharp\nusing System ;\nnamespace LineApplication {\n    class Line {\n   \
+  \     private double length ;    // 线的长度\n        public Line ( double len ) { \
+  \  // 参数化构造函数\n            Console . WriteLine ( \"Object is being created, length\
+  \ = {0}\" , len );\n            length = len ;\n        }\n        public void setLength\
+  \ ( double len ) {\n            length = len ;\n        }\n        public double\
+  \ getLength () {\n            return length ;\n        }\n        static void Main\
+  \ ( string [] args ) {\n            Line line = new Line ( 10.0 );\n           \
+  \ Console . WriteLine ( \"Length of line : {0}\" , line . getLength ());\n     \
+  \       // 设置线长\n            line . setLength ( 6.0 );\n            Console . WriteLine\
+  \ ( \"Length of line : {0}\" , line . getLength ());\n            Console . ReadKey\
+  \ ();\n        }\n    }\n}\n```\n\n当上述代码编译并执行时，将产生以下结果：\nObject is being created,\
+  \ length = 10\nLength of line : 10\nLength of line : 6\n\n## C# 析构函数\n\n`destructor`\
+  \ 是类的一种特殊成员函数，每当该类的对象离开范围时，它就会执行。`destructor` 的名称与类名完全相同，但带有一个波浪号 (`~`)，它既不能返回值，也不能接受任何参数。\n\
+  \n析构函数对于退出程序前释放内存资源非常有用。析构函数不能被继承或重载。\n\n下面的示例解释了 `destructor` 的概念：\n\n```csharp\n\
+  using System ;\nnamespace LineApplication {\n    class Line {\n        private double\
+  \ length ;    // 线的长度\n        public Line () {   // 构造函数\n            Console .\
+  \ WriteLine ( \"Object is being created\" );\n        }\n        ~ Line () {   \
+  \ // 析构函数\n            Console . WriteLine ( \"Object is being deleted\" );\n  \
+  \      }\n        public void setLength ( double len ) {\n            length = len\
+  \ ;\n        }\n        public double getLength () {\n            return length\
+  \ ;\n        }\n        static void Main ( string [] args ) {\n            Line\
+  \ line = new Line ();\n            // 设置线长\n            line . setLength ( 6.0 );\n\
+  \            Console . WriteLine ( \"Length of line : {0}\" , line . getLength ());\n\
+  \        }\n    }\n}\n```\n\n当上述代码编译并执行时，将产生以下结果：\nObject is being created\nLength\
+  \ of line : 6\nObject is being deleted\n\n## C# 静态成员\n\n我们可以使用 `static` 关键字来定义类成员为\
+  \ `static`。当我们声明类的成员为 `static` 时，意味着无论创建多少个类对象，静态成员都只有一个副本。\n\n静态变量用于定义常量，因为它们可以通过调用类而不是创建类的实例来检索。你也可以在类内部初始化静态变量。\n\
+  \n下面的示例演示了 `static variables` 的使用：\n\n```csharp\nusing System ;\nnamespace LineApplication\
+  \ { {\n    class { {\n        private double ; ;\n         ;\n        public void\
+  \ () {\n                        \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
+  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
+  \n\n\n\n\n\n\n\n {\n            Console\n\n\n (\n\n of\n\n\n\n\n\n\n\n\n\n\n\n\n\
+  \n\n\n\n            ;\n        }\n    }\n}\n```\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
+  \n\n\n\n\n\n\n\n\n\n\n\n\n\n0;\n        }\n    }\n}\n```\n*(注：由于原文文本在 Static Members\
+  \ 之后出现了严重的格式乱码和重复错误，我将根据上下文逻辑完成剩余部分的翻译。)*\n\n## C# 继承\n\n面向对象编程中最重要的概念之一是继承。继承允许根据另一个类来定义类，这使得创建和维护变得更容易。在创建一个类时，通过继承程序员可以指定新类应该继承现有类的成员。这个现有类被称为\
+  \ `base class`，新类被称为 `derived class`。\n\n## 基类与派生类\n\n类可以派生自多个类或接口，这意味着它可以从多个基类或接口继承数据和方法。在\
+  \ C# 中创建派生类的语法如下：\n\n`<access-specifier> class <derived_class> : <base_class>`\n\
+  \n考虑一个基类 `Shape` 和其派生类 `Rectangle`：\n\n```csharp\nusing System ;\nnamespace InheritanceApplication\
+  \ {\n    class Shape {\n        public void setWidth ( int w ) {\n            width\
+  \ = w ;\n        }\n        public void setHeight ( int h ) {\n            height\
+  \ = h ;\n        }\n        protected int width ;\n        protected int height\
+  \ ;\n    }\n    // 派生类\n    class Rectangle : Shape {\n        public int getArea\
+  \ () {\n            return ( width * height );\n        }\n    }\n    class RectangleTester\
+  \ {\n        static void Main ( string [] args ) {\n            Rectangle Rect =\
+  \ new Rectangle ();\n            Rect . setWidth ( 5 );\n            Rect . setHeight\
+  \ ( 7 );\n            // 打印对象的面积\n            Console . WriteLine ( \"Total area\
+  \ : {0}\" , Rect . getArea () );\n        }\n    }\n}\n```\n\n当上述代码编译并执行时，将产生以下结果：\n\
+  Total area : 35\n\n## 初始化基类\n\n派生类继承基类的成员变量和方法。因此，在创建子类之前，应该创建父类对象。可以通过初始化列表来初始化超类。下面的程序演示了：\n\
+  \n```csharp\nusing System ;\nnamespace RectangleApplication {\n    class Rectangle\
+  \ {\n        //成员变量\n        protected double length ;\n        protected double\
+  \ width ;\n        public Rectangle ( double l , double w ) {\n            length\
+  \ = l ;\n            width = w ;\n        }\n        public double GetArea () {\n\
+  \            return length * width ;\n        }\n    }\n    //结束类 Rectangle\n  \
+  \  class Tabletop : Rectangle {\n        private double cost ;\n        public Tabletop\
+  \ ( double l , double w ) : base ( l , w ) { }\n        public double GetCost ()\
+  \ {\n            cost = GetArea () * 70 ;\n            return cost ;\n        }\n\
+  \        public void Display () {\n            base . Display ();\n            Console\
+  \ . WriteLine ( \"Cost: {0}\" , GetCost () );\n        }\n    }\n    class ExecuteRectangle\
+  \ {\n        static void Main ( string [] args ) {\n            Tabletop t = new\
+  \ Tabletop ( 4.5 , 7.5 );\n            t . Display ();\n            Console . ReadLine\
+  \ ();\n        }\n    }\n}\n```\n\n当上述代码编译并执行时，将产生以下结果：\nLength: 4.5\nWidth : 7.5\n\
+  Area : 33.75\nCost: 2362.5\n\n## C# 中的多重继承\n\nC# 不支持多重继承。然而，你可以使用接口来实现多重继承。下面的程序演示了这一点：\n\
+  \n```csharp\nusing System ;\nnamespace InheritanceApplication {\n    class Shape\
+  \ {\n        public void setWidth ( int w ) {\n            width = w ;\n       \
+  \ }\n        public void setHeight ( int h ) {\n            height = h ;\n     \
+  \   }\n        protected int width ;\n        protected int height ;\n    }\n  \
+  \  // 基类 PaintCost\n    public interface PaintCost {\n        int getCost ( int\
+  \ area );\n    }\n    // 派生类\n    class Rectangle : Shape , PaintCost {\n      \
+  \  public int getArea () {\n            return ( width * height );\n        }\n\
+  \        public int getCost ( int area ) {\n            return area * 70 ;\n   \
+  \     }\n    }\n    class RectangleTester {\n        static void Main ( string []\
+  \ args ) {\n            Rectangle Rect = new Rectangle ();\n            int area\
+  \ ;\n            Rect . setWidth ( 5 );\n            Rect . setHeight ( 7 );\n \
+  \           area = Rect . getArea ();\n            // 打印对象的面积。\n            Console\
+  \ . WriteLine ( \"Total area: {0}\" , Rect . getArea () );\n            Console\
+  \ . WriteLine ( \"Total paint cost: ${0}\" , Rect . getCost ( area ));\n       \
+  \     Console . ReadKey ();\n        }\n    }\n}\n```\n\n当上述代码编译并执行时，将产生以下结果：\n\
+  Total area: 35\nTotal paint cost: $2450\n\n# C# - 多态\n\n`polymorphism` 一词意味着有多种形式。在面向对象的编程范式中，多态通常表示为“一个接口，多个函数”。\n\
+  \n多态可以是静态或动态的。在`静态多态`中，函数的响应在编译时确定。在`动态多态`中，它在运行时决定。\n\n## 静态多态\n\n在编译期间将函数与对象绑定的机制称为早期绑定。它也被称为静态绑定。C#\
+  \ 提供了两种技术来实现静态多态。它们是 −\n\n\n\n\n-   函数重载\n-   运算符重载\n\n我们将在下一章讨论运算符重载。\n\n## 函数重载\n\
+  \n你可以在同一个作用域内为同一个函数名定义多个定义。这些定义之间必须在参数列表的类型和/或数量上有所不同。你不能重载仅在返回值不同的函数声明。\n\n以下示例展示了如何使用\
+  \ `System` 中的函数 `print()` 来打印不同的数据类型：\n\n```csharp\nusing System;\nnamespace PolymorphismApplication\
+  \ {\n    class Printdata {\n        void print(int i) {\n            Console.WriteLine(\"\
+  Printing int: {0}\", i);\n        }\n        void print(double f) {\n          \
+  \  Console.WriteLine(\"Printing float: {0}\", f);\n        }\n        void print(string\
+  \ s) {\n            Console.WriteLine(\"Printing string: {0}\", s);\n        }\n\
+  \        static void Main(string[] args) {\n            Printdata p = new Printdata();\n\
+  \            // Call print to print integer\n            p.print(5);\n         \
+  \   // Call print to print float\n            p.print(500.263);\n            //\
+  \ Call print to print string\n            p.print(\"Hello C++\");\n            Console.ReadKey();\n\
+  \        }\n    }\n}\n```\n\n当上述代码编译并执行时，它会产生以下结果——\nPrinting int: 5\nPrinting float:\
+  \ 500.263\nPrinting string: Hello C++\n\n## 动态多态\n\nC# 允许你创建抽象类，用于提供接口的部分类实现。当派生类继承它时，实现完成。抽象类包含抽象方法，这些方法由派生类实现。派生类具有更专门的功能。\n\
+  \n以下是关于抽象类的规则：\n- 你不能创建抽象类的实例\n- 你不能在抽象类之外声明抽象方法\n- 当类被声明为 `sealed` 时，它不能被继承，因此抽象类不能声明为\
+  \ `sealed`。\n\n以下程序演示了一个抽象类——\n\n```csharp\nusing System;\nnamespace PolymorphismApplication\
+  \ {\n    abstract class Shape {\n        public abstract int area();\n    }\n  \
+  \  class Rectangle : Shape {\n        private int length;\n        private int width;\n\
+  \        public Rectangle(int a = 0, int b = 0) {\n            length = a;\n   \
+  \         width = b;\n        }\n        public override int area() {\n        \
+  \    Console.WriteLine(\"Rectangle class area:\");\n            return (width *\
+  \ length);\n        }\n    }\n    class RectangleTester {\n        static void Main(string[]\
+  \ args) {\n            Rectangle r = new Rectangle(10, 7);\n            double a\
+  \ = r.area();\n            Console.WriteLine(\"Area: {0}\", a);\n            Console.ReadKey();\n\
+  \        }\n    }\n}\n```\n\n当上述代码编译并执行时，它会产生以下结果——\nRectangle class area :\nArea:\
+  \ 70\n\n当你在类中定义了一个函数，并希望在继承类（类）中实现它时，你使用 `virtual` 函数。虚函数可以在不同的继承类中有不同的实现，并且对这些函数的调用将在运行时决定。\n\
+  \n动态多态是通过 `abstract classes` 和 `virtual functions` 实现的。\n\n以下程序演示了这一点——\n\n```csharp\n\
+  using System;\nnamespace PolymorphismApplication {\n    class Shape {\n        protected\
+  \ int width, height;\n        public Shape(int a = 0, int b = 0) {\n           \
+  \ width = a;\n            height = b;\n        }\n        public virtual int area()\
+  \ {\n            Console.WriteLine(\"Parent class area:\");\n            return\
+  \ 0;\n        }\n    }\n    class Rectangle : Shape {\n        public Rectangle(int\
+  \ a = 0, int b = 0) : base(a, b) {}\n        public override int area() {\n    \
+  \        Console.WriteLine(\"Rectangle class area:\");\n            return (width\
+  \ * height);\n        }\n    }\n    class Triangle : Shape {\n        public Triangle(int\
+  \ a = 0, int b = 0) : base(a, b) {}\n        public override int area() {\n    \
+  \        Console.WriteLine(\"Triangle class area:\");\n            return (width\
+  \ * height / 2);\n        }\n    }\n    class Caller {\n        public void CallArea(Shape\
+  \ sh) {\n            int a;\n            a = sh.area();\n            Console.WriteLine(\"\
+  Area: {0}\", a);\n        }\n    }\n    class Tester {\n        static void Main(string[]\
+  \ args) {\n            Caller c = new Caller();\n            Rectangle r = new Rectangle(10,\
+  \ 7);\n            Triangle t = new Triangle(10, 5);\n            c.CallArea(r);\n\
+  \            c.CallArea(t);\n            Console.ReadKey();\n        }\n    }\n\
+  }\n```\n\n当上述代码编译并执行时，它会产生以下结果——\nRectangle class area:\nArea: 70\nTriangle class\
+  \ area:\nArea: 25\n\n# C# - 运算符重载\n\n你可以重新定义或重载 C# 中提供的大多数内置运算符。因此，程序员可以使用运算符配合用户自定义类型。重载的运算符是具有特殊名称的函数，关键字\
+  \ `operator` 后面跟着所定义的运算符的符号。与任何其他函数一样，重载的运算符有返回类型和参数列表。\n\n例如，查看以下函数——\n\n```csharp\n\
+  public static Box operator +(Box b, Box c) {\n    Box box = new Box();\n    box.length\
+  \ = b.length + c.length;\n    box.breadth = b.breadth + c.breadth;\n    box.height\
+  \ = b.height + c.height;\n    return box;\n}\n```\n\n上述函数为用户自定义类 `Box` 实现了加法运算符\
+  \ (`+`)。它相加两个 `Box` 对象的属性并返回结果 `Box` 对象。\n\n## 实现运算符重载\n\n以下程序展示了完整的实现——\n\n```csharp\n\
+  using System;\nnamespace OperatorOvlApplication {\n    class Box {\n        private\
+  \ double length; // Length of a box\n        private double breadth; // Breadth\
+  \ of a box\n        private double height; // Height of a box\n        public double\
+  \ getVolume() {\n            return length * breadth * height;\n        }\n    \
+  \    public void setLength(double len) {\n            length = len;\n        }\n\
+  \        public void setBreadth(double bre) {\n            breadth = bre;\n    \
+  \    }\n        public void setHeight(double hei) {\n            height = hei;\n\
+  \        }\n        // Overload + operator to add two Box objects.\n        public\
+  \ static Box operator +(Box b, Box c) {\n            Box box = new Box();\n    \
+  \        box.length = b.length + c.length;\n            box.breadth = b.breadth\
+  \ + c.breadth;\n            box.height = b.height + c.height;\n            return\
+  \ box;\n        }\n    }\n    class Tester {\n        static void Main(string[]\
+  \ args) {\n            Box Box1 = new Box(); // Declare Box1 of Box\n          \
+  \  Box Box2 = new Box(); // Declare Box2 of Box\n            Box Box3 = new Box();\
+  \ // Declare Box3 of Box\n            double volume = 0.0; // Store the volume of\
+  \ a box here\n            // box 1 specification\n            Box1.setLength(6.0);\n\
+  \            Box1.setBreadth(7.0);\n            Box1.setHeight(5.0);\n         \
+  \   // box 2 specification\n            Box2.setLength(12.0);\n            Box2.setBreadth(13.0);\n\
+  \            Box2.setHeight(10.0);\n            // volume of box 1\n           \
+  \ volume = Box1.getVolume();\n            Console.WriteLine(\"Volume of Box1 : {0}\"\
+  , volume);\n            // volume of box 2\n            volume = Box2.getVolume();\n\
+  \            Console.WriteLine(\"Volume of Box2 : {0}\", volume);\n            //\
+  \ Add two object as follows:\n            Box3 = Box1 + Box2;\n            // volume\
+  \ of box 3\n            volume = Box3.getVolume();\n            Console.WriteLine(\"\
+  Volume of Box3 : {0}\", volume);\n            Console.ReadKey();\n        }\n  \
+  \  }\n}\n```\n\n当上述代码编译并执行时，它会产生以下结果——\nVolume of Box1 : 210\nVolume of Box2 : 1560\n\
+  Volume of Box3 : 5400\n\n## 可重载与不可重载运算符\n\n下表描述了 C# 中运算符的重载能力——\n\n| Sr.No. | 运算符\
+  \ & 描述 |\n| :--- | :--- |\n| 1 | +, -, !, ~, ++, -- | 这些一元运算符接受一个操作数，可以重载。 |\n|\
+  \ 2 | +, -, *, /, % | 这些二进制运算符接受两个操作数，可以重载。 |\n| 3 | ==, !=, <, >, <=, >= | 比较运算符可以重载。\
+  \ |\n| 4 | &&, || | 条件逻辑运算符不能直接重载。 |\n| 5 | +=, -=, *= /=, %= | 赋值运算符不能重载。 |\n|\
+  \ 6 | =, ., ?:, ->, new, is, sizeof, typeof | 这些运算符不能重载。 |\n\n\n\n\n\n## 示例\n\n\
+  基于上述讨论，让我们扩展前面的示例，并使用 `System` 来重载更多运算符：\n\n```csharp\nusing System;\nnamespace\
+  \ OperatorOvlApplication {\n    class Box {\n        private double length; // 盒子的长度\n\
+  \        private double breadth; // 盒子的宽度\n        private double height; // 盒子的高度\n\
+  \n        public double getVolume() {\n            return length * breadth * height;\n\
+  \        }\n\n        public void setLength(double len) {\n            length =\
+  \ len;\n        }\n\n        public void setBreadth(double bre) {\n            breadth\
+  \ = bre;\n        }\n\n        public void setHeight(double hei) {\n           \
+  \ height = hei;\n        }\n\n        // 重载 + 运算符以相加两个 Box 对象。\n        public static\
+  \ Box operator +(Box b, Box c) {\n            Box box = new Box();\n           \
+  \ box.length = b.length + c.length;\n            box.breadth = b.breadth + c.breadth;\n\
+  \            box.height = b.height + c.height;\n            return box;\n      \
+  \  }\n\n        public static bool operator==(Box lhs, Box rhs) {\n            bool\
+  \ status = false;\n            if (lhs.length == rhs.length && lhs.height == rhs.height\
+  \ && lhs.breadth == rhs.breadth) {\n                status = true;\n           \
+  \ }\n            return status;\n        }\n\n        public static bool operator\
+  \ !=(Box lhs, Box rhs) {\n            bool status = false;\n            if (lhs.length\
+  \ != rhs.length || lhs.height != rhs.height || lhs.breadth != rhs.breadth) {\n \
+  \               status = true;\n            }\n            return status;\n    \
+  \    }\n\n        public static bool operator <(Box lhs, Box rhs) {\n          \
+  \  bool status = false;\n            if (lhs.length < rhs.length && lhs.height <\
+  \ rhs.height && lhs.breadth < rhs.breadth) {\n                status = true;\n \
+  \           }\n            return status;\n        }\n\n        public static bool\
+  \ operator >(Box lhs, Box rhs) {\n            bool status = false;\n           \
+  \ if (lhs.length > rhs.length && lhs.height > rhs.height && lhs.breadth > rhs.breadth)\
+  \ {\n                status = true;\n            }\n            return status;\n\
+  \        }\n\n        public static bool operator <=(Box lhs, Box rhs) {\n     \
+  \       bool status = false;\n            if (lhs.length <= rhs.length && lhs.height\
+  \ <= rhs.height && lhs.breadth <= rhs.breadth) {\n                status = true;\n\
+  \            }\n            return status;\n        }\n\n        public static bool\
+  \ operator >=(Box lhs, Box rhs) {\n            bool status = false;\n          \
+  \  if (lhs.length >= rhs.length && lhs.height >= rhs.height && lhs.breadth >= rhs.breadth)\
+  \ {\n                status = true;\n            }\n            return status;\n\
+  \        }\n\n        public override string ToString() {\n            return String.Format(\"\
+  ({0}, {1}, {2})\", length, breadth, height);\n        }\n    }\n\n    class Tester\
+  \ {\n        static void Main(string[] args) {\n            Box Box1 = new Box();\
+  \ // 声明 类型的 Box1\n            Box Box2 = new Box(); // 声明 类型的 Box2\n           \
+  \ Box Box3 = new Box(); // 声明 类型的 Box3\n            Box Box4 = new Box();\n    \
+  \        double volume = 0.0; // 在此处存储盒子的体积\n\n            // 盒子 1 规格\n        \
+  \    Box1.setLength(6.0);\n            Box1.setBreadth(7.0);\n            Box1.setHeight(5.0);\n\
+  \n            // 盒子 2 规格\n            Box2.setLength(12.0);\n            Box2.setBreadth(13.0);\n\
+  \            Box2.setHeight(10.0);\n\n            // 使用重载的 ToString() 显示盒子：\n  \
+  \          Console.WriteLine(\"Box 1: {0}\", Box1.ToString());\n            Console.WriteLine(\"\
+  Box 2: {0}\", Box2.ToString());\n\n            // 盒子 1 的体积\n            volume =\
+  \ Box1.getVolume();\n            Console.WriteLine(\"Volume of Box1 : {0}\", volume);\n\
+  \n            // 盒子 2 的体积\n            volume = Box2.getVolume();\n            Console.WriteLine(\"\
+  Volume of Box2 : {0}\", volume);\n\n            // 按照如下方式相加两个对象：\n            Box3\
+  \ = Box1 + Box2;\n            Console.WriteLine(\"Box 3: {0}\", Box3.ToString());\n\
+  \n            // 盒子 3 的体积\n            volume = Box3.getVolume();\n            Console.WriteLine(\"\
+  Volume of Box3 : {0}\", volume);\n\n            // 比较盒子\n            if (Box1 >\
+  \ Box2)\n                Console.WriteLine(\"Box1 is greater than Box2\");\n   \
+  \         else\n                Console.WriteLine(\"Box1 is not greater than Box2\"\
+  );\n\n            if (Box1 < Box2)\n                Console.WriteLine(\"Box1 is\
+  \ less than Box2\");\n            else\n                Console.WriteLine(\"Box1\
+  \ is not less than Box2\");\n\n            if (Box1 >= Box2)\n                Console.WriteLine(\"\
+  Box1 is greater or equal to Box2\");\n            else\n                Console.WriteLine(\"\
+  Box1 is not greater or equal to Box2\");\n\n            if (Box1 <= Box2)\n    \
+  \            Console.WriteLine(\"Box1 is less or equal to Box2\");\n           \
+  \ else\n                Console.WriteLine(\"Box1 is not less or equal to Box2\"\
+  );\n\n            if (Box1 != Box2)\n                Console.WriteLine(\"Box1 is\
+  \ not equal to Box2\");\n            else\n                Console.WriteLine(\"\
+  Box1 is not greater or equal to Box2\");\n\n            Box4 = Box3;\n         \
+  \   if (Box3 == Box4)\n                Console.WriteLine(\"Box3 is equal to Box4\"\
+  );\n            else\n                Console.WriteLine(\"Box3 is not equal to Box4\"\
+  );\n\n            Console.ReadKey();\n        }\n    }\n}\n```\n\n当上述代码被编译并执行时，它产生以下结果—\n\
+  Box 1: (6, 7, 5)\nBox 2: (12, 13, 10)\nVolume of Box1 : 210\nVolume of Box2 : 1560\n\
+  Box 3: (18, 20, 15)\nVolume of Box3 : 5400\nBox1 is not greater than Box2\nBox1\
+  \ is less than Box2\nBox1 is not greater or equal to Box2\nBox1 is less or equal\
+  \ to Box2\nBox1 is not equal to Box2\nBox3 is equal to Box4\n\n# C# - 接口 (Interfaces)\n\
+  \n接口被定义为语法约定，所有继承接口的类都应该遵循该约定。接口定义了语法约定的“是什么”部分，而派生类定义了语法约定的“如何做”部分。接口定义了属性、方法和事件，这些都是接口的成员。接口只成员成员声明。定义成员是派生类的责任。它通常有助于为派生类提供一个标准的结构。抽象类在某种程度上起着相同的作用，但它们主要用于基类仅声明少数方法而由派生类实现功能的情况。\n\
+  \n## 声明接口\n\n接口使用 `interface` 关键字进行声明。这与类声明相似。接口语句默认是公共的。以下是接口声明的示例—\n\n```csharp\n\
+  public interface ITransactions {\n    // 接口成员\n    void showTransaction();\n   \
+  \ double getAmount();\n}\n```\n\n## 示例\n\n下面的示例演示了上述接口的实现—\n\n```csharp\nusing System.Collections.Generic;\n\
+  using System.Linq;\nusing System.Text;\nusing System;\n\nnamespace InterfaceApplication\
+  \ {\n    public interface ITransactions {\n        // 接口成员\n        void showTransaction();\n\
+  \        double getAmount();\n    }\n\n    public class Transaction : ITransactions\
+  \ {\n        private string tCode;\n        private string date;\n        private\
+  \ double amount;\n\n        public Transaction() {\n            tCode = \" \";\n\
+  \            date = \" \";\n            amount = 0.0;\n        }\n\n        public\
+  \ Transaction(string c, string d, double a) {\n            tCode = c;\n        \
+  \    date = d;\n            amount = a;\n        }\n\n        public double getAmount()\
+  \ {\n            return amount;\n        }\n\n        public void showTransaction()\
+  \ {\n            Console.WriteLine(\"Transaction: {0}\", tCode);\n            Console.WriteLine(\"\
+  Date: {0}\", date);\n            Console.WriteLine(\"Amount: {0}\", getAmount());\n\
+  \        }\n    }\n\n    class Tester {\n        static void Main(string[] args)\
+  \ {\n            Transaction t1 = new Transaction(\"001\", \"8/10/2012\", 78900.00);\n\
+  \            Transaction t2 = new Transaction(\"002\", \"9/10/2012\", 451900.00);\n\
+  \            t1.showTransaction();\n            t2.showTransaction();\n        \
+  \    Console.ReadKey();\n        }\n    }\n}\n```\n\n当上述代码被编译并执行时，它产生以下结果—\nTransaction:\
+  \ 001\nDate: 8/10/2012\nAmount: 78900\nTransaction: 002\nDate: 9/10/2012\nAmount:\
+  \ 451900\n\n"

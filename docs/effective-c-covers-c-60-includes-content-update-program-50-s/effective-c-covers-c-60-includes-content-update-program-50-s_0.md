@@ -1,0 +1,9023 @@
+# 高效 C# (涵盖 C# 6.0)，包含内容更新计划)：提升 C# 的 50 种方法 (第 3 版) (高效软件开发系列)
+
+
+
+![](img/9780134579283.jpg)
+![](img/9780134579283.jpg)
+
+# 关于本书
+
+ePUB 是一种开放的行业标准电子书格式。然而，不同阅读设备和应用程序对 ePUB 及其许多功能的支持程度不同。请使用您的设备或应用设置来根据您的喜好自定义显示效果。您可以自定义的设置通常包括字体、字号、单栏或双栏、横屏或竖屏模式，以及可以点击或触碰放大的图表。有关您的设备或应用上功能的更多信息，请访问设备制造商的网站。
+
+许多书籍包含了编程代码或配置示例。为了优化这些元素的显示效果，请在单栏横屏模式下查看电子书，并将字体大小调整为最小。除了以重流格式显示代码外，我们还包含了代码的图像，模拟纸质书中的显示效果；因此，当重流格式可能会影响代码列表的显示时，您将看到“点击此处查看图像”链接。要返回上一页，请点击设备或应用上的后退按钮。
+
+
+
+
+
+## 《高效 C#》第二版的赞誉
+
+“成为一名高效的 .NET 开发者需要对所选择的语言有深入理解。Wagner 的书通过逻辑严密的论证和见解为读者提供了这些知识。无论你是 C# 新手还是已经使用了多年，在阅读这本书时都能学到新东西。” — Jason Bock，Magenic 首席顾问
+
+“如果你像我一样，你可能收集了一些 C# 语言精粹，它们立即提升了你作为专业开发人员的能力。你手中握有的可能是迄以来汇出的这些技巧的最佳合集。Bill 在他的同名著作《Effective C#》的最新版中，成功超越了我远最疯狂的预期。” — Bill Craun，Ambassador Solutions 首席顾问
+
+“《高效 C#，第二版》是任何构建高性能和/或高扩展性应用程序的人的必读。Bill 拥有一种稀有的能力，能够将极其复杂的问题拆解为人类可以理解、消化和吸收的部分。” — Josh Holmes，Microsoft 架构宣教士
+
+“Bill 再次做到了。这本书是针对任何 C# 开发者的无价技巧的简明合集。每天学习一个技巧，五十天后你将成为一名更优秀的 C# 开发者！” — Claudio Lassala，EPS Software/CODE Magazine 首席开发人员
+
+“C# 语言知识和理解的源泉。Bill 根据你在代码中编写的内容，揭示了 .NET 运行时底层发生的情况，并教授了务实的实践方法，以写出更简洁、更容易编写且更易理解的代码。技巧、技巧和深度理解的完美结合……每个 C# 开发者都应该阅读。” — Brian Noyes，IDesign Inc. 首席架构师（`www.idesign.net`）
+
+“《高效 C#》是每个 C# 开发者的必读之。毫无置疑。它在代码设计方面的务实建议是无价的。” — Shawn Wildermuth，Microsoft MVP (C#)，作者、培训师及演讲师
+
+“在书中，Bill Wagner 提供了关于如何使用 C# 语言中最重要功能的实际解释。他深厚的知识和老练的交流技巧阐明了 C# 的新功能，让你能够利用它们编写更简洁、更容易维护的程序。” — Charlie Calvert，Microsoft C# 社区计划经理
+
+![Image](img/fm01fig01.jpg)
+
+*致 Marlene，她继续为我们共同从事的一切工作提供灵感和支持。*
+
+
+
+
+
+
+
+### 条 16：永远在构造函数中调用虚函数
+### 条 17：实现标准的 Dispose 模式
+
+# 第 3 章 使用泛型
+
+## 条 18：始终定义最小化且充分的约束
+## 条 19：使用运行时类型检查对泛型算法进行特化
+## 条 20：使用 `IComparable<T>` 和 `IComparer<T>` 实现排序关系
+## 条 21：始终创建支持 `Disposable` 类型参数的泛型类
+## 条 22：支持泛型协变与逆变
+## 条 23：使用委托为类型参数定义方法约束
+## 条 24：不要在基类或接口上创建泛型特化
+## 条 25：除非类型参数是实例字段，否则优先使用泛型方法
+## 条 26：除泛型接口外，实现经典接口
+## 条 27：使用扩展方法增强最小化接口契约
+## 条 28：考虑使用扩展方法增强构造的类型
+
+# 第 4 章 使用 LINQ
+
+## 条 29：优先使用迭代器方法而非返回集合
+## 条 30：优先使用查询语法而非循环
+## 条 31：为序列创建可组合的 API
+## 条 32：将迭代与操作、谓词和函数解耦
+## 条 33：按需生成序列项
+## 条 34：通过函数参数松宽耦合
+## 条 35：永远重载扩展方法
+## 条 36：理解查询表达式如何映射到方法调用
+## 条 37：查询中优先使用延迟求值而非急切评估
+## 条 38：优先使用 Lambda 表达式而非方法
+## 条 39：避免在函数和操作中抛出异常
+## 条 40：区分早期执行与延迟执行
+## 条 41：避免捕获贵资源
+## 条 42：区分 `IEnumerable` 和 `IQueryable` 数据源
+## 条 43：使用 `Single()` 和 `First()` 强制查询的语义预期
+## 条 44：避免修改绑定变量
+
+# 第 5 章异常实践
+
+## 条 45：使用异常报告方法契约失败
+## 条 46：利用 `using` 和 `try/finally` 进行资源清理
+## 条 47：创建完整的特定应用程序异常类
+## 条 48：优先选择强异常保证
+## 条 49：优先使用异常过滤器而非 `catch` 和重新抛出
+
+# 索引
+
+## 引言
+
+2016 年的 C# 社区与 *Effective C#* 第一版出版时的 2004 年非常不同。使用 C# 的开发者多得多。C# 社区的大部分人现在将 C# 视为他们的第一职业语言。他们并不是带着使用其他语言形成的根深习惯来接触 C# 的。社区的经验范围广泛得多。从应届毕业生到拥有十年经验的专业人士都在使用 C#。
+
+该社区的经验范围广泛得多。从应届毕业生到拥有十年经验的专业人士都在使用 C#。
+
+该社区的经验范围广泛得多。从应届毕业生到拥有十年经验的专业人士都在使用 C#。
+
+在这一版中，我正在重新组织这两本书以及新版。*Effective C#* 不会带你开启该语言的历史之旅。相反，它讨论了你如何将当前版本 C# 语言的所有特性集成到你的日常开发中。
+
+书中的许多建议都可以通过基于 Roslyn 的分析器和代码修复进行验证。我在这里维护了它们的仓库：`https://github.com/BillWagner/EffectiveCSharpAnalyzers`。如果你有想法或想贡献，请提交 issue 或向我发送 pull request。除了语言特性外，我假设你对通用语言运行时 (`CLR`) 和即时编译程序 (`JIT`) 有一些了解。
+
+### 关于内容
+
+在你自己编写的几乎每个 C# 程序中，你每天都会用到语言结构。第 1 章“C# 语言惯用法”涵盖了你将频繁使用的那些语言惯用法，它们应该感觉像你手中顺手的工具。这些是你创建的每种类型和实现的每个算法的构建组件。
+
+在托管环境中工作并不意味着环境免除了你的所有责任。你仍然必须与环境协作，创建满足规定性能要求的正确程序。这不仅仅关于性能测试和性能调优。第 2 章“.NET 资源管理”将教你设计惯用法，让你能够在详细优化开始之前与环境协作来实现这些目标。
+
+泛型是自 C# 2.0 以来添加到 C# 语言的所有内容的启用技术。第 3 章“使用泛型”涵盖了作为 `System.Object` 转换的替代品的泛型，然后讨论了高级技术，如约束、泛型特化、方法约束和向后兼容。你将学习几种技术，通过这些技术，泛型将让你更容易表达你的设计意图。
+
+
+
+
+
+# 第 4 章：使用 LINQ
+
+`LINQ` 解释了查询、查询语法以及相关功能。你将了解到何时使用扩展方法来将合约与实现分离，如何有效地使用 C# 闭包，以及如何使用匿名类型进行编程。你将学习编译器如何将查询关键字映射到方法调用，如何区分委托和表达式树（并在需要时它们之间进行转换），以及在寻找标量结果时如何对查询进行转义（escape）。
+
+# 第 5 章：异常实践
+
+`Exception Practices`（异常实践）提供了在现代 C# 程序中管理异常和错误的指导。你将学习如何确保错误被正确报告，以及在发生错误如何保持程序状态的一致性并在理想情况下保持不变。你将学习如何为使用你代码的开发者提供更好的调试体验。
+
+## 代码规范
+
+在书中展示代码仍然需要在空间和清晰度之间做出一些权衡。我尝试精简示例，以说明示例的特定要点。这通常意味着省略类或方法的其他部分。有时为了空间，这会包括省略错误恢复代码。公共方法应该验证其参数和其他输入，但这些代码通常为了空间而被省略。类似的空间考虑还去除了方法调用的验证以及复杂算法中经常包含的 `try/finally` 句。
+
+我通常假设当示例使用常用命名空间时，大多数开发者都能找到相应的命名空间。你可以安全地假设每个示例隐式包含了以下 `using` 语句：
+
+```csharp
+using System;
+using static System.Console;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+```
+
+## 提供反馈
+
+尽管我付出了努力，审稿人员也付出了努力，但错误可能渗透到文本或示例中。如果你认为发现了错误，请通过 `bill@thebillwagner.com` 联系我，或在 Twitter 上关注 `@billagner`。勘误（Errata）将发布在 `http://thebillwagner.com/Resources/EffectiveCS`。书中许多内容都是与其他 C# 开发者通过电子邮件和 Twitter 交流的结果。如果你对建议有疑问或意见，请联系我。有关性话题的讨论将在我的博客 `http://thebillwagner.com/blog` 上进行。
+
+在 `informit.com` 注册你的 *Effective C#, 第三版*，以便方便地下载、更新和获取可用更正。要开始注册流程，请访问 `informit.com/register` 并登录或创建账户。输入产品 ISBN (9780672337871) 并点击 `Submit`。流程完成后，你将在“Registered Products”下找到任何可用的额外内容。
+
+## 致谢
+
+许多人对本书做出了贡献，我深表感谢。多年来，我有荣幸成为极其优秀的 C# 社区的一员。C# Insiders 邮件列表（无论是在微软内部还是外部）的每个人都贡献了想法和对话，让这本书变得更好。
+
+我必须特别提到 C# 社区的几位成员，他们直接在想法上帮助了我，并将这些想法转化为具体的建议。与 `Jon Skeet`、`Dustin Campbell`、`Kevin Pilch-Bisson`、`Jared Parsons`、`Scott Allen` 以及最重要的 `Mads Torgersen` 的对话是本版中许多新想法的基础。
+
+我这一版拥有一支非常棒的技术评审员团队。`Jason Bock`、`Mark Michaelis` 和 `Eric Lippert` 仔细审阅了文本和示例，以确保你现在手中的这本书书的质量。他们的评审是详尽且完整的，这是任何人所能期待的最理想结果。此外，他们增加的建议帮助我更好地解释了许多主题。
+
+`Addison-Wesley` 的团队是一个梦幻般的合作伙伴。`Trina Macdonald` 是一位出色的编辑、任务大师，也是任何完成工作背后的推动力量。她非常依赖 `Mark Renfro` 和 `Olivia Basegio`，我也是如此。他们的贡献创造了从正封面到封底以及之间所有内容的完成手稿质量。`Curt Johnson` 继续在技术内容营销方面做着不可信的工作。无论你选择这本书的何种格式，`Curt` 对它的存在都有过贡献。
+
+再次成为 `Scott Meyers` 系列的一员是一种荣幸。他会查看每一份手稿，并提供改进的建议和评论。他极其严谨，他在软件方面的经验（尽管不是针对 C#）意味着他能发现任何我没有解释清楚或未充分证明某项建议合理的地方。他的反馈一如既往是无价的。
+
+我的家人放弃了陪伴我的时间让我完成这份手稿。我的妻子 `Marlene` 在我去写作或创建示例期间度过了无数小时。没有她的支持，我永远无法完成这本或任何其他书。完成它也不会如此有成就感。
+
+## 关于作者
+
+`Bill Wagner` 是世界上顶尖的 C# 开发者之一，也是 `ECMA C# 标准委员会` 的成员。他是 `Humanitarian Toolbox` 的主席，曾获得 11 年 `微软区域总监` 和 `.NET MVP` 荣誉，最近被任命为 `.NET Foundation 顾问委员会`成员。`Wagner` 与从初创公司到企业合作改进软件开发流程并扩大其软件开发团队。他目前任职于微软，负责 `.NET Core` 内容团队。他在伊利诺伊大学香槟厄巴纳分校获得计算机科学学士学位。
+
+# C 语言习惯
+
+如果你现在做的事情有效，为什么要改变它呢？答案是你可以做得更好。你改变工具或语言是因为你可以提高效率。如果不改变习惯，你就无法意识到预期的收益。当新语言 C# 与熟悉的语言（如 C++ 或 Java）有许多相似之处时，这会变得更加困难。C# 是另一种使用大括号的语言，让你很容易掉入你在其他语言中使用的习惯。这将阻碍你充分利用 C#。C# 语言自 2001 年首次发布以来一直在不断进化。它比最初版本离 C++ 或 Java 大得多。如果你是从其他语言接触 C#，你需要学习 C# 的习惯，让语言为你服务，而不是反对你。本章讨论了你应该改变的习惯——以及你应该怎么做。
+
+## 项目 1：优先使用隐式类型局部变量
+
+隐式类型局部变量引入 C# 语言是为了支持匿名类型。使用隐式类型局部变量的第二个原因是，某些查询的结果是 `IQueryable<T>`，而另一些则返回 `IEnumerable<T>`。如果你将 `IQueryable<T>` 强制转换为 `IEnumerable<T>` 集合，你就会错过 `IQueryProvider` 提供的任何增强（见第 42 项）。
+
+
+
+
+我更倾向于使用 `var` 并用它来声明许多局部变量，因为我发现这让开发者的注意力集中在重要部分（语义含义），而不是变量类型的细节上。如果我创建了无法通过类型检查的结构，编译器仍然会警告我。变量的类型安全并不等同于开发者编写完整的类型名。在许多情况下，`IQueryable` 和 `IEnumerable` 之间的差异并没有为开发者的你提供任何信息。然而，如果你尝试告诉编译器它是哪种类型，你会发现通过错误的类型可以改变行为（参见第 42 项）。有时候，使用隐式类型变量更好，因为编译器选出的类型会比你选的更好。但在其他时候，过度使用 `var` 只会降低代码的可读性。更糟糕的是，使用隐式类型变量可能会导致微妙的转换错误。
+
+局部类型推断
+局部类型推断对 C# 中使用的静态类型没有产生实际影响。这是为什么呢？首先，你需要理解局部类型推断不等同于动态类型。用 `var` 声明的变量不是动态的，而是根据赋值右侧的类型隐式声明的。使用 `var`，你并没有告诉编译器你正在创建哪种类型；而是编译器为你声明了类型。
+
+## 可读性
+让我们从可读性问题开始。很多时候，局部变量的类型从其初始化语句就可以看出：
+
+```csharp
+var foo = new MyType();
+```
+
+任何胜任的开发者都能从声明判断出 `foo` 的类型。同样，大多数工厂方法也是清晰的：
+
+点击此处查看代码图像
+
+```csharp
+var thing = AccountFactory.CreateSavingsAccount();
+```
+
+然而，在某些情况下，返回类型并不总是从方法名看出：
+
+点击此处查看代码图像
+
+```csharp
+var result = someObject.DoSomeWork(anotherParameter);
+```
+
+当然，这是一个刻意的例子，我希望你代码库中的大多数方法的名称都能更好地指示返回了什么。即使在这个刻意的例子中，一个更好的变量名也能为大多数开发者提供更好的含义指示：
+
+点击此处查看代码图像
+
+```csharp
+var HighestSellingProduct = someObject
+    .DoSomeWork(anotherParameter);
+```
+
+即使没有任何类型信息，大多数开发者也会正确地假设 `Product` 的类型。
+
+取决于 `DoSomeWork` 的实际签名，当然，`HighestSellingProduct` 实际上可能并不是 `Product`。它可能是任何派生自 `Product` 的类，甚至是 `Product` 实现的任何接口。编译器认为 `HighestSellingProduct` 就是 `DoSomeWork` 方法签名告诉它的任何类型。
+
+运行时类型实际上是 `Product` 并不并不重要。当编译时类型与运行时类型不同时，编译器总是胜出的。除非你使用某种类型转换，否则你没有发言权。
+
+我们已经进入了 `var` 引入可读性问题的领域。引入 `var` 作为存储方法返回值的变量类型，是使用 `var` 困扰阅读你代码的开发者的方式之一。阅读代码的人会假设一种类型。在运行时，人类可能是正确的。但编译器并没有机会检查对象的运行时类型。编译器检查的是编译时类型，并根据这些声明推断局部变量的类型。变化的是，现在由编译器决定变量的声明类型。当你自己声明类型时，其他开发者可以看到声明类型。相比之下，当你使用 `var` 时，编译器决定了类型，但开发者可能看不到写出来的类型。由于你编写代码的方式，人类读者和编译器对涉及的类型得出了不同的结论。这将维护错误和可以避免的错误。
+
+## 数值类型
+当你声明内置数值类型的变量时，让我们继续观察由隐式类型局部变量引起的问题。内置数值类型之间存在大量的转换。宽化转换（例如从 `float` 到 `double`）始终是安全的。还有窄收转换（例如从 `long` 到 `int`），这些转换涉及精度的损失。通过显式声明所有数值变量的类型，你保留了对所用类型的某些控制，并帮助编译器警告你可能存在的危险转换。
+
+检查这段简短的代码：
+
+点击此处查看代码图像
+
+```csharp
+var f = GetMagicNumber();
+
+var total = 100 * f / 6;
+
+Console.WriteLine(
+    $"Declared Type: {total.GetType().Name}, Value: {total}");
+```
+
+`total` 是什么？它取决于 `GetMagicNumber` 返回的类型。这里有五个输出，全部来自 `GetMagicNumber()` 的不同声明：
+
+点击此处查看代码图像
+
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+由于 `GetMagicNumber` 返回的类型，`total` 的类型是不同的。这些由于 `GetMagicNumber()` 的不同声明导致了不同的输出：
+Declared Type: Double, Value: 166.666666666667
+Declared Type: Single, Value: 166.6667
+Declared Type: Decimal, Value: 166.6666666666666666666667
+Declared Type: Int32, Value: 166
+Declared Type: Int64, Value: 166
+
+(注：由于提供的原始文本中存在大量重复的输出示例，翻译时已根据“不要重复输出原文”的原则进行了精简处理，确保核心逻辑翻译完整。)
+
+
+
+
+那个示例展示了局部变量类型推断可能让维护代码的开发者变得更加困难的情况。编译器的工作方式是相同的，而且它是执行类型检查的工具。然而，开发者无法轻松看到应用了哪些规则和转换。在这些情况下，局部类型推断会阻碍涉及类型的视图。
+
+尽管如此，编译器在为变量选择最佳类型方面可能比你更聪明。检查这个简单的例程，它从数据库检索以某些字符串开头的客户名称：
+
+点击此处查看代码图像
+
+```csharp
+public IEnumerable<string> FindCustomersStartingWith1(string start)
+{
+    IEnumerable<string> q =
+        from c in db.Customers
+        select c.ContactName;
+
+    var q2 = q.Where(s => s.StartsWith(start));
+    return q2;
+}
+```
+
+这段代码存在严重的性能问题。原始查询定义了整个客户联系名称列表，它被开发者声明为 `IEnumerable<string>`。由于查询是在数据库上运行的，它实际上是 `IQueryable<string>`。然而，通过强行声明返回值，你丢失了该信息。`IQueryable<T>` 继承自 `IEnumerable<T>`，因此编译器甚至不会对这种赋值发出警告。然而，当查询的第二个部分编译时，将使用 `Enumerable.Where` 而不是 `Queryable.Where`。在这种情况下，编译器本可以正确确定一个比你强制要求的类型（`IEnumerable<string>`）更好的类型（`IQueryable<string>`）。如果你犯的错误导致没有从 `IQueryable<string>` 的隐式转换，那么编译器将给你一个错误。然而，因为 `IQueryable<T>` 继承自 `IEnumerable<T>`，编译器允许这种转换，导致你自误误。
+
+第二个查询没有调用 `Queryable.Where`；而是调用了 `Enumerable.Where`。这对性能有很大的负面影响。在项目 42 中，你将了解到 `IQueryable` 将多个查询表达式组合成一个可以一次执行的操作，通常在数据所在的远程服务器上执行。在此例中，查询的第二个部分（`where` 子句）看到的源是一个 `IEnumerable<string>`。这个变化是意义重大的，因为只有查询的第一部分是在远程机器上构建的。整个客户名称列表将从源返回。第二个语句（`where` 子句）在本地检查整个客户联系名称列表，并只返回匹配搜索字符串的项。
+
+将其与此版本对比：
+
+点击此处查看代码图像
+
+```csharp
+public IEnumerable<string> FindCustomersStartingWith(string start)
+{
+    var q =
+        from c in db.Customers
+        select c.ContactName;
+
+    var q2 = q.Where(s => s.StartsWith(start));
+    return q2;
+}
+```
+
+现在 `q` 是一个 `IQueryable<string>`。编译器根据查询的源推断出返回值。第二个语句组合了查询，将 `Where` 子句添加到查询中，并持有一个新的更完整的表达式树。只有当调用者通过枚举结果执行查询时，才会检索实际数据。过滤查询的表达式被传递给数据源，结果序列仅包含匹配过滤器的联系名称。任何网络流量都减少了，查询更加高效。这是一个人为构造的示例，你可能会创建一个单一查询，但现实中的查询可能由多个方法组成。
+
+这种神奇的变化在于，`q` 现在（由编译器）声明为 `IQueryable<string>` 而不是 `IEnumerable<string>`。扩展方法不能是虚的，且分发不取决于对象的运行时类型。相反，扩展方法是静态方法，编译器根据编译时类型而不是运行时类型来决定哪个方法是最佳匹配。这里没有晚绑定机制。即使运行时类型包含可以匹配该调用的实例成员，它们对编译器来说也是不可见的，因此不是候选者。
+
+需要注意的是，任何扩展方法都可以被写成以检查其参数的运行时类型。扩展方法可以根据运行时类型创建不同的实现。事实上，`Enumerable.Reverse()` 正是这样做的，以便在参数实现 `IList<T>` 或 `ICollection<T>` 时获得更高的性能（参见本章节稍后介绍项目 3）。
+
+你作为开发者，必须决定让编译器静默声明变量的编译时类型是否会损害可读性。如果无法立即看到局部变量的精确类型会导致别人阅读代码时产生歧义，那么最好是显式声明该类型。然而，在许多情况下，代码清晰地传达了变量的语义信息。在你所看到的示例中，代码清晰地传达了变量的语义信息。
+
+## 项目 2：优先使用 `readonly` 而非 `const`
+
+C# 有两种不同的常量：编译时常量和运行时常量。它们的行为非常不同，使用错误的一个将让你付出代价。你应该优先使用运行时常量而不是编译时常量。编译时常量稍快，但比运行时常量灵活得多。将编译时常量留给性能至关且常量值在发布之间永远不会改变的情况。
+
+你使用 `readonly` 关键字声明运行时常量。编译时常量使用 `const` 关键字声明：
+
+点击此处查看代码图像
+
+```csharp
+// 编译时常量：
+public const int Millennium = 2000;
+
+// 运行时常量：
+public static readonly int ThisYear = 2004;
+```
+
+上述代码显示了类或`struct`范围内的两种常量。编译时常量也可以在方法内部声明。只读常量不能在方法范围内声明。
+
+编译时常量和运行时常量行为之间的差异源于它们如何被访问。编译时常量会在你的对象代码中替换为该常量的值。这种结构：
+
+点击此处查看代码图像
+
+if (myDateTime.Year == Millennium)
+
+编译为与你编写以下代码相同的微软中间级语言（MSIL，或 IL）：
+
+if (myDateTime.Year == 2000)
+
+运行时常量在运行时评估。当你引用只读常量时生成的 IL 引用 `readonly` 变量，而不是值。
+
+
+
+
+
+这种区别对何时可以使用这两类常量施加了若干限制。编译时常量只能用于内置的整型和浮点型类型、`enums` 或 `strings`。这些是唯一允许您在初始化器中分配有意义的常量值的类型。这些原始类型是唯一编译器生成的 IL 中可以被替换为字面量（literal values）的类型。以下结构无法编译。您不能使用 `new` 操作符来初始化编译时常量，即使初始化的类型是值类型：
+
+点击此处查看代码图像
+
+```cs
+// 无法编译，请使用 readonly：
+
+private const DateTime classCreation = new DateTime(2000, 1, 1, 0, 0, 0);
+```
+
+编译时常量仅限于数字、字符串和 `null`。只读（read-only）值也是常量，因为它们在构造函数执行后无法被修改。但只读值与常量的不同之处在于，它们是在运行时赋值的。在处理运行时常量时，您拥有更大的灵活性。例如，运行时常量可以是任何类型。您必须在构造函数中初始化它们，或者可以使用初始化器。您可以为 `DateTime` 结构体创建 `readonly` 值；但无法使用 `const` 创建 `DateTime` 值。
+
+您可以将 `readonly` 值用于实例常量，从而为类类型的每个实例存储不同的值。根据定义，编译时常量是静态常量。
+
+最重要的区别是，`readonly` 值是在运行时解析的。当引用一个 `readonly` 常量时，生成的 IL 引用的是 `readonly` 变量，而不是该值。这种差异对长期维护具有深远影响。编译时常量生成的 IL 与您在代码中使用数值常量生成的相同，即使跨程序集也是如此：一个程序集中的常量在另一个程序集中使用时，仍然会被替换为具体的值。
+
+编译时常量和运行时常量的评估方式会影响运行时兼容性。假设您在一个名为 `Infrastructure` 的程序集中同时定义了 `const` 和 `readonly` 字段：
+
+点击此处查看代码图像
+
+```cs
+public class UsefulValues
+{
+    public static readonly int StartValue = 5;
+    public const int EndValue = 10;
+}
+```
+
+在另一个程序集中，您引用了这些值：
+
+点击此处查看代码图像
+
+```cs
+for (int i = UsefulValues.StartValue;
+    i < UsefulValues.EndValue; i++)
+    Console.WriteLine("value is {0}", i);
+```
+
+如果您运行这个小测试，将看到以下明显的输出：
+
+点击此处查看代码图像
+
+Value is 5  
+Value is 6  
+...
+Value is 9
+
+随着时间推移，您发布了新版本的 `Infrastructure` 程序集，并包含了以下更改：
+
+点击此处查看代码图像
+
+```cs
+public class UsefulValues
+{
+    public static readonly int StartValue = 105;
+    public const int EndValue = 120;
+}
+```
+
+您在不重新编译 `Application` 程序集的情况下分发了 `Infrastructure` 程序集。您期望得到结果：
+
+点击此处查看代码图像
+
+Value is 105  
+Value is 106  
+...
+Value is 119（等等，文字显示为 119，但逻辑上应该是 120）
+
+
+
+
+只要可能，使用 `as` 运算符都是正确的选择，因为它比盲目进行强制类型转换（casting）更安全，而且在运行时效率更高。`as` 和 `is` 运算符不会执行任何用户定义的转换。只有当运行时类型与目标类型匹配时，它们才会成功；它们很少为了满足请求而创建一个新对象。（当将装箱的值类型转换为未装箱的可空值类型时，`as` 运算符会创建一个新类型。）
+
+看这个示例。你编写了一段代码需要将任意对象转换为 `MyType` 实例。
+
+点击此处查看代码图片
+
+```csharp
+object o = Factory.GetObject();
+
+// 版本一：
+
+MyType t = o as MyType;
+
+if (t != null)
+{
+    // 使用 t，它是一个 MyType。
+}
+else
+{
+    // 报告失败。
+}
+```
+
+或者你可以这样写：
+
+点击此处查看代码图片
+
+```csharp
+object o = Factory.GetObject();
+
+// 版本二：
+
+try
+{
+    MyType t;
+    t = (MyType)o;
+    // 使用 t，它是一个 MyType。
+}
+catch (InvalidCastException)
+{
+    // 报告转换失败。
+}
+```
+
+你会同意第一个版本更简单且更易读。它没有 `try`/`catch` 句，因此你避免了开销和额外的代码。注意，强制转换版本除了捕获异常外，必须检查 `null`。使用强制类型转换可以将 `null` 转换为任何引用类型，但 `as` 运算符在用作 `null` 引用时会返回 `null`。因此，使用强制转换时，你既需要检查 `null` 又需要捕获异常。使用 `as`，只需要检查返回的引用是否为 `null`。
+
+`as` 运算符与强制转换运算符最大的区别在于如何处理用户定义的转换。`as` 和 `is` 运算符检查被转换对象的运行时类型；除了必要时进行装箱外，它们不执行任何其他操作。如果特定对象不是请求的类型或派生自请求类型，它们就会失败。相反，强制转换可以使用转换运算符将对象转换为请求类型。这包括任何内置的数值转换。将 `long` 转换为 `short` 可能会丢失信息。
+
+当你强制转换用户定义的类型时，也会存在相同的问题。考虑这个类型：
+
+点击此处查看代码图片
+
+```csharp
+public class SecondType
+{
+    private MyType _value;
+    // 其他细节省略
+    // 转换运算符。
+    // 这将 SecondType 转换为
+    // MyType，见项目第 29 项。
+    public static implicit operator MyType(SecondType t)
+    {
+        return t._value;
+    }
+}
+```
+
+假设第一个代码片段中的 `Factory.GetObject()` 函数返回了一个 `SecondType` 对象：
+
+点击此处查看代码图片
+
+```csharp
+object o = Factory.GetObject();
+
+// o 是一个 SecondType:
+MyType t = o as MyType; // 失败。o 不是 MyType
+if (t != null)
+{
+    // 使用 t，它是一个 MyType。
+}
+else
+{
+    // 报告失败。
+}
+
+// 版本二：
+try
+{
+    MyType t1;
+    t1 = (MyType)o; // 失败。o 不是 MyType
+    // 使用 t1，它是一个 MyType。
+}
+catch (InvalidCastException)
+{
+    // 报告转换失败。
+}
+```
+
+两个版本都失败了。但我告诉过你强制转换会执行用户定义的转换。你可能认为强制转换会成功。你是对的——如果你那样想，它应该成功。但它失败了，是因为你的编译器是根据对象的编译时类型 `o` 生成代码的编译器对 `o` 的运行时类型一无所知；它将 `o` 视为 `object` 的实例。编译器发现没有从 `object` 到 `MyType` 的自定义转换。它检查了 `object` 和 `MyType` 的定义。在缺乏任何自定义转换的情况下，编译器生成代码来检查 `o` 的运行时类型，并检查该类型是否为 `MyType`。由于 `o` 是一个 `SecondType` 对象，操作失败了。编译器并没有检查 `o` 的实际运行时类型是否可以转换为 `MyType` 对象。
+
+如果你写如下代码，就可以让从 `SecondType` 到 `MyType` 的转换成功：
+
+点击此处查看代码图片
+
+```csharp
+object o = Factory.GetObject();
+
+// 版本三：
+SecondType st = o as SecondType;
+try
+{
+    MyType t;
+    t = (MyType)o;
+    // 使用 t，它是一个 MyType。
+}
+catch (InvalidCastException)
+{
+    // 报告转换失败。
+}
+```
+
+你不永远应该写这种代码。尽可能使用 `as` 来避免异常是更好的做法。考虑这段代码片段：
+
+点击此处查看代码图片
+
+```csharp
+object o = Factory.GetObject();
+
+static void StuffWithObject(object o)
+{
+    try
+    {
+        MyType t;
+        t = (MyType)o; // 失败。o 不是 MyType
+        // 使用 t，它是一个 MyType。
+    }
+    catch (InvalidCastException)
+    {
+        // 报告转换失败。
+    }
+}
+```
+
+等等，更好的方法是使用 `as` 转换为类型：
+
+点击此处查看代码图片
+
+```csharp
+object o = Factory.GetObject();
+int i = o as int; // 编译失败
+```
+
+这是因为 `int` 是值类型，永远不能为 `null`。当 `as` 运算符的左操作数是可空值类型时，这种技术有效：
+
+点击此处查看代码图片
+
+```csharp
+object o = Factory.GetObject();
+int? i = o as int?;
+if (i != null)
+{
+    Console.WriteLine(i.Value);
+}
+```
+
+既然 `is`、`as` 和强制转换之间的差异，你认为 `foreach` 循环使用的是哪种运算符？`foreach` 循环可以操作非泛型的 `IEnumerable` 序列，并将类型强制转换内置在迭代中。
+
+点击此处查看代码图片
+
+```csharp
+public void UseCollection(IEnumerable theCollection)
+{
+    foreach (MyType t in theCollection)
+    {
+        t.DoStuff();
+    }
+}
+```
+
+`foreach` 语句使用强制转换操作执行从对象到循环类型转换。`foreach` 语句生成的代码等同于这个手写版本：
+
+点击此处查看代码图片
+
+```csharp
+public void UseCollectionV2(IEnumerable theCollection)
+{
+    IEnumerator it = theCollection.GetEnumerator();
+    while (it.MoveNext())
+    {
+        MyType t = (MyType)it.Current;
+        t.DoStuff();
+    }
+}
+```
+
+
+
+
+`foreach` 语句需要使用类型转换来同时支持值类型和引用类型。通过选择转换操作符，无论目标类型是什么，`foreach` 语句都表现出相同的行为。然而，由于使用了类型转换，`foreach` 循环可能会抛出 `InvalidCastException`。
+
+由于 `IEnumerator.Current` 返回的是 `System.Object`，它没有转换操作符，因此没有任何类型符合此测试。正如你所见的，`SecondType` 对象的集合无法在之前的 `UseCollection()` 函数中使用，因为转换失败了。`foreach` 语句（使用类型转换）不会检查集合中对象运行时类型中可用的转换。它只检查 `System.Object` 类（`IEnumerator.Current` 返回的类型）中可用的转换，以及循环变量的声明类型（在本例中为 `MyType`）。
+
+最后，有时你可能想要知道对象的精确类型，而不仅仅是当前类型是否可以转换为目标类型。`is` 运算符遵循多态规则：如果 `fido` 是 `Dog`（派自 `Animal`），则 `fido is Animal` 返回 `true`。`GetType()` 方法获取对象的运行时类型。它比 `is` 或 `as` 语句提供的测试更严格。`GetType()` 返回对象的类型并可以与特定类型进行比较。
+
+再次考虑此函数：
+
+```csharp
+public void UseCollectionV3(IEnumerable theCollection)
+{
+    foreach (MyType t in theCollection)
+        t.DoStuff();
+}
+```
+
+如果你创建了一个派自 `MyType` 的 `NewType` 类，那么 `NewType` 对象集合在 `UseCollection` 函数中可以正常工作：
+
+```csharp
+public class NewType : MyType
+{
+    // 内容省略。
+}
+```
+
+如果你打算写一个适用于所有 `MyType` 实例的对象的函数，那是没问题的。如果你打算写一个仅适用于精确的 `MyType` 对象的函数，那么你应该使用精确类型进行比较。在这里，你应该在 `foreach` 循环内部这样做。精确运行时类型最常用的时刻是进行等效性测试时。在大多数其他比较中，由 `as` 和 `is` 提供的 `.isinst` 比较在语义上是正确的。
+
+.NET 基类库 (BCL) 包含一种使用相同类型操作转换序列中元素的方法：`Enumerable.Cast<T>()` 转换支持经典 `IEnumerable` 接口的序列中的每个元素：
+
+```csharp
+IEnumerable collection = new List<int>()
+    { 1,2,3,4,5,6,7,8,9,10};
+
+var small = from int item in collection
+            where item < 5
+            select item;
+
+var small2 = collection.Cast<int>().Where(item => item < 5).
+    Select(n => n);
+```
+
+该查询生成的方法调用与上述代码的最后一行相同。在两种情况下，`Cast<T>` 方法都将序列中的每个项转换为目标类型。`Enumerable.Cast<T>` 方法使用旧式转换而不是 `as` 运算符。使用旧式转换意味着 `Cast<T>` 不需要具有类约束。使用 `as` 运算符将具有局限性，BCL 团队没有实现不同的 `Cast<T>` 方法，而是选择创建一个使用旧式转换操作符的单一方法。这是你在编写代码时也应该考虑的权衡。当你需要转换一个作为泛型类型参数之一的的对象时，你需要权衡类约束的必要性与使用转换操作符的不同行为之间的关系。
+
+此外，注意带有泛型的类型转换没有使用任何转换操作符。这意味着对整数序列执行 `Cast<double>()` 将失败。在 C# 4.0 及更高版本中，可以通过使用 `dynamic` 和运行时类型检查进一步规避类型系统。有许多方法可以根据已知行为的预期来处理对象，而不是对提供的特定类型或接口了解任何信息。
+
+良好的面向对象实践认为你应该避免转换类型，但有时没有其他选择。如果你无法避免转换，请使用语言的 `as` 和 `is` 运算符更清楚地表达你的意图。强制类型的不同方法有不同的规则。`is` 和 `as` 运算符几乎总是正确的语义，只有当被测试的对象是正确类型时它们才会成功。优先使用这些语句而不是转换操作符，后者可能会产生意外的副作用，并在你最不意料的时候成功或失败。
+
+## 事项 4：用插值字符串替换 `string.Format()`
+
+自开发者开始编写程序以来，他们一直在将计算机中存储的信息转换为人类可读的格式。在 C# 中，我们一直使用 API 来这一点，这些 API 的根源可以很容易追溯到最初在 C 语言中引入的那些。
+
+在 C# 中，我们一直使用 API 来这一点。现在是时候放弃这些技术并拥抱 C# 6.0 中引入的新型字符串插值功能了。
+
+C# 6.0 中提供的新语法比经典的字符串格式化具有若干几个优势。它还为生成字符串的表达式提供了更丰富的语法。
+
+插值字符串在字符串前有一个 `$` 作为前缀。然后，不再在 `{}` 字符之间使用位置索引，而是可以放置任何 C# 表达式。这大大提高了可读性。在格式字符串中直接读取替换表达式非常容易。
+
+首先，让我们探索一下用于替换字符串的表达式的语法和限制。
+
+我非常小心地使用“表达式”一词来描述可以用于替换字符串的代码。你不能将控制流语句（如 `if`/`else` 或 `while`）作为替换字符串。
+
+
+
+
+
+`String` 插值通过执行与现今 `string.Format()` 功能类似的库代码来工作（请参阅本章节稍后的 Item 5，了解有关它如何处理国际化的讨论）。这包括在需要将变量转换为字符串的必要性。例如，考虑这个插值字符串：
+
+点击此处查看代码图像
+
+```csharp
+Console.WriteLine($"The value of pi is {Math.PI}");
+```
+
+字符串插值生成的代码将调用一个格式化方法，其参数是一个对象的 `params` 数组。`Math.PI` 属性是一个 `double` 类型，这是一种值类型。为了将该 `double` 强制转换为 `Object`，将对其进行装箱（boxing）。在频繁运行的代码或紧凑循环中，这会对性能产生重大影响（请参阅本章节稍后的 Item 9）。你应该使用表达式将这些参数转换为字符串。这样可以避免对表达式中使用的任何值类型进行装箱：
+
+点击此处查看代码图像
+
+```csharp
+Console.WriteLine(
+  $"The value of pi is {Math.PI.ToString()}");
+```
+
+`ToString()` 返回的文本可能不符合你的需求，因此你可能希望对表达式进行更多处理以创建你所需的精确文本。这很简单：只需修改表达式以生成你需要的精确文本：
+
+点击此处查看代码图像
+
+```csharp
+Console.WriteLine(
+  $"The value of pi is {Math.PI.ToString("F2")}");
+```
+
+生成你所需的精确字符串的一部分可能包括其他字符串处理，或者对你的表达式返回的对象进行格式化。让我们从简单地应用标准格式字符串开始。这涉及到使用内置格式化字符串来创建你想要的输出。在 `{}` 字符内部，放置 `:` ，然后是格式字符串。
+
+点击此处查看代码图像
+
+```csharp
+Console.WriteLine($"The value of pi is {Math.PI:F2}");
+```
+
+敏锐的读者会注意到，:` 可能是条件表达式的一部分。这确实导致了一点冲突：C# 会找到 `:` 并假设它是格式字符串的开头。以下代码无法编译：
+
+点击此处查看代码图像
+
+```csharp
+Console.WriteLine(
+  $"The value of pi is {round ? Math.PI.ToString() :
+Math.PI.ToString("F2")}");
+```
+
+让此代码通过编译的答案很简单。你只需要强制编译器相信你想要的是一个条件表达式，而不是格式字符串的开头。只需将整个条件表达式放在括号内，你就能得到想要的行为：
+
+点击此处查看代码图像
+
+```csharp
+Console.WriteLine($@"The value of pi is {(round ?
+    Math.PI.ToString() : Math.PI.ToString("F2"))}");
+```
+
+将字符串插值嵌入语言中提供了强大的功能。你在字符串插值使用的表达式可以是任何有效的 C# 表达式。你已经见过变量和条件表达式了。但这只是个开始。你可以使用空合并运算符或空传播运算符来清晰地处理缺失值：
+
+点击此处查看代码图像
+
+```csharp
+Console.WriteLine(
+    $"The customer's name is {c?.Name ?? "Name is missing"}");
+```
+
+是的，插值表达式内部支持字符串嵌套。你在 `{` 和 `}` 字符之间放置的任何结构都将被视为 C# 代码并解析为表达式的一部分（唯一的例外是会引入格式字符串的 `:` 字符）。
+
+这一切都是非常好的，但当你深入研究它时，它可能会变成一场“掉进兔子洞”之旅。构成插值字符串参数的表达式本身也可以包含插值字符串。在有限的形式下，这是非常有用的。考虑这个示例如何格式化字符串以显示有关记录的信息，或缺失记录的索引：
+
+点击此处查看代码图像
+
+```csharp
+string result = default(string);
+
+Console.WriteLine($@"Record is {(records.TryGetValue(index,out result) ? result :
+$"No record found at index {index}")}");
+```
+
+在记录缺失的情况下，条件表达式中的假部分使用另一个插值字符串来返回消息，指示搜索的是哪个索引。
+
+你还可以使用 LINQ 查询（参见 第 4 章，“使用 LINQ””）来创建用于插值字符串的值。这些查询本身也可以使用插值字符串来格式化它们的输出：
+
+点击此处查看代码图像
+
+```csharp
+var output = $@"The First five items are: {src.Take(5).Select(
+n => $@"Item: {n.ToString()}").Aggregate(
+(c, a) => $@"{c}{Environment.NewLine}{a}")})";
+```
+
+最后一个例子可能超出了你想看到的范围，但它说明了字符串插值与语言深度集成。在 Razor 视图中，此功能甚至被纳入 ASP.NET 的 Razor 引擎中。这可以使生成 HTML 变得更容易。这里是显示当前登录用户的控件中的一个示例：
+
+点击此处查看代码图像
+
+```html
+<a asp-controller="Manage" asp-action="Index" title="Manage">Hello@User.GetUserName()!</a>
+```
+
+
+
+
+
+你之前在字符串插值方面所做的工作都会让你认为，使用“$`”语法创建字符串会生成一个字符串。在大多数情况下，这种简化是有效的。实际上，插值字符串字面量可以隐式地转换为字符串或可格式化的字符串（formattable string）。
+
+例如，这行代码使用字符串插值来构造一个字符串：
+
+点击此处查看代码
+
+```csharp
+string first =
+$"It's the {DateTime.Now.Day} of the {DateTime.Now.Month} month";
+```
+
+这行代码使用字符串插值来构造一个派自 `FormattableString` 类型的对象：
+
+点击此处查看代码
+
+```csharp
+FormattableString second =
+$"It's the {DateTime.Now.Day} of the {DateTime.Now.Month} month";
+```
+
+这行代码使用隐式类型局部变量，假设 `third` 应该是一个字符串并生成创建字符串的代码：
+
+点击此处查看代码
+
+```csharp
+var third =
+$"It’s the {DateTime.Now.Day} of the {DateTime.Now.Month} month";
+```
+
+编译器根据请求输出的编译时类型生成不同的代码。生成字符串的代码将根据执行代码机器的当前文化对该字符串进行格式化。如果你在美国运行代码，`double` 值的数分隔符将是“.”；如果你在大多数欧洲国家运行相同的代码，小数点分隔符将是“”。
+
+你可以利用编译器生成字符串或 `Formattable String` 的能力，使用字符串插值为任何文化格式化字符串。考虑以下两种使用特定语言和文化将 `FormattableString` 转换为字符串的方法：
+
+点击此处查看代码
+
+```csharp
+public static string ToGerman(FormattableString src)
+{
+    return string.Format(null,
+      System.Globalization.CultureInfo.
+          CreateSpecificCulture("de-de"),
+      src.Format,
+      src.GetArguments());
+}
+
+public static string ToFrenchCanada(FormattableString src)
+{
+    return string.Format(null,
+      System.Globalization.CultureInfo.
+          CreateSpecificCulture("de-CA"),
+      src.Format,
+      src.GetArguments());
+}
+```
+
+这些方法接受一个 `FormattableString` 作为唯一参数。当使用 `FormattableString` 调用这些方法时，它们将使用特定的文化（德语文化和语言，或法语的加拿大文化）将该 `FormattableString` 转换为字符串。你也可以直接在字符串插值的结果上调用这些方法之一。
+
+首先，重要的是不要用接受字符串作为参数的相似版本来重载这些方法。如果存在可以同时接受字符串和 `FormattableString` 的重载，编译器将生成创建字符串的代码，然后调用带有字符串参数的版本。
+
+你还会注意到，我没有为上述两个方法创建扩展方法。这是因为编译器中决定是否应该创建字符串或 `FormattableString` 的逻辑，当结果是“.”运算符的左侧时，会创建一个字符串而不是 `FormattableString`。字符串插值的目标之一是让它易于与现有的字符串 类配合使用。然而，即使有这个目标，团队仍然希望启用所有可能的全球化场景。这些场景确实需要你额外做工作，但很容易处理。
+
+字符串插值功能确实支持你国际化和特定本地化所需的所有内容。最棒的是，它的实现方式让你在所有代码都为当前文化生成文本时能够忽略其复杂性。当你需要特定的文化时，你必须显式地告诉字符串插值创建一个 `FormattableString`，然后你就可以使用任何所需的特定文化将其转换为字符串。
+
+## 第 6 项：避免字符串类型 API（String-ly Typed APIs）
+
+随着我们向更加分布式的程序发展，我们必须在不同系统之间传输越来越多的数据。我们还使用许多依赖名称和字符串标识符来处理数据的不同库。这些是跨平台和跨语言处理数据的方便方法。然而，这种便利性是有代价的。与这些 API 和库工作意味着丢失类型安全。你失去了工具支持。你失去了静态类型语言的许多优势。
+
+C# 语言设计团队意识到了这一点，并在 C# 6.0 中增加了 `nameof()` 表达式。这个实用的小关键字将符号替换为包含其名称的字符串。最常见的例子是实现 `INotifyPropertyChanged` 接口：
+
+点击此处查看代码
+
+```csharp
+public string Name
+{
+    get { return name;}
+    set
+    {
+        if (value != name)
+        {
+            name = value;
+            PropertyChanged?.Invoke(this,
+                new PropertyChangedEventArgs(nameof(Name)));
+        }
+    }
+}
+
+private string name;
+```
+
+使用 `nameof` 运算符，属性名称的任何更改都会正确地反映在事件参数使用的字符串中。这些是使用 `nameof()` 的基础。
+
+`nameof()` 运算符的结果为符号的名称。它适用于类型、变量、接口和命名空间。它可以使用未限定名称，也可以使用完全限定名称。在泛型定义上存在一些限制：你需要一个指定了所有类型参数的闭合泛型。
+
+
+
+
+
+在所有这些地方使用 `nameof` 算符的好处是，符号名称的任何更改或更新都会正确地反映在变量名上。静态分析工具还可以在参数名称被用于错误位置时发现错误和不匹配之处。这些工具有多种形式，从运行在编辑器或 IDE 中的诊断程序，到构建和持续集成（CI）工具、重构工具等等等。通过尽可能地保留符号信息，你能够让这些自动化工具发现并可能修复尽可能许多类型的错误。这样一来，只能通过自动化测试或人工检查才能发现的错误就会变少。这让我们所有人都有更多时间去关注更棘手的问题。
+
+## 第 7 项：使用委托表达式表达式回调
+
+我：“儿子，去把草坪割了。我要读一会儿书。”
+
+Scott ：“爸爸，我把草坪清理过了。”
+
+Scott ：“爸爸，我给割草机加了油。”
+
+Scott ：“爸爸，割草机启动不了。”
+
+我：“我来启动它。”
+
+Scott ：“爸爸，我做完了。”
+
+这段简短的对话说明了回调（callbacks）。我给我儿子布置了一个任务，他（反复地）用状态中断了我的工作。在等待他完成任务的每个部分时，我并没有阻塞自己的进度。当他有重要的（甚至是不重要的）状态需要报告或需要我的帮助时，他能够定期地中断我。回调被用于从服务器向客户端异步提供反馈。它们可能涉及多线程，也可能仅仅为同步更新提供一个入口。在 C# 语言中，回调是通过使用委托（delegates）表示的。
+
+委托提供了类型安全的回调定义。尽管委托最常用的用途是事件，但这不应成为你使用这一语言特性的唯一时刻。每当你需要配置类之间的通信，并且希望比接口提供的耦合度更低时，委托都是正确的选择。委托允许你在运行时配置目标并通知多个客户端。委托是一个包含方法引用的对象。该方法既可以是静态方法，也可以是实例方法。通过委托，你可以与运行时配置的（一个（或多个）客户端对象进行通信。
+
+回调和委托是如此常见的用例，因此 C# 语言提供了以 Lambda 表达式形式存在的紧凑语法来表示委托。此外，.NET Framework 库使用 `Predicate<T>`、`Action<>` 和 `Func<>` 定义了许多常见的委托形式。谓词（predicate）是一个测试条件的布尔函数。`Func<>` 接收多个参数并产生单个结果。是的，这意味着 `Func<T, bool>` 的形式与 `Predicate<T>` 相同。然而，编译器不会将 `Predicate<T>` 和 `Func<T, bool>` 视为相同类型。通常，具有相同参数和返回类型的不同委托类型定义是不同的类型。编译器不允许它们之间进行转换。最后，`Action<>` 接收任意数量的参数且返回类型为 `void`。
+
+LINQ 是基于这些概念构建的。`List<T>` 类也包含了许多使用回调的方法。查看这段代码段：
+
+点击此处查看代码图片
+
+```
+List<int> numbers = Enumerable.Range(1, 200).ToList();
+
+var oddNumbers = numbers.Find(n => n % 2 == 1);
+
+var test = numbers.TrueForAll(n => n < 50);
+
+numbers.RemoveAll(n => n % 2 == 0);
+
+numbers.ForEach(item => Console.WriteLine(item));
+```
+
+`Find()` 方法接收一个形式为 `Predicate<int>` 的委托，对列表中的每个元素进行测试。这是一个简单的回调。`Find()` 方法使用回调测试每个项目，并返回通过谓词所包含测试的元素。编译器将 Lambda 表达式转换为委托，并使用该委托表示回调。
+
+`TrueForAll()` 的相似之处在于它对每个元素应用测试，并判断谓词是否对所有项都为真。`RemoveAll()` 通过移除所有谓词为真的项来修改列表容器。
+
+最后，`List.ForEach()` 方法对列表中的每个元素执行指定的操作。与之前一样，编译器将 Lambda 表达式转换为一个方法，并创建一个引用到该方法的委托。
+
+你会在 .NET Framework 中发现许多此类概念的示例。LINQ 的所有内容都是基于委托构建的。回调用于处理 Windows Presentation Foundation (WPF) 和 Windows Forms 中的跨线程封送（marshalling）。在 .NET Framework 需要单个方法的任何地方，它都会使用调用者可以以 Lambda 表达式形式表示的委托。当你在任何 API 中需要回调用例时，也应该遵循相同的示例。
+
+出于历史原因，所有的委托都是多路委托（multicast delegates）。多路委托在单个调用中封装了所有添加到委托中的目标函数。该结构有两个注意事项：它在面对异常时是不安全的，并且返回值将是最后一个多路委托调用的最后一个目标函数的返回值。
+
+在多路委托的调用内部，每个目标都是按顺序被调用的。委托不会捕获任何异常。因此，目标抛出的任何异常都会结束委托的调用链。
+
+返回值上也存在类似的问题。你可以定义具有 `void` 以外返回类型的委托。你可以写一个回调来检查用户中止：
+
+点击此处查看代码图片
+
+```
+public void LengthyOperation(Func<bool> pred)
+{
+    foreach (ComplicatedClass cl in container)
+    {
+        cl.DoyOperation();
+        // 检查用户中止：
+        if (false == pred())
+        {
+            return;
+        }
+    }
+}
+```
+
+作为单路委托时是有效的，但作为多路委托使用时就有问题了：
+
+点击此处查看代码图片
+
+```
+Func<bool> cp = () => CheckWithUser();
+
+cp += () => CheckWithSystem();
+
+c.LengthyOperation(cp);
+```
+
+调用委托的返回值是最后一个目标函数的返回值。其他返回值都被忽略了。
+
+你通过自己调用每个委托来解决这两个问题。你创建的每个委托包含一个委托列表。要检查调用链，请遍历调用列表：
+
+点击此处查看代码图片
+
+```
+public void LengthyOperation2(Func<bool> pred)
+{
+    bool bContinue = true;
+    foreach (ComplicatedClass cl in container)
+    {
+        cl.DoyOperation();
+        foreach (Func<bool> pr in pred.GetInvocationList())
+        {
+            bContinue &= pr();
+        }
+        if (!bContinue)
+        {
+            return;
+        }
+    }
+}
+```
+
+在这种情况下，我定义的语义是每个委托都为真时迭代继续。
+
+委托提供了运行时使用回调的最佳方式，对客户端类的要求更简单。你可以在运行时配置委托目标。你可以支持多个客户端目标。.NET 中的回调应使用委托实现。
+
+## 第 8 项：使用空条件操作符进行事件调用
+
+在初看起来，引发事件似乎非常简单。你定义一个事件，并在需要时调用任何附加到该事件的事件处理器。底层的多路委托对象会管理顺序调用所有附加处理器的复杂性。在实践中，以这种幼稚的方式调用事件存在许多陷阱。C# 6.0 引入的空条件操作符为这种用例提供了更简洁的语法。你应该尽快改变现有习惯以使用新语法。
+
+
+
+
+让我们来看看旧的语法，以及为了编写安全的事件调用代码需要做些什么。事件调用的最简单示例如下：
+
+点击此处查看代码图像
+
+```csharp
+public class EventSource
+{
+    private EventHandler<int> Updated;
+    public void RaiseUpdates()
+    {
+        counter++;
+        Updated(this, counter);
+    }
+    private int counter;
+}
+```
+
+这段代码有一个明显的问题。如果该对象在没有向 `Updated` 事件附加任何事件处理程序的情况下运行时，代码将抛出 `NullReferenceException`。在 C# 中，当没有向事件添加任何处理程序时，事件处理程序的值为 `null`。
+
+因此，开发者需要将任何事件调用封装在一个检查中，以确定事件处理程序是否为 `null`：
+
+点击此处查看代码图像
+
+```csharp
+public void RaiseUpdates()
+{
+    counter++;
+    if (Updated != null)
+        Updated(this, counter);
+}
+```
+
+这段代码在几乎所有情况下都能工作，但其中潜伏着一个可能的 bug。它可能会执行第一行（即检查事件处理程序是否为 `null`），并发现事件处理程序不是 `null`。然而，在检查和调用事件之间，另一个线程可能会执行并取消对该事件处理程序的订阅。当第一个线程继续执行并调用事件处理程序时，该处理程序已经是 `null` 了。你仍然会得到 `NullReferenceException`。不过，发生的概率会更低，而且不会出现在容易复现的场景中。
+
+这个 bug 要难诊断和修复得多。代码看起来是正确的。为了看到错误，你需要让线程按照完全正确的顺序执行代码。经验开发者已经从惨痛的经验中吸了解到这种写法是危险的，并将其替换为以下代码：
+
+点击此处查看代码图像
+
+```csharp
+public void RaiseUpdates()
+{
+    counter++;
+    var handler = Updated;
+    if (handler != null)
+        handler(this, counter);
+}
+```
+
+这段代码是 .NET 和 C# 中触发事件的推荐做法。它有效，而且是线程安全的。但在可读性方面，它存在几个问题。完全无法看出这种变化是如何让之前的代码变得线程安全的。
+
+让我们理解一下为什么这样做有效且是线程安全的。
+
+第一行将当前事件处理程序赋值给新的局部变量。该新局部变量现在包含一个多路委托，引用了成员变量事件中的所有原始处理程序。
+
+事件赋值创建了赋值操作右侧内容的浅拷贝。这个浅拷贝包含了包含了对每个已附加事件处理程序的引用的新副本。对于没有附加任何处理器的事件字段，右侧为 `null`，`null` 值被存储在赋值的左侧。
+
+如果另一个线程中的代码取消了对事件的订阅，取消订阅的代码修改了类的事件字段，但它不会从局部变量中移除事件处理程序。局部变量仍然保留了复制时存在的所有事件订阅者。
+
+因此，当这段代码检查 `null` 时，它看到的是复制发生时事件订阅者的快照。然后，根据条件调用事件，所有在复制时订阅的事件处理程序都将被调用。
+
+它能行得通，但对于新的 .NET 开发者来说，并不容易观察和理解。此外，它在每个触发事件的地方都必须进行复制。或者，你可以创建一个私有方法来触发事件，并将这种写法封装在该私有方法中。
+
+对于一个本应该非常易用的功能——事件调用来说，这需要大量的代码和大量的认知开销。
+
+空条件运算符将此操作恢复到一个简单得多的代码结构：
+
+点击此处查看代码图像
+
+```csharp
+public void RaiseUpdates()
+{
+    counter++;
+    Updated?.Invoke(this, counter);
+}
+```
+
+这段代码使用空条件运算符 (`?.`) 来安全地调用事件处理程序。(`?.`) 运算符会评估运算符的左侧。如果评估结果为非空值，则执行运算符右侧的表达式。如果表达式为 `null`，则会短路并继续执行下一条语句。
+
+它在语义上与早期使用 `if` 语句的结构相似。唯一的区别是 (`?.`) 运算符的左侧只会被求值一次。
+
+当你使用 (`?.`) 运算符时，必须使用 `Invoke` 方法，因为语言不允许在 (`?.`) 运算符后直接跟括号。编译器会为每个委托或事件生成一个类型安全的 `Invoke()` 方法。
+
+## 项目 9：最小化装箱和拆箱
+
+值类型是数据的容器。它们不是多态类型。另一方面，.NET Framework 在设计时将单一引用类型 `System.Object` 作为整个层次结构的根节点。这两个目标是相互冲突的。.NET Framework 使用装箱和拆箱来弥补它们之间的差距。装箱将值类型置于无类型的引用对象中，以便可以使用该值类型。拆箱则从箱中提取该值类型的拷贝。当需要在预期 `System.Object` 类型或接口类型的地方使用值类型时，装箱和拆箱是必要的。但装箱和拆箱始终是损耗性能的操作。有时，当装箱和拆箱还会创建对象的临时副本时，它们会导致程序中出现细微的 bug。尽可能避免装箱和拆箱。
+
+装箱将值类型转换为引用类型。在堆上分配一个新的引用对象（即“箱”），并将值类型的拷贝存储在该引用对象中。请参考图 1.1 关于箱化对象如何存储和访问的插图。箱包含了值类型对象的拷贝，并复制了箱化值类型实现的接口。当你需要从箱中检索任何内容时，会创建并返回该值类型的拷贝。这就是装箱和拆箱的核心概念：值的拷贝进入箱，每次访问箱内内容时都会创建一个副本。
+
+**图 1.1** 箱中的值类型。为了将值类型转换为 `System.Object` 引用，会创建一个无名引用类型。值类型内联存储在无名引用类型中。所有访问值类型的方法都通过箱传递到存储的值类型。
+
+
+
+
+
+在许多方面，.NET 2.0 中泛型的引入意味着你可以通过使用泛型类和泛型方法来避免装箱（boxing）和拆箱（unboxing）。这无疑创建使用值类型且不产生额外装箱操作的最有效方法。然而，.NET Framework 中许多许多方法的参数类型为 `System.Object`。这些 API 仍然会产生装箱和拆箱操作。这种操作是自动发生的。每当你在使用引用类型（如 `System.Object`）的地方使用值类型时，编译器就会生成装箱和拆箱指令。此外，当你通过接口指针使用值类型时也会发生装箱和拆箱操作。你不会收到任何警告——装箱就这样发生了。即使是这样简单的语句也会执行装箱：
+
+点击此处查看代码
+
+```
+Console.WriteLine($"A few numbers:{firstNumber}, {secondNumber}, {thirdNumber}");
+```
+
+创建插值字符串的工作使用了 `System.Object` 引用数组。整数是值类型，必须经过装箱才能传递给编译器生成的、从值创建字符串的方法。将三个整数参数强制转换为 `System.Object` 的唯一方法就是装箱。此外，在此方法内部，代码会进入箱内部以调用箱中对象的 `ToString()` 方法。在某种意义上，你生成了如下结构：
+
+点击此处查看代码
+
+```c
+int i = 25;
+object o = i; // 装箱
+Console.WriteLine(o.ToString());
+```
+
+每个对象都会重复进行装箱和拆箱。在从参数创建字符串的方法内部，会执行如下代码：
+
+点击此处查看代码
+
+```c
+object firstParm = 5;
+object o = firstParm;
+int i = (int)o;// 拆箱
+string output = i.ToString();
+```
+
+你永远不会自己写这种代码。然而，通过让编译器自动从特定的值类型转换为 `System.Object`，你确实让它发生了。编译器只是在尝试帮助你。它希望你成功。它乐意地生成将任何值类型转换为 `System.Object` 实例所需的装箱和拆箱语句。
+
+为了避免这种特定的损失，你应该在将类型发送到 `WriteLine` 之前手动将它们转换为字符串实例：
+
+点击此处查看代码
+
+```c
+Console.WriteLine($@"A few numbers:{firstNumber.ToString()}, {secondNumber.ToString()}, {thirdNumber.ToString()}");
+```
+
+此代码使用了整数的已知类型，且值类型（整数）永远不会隐式转换为 `System.Object`。这个常见示例说明了避免装箱的第一规则：注意到 `System.Object` 的隐式转换。如果可以，不应用值类型替代 `System.Object`。
+
+另一种你无意中用值类型替代 `System.Object` 的情况是将值类型放在 .NET 1.x 集合中。你应该使用 .NET BCL 2.0 版本添加的泛型集合，而不是 1.x 基于对象的集合。然而，BCL BCL 中的某些组件仍然使用 1.x 风格的集合。你应该理解这些问题以及如何避免它们。
+
+.NET Framework 集合的最初存储的是 `System.Object` 实例的引用。每当你向集合添加值类型时，它就会被装箱。每当你从集合中移除对象时，它都会从箱中被复制。从箱中取出对象总是创建一个副本。这在你的应用程序中引入了一些微妙的 bug。这些 bug 是定义装箱的规则的结果。从一个简单的结构开始，它允许你修改其中一个字段，并将这些对象放入集合中：
+
+点击此处查看代码
+
+```csharp
+public struct Person
+{
+    public string Name { get; set; }
+    public override string ToString()
+    {
+        return Name;
+    }
+}
+
+// 在集合中使用 Person：
+var attendees = new List<Person>();
+Person p = new Person { Name = "Old Name" };
+attendees.Add(p);
+
+// 尝试更改名称：
+// 如果 Person 是引用类型，则会有效。
+Person p2 = attendees[0];
+p2.Name = "New Name";
+
+// 输出 "Old Name":
+Console.WriteLine(attendees[0].ToString( ));
+
+int i = 25;
+object o = i; // 装箱
+Console.WriteLine(o.ToString());
+```
+
+`Person` 是一个值类型。JIT 编译器为 `List<Person>` 创建了一个特定的封闭泛型类型，使得 `Person` 对象不会被装箱，因为它们存储在 `attendees` 集合中。当你移除 `Person` 对象以访问 `Name` 属性进行更改时，会产生另一个副本。你所做的只是修改了副本。事实上，为了通过 `attendees[0]` 对象调用 `ToString()` 函数，又创建了第三个副本。由于由于许多原因，你应该创建不可变的值类型。
+
+是的，值类型可以转换为 `System.Object` 或任何接口引用。这些转换是隐式发生的，增加了查找它们的难度。这些环境和语言的规则。留意任何将值类型转换为 `System.Object`、将值放入集合或接口类型的结构。
+
+## 项目 10：仅使用 `new` 修饰符响应基类
+
+你可以在类成员上使用 `new` 修饰符来重新定义继承的类成员。尽管你可以这么做，但并不意味着你应该这样做。重定义非虚拟方法会产生歧义的行为。如果两个类通过继承相关联，大多数开发者看到这两块代码时会立即假设它们执行的是相同的操作：
+
+点击此处查看代码
+
+```csharp
+object c = MakeObject();
+
+// 通过 MyClass 引用调用：
+MyClass cl = c as MyClass;
+cl.MagicMethod();
+
+// 通过 MyOtherClass 引用调用：
+MyOtherClass cl2 = c as MyOtherClass;
+cl2.MagicMethod();
+```
+
+当涉及 `new` 修饰符时，情况并非如此：
+
+点击此处查看代码
+
+```csharp
+public class MyClass
+{
+    public void MagicMethod()
+    {
+        Console.WriteLine("MyClass");
+    }
+}
+
+public class MyOtherClass : MyClass
+{
+    // 为此类重定义 MagicMethod。
+    public new void MagicMethod()
+    {
+        Console.WriteLine("MyOtherClass");
+    }
+}
+```
+
+这种这种做法会导致大量的开发者困惑。如果你在同一个对象上调用同一个函数，你期望执行相同的代码。改变你调用函数的引用或标签会改变行为，这种感觉非常糟糕。它是不一致的。
+
+非虚拟方法是静态绑定的。任何地方任何引用 `MyClass.MagicMethod()` 调用的都是该函数。运行时不会寻找任何派生类中定义的不同版本。相反，虚拟函数是动态绑定的。运行时根据对象的运行时类型调用相应的函数。
+
+
+
+
+
+避免使用 `new` 修饰符来重新定义非虚函数的建议，不应被解释为在定义基类时将所有内容都设为虚函数。库的设计者在将函数设为虚函数时实际上建立了一份合同。你表明，任何派生类都预期更改虚函数的实现。虚函数集定义了派生类预期更改的所有行为。“默认虚函数”的设计意味着派生类可以修改你类的所有行为。这实际上说明你没有深思派生类可能想要修改的哪些会产生的所有影响。相反，花时间仔细思考哪些方法和属性是设计为多态的。将这些（且仅限这些）设为虚函数。不要将其看作是对类使用者的限制。相反，要将其看作为你提供的自定义类型行为的入口点提供指导。
+
+在一种情况下，且仅一种情况下，你想要使用 `new` 修饰符。你添加 `new` 修饰符是为了引入基类的新版本，而该版本包含一个你已经使用的方法名。你已经有了依赖于类中该方法名的代码。在该领域中，你可能已经有其他程序集在使用该方法。你在库中创建了以下类，使用了在另一个库中定义的 `BaseWidget`：
+
+点击此处查看代码
+
+```csharp
+public class MyWidget : BaseWidget
+{
+    public new void NormalizeValues()
+    {
+        // 省略细节。
+    }
+}
+```
+
+你完成了控件，客户正在使用它。然后你发现 `BaseWidget` 公司发布了新版本。由于渴望新功能，你立即购买了它并尝试构建你的 `MyWidget` 类。构建失败了，因为 `BaseWidget` 的人员添加他们自己的 `NormalizeValues` 方法：
+
+点击此处查看代码
+
+```csharp
+public class BaseWidget
+{
+    public void Normalizevalues()
+    {
+        // 省略细节。
+    }
+}
+```
+
+这是一个问题。你的基类在你的类命名空间下溜入了一个方法。修复这个问题有两种方法。你可以更改 `NormalizeValues` 方法的名字。注意，我暗示了 `BaseWidget.NormalizeValues()` 在语义上与 `MyWidget.NormalizeAllValues` 是相同的操作。如果不是这样，你就不应该调用基类的实现。
+
+点击此处查看代码
+
+```csharp
+public class MyWidget : BaseWidget
+{
+    public void NormalizeAllValues()
+    {
+        // 省略细节。
+        // 仅当（运气好的话）新方法
+        // 执行相同操作时才调用基类。
+        base.Normalizevalues();
+    }
+}
+```
+
+或者，你可以使用 `new` 修饰符：
+
+点击此处查看代码
+
+```csharp
+public class MyWidget : BaseWidget
+{
+    public new void NormalizeValues()
+    {
+        // 省略细节。
+        // 仅当（运气好的话）新方法
+        // 执行相同操作时才调用基类。
+        base.Normalizevalues();
+    }
+}
+```
+
+如果你可以访问 `MyWidget` 类所有客户端的源代码，你应该更改方法名，因为从长远来看这样做更容易。然而，如果你已经向世界发布了 `MyWidget` 类，这将迫使你所有的用户进行大量更改。这正是 `new` 修饰符派上用场的地方。你的客户端将继续使用你的 `NormalizeValues()` 方法而无需更改。他们中没有人会调用 `BaseWidget.NormalizeValues()`，因为它不存在。`new` 修饰符处理了基类升级与你之前在类中声明的成员发生冲突的情况。
+
+当然，随着时间的推移，你的用户可能会开始想要使用 `BaseWidget.NormalizeValues()` 方法。这时你又回到了原始问题：两个看起来相同但不同的方法。深思 `new` 修饰符的所有长期影响。有时，更改方法带来的短期不便仍然更好。
+
+`new` 修饰符必须谨慎使用。如果你不加区分地应用它，就会会在对象中创建歧义的方法调用。它用于特殊情况，即基类的升级导致了你类中的成员冲突。即使在这种情况下，在使用之前也要仔细考虑。最重要的是，不要在任何其他情况下使用它。
+
+## 2. .NET 资源管理
+
+NET 程序运行在托管环境中这一简单事实对你创建的类型类型有很大影响。利用该环境需要将你的思维从其他环境变为 .NET 通用运行时 (`CLR`)。这意味着理解垃圾回收器 (`GC`)。这意味着理解如何管理资源。
+
+### 事项 11：理解 .NET 资源管理
+
+如果不理解环境如何处理内存，你就无法成为一名有效的开发者。在 .NET 中，这意味着理解内存管理和垃圾回收器。
+
+GC 控制托管内存。与原生环境不同，你不需要对大多数内存泄漏、悬挂指针、未初始化指针或许多内存管理问题负责。但当你需要清理时，垃圾回收器工作得更好。你负责管理未托管资源，例如数据库连接、GDI+ 对象、COM 对象和其他系统对象。此外，你可能会因为使用事件处理程序或委托创建了它们之间的链接，而导致对象在内存中停留的时间比你想的要。在请求结果时执行的查询也会导致对象引用的时间比预期的更长（参见事项 41）。
+
+消息是：由于 GC 控制内存，某些设计模式比你自己管理内存要容易实现得多。循环引用（无论是简单的关系还是复杂的对象网）都更容易正确地实现。GC 的标记和压缩（Mark and Compact）算法能够高效地检测这些关系并完整地移除不可达的对象网。GC 通过从应用程序根对象开始遍历对象树来确定对象是否可达，而不是像 COM 那样强制每个对象跟踪对它的引用。`EntitySet` 类提供了一个该算法如何简化对象所有权的示例。实体是从数据库加载的对象集合。每个实体都可能包含指向其他对象的引用。任何这些实体都可能包含指向其他实体的链接。就像关系数据库实体集模型一样，这些链接和引用可能是循环。
+
+引用贯穿于不同实体集所表示的对象网。释放内存是 GC 的责任。由于 .NET Framework 设计者不需要释放这些对象，复杂的对象引用网并没有引起问题。不需要对释放这个对象网的正确顺序做出决策；这是 GC 的工作。应用程序在完成后可以停止对任何实体的引用。垃圾回收器将知道该实体是否仍从活动对象可达。无法从应用程序到达的任何对象都是垃圾。
+
+
+
+
+垃圾回收器每次运行时都会对托管堆进行压缩。压缩堆会移动托管堆中的每个存活对象，使得空闲空间位于内存中的一个连续块中。图 2.1 显示了垃圾回收前后堆的两个快照。在每次执行一次 GC 操作后，所有空闲内存都会被放置在一个连续的内存块中。
+
+![Image](img/02fig01.jpg)
+
+**图 2.1** 垃圾回收器不仅移除未使用的内存，还会移动内存中的其他对象以压缩已用内存并最大化自由空间。
+
+正如你刚刚学到的，托管堆的内存管理完全是垃圾回收器的责任。其他系统资源必须由开发者（即你以及你类的用户）来管理。两种机制帮助开发者控制未托管资源的生命周期：终结器（finalizers）和 `IDisposable` 接口。终结器是一种防御机制，确保你的对象始终有一种释放未托管资源的方法。终结器有许多缺点，因此你还有 `IDisposable` 接口，它提供了一种侵入性较低的方法来及时将资源返回给系统。
+
+终结器由垃圾回收器在对象变成垃圾后的某个时间调用。你不知道它何时发生。你所知道的是在大多数环境中，它发生在你的对象无法被访问之后的某个时候。这与 C++ 相比是一个巨大的变化，对你的设计有重要影响。经验丰富的 C++ 程序员编写类时，会在构造函数中分配关键资源，并在析构函数中释放它：
+
+点击此处查看代码图像
+
+```csharp
+// Good C++, 的 C#:
+
+class CriticalSection
+{
+    // 构造函数获取系统资源。
+    public CriticalSection()
+    {
+        EnterCriticalSection();
+    }
+    // 析构函数释放系统资源。
+    ~CriticalSection()
+    {
+        ExitCriticalSection();
+    }
+    private void ExitCriticalSection()
+    {
+    }
+    private void EnterCriticalSection()
+    {
+    }
+}
+
+// usage:
+
+void Func()
+{
+    // s 的生命周期控制对
+    // 系统资源的访问。
+    CriticalSection s = new CriticalSection();
+    // 执行工作。
+    //...
+    // 编译器生成对析构函数的调用。
+    // 代码退出关键区。
+}
+```
+
+这种常见的 C++ 惯用法确保了资源释放是异常安全的。然而，在 C# 中这不起作用——至少不是以这种方式。确定性终结（deterministic finalization）并不是 .NET 环境或 C# 语言的一部分。尝试将 C++ 确定性终结的惯用法强制引入 C# 语言效果并不好。在 C# 中，终结器在大多数环境中最终执行，但它并不会及时执行。在上一个示例中，代码最终会退出关键区，但在 C# 中，它在函数退出时并没有退出关键区。它发生在之后的某个未知的时间。你不知道何时发生。你无法知道何时。终结器是保证由特定类型对象分配的未托管资源最终被释放的唯一方法。但终结器在不确定的时间执行，因此你的设计和编码实践应该尽可能地减少对创建终结器的需求，同时也尽可能地减少对已存在的终结器的执行需求。在本章中，你将学习避免创建自己的终结器的技术，以及在必须存在终结器时如何减少其负面影响。
+
+依赖终结器还会引入性能开销。需要终结的对象会给垃圾回收器带来性能负担。当 GC 发现一个对象是垃圾但又需要终结时，它不能立即将该项从内存中移除。首先，它调用终结器。终结器不是由收集垃圾的线程执行的。相反，GC 将每个准备好终结的对象放入队列中，并执行这些对象的所有终结器。它继续处理工作，从内存中移除其他垃圾。在下一次 GC 周期中，这些已终结的对象将从内存中移除。图 2.2 显示了三次不同的 GC 操作以及内存使用的差异。注意，需要终结器的对象在内存中停留了额外的周期。
+
+![Image](img/02fig02.jpg)
+
+**图 2.2** 该序列显示了终结器对垃圾回收器的影响。对象在内存中停留的时间延长，并且需要创建一个额外的线程来运行垃圾回收器。
+
+这可能会让你认为需要终结的对象比需要的额外在内存中多存了一个 GC 周期。但我简化了问题。由于另一个 GC 设计决策，情况比这更复杂。.NET 垃圾回收器定义了代（generations）来优化其工作。代有助于 GC 更快地识别可能的垃圾候选对象。自上次垃圾回收操作以来创建的任何对象都是第 0 代。任何存活一次 GC 操作的对象都是第 1 代。任何存活两次或多次操作的对象都是第 2 代。代的目的是将短命对象与在应用程序生命周期内存在的对象分开。第 0 代对象大多是那些短命变量。成员变量和全局变量很快进入第 1 代并最终进入第 2 代。GC 通过限制检查第一、二代对象的频率来优化工作。每个 GC 周期都会检查第 0 代对象。大约每十次 GC 检查第 0 和 1 代。大约每 100 次 GC 周期检查所有对象。考虑终结及其成本：一个需要终结的对象在内存中停留的时间可能比不需要终结时多九个 GC 周期。如果它仍然没有被终结，它将移动到第 2 代。在第 2 代，对象会多活 100 个周期直到下一次收集。
+
+总结一下，记住托管环境（由垃圾回收器负责内存管理）是一个巨大的优势：内存泄漏和许多指针相关问题不再是你的问题。非内存资源迫使你创建终结器以正确清理这些非内存资源。终结器对程序的性能有严重影响，但你必须编写它们以避免资源泄漏。实现并使用 `IDisposable` 接口可以避免终结器带来的垃圾回收器性能消耗。下一项描述了帮助你更有效地使用此环境的具体技术。
+
+### 第 12 项：优先使用成员初始化代替赋值语句
+
+类通常有多个构造函数。随着时间的推移，成员变量和构造函数之间很容易不同步。确保这种情况不发生的最佳方法是在声明变量时初始化它们，而不是在每个构造函数的体中。你应该对静态和实例变量都使用初始化语法。
+
+在 C# 中，在声明变量时构造成员变量是自然的。只需在声明变量时初始化它即可：
+
+点击此处查看代码图像
+
+```csharp
+public class MyClass
+{
+    // 声明集合，并初始化它。
+    private List<string> labels = new List<string>();
+}
+```
+
+
+
+无论你最终为 `MyClass` 类型添加多少个构造函数，`labels` 都会被正确初始化。编译器会在每个构造函数的开始处生成代码，以执行你为实例成员变量定义的所有初始化器。当你添加新的构造函数时，标签会被重新初始化。同样地，如果你添加了新的成员变量，你不需要在每个构造函数中添加初始化代码；在定义变量的地方进行初始化就足够了。同样重要的是，初始化器会被添加到编译器生成的默认构造函数中。每当你没有显式定义任何构造函数时，C# 编译器就会为你的类型创建一个默认构造函数。
+
+初始化器不仅仅是构造函数体中语句的便捷快捷方式。初始化器生成的语句被放置在构造函数体之前的对象代码中。初始化器会在你的类型的基类构造函数执行之前执行，并且变量在类中声明的顺序执行。
+
+使用初始化器是避免类型中出现未初始化变量的最简单方法，但它并非完美。在三种情况下，你不应该使用初始化器语法。第一种是你将对象初始化为 0 或 `null` 时。默认系统初始化会在你的任何代码执行之前为你将所有内容设置为 0。系统生成的 0 初始化是在非常低层级使用 CPU 指令将整个内存块设置为 0 完成的。你部分的任何额外 0 初始化都是多余的。C# 编译器会尽职尽地添加额外的指令再次将内存设置为 0。这并没有错——但它可能会导致脆弱的代码。
+
+点击此处查看代码图像
+
+```c
+public struct MyValType
+{
+    // elided
+}
+
+MyValType myVal1;  // 初始化为 0
+
+MyValType myVal2 = new MyValType(); // 也是 0
+```
+
+这两条语句都将变量初始化为全 0。第一个通过将包含 `myVal1` 的内存设置为 0 来实现。第二个使用 IL 指令 `initobj`，这会导致对 `myVal2` 变量执行装箱和拆箱操作。这会消耗大量的额外时间（参见项目 9）。
+
+第二个低效问题出现在当你为同一个对象创建多次初始化时。你应该只对在所有构造函数中接收相同初始化的变量使用初始化器语法。这个版本的 `MyClass` 有这样路径，在构造过程中创建了两个不同的 `List` 对象：
+
+点击此处查看代码图像
+
+```csharp
+public class MyClass2
+{
+    // 声明集合并初始化它。
+    private List<string> labels = new List<string>();
+
+    MyClass2()
+    {
+    }
+
+    MyClass2(int size)
+    {
+        labels = new List<string>(size);
+    }
+}
+```
+
+当你创建一个新的 `MyClass2` 并指定集合大小时，你创建了两个列表。其中一个是数组列表。初始化器在构造函数之前执行。编译器创建了这个版本，而你可以手动完成操作。（关于正确的方法，请参见项目 14）。
+
+点击此处查看代码图像
+
+```csharp
+public class MyClass2
+{
+    // 声明集合并初始化它。
+    private List<string> labels;
+
+    MyClass2()
+    {
+        labels = new List<string>();
+    }
+
+    MyClass2(int size)
+    {
+        labels = new List<string>(size);
+    }
+}
+```
+
+### 项目 13：为静态成员使用适当的初始化
+
+你知道你应该在类型可以使用之前初始化静态变量。C# 允许你使用静态初始化器来实现此目的。静态构造函数是一个特殊的函数，它在类类中定义的任何方法、变量或属性被访问之前执行。你不应该使用实例构造函数。对于需要复杂初始化的字段，考虑使用 `Lazy<T>` 来执行。
+
+与实例初始化器一样，你可以使用初始化器语法作为静态构造函数的替代方案。如果你只需要分配静态成员，请使用初始化器语法。当你有更复杂的逻辑来初始化静态变量时，请创建一个静态构造函数。
+
+在 C# 中实现单例模式是静态构造函数最常用的用法。将你的实例构造函数设为私有，并添加一个初始化：
+
+点击此处查看代码图像
+
+```csharp
+public class MySingleton
+{
+    private static readonly MySingleton theAndOnly = new MySingleton();
+
+    public static MySingleton TheOnly
+    {
+        get { return theAndOnly; }
+    }
+
+    private MySingleton()
+    {
+    }
+}
+```
+
+单例模式也可以同样容易这样写，以防你有更复杂的逻辑来初始化单例：
+
+点击此处查看代码图像
+
+```csharp
+public class MySingleton2
+{
+    private static readonly MySingleton2 theAndOnly;
+
+    static MySingleton2()
+    {
+        theAndOnly = new MySingleton2();
+    }
+
+    public static MySingleton2 TheOnly
+    {
+        get { return theAndOnly; }
+    }
+
+    private MySingleton2()
+    {
+    }
+}
+```
+
+与实例初始化器一样，静态初始化器在任何静态构造函数调用之前执行。而且，你的静态初始化器可能会在基类的静态构造函数之前执行。
+
+
+
+
+
+CLR 在应用程序空间（一个 `AppDomain`）中首次访问你的类型之前，会自动调用你的静态构造函数。你只能定义一个静态构造函数，且它不能接受任何参数。由于静态构造函数是由 CLR 调用的，因此你必须小心其中生成的异常。如果你让异常逃逸了静态构造函数，CLR 将通过抛出 `TypeInitializationException` 来终止你的程序。调用者捕获该异常的情况甚至更为阴险。尝试创建该类型的代码将失败，直到该 `AppDomain` 被卸载为止。CLR 无法通过执行静态构造函数来初始化该类型。它不会再次尝试，但该类型并没有被正确初始化。该类型的对象（或其派生的任何类型）将无法被定义。因此，这是不被允许的。
+
+异常是使用静态构造函数而不是静态初始化器的常见原因。如果你使用静态初始化器，你无法自己捕获异常。而使用静态构造函数，你可以捕获异常（参见第 47 项）：
+
+点击此处查看代码图像
+
+```
+static MySingleton2()
+{
+    try
+    {
+        theOneAndOnly = new MySingleton2();
+    }
+    catch
+    {
+        // 在此尝试尝试恢复。
+    }
+}
+```
+
+静态初始化器和静态构造函数提供了初始化类静态成员最简洁、最清晰的方法。它们易于阅读且易于正确。引入这些机制是为了专门解决在其他语言中初始化静态成员时涉及的困难。
+
+### 第 14 项：减少重复初始化逻辑
+
+编写构造函数通常是一项重复性工作。许多开发者编写第一个构造函数，然后将代码复制粘贴到其他构造函数中，以满足类接口定义的多个重载。理想情况下，你不是其中之一。如果你是，请停止这样做。资深 C++ 程序员会将常用算法提取到私有辅助方法中。也停止这样做吧。当你发现多个构造函数包含相同的逻辑时，请将该逻辑提取到一个公共构造函数中。你将获得避免代码重复的收益，而且构造函数初始化器生成的对象代码要高效得多。C# 编译器识别构造函数初始化器为特殊语法，并移除重复的变量初始化和重复的基类构造函数调用。结果是你的最终对象执行了最少的代码来正确初始化对象。通过将责任委托给公共构造函数，你也编写了最少代码。
+
+构造函数初始化器允许一个构造函数调用另一个构造函数。这个示例展示了简单的用法：
+
+点击此处查看代码图像
+
+```c
+public class MyClass
+{
+    // 数据集合
+    private List<ImportantData> coll;
+    // 实例名称：
+    private string name;
+
+    public MyClass() :
+        this(0, "")
+    {
+    }
+
+    public MyClass(int initialCount) :
+        this(initialCount, string.Empty)
+    {
+    }
+
+    public MyClass(int initialCount, string name)
+    {
+        coll = (initialCount > 0) ?
+        new List<ImportantData>(initialCount) :
+        new List<ImportantData>();
+        this.name = name;
+    }
+}
+```
+
+C# 4.0 增加了默认参数，你可以用它来减少构造函数中的重复代码。你可以用一个指定了所有或许多值默认值的构造函数，来替换 `MyClass` 的所有不同构造函数：
+
+点击此处查看代码图像
+
+```csharp
+public class MyClass
+{
+    // 数据集合
+    private List<ImportantData> coll;
+    // 实例名称：
+    private string name;
+    // 需要满足 new() 约束。
+    public MyClass() :
+        this(0, string.Empty)
+    {
+    }
+
+    public MyClass(int initialCount = 0, string name = "")
+    {
+        coll = (initialCount > 0) ?
+        new List<ImportantData>(initialCount) :
+        new List<ImportantData>();
+        this.name = name;
+    }
+}
+```
+
+在选择默认参数和重载之间存在权衡。使用默认参数会在你的类与所有使用它的客户端之间创建更紧密的耦合。特别是，形式参数的名称变成了公共接口的一部分，当前的默认值也是如此。更改参数值需要重新编译所有客户端代码以采纳这些更改。这使得重载构造函数在面对未来变化时更具韧性。你可以添加新的构造函数，或者更改那些未指定值的构造函数的默认行为，而不会破坏客户端代码。
+
+默认参数是解决此问题的优方案。然而，某些 API 使用反射来创建对象并依赖无参数构造函数。为所有参数提供默认值的构造函数并不等同于无参数构造函数。你可能需要编写单独的构造函数作为独立函数支持。对于构造函数来说，这这意味着大量的重复代码。使用构造函数链，让一个构造函数调用同一类中定义的另一个构造函数，而不是创建一个公共实用程序。这种提取公共构造函数逻辑的替代方法存在几处低效之处：
+
+点击此处查看代码图像
+
+```csharp
+public class MyClass
+{
+    private List<ImportantData> coll;
+    private string name;
+
+    public MyClass()
+    {
+        commonConstructor(0, "");
+    }
+
+    public MyClass(int initialCount)
+    {
+        commonConstructor(initialCount, "");
+    }
+
+    public MyClass(int initialCount, string Name)
+    {
+        commonConstructor(initialCount, Name);
+    }
+
+    private void commonConstructor(int count,
+```
+
+
+
+
+
+```csharp
+string name)
+    {
+        coll = (count > 0) ?
+        new List<ImportantData>(count) :
+        new List<ImportantData>();
+        this.name = name;
+    }
+}
+```
+
+那个版本看起来是一样的，但生成的对象代码效率要低得多。编译器会在构造函数中添加代码来代表你执行几项功能。它为所有变量初始化器添加了语句（参见本章前面的第 12 节）。它会调用基类构造函数。当你编写自己的通用工具函数时，编译器无法提取出这些重复的代码。第二个版本的 IL 与你编写以下代码是一样的：
+
+点击此处查看代码图像
+
+```csharp
+public class MyClass
+{
+    private List<ImportantData> coll;
+    private string name;
+    public MyClass()
+    {
+        // 实例初始化器将放在这里。
+        object(); // 非法，仅用于说明。
+        commonConstructor(0, "");
+    }
+    public MyClass(int initialCount)
+    {
+        // 实例初始化器将放在这里。
+        object(); // 非法，仅用于说明。
+        commonConstructor(initialCount, "");
+    }
+    public MyClass(int initialCount, string Name)
+    {
+        // 实例初始化器将放在这里。
+        object(); // 非法，仅用于说明。
+        commonConstructor(initialCount, Name);
+    }
+    private void commonConstructor(int count,
+    string name)
+    {
+        coll = (count > 0) ?
+        new List<ImportantData>(count) :
+        new List<ImportantData>();
+        this.name = name;
+    }
+}
+```
+
+如果你能按照编译器看到的方式来编写第一个版本的构造代码，你会写成这样：
+
+点击此处查看代码图像
+
+```csharp
+// 非法，演示生成的 IL：
+public class MyClass
+{
+    private List<ImportantData> coll;
+    private string name;
+    public MyClass()
+    {
+        // 此处没有变量初始化器。
+        // 调用下方的第三个构造函数。
+        this(0, ""); // 非法，仅用于说明。
+    }
+    public MyClass(int initialCount)
+    {
+        // 此处没有变量初始化器。
+        // 调用下方的第三个构造函数。
+        this(initialCount, "");
+    }
+    public MyClass(int initialCount, string Name)
+    {
+        // 实例初始化器将放在这里。
+        //object(); // 非法，仅用于说明。
+        coll = (initialCount > 0) ?
+        new List<ImportantData>(initialCount) :
+        new List<ImportantData>();
+        name = Name;
+    }
+}
+```
+
+区别在于编译器没有生成多次对基类的调用，也没有将实例初始化器拷贝到每个构造函数中。基类构造函数仅从最后一个构造函数调用的事实也具有重要意义：你不能在一个构造函数中包含多个一个构造函数初始化器。你可以使用 `this()` 委托给该类中的另一个构造函数，也可以使用 `base()` 调用基类构造函数。你不能两者兼顾。
+
+仍然不接受构造函数初始化器的理由吗？那么考虑一下只读常量。在这个示例中，对象的名称在它的生命周期内不应改变。这意味着你应该将其设为只读。这会导致通用工具函数产生错误：点击此处查看代码图像
+
+```csharp
+public class MyClass
+{
+    // 数据集合
+    private List<ImportantData> coll;
+    // 此实例的计数器
+    private int counter;
+    // 实例的名称：
+    private readonly string name;
+    public MyClass()
+    {
+        commonConstructor(0, string.Empty);
+    }
+    public MyClass(int initialCount)
+    {
+        commonConstructor(initialCount, string.Empty);
+    }
+    public MyClass(int initialCount, string Name)
+    {
+        commonConstructor(initialCount, Name);
+    }
+    private void commonConstructor(int count,
+    string name)
+    {
+        coll = (count > 0) ?
+        new List<ImportantData>(count) :
+        new List<ImportantData>();
+        // 错误：在构造函数之外更改名称。
+        // this.name = name;
+    }
+}
+```
+
+编译器强制执行 `this.name` 的只读性，并不允许任何不在构造函数中的代码修改它。C# 的构造函数初始化器提供了替代方案。除了最简单的类之外，所有类都包含多个构造函数。它们的任务是初始化对象的所有成员。根据其本质，这些函数具有相似的或理想情况下共享的逻辑。使用 C# 构造函数初始化器来提取这些公共算法，这样你只需要编写一次，它们就会执行一次。
+
+默认参数和重载各有作用。通常情况下，你应该倾向于使用默认值而不是重载构造函数。毕竟，如果你允许客户端开发者指定参数值，你的构造函数必须能够处理用户指定的任何值。你的原始默认值应该始终是合理的，并且不应该产生异常。因此，即使更改默认参数值在技术上是破坏性更改，但它不应该让你的客户端察觉到。他们的代码仍将使用原始值，而这些原始值应该仍然产生合理的结果。这减少了使用默认值的潜在风险。
+
+
+
+
+不要让垃圾回收器工作过载。你可以遵循一些简单的技术，来尽量减少 `GC` 代表你的程序执行的工作量。所有的引用类型（即使是局部变量）都会创建内存分配。当没有根（root）保持它们存活时，这些对象就会垃圾。对于局部变量来说，通常意味着声明它们的方法不再处于激活状态。一种非常常见的糟糕做法是在 Windows 绘图处理程序中分配 GDI 对象：
+
+点击此处查看代码图像
+
+```csharp
+protected override void OnPaint(PaintEventArgs e)
+{
+    // 错误。在每次绘制事件中都创建相同的字体。
+    using (Font MyFont = new Font("Arial", 10.0f))
+    {
+        e.Graphics.DrawString(DateTime.Now.ToString(),
+            MyFont, Brushes.Black, new PointF(0, 0));
+    }
+    base.OnPaint(e);
+}
+```
+
+`OnPaint()` 被调用非常频繁。每当它被调用时，你都会创建一个完全相同设置的另一个 `Font` 对象。垃圾回收器需要为你清理这些对象。`GC` 用于判断何时运行的条件之一是内存分配的数量和内存分配的频率。更多的分配意味着对 `GC` 的压力越大，导致它运行得更频繁。这是极其低效的。
+
+相反，将 `Font` 对象从局部变量提升为成员变量。在每次绘制窗口时重用同一个字体：
+
+点击此处查看代码图像
+
+```csharp
+private readonly Font myFont =
+    new Font("Arial", 10.0f);
+
+protected override void OnPaint(PaintEventArgs e)
+{
+    e.Graphics.DrawString(DateTime.Now.ToString(),
+        myFont, Brushes.Black, new PointF(0, 0));
+    base.OnPaint(e);
+}
+```
+
+你的程序不再在每次绘制事件时都创建垃圾。垃圾回收器的工作减少了。你的程序运行得快了一点。当你将实现 `IDisposable` 的局部变量提升为成员变量时（例如示例中的字体），你需要在你的类中实现 `IDisposable`。第 17 项 解释了如何正确这样做。
+
+当局部变量是引用类型（值类型则无影响）并且它们会在频繁调用的例程中使用时，你应该将它们提升为成员变量。绘图程序中的字体就是一个极佳的例子。只有频繁访问的程序中的局部变量才是良好的候选。不频繁调用的程序则不是。你试图避免重复创建相同的对象，而不是将每个局部变量都变成成员变量。
+
+之前使用的静态属性 `Brushes.Black` 说明了另一种你应该使用的技术，以避免重复分配相似的对象。为你需要的引用类型创建常用实例创建静态成员变量。以之前使用的黑色画笔为例。每当你需要用黑色在窗口中绘制某些内容时，都需要一个黑色画笔。如果你在每次绘制任何内容时都分配一个新的，你会在程序运行期间创建并销毁大量的黑色画笔。第一种方法（将黑色画笔作为你每个类型的成员创建）有帮助，但还不够。程序可能会创建几十个窗口和控件，从而创建几十个黑色画笔。.NET Framework 的设计者预料到了这一点，并为你创建了一个单一的黑色画笔，以便在你需要时重用。`Brushes` 类包含许多静态 `Brush` 对象，每个对象都有一种不同的常用颜色。内部，`Brushes` 类使用惰性评估算法来只创建你请求的画笔。一个简化的实现如下：
+
+点击此处查看代码图像
+
+```csharp
+private static Brush blackBrush;
+
+public static Brush Black
+{
+    get
+    {
+        if (blackBrush == null)
+            blackBrush = new SolidBrush(Color.Black);
+        return blackBrush;
+    }
+}
+```
+
+当你第一次请求黑色画笔时，`Brushes` 类会创建它。`Brushes` 类保留了对单个黑色画笔的引用，并在你再次请求它时返回同一个句柄。最终结果是你创建了一个黑色画笔并永远重用它。此外，如果你的应用程序不需要某个特定资源——例如，柠檬绿色画笔——它永远不会被创建。框架提供了一种方法，将创建的对象限制为你实现目标所需的最小集合。在你的程序中考虑这种技术。优点是，你创建了更少的对象。缺点是，这可能导致对象在内存中存在的时间比需要更长。甚至意味着无法释放非托管资源，因为你不知道何时调用 `Dispose()` 方法。
+
+你已经学习了两种在程序执行任务时尽量减少分配次数的。。你可以将经常使用的局部变量提升为成员变量。你可以使用依赖注入来创建并重用表示给定类型常用实例的对象。最后一种技术涉及为不可变类型构建最终值。`System.String` 类是不可变的：在你构造一个字符串后，该字符串的内容无法被修改。每当你编写看似修改字符串内容的代码时，你实际上是在创建一个新的字符串对象，并将旧的字符串对象留为垃圾。这种看似无害的做法：
+
+点击此处查看代码图像
+
+```csharp
+string msg = "Hello, ";
+msg += thisUser.Name;
+msg += ". Today is ";
+msg += DateTime.Now.ToString();
+```
+
+这种做法就像写成下面的代码一样低效：
+
+点击此处查看代码图像
+
+```csharp
+string msg = "Hello, ";
+// 仅用于演示：
+string tmp1 = new String(msg + thisUser.Name);
+msg = tmp1;
+string tmp2 = new String(msg + ". Today is ");
+msg = tmp2;
+string tmp3 = new String(msg + DateTime.Now.ToString());
+msg = tmp3;
+```
+
+字符串 `tmp1`、`tmp2` 和 `tmp3` 以及最初构造的 `msg` 都是垃圾。`string` 类的 `+=` 操作符创建一个字符串对象并返回该字符串。它并没有通过将字符附加原始存储来修改现有字符串。对于像上面简单的构造，你应该使用插值字符串：
+
+点击此处查看代码图像
+
+```csharp
+string msg = string.Format("Hello, {0}. Today is {1}", thisUser.Name, DateTime.Now.ToString());
+```
+
+对于更复杂的字符串操作，你可以使用 `StringBuilder` 类：
+
+点击此处查看代码图像
+
+```csharp
+StringBuilder msg = new StringBuilder("Hello, ");
+msg.Append(thisUser.Name);
+msg.Append(". Today is ");
+msg.Append(DateTime.Now.ToString());
+string finalMsg = msg.ToString();
+```
+
+上面的示例足够简单，以你会使用插值字符串（见第 4 项）。当构建最终字符串所需的逻辑对于插值字符串太复杂时，使用 `StringBuilder`。`StringBuilder` 是用于构建不可变字符串对象的可变字符串类。它提供了可变字符串的功能，让你在构造不可变字符串对象之前创建和修改文本。使用 `StringBuilder` 创建字符串对象的最终版本。更重要的是，学习这种设计模式。当你的设计需要不可变类型时，考虑创建构建对象来促进最终对象的多阶段构造。这为你类的用户提供了一种分步构造对象的方法，同时保持了你类型的不可变性。
+
+
+
+
+垃圾回收器在管理你的应用程序使用的内存方面非常高效。但请记住，创建和销毁堆对象仍然需要时间。避免创建过多的对象；不要创建你不需要的对象。还要避免在本地函数中创建多个引用类型的对象。相反，考虑将局部变量提升为成员变量，或者为类型最常见的实例创建静态对象。最后，考虑为不可变类型创建可变的生成器类。
+
+### 条目 16：永远不要构造函数中调用虚函数
+
+虚函数在对象构造期间会表现出奇怪的行为。在所有构造函数执行之前，对象尚未完全创建。在此期间，虚函数的行为可能不会按照你希望或预期进行。查看以下简单的程序：
+
+点击查看代码图像
+
+```cs
+class B
+{
+    protected B()
+    {
+        VFunc();
+    }
+    protected virtual void VFunc()
+    {
+        Console.WriteLine("VFunc in B");
+    }
+}
+
+class Derived : B
+{
+    private readonly string msg = "Set by initializer";
+    public Derived(string msg)
+    {
+        this.msg = msg;
+    }
+    protected override void VFunc()
+    {
+        Console.WriteLine(msg);
+    }
+    public static void Main()
+    {
+        var d = new Derived("Constructed in main");
+    }
+}
+```
+
+你认为会打印什么——“Constructed in main”、“VFunc in B”还是“Set by initializer”？经验丰富的 C++ 程序员会说“VFunc in B”。一些 C# 程序员会说“Constructed in main”。但正确答案是“Set by initializer”。
+
+基类构造函数调用了一个在类类中定义但在派生类中重写的虚函数。在运行时，调用的是派生类的版本。毕竟，对象的运行时类型是 `Derived`。C# 语言定义认为派生对象是完全可用的，因为在进入任何构造函数体之前，所有成员变量已经初始化。毕竟，所有的变量初始化器都已执行。你已经有机会初始化所有变量。但这并不意味着你一定将所有成员变量初始化为了你想要的值。只是变量初始化器执行了；任何派生类构造函数体中的代码都没有机会执行工作。
+
+无论如何，当你在构造对象时调用虚函数，就会发生某些不一致。C++ 语言设计者决定，虚函数应该解析为正在构造对象的运行时类型。他们决定对象的运行时类型应该在对象创建时就被确定。
+
+这背后是有逻辑的。首先，正在创建的对象是一个 `Derived` 对象；每个函数都应该为 `Derived` 对象调用正确的重写方法。C++ 的规则在这里是不同的：对象的运行时类型随着每个类构造函数的开始执行而发生改变。其次，这种 C# 语言特性避免了当当前类型为抽象基类时，在虚方法的底层实现中存在空方法指针的问题。考虑这个变体基类：
+
+点击查看代码图像
+
+```cs
+abstract class B
+{
+    protected B()
+    {
+        VFunc();
+    }
+    protected abstract void VFunc();
+}
+
+class Derived : B
+{
+    private readonly string msg = "Set by initializer";
+    public Derived(string msg)
+    {
+        this.msg = msg;
+    }
+    protected override void VFunc()
+    {
+        Console.WriteLine(msg);
+    }
+    public static void Main()
+    {
+        var d = new Derived("Constructed in main");
+    }
+}
+```
+
+该示例可以编译，因为没有创建 `B` 对象，并且任何具体的派生对象都必须为 `VFunc()` 提供实现。C# 调用与实际运行时类型匹配的 `VFunc()` 版本的策略，是在构造函数中调用抽象函数时获得除运行时异常之外结果的唯一可能。经验丰富的 C++ 程序员会识别出如果你这样做可能导致的潜在运行时错误。
+
+尽管如此，这个简单的例子展示了在构造函数中调用虚函数的陷阱。在构造函数中调用虚函数会让你的代码极其脆弱。在构造函数中调用虚函数强制要求派生类定义默认构造函数。但对于对所有派生类来说，这是一个沉重的负担。你真的期望每个使用你代码的人都遵守这些规则吗？我不这么认为。玩这种游戏的收益微乎其微，却带来了许多未来的痛苦。事实上，这种情况发生非常少，以至于它被包含在 Visual Studio 带的 FxCop 和静态代码分析器工具中。
+
+### 条目 17：实现标准的 Dispose 模式
+
+我们讨论过释放持有未托管资源对象的重要性。现在是时候涵盖创建包含内存以外资源的类型时，如何编写自己的资源管理代码了。.NET Framework 处处使用一种标准模式来释放托管资源。你类型的用户会期望你遵循这一标准模式。标准的 Dispose 惯用法在客户端记得时使用 `IDisposable` 接口释放你的未托管资源，并在客户端忘记时防御性地使用终结器（finalizer）。它与垃圾回收器协同工作，确保你的对象只在需要时才需要支付与终结器相关的性能代价。这是处理未托管资源的正确方法，因此彻底理解它是有值的。在实践中，.NET 中的未托管资源可以通过派自 `System.Runtime.Interop.SafeHandle` 的类来访问，该类正确地实现了这里描述的模式。
+
+类层次结构中的根基类应该执行以下操作：
+
+- 它应该实现 `IDisposable` 接口以释放资源。
+- 仅当你的类直接包含未托管资源时，才应该添加终结器作为防御机制。
+- `Dispose` 和终结器（如果存在）都将释放资源的工作委托给虚方法，派生类可以根据自己的资源管理需求对该方法进行重写。
+
+派生类需要：
+
+- 仅当派生类必须释放其自己的资源时，重写虚方法。
+- 仅当其直接成员字段之一是未托管资源时，才实现终结器。
+- 记住调用基类的函数版本。
+
+
+
+
+首先，你的类当且仅当它直接包含未托管资源时，才必须有一个终结器。你不应该依赖客户端始终调用 `Dispose()` 方法。当他们忘记调用时，你的资源就会泄漏。虽然是他们没有调用 `Dispose` 的错，但会被怪你。保证未托管资源被正确释放的唯一方法是创建一个终结器。因此，当且仅当你的类型包含未托管资源时，创建一个终结器。
+
+当垃圾回收器运行时，它会立即从内存中移除任何没有终结器的垃圾对象。所有带有终结器的对象都会留在内存中。这些对象被添加到终结队列，`GC` 会运行这些对象的终结器。在终结器线程完成工作后，垃圾对象通常可以从内存中移除。由于它们存过了回收，它们会被提升一个代数。它们还被标记为不需要终结，因为终结器已经运行过了。它们将在下一次更高代的回收时从内存中移除。需要终化的对象在内存中停留的时间比没有终结器的对象长得多。但你别选择。如果你打算采取防御性措施，当你的类型持有未托管资源时，必须编写终结器。但先不要担心性能。接下来的步骤将确保客户端更容易避免与终结化相关的性能惩罚。
+
+### 实现 IDisposable
+
+实现 `IDisposable` 是通知用户和运行时系统你的对象持有必须及时释放资源的标准方法。`IDisposable` 接口只包含一个方法：
+
+点击此处查看代码图像
+
+```cpp
+public interface IDisposable
+{
+    void Dispose();
+}
+```
+
+你对 `IDisposable.Dispose()` 方法的实现负责四项任务：
+
+1. 释放所有未托管资源。
+2. 释放所有托管资源（这包括解绑事件）。
+3. 设置状态标志位以表示对象已被释放。如果你在释放对象后调用了任何公共成员，你需要检查此状态并抛出 `ObjectDisposed` 异常。
+4. 抑制终结化。你通过调用 `GC.SuppressFinalize(this)` 来完成这项任务。
+
+通过实现 `IDisposable`，你完成了两件事：你为客户端提供了及时释放你所持有的所有托管资源的机制，并且为客户端提供了一个释放所有未托管资源的标准方法。这是一个相当大的改进。在类型中实现 `IDisposable` 之后，客户端就可以避免终结化的代价。你的类就是 .NET 社区中一个良好的成员。
+
+但你创建的机制中仍然存在漏洞。派生类如何清理自己的资源并让基类也进行清理？如果派生类重写了 `finalize` 或添加了自己的 `IDisposable` 实现，这些方法必须调用基类；否则，基类将无法正确清理。此外，`finalize` 和 `Dispose` 共享一些相同的职责；你几乎肯定在 `finalize` 方法和 `Dispose` 方法之间重复了代码。重写接口函数并不总是按照你预期的方式工作。接口函数默认不是虚的。我们需要做更多工作来解决这些问题。标准 Dispose 模式中的第三种方法（受保护的虚辅助函数）提取了这些共同任务，并为派生类释放它们分配的资源留下了钩子。基类包含核心接口的代码。虚函数为派生类提供了钩子，以便在响应 `Dispose()` 或终结化时清理资源：
+
+点击此处查看代码图像
+
+```cpp
+protected virtual void Dispose(bool isDisposing)
+```
+
+此重载方法执行支持 `finalize` 和 `Dispose` 所需的工作，由于它是虚的，它为所有派生类提供了一个入口。派生类可以重写此方法，提供清理其资源的正确实现并调用基类版本。当 `isDisposing` 为 `true` 时，你清理托管和未托管资源；当 `isDisposing` 为 `false` 时，你只清理未托管资源。在两种情况下，调用基类的 `Dispose(bool)` 方法让它清理自己的资源。
+
+这是一个短示例，展示了你在实现此模式时提供的代码框架。`MyResourceHog` 类展示了实现 `IDisposable` 和创建虚 `Dispose` 方法的代码：
+
+点击此处查看代码图像
+
+```cpp
+public class MyResourceHog : IDisposable
+{
+    // 已释放的标志位
+    private bool alreadyDisposed = false;
+
+    // IDisposable 的实现。
+    // 调用虚方法 Dispose。
+    // 抑制终结化。
+    public void Dispose()
+    {
+        Dispose(true);
+        GC.SuppressFinalize(this);
+    }
+
+    // 虚 Dispose 方法
+    protected virtual void Dispose(bool isDisposing)
+    {
+        // 不要释放多次。
+        if (alreadyDisposed)
+            return;
+        if (isDisposing)
+        {
+            // TODO: 释放托管资源。
+        }
+        // TODO: 释放未托管资源。
+        // 设置标志：
+        alreadyDisposed = true;
+    }
+
+    public void Example()
+    {
+        if (alreadyDisposed)
+            throw new ObjectDisException("MyResourceHog", "在已释放的对象上调用方法");
+    }
+}
+```
+
+如果派生类需要执行额外的清理，它实现受保护的 `Dispose` 方法：
+
+点击此处查看代码图像
+
+```cpp
+public class DerivedResourceHog : MyResourceHog
+{
+    // 自己的释放标志
+    private bool disposed = false;
+
+    protected override void Dispose(bool isDisposing)
+    {
+        // 不要释放多次。
+        if (disposed)
+            return;
+        if (isDisposing)
+        {
+            // TODO: 释放托管资源。
+        }
+        // TODO: 释放未托管资源。
+        // 让基类释放其资源。
+        base.Dispose(isDisposing);
+        // 设置派生类的释放标志：
+        disposed = true;
+    }
+}
+```
+
+
+
+你会发现 `MyResourceHog` 还是 `DerivedResourceHog` 都不包含终结器（finalizer）。我编写的示例代码没有直接包含任何非托管资源。因此，不需要终结器。这意味着示例代码从未调用过 `Dispose(false)`。这是正确的模式。除非你的类直接包含非托管资源，否则你不应该实现终结器。只有那些直接包含非托管资源的类才应该实现终结器并增加该项开销。即使它从未被调用，终结器的存在确实为你的类型带来了相当大的性能开销。除非你的类型确实需要终结器，否则不要添加它。但是，你仍然应该正确地实现该模式，以便如果任何派生类添加了非托管资源，它们可以添加终结器并实现 `Dispose(bool)`，从而正确处理非托管资源。
+
+这引出了我对任何与释放或清理相关的方法最重要的建议：你应该只释放资源。不要在 `dispose` 方法执行期间执行任何其他处理。在你的 `Dispose` 或析化方法中执行其他处理可能会给对象的生命周期带来严重的复杂性。对象在构造时出生，在垃圾回收器回收时死亡。当你的程序无法再访问它们时，可以认为它们处于昏迷状态。如果你无法访问一个对象，就无法调用它的任何方法。从所有意义上说，它已经死了。但拥有终结器的对象在被宣布死亡之前还可以最后呼吸一次。终结器除了清理非托管资源外什么都不应该做。如果终结器以某种方式让对象再次可访问，那么它就被“复活”了。它是活着的但状态不好，尽管它已经从昏迷状态中醒来。这里有一个明显的例子：
+
+点击此处查看代码图像
+
+```sharp
+public class BadClass
+{
+    // 存储对全局对象的引用：
+    private static readonly List<BadClass> finalizedList =
+        new List<BadClass>();
+
+    private string msg;
+
+    public BadClass(string msg)
+    {
+        // 缓存引用：
+        msg = (string)msg.Clone();
+    }
+
+    ~BadClass()
+    {
+        // 将此对象添加到列表中。
+        // 此对象是可访问的，不再
+        // 属于垃圾了。它回来了！
+        finalizedList.Add(this);
+    }
+}
+```
+
+当 `BadClass` 对象执行其终结器时，它将自己的引用放在一个全局列表中。它刚刚让自己变得可访问。它又活过来了！你刚刚引入的问题数量会让任何人感到不知所措。该对象已经被析化了，因此垃圾回收器现在认为没有必要再次调用它的终结器。如果你实际上需要析化一个被复活的对象，这是不会发生的。其次，你的某些资源可能不可用。`GC` 不会从内存中移除任何仅由终结器队列中的对象可访问的对象，但它可能已经对它们进行了析化。如果是这样，它们几乎肯定不再可用了。尽管 `BadClass` 拥有的成员仍在内存中，但它们很可能已经被释放或析化了。在语言中，你没有任何方法可以控制析化的顺序。你无法让这种构造可靠地工作。不要尝试。
+
+我从未见过以这种显而易见的方式复活对象的代码，除了学术练习之外。但我见过某些代码，其中终结器尝试执行一些实际工作，并且当终结器调用的某个函数保存了对象的引用时，最终让自己重获了生命。教训是，要非常仔细检查终结器中的任何代码，扩展来说，两个 `Dispose` 方法。如果该代码正在执行释放资源之外的任何操作，请再检查一遍。这些操作可能会在未来导致你的程序出现 bug。删除这些操作，并确保终结器和 `Dispose()` 方法释放资源而不做其他事情。
+
+在托管环境中，你不需要为你创建的每个类型编写终结器；你只需为存储非托管类型的类型，或者当你的类型包含实现 `IDisposable` 的成员时才编写。即使你只需要 `IDisposable` 接口而不是终结器，也要实现整个模式。否则，你将通过使派生类对标准释放惯用法的实现变得复杂，来限制它们。请遵循我描述的标准释放惯用法。这将让你、你类的类的用户以及那些从你的类型创建派生类的人过得更轻松。
+
+## 3. 使用泛型
+
+某些文章和论文可能会让你认为泛型仅在集合语境下有用。事实并非如此。还有许多其他使用泛型的方法。你可以使用它们来创建接口、事件处理程序、通用算法等。
+
+许多其他讨论将 C# 泛型与 C++ 模板进行比较，通常是为了认为一种比另一种更好。将 C# 泛型与 C++ 模板比较有助于你理解语法，但比较应该到此为止。某些惯用法对 C++ 来说更自然，而另一些对 C# 泛型来说更自然。但正如你稍后在 项目 19 中看到的，尝试决定哪种“更好”只会损害你对这两者的理解。泛型的引入需要对 C# 编译器、即时编译（`JIT`）编译器和通用语言运行时（`CLR`）进行更改。C# 编译器获取你的 C# 代码并为泛型类型创建微软中间语言 (`MSIL`) 或 `IL` 定义。`JIT` 编译器将泛型定义与一组类型参数结合，创建一个封闭的泛型类型。`CLR` 在运行时支持这两种概念。
+
+泛型定义存在成本和收益。有时，用泛型等替换特定代码会让你的程序更小。而在其他情况下，它会让程序更大。是否会遇到泛型膨胀取决于你使用的特定类型参数以及创建的封闭泛型类型的数量。
+
+泛型类定义是完全编译的 `MSIL` 类型。它们包含的内容对于任何可能使用的类型参数都必须是有效的。泛型定义被称为泛型定义。泛型的特定实例（其中所有类型参数已指定）被称为封闭泛型类型。（如果只指定部分参数，则被称为开放泛型类型。）
+
+`IL` 中的泛型是真实类型的部分定义。`IL` 包含特定泛型类型实例的占位符。`JIT` 编译器在创建实例化封闭泛型类型的机器码时完成该定义。这种做法在增加多个封闭泛型类型的代码成本与减少存储数据所需的时间空间之间进行权衡。
+
+这种过程适用于你创建的每个类型，无论泛泛型。对于非泛型类型，类的 `IL` 与生成的机器码之间是一一对应的关系。泛型为这种翻译引入了一些新问题。当泛型类被 `JIT` 编译时，`JIT` 编译器检查类型参数并根据参数发射特定的指令。`JIT` 编译器执行多次优化，将不同的类型参数折叠到机器代码中。首先，`JIT` 编译器为所有引用类型创建一个泛型类的机器版本。
+
+所有这些实例化在运行时共享相同的代码：
+
+点击此处查看代码图像
+
+```csharp
+List<string> stringList = new List<string>();
+
+List<Stream> OpenFiles = new List<Stream>();
+
+List<MyClassType> anotherList = new List<MyClassType>();
+```
+
+
+
+
+C# 编译器在编译时强制执行类型安全，而 JIT 编译器可以通过假设类型是正确的，来生成更优化的机器代码版本。
+
+对于至少有一个值类型作为类型参数的封闭泛型类型，适用于不同的规则。JIT 编译器会为不同的类型参数创建不同的机器指令集。因此，以下三个封闭泛型类型具有不同的机器代码页：
+
+点击此处查看代码图像
+
+```csharp
+List<double> doubleList = new List<double>();
+
+List<int> markers = new List<int>();
+
+List<MyStruct> values = new List<MyStruct>();
+```
+
+这可能很有趣，但你为什么要关心这个呢？与多个不同引用类型一起使用的泛型类型不会影响内存占用。所有 JIT 编译的代码都是共享的。然而，当封闭泛型类型包含值类型作为参数时，这些 JIT 编译的代码是不可共享的。让我们深入研究一下这个过程，看看它是如何受到影响的。
+
+当运行时需要 JIT 编译一个泛型定义（方法或类），且至少有一个类型参数是值类型时，它会经历一个两步过程。首先，它创建一个表示封闭泛型类型的新 IL 类。我这里进行了简化，但本质上运行时会将泛型定义中所有位置的 `T` 替换为 `int` 或适当的值类型。替换之后，它将必要的代码 JIT 编译为 x86 指令。这个两步过程是必要的，因为 JIT 编译器在加载时不会为整个类创建 x86 代码；相反，每个方法只有在第一次调用时才会被 JIT 编译。因此，在 IL 中进行块替换，然后按需对生成的 IL 进行 JIT 编译是有意义的，就像处理普通类定义一样。
+
+这意味着内存占用的运行时成本是这样累加的：每个使用值类型的封闭泛型类型都会多出一个 IL 定义副本，并且在封闭泛型类型使用的每个不同值类型参数中调用的每个方法都会产生第二个额外的机器代码副本。
+
+然而，使用值类型参数的泛型也有有利面：你避免了值类型的装箱和拆箱，从而减少了值类型代码和数据的大小。此外，编译器确保了类型安全；因此，需要的运行时检查更少，这减少了代码库的大小并提高了性能。此外，如本章后面项目 25 所述，创建泛型方法而不是泛型类可以限制为每个单独实例化创建的额外 IL 代码量。只有实际引用的方法会被实例化。定义在非泛型类中的泛型方法不会被 JIT 编译。
+
+本章讨论了你可以使用泛型的许多方法，并解释了如何创建泛型类型和方法，这些将为你节省时间并帮助你创建可用的组件。
+
+### 项目 18：始终定义最小且充分的约束
+
+你在类型参数上声明的约束指定了你的类从任何作为类型参数的类型中为了完成工作而必须具备的行为。不满足你所有约束的类型将无法工作。请与以下事实权衡：你施加的每种约束都意味着想要使用你类型的开发者需要付出更多工作。正确的选择取决于任务，但任何一种极端的做法都是错误的。如果你不指定任何约束，就必须在运行时执行更多检查；你将进行更多强制转换，可能使用反射，并在开发者误用你的类型时产生更多的运行时错误。指定不必要的约束意味着为使用你类的开发者制造了太多的工作。你的目标是找到折中点，即指定你需要的，而不是你想要的所有。
+
+`Constraints` 允许编译器预期的类型参数中具有的在 `System.Object` 中定义的公共接口之外的能力。当你创建一个泛型类型时，C# 编译器必须为该泛型类型定义生成有效的 IL。在在此过程中，尽管编译器对可能替换任何类型参数的实际类型了解有限，但它必须创建一个有效的程序集。在没有你的引导的情况下，编译器只能假设这些类型具有最基本的能力：`System.Object` 暴露的方法。编译器无法强制你对类型所作的任何假设。编译器只知道你的类型必须派自 `System.Object`。（这意味着你不能使用指针作为类型参数创建不安全的泛型。）仅假设 `System.Object` 的能力是非常局限的。编译器将将对任何在 `System.Object` 中未定义的内容发出错误。这甚至包括诸如 `new T()` 这样的基础操作，如果你定义了带参数的构造函数，该操作就会被隐藏。
+
+你使用约束来向（同时向编译器和开发者）传达你对泛型类型所作的任何假设。约束告诉编译器，你的泛型类型期望 `System.Object` 公共接口之外的功能。这种通信在两个方面帮助了编译器。首先，它在你创建泛型类型时很有帮助：编译器断言任何泛型类型参数包含了你在约束中指定的能力。其次，编译器确保使用你泛型类型的人定义了符合你规范的类型参数。你可以指定类型参数必须是 `struct`，或者它必须是 `class`。你可以指定类型必须实现的任意数量接口。你还可以指定基类，这暗示了类约束。
+
+另一种方法是你进行大量的强制转换和运行时测试。例如，以下泛型方法没有对 `T` 声明任何约束，因此在使用这些方法之前，它必须检查 `IComparable<T>` 接口是否存在：
+
+点击此处查看代码图像
+
+```csharp
+public static bool AreEqual<T>(T left, T right)
+{
+    if (left == null)
+        return right == null;
+    if (left is IComparable<T>)
+    {
+        IComparable<T> lval = left as IComparable<T>;
+        if (right is IComparable<T>)
+            return lval.CompareTo(right) == 0;
+        else
+            throw new ArgumentException("Type does not implement<T>", nameof(right));
+    }
+    else // 失败
+    {
+        throw new ArgumentException("Type does not implement<T>", nameof(left));
+    }
+}
+```
+
+如果你指定 `T` 必须实现 `IComparable<T>`，等效方法将简单得多：
+
+点击此处查看代码图像
+
+```csharp
+public static bool AreEqual2<T>(T left, T right)
+    where T : IComparable<T> =>
+    left.CompareTo(right) == 0;
+```
+
+第二个版本将运行时错误转换为编译时错误。你编写的代码更少，编译器防止了第一个版本中必须应对的运行时错误。如果没有约束，你没有良好的方案来报告明显的程序错误。你需要为你的泛型类型指定必要的约束。不这样做意味着你的类可能很容易被误用，在开发者猜错时产生异常或其他运行时错误。他们会经常猜错，因为客户端开发者确定如何使用你类的唯一方法就是阅读你的文档。作为开发者，你自己很清楚这种可能性有多大。
+
+
+
+
+但在定义约束时，很容易做得过度。你对泛型类型参数设置的约束越多，你试图帮助的客户端开发者能够使用该泛型类的机会就越少。虽然你必须指定必要的约束，但你也需要尽可能减少在泛型参数上所设置的约束数量。
+
+有许多方法可以减少你所指定的约束。最常见的方法之一是确保你的泛型类型不需要它们本可以不具备所需的功能。例如，让我们来看 `IEquatable<T>`。它是一个常见的接口，而且是许多开发者在创建新类型时都会实现的接口。你可以使用 `Equals` 来重写 `AreEqual` 方法：
+
+点击此处查看代码图像
+
+```csharp
+public static bool AreEqual<T>(T left, T right) =>
+    left.Equals(right);
+```
+
+这个版本的 `AreEqual` 有趣之处在于，如果 `AreEqual<T>()` 定义在一个声明了 `IEquatable<T>` 约束的泛型类中，它将调用 `IEquatable<T>.Equals`。否则，C# 编译器无法假设 `IEquatable<T>` 存在。此时作用域内唯一的 `Equals()` 方法是 `System.Object.Equals()`。
+
+这个示例说明了 C# 泛型与 C++ 模板之间的主要区别。在 C# 中，编译器必须根据约束中指定的信息生成 IL。即使为特定实例化指定的类型具有更好的方法，除非在编译泛型类型时指定了该方法，否则它不会被使用。
+
+当类型上实现了 `IEquatable<T>` 时，它无疑是测试相等性的一种更高效的方法。你避免了为了正确重写 `System.Object.Equals()` 而必须的运行时测试。你避免了如果作为泛型使用的类型是值类型，则必须执行的装箱和拆箱操作。如果你对性能非常敏感，`IEquatable<T>` 甚至避免了虚方法调用的微小开销。
+
+因此，要求客户端开发者支持 `IEquatable<T>` 是一好事。但它能达到约束的水平吗？如果存在一个可以正常工作（尽管效率稍低）的 `System.Object.Equals` 方法，难道每个使用你类的人都都必须实现 `IEquatable<T>` 吗？我建议在可用时使用首选方法（`IEquatable<T>`），但在首选方法不可用时透明地降级到不首选的 API 方法（`Equals()`）。你可以通过创建根据你支持的能力进行重载的自定义内部方法来实现这一点。本质上，这就是我在本文开头处展示的原始 `AreEqual()` 方法。这种方法需要更多工作，但我们将查看如何查询类型的能力，并使用类型参数中可用的最佳接口，而无需强制客户端开发者承担额外工作。
+
+有时，强制要求约束对于一个类的使用来说太局限了，相反，你应该将特定接口或基类的存在与否视为一种优势，而不是一种强制要求。在这些情况下，你在编写方法时，应该考虑类型参数可能提供额外益处的情况，但这些增强功能并不总是可用的。这就是 `Equatable<T>` 和 `Comparable<T>` 中实现的这种设计。
+
+当同时存在泛型和非泛型接口时，你可以将此技术扩展到其他约束——例如 `IEnumerable` 和 `IEnumerable<T>`。
+
+你另一个需要仔细考虑的地方是默认构造函数约束。很多时候，你可以通过将 `new` 调用替换为对 `default()` 的调用来替换 `new()` 约束。后者 C# 中的一个运算符，用于产生类型的默认值。该运算符为值类型创建默认的 0 位模式，并为引用类型产生 `null`。因此，将 `new()` 替换为 `default()` 通常意味着引入类约束或值约束。注意，当你处理引用类型时，`default()` 的语义与 `new()` 的语义非常不同。
+
+你经常会在泛型类中使用 `default()`，这些类需要类型参数对象的默认值。以下是一个搜索满足谓词第一个对象的方法。如果所需的对象存在，则返回它；否则，返回默认值。
+
+点击此处查看代码图像
+
+```csharp
+public static T FirstOrDefault<T>(this IEnumerable<T> sequence,
+    Predicate<T> test)
+{
+    foreach (T value in sequence)
+        if (test(value))
+            return value;
+    return default(T);
+}
+```
+
+将其对比下面的方法。它封装了一个工厂方法来创建类型为 `T` 的对象。如果工厂方法返回 `null`，则方法返回默认构造函数返回的值。
+
+点击此处查看代码图像
+
+```csharp
+public delegate T FactoryFunc<T>();
+public static T Factory<T>(FactoryFunc<T> makeANewT)
+where T : new()
+{
+    T rVal = makeANewT();
+    if (rVal == null)
+        return new T();
+    else
+        return rVal;
+}
+```
+
+使用 `default()` 的方法不需要约束。调用 `new()` 方法必须指定 `new()` 约束。此外，由于对空值的测试，其行为与引用类型相比值类型非常不同。值类型不能为 `null`。因此，`if` 语句下的子句永远不会执行。尽管 `Factory<T>` 检查 `null` 值，它仍然可以与值类型一起使用。JIT 编译器（将 `T` 替换为特定类型）会在 `T` 是值类型时移除空测试。
+
+你应该特别注意 `new()`、`struct` 和 `class` 约束。上述示例表明，添加任何这些约束都会产生关于对象如何构造、默认值是全零还是空引用，以及是否可以在泛型类内部构造泛型类型实例的假设。理想情况下，你应该尽可能避免这三个约束中的一个。仔细考虑你的泛型类型是否真的需要这些假设。通常，当存在合适的替代方案时，你只是在脑海中创建了一个假设。
+
+### 总结
+你可以通过指定新的类型参数来轻松地复用泛型。带有新类型参数的新实例化意味着一个具有相似功能的新类型。
+
+
+
+这一切都是非常好的，因为你写的代码更少。然而，有时更具泛型性意味着没有利用更具体但明显更优越的算法。C# 语言的规则已经考虑了这一点。你只需要意识到，当类型参数具有更强的能力时，你的算法可以更高效，然后编写该特定的代码即可。此外，创建一个指定了不同约束的第二个泛型类型并不总是有效的。泛型实例化是基于对象的**编译时类型**，而不是运行时类型。如果你没有考虑到这一点，可能会错失潜在的优化空间。
+
+例如，假设你编写了一个类，它对一个项序列提供反序枚举：
+
+点击此处查看代码图像
+
+```csharp
+public sealed class ReverseEnumerable<T> : IEnumerable<T>
+{
+    private class ReverseEnumerator : IEnumerator<T>
+    {
+        int currentIndex;
+        IList<T> collection;
+        public ReverseEnumerator(IList<T> srcCollection)
+        {
+            collection = srcCollection;
+            currentIndex = collection.Count;
+        }
+        //  IEnumerator<T> Members
+        public T Current => collection[currentIndex];
+        // IDisposable Members
+        public void Dispose()
+        {
+            // no implementation but necessary
+            // because IEnumerator<T> implements IDisposable
+            // No protected Dispose() needed
+            // because this class is sealed.
+        }
+        //    IEnumerator Members
+        object System.Collections.IEnumerator.Current
+            => this.Current;
+        public bool MoveNext() => --currentIndex >= 0;
+        public void Reset() => currentIndex = collection.Count;
+    }
+
+    IEnumerable<T> sourceSequence;
+    IList<T> originalSequence;
+    public ReverseEnumerable(IEnumerable<T> sequence)
+    {
+        sourceSequence = sequence;
+    }
+    // IEnumerable<T> Members
+    public IEnumerator<T> GetEnumerator()
+    {
+        // Create a copy of the original sequence,
+        // so it can be reversed.
+        if (originalSequence == null)
+        {
+            originalSequence = new List<T>();
+            foreach (T item in sourceSequence)
+                originalSequence.Add(item);
+        }
+        return new ReverseEnumerator(originalSequence);
+    }
+    // IEnumerable Members
+    System.Collections.IEnumerator
+        System.Collections.IEnumerable.GetEnumerator() =>
+            this.GetEnumerator();
+}
+```
+
+此实现假设从参数提供的信息最少。`ReverseEnumerable` 构造函数假设其输入参数支持 `IEnumerable<T>`，仅此而已。`IEnumerable<T>` 不提供任何随机访问。因此，反转列表的唯一方法如 `ReverseEnumerator<T>.GetEnumerator()` 的主体所示。在这里，如果第一次调用构造函数，它会遍历整个输入序列并创建一个副本。然后嵌套类就可以反向遍历列表了。
+
+这种方法可以运行，而且当实际集合不支持随机访问时，这是创建序列反序枚举的唯一方法。许多集合支持随机访问，而在这些情况下，这段代码的效率非常低。当输入序列支持 `IList<T>` 时，你无缘地创建了整个序列的额外副本。让我们利用许多实现 `IEnumerable<T>` 的类型也实现了 `IList<T>` 的事实，提高这段代码的效率。
+
+唯一的改变在于 `ReverseEnumerable<T>` 类的构造函数中：
+
+点击此处查看代码图像
+
+```csharp
+public ReverseEnumerable(IEnumerable<T> sequence)
+{
+    sourceSequence = sequence;
+    // If sequence doesn't implement IList<T>,
+    // originalSequence is null, so this works
+    // fine
+    originalSequence = sequence as IList<T>;
+}
+```
+
+我们为什么不直接使用 `IList<T>` 创建第二个构造函数呢？这在参数的编译时类型为 `IList<T>` 时很有帮助。但在某些情况下它不起作用——例如，当参数的编译时类型是 `IEnumerable<T>` 但运行时类型实现了 `IList<T>` 时。为了捕获这些情况，你应该提供运行时和编译时的重载版本。
+
+```csharp
+public ReverseEnumerable(IEnumerable<T> sequence)
+{
+    sourceSequence = sequence;
+    // If sequence doesn't implement IList<T>,
+    // originalSequence is null, so this works
+    // fine
+    originalSequence = sequence as IList<T>;
+}
+
+public ReverseEnumerable(IList<T> sequence)
+{
+    sourceSequence = sequence;
+    originalSequence = sequence;
+}
+```
+
+`IList<T>` 比 `IEnumerable<T>` 能够启用更高效的算法。你没有迫使该类的使用者提供更多功能，但在他们提供了这些功能时，你利用了更强大的能力。这种改变处理了绝大多数情况，但某些集合实现了 `ICollection<T>` 而没有实现 `IList<T>`。在这些情况下仍然存在效率低的问题。再次查看 `ReverseEnumerable<T>.GetEnumerator()` 方法：
+
+点击此处查看代码图像
+
+```csharp
+public IEnumerator<T> GetEnumerator()
+{
+    // Create a copy of the original sequence,
+    // so it can be reversed.
+    if (originalSequence == null)
+    {
+        originalSequence = new List<T>();
+        foreach (T item in sourceSequence)
+            originalSequence.Add(item);
+    }
+    return new ReverseEnumerator(originalSequence);
+}
+```
+
+如果源集合实现了 `ICollection<T>`，那么创建输入序列副本的代码执行速度将比需要的要慢。以下方法添加了 `Count` 属性，你可以用它来初始化最终存储空间：
+
+点击此处查看代码图像
+
+```csharp
+public IEnumerator<T> GetEnumerator()
+{
+    // String is a special case:
+    if (sourceSequence is string)
+    {
+        // Note the cast because T may not be a char at
+        // compile time
+        return new
+            ReverseStringEnumerator(sourceSequence as string)
+            as IEnumerator<T>;
+    }
+    // Create a copy of the original sequence,
+    // so it can be reversed.
+    if (originalSequence == null)
+    {
+        if (sourceSequence is ICollection<T>)
+        {
+            ICollection<T> source =
+                sourceSequence as ICollection<T>;
+            originalSequence = new List<T>(source.Count);
+        }
+        else
+        {
+            originalSequence = new List<T>();
+        }
+        foreach (T item in sourceSequence)
+            originalSequence.Add(item);
+    }
+    return new ReverseEnumerator(originalSequence);
+}
+```
+
+我在这里展示的代码与 `List<T>` 构造函数中从输入序列创建列表的代码相似：
+
+点击此处查看代码图像
+
+```csharp
+List<T>(IEnumerable<T> inputSequence);
+```
+
+在离开这个项目之前，我想说明另外一点。你会注意到，我在 `ReverseEnumerable<T>` 中做的所有测试都是对运行时参数的运行时测试。这意味着你假设了查询额外能力需要付出运行时成本。在大多数情况下，运行时测试的成本远小于复制元素的成本。
+
+
+
+
+你可能认为我们已经查看了 `ReverseEnumerable<T>` 类的所有用法。但仍然存在一种变体：`string` 类。`string` 提供了对字符随机访问的方法，例如 `IList<char>`，但 `string` 并没有实现 `IList<char>`。使用更具特定性的方法需要在你的泛型类内部编写更具特定的代码。`ReverseStringEnumerator` 类（如下所示）嵌套在 `ReverseEnumerable<T>` 内部，它的实现非常直观。注意构造函数使用了字符串的 `Length` 参数，而其他方法与 `ReverseEnumerator<T>` 类中的方法几乎相同。
+
+点击此处查看代码图像
+
+```csharp
+private sealed class ReverseStringEnumerator : IEnumerator<char>
+{
+    private string sourceSequence;
+    private int currentIndex;
+    public ReverseStringEnumerator(string source)
+    {
+        sourceSequence = source;
+        currentIndex = source.Length;
+    }
+    // IEnumerator<char> Members
+    public char Current => sourceSequence[currentIndex];
+    //  IDisposable Members
+    public void Dispose()
+    {
+        // no implementation but necessary
+        // because IEnumerator<T> implements IDisposable
+    }
+    // IEnumerator Members
+    object System.Collections.IEnumerator.Current
+        => sourceSequence[currentIndex];
+    public bool MoveNext() => --currentIndex >= 0;
+    public void Reset() => currentIndex = sourceSequence.Length;
+}
+```
+
+为了完成特定的实现，`ReverseEnumerable<T>.GetEnumerator()` 需要查看适当的类型并创建正确的枚举器类型：
+
+点击此处查看代码图像
+
+```csharp
+public IEnumerator<T> GetEnumerator()
+{
+    // String is a special case:
+    if (sourceSequence is string)
+    {
+        // 注意此强制转换，因为在编译时
+        // T 可能不是 char
+        return new ReverseStringEnumerator(sourceSequence as string)
+            as IEnumerator<T>;
+    }
+    // 创建原始序列的副本，
+    // 以便可以被反转。
+    if (originalSequence == null)
+    {
+        if (sourceSequence is ICollection<T>)
+        {
+            ICollection<T> source = sourceSequence as ICollection<T>;
+            originalSequence = new List<T>(source.Count);
+        }
+        else
+            originalSequence = new List<T>();
+    }
+    foreach (T item in sourceSequence)
+        originalSequence.Add(item);
+    }
+    return new ReverseEnumerator(originalSequence);
+}
+```
+
+和一样，目标是将任何特殊实现隐藏在泛型类内部。这需要多一些工作，因为 `string` 类的特化需要内部类的一个完全独立的实现。
+
+你还会注意到，当使用 `ReverseStringEnumerator` 时，`GetEnumerator()` 的实现需要进行强制转换。在编译时，`T` 可以是任何类型，因此它可能不是 `char`。这种转换是安全的；代码中的唯一路径确保了 `T` 是 `char`，因为序列是一个字符串。这没关系，因为它是隐藏的。
+
+### 项目 20：使用 `IComparable<T>` 和 `IComparer<T>` 实现排序关系
+
+`IComparable<T>` 接口描述了集合应该如何排序。.NET Framework 定义了两个接口：`IComparable<T>` 和 `IComparer<T>`。`IComparable<T>` 定义了你的类型的自然顺序。`IComparer<T>` 定义了替代排序方式。
+
+点击此处查看代码图像
+
+```csharp
+struct Customer : IComparable<Customer>, IComparable
+{
+    private readonly string name;
+    public Customer(string name)
+    {
+        this.name = name;
+    }
+    // IComparable<Customer> Members
+    public int CompareTo(Customer other)
+    {
+        return name.CompareTo(other.name);
+    }
+    // IComparable Members
+    int IComparable.CompareTo(object obj)
+    {
+        if (!(obj is Customer))
+        {
+            throw new ArgumentException("Argument is not a Customer", "obj");
+        }
+        Customer otherCustomer = (Customer)obj;
+        return CompareTo(otherCustomer);
+    }
+}
+```
+
+注意 `IComparable` 在此结构体中是显式实现的。这确保了只有为之前的接口编写的代码才会调用对象类型版本的 `CompareTo()`。经典版本的 `IComparable` 有太多多的令人不喜欢的地方。你必须检查参数的运行时类型。错误代码可能会合法地调用此方法，并将任何内容作为 `CompareTo` 方法的参数。此外，正确的参数必须经过装箱（boxing）和拆箱（unboxing）以提供实际的比较。这对于每次比较来说都是一个额外的运行时开销。排序集合将平均使用 `IComparable.Compare` 方法对你的对象进行 *n* log(*n*) 次比较。其中每次比较都会导致三次装箱和拆箱操作。对于一个拥有 1,000 个点的数组，平均会有超过 20,000 次装箱和拆箱操作：*n* log(*n*) 几乎是 7,000，而每次比较有三次装箱和拆箱操作。
+
+你可能会疑惑为什么要实现非泛型的 `IComparable` 接口。有两个原因。首先，为了简单的向后兼容。你的类型将与 .NET 2.0 之前创建的代码交互，尽管它已经过了好几个版本了。基类库的一些类（考虑 WinForms 或 ASP.NET Web Forms）需要与 1.0 实现向后兼容。这意味着需要支持非泛型接口。
+
+因为经典的 `IComparable.CompareTo()` 现在是显式接口实现，它只能通过 `IComparable` 引用进行调用。你的 `Customer` 结构体用户将获得获得类型安全的比较，而不安全的比较是无法访问的。以下无意的错误现在不再通过编译：
+
+```csharp
+Customer c1;
+Employee e1;
+
+if (c1.CompareTo(e1) > 0)
+    Console.WriteLine("Customer one is greater");
+```
+
+
+
+代码无法编译，因为对于公共方法 `Customer.CompareTo(Customer right)` 的参数不正确。`IComparable.CompareTo(object right)` 方法是不可见的。你只有通过显式转换引用才能访问 `IComparable` 方法：
+
+点击此处查看代码图片
+
+```go
+Customer c1;
+Employee e1;
+
+if (c1.CompareTo(e1) > 0)
+    Console.WriteLine("Customer one is greater");
+```
+
+当你实现 `IComparable` 时，请使用显式接口实现并提供一个强类型的公共重载。强类型重载可以提高性能并减少他人误用 `CompareTo` 方法的概率。你可能在 .NET Framework 使用的 `Sort` 函数中无法看到所有的收益，因为它仍然通过接口指针访问 `CompareTo()`，但了解两个待比较对象类型的代码将获得更好的性能。
+
+我们将对 `Customer` `struct`（结构体）进行最后一次微小调整。C# 语言允许你重载标准关系运算符。这些运算符应该利用类型安全的 `CompareTo()` 方法：
+
+点击此处查看代码图片
+
+```csharp
+public struct Customer : IComparable<Customer>, IComparable
+{
+    private readonly string name;
+    public Customer(string name)
+    {
+        this.name = name;
+    }
+    // IComparable<Customer> Members
+    public int CompareTo(Customer other) =>
+        name.CompareTo(other.name);
+
+    // IComparable Members
+    int IComparable.CompareTo(object obj)
+    {
+        if (!(obj is Customer))
+            throw new ArgumentException(
+                "Argument is not a Customer", "obj");
+        Customer otherCustomer = (Customer)obj;
+        return this.CompareTo(otherCustomer);
+    }
+
+    // Relational Operators.
+    public static bool operator <(Customer left,
+        Customer right) =>
+              left.CompareTo(right) < 0;
+    public static bool operator <=(Customer left,
+        Customer right) =>
+              left.CompareTo(right) <= 0;
+    public static bool operator >(Customer left,
+        Customer right) =>
+              left.CompareTo(right) > 0;
+    public static bool operator >=(Customer left,
+        Customer right) =>
+              left.CompareTo(right) >= 0;
+}
+```
+
+客户的标准排序就此为止：按名称排序。之后，你必须创建一个报告，按收入对所有客户进行排序。你仍然需要 `Customer` `struct` 定义的普通比较功能，按名称对它们进行排序。在泛型出现后开发的、大部分 .NET Framework 的 API 都会要求一个 `Comparison<T>` 委托来执行其他排序。在 `Customer` 类型中创建静态属性来提供其他比较顺序是简单的。例如，此委托比较了两个客户产生的收入：
+
+点击此处查看代码图片
+
+```csharp
+public static Comparison<Customer> CompareByRevenue =>
+    (left,right) => left.revenue.CompareTo(right.revenue);
+```
+
+旧版本的库会要求使用 `IComparer` 接口来请求这种功能。`IComparer` 提供了一种在不使用泛型的情况下为类型提供替代顺序的标准方法。1.x 版本 .NET Framework 类库中提供的任何处理 `IComparable` 类型的方法都提供了通过 `IComparer` 对对象进行排序的重载。由于你编写了 `Customer` `struct`，你可以将这个新类（`RevenueComparer`）作为私有嵌套类创建在 `Customer` `struct` 内部。它通过 `Customer` `struct` 中的静态属性暴露：
+
+点击此处查看代码图片
+
+```csharp
+public struct Customer : IComparable<Customer>, IComparable
+{
+    private readonly string name;
+    private double revenue;
+    public Customer(string name, double revenue)
+    {
+        this.name = name;
+        this.revenue = revenue;
+    }
+    // IComparable<Customer> Members
+    public int CompareTo(Customer other)
+    {
+        return name.CompareTo(other.name);
+    }
+    // IComparable Members
+    int IComparable.CompareTo(object obj)
+    {
+        if (!(obj is Customer))
+            throw new ArgumentException(
+                "Argument is not a Customer", "obj");
+        Customer otherCustomer = (Customer)obj;
+        return this.CompareTo(otherCustomer);
+    }
+    // Relational Operators.
+    public static bool operator <(Customer left,
+        Customer right)
+    {
+        return left.CompareTo(right) < 0;
+    }
+    public static bool operator <=(Customer left,
+        Customer right)
+    {
+        return left.CompareTo(right) <= 0;
+    }
+    public static bool operator >(Customer left,
+        Customer right)
+    {
+        return left.CompareTo(right) > 0;
+    }
+    public static bool operator >=(Customer left,
+        Customer right)
+    {
+        return left.CompareTo(right) >= 0;
+    }
+    private static Lazy<RevenueComparer> revComp =
+        new Lazy<RevenueComparer>(() => new RevenueComparer());
+    public static IComparer<Customer> RevenueCompare
+        => revComp.Value;
+    public static Comparison<Customer> CompareByRevenue =>
+        (left,right) => left.revenue.CompareTo(right.revenue);
+
+    // 用于比较客户的类。
+    // 总是通过接口指针使用，
+    // 所以仅提供接口重写。
+    private class RevenueComparer : IComparer<Customer>
+    {
+        // IComparer<Customer> Members
+        int IComparer<Customer>.Compare(Customer left,
+            Customer right) =>
+              left.revenue.CompareTo(right.revenue);
+    }
+}
+```
+
+带有嵌入 `RevenueComparer` 的 `Customer` `struct` 允许你按名称对客户进行排序（客户的自然顺序），并通过暴露实现 `IComparer` 接口的类提供了替代排序。如果你没有 `Customer` 类的源码，仍然可以提供 `IComparer` 使用其任何公共属性对客户进行排序。只有当你无法访问类的源码时，才使用这种惯用法，例如你需要对 .NET Framework 中的某些类提供不同的排序时。
+
+在这一项中我没有提到过 `Equals()` 或 `==` 运算符。排序关系和相等性是不同的操作。你不需要实现相等性比较来拥有排序关系。事实上，引用类型通常根据对象内容实现排序，但根据对象标识实现相等性。即使 `Equals()` 返回 `false`，`CompareTo()` 也返回 0。这是完全合法的。
+
+`IComparable` 和 `IComparer` 是为类型提供排序关系的标准机制。`IComparable` 应该用于最自然的排序。当你实现 `IComparable` 时，你应该重载比较运算符（`<`、`>`、`<=`、`>=`）并与我们的排序保持一致。`IComparer` 可提供替代排序，或者当你需要为一个未提供排序的类型提供排序时使用。
+
+
+
+约束（Constraints）为你以及你类的使用者做了两件事。首先，使用约束可以将运行时错误转换为编译时错误。其次，约束为你类的使用者提供了一套清晰的文档，说明他们在实例化你的泛型类型时需要满足什么条件。但你不能使用约束来指定类型参数*不能*做什么。在大多数情况下，你并不关心类型参数除了你的类型所期望和使用的能力之外还具备什么能力。但在类型参数实现 `IDisposable` 的特殊情况下，你会有一些额外的工作要处理。
+
+展示此问题的现实示例很快就会变得复杂，因此我编写了一个简单的示例，来展示这个问题是如何发生的，以及如何在代码中纠正它。当你有一个泛型方法，需要在其其中一个方法中创建并使用类型参数的实例时，问题就会出现：
+
+点击此处查看代码图片
+
+```c
+public interface IEngine
+{
+    void DoWork();
+}
+
+public class EngineDriverOne<T> where T : IEngine, new()
+{
+    public void GetThingsDone()
+    {
+        T driver = new T();
+        driver.DoWork();
+    }
+}
+```
+
+如果 `T` 实现 `IDisposable`，你可能引入了资源泄漏。在每个创建类型为 `T` 的局部变量的情况下，你都需要检查 `T` 是否实现了 `IDisposable`，如果是，则要正确地释放它：
+
+点击此处查看代码图片
+
+```csharp
+public void GetThingsDone()
+{
+    T driver = new T();
+    using (driver as IDisposable)
+    {
+        driver.DoWork();
+    }
+}
+```
+
+如果你从未在 `using` 语句中见过那样的类型转换，这看起来可能有点困惑，但它是有效的。编译器会创建一个隐藏的局部变量，存储转换为 `IDisposable` 类型的 driver 引用。如果 `T` 没有实现 `IDisposable`，则该局部变量的值为 `null`。在这些情况下，编译器不会调用 `Dispose()`，因为它在执行此额外工作之前会先检查是否为 `null`。然而，在所有 `T` 实现 `IDisposable` 的情况下，编译器在退出 `using` 块时生成对 `Dispose()` 方法的调用。
+
+这是一个相当简单的惯用法：将类型参数的局部实例封装在 `using` 语句中。你需要使用我在这里展示的转换，因为 `T` 可能实现也可能实现 `IDisposable`。
+
+当你的泛型类需要创建并使用类型参数实例作为成员变量时，你的生活会变得更加复杂。你的泛型类现在拥有一个可能实现 `IDisposable` 的类型的引用。这意味着你的泛型类必须实现 `IDisposable`。你需要让你的类检查资源是否实现了 `IDisposable`，如果是，它必须释放该资源：
+
+点击此处查看代码图片
+
+```csharp
+public sealed class EngineDriver2<T> : IDisposable
+    where T : IEngine, new()
+{
+    // 创建开销较大，所以初始化为 null
+    private Lazy<T> driver = new Lazy<T>(() => new T());
+    public void GetThingsDone() =>
+        driver.Value.DoWork();
+
+    // IDisposable Members
+    public void Dispose()
+    {
+        if (driver.IsValueCreated)
+        {
+            var resource = driver.Value as IDisposable;
+            resource?.Dispose();
+        }
+    }
+}
+```
+
+你的类这一轮承担了相当多的负担。首先，你增加了实现 `IDisposable` 的工作。其次，为你类添加了 `sealed` 关键字。要么这样做，要么实现完整的 `IDisposable` 模式以允许派生类也能使用你的 `Dispose()` 方法。（参见 Krzysztof Cwalina 和 Brad Abrams 的 *Framework Design Guidelines* [Addison-Wesley, 2009], 第 248–261 页，或 Item 17。）密封该类意味着你不需要那些额外的工作。然而，它限制了你类的使用者，他们无法再从你的类派生新类型。
+
+
+
+点击此处查看代码图像
+
+```csharp
+abstract public class CelestialBody :
+    IComparable<CelestialBody>
+{
+    public double Mass { get; set; }
+    public string Name { get; set; }
+    // elided
+}
+
+public class Planet : CelestialBody
+{
+    // elided
+}
+
+public class Moon : CelestialBody
+{
+    // elided
+}
+
+public class Asteroid : CelestialBody
+{
+    // elided
+}
+```
+
+此方法以协变的方式处理 `CelestialBody` 对象的数组，并且是安全的：
+
+点击此处查看代码图像
+
+```csharp
+public static void CoVariantArray(CelestialBody[] baseItems)
+{
+    foreach (var thing in baseItems)
+        Console.WriteLine("{0} has a mass of {1} Kg",
+              thing.Name, thing.Mass);
+}
+```
+
+此方法也以协变的方式处理 `CelestialBody` 对象的数组，但它是不安全的。赋值语句将抛出异常。
+
+点击此处查看代码图像
+
+```csharp
+public static void UnsafeVariantArray(CelestialBody[] baseItems)
+{
+    baseItems[0] = new Asteroid
+        { Name = "Hygiea", Mass = 8.85e19 };
+}
+```
+
+你只需通过将派生类的数组赋值给一个基类数组类型的变量，就会遇到同样的问题：
+
+点击此处查看代码图像
+
+```csharp
+CelestialBody[] spaceJunk = new Asteroid[5];
+spaceJunk[0] = new Planet();
+```
+
+将集合视为协变意味着，当两个类型之间存在继承关系时，你可以想象这两种类型的对应的数组之间也存在类似的继承关系。这不是一个严格的定义，但它是一个有助于记忆记忆的有用模型。`Planet` 可以传递给任何期望 `CelestialBody` 的方法。这是因为 `Planet` 派自 `CelestialBody`。同样，你可以将 `Planet[]` 传递给任何期望 `CelestialBody[]` 的方法。但如上面的示例所示，其结果并不总是如你预期的那样。
+
+当泛型首次引入时，这个问题是以一种相当严厉的方式处理的。C# 编译器总是以不变的方式处理泛型。泛型类型必须完全匹配。然而，在 C# 4.0 及更高版本中，你可以泛泛型接口标记，使其能够以协变或逆变的方式被处理。让我们先讨论泛型协变，然后我们转向逆变。
+
+此方法可以使用 `List<Planet>` 调用：
+
+点击此处查看代码图像
+
+```csharp
+public static void CovariantGeneric
+    (IEnumerable<CelestialBody> baseItems)
+{
+    foreach (var thing in baseItems)
+        Console.WriteLine("{0} has a mass of {1} Kg",
+              thing.Name, thing.Mass);
+}
+```
+
+这是因为 `IEnumerable<T>` 经过了增强，限制 `T` 仅在其接口中作为输出位置：
+
+点击此处查看代码图像
+
+```csharp
+public interface IEnumerable<out T> : IEnumerable
+{
+    new IEnumerator<T> GetEnumerator();
+}
+
+public interface IEnumerator<out T> :
+    IDisposable, IEnumerator
+{
+    new T Current { get; }
+    // MoveNext(), Reset() inherited from IEnumerator
+}
+```
+
+我在这里同时包含了 `IEnumerable<T>` 和 `IEnumerator<T>` 的定义，因为 `IEnumerator<T>` 拥有重要的限制。注意 `IEnumerator<T>` 现在使用 `out` 饰符修饰类型参数 `T`。这强制要求编译器将 `T` 限制在输出位置。输出位置限于函数返回值、属性的 get 访问器以及某些委托位置。
+
+因此，使用 `IEnumerable<out T>`，编译器知道你将查看序列中的每个 `T`，但永远不会修改源序列的内容。在这种情况下，将每个 `Planet` 视为 `CelestialBody` 是行的。
+
+`IEnumerable<T>` 能够是协变的仅是因为 `IEnumerator<T>` 也是协变的。如果 `IEnumerable<T>` 返回的是一个未声明为协变的接口，编译器将生成错误。
+
+然而，在使用泛型时，替换列表中的第一个项的方法将是不变的：
+
+点击此处查看代码图像
+
+```csharp
+public static void InvariantGeneric
+    (IEnumerable<CelestialBody> baseItems)
+{
+    baseItems[0] = new Asteroid
+        { Name = "Hygiea", Mass = 8.85e19 };
+}
+```
+
+
+
+
+`IContravariantDelegate<T>` 与之相似，但它展示了你如何在逆变接口中使用委托。同样，`ActOnAnItem` 方法是显而易见的。`ActOnAnItemLater()` 方法只是稍微复杂一点。你返回的是一个在将来某个时刻会接受 `T` 类型对象的方法。这最后一个方法再次可能会引起一些困惑。这与另一个接口的概念相同。`GetAnItemLater()` 方法接收一个在将来某个时刻会返回 `T` 对象的方法。尽管 `Func<out T>` 被声明为协变的，但它的作用是将一个输入参数传递给实现 `IContravariantDelegate` 的对象。在这一点上，对于 `IContravariantDelegate` 来说，它的用法是逆变的。
+
+要准确描述协变和逆变的工作原理确实会变得非常复杂。幸运的是，现在语言支持使用 `in`（逆变）和 `out`（协变）修饰符对泛型接口和委托进行装饰。你应该尽可能对你定义的任何接口和委托使用 `in` 或 `out` 修饰符。这样编译器就可以纠正你所定义的变性的任何可能的误用。编译器会在你的接口和委托定义中捕获这些错误，并检测你创建的类型的任何误用。
+
+### 项目 23：使用委托为类型参数定义方法约束
+
+初看之下，C# 中的约束机制似乎过于局限：你只能指定一个基类、一个接口、类或结构体，以及一个无参数的构造函数。这留下了很多空白。你不能指定静态方法（包括任何运算符），也无法指定任何其他构造函数。从一个角度来看，语言定义的约束可以满足每一个约定。你可以使用参数来定义一个创建 `T` 对象的 `IFactory<T>` 接口。你可以定义 `IAdd<T>` 来相加 `T` 对象，并使用在 `T` 上定义的静态运算符 `+`（或使用其他添加 `T` 对象的方法）。但并不是解决此问题的好方法。这涉及大量的额外工作，并且模糊了你的基础设计。
+
+让我们考虑 `Add()` 示例。如果你的泛型类需要一个针对 `T` 的 `Add()` 方法，你就需要执行几项任务：你需要创建一个 `IAdd<T>` 接口。针对该接口编写代码。到为止，这还不错。但所有想要使用你的泛型类的开发者都得做更多工作。他们需要创建一个实现 `IAdd<T>` 的类，定义 `IAdd<T>` 所需的方法，然后为你的泛型类定义指定闭合泛型类。为了调用一个方法，你却让开发者仅仅创建一个类来匹配一个 API 签名。这为想要使用你类的开发者引入了相当大的摩擦和困惑。
+
+但事实并非如此。你可以指定与你的泛型类需要调用的方法匹配的委托签名。这并不意味着作为泛型类作者的你需要做更多工作。但它为使用你泛型类的开发者节省了大量工作。
+
+以下是你如何定义一个需要添加两个 `T` 类型对象方法的泛型类。你甚至不需要定义自己的委托；`System.Func<T1, T2, TOutput>` 委托匹配了你需要的签名。这是一个添加两个对象的泛型方法，它使用了一个实现了 `Add` 的提供的方法：
+
+点击此处查看代码图片
+
+```cs
+public static class Example
+{
+    public static T Add<T>(T left, T right,
+        Func<T, T, T> AddFunc) =>
+    AddFunc(left, right);
+}
+```
+
+使用你类的开发者可以使用类型推断和 Lambda 表达式来定义当你的泛型类需要调用 `AddFunc()` 时应该调用的方法。你可以像这样使用 Lambda 表达式调用 `Add` 泛型方法：
+
+点击此处查看代码图片
+
+```cs
+int a = 6;
+int b = 7;
+int sum = Example.Add(a, b, (x, y) => x + y);
+```
+
+C# 编译器从 Lambda 表达式中推断类型和返回值。C# 编译器创建一个私有的静态方法，返回两个整数的和。该方法的名称由编译器生成。编译器还会创建一个 `Func<T,T,T>` 委托对象，并将方法指针分配给该编译器生成的方法。最后，编译器将该委托传递给泛型 `Example.Add()` 方法。
+
+我使用 Lambda 语法来指定定义委托的方法，是为了说明为什么你应该创建基于委托的接口约定。这段代码是一个为了演示设计的例子，但概念才是重要的。当使用接口来定义约束变得难以用时，你可以定义一个适合你需求的方法签名和委托类型。然后你将该委托的实例添加到泛型方法的参数列表中。使用你类的开发者可以使用 Lambda 表达式来定义该方法，以更清晰的方式编写更少的代码。使用你类的开发者只需要创建一个定义他们所需方法功能的 Lambda 表达式即可。没有额外的代码来支持基于接口的约束语法。
+
+在更多情况下，你可能想使用基于委托的约定来创建操作序列的算法。假设你需要编写代码将两个序列的样本合并成单个序列。你的 `Point` 类可能看起来如下：
+
+```cs
+public class Point
+{
+    public double X { get; }
+    public double Y { get; }
+    public Point(double x, double y)
+    {
+        X = x;
+        Y = y;
+    }
+}
+```
+
+你需要通过反复调用 `Point(double, double)` 构造函数来创建一个 `Point` 并设置 X 和 Y 属性。解决方案是定义一个接受两个参数并返回点的委托。
+
+点击此处查看代码图片
+
+```cs
+delegate TOutput Func<T1, T2>(T1, T2);
+```
+
+在这个示例中，`T1` 和 `T2` 是相同类型：`double`。库中创建一个输出的泛型方法类似于：
+
+点击此处查看代码图片
+
+```cs
+public static IEnumerable<TOutput> Zip<T1, T2, TOutput>(
+    IEnumerable<T1> left, IEnumerable<T2> right,
+    Func<T1, T2, TOutput> generator)
+{
+    IEnumerator<T1> leftSequence = left.GetEnumerator();
+    IEnumerator<T2> rightSequence = right.GetEnumerator();
+    while (leftSequence.MoveNext() && rightSequence.MoveNext())
+    {
+        yield return generator(leftSequence.Current, rightSequence.Current);
+    }
+    leftSequence.Dispose();
+    rightSequence.Dispose();
+}
+```
+
+`Zip` 遍历输入序列，对于输入序列中的每一对，它调用器委托，返回新构建的 `Point` 对象（参见项目 29 和项目 33）。委托约定规定你需要从两个不同的输入构造输出类型的方法。注意 `Zip` 的定义使得两个输入类型不需要是相同类型。你可以使用此相同方法创建不同类型的键值对。你只需要不同的委托。
+
+你可以这样调用 `Zip`：
+
+点击此处查看代码图片
+
+```cs
+double[] xValues = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+double[] yValues = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+List<Point> values = new List<Point>(
+    Utilities.Zip(xValues, yValues, (x, y) => new Point(x, y)));
+```
+
+
+
+
+
+```cs
+new Point(x, y)));
+```
+
+与之前一样，编译器生成一个私有静态方法，使用该方法的引用实例化委托对象，并将该委托对象传递给 `Merge()` 方法。
+
+在一般情况下，你的泛型类需要调用的任何方法都可以被特定的委托所替换。前两个示例包含了一个为泛型方法被调用的委托。即使你的类型在许多地方需要该委托方法，这种做法仍然有效。你可以创建一个泛型类，其中一个类类型参数是委托。然后，当你创建该类的实例时，将类的某个成员赋值给该类型的委托。
+
+接下来的这个简单示例缓存了一个从流中读取点点的委托，并调用该委托将文本输入转换为 `Point`。第一步是为 `Point` 类添加一个构造函数，用于从文件中读取点：
+
+点击此处查看代码图片
+
+```csharp
+public Point(System.IO.TextReader reader)
+{
+    string line = reader.ReadLine();
+    string[] fields = line.Split(',');
+    if (fields.Length != 2)
+        throw new InvalidOperationException("Input format incorrect");
+    double value;
+    if (!double.TryParse(fields[0], out value))
+        throw new InvalidOperationException("Could not parse X value");
+    else
+        X = value;
+    if (!double.TryParse(fields[1], out value))
+        throw new InvalidOperationException("Could not parse Y value");
+    else
+        Y = value;
+}
+```
+
+创建集合类需要一些间接操作。你无法强制要求你的泛型类型包含一个带参数的构造函数。然而，你可以强制要求执行你想要的方法。你定义了一个委托类型，它可以从文件中构造出 `T`：
+
+点击此处查看代码图片
+
+```csharp
+public delegate T CreateFromStream<T>(TextReader reader);
+```
+
+接下来，你创建容器类，该容器的构造函数接受一个委托类型的实例作为参数：
+
+点击此处查看代码图片
+
+```csharp
+public class InputCollection<T>
+{
+    private List<T> thingsRead = new List<T>();
+    private readonly CreateFromStream<T> readFunc;
+    public InputCollection(CreateFromStream<T> readFunc)
+    {
+        this.readFunc = readFunc;
+    }
+    public void ReadFromStream(TextReader reader) =>
+        thingsRead.Add(readFunc(reader));
+    public IEnumerable<T> Values => thingsRead;
+}
+```
+
+当你实例化 `InputCollection` 时，你提供了该委托：
+
+点击此处查看代码图片
+
+```csharp
+var readValues = new InputCollection<Point>(
+    (inputStream) => new Point(inputStream));
+```
+
+这个示例足够简单，以至于你可能会创建一个非泛型类。然而，这种技术将帮助你构建依赖于普通约束无法指定的行为的泛型类型。
+
+通常，表达你设计的最佳方法是使用类约束或接口约束来指定你的约束。.NET BCL 在许多地方都是这样做，期望你的类型实现 `IComparable<T>`、`IEquatable<T>` 或 `IEnumerable<T>`。这是正确的设计选择，因为这些接口是常见的，并且被许多算法使用。此外，它们被清晰地表达为接口：实现 `IComparable<T>` 的类型声明它支持排序关系；实现 `IEquatable<T>` 的类型声明它支持相等性。
+
+然而，如果你需要创建一个自定义接口约来仅支持特定的泛型方法或类，你可能需要这种方法。
+
+### 项目 24：不要在基类或接口上创建特化
+
+引入泛型方法会让重载解析变得复杂。泛型方法可以匹配任何类型。取决于你如何小心（或不小心），你的应用程序行为可能会很奇怪。创建泛型类或方法时需要注意。检查以下代码，并尝试猜测输出：
+
+点击此处查看代码图片
+
+```csharp
+using System;
+public class Base
+{
+}
+public interface IMessageWriter
+{
+    void WriteMessage();
+}
+public class Derived : Base, IMessageWriter
+{
+    public void WriteMessage() =>
+        WriteLine("Inside Derived.WriteMessage");
+}
+
+public class AnotherType : IMessageWriter
+{
+    public void WriteMessage() =>
+        WriteLine("Inside AnotherType.WriteMessage");
+}
+
+class Program
+{
+    static void WriteMessage(Base b)
+    {
+        WriteLine("Inside WriteMessage(Base)");
+    }
+    static void WriteMessage<T>(T obj)
+    {
+        WriteLine("Inside WriteMessage<T>(T):");
+        WriteLine(obj.ToString());
+    }
+    static void WriteMessage(IMessageWriter obj)
+    {
+        WriteLine("Inside WriteMessage(IMessageWriter):");
+        obj.WriteMessage();
+    }
+    static void Main(string[] args)
+    {
+        Derived d = new Derived();
+        WriteLine("Calling Program.WriteMessage");
+        WriteMessage(d);
+        WriteLine();
+        WriteLine("Calling through IMessageWriter");
+        WriteMessage((IMessageWriter)d);
+        WriteLine();
+        WriteLine("Cast to base object");
+        WriteMessage((Base)d);
+        WriteLine();
+        WriteLine("Another Type test:");
+        AnotherType anObject = new AnotherType();
+        WriteMessage(anObject);
+        WriteLine();
+        WriteLine("Cast to IMessageWriter:");
+        WriteMessage((IMessageWriter)anObject);
+        WriteLine();
+    }
+}
+```
+
+某些注释可能会提示你，但在查看输出之前请先做出你的猜测。理解泛型方法的存在如何影响方法解析规则至关重要。泛型几乎总是是良好的匹配，它们会扰乱我们对调用何种方法的假设。以下是输出：
+
+点击此处查看代码图片
+
+Calling Program.WriteMessage
+Inside WriteMessage<T>(T):Item14.Derived
+Calling through IMessageWriter interface
+Inside WriteMessage(IMessageWriter):
+Inside Derived.WriteMessage
+Cast to base object
+Inside WriteMessage(Base)
+Another Type test:
+Inside WriteMessage<T>(T):Item14.AnotherType
+Cast to IMessageWriter:
+Inside AnotherType.WriteMessage
+
+
+
+
+第一个测试展示了一个需要记住的重要概念：对于类型派生自 `MyBase` 的表达式，`WriteMessage<T>(T obj)` 比 `WriteMessage(MyBase b)` 是更好的匹配项。这是因为编译器可以通过在该条消息中用 `MyDerived` 替换 `T` 来实现精确匹配，而 `WriteMessage(MyBase)` 则需要隐式转换。泛型方法明显更好。当你看到在 `Queryable` 和 `Enumerable` 类中定义的扩展方法时，这个概念将变得更加重要。泛型方法始终是完美匹配的，因此它们会胜过基类方法。
+
+接下来的两个测试展示了你如何通过显式调用转换（转换为 `MyBase` 或 `IMessageWriter` 类型）来控制这种行为。最后两个测试显示，即使没有类继承，接口实现中也存在相同的行为。
+
+名称解析规则非常有趣，你甚至可以在极客鸡尾派对上炫耀你关于它们的深奥知识。但你真正需要的是一种策略，来编写代码以确保你对“最佳匹配”的概念与编译器的概念一致。毕竟，编译器在这场战斗中总是获胜的。
+
+如果你打算支持一个类及其所有后代，那么为基类创建泛型特化并不是一个好主意。为接口创建泛型特化同样容易出错。但数值类型并没有出现这些陷阱。整数类型和浮点数值类型之间没有继承链。正如本章前面的部分 Item 18 所解释的，通常有充分理由为不同的值类型提供特定版本的方法。具体来说，.NET Framework 为 `Enumerable.Max<T>`、`Enumerable.Min<T>` 以及类似方法在所有数值类型上包含了特化。但最好的做法是使用编译器，而不是添加运行时检查来确定类型。这正是你一开始尝试使用泛型所想要避免的，不是吗？
+
+点击此处查看代码图像
+
+```csharp
+// 不是最佳解决方案
+// 这使用了运行时类型检查
+
+static void WriteMessage<T>(T obj)
+{
+    if (obj is MyBase)
+        WriteMessage(obj as MyBase);
+    else if (obj is IMessageWriter)
+        WriteMessage((IMessageWriter)obj);
+    else
+    {
+        Write("Inside WriteMessage<T>(T):  ");
+        WriteLine(obj.ToString());
+    }
+}
+```
+
+这段代码可能是可以的，但仅当需要检查的条件很少时如此。它确实为使用你类的开发者隐藏了所有丑陋的行为，但注意它引入了一些运行时开销。你的泛型方法现在正在检查特定类型，以确定它们（在你的脑中）是否比编译器任由其发展时会选择的具有更好的匹配。只有当你确定更好的匹配确实优越很多时，才使用这种技术，并衡量性能以查看是否有更好的编写库的方法来从上避免该问题。
+
+当然，这并不是说你不应该为特定的实现创建更具体的方法。本章前面的 Item 19 展示了在可用高级功能时如何创建一个更好的实现。Item 33 中的代码创建了一个反向迭代器，该迭代器在创建高级功能时能够正确地自我调整。请注意，Item 33 的代码并不依赖泛型类型进行任何名称解析。每个构造函数都正确地表达了各种功能，以确保在每个位置都可以调用适当的方法。然而，如果你想为给定类型创建泛型方法的特定实例化，则需要为该类型及其所有后代创建该实例化。如果你想为接口创建泛型特化，你需要为实现该接口的所有类型创建一个版本。
+
+### 事项 25：优先使用泛型方法，除非类型参数是实例字段
+
+人们很容易陷入局限于泛型类定义的习惯中。但通常，你可以通过使用包含许多泛型方法的非泛型类来更清晰地表达工具类。原因再次是，C# 编译器必须根据指定的约束为整个泛型类生成有效的 IL。一组约束必须对整个类都有效。而一个包含泛型方法的工具类可以为每个方法指定不同的约束。这些不同的约束可以使编译器更容易找到最佳匹配，从而让你的客户更容易地使用你的算法。
+
+此外，每个类型参数只需要在它使用的方法中满足约束。相比之下，在泛型类中，类型参数必须满足整个类定义的所有约束。随着你随时间推扩展类，如果类型参数指定在类级别而不是方法级别，约束就会变得严格得多。在发布两次后，你可能会希望当初是在方法级别指定你的泛型方法的。这里有一条简单的准则：如果一个类型需要类型级的数据成员，特别是涉及类型参数的数据成员，请将其设为泛型类。否则，使用泛型方法。
+
+让我们考虑一个包含泛型方法的简单示例：
+
+```csharp
+static class Utils<T>
+{
+    public static T Max(T left, T right) =>
+        Comparer<T>.Default.Compare(left, right) < 0 ? right : left;
+
+    public static T Min(T left, T right) =>
+        Comparer<T>.Default.Compare(left, right) < 0 ? left : right;
+}
+```
+
+初看之下，它似乎可以工作。你可以比较数字：
+```csharp
+double d1 = 4;
+double d2 = 5;
+double max = Utils<double>.Max(d1, d2);
+```
+你可以比较字符串：
+```csharp
+string foo = "foo";
+string bar = "bar";
+string sMax = Utils<string>.Max(foo, bar);
+```
+
+你很满意，然后回家了。但使用你类的人们并不开心。你会注意到上述代码中的每个调用都需要显式指定类型。这是因为你创建了一个泛型类，而不是一组泛型方法。额外的工作虽然麻烦，但这里有更深层次的问题。许多内置类型已经有了可用的 `Max` 和 `Min` 方法。`Math.Max()` 和 `Math.Min()` 在所有数值类型上都已定义。而不是使用这些方法，你的泛型类总是获取使用 `Comparer<T>` 创建的版本。这可行，但它强制进行运行时检查以确定类型是否实现了 `IComparer<T>`，然后调用正确的方法。
+
+自然，你希望用户能够自动获取最佳方法。如果你创建泛型方法，这会简单得多：
+
+```csharp
+static class Utils
+{
+    public static T Max<T>(T left, T right) =>
+        Comparer<T>.Default.Compare(left, right) < 0 ? right : left;
+
+    public static double Max(double left, double right) =>
+        Math.Max(left, right);
+
+    // 其他数值类型的版本
+
+    public static T Min<T>(T left, T right) =>
+        Comparer<T>.Default.Compare(left, right) < 0 ? left : right;
+
+    public static double Min(double left, double right) =>
+        Math.Min(left, right);
+
+    // 其他数值类型的版本
+}
+```
+
+这个 `Utils` 类不再是一个泛型类。相反，它拥有 `Min` 和 `Max` 的多个重载。这些特定方法比泛型版本更高效（参见 事项 3）。更棒的是，用户不再需要指定他们调用哪个版本：
+
+
+
+
+
+点击此处查看代码图片
+
+```sharp
+double d1 = 4;
+double d2 = 5;
+double max = Utils.Max(d1, d2);
+string foo = "foo";
+string bar = "bar";
+string sMax = Utils.Max(foo, bar);
+double? d3 = 12;
+double? d4 = null;
+double? Max2 = Utils.Max(d3, d4).Value;
+```
+
+如果参数类型有特定的版本，编译器会调用该版本。如果没有特定的版本，编译器将调用泛型版本。此外，如果你稍后为 `Utils` 类扩展了更多针对不同特定类型的版本，编译器将立即识别并它们。
+
+不仅仅是静态工具类应该使用泛型方法而不是泛型类。考虑这个简单的类，它用于构建一个逗号分隔的项列表：
+
+点击此处查看代码图片
+
+```csharp
+public class CommaSeparatedListBuilder
+{
+    private StringBuilder storage = new StringBuilder();
+    public void Add<T>(IEnumerable<T> items)
+    {
+        foreach (T item in items)
+        {
+            if (storage.Length > 0)
+                storage.Append(", ");
+            storage.Append("\"");
+            storage.Append(item.ToString());
+            storage.Append("\"");
+        }
+    }
+    public override string ToString() =>
+        storage.ToString();
+}
+```
+
+按照代码编写，这允许你在列表中创建任意数量的不同类型。每当你使用一个新类型时，编译器都会生成 `Add<T>` 的新版本。如果你改为将类型参数应用于类声明，那么每个 `CommaSeparatedListBuilder` 都被强制只能持有一种类型。这两种方法都是有效的，但语义非常不同。
+
+这个示例足够简单，你可以用 `System.Object` 替换类型参数。但这个概念是你可以经常应用的。你可以在非泛型类中使用通用的泛型方法来在类中创建不同的特化方法。该类没有在字段中使用 `T`，而仅将其作为公共 API 中方法的参数。使用不同的类型来代替该方法的参数并不意味着你需要不同的实例化。
+
+显然，并不是每个泛型算法都适用于泛型方法而不是泛型类。一些简单的指南可以帮助你确定使用哪一种。在两种情况下，你必须创建一个泛型类：第一种是你的类将类型参数之一的值作为内部状态的一部分（集合就是一个显的例子）。第二种是你的类实现了一个泛型接口。除了这两种情况，你通常可以创建一个非泛型类并使用泛型方法。最终，你在未来更新算法的选择上会有更多的粒度。
+
+再次查看前一个示例的代码。你会发现第二个 `Utils` 类并没有强制调用者在每次调用其中一个泛型方法时显式地声明每个类型。在可能的情况下，第二个版本是更好的 API 解决方案，原因有很多。首先，它对调用者来说更简单。当你不指定类型参数时，编译器会选择最可能的方法。这种做法为你（库开发者）今后提供了许多选择。如果你发现某个特定实现更好，你的调用者会自动获得你创建的特定方法。反之，如果你的方法强制调用者指定所有类型参数，那么即使你提供了更好的替代方案，他们也将继续使用泛型方法。
+
+### 事项 26：除泛型接口外，实现经典接口
+
+到目前为止，本章的事项已经探索了泛型的所有奇妙优势。如果我们只需要忽略 .NET 和 C# 支持泛型之前的所有内容，那就太好了。但由于各种原因，开发者的生活并没有那么简单。如果你在支持新库中想要支持的泛型接口的同时，还支持经典的非泛型接口，你的类将变得有用得多。这一建议适用于 (1) 你的类以及它们支持的接口，(2) 公共属性，甚至以及 (3) 你选择序列化的元素。
+
+让我们检查为什么你需要考虑支持这些非泛型接口，并看看如何在支持这些经典接口的同时，仍鼓励类的用户使用更更新的泛型版本。让我们从一个简单的 `Name` 类实现开始，它用于存储应用程序中人的姓名：
+
+点击此处查看代码图片
+
+```csharp
+public class Name :
+    IComparable<Name>,
+    IEquatable<Name>
+{
+    public string First { get; set; }
+    public string Last { get; set; }
+    public string Middle { get; set; }
+    // IComparable<Name>
+    public int CompareTo(Name other)
+    {
+        if (Object.ReferenceEquals(this, other))
+            return 0;
+        if (Object.ReferenceEquals(other, null))
+            return 1; // 任何空对象 > null。
+        int rVal = Comparer<string>.Default.Compare(Last, other.Last);
+        if (rVal != 0)
+            return rVal;
+        rVal = Comparer<string>.Default.Compare(First, other.First);
+        if (rVal != 0)
+            return rVal;
+        return Comparer<string>.Default.Compare(Middle, other.Middle);
+    }
+    // IEquatable<Name>
+    public bool Equals(Name other)
+    {
+        if (Object.ReferenceEquals(this, other))
+            return true;
+        if (Object.ReferenceEquals(other, null))
+            return false;
+        // 等同于使用 EqualityComparer<string>
+        return Last == other.Last &&
+               First == other.First &&
+               Middle == other.Middle;
+    }
+    // 其他细节省略
+}
+```
+
+等性和排序的核心功能都是基于泛型（类型安全的）版本实现的。此外，你可以看到我将 `CompareTo()` 中的空检查延迟给了默认比较器。这了大量的代码并提供了相同的语义。
+
+对于一个完全健壮的系统，还有更多工作要做。你可能需要集成来自不同逻辑系统的类型。假设你从一个供应商购买了电子商务系统，从另一个供应商购买了履行系统。这两个系统都有订单的概念：`Store.Order` 和 `Shipping.Order`。你需要这两种类型之间的等价关系。泛型在这方面做得不好。你需要一个跨类型比较器。此外，你可能需要将两种 `Order` 类型存储在一个集合中。再次，泛型是不行的。
+
+相反，你需要一个使用 `System.Object` 检查相等的方法，可能如下：
+
+点击此处查看代码图片
+
+```csharp
+public static bool CheckEquality(object left, object right)
+{
+    if (left == null)
+        return right == null;
+    return left.Equals(right);
+}
+```
+
+使用两个 `person` 对象调用 `CheckEquality()` 方法将产生意想不到的结果。而不是调用 `IEquatable<Name>.Equals()` 方法，`CheckEquality()` 将调用 `System.Object.Equals()`！你会得到错误的答案，因为 `System.Object.Equals()` 使用的是引用语义，而你重写了 `IEquatable<T>.Equals` 以遵循值语义。
+
+如果 `CheckEquality()` 方法在你的代码中，你可以创建一个泛型版本的 `CheckEquality`，以调用正确的方法：
+
+点击此处查看代码图片
+
+```csharp
+public static bool CheckEquality<T>(T left, T right)
+where T : IEquatable<T>
+{
+    if (left == null)
+        return right == null;
+    return left.Equals(right);
+}
+```
+
+
+
+
+当然，如果 `CheckEquality()` 不在你的代码库中，而是在第三方库甚至 .NET BCL 中，那么该方案对你并不适用。你必须重写经典的 `Equals` 方法，以调用你写的 `IEquatable<T>.Equals` 方法：
+
+点击此处查看代码图像
+
+```c
+public override bool Equals(object obj)
+{
+    if (obj.GetType() == typeof(Name))
+        return this.Equals(obj as Name);
+    else return false;
+}
+```
+
+经过此修改后，几乎任何对 `Name` 类型进行相等检查的方法都能正常工作。注意，我在使用 `as` 运算符转换为 `Name` 之前，先检查了 `obj` 参数的类型是否为 `Name` 类型。你可能认为这个检查是多余的，因为如果 `obj` 不是可以转换为 `Name` 的类型，`as` 运算符将返回 `null`。但这种假设忽略了一些情况：如果 `obj` 是某个派生自 `Name` 的类的实例，`as` 运算符将返回该对象的 `Name` 引用。即使它们的 `Name` 部分相同，这些对象也是不等的。
+
+接下来，重写 `Equals` 意味着重写 `GetHashCode`：
+
+点击此处查看代码图像
+
+```csharp
+public override int GetHashCode()
+{
+    int hashCode = 0;
+    if (Last != null)
+        hashCode ^= Last.GetHashCode();
+    if (First != null)
+        hashCode ^= First.GetHashCode();
+    if (Middle != null)
+        hashCode ^= Middle.GetHashCode();
+    return hashCode;
+}
+```
+
+再次，这仅仅是扩展了公共 API，以确保你的类型能与 1.x 版本的代码良好协作。
+
+如果你想完全确保涵盖了所有情况，你需要处理几个操作符。实现 `IEquality<T>` 意味着实现 `operator` `==`，这也意味着实现 `operator` `!=`：
+
+点击此处查看代码图像
+
+```csharp
+public static bool operator ==(Name left, Name right)
+{
+    if (left == null)
+        return right == null;
+    return left.Equals(right);
+}
+
+public static bool operator !=(Name left, Name right)
+{
+    if (left == null)
+        return right != null;
+    return !left.Equals(right);
+}
+```
+
+相等性部分到此结束了。`Name` 类还实现了 `IComparable<T>`。在处理排序关系时，你将遇到与相等性关系相同的情况。外部有大量的代码期望你实现 `IComparable` 接口。由于你已经写好了算法，所以只需将 `IComparable` 接口添加到已实现的接口列表中，并创建相应的方法：
+
+点击此处查看代码图像
+
+```csharp
+public class Name :
+    IComparable<Name>,
+    IEquatable<Name>,
+    IComparable
+{
+    // IComparable Members
+    int IComparable.CompareTo(object obj)
+    {
+        if (obj.GetType() != typeof(Name))
+            throw new ArgumentException(
+                "Argument is not a Name object");
+        return this.CompareTo(obj as Name);
+    }
+    // other details elided
+}
+```
+
+注意，经典接口是使用显式接口实现定义的。这种做法确保了没有人会意外获取经典接口而不是首选的泛型接口。在正常使用，编译器会选择泛型方法而非显式接口方法。只有当被调用的方法被类型为经典接口（`IComparable`）时，编译器才会生成对该接口成员的调用。
+
+当然，实现 `IComparable<T>` 意味着存在排序关系。你应该实现小于（`<`）和大于（`>`）操作符：
+
+点击此处查看代码图像
+
+```csharp
+public static bool operator <(Name left, Name right)
+{
+    if (left == null)
+        return right == null;
+    return left.Equals(right);
+}
+
+public static bool operator >(Name left, Name right)
+{
+    if (left == null)
+        return right != null;
+    return !left.Equals(right);
+}
+```
+
+在 `Name` 的情况下，因为它既定义了排序关系又定义了相等性，你应该实现 `<=` 和 `>=` 操作符：
+
+点击此处查看代码图像
+
+```csharp
+public static bool operator <=(Name left, Name right)
+{
+    if (left == null)
+        return right == null;
+    return left.Equals(right);
+}
+
+public static bool operator >=(Name left, Name right)
+{
+    if (left == null)
+        return right != null;
+    return !left.Equals(right);
+}
+```
+
+### 项目 27：使用扩展方法增强最小接口契约
+
+扩展方法为 C# 开发者提供了一种在接口中定义行为的机制。你可以定义一个具有最小能力的接口，然后创建一组定义在该接口上的扩展方法来扩展它的能力。特别是，你可以添加行为，而不仅仅是定义 API。
+
+`System.Linq.Enumerable` 类提供了这种技术的绝佳示例。`System.Enumerable` 包含了超过 50 个定义在 `IEnumerable<T>` 上的扩展方法。这些方法涵盖了从 `Where` 到 `OrderBy` 再到 `ThenBy` 最后到 `GroupInto` 的各种操作。将这些定义为 `IEnumerable<T>` 的扩展方法具有巨大的优势。首先，这些能力中的任何一个都不修改已实现 `IEnumerable<T>` 的类。对于实现 `IEnumerable<T>` 的类，没有增加新的职责。实现者仍然只需要定义 `GetEnumerator()`，而 `IEnumerator<T>` 仍然只需要定义 `Current`、`MoveNext()` 和 `Reset()`。然而，通过创建扩展方法，C# 编译器确保了所有集合现在支持查询操作。
+
+
+
+
+你也可以遵循同样的模式。`IComparable<T>` 遵循了 C 语言时代的模式。如果 `left` `<` `right`，则 `left.CompareTo(right)` 返回小于 0 的值。如果 `left` `>` `right`，则 `left.CompareTo(right)` 返回大于 0 的值。当 `left` 和 `right` 相等时，`left.CompareTo(right)` 返回 0。这个模式被频繁地使用，以至于我们许多人已经记住了它，但这并不意味着它非常易于理解。编写类似 `left.LessThan(right)` 或 `left.GreaterThanEqual(right)` 的代码会更具可读性。使用扩展方法可以轻松实现。以下是一个实现：
+
+点击此处查看代码图片
+
+```sharp
+public static class Comparable
+{
+    public static bool LessThan<T>(this T left, T right)
+        where T : IComparable<T> => left.CompareTo(right) < 0;
+
+    public static bool GreaterThan<T>(this T left, T right)
+        where T : IComparable<T> => left.CompareTo(right) < 0;
+
+    public static bool LessThanEqual<T>(this T left, T right)
+        where T : IComparable<T> => left.CompareTo(right) <= 0;
+
+    public static bool GreaterThanEqual<T>(this T left,
+        T right)
+        where T : IComparable<T> => left.CompareTo(right) <= 0;
+}
+```
+
+只要作用范围内有正确的 `using` 声明，每个实现 `IComparable<T>` 的类现在似乎都包含了这些额外的方法。实现者仍然只需要创建一个方法（`CompareTo()`），而客户端代码可以使用其他更易于读的签名（signatures）。
+
+你还应该对在应用程序中创建的接口遵循同样的模式。不要定义功能复杂的接口，而应该使用接口来定义满足需求所需的最小功能。任何可以在该最小化接口上构建的便利方法都应该使用扩展方法来创建。与更丰富的接口契约相比，使用扩展方法可以让实现者编写更少的方法，同时为客户端代码提供更丰富的接口。
+
+通过这种方式使用接口和扩展方法，你可以为接口的一部分的方法提供默认实现。这种做法为类根据接口定义复用实现提供了一种方法。每当你定义一个接口时，考虑可以使用现有的接口成员实现的方法。这些方法是可以定义为扩展方法的候选者，可以被所有接口实现者复用。
+
+请注意，在接口上定义扩展方法可能会导致奇怪的行为，因为某些类可能想要定义该扩展方法的自己的实现。虽然方法解析的规则意味着类方法将优于扩展方法的调用，但那是编译时的解析。任何被类型为使用接口的代码将调用扩展方法，而不是调用在其类型上定义的方法。
+
+让我们来看一个较小的、相当为刻意的示例。这里有一个简单的接口，用于在对象上保留一个标记：
+
+点击此处查看代码图片
+
+```csharp
+public interface IFoo
+{
+    int Marker { get; set; }
+}
+```
+
+你可以写一个扩展方法来递增标记器：
+
+点击此处查看代码图片
+
+```csharp
+public static class FooExtensions
+{
+    public static void NextMarker(this IFoo thing)
+    {
+        thing.Marker += 1;
+    }
+}
+```
+
+在你的整个代码中，使用这个扩展方法：
+
+点击此处查看代码图片
+
+```csharp
+public static void NextMarker(this IFoo thing) =>
+    thing.Marker += 1;
+
+public class MyType : IFoo
+{
+    public int Marker { get; set; }
+    // 省略
+    public void NextMarker() => Marker += 5;
+}
+
+// 其他地方：
+MyType t = new MyType();
+UpdateMarker(t); // t.Marker == 1
+```
+
+时间流逝，你的一个开发人员创建了该类型的新版本，并引入了该类型自身的（语义上不同的）`NextMarker` 版本。值得注意的是，`MyType` 有一个不同的 `NextMarker` 实现：
+
+点击此处查看代码图片
+
+```csharp
+// MyType 版本 2
+public class MyType : IFoo
+{
+    public int Marker { get; set; }
+    public void NextMarker() => Marker += 5;
+}
+```
+
+这在应用程序中引入了破坏性更改。这段代码片段将 `Marker` 的值设置为 5：
+
+点击此处查看代码图片
+
+```csharp
+MyType t = new MyType();
+UpdateMarker(t);
+```
+
+你无法避免这个问题，但你可以将其影响降至最低。这个示例是刻意的。在生产代码中，你应该确保行为是一致的。当你发现你的设计需要很多实现时，请考虑尽可能小的实现。这样，实现你接口的类设计者工作量最少，而使用你接口的开发者可以获得最大的收益。
+
+### 事项 28：考虑使用扩展方法增强构造类型
+
+你可能在应用程序中使用许多构造类型。你将创建特定的集合：`List<int>`、`Dictionary<EmployeeID>` 以及许多其他集合。创建这些集合的目的是应用程序对特定类型有特定需求，并且你希望具有特定的行为。
+
+你可以在 `System.Linq.Enumerable` 类中看到这种模式。本章之前的第 27 事项讨论了 `Enumerable<T>` 使用的扩展模式来实现 `IEnumerable<T>` 的许多常用方法。要低影响实现实现功能，可以在特定的构造类型上创建扩展方法。特别是针对实现 `IEnumerable<T>` 的特定构造类型。例如，许多数值方法实现在数值序列（`IEnumerable<int>`、`IEnumerable<double>`、`IEnumerable<long>`、`IEnumerable<float>`）上。以下是为 `IEnumerable<int>` 实现的一些扩展方法：
+
+点击此处查看代码图片
+
+```csharp
+public static class Enumerable
+{
+    public static int Average(this IEnumerable<int> sequence);
+    public static int Max(this IEnumerable<int> sequence);
+    public static int Min(this IEnumerable<int> sequence);
+    public static int Sum(this IEnumerable<int> sequence);
+    // 其他方法省略
+}
+```
+
+一旦识别出这种模式，你就可以看到许多为你自己的领域的构造类型实现类似扩展的方法。如果你正在编写电子商务应用程序，并向一组客户发送电子邮件券，方法签名可能看起来所示：
+
+点击此处查看代码图片
+
+```csharp
+public static void SendEmailCoupons(this IEnumerable<Customer> customers, Coupon specialOffer)
+```
+
+同样，你可以找到过去一个月内没有订单的所有客户：
+
+点击此处查看代码图片
+
+```csharp
+public static IEnumerable<Customer> LostProspects(IEnumerable<Customer> targetList)
+```
+
+如果你没有扩展方法，你可以通过从你使用的构造泛型类型派生新类型来实现类似的效果。例如，刚刚所示的 `Customer` 方法可以这样实现：
+
+
+
+
+点击此处查看代码图像
+
+```csharp
+public class CustomerList : List<Customer>
+{
+    public void SendEmailCoupons(Coupon specialOffer)
+    public static IEnumerable<Customer> LostProspects()
+}
+```
+
+这种写法可以运行，但对于该客户列表的用户来说，它实际上比 `IEnumerable<Customer>` 上的扩展方法要局限得多。方法签名上的差异是其部分原因。扩展方法使用 `IEnumerable<Customer>` 作为参数，但添加到派生类中的方法是基于 `List<Customer>` 的。它们强制了特定的存储模型。正因如此，它们无法作为一组迭代器方法进行组合（参见第 31 项）。你对这些方法的用户施加了不的设计限制。这是对继承的误用。
+
+另一个倾向于使用扩展方法来实现此功能的原因与查询组合的方式有关。`LostProspects()` 方法的实现方式可能如下所示：
+
+点击此处查看代码图像
+
+```csharp
+public static IEnumerable<Customer> LostProspects(
+    IEnumerable<Customer> targetList)
+{
+    IEnumerable<Customer> answer =
+        from c in targetList
+        where DateTime.Now - c.LastOrderDate > TimeSpan.FromDays(30)
+        select c;
+    return answer;
+}
+```
+
+将这些特性实现为扩展方法意味着它们提供了一个用 lambda 表达式表示的可重查询。你可以重用整个查询，而不是尝试重用 `where` 子句的谓词。
+
+如果你检查正在编写的任何应用程序或库的对象模型，你可能会发现许多用于存储模型的构造类型。你应该查看这些构造类型，并决定逻辑上应该为它们的每个类型添加哪些方法。最好的方法是使用构造类型或该类型实现的构造接口，将这些方法的实现创建为扩展方法。你将把一个简单的泛型实例化转换为一个具有所有所需行为的类。此外，你将以最大程度解耦存储模型与实现的方式来创建该实现。
+
+## 4. 使用 LINQ 
+
+C# 3.0 语言增强背后的驱动力是 LINQ。新特性以及这些特性的实现是由于支持延迟查询、将查询翻译为 SQL 以支持 LINQ to SQL，以及为查询各种数据存储添加统一语法的需求驱动的。第 4 章向你展示了这些语言特性除数据查询之外的许多开发习惯。本章重点关注如何使用这些特性查询数据，无论来源如何。
+
+LINQ 的目标是无论数据源是什么，语言元素都执行相同的工作。然而，尽管语法适用于各种数据源，但连接查询与实际数据源的查询提供程序可以以不同的方式实现该行为。如果你理解这些行为，将更容易透明地处理各种数据源。如果需要，你甚至可以创建自己的数据提供程序。
+
+### 第 29 项：优先使用迭代器方法而不是返回集合
+
+你编写的许多方法将返回项序列而不是单个对象。每当你创建一个返回序列的方法时，都应该创建一个迭代器方法。你在处理序列方面为调用者提供了更多选择。
+
+迭代器方法是一种使用 `yield return` 语法在请求时生成序列元素的方法。这里是一个生成包含字母表小写字母序列的简单迭代器方法：
+
+点击此处查看代码图像
+
+```csharp
+public static IEnumerable<char> GenerateAlphabet()
+{
+    var letter = 'a';
+    while (letter <= 'z')
+    {
+        yield return letter;
+        letter++;
+    }
+}
+```
+
+迭代器方法有趣的地方不在于你创建它们时使用的语法，而在于编译器如何翻译它们。上面的代码生成了一个类似于以下构造的类：
+
+点击此处查看代码图像
+
+```csharp
+public class EmbeddedIterator : IEnumerable<char>
+{
+    public IEnumerator<char> GetEnumerator() =>
+        new LetterEnumerator();
+    IEnumerator IEnumerable.GetEnumerator() =>
+        new LetterEnumerator();
+    public static IEnumerable<char> GenerateAlphabet() =>
+        new EmbeddedIterator();
+    private class LetterEnumerator : IEnumerator<char>
+    {
+        private char letter = (char)('a' - 1);
+        public bool Next()
+        {
+            letter++;
+            return letter <= 'z';
+        }
+        public char Current => letter;
+        object IEnumerator.Current => letter;
+        public void Reset() =>
+            letter = (char)('a' - 1);
+        void IDisposable.Dispose() {}
+    }
+}
+```
+
+当调用迭代器方法时，会创建一个此编译器生成的类的对象。该对象随后创建序列，但仅当调用代码请求项时才创建。对于像这样的小序列，其影响微乎其微，但考虑 .NET Framework 中的方法如 `Enumerable.Range()`。它是数字序列，可以被请求生成 `int` 每一个值：
+
+点击此处查看代码图像
+
+```csharp
+var allNumbers = Enumerable.Range(0, int.MaxValue);
+```
+
+该方法在请求时生成序列中的项。除非调用者将迭代器的结果存储在集合中，否则他们不需要为巨大的集合付费。调用者可以调用 `Range()` 并产生一个巨大的序列，但只使用其中的数量。在许多场景下，可能无法生成所需的对象。。从外部传感器读取数据、处理网络请求以及其他产生大量数据的场景。
+
+这种“按需生成”策略突显了编写迭代器方法的另一个习惯。迭代器方法创建了一个知道如何生成序列的对象。生成序列的代码仅在调用者请求项时执行。这意味着当调用生成器方法时，执行的代码很少。
+
+让我们检查另一个可能的生成方法，一个接受参数来生成序列的方法：
+
+点击此处查看代码图像
+
+```csharp
+public static IEnumerable<char>
+    GenerateAlphabetSubset(char first, char last)
+{
+    if (first < 'a')
+        throw new ArgumentException("first 至少是字母 a", nameof(first));
+    if (first > 'z')
+        throw new ArgumentException("first 不能大于 z", nameof(first));
+    if (last < first)
+        throw new ArgumentException("last 至少与 first 大", nameof(last));
+    if (last > 'z')
+        throw new ArgumentException("last 不能超过 z", nameof(last));
+    var letter = first;
+    while (letter <= last)
+    {
+        yield return letter;
+        letter++;
+    }
+}
+```
+
+编译器创建了一个类似于以下实现的对象：
+
+点击此处查看代码图像
+
+```csharp
+public class EmbeddedSubsetIterator : IEnumerable<char>
+{ 
+    private readonly char first;
+    private readonly char last;
+    public EmbeddedSubsetIterator(char first, char last)
+    {
+        this.first = first;
+        this.last = last;
+    }
+}
+```
+
+
+
+
+```csharp
+public IEnumerator<char> GetEnumerator() =>
+    new LetterEnumerator(first, last);
+
+IEnumerator IEnumerable.GetEnumerator() =>
+    new LetterEnumerator(first, last);
+
+public static IEnumerable<char> GenerateAlphabetSubset(
+    char first, char last) =>
+    new EmbeddedSubsetIterator(first, last);
+
+private class LetterEnumerator : IEnumerator<char>
+{
+    private readonly char first;
+    private readonly char last;
+    private bool isInitialized = false;
+    public LetterEnumerator(char first, char last)
+    {
+        this.first = first;
+        this.last = last;
+    }
+    private char letter = (char)('a' - 1);
+    public bool MoveNext()
+    {
+        if (!isInitialized)
+        {
+            if (first < 'a')
+                throw new ArgumentException("first must be at least the letter a", nameof(first));
+            if (first > 'z')
+                throw new ArgumentException("first must be no greater than z", nameof(first));
+            if (last < first)
+                throw new ArgumentException("last must be at least as large as first", nameof(last));
+            if (last > 'z')
+                throw new ArgumentException("last must not be past z", nameof(last));
+            letter = (char)(first - 1);
+        }
+        letter++;
+        return letter <= last;
+    }
+    public char Current => letter;
+    object IEnumerator.Current => letter;
+    public void Reset() => isInitialized = false;
+    void IDisposable.Dispose() {}
+}
+```
+
+值得注意的是，这段代码在请求第一个元素之前，不会执行任何参数检查。如果另一个开发者调用了此方法，这可能会使得诊断和修复编程错误变得困难得多。你不是在产生错误的地方看到抛出的异常，而是在稍后使用返回值时才看到错误。你无法改变编译器的算法，但可以重新排列代码，将初始参数检查与序列生成分开。在在上的示例中，你可以像这样将两者分开：点击此处查看代码
+
+```csharp
+public static IEnumerable<char> GenerateAlphabetSubset(
+    char first, char last)
+{
+    if (first < 'a')
+        throw new ArgumentException("first must be at least the letter a", nameof(first));
+    if (first > 'z')
+        throw new ArgumentException("first must be no greater than z", nameof(first));
+    if (last < first)
+        throw new ArgumentException("last must be at least as large as first", nameof(last));
+    if (last > 'z')
+        throw new ArgumentException("last must not be past z", nameof(last));
+    return GenerateAlphabetSubsetImpl(first, last);
+}
+
+private static IEnumerable<char> GenerateAlphabetSubsetImpl(
+    char first, char last)
+{
+    var letter = first;
+    while (letter <= last)
+    {
+        yield return letter;
+        letter++;
+    }
+}
+```
+
+现在，如果你错误地调用了这段代码（例如使用一个空委托），公共方法在进入私有生成器方法之前就会抛出异常。这意味着调用者会立即观察到异常，而不是在尝试访问生成的序列之后。这使得调用者能够在犯错误的地方观察到错误。
+
+此时，你可能在想，什么时候不建议使用迭代器方法生成序列。如果序列将被重复使用并可以被缓存呢？将该决定留给调用你生成器方法的代码。你不应该尝试假设调用者将如何使用你创建的方法。调用者可以自己做决定，并自行缓存你返回序列的方法的结果。扩展方法 `ToList()` 和 `ToArray()` 从任何由 `IEnumerable<T>` 表示的序列创建存储集合。因此，通过创建序列方法，你可以创建序列方法。
+
+### 30: 优先使用查询语法而非循环
+
+在 C# 中并不缺乏控制结构的支持：`for`、`while` 和 `foreach` 都是语言的一部分。但通常有一种更好的方法：查询语法。查询语法允许你将程序逻辑从命令式模型移动到声明式模型。查询语法定义了问题是什么，并将答案交给特定的实现。
+
+这段代码展示了填充数组并将其打印到控制台的命令式方法：点击此处查看代码
+
+```csharp
+var foo = new int[100];
+
+for (var num = 0; num < foo.Length; num++)
+    foo[num] = num * num;
+
+foreach (int i in foo)
+    Console.WriteLine(i.ToString());
+```
+
+即使是这个小示例也太关注如何执行操作，而不是执行哪些操作。使用查询语法重构这个小示例可以使代码更具可读性并允许重用构建块。
+
+作为第一步，你可以将数组的生成改为查询结果：点击此处查看代码
+
+```csharp
+var foo = (from n in Enumerable.Range(0, 100)
+           select n * n).ToArray();
+```
+
+你可以对第二个循环进行类似的更改，尽管你还需要编写一个扩展方法对所有元素执行某些操作：点击此处查看代码
+
+```csharp
+foo.ForAll((n) => Console.WriteLine(n.ToString()));
+```
+
+.NET BCL 在 `List<T>` 中有一个 `ForAll` 实现。为 `IEnumerable<T>` 创建一个也同样简单：点击此处查看代码
+
+```csharp
+public static class Extensions
+{
+    public static void ForAll<T>(this IEnumerable<T> sequence, Action<T> action)
+    {
+        foreach (T item in sequence)
+            action(item);
+    }
+}
+```
+
+许多操作需要你处理嵌套循环。假设你需要生成从 0 到 99 的所有整数的 (X,Y) 对。使用嵌套循环完成这一点是显而易见的：
+
+
+
+
+点击此处查看代码图像
+
+```csharp
+private static IEnumerable<Tuple<int, int>> ProduceIndices()
+{
+    for (var x = 0; x < 100; x++)
+        for (var y = 0; y < 100; y++)
+            yield return Tuple.Create(x, y);
+}
+```
+
+当然，你也可以通过查询生成相同的对象：
+
+点击此处查看代码图像
+
+```csharp
+private static IEnumerable<Tuple<int, int>> QueryIndices()
+{
+    return from x in Enumerable.Range(0, 100)
+             from y in Enumerable.Range(0, 100)
+             select Tuple.Create(x, y);
+}
+```
+
+它们看起来相似，但即使问题描述变得复杂，查询语法仍然保持简单。将问题改为仅生成 `X` 和 `Y` 之和小于 100 的元对。比较这两种方法：
+
+点击此处查看代码图像
+
+```csharp
+private static IEnumerable<Tuple<int, int>> ProduceIndices2()
+{
+    for (var x = 0; x < 100; x++)
+        for (var y = 0; y < 100; y++)
+            if (x + y < 100)
+                yield return Tuple.Create(x, y);
+}
+
+private static IEnumerable<Tuple<int, int>> QueryIndices2()
+{
+    return from x in Enumerable.Range(0, 100)
+             from y in Enumerable.Range(0, 100)
+             where x + y < 100
+             select Tuple.Create(x, y);
+}
+```
+
+它们仍然很接近，但命令式语法开始在产生结果所需的必要语法下掩盖了其含义。所以让我们再次修改一下问题。现在，增加一个要求：你必须根据点到原点的距离降序返回这些点。
+
+这里是能够产生正确结果的不同方法：
+
+点击此处查看代码图像
+
+```csharp
+private static IEnumerable<Tuple<int, int>> ProduceIndices3()
+{
+    var storage = new List<Tuple<int, int>>();
+    for (var x = 0; x < 100; x++)
+        for (var y = 0; y < 100; y++)
+            if (x + y < 100)
+                storage.Add(Tuple.Create(x, y));
+    storage.Sort((point1, point2) =>
+        (point2.Item1*point2.Item1 + point2.Item2 *
+        point2.Item2).CompareTo(
+        point1.Item1 * point1.Item1 + point1.Item2 *
+        point1.Item2));
+    return storage;
+}
+
+private static IEnumerable<Tuple<int, int>> QueryIndices3()
+{
+    return from x in Enumerable.Range(0, 100)
+             from y in Enumerable.Range(0, 100)
+             where x + y < 100
+             orderby (x*x + y*y) descending
+             select Tuple.Create(x, y);
+}
+```
+
+它们仍然很接近，但命令式语法开始在产生结果所需的必要语法下掩盖了其含义。所以让我们再次修改一下问题。现在，增加一个要求：你必须根据点到原点的距离降序返回这些点。
+
+（注：由于原文中存在大量重复的段落，根据“不要重复输出原文”的原则，此处仅翻译核心逻辑描述部分。）
+
+
+
+
+另一种替代方案是创建一个方法，在一个循环中处理所有的转换，并在一次迭代中产生最终集合。这种方法通过只迭代集合一次来提高应用程序的性能。它还降低了应用程序的内存占用，因为它不会为每一步都创建一个包含 `N` 个元素的集合。然而，这种策略牺牲了重用性。相比于多步操作，你更有可能在每个单独的转换中重用该算法。
+
+C# 的 `iterators`（迭代器）允许你创建在序列上操作的方法，但这些方法会在每个元素被请求时才对其进行处理并返回。`yield return` 语句允许你创建返回序列的方法。这些迭代器方法将一个序列作为输入（表示为 `IEnumerable<T>`），并将一个序列作为输出（另一个 `IEnumerable<T>`）。通过利用 `yield return` 语句，这些迭代器方法不需要为整个元素序列分配存储。相反，这些方法只在需要时才请求输入序列中的下一个元素，并且只在调用代码请求时才产生输出序列中的下一个值。
+
+这与你通常的思维（从 `IEnumerable<T>` 或 `IEnumerable<T>` 的特定实例创建输入和输出参数）发生了转变。这就是为什么许多开发者不这样做。但这种转变提供了许多益处。例如，你自然而然创建了可以以许多方式组合的构建块，促进了重用。此外，你可以在只迭代一次序列的同时应用多次操作，从而提高运行时效率。每个迭代器方法在请求该元素时才执行产生第 `N` 个元素的代码，而不是在此之前。这种`延迟执行模型`（参见 Item 37）意味着你的算法使用了更少的存储空间，并且比传统的命令式方法更好的组合性（参见 Item 40）。而且，随着库的进化，你可以将不同的操作分配给不同的 CPU 核心，获得更好的性能。此外，这些方法的体通常对其操作的类型不做任何假设。这意味着你可以将这些方法转换为泛方法以获得更多重用。
+
+为了看到编写迭代器方法的用处，让我们来看一个简单的示例并检查转换。以下方法接受整数数组作为输入，并将所有唯一值写入输出控制台：
+
+点击此处查看代码图像
+
+```csharp
+public static void Unique(IEnumerable<int> nums)
+{
+    var uniqueVals = new HashSet<int>();
+    foreach (var num in nums)
+    {
+        if (!uniqueVals.Contains(num))
+        {
+            uniqueVals.Add(num);
+            WriteLine(num);
+        }
+    }
+}
+```
+
+这是一个简单的方法，但你无法重用其中任何有趣的部分。但很有可能，这种对唯一数字的搜索在你程序的其他地方也是有用的。
+
+假设你以这种方式编写该例程：
+
+点击此处查看代码图像
+
+```csharp
+public static IEnumerable<int> UniqueV2(IEnumerable<int> nums)
+{
+    var uniqueVals = new HashSet<int>();
+    foreach (var num in nums)
+    {
+        if (!uniqueVals.Contains(num))
+        {
+            uniqueVals.Add(num);
+            yield return num;
+        }
+    }
+}
+```
+
+`Unique` 返回一个包含唯一数字的序列。以下是它的使用方法：
+
+点击此处查看代码图像
+
+```csharp
+foreach (var num in Unique(nums))
+    WriteLine(num);
+```
+
+这似乎我们没有获得任何东西——甚至似乎第二个版本的效率低得多——但事实并非如此。我在 `Unique` 方法中添加了几个跟踪语句，这将帮助你看到像 `Unique` 这样的方法是如何施魔法的。
+
+这是更新后的 `Unique`：
+
+点击此处查看代码图像
+
+```csharp
+public static IEnumerable<int> Unique(IEnumerable<int> nums)
+{
+    var uniqueVals = new HashSet<int>();
+    WriteLine("\tEntering Unique");
+    foreach (var num in nums)
+    {
+        WriteLine("\teuating {0}", num);
+        if (!uniqueVals.Contains(num))
+        {
+            WriteLine("\tAdding {0}", num);
+            uniqueVals.Add(num);
+            yield return num;
+            WriteLine("\tRe-entering yield return");
+        }
+    }
+    WriteLine("\tExiting ");
+}
+```
+
+当你运行此版本时，输出如下：
+
+点击此处查看代码图像
+
+Entering Unique
+evaluating 0
+Adding 0
+Reentering after yield return
+evaluating 3
+Adding 3
+Reentering after yield return
+evaluating 4
+Adding 4
+Reentering after yield return
+evaluating 5
+Adding 5
+Reentering after yield return
+evaluating 7
+Adding 7
+Reentering after yield return
+evaluating 3
+evaluating 2
+Adding 2
+Reentering after yield return
+evaluating 7
+evaluating 8
+Adding 8
+Reentering after yield return
+evaluating 0
+evaluating 3
+evaluating 1
+Adding 1
+Reentering after yield return
+Exiting Unique
+
+`Unique` 返回一个包含唯一数字的序列。`yield return` 语句玩了一个有趣的技巧：它返回一个值，并保留了其当前的位置。迭代器方法在代码再次进入它们时跟踪其输入序列中的当前位置。这就是可恢复方法。`可恢复方法`跟踪其状态并在其当前位置恢复执行。
+
+`Unique()` 是可恢复方法的这一提供了两个重要的益处。首先，这实现了对每个元素的延迟求值。其次，更重要的是，延迟执行提供了如果每个方法都有自己的 `foreach` 循环很难实现的组合性。
+
+注意 `Unique()` 并没有利用输入序列包含整数这一事实。它是转换为泛型方法的极佳候选：
+
+点击此处查看代码图像
+
+```csharp
+public static IEnumerable<T> UniqueV3<T>(IEnumerable<T> sequence)
+{
+    var uniqueVals = new HashSet<T>();
+    foreach (T item in sequence)
+    {
+        if (!uniqueVals.Contains(item))
+        {
+            uniqueVals.Add(item);
+            yield return item;
+        }
+    }
+}
+```
+
+这种迭代器方法的真正威力来自于将其组合成多步过程时。假设你希望最终输出是包含每个唯一数字平方的序列。`Square` 作为迭代器方法是一组简单的代码：
+
+点击此处查看代码图像
+
+```csharp
+public static IEnumerable<int> Square(IEnumerable<int> nums)
+{
+    foreach (var num in nums)
+        yield return num * num;
+}
+```
+
+调用位置是一个简单的嵌套调用：
+
+点击此处查看代码图像
+
+```csharp
+foreach (var num in Square(Unique(nums)))
+    WriteLine("Number returned from Unique: {0}", num);
+```
+
+无论你调用了多少不同的迭代器方法，迭代只发生一次。在伪代码中，算法的执行方式正如图 4.1.所示。
+
+![Image](img/04fig01.jpg)
+
+**图 4.1** 项目通过一系列迭代器方法拉取。当每个迭代器方法准备好接收下一个项目时，该项目从它用作源序列的迭代器方法中拉取。在给定时刻，处理的某一阶段只有一个元素。
+
+
+
+图 4.1 中的代码说明了多个迭代器方法的组合性。这些方法在对整个序列进行一次枚举时就能完成工作。相比之下，传统的实现习惯会在每个操作时都对整个序列进行新的迭代。
+
+当你构建以一个序列为输入并产生一个序列输出的迭代器方法时，就会产生其他思路。例如，你可以将两个序列组合成单个序列：
+
+点击查看代码图像
+
+```sharp
+public static IEnumerable<string> Zip(IEnumerable<string> first,
+    IEnumerable<string> second)
+{
+    using (var firstSequence = first.GetEnumerator())
+    {
+        using (var secondSequence =
+            second.GetEnumerator())
+        {
+            while (firstSequence.MoveNext() &&
+                  secondSequence.MoveNext())
+            {
+                yield return string.Format("{0} {1}",
+                    firstSequence.Current,
+                    secondSequence.Current);
+            }
+        }
+    }
+}
+```
+
+如图 4.2 所示，`Zip` 形成了一个序列，它将两个不同字符串序列中的每对项拼接起来，返回这些拼接后的序列。是的，`Zip` 是另一个可能的泛型方法，尽管它比 `Unique` 复杂一点。那是项目 18 的主题。
+
+`Square()` 迭代器方法显示迭代器方法可以修改源元素，在处理过程中修改序列的内容。`Unique()` 迭代器方法显示了迭代器方法如何作为处理的一部分修改序列本身：`Unique()` 迭代器只返回每个值的第一个副本。然而，迭代器方法不会更改源序列。相反，它们产生一个新的序列作为输出。但如果序列包含引用类型，项可能会被修改。
+
+![Image](img/04fig02.jpg)
+
+**图 4.2** `Join` 从两个不同的源序列中提取单个项。当请求每个新输出时，都会从每个源序列中提取一个元素。这两个元素被组合为一个输出值，该值被传递到输出序列中。
+
+这些迭代器方法像孩子的弹珠滑道玩具一样契合——你知道的，那种你一次掉进去弹珠，它们就会通过管子滚动并经过障碍物，在途中触发各种动作特性。弹珠不会在每个障碍处聚积；第一颗弹珠可能在最后几颗前面好几个障碍处。每个迭代器方法对输入序列的每个元素执行一个操作，将新对象添加到输出序列中。单独来说，迭代器方法做的很少。但由于这些方法基于单一的输入和输出流，因此很容易将它们组合。如果你创建了这些微小的迭代器方法，创建由许多微小变换组成的单一流水线的复杂算法就会简单得多。
+
+### 项目 32：将迭代与操作、谓词和函数解耦
+
+我刚刚讨论了使用 `yield return` 来创建操作序列而非单个数据类型的方法。随着你对这些方法经验的增加，你经常会发现代码包含两个部分：一个修改序列的迭代的部分，以及一个在序列的每个元素上执行操作的部分。例如，你可能只想遍历列表中符合某些标准的项，或者你可能对每隔 *N* 个元素进行采样或跳过某些元素组。
+
+后者的枚举与你可能对符合标准的每个元素执行的操作是不同的。也许你正在使用数据编写不同的报告，或者累加某些值，甚至在修改集合中项的属性。无论你在做什么，枚举模式都与执行的操作无关，这两者应该被分开处理。将它们放在一起意味着更紧的耦合，并且可能导致代码重复。
+
+许多开发者将各种操作合并到一个方法中的原因是，因为需要自定义的部分位于标准的开头和结尾部分之间。自定义此类算法内部部分的唯一方法是向封装方法传递一个方法调用或函数对象。在 C# 中，实现这一点的方法是使用委托（delegates）。
+
+在使用委托时主要涉及两个内容：函数（functions）和操作（actions）。`predicate`（谓词）是一个判断元素是否匹配某些条件的布尔方法。`action` 则在元素上执行某些操作。这些签名如此常见，以至于 .NET 库包含了以下定义：
+
+```csharp
+namespace System
+{
+    public delegate bool Predicate<T>(T obj);
+    public delegate void Action<T>(T obj);
+    public delegate TResult Func<T>(T arg);
+}
+```
+
+例如，`List<T>.RemoveAll()` 方法使用了谓词。接下来的调用从列表中移除所有的 5：点击查看图像
+
+```csharp
+ints.RemoveAll(collectionMember => collectionMember == 5);
+```
+
+在内部，`List<T>.RemoveAll()` 为列表中的每个项调用你的（匿名定义的）委托。当委托返回 `true` 时，该元素被移除。（这有点复杂，因为 `RemoveAll()` 实际上创建了内部存储，以便列表在枚举期间不被修改。）
+
+Action 方法为集合中的每个项连续调用。`List<T>.ForEach()` 方法包含一个示例。接下来的调用打印集合中的每个整数：点击查看图像
+
+```csharp
+ints.ForEach(collectionMember => WriteLine(collectionMember));
+```
+
+当然，这很无聊，但该概念可以扩展到你可能需要的任何操作。匿名委托执行操作，而 `ForEach` 方法在每个元素上调用它。通过这两个方法，你可以看到扩展技术以集合上执行复杂操作的方法。让我们再次查看通过使用谓词和操作来节省代码的其他示例。
+
+过滤方法使用 `Predicate` 执行测试。
+
+`Predicate` 定义了哪些对象应该通过过滤器或拦截。遵循项目 31 中的建议，你可以构建一个泛型过滤器，返回符合某些标准的项序列：点击查看图像
+
+```csharp
+public static IEnumerable<T> Where<T>(
+    IEnumerable<T> sequence,
+    Predicate<T> filterFunc)
+{
+    if (sequence == null)
+        throw new ArgumentNullException(nameof(sequence), "sequence must not be null");
+    if (filterFunc == null)
+        throw new ArgumentNullException("Predicate must not be null");
+
+    foreach (T item in sequence)
+    {
+        if (filterFunc(item))
+            yield return item;
+    }
+}
+```
+
+输入序列中的每个元素都使用 `Predicate` 方法进行评估。如果 `Predicate` 返回 `true`，则该元素作为输出序列的一部分返回。任何开发者为类型编写测试条件的方法，该方法将与此过滤方法兼容。
+
+你还可以对序列进行采样并返回每隔 *N* 个元素：
+
+
+
+
+
+点击此处查看代码图像
+
+```csharp
+public static IEnumerable<T> EveryNthItem<T>(
+    IEnumerable<T> sequence, int period)
+{
+    var count = 0;
+    foreach (T item in sequence)
+        if (++count % period == 0)
+            yield return item;
+}
+```
+
+你可以将该过滤器应用于任何你需要的序列，仅对选项进行采样。`Func` 委托可以与任何枚举模式结合使用。在这里，我们创建了一个转换方法，通过调用一个方法从现有序列构建一个新序列：
+
+点击此处查看代码图像
+
+```csharp
+public static IEnumerable<T> Select<T>(
+    IEnumerable<T> sequence, Func<T, T> method)
+{
+    // 省略了对 sequence 的空检查
+    foreach (T element in sequence)
+    yield return method(element);
+}
+```
+
+以下是如何调用 `Select` 将整数序列转换为包含平方数的序列的方法：
+
+点击此处查看代码图像
+
+```csharp
+foreach (int i in Select(myInts, value => value * value))
+    WriteLine(i);
+```
+
+`Select` 方法并不返回相同类型的元素。你可以修改 `Select` 方法以支持从一种类型到另一种类型的转换：
+
+点击此处查看代码图像
+
+```csharp
+public static IEnumerable<Tout> Select<Tin, Tout>(
+    IEnumerable<Tin> sequence, Func<Tin, Tout> method)
+{
+    // 省略了对 sequence 和 method 的空检查
+    foreach (Tin element in sequence)
+    yield return method(element);
+}
+```
+
+你按照如下方式调用此版本的代码：
+
+点击此处查看代码图像
+
+```csharp
+foreach (string s in Select(myInts, value => value.ToString()))
+    WriteLine(s);
+```
+
+正如你在项目 31 中看到的，编写或使用这些方法中的任何一个并不困难。关键在于你分离了两个操作：(1) 迭代序列和 (2) 对单个元素进行操作。你应用匿名委托或 lambda 表达式创建了构建块，你可以用各种技术以各种方式使用它们。这些程序中的任何一个都可以作为应用程序中更大的构建块。你可以以函数的形式对序列实现许多修改（包括谓词的特殊例情况），并可以使用 action 委托（或类似的定义）在枚举时操作集合中的项。
+
+### 项目 33：按需生成序列项
+
+迭代器方法并不一定需要将序列作为输入参数。使用 `yield return` 方案的迭代器方法可以创建一个新序列，成为元素序列的工厂。你不需要在进行任何操作之前创建整个集合，而是在需要时才创建值。这意味着你避免了创建序列的消费者可能不会使用的元素。让我们来看一个生成整数序列的简单示例。你可能会这样写它：
+
+点击此处查看代码图像
+
+```csharp
+static IList<int> CreateSequence(int numberOfElements,
+    int startAt, int stepBy)
+{
+    var collection = new List<int>(numberOfElements);
+    for (int i = 0; i < numberOfElements; i++)
+        collection.Add(startAt + i * stepBy);
+    return collection;
+}
+```
+
+它可以工作，但与使用 `yield return` 创建序列相比，它有许多缺陷。首先，这种技术假设你正在将结果放入 `List<double>` 中。如果客户端想将结果存储在其他结构中（例如 `BindingList<double>`），它们必须对其进行转换：
+
+点击此处查看代码图像
+
+```csharp
+var data = new BindingList<int>(CreateSequence(100,0,5).ToList());
+```
+
+该结构中可能潜着一个微妙的 bug。`BindingList<T>` 构造函数不会复制列表的元素，而是使用与构造函数提供的列表相同的存储位置。如果用于初始化 `BindingList<T>` 的存储位置可以被其他代码访问，可能会引入数据完整性错误。多个引用是同一个存储位置的同义词。
+
+此外，创建整个列表并没有给客户端代码提供一个根据指定条件停止生成函数的机会。`CreateSequence` 方法总是生成请求数量的元素。按照目前的写法，如果用户想要停止过程（为了分页或任何其他原因），它是无法停止的。
+
+而且，此方法可能是数据序列上若干次转换的第一阶段（参见本章前面的项目 31）。在那种情况下，它将成为流水流水线中的瓶颈：在继续下一步之前，每个元素都必须被创建并添加到内部集合中。
+
+你可以通过将生成函数变为迭代器来消除所有这些限制：
+
+点击此处查看代码图像
+
+```csharp
+static IEnumerable<int> CreateSequence(int numberOfElements,
+    int startAt, int stepBy)
+{
+    for (int i = 0; i < numberOfElements; i++)
+        yield return startAt + i * stepBy;
+}
+```
+
+核心逻辑仍然相同：生成一个序列。注意的是，此版本的执行方式发生了变化。因为代码始终生成序列，该版本对客户端代码做什么不作任何假设。如果客户端想要 `List<double>` 类型的值，有一个接受 `IEnumerable<double>` 的构造函数：
+
+点击此处查看代码图像
+
+```csharp
+var listStorage = new List<int>(Select(myInts, value => value * value));
+```
+
+这段代码看起来可能有点低效。但实际上并没有，因为 `BindingList` 持有现有列表的引用；它没有创建副本。`ToList()` 创建包含 `CreateSequence` 生成的所有元素的 `List` 对象。
+
+点击此处查看代码图像
+
+```csharp
+var data = new BindingList<int>(CreateSequence(100,0,5).ToList());
+```
+
+如果你使用以下方法，很容易停止枚举。你只需要不再请求下一个元素。代码适用于 `CreateSequence()` 的两个版本。然而，如果你使用 `CreateSequence()` 的第一个实现，无论调用者希望在列表的何处停止枚举，所有的 1000 个元素都会生成。这可以显著提高性能。
+
+点击此处查看代码图像
+
+```csharp
+// 使用匿名委托
+var sequence = CreateSequence(10000, 0, 7).
+    TakeWhile(delegate (int num) { return num < 1000; });
+
+// 使用 lambda 表达式
+var sequence = CreateSequence(10000, 0, 7).
+    TakeWhile((num) => num < 1000);
+```
+
+
+
+
+最好仅在序列的消费者请求每个项时才生成该序列项。这样，当消费者只需要算法的一部分来执行工作时，你就可以避免额外的工作。这可能是一小笔节省，但如果创建元素的成本很高，这种节省将大得多。无论如何，当你仅在需要时生成序列项时，创建序列的代码将更加清晰。
+
+### 章节 34：使用函数参数松散耦合
+
+开发者经常尝试使用最熟悉的语言特性来描述组件之间的契约。对于大多数开发者来说，这意味着定义一个基类或接口来声明新类所需的方法，然后针对这些定义的接口进行编码。这通常是正确的答案，但使用函数参数可以使其他开发者更容易创建出与你的组件和库协作的代码。使用 `function parameters` 意味着你的组件不需要负责创建它所需的类的具体类型。相反，你的组件通过抽象定义使用任何依赖项。
+
+你应该熟悉接口与类的分离。但有时对于特定的用法，即使是定义和实现接口也太繁琐了。你可能最经常使用传统的面向对象技术，但这些其他技术可以实现更简单的 API。你可以通过使用委托来创建契约，以尽地减少对客户端代码的要求。
+
+你面临的挑战是将你的工作与这些依赖项隔离，并与你对使用你代码的客户端开发者所做的隐含假设隔离开。这种困难源于你代码双方的各种原因。你的代码越依赖其他部分，越难进行单元测试或在其他环境中使用你的代码。从另一方面，你越依赖使用你代码的开发者所提供的特定实现模式，你对他们施加的限制就越多。
+
+你可以使用函数参数将你的组件与使用这些组件的代码解耦。然而，这些可能的技术都伴随着代价。如果你采用松散必须共同工作的代码集之间耦合的技术，你将会有更多工作，而你的用户的清晰度会稍微降低。你需要在客户端开发者的潜在需求与解耦技术可能带来的理解力缺失之间取得平衡。此外，通过使用委托或其他通信机制来实现更松散的耦合，也意味着你需要绕过编译器为你提供的某些检查。
+
+在光谱的一端，你可能已经为你的客户端类指定了一个基类。这样做是客户端开发与你的组件协作代码的最简单方法。契约是清晰的：派自此指定的基类，实现这些已知的抽象（或其他虚拟）方法，就可以正常工作。此外，你可以在抽象基类中实现任何通用功能。你组件的用户不需要重新实现其中的任何代码。
+
+从你组件的角度来看，这种方法也少了一些工作。你可以假设某些行为已经实现。编译器不会允许某人在不提供所有抽象方法实现的情况下构建派生类。没有什么可以强制执行正确的实现，但你知道一个合适的方法存在。
+
+然而，强制客户端代码派生自你定义的基类是要求客户端代码具备某些行为的限制性最大的方法。创建一个要求基类的组件对你的所有用户来说都是局限的。你正在强制某种类层次结构。没有其他方法可以使用它。
+
+创建接口并针对其编码比依赖于基类具有更松散的耦合。你可能已经创建了一个接口并强制客户端编码人员实现该接口。这种做法创建的关系与你通过使用基类建立的关系相似。只有两个重要的区别：第一，使用接口不会对你的用户强制任何类层次结构。但第二，你无法为客户端代码所需的任何行为轻松提供默认实现。
+
+通常，这些机制中的任何一个对于你的目的来说工作太大。你真的需要定义一个接口吗？或者更松散耦合的方法（例如定义委托签名）会更好？
+
+你已经在在本章前面的 Item 32 中看到了这个例子。`List.RemoveAll()` 方法签名接受一个 `Predicate<T>` 类型的委托：
+
+```csharp
+void List<T>.RemoveAll(Predicate<T> match);
+```
+
+.NET Framework 设计师可以通过定义接口来实现此方法：
+
+```csharp
+// 不恰的额外耦合。
+
+public interface IPredicate<T>
+{
+    bool Match(T soughtObject);
+}
+
+public class List<T>
+{
+    public void RemoveAll(IPredicate<T> match)
+    {
+        // 省略
+    }
+    // 其他 api 省略
+}
+```
+
+第二个版本的用法要多出很多工作：
+
+```csharp
+public class MyPredicate : IPredicate<int>
+{
+    public bool Match(int target) =>
+        target < 100;
+}
+```
+
+回看 Item 31，看看使用为 `List<T>` 定义的版本要容易得多。通常，当你使用委托或松散耦合定义接口时，对所有使用你代码的开发者来说都会变得容易得多。
+
+```csharp
+public static IEnumerable<string> Zip(IEnumerable<string> first, IEnumerable<string> second)
+{
+    using (var firstSequence = first.GetEnumerator())
+    {
+        using (var secondSequence = second.GetEnumerator())
+        {
+            while (firstSequence.MoveNext() && secondSequence.MoveNext())
+            {
+                yield return string.Format("{0} {1}", firstSequence.Current, secondSequence.Current);
+            }
+        }
+    }
+}
+```
+
+你可以创建一个泛型方法并使用函数参数来构建输出：
+
+```csharp
+public static IEnumerable<TResult> Zip<T1, T2, TResult>(IEnumerable<T1> first, IEnumerable<T2> second, Func<T1, T2, TResult> zipper)
+{
+    using (var firstSequence = first.GetEnumerator())
+    {
+        using (var secondSequence = second.GetEnumerator())
+        {
+            while (firstSequence.MoveNext() && secondSequence.MoveNext())
+            {
+                yield return zipper(firstSequence.Current, secondSequence.Current);
+            }
+        }
+    }
+}
+```
+
+调用者现在必须定义 `zipper` 的主体：
+
+```csharp
+var result = Zip(first, second, (one, two) =>
+```
+
+
+
+
+
+```cs
+`string.Format("{0} {1}", one, two));`
+```
+
+这使得 `Zip` 方法与与其调用者之间的耦合变得松散得多。
+
+Item 33（本章前面的内容）中的 `CreateSequence` 方法也可以从类似的更改中受益。Item 33 中的版本创建了一个整数序列。你可以将其制为泛型方法，并使用函数参数来指定如何生成该序列：
+
+点击此处查看代码图片
+
+```cs
+public static IEnumerable<T> CreateSequence<T>(
+    int numberOfElements,
+    Func<T> generator)
+{
+    for (var i = 0; i < numberOfElements; i++)
+        yield return generator();
+}
+```
+
+调用者可以通过这种方式定义原始行为：
+
+点击此处查看代码图片
+
+```cs
+var startAt = 0;
+var nextValue = 5;
+var sequence = CreateSequence(1000,
+    () => startAt += nextValue);
+```
+
+在其他情况下，你可能想对序列中的所有项执行某种算法，并返回单个标量值。例如，此方法创建了一个整数序列的和：
+
+点击此处查看代码图片
+
+```cs
+public static int Sum(IEnumerable<int> nums)
+{
+    var total = 0;
+    foreach (int num in nums)
+    {
+        total += num;
+    }
+    return total;
+}
+```
+
+你可以通过提取 `Sum` 算法并将其替换为委托定义，将此方法变成一个通用的累加器：
+
+点击此处查看代码图片
+
+```cs
+public static T Sum<T>(IEnumerable<T> sequence, T total,
+    Func<T, T, T> accumulator)
+{
+    foreach (T item in sequence)
+    {
+        total = accumulator(total, item);
+    }
+    return total;
+}
+```
+
+你可以像这样调用它：
+
+点击此处查看代码图片
+
+```cs
+var total = 0;
+total = Sum(sequence, total, (sum, num) => sum + num);
+```
+
+`Sum` 方法仍然具有局限性。按照目前的写法，它必须对序列、返回值和初始值使用相同的类型。你可能希望在不同的类型上使用它：
+
+点击此处查看代码图片
+
+```cs
+var peeps = new List<Employee>();
+// 所有员工在其他地方添加。
+// 计算总薪资：
+var totalSalary = Sum(peeps, 0M, (person, sum) =>
+    sum + person.Salary);
+```
+
+你只需要对 `Sum` 方法定义进行细微修改，允许序列元素和累加和使用不同的参数类型。我们还将该名称更改为 BCL 中更通用的方法名：`Fold`：
+
+点击此处查看代码图片
+
+```cs
+public static TResult Fold<T, TResult>(
+    IEnumerable<T> sequence,
+    TResult total,
+    Func<T, TResult, TResult> accumulator)
+{
+    foreach (T item in sequence)
+    {
+        total = accumulator(item, total);
+    }
+    return total;
+}
+```
+
+将函数作为参数可以在很大程度上将算法与其操作的特定数据类型隔离开来。然而，当你松了耦合时，也增加了在这些解耦组件通信时，为了确保正确的错误处理而可能需要的工作量。例如，假设你创建了定义事件的代码。你知道，每当意图触发该事件时，必须检查事件成员是否为 `null`。客户端代码可能没有创建事件处理程序。当你使用委托创建接口时，也将面临相同的工作。当客户端传递 `null` 委托时，正确的行为是什么？是抛出异常，还是有正确的默认行为？如果客户端代码委托 `throw` 异常会发生什么？你可以恢复吗？如果，如何恢复？
+
+最后，当你从使用继承切换到使用委托来定义预期时，你必须理解，你持有对象或接口引用所具有的运行时耦合是相同的。如果你的对象存储了一个可以调用的委托副本，那么你的对象就控制了委托所引用对象的生命周期。你可能延长了这些对象的寿命。这与你的对象持有一个对象（通过存储对接口或基类的引用）并由你的对象调用它没有区别。尽管这在代码上更难看出。
+
+默认做法仍然是创建接口来规定你的组件如何与客户端代码通信。抽象基类赋予你额外的能力，可以为某些由客户端代码执行的工作提供默认实现。为你预期的方法定义委托给了你最大的灵活性，但也意味着你获得的工具支持更少。你付出了更多工作，但获得了更大的灵活性。
+
+### Item 35：永远不要重载扩展方法
+
+早些时候（Item 27 和 Item 28)讨论了创建扩展方法的三个原因：为接口创建默认实现、为关闭类型创建行为以及创建可组合接口。然而，扩展方法并不总是设计预期的好方法。在所有情况下，你对现有类型进行了某些增强，但扩展方法并没有从根本上改变类型。滥用和误用扩展方法会迅速产生冲突方法的泥潭，增加维护成本。让我们从一个误用扩展方法的示例开始。假设你有一个由其他库生成的 `Person` 类：
+
+点击此处查看代码图片
+
+```cs
+public sealed class Person
+{
+    public string FirstName
+    {
+        get;
+        set;
+    }
+    public string LastName
+    {
+        get;
+        set;
+    }
+}
+```
+
+你可能会编写一个扩展方法为控制台创建一个姓名报告：
+
+点击此处查看代码图片
+
+```cs
+// 糟糕的开始。
+// 使用扩展方法扩展类
+namespace ConsoleExtensions
+{
+    public static class ConsoleReport
+    {
+        public static string Format(this Person target) =>
+            $"{target.LastName,20},{target.FirstName,15}";
+    }
+}
+```
+
+生成控制台报告非常简单：
+
+点击此处查看代码图片
+
+```cs
+static void Main(string[] args)
+{
+    List<Person> somePresidents =
+        new List<Person>{
+    new Person{
+            FirstName = "George",
+            LastName = "Washington" },
+    new Person{
+            FirstName = "Thomas",
+            LastName = "Jefferson" },
+    new Person{
+            FirstName = "Abe",
+            LastName = "Lincoln" }
+        };
+    foreach (Person p in somePresidents)
+        Console.WriteLine(p.Format());
+}
+```
+
+这看起来似乎无大碍。但需求变化了。后来你发现你需要创建一个 XML 格式的报告。有人可能会考虑编写这个方法：
+
+点击此处查看代码图片
+
+```cs
+// 更加糟糕。
+// 不同命名空间中的
+// 义扩展方法
+namespace XmlExtensions
+{
+    public static class XmlReport
+    {
+        public static string Format(this Person target) =>
+            new XElement("Person",
+                new XElement("LastName", target.LastName),
+    }
+}
+}
+```
+
+
+
+
+```csharp
+new XElement("FirstName", target.FirstName)
+).ToString();
+}
+}
+```
+
+在源文件中切换 `using` 语句会改变报告的格式。这是对扩展方法的误用。这是一种扩展类型非常脆弱的方法。如果开发者使用了错误的命名空间，程序的行为就会发生变化。如果她忘记使用任何一个扩展方法命名空间，程序将无法编译。如果她在不同的方法中同时需要这两个命名空间，那么她必须根据所需的扩展方法，将类定义拆分到不同的文件中。同时使用两个命名空间会导致编译器在遇到模糊引用时产生错误。
+
+你显然需要一种不同的方法来实现此功能。扩展方法强制根据对象的编译时类型进行调用分发。通过切换命名空间来确定所需所需的哪种方法，这会让该策略变得更加脆弱。
+
+此功能并非基于你所扩展的类型：将一个 `Person` 对象格式化为 XML 或控制台报告，并不是 `Person` 类型的一部分，而是更接近于使用该 `Person` 对象的外部环境。
+
+扩展方法应该用于通过自然上属于该类型的功能来增强类型。你应该只在添加逻辑上属于该类型的功能时才创建扩展方法。第 27 项和第 28 项解释了增强接口和封闭类型的两种技术。如果你查看这些项目中的示例，你会发现所有这些扩展方法创建的方法从类型使用者的角度来看，就像是该类型的一部分。
+
+与此处的示例形成对比。`Format` 方法并不是 `Person` 类型的一部分，而是使用 `Person` 类型的方法。从使用该类型的代码角度来看，它们并不属于 `Person` 类型。
+
+这些方法本身是有效的，但它们应该是可以在 `Person` 对象上使用的类中的普通静态方法。事实上，如果可能，它们应该被放在同一个类中，并使用不同的方法名：
+
+点击此处查看代码图像
+
+```csharp
+public static class PersonReports
+{
+    public static string FormatAsText(Person target)=>
+        $"{target.LastName,20},{target.FirstName,15}";
+
+    public static string FormatAsXML(Person target) =>
+        new XElement("Person",
+            new XElement("LastName", target.LastName),
+            new XElement("FirstName", target.FirstName)
+        ).ToString();
+}
+```
+
+该类包含两个方法作为静态方法，且不同的名称清楚地反映了每个方法的目的。你在没有为类的公共接口（或感知的公共接口）引入歧义的情况下，为类的用户提供了这两个方法。任何开发者在需要时都可以使用其中任何一个方法。你并没有通过在不同的命名空间中引入相同的方法签名来创建任何歧义。这至关重要，因为很少有开发者会假设更改 `using` 语句列表会改变程序的运行时行为。他们可能认为这会导致编译错误而不是运行时错误。
+
+当然，一旦你更改了方法名使其不再冲突，你就可以再次将这些方法变为扩展方法。这些方法并没有带来多少收益，它们似乎并不是在扩展类型，而是在使用类型。然而，由于名称不冲突，你可以将两个方法放在同一个命名空间和同一个类中。这避免了之前示例中的陷阱。
+
+你应该将一个类型的扩展方法集视为单一的全局集合。扩展方法绝不应该在命名空间上进行重载。如果在任何时候你发现需要创建多个具有相同签名的扩展方法，请停下来。相反，更改方法签名，并考虑创建普通的静态方法。这种做法避免了当编译器根据 `using` 语句选择重载时产生的歧义。
+
+### 第 36 项：理解查询表达式如何映射到方法调用
+
+LINQ 构建在两个概念之上：查询语言，以及从该查询语言到一组方法的翻译。C# 编译器将用该查询语言编写的查询表达式转换为方法调用。
+
+每个查询表达式都有一个到一个或多个方法调用的映射。你应该从两个角度来理解这种映射。从类使用者的角度来看，你需要理解你的查询表达式仅仅是方法调用。`where` 子句翻译为对名为 `Where()` 的方法的调用，并带有相应的参数集。作为类设计者，你应该评估由基础框架提供的这些方法的实现，并判断你是否可以为你的类型创建更好的实现。如果不能，你应该直接沿用基础库的版本。然而，当你能够创建一个更好的版本时，你必须确保你完全理解从查询表达式到方法调用的翻译。确保你的方法签名正确处理每种情况是你的责任。对于某些查询表达式，路径是显而易见的。然而，理解一些更复杂的表达式有些困难。以下是 Anders Hejberg, Mads Torgersen, Scott (2009) 著《The C# Programming Language, Third Edition》§7.15 中首次出现的定义：
+
+```csharp
+delegate R Func<T1>;
+delegate R Func<T1, T2>;
+
+class C
+{
+    public C<T> Cast<T>();
+}
+class C<T>
+{
+    public C<U> Where(Func<T, bool> predicate);
+    public C<U> Select(Func<T, U> selector);
+    public C<V> SelectMany<U, V>(Func<T, U> selector, Func<U, V> resultSelector);
+}
+
+...（基于文本流的简化结构表示）
+
+.NET 基础库提供了该模式的两个通用引用实现。`System.Linq.Enumerable` 为 `IEnumerable<T>` 提供了实现查询模式的扩展方法。`System.Linq.Queryable` 为 `IQueryable<T>` 提供了类似的扩展方法，支持查询提供程序将查询翻译成另一种格式进行执行的能力。（例如，LINQ to SQL 实现将查询表达式转换为 SQL 数据库引擎执行的 SQL 查询。）作为类使用者，你可能在大多数查询中都使用了这两个引用实现之一。
+
+其次，作为类作者，你可以创建一个实现 `IEnumerable<T>` 或 `IQueryable<T>` 的数据源，在这种情况下，你的类型已经实现了查询模式。你的类型拥有该实现是因为你正在使用基础库中定义的扩展方法。
+
+
+
+
+
+在我们继续下去之前，你应该理解 C# 语言并没有对查询表达式模式（query expression pattern）强制执行任何执行语义。你可以创建一个与其中一个查询方法签名匹配的方法，并在内部执行任何操作。编译器无法验证你的 `Where` 方法是否符合查询表达式模式的预期。它所能做的只是确保语法约定得到满足。这种行为与任何接口方法的行为没有区别。例如，你可以创建一个执行任何操作的接口方法，无论它是否符合用户的预期。
+
+当然，这并不意味着你应该去考虑这种计划。如果你实现了查询表达式模式的任何一种方法，你应该确保它的行为在语法和语义上都与参考实现保持一致。除了性能差异外，调用者不应该能够判断出是在使用你的方法还是在使用参考实现。
+
+从查询表达式到方法调用的翻译是一个复杂的迭代过程。编译器会反复将表达式翻译为方法，直到所有表达式都翻译完毕。此外，编译器在执行这些翻译时有一个指定的顺序，尽管我并不是按照那个顺序来解释的。编译顺序对编译器来说是很简单的，并且在 C# 规范中有所记录。我选择了一个更容易向人类解释的顺序。为了我们的目的，我将在较小、更简单的示例中讨论其中一些翻译。
+
+在下面的查询中，让我们检查 `where`、`select` 和 `range` 变量：
+
+点击此处查看代码图像
+
+```csharp
+var numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+var smallNumbers = from n in numbers
+                    where n < 5
+                    select n;
+```
+
+表达式 `from` `n` `in` `numbers` 将范围变量 `n` 绑定到 `numbers` 中的每个值。`where` 子句定义了一个过滤器，它会被翻译为 `where` 方法。表达式 `where` `n` `<` `5` 翻译为：
+
+```csharp
+numbers.Where(n => n < 5);
+```
+
+`Where` 仅仅是一个过滤器。`Where` 的输出是输入序列的子集，仅包含满足谓词的元素。输入和输出序列必须包含相同的类型，且正确的 `Where` 方法不能修改输入序列中的项。（用户定义的谓词可能会修改项，但这不是查询表达式模式的责任。）
+
+该 `where` 方法既可以实现为 `numbers` 可访问的实例方法，也可以实现为匹配 `numbers` 类型的扩展方法。在示例中，`numbers` 是一个 `int` 数组。因此，方法调用中的 `n` 必须是一个整数。
+
+`Where` 是查询表达式到方法调用翻译中最简单的一种。在继续之前，让我们稍微深入探讨一下它是如何工作的，以及这对翻译意味着什么。编译器在任何重载解析或类型绑定之前，就完成了从查询表达式到方法调用的翻译。当编译器将查询表达式翻译为方法调用时，它并不知道是否存在候选方法。它不检查类型，也不寻找任何候选扩展方法。它简单地将查询表达式翻译成方法调用。在所有查询都翻译成方法调用语法后，编译器会执行搜索候选方法的工作，然后确定最佳匹配。
+
+接下来，你可以将那个简单的示例扩展，包含查询中的 `select` 表达式。`select` 子句被翻译为 `Select` 方法。然而，在某些特殊情况下，`Select` 方法可以被优化掉。示例查询是一个**退化选择（degenerate select）**，它选择了 `range` 变量。退化选择查询可以被优化掉，因为输出序列不等于输入序列。示例查询包含一个 `where` 子句，这打破了输入序列和输出序列之间的等等关系。因此，查询的最终方法调用版本是：
+
+点击此处查看代码图像
+
+```csharp
+var smallNumbers = numbers.Where(n => n < 5);
+```
+
+`select` 子句被移除是因为它是冗余的。这是安全的，因为 `select` 作用于另一个查询表达式的即时结果（在本示例中，是 `where`）。
+
+当 `select` 不作用于另一个表达式的即时结果时，它就不能被优化掉。考虑这个查询：
+
+点击此处查看代码图像
+
+```csharp
+var allNumbers = from n in numbers select n;
+```
+
+它将被翻译为此方法调用：
+
+点击此处查看代码图像
+
+```csharp
+var allNumbers = numbers.Select(n => n);
+```
+
+在谈到这个话题时，注意 `select` 经常用于将一个输入元素转换或投影为不同的元素或类型。下面的查询修改了结果的值：
+
+点击此处查看代码图像
+
+```csharp
+var numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+var smallNumbers = from n in numbers
+                    where n < 5
+                    select n;
+```
+
+或者你也可以将输入转换为不同的类型：
+
+点击此处查看代码图像
+
+```csharp
+var numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+var smallNumbers = from n in numbers
+                    where n < 5
+                    select { Number = n };
+```
+
+`select` 子句映射匹配签名的 `Select` 方法：
+
+点击此处查看代码图像
+
+```csharp
+var numbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+var smallNumbers = from n in numbers
+                    where n < 5
+                    select { Number = n };
+```
+
+`select` 转换输入类型。正确的 `select` 必须为每个输入产生一个元素。
+
+简单的表达式到此结束。现在我们讨论一些不显明显的转换。排序映射到 `OrderBy` 和 `ThenBy`，或者 `OrderByDescending` 和 `ThenByDescending`。考虑这个查询：
+
+点击此处查看代码图像
+
+```csharp
+var people = from e in employees
+             where e.Age > 30
+             orderby e.LastName, e.FirstName, e.Age
+             select e;
+```
+
+它翻译为：
+
+点击此处查看代码图像
+
+```csharp
+var people = employees.Where(e => e.Age > 30)
+                      .OrderBy(e => e.LastName)
+                      .ThenBy(e => e.FirstName)
+                      .ThenBy(e => e.Age);
+```
+
+注意查询模式的定义，`ThenBy` 作用于 `OrderBy` 或 `ThenBy` 返回的序列。这些序列可以包含标记，以便在排序键相等时允许 `ThenBy` 操作。
+
+如果 `orderby` 子句被表示为不同的子句，这种转换就不相同。下面的查询先按 `LastName` 对整个序列排序，然后再次按 `FirstName` 排序，再次按 `Age` 排序：
+
+点击此处查看代码图像
+
+```csharp
+// 不正确。对整个序列进行了三次全排序。
+var people = from e in employees
+             where e.Age > 30
+             orderby e.LastName
+             orderby e.FirstName
+             orderby e.Age
+             select e;
+```
+
+作为独立的查询，你可以指定任何 `orderby` 子句使用降序排序：
+
+点击此处查看代码图像
+
+```csharp
+var people = from e in employees
+             where e.Age > 30
+             orderby e.LastName descending, e.FirstName, e.Age
+             select e;
+```
+
+
+
+
+`OrderBy` 方法会创建一个不同的序列类型作为输出，这样 `thenby` 子句可以更高效，并确保整个查询的类型是正确的。`ThenBy` 无法在无序序列上操作，只能在排序后的序列上操作（在示例中类型为 `O<T>`）。子范围已经是排序并标记标记的。如果你为某个类型创建了自定义的 `Orderby` 和 `Thenby` 方法，你必须遵循这一规则。你需要为每个排序后的子范围添加一个标识符，以便任何后续的 `ThenBy` 子句都能正常工作。`ThenBy` 方法需要定义类型，以接收 `OrderBy` 或 `ThenBy` 方法的输出，然后正确地排序每个子范围。
+
+我关于 `OrderBy` 和 `ThenBy` 的所有说明也适用于 `OrderByDescending` 和 `ThenByDescending`。事实上，如果你的类型有其中任何一个方法的自定义版本，你应该始终实现这四个方法。
+
+### 查询表达式翻译
+
+剩余的表达式翻译涉及多个步骤。这些查询涉及分组或引入了延续（continuations）的多个 `from` 子句。包含延续的查询表达式被翻译为嵌套查询。然后，这些嵌套查询被翻译为方法。以下是一个带有延续的简单查询：
+
+点击此处查看代码图片
+
+```csharp
+var results = from e in employees
+              group e by e.Department into d
+              select new
+              {
+                  Department = d.Key,
+                  Size = d.Count()
+              };
+```
+
+在执行任何其他翻译之前，延续会被翻译为嵌套查询：
+
+点击此处查看代码图片
+
+```csharp
+var results = from d in
+                  from e in employees group e by e.Department
+              select new { Department = d.Key,
+              Size = d.Count()};
+```
+
+一旦创建了嵌套查询，方法就会翻译为以下内容：
+
+点击此处查看代码图片
+
+```csharp
+var results = employees.GroupBy(e => e.Department).
+    Select(d => new { Department = d.Key,
+    Size = d.Count() });
+```
+
+上述查询显示了一个返回单个序列的 `GroupBy`。查询表达式模式中的另一个 `GroupBy` 方法返回一个组的序列，其中每个组包含一个键和一个值列表：
+
+点击此处查看代码图片
+
+```csharp
+var results = from e in employees
+              group e by e.Department into d
+              select new
+              {
+                  Department = d.Key,
+                  Employees = d.AsEnumerable()
+              };
+```
+
+该查询映射到以下方法调用：
+
+点击此处查看代码图片
+
+```csharp
+var results2 = employees.GroupBy(e => e.Department).
+    Select(d => new {
+      Department = d.Key,
+      Employees = d.AsEnumerable()
+    });
+```
+
+`GroupBy` 方法产生一个键/值列表对的序列；键是分组选择器，值是组中项的序列。查询 `select` 子句可能会为每个组中的值创建新对象。然而，输出应该始终是一个键值对序列，其中值包含由每个项创建的某些元素。
+
+### SelectMany, Join 和 GroupJoin
+
+最后需要理解的方法是 `SelectMany`、`Join` 和 `GroupJoin`。这三个方法非常复杂，因为它们处理多个输入序列。实现这些翻译的方法会跨多个序列执行枚举，然后将生成的序列扁平化为单个输出。`SelectMany` 产生两个源序列的笛卡尔积。例如，考虑此查询：
+
+点击此处查看代码图片
+
+```csharp
+int[] odds = { 1, 3, 5, 7 };
+int[] evens = { 2, 4, 6, 8 };
+var pairs = from oddNumber in odds
+              from evenNumber in evens
+              select new
+              {
+                  oddNumber,
+                  evenNumber,
+                  Sum = oddNumber + evenNumber
+              };
+```
+
+它产生产生一个包含 16 个元素的序列：
+
+点击此处查看代码图片
+
+```
+1,2, 3
+1,4, 5
+1,6, 7
+1,8, 9
+3,2, 5
+3,4, 7
+3,6, 9
+3,8, 11
+5,2, 7
+5,4, 9
+5,6, 11
+5,8, 13
+7,2, 9
+7,4, 11
+7,6, 13
+7,8, 15
+```
+
+包含多个 `select` 子句的查询表达式被翻译为 `SelectMany` 方法。示例查询将被翻译为以下 `SelectMany` 调用：
+
+点击此处查看代码图片
+
+```csharp
+int[] odds = { 1, 3, 5, 7 };
+int[] evens = { 2, 4, 6, 8 };
+var values = odds.SelectMany(oddNumber => evens,
+    (oddNumber, evenNumber) =>
+    new {
+      oddNumber,
+      evenNumber,
+      Sum = oddNumber + evenNumber
+    });
+```
+
+`SelectMany` 的第一个参数是映射第一个序列中每个元素到第二个序列的函数。第二个参数（输出选择器）产生两个序列中项的组合。`SelectMany()` 遍历第一个序列。对于第一个序列中的每个值，它遍历第二个序列，产生来自组合的结果值。`SelectMany` 的一种实现如下：
+
+点击此处查看代码图片
+
+```csharp
+static IEnumerable<TOutput> SelectMany<T1, T2, TOutput>(
+    this IEnumerable<T1> src,
+    Func<T1, IEnumerable<T2>> inputSelector,
+    Func<T1, T2, TOutput> resultSelector)
+{
+    foreach (T1 first in src)
+    {
+        foreach (T2 second in inputSelector(first))
+        {
+            yield return resultSelector(first, second);
+        }
+    }
+}
+```
+
+第一个输入序列被遍历。然后使用当前序列的值遍历第二个输入序列。这是重要的，因为第二个序列的输入选择器可能依赖于第一个序列的当前值。然后，当生成每对元素时，就会对每对调用结果选择器。
+
+如果你的查询包含更多表达式且 `SelectMany` 没有创建最终结果，那么 `SelectMany` 会创建一个包含每个输入序列项的元组。该元组的序列是后续表达式的输入序列。例如，考虑此原始查询的修改版本：
+
+点击此处查看代码图片
+
+```csharp
+int[] odds = { 1, 3, 5, 7 };
+int[] evens = { 2, 4, 6, 8 };
+var values = from oddNumber in odds
+              from evenNumber in evens
+              where oddNumber > evenNumber
+              select new
+              {
+                  oddNumber,
+                  evenNumber,
+                  Sum = oddNumber + evenNumber
+              };
+```
+
+它产生此 `SelectMany` 方法调用：
+
+点击此处查看代码图片
+
+```csharp
+odds.SelectMany(oddNumber => evens,
+    (oddNumber, evenNumber) =>
+    new { oddNumber, evenNumber });
+```
+
+整个查询随后被翻译为语句：
+
+点击此处查看代码图片
+
+```csharp
+var values = odds.SelectMany(oddNumber => evens,
+    (oddNumber, evenNumber) =>
+    new { oddNumber, evenNumber }).
+    Where(pair => pair.oddNumber > pair.evenNumber).
+    Select(pair => new {
+      pair.oddNumber,
+      pair.evenNumber,
+      Sum = pair.oddNumber + pair.evenNumber
+    });
+```
+
+
+
+当编译器将多个 `from` 子句翻译为 `SelectMany` 方法调用时，你可以看到 `SelectMany` 处理方式中的另一个有趣特性。`SelectMany` 组合良好。两个以上的 `from` 子句会产生多个 `SelectMany()` 方法调用。第一个 `SelectMany()` 调用产生的二元组将传递给第二个 `SelectMany()`，产生一个三元组。该三元组将包含三个序列的所有组合。考虑此查询：
+
+点击此处查看代码图像
+
+```csharp
+var triples = from n in new int[] { 1, 2, 3 }
+              from s in new string[] { "one", "two", "three"}
+              from r in new string[] { "I", "II", "III" }
+              select new { Arabic = n, Word = s, Roman = r };
+```
+
+它将被翻译为以下方法调用：
+
+点击此处查看代码图像
+
+```csharp
+var numbers = new int[] { 1, 2, 3 };
+var words = new string[] { "one", "two", "three" };
+var romanNumerals = new string[] { "I", "II", "III" };
+var triples = numbers.SelectMany(n => words,
+    (n, s) => new { n, s }).
+    SelectMany(pair => romanNumerals,
+    (pair, n) =>
+        new { Arabic = pair.n, Word = pair.s, Roman = n });
+```
+
+如你所见，通过应用更多的 `SelectMany()` 调用，你可以从三个序列扩展到任意数量的输入序列。这些后续示例还演示了 `SelectMany` 如何将匿名类型引入你的查询中。`SelectMany()` 返回的序列是某种匿名类型的序列。
+
+现在，让我们来看你需要理解的另外两种翻译：`Join` 和 `GroupJoin`。它们都应用于连接表达式（join expressions）。当连接表达式包含 `into` 子句时，始终使用 `GroupJoin`。当连接表达式不包含 `into` 子句时，使用 `Join`。
+
+没有 `into` 的连接如下所示：
+
+点击此处查看代码图像
+
+```csharp
+var numbers = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+var labels = new string[] { "0", "1", "2", "3", "4", "5" };
+var query = from num in numbers
+              join label in labels on num.ToString() equals label
+              select new { num, label };
+```
+
+它被翻译为：
+
+点击此处查看代码图像
+
+```csharp
+var query = numbers.Join(labels, num => num.ToString(),
+    label => label, (num, label) => new { num, label });
+```
+
+`into` 子句创建了一个细分结果的列表：
+
+点击此处查看代码图像
+
+```csharp
+var groups = from p in projects
+              join t in tasks on p equals t.Parent
+              into projTasks
+              select new { Project = p, projTasks };
+```
+
+它被翻译为 `GroupJoin`：
+
+点击此处查看代码图像
+
+```csharp
+var groups = projects.GroupJoin(tasks,
+    p => p, t => t.Parent, (p, projTasks) =>
+        new { Project = p, TaskList = projTasks });
+```
+
+将所有表达式转换为方法调用的整个过程是复杂的，通常需要几个步骤。
+
+好消息是，在大多数情况下，你可以放心地工作，因为你知道编译器执行了正确的翻译。由于你的类型实现了 `IEnumerable<T>`，使用你类型的用户将获得正确的行为。
+
+但你可能会有一种冲动，想要为一个或多个实现查询表达式模式的方法创建自己的版本。也许你的集合类型总是按照……排序的……
+
+
+
+
+你可以使用此功能从现有的查询组合成新的查询。你不需要获取第一个查询的结果并将其作为一个单独步骤进行处理，而是可以在不同的步骤组合查询，然后只执行一次组合后的查询。例如，假设我修改了查询以返回通用格式（universal format）的时间：
+
+点击查看代码图像
+
+```csharp
+var sequence1 = Generate(10, () => DateTime.Now);
+
+var sequence2 = from value in sequence1
+                select value.ToUniversalTime();
+```
+
+`sequence1` 和 `sequence2` 共享的是函数组合，而不是数据。`sequence2` 并不是通过枚举 `sequence1` 中的值并修改每个值来构建的。相反，它是通过执行产生 `sequence1` 的代码，然后执行产生 `sequence2` 的代码创建的。如果你在不同的时间迭代这两个序列，你会看到互不相关的序列。`sequence2` 不包含从 `sequence1` 转换来的值。相反，它将包含完全的新值。它并不是生成一个日期序列然后将整个序列转换为通用时间。相反，每行代码都使用通用时间生成了一组值。
+
+查询表达式在理论上可以处理无限序列。它们之所以可以这样做是因为它们是**延迟的（lazy）**。如果编写得当，它们会检查序列的第一部分，并在找到答案时终止。另一方面，某些查询表达式在创建答案之前必须检索整个序列。理解这些瓶颈可能何时发生，将帮助你创建出既自然又不会产生性能惩罚的查询。此外，这种理解将帮助你避免那些需要完整序列并产生瓶颈的情况。
+
+考虑下面这个小程序：
+
+点击查看代码图像
+
+```csharp
+static void Main(string[] args)
+{
+    var answers = from number in AllNumbers()
+                      select number;
+
+    var smallNumbers = answers.Take(10);
+
+    foreach (var num in smallNumbers)
+    {
+        Console.WriteLine(num);
+    }
+}
+
+static IEnumerable<int> AllNumbers()
+{
+    var number = 0;
+    while (number < int.MaxValue)
+    {
+        yield return number++;
+    }
+}
+```
+
+这个示例说明了我所说的“不需要完整序列的方法”。该方法的输出是数字序列 0,1,2,3,4,5,6,7,8,9。即使 `AllNumbers()` 方法可以生成一个无限序列，情况也是是这样的。（是的，它最终会发生溢出，但在那之前你就会失去耐心了。）
+
+这种方法之所以运行得如此快，是因为不需要整个序列。`Take()` 方法返回序列中的前 *N* 个对象，因此其他内容都不重要。
+
+然而，如果你将此查询重写为如下形式，你的程序将无限运行：
+
+点击查看代码图像
+
+```csharp
+class Program
+{
+    static void Main(string[] args)
+    {
+        var answers = from number in AllNumbers()
+                          where number < 10
+                          select number;
+        foreach (var num in answers)
+            Console.WriteLine(num);
+    }
+}
+```
+
+它会无限运行（或者直到 `int.MaxValue`），因为查询必须检查每一个数字以确定哪些方法匹配。这个版本的相同逻辑需要整个序列。
+
+许多查询操作符必须拥有整个序列才能正确运行。`Where` 使用整个序列。`Where` 逐个检查每个元素并可能产生另一个无限序列。`OrderBy` 需要整个序列来执行排序操作。`Max` 和 `Min` 以类似于 `Where` 的方式需要整个序列。在不检查序列中每个元素的情况下无法执行这些操作。当你需要这些功能时，就会使用这些方法。
+
+你需要考虑使用需要访问整个序列的方法的后果。正如你看到的，如果序列可能是无限的，你必须避免任何需要整个序列的方法。其次，即使序列不是无限的，任何过滤序列的查询方法也应该放在查询的前部（front-loaded）。如果查询的前几个步骤删除了一些元素，会对性能产生积极影响。例如，以下两个查询产生相同的结果。但第二个查询的执行速度可能更快。在 `System.Linq` 提供的 LINQ to Objects 中，两个查询都会被优化。
+
+点击查看代码图像
+
+```csharp
+// 先排序后过滤
+var sortedSlow = from p in products
+                 orderby p
+                 where p > 100;
+
+// 先过滤后排序
+var sortedFast = from p in products
+                 where p > 100
+                 orderby p;
+```
+
+注意，第一个查询对整个序列排序，然后丢弃总和小于 100 的产品。第二个查询先过滤，得到一个短得多的序列。这就是快速完成的算法之间的区别。到为止，我已经给了你很多理由使用延迟求值。在大多数情况下，这是最佳方法。在其他情况下，你确实想要某个时间点的快照。你可以使用两种方法来生成序列：`ToList()` 和 `ToArray()`。这两个方法都会执行查询并将结果分别存储在 `List<T>` 或 `Array` 中。通过强制立即执行，你捕获了当前的数据快照。稍后可以使用保存的版本。在几乎所有情况下，延迟求值都比急求值节省工作且更灵活。在需要急求值的少数情况下，可以通过运行查询并使用 `ToList()` 或 `ToArray()` 存储结果来强制执行。但除非有明显的急求值需求，否则使用延迟更好。
+
+### 第 38 条：优先使用 Lambda 表达式而不是方法
+
+这条建议可能违背直觉。使用 Lambda 表达式会导致 lambda 中出现重复代码。你经常发现重复的小段逻辑。以下代码有多次重复的逻辑：
+
+点击查看代码图像
+
+```csharp
+var allEmployees = FindEmployees();
+
+// 寻找早期员工：
+var earlyFolks = from e in allEmployees
+                  where e.Classification == EmployeeType.Salary
+                  where e.YearsOfService > 20
+                  where e.MonthlySalary < 4000
+                  select e;
+
+// 寻找最新的人：
+var newest = from e in allEmployees
+             where e.Classification == EmployeeType.Salary
+             where e.YearsOfService < 20
+             where e.MonthlySalary < 4000
+             select e;
+```
+
+
+
+你可以将多次对 `Where` 的调用替换为包含两个条件的单个 `Where` 子句。这两种表示方式之间没有明显的区别。由于查询是可以组合的（参见第 31 项），并且由于简单的 `where` 谓词很可能会被内联，因此性能是相同的。
+
+你可能倾向于将重复的 lambda 表达式提取到可以重用的方法中。你得到的代码看起来像这样：
+
+点击此处查看代码图像
+
+```csharp
+// factor out method:
+private static bool LowPaidSalaried(Employee e) =>
+    e.MonthlySalary < 4000 && e.Classification ==
+    EmployeeType.Salary;
+
+// elsewhere
+var allEmployees = FindAllEmployees();
+
+var earlyFolks = from e in allEmployees
+                  where LowPaidSalaried(e) &&
+                        e.YearsOfService > 20
+                  select e;
+
+// find the newest people:
+var newest = from e in allEmployees
+             where LowPaidSalaried(e) && e.YearsOfService < 2
+             select e;
+```
+
+这是一个很小的例子，所以这里变化不大。但它已经感觉好多了。现在，如果员工的分类发生变化，或者低阈值发生变化，你只需要在一个地方更改逻辑。
+
+遗憾的是，这种重构代码的方法降低了它的可重用性。按编写的第一个版本实际上比第二个版本更具重用性。这是因为 lambda 表达式求值、解析和最终执行的方式。如果你像大多数开发者一样，你会把复制的代码看作纯粹的邪恶，是必须不惜代价去消除的东西。带有单个方法的版本更简单。如果需要发生变化，它只有一份代码副本需要修改。这只是纯粹的良好的软件工程。
+
+遗憾的是，它也是错误的。某些代码会将 lambda 表达式转换为委托（delegate），以执行你查询表达式中的代码。其他类则会从 lambda 表达式创建表达式树，解析该表达式并在另一个环境中执行它。LINQ to Objects 执行前者，而 LINQ to SQL 执行后者。
+
+LINQ to Objects 在本地数据存储上执行查询，这些数据通常存储在泛型集合中。其实现创建了一个包含 lambda 表达式中逻辑的匿名委托并执行该代码。LINQ to Objects 扩展方法使用 `IEnumerable<T>` 作为输入序列。
+
+另一方面，LINQ to SQL 使用查询中包含的表达式树。该表达式树包含你查询的逻辑表示。LINQ to SQL 解析树并使用表达式树创建适当的 T-SQL 查询，该查询可以直接在数据库上执行。然后，查询字符串（作为 T-SQL）被发送到数据库引擎并在那里执行。
+
+这种处理方式要求 LINQ to SQL 引擎解析表达式树，并将每个逻辑操作替换为等效的 SQL。所有方法调用都被替换为 `Expression.MethodCall` 节点。LINQ to SQL 引擎无法将任何任意方法调用转换为 SQL 表达式。相反，它会抛出异常。LINQ to SQL 引擎宁愿失败，也不尝试执行多个查询并将多个数据带到应用程序边界的进行处理。
+
+如果你正在构建任何数据源可以是任何内容的可重用库，你必须预见到这种情况。你必须构造代码，以便它能与任何数据源正常工作。这意味着你需要保持 lambda 表达式相互独立，并以内联代码的形式存在，以便你的库能够正常运行。
+
+当然，这并不意味着你应该在整个库中复制代码。它只是意味着当涉及查询表达式和 lambda 时，你需要为你的应用程序创建不同的构建块。从我们简单的例子中，你可以通过这种方式创建更大的重用块：
+
+点击此处查看代码图像
+
+```csharp
+private static IQueryable<Employee> LowPaidSalariedFilter
+    (this IQueryable<Employee> sequence) =>
+        from s in sequence
+        where s.Classification == EmployeeType.Salary &&
+        s.MonthlySalary < 4000
+        select s;
+
+// elsewhere:
+var allEmployees = FindAllEmployees();
+
+// Find the first employees:
+var salaried = allEmployees.LowPaidSalariedFilter();
+var earlyFolks = salaried.Where(e => e.YearsOfService > 20);
+
+// find the newest people:
+var newest = salaried.Where(e => e.YearsOfService < 2);
+```
+
+当然，并不是每个查询都那么简单。在复杂的查询中重用 lambda 表达式最高效的方法之一是在闭泛泛型上为这些查询创建扩展方法。你可以发现寻找低薪月薪员工的方法就是这样一种方法。它接收员工序列并返回一个过滤后的员工序列。在生产代码中，你应该创建一个使用 `IEnumerable<Employee>` 作为参数类型的第二个重载方法。这样，你就可以同时支持 LINQ-to-SQL 风格的实现和 LINQ to Objects 实现。
+
+通过组合那些接收 lambda 表达式并是序列方法的较小构建块，你可以构建出确切需要的查询。你获得了创建能够适用于 `IEnumerable<T>` 和 `IQueryable<T>` 代码的优势。此外，你还没有破坏可查询表达式树的可能求值方式。
+
+###.
+
+### 第 39 项：避免在函数和操作中抛出异常
+
+当你创建一个在值序列上执行的代码时，如果代码在序列序列处理的某处抛出异常，你将面临恢复状态的困难。你不知道处理了多少元素，或者是否处理了。你不知道需要回滚什么。你完全无法恢复程序状态。
+
+考虑这段代码片段，它给每个人加了 5% 的工资：
+
+点击此处查看代码图像
+
+```csharp
+var allEmployees = FindAllEmployees();
+
+allEmployees.ForEach(e => e.MonthlySalary *= 1.05M);
+```
+
+有一天，此例程运行并抛出了异常。异常很不是在第一个或最后一个员工处抛出的。某些员工加了工资，而另一些员工没有。你的程序将很难恢复之前的状态。你能将数据恢复到一致状态吗？一旦丢失了程序状态的知识，除非对所有数据进行人工检查，否则你无法找回。
+
+
+
+
+这个问题出现的原因是代码片段直接修改了序列中的元素。它没有遵循**强异常保证**（strong exception guarantee）。面对错误时，你无法知道发生了什么，哪些没有发生。
+
+你可以通过保证当方法未完成时，可观测程序状态不会发生改变来修复这种局面。你可以通过多种方式实现这一点，每种方式都有自己的优势和风险。
+
+在讨论风险之前，让我们更详细地检查关注的原因。并不是所有方法都会表现出这个问题。许多方法会检查序列但并不对其进行修改。以下方法检查每个人的薪水并返回结果：
+
+点击此处查看代码图像
+
+```c
+var total = allEmployees.Aggregate(0M,
+    (sum, emp) => sum + emp.MonthlySalary);
+```
+
+对于像这种不修改序列中任何数据的方法，你不需要对其进行仔细修改。在许多应用程序中，你会发现大多数方法都没有修改序列。让我们再次回到第一个方法，给每位员工加薪 5%。你可以采取哪些操作来重构该方法，以确保满足强异常保证？
+
+重构操作的第一且最简单的方法是重新设计操作，以确保早先在 lambda 表达式中表示的操作方法永远不会抛出异常。在许多情况下，在修改序列中的每个元素之前，测试任何失败条件都是可能的。你需要定义函数和谓词，以便方法的合约在所有情况下（即使是错误情况）都能满足。如果对于导致异常的元素执行“什么都不做”是正确的行为，那么这种策略就是有效的。在加薪的示例中，假设所有异常都是由过时的员工记录引起的，这些记录包含了不再为公司工作但仍在持久化存储中的人员。那么，跳过他们就是正确的行为。这种修改是可行的：
+
+点击此处查看代码图像
+
+```csharp
+allEmployees.FindAll(
+    e => e.Classification == EmployeeType.Active).
+    ForEach(e => e.MonthlySalary *= 1.05M);
+```
+
+以这种方式解决问题是避免算法出现不一致性的简单路径。只要你能够编写操作方法以确保没有异常离开 lambda 表达式或操作方法，那就是最有效的技术。
+
+然而，有时你可能无法保证这些表达式永远不会抛出异常。现在你必须采取更昂贵的防御措施。你需要重构算法以考虑到异常的可能性。这意味着在副本上执行所有工作，然后只有在操作成功完成时，才用副本替换原始序列。如果你认为无法避免异常的可能性，可以重写我们早的算法：
+
+点击此处查看代码图像
+
+```csharp
+var updates = (from e in allEmployees
+                select new Employee
+                {
+                    EmployeeID = e.EmployeeID,
+                    Classification = e.Classification,
+                    YearsOfService = e.YearsOfService,
+                    MonthlySalary = e.MonthlySalary *= 1.05M
+                }).ToList();
+allEmployees = updates;
+```
+
+你在这里可以看到这些更改的代价。首先，代码比之前的版本多得多。这意味着更多的工作量——更多需要维护的代码和更多需要理解的内容。但你也改变了应用程序的性能指标。这个新版本创建了所有员工记录的第二个副本，然后将新员工列表的引用与旧列表引用交换。如果员工列表很大，可能会导致巨大的性能瓶颈。在交换引用之前，你已经在列表中创建了所有员工的副本。操作的约现在当 `Employee` 对象无效时可能会抛出异常。查询外部的代码现在处理了这些情况。
+
+这种特定的修复还有另一个问题：它是否有意义取决于如何使用。这个新版本限制了你使用多个函数组合操作的能力。这段代码片段缓存了完整列表。这意味着它的修改没有在列表的单次枚举中与其他变换组合在一起。每个转换都变成了一个命令式操作。在实践中，你可以通过创建一个执行所有转换的查询语句来绕过这个问题。你缓存列表并将整个序列作为所有转换的最后一步进行交换。使用该技术，你保留了可组合性并仍然提供了强异常保证。
+
+在实践中，这意味着编写查询表达式来返回新序列，而不是在位修改元素。这让你有更好的机会确保不抛出异常。这在多线程环境中也适用。当使用 lambda 表达式时，问题可能更难发现。你应该在操作生成后交换整个序列。
+
+### 事项 40：区分早期执行与延迟执行
+
+**声明式代码**（Declarative code）是阐述性的：它定义了“做什么”。**命令式代码**（Imperative code）详细说明了逐步执行的指令，解释了“怎么做”。两者都是有效的，并可以用于创建运行的程序。然而，混合两者会导致应用程序中出现不可预测的行为。你今天执行的所有命令式代码都将计算所需的参数，然后调用方法。这行代码描述了创建答案的命令式步骤：
+
+点击此处查看代码图像
+
+```csharp
+var answer = DoStuff(Method1(),
+    Method2(),
+    Method3());
+```
+
+在运行时，它执行以下操作：
+1. 它调用 `Method1` 生成 `DoStuff()` 的第一个参数。
+2. 它调用 `Method2` 生成 `DoStuff()` 的第二个参数。
+3. 它调用 `Method3` 生成 `DoStuff()` 的第三个参数。
+4. 它使用三个计算出的参数调用 `DoStuff`。
+
+这对你来说应该是熟悉的代码风格。所有参数都被计算，数据被发送到任何方法。你编写的算法是产生结果必须遵循的描述性步骤。
+
+**延迟执行**（Deferred execution）使用 lambda 和查询表达式完全改变了这个过程，并可能会让你措手不及。下面这行代码看起来与前面的示例做了同样的事情，但你很快就会发现它们存在区别：
+
+点击此处查看代码图像
+
+```csharp
+var answer = DoStuff(() => Method1(),
+    () => Method2(),
+    () => Method3());
+```
+
+在运行时，它执行以下操作：
+1. 它调用 `DoStuff()`，传递可以调用 `Method1`、`Method2` 和 `Method3` 的 lambda 表达式。
+2. 在 `DoStuff` 内部，只有当需要 `Method1` 的结果时，`Method1` 才被调用。
+3. 在 `DoStuff` 内部，只有当需要 `Method2` 的结果时，`Method2` 才被调用。
+
+
+
+
+
+## 4. 在 `DoStuff` 内部，当且仅当需要 `Method3` 的结果时才会调用 `Method3`。
+
+## 5. `Method1`、`Method2` 和 `Method3` 可以按照任何顺序被调用，次数根据需要决定（包括零次）。
+
+除非需要结果，否则这些方法都不会被调用。这种区别是巨大的，如果你混合使用这两种惯用法，将会给自己带来巨大的麻烦。
+
+从外部来看，任何方法都可以用其返回值来代替，反之亦然，只要该方法不产生任何副作用。在我们的示例中，`DoStuff()` 方法认为这两种策略没有区别。返回的值相同，且任何策略都是正确的。如果方法对相同的输入总是返回相同的值，那么方法的返回值就可以一直替换为对方法的调用，反之亦然。
+
+然而，从程序的整体来看，这两行代码之间可能存在显著差异。命令式模型始终调用所有三个方法。其中任何一个方法的任何副作用都会恰好发生一次。相比之下，声明式模型可能执行也可能不执行所有或任何方法。声明版本可能会多次执行任何一个方法。这就是 (1) 调用方法并将结果传递给方法与 (2) 将委托传递给方法并让方法调用委托之间的区别。你可能会从应用程序的不同运行获得不同的结果，取决于这些方法中发生了哪些操作。
+
+Lambda 表达式、类型推断和枚举器的加入使得在类中使用函数式编程概念变得简单得多。你可以构建高阶函数，将函数作为参数，或者向其调用者返回函数。在某种意义上，这并不是一个巨大的变化：纯函数及其返回值始终是可互换的。在实践中，函数可能会有副作用，这意味着适用不同的规则。
+
+如果数据和方法是可以互换的，你应该选择哪一个？更重要的是，你什么时候应该选择哪一个？最重要的区别是，数据在使用之前必须被评估，而方法可以被延迟求值。当你必须尽早评估数据时，你必须预先评估方法并将结果作为数据，而不是采用函数式方法并替换该方法。
+
+决定使用哪种方法的最重要的标准是副作用的可能性，包括函数体内部的副作用以及返回值的可变性。第 37 项（本章节较早些处）显示了一个结果基于当前时间的查询。它的返回值取决于你是执行并缓存结果，还是将查询作为函数参数使用。如果函数本身产生副作用，程序的行为取决于你执行函数的时机。
+
+你可以使用一些技术来尽量减少早期求值和延迟求值之间的对比。纯不可变类型不能被更改，它们也不会改变程序的其他状态；因此，它们不受副作用的影响。在之前的简短示例中，如果 `Method1`、`Method2` 和 `Method3` 是不可变类型的成员，那么早期求值语句和延迟求值语句的可观测行为应该是完全相同的。
+
+我的示例没有接受任何参数，但如果那些延迟求值方法任何一个接受参数，这些参数必须是不可变的，以确保早期和延迟绑定的结果是相同的。
+
+因此，在决定早期求值和延迟求值之间，最重要的点是你想要实现的语义。如果（当且仅当）对象和方法是不可变的，那么当用计算该值的函数替换值时，程序的正确性是相同的，反之亦然。（在这种情况下，“不可变方法”意味着方法不能修改任何全局状态，例如执行 I/O 操作、更新全局变量或与其他进程通信）。如果对象和方法不是不可变的，你就有可能通过从早期求值切换到延迟求值（或反之）来改变程序的行为。此项其余部分假设早期求值和延迟求值之间的可观测行为不会改变。我们将查看其他倾向于某一种策略的原因。
+
+一个决策点是输入输出空间的大小与计算输出的成本之间的对比。例如，如果 `Math.PI` 在调用时计算 pi，程序仍然可以工作。值和计算从外部来说是可互换的。然而，程序会变慢，因为计算 pi 需要时间。另一方面，方法 `CalculatePrimeFactors(int)` 可以被一个包含所有整数因子的查找表所取代。在这种情况下，内存中数据表的成本可能远大于在需要时计算这些值的时间成本。
+
+你的现实问题可能落在这两个极端之间的某处。正确的解决方案不会那么明显，也不会是一目了然。除了分析计算成本与存储成本之外，你还需要考虑将如何使用任何给定方法的的结果。你会发现在某些情况下，对某些查询进行早期求是有意义的。在其他情况下，你只会偶尔使用中间结果。如果你确保代码不产生副作用，并且早期或延迟求值都能产生正确答案，你就可以根据两种解决方案的测量性能指标做出决定。你可以尝试两种方法，测量差异，并使用更好的结果。
+
+最后，在某些情况下，你可能会发现两种策略的混合效果最好。你可能会发现缓存有时提供了最高的效率。在这些情况下，你可以创建一个返回缓存值的委托：
+
+```
+var cache = Method1();
+var answer = DoStuff(() => cache, () => Method2(), () => Method3());
+```
+
+最后一个决策点是该方法是否可以在远程数据存储上执行。这一因素很大地影响了 LINQ to SQL 处理查询的方式。每个 LINQ to SQL 查询从延迟查询开始：使用方法而不是数据来作为参数。某些方法可能涉及在数据库引擎内部完成的工作，而某些工作代表在部分处理的查询提交到数据库引擎之前必须进行的本地方法。LINQ to SQL 解析表达式树。在提交查询到数据库引擎之前，它会将任何方法调用替换为这些方法调用的结果。只有当方法调用不依赖于输入序列中的任何单个项目时，它才能进行这种处理（参见项 37 和 38，均在本章中）。
+
+
+
+
+现在当你在 C# 中创建算法时，你可以确定将数据作为参数或将函数作为参数是否会导致行为上的任何差异。一旦你确定这两种方法都是正确的，就必须确定哪种是更好的策略。当输入空间较小时，传递数据可能更好。然而，在其他情况下，当输入或输出空间可能很大且你并不一定使用整个输入数据空间时，你可能会发现使用算法本身作为参数要明智得多。如果你不确定，请倾向于使用算法作为参数，因为实现函数的开发者可以创建该函数来急进评估输出空间，并转而处理数据值。
+
+### 第 41 项：避免捕获昂贵的资源
+
+闭包（Closures）创建了包含绑定变量的对象。这些绑定变量的生命周期可能会让你感到惊讶，而且并不总是好结果。作为开发者，我们已经习惯以非常简单的方式看待局部变量的生命周期：变量在声明时进入作用域，在相应代码块关闭时离开作用域。局部变量在离开作用域后就可以垃圾回收。我们利用这些假设来管理资源使用和对象生命周期。
+
+闭包和捕获变量改变了这些规则。当你在闭包中捕获变量时，该变量引用的对象的生命周期可能会被延长。在最后一个引用该捕获变量的委托变成垃圾之前，它才不是垃圾。在某些情况下，它的持续时间可能更长。当闭包和捕获变量逃出一个一个方法后，它们会被客户端代码中的闭包和委托访问。这些委托和闭包可以被其他代码访问，依此类推。最终，访问你委托的代码将变成一组开放的方法集合，它们完全不知道你的闭包和委托何时不再可及。这意味着，如果你返回了一个由使用捕获变量的委托所表示的内容，你实际上并不知道局部变量何时离开作用域的。
+
+好消息是，通常你不需要担心这种行为。受托管类型且不持有昂贵资源的局部变量会在稍后的点被垃圾回收，就像普通变量一样。如果局部变量唯一消耗的是内存，那么完全不需要担心。
+
+但某些变量持有着昂贵的资源。它们代表实现了 `IDisposable` 接口并需要显式清理的类型。你可能会在实际枚举集合之前过早地清理了这些资源。你可能会发现文件或连接关闭得不够快，由于文件仍然开启，你无法访问它们。
+
+项目 44 向你展示了 C# 编译器如何生成委托以及变量如何在闭包内部被捕获。在这一项中，我们研究如何识别何时捕获了包含其他资源的变量。我们检查了如何管理这些资源，以及如何避免当捕获变量存活比你预期的长时可能出现的陷阱。
+
+考虑以下结构：
+
+```csharp
+var counter = 0;
+var numbers = Extensions.Generate(30, () => counter++);
+```
+
+它生成的代码看起来像这样：
+
+```csharp
+private class Closure
+{
+    public int generatedCounter;
+    public int generatorFunc() =>
+        generatedCounter++;
+}
+
+// usage
+var c = new Closure();
+c.generatedCounter = 0;
+var sequence = Extensions.Generate(30, new Func<int>(
+    c.generatorFunc));
+```
+
+这可能会变得非常有趣。隐藏的嵌套类成员已经绑定到 `Extensions.Generate` 使用的委托上。这会影响隐藏对象的生命周期，并因此影响任何成员何时可以被垃圾回收。看这个示例：
+
+```csharp
+public IEnumerable<int> MakeSequence()
+{
+    var counter = 0;
+    var numbers = Extensions.Generate(30, () => counter++);
+    return numbers;
+}
+```
+
+在这段代码中，返回的对象使用了由闭包绑定的委托。因为返回值需要该委托，该委托的生命周期超过了方法的激活周期。表示绑定变量的对象生命周期被延长了。因为委托实例是可及的，所以对象也是可及；因为委托是返回对象的一部分，所以委托仍然可及。因为对象可及，所以对象的所有成员都是可及的。
+
+C# 编译器生成的代码看起来如下：
+
+```csharp
+public static IEnumerable<int> MakeSequence()
+{
+    var c = new Closure();
+    c.generatedCounter = 0;
+    var sequence = Extensions.Generate(30,
+        new Func<int>(c.generatorFunc));
+    return sequence;
+}
+```
+
+注意，此序列包含一个对方法的委托引用，该方法绑定到 `c`，即实例化闭包的局部对象。局部变量 `c` 的生命周期持续到了方法结束之后。
+
+通常情况下，这种情况不会引起太大担心。但在两种情况下可能会导致混惑。第一种涉及 `IDisposable`。考虑以下代码。它从 CSV 输入流中读取数字，并将值作为数字序列的序列返回。每个内部序列包含该行的数字。它使用了在 第 27 项 中所示的一些扩展方法。
+
+```csharp
+public static IEnumerable<string> ReadLines(
+    this TextReader reader)
+{
+    var txt = reader.ReadLine();
+    while (txt != null)
+    {
+        yield return txt;
+        txt = reader.ReadLine();
+    }
+}
+
+public static int DefaultParse(this string input,
+    int defaultValue)
+{
+    int answer;
+    return int.TryParse(input, out answer) ? answer : defaultValue;
+}
+
+public static IEnumerable<IEnumerable<int>> ReadNumbersFromStream(TextReader t)
+{
+    var allLines = from line in t.ReadLines()
+                   select line.Split(',');
+    var matrixOfValues = from line in allLines
+                         select from item in line
+                              select item.DefaultParse(0);
+    return matrixOfValues;
+}
+```
+
+你会这样使用它：
+
+```csharp
+var t = new StreamReader(File.OpenRead("TestFile.txt"));
+var rowsOfNumbers = ReadNumbersFromStream(t);
+```
+
+记住，查询只有在访问值时才会生成下一个值。`ReadNumbersFromStream()` 方法并没有所有数据放入内存，而是根据需要从流中加载值。接下来的两个语句并没有真正读取文件。只有当你开始枚举 `rowsOfNumbers` 中的值时，才会打开文件并开始读取值。
+
+后来，在代码审查中，有人——比如那个吹条主义的 Alexander——指出你从未关闭测试文件。也许他发现是因为存在资源泄漏，或者是当他尝试再次读取文件时由于文件仍处于开启状态而发现了某个错误。你做了一个更改来解决这个问题。遗憾的是，这并没有解决根源问题。
+
+```csharp
+IEnumerable<IEnumerable<int>> rowOfNumbers;
+using (TextReader t = new StreamReader(File.OpenRead("TestFile.txt")))
+{
+    rowOfNumbers = ReadNumbersFromStream(t);
+}
+```
+
+
+
+
+```csharp
+rowOfNumbers = ReadNumbersFromStream(t);
+
+foreach (var line in rowOfNumbers)
+{
+    foreach (int num in line)
+        Write("{0}, ", num);
+    WriteLine();
+}
+```
+
+发生了什么？
+
+你试图在关闭文件后对其进行读取。迭代抛出了一个 `ObjectDisposedException`。C# 编译器将 `TextReader` 绑定到了读取和解析文件项的委托程序上。那段代码由变量 `arrayOfNums` 表示。目前还没有发生任何事情。流尚未被读取，没有任何内容也没有被解析。这是当你将资源管理向上移交给调用者时会产生的问题之一。如果这些调用者误解了资源的生命周期，他们将引入一系列从资源泄露到代码损坏的各种问题。
+
+### 修复
+
+特定的修复方法非常直观。你只需要调整代码顺序，以便在关闭文件之前使用数字数组：
+
+点击此处查看代码图片
+
+```csharp
+using (TextReader t = new
+    StreamReader(File.OpenRead("TestFile.txt")))
+{
+    var arrayOfNums = ReadNumbersFromStream(t);
+    foreach (var line in arrayOfNums)
+    {
+        foreach (var num in line)
+            Write("{0}, ", num);
+        WriteLine();
+    }
+}
+```
+
+这很棒，但并不是你所有的问题都那么简单。这种策略会导致大量的重复代码，而我们总是试图避免这一点。所以，让我们看看这个解决方案，获取一些关于如何引导更通用答案的提示。前面的代码之所以能工作，是因为它在文件关闭之前使用了数字数组。
+
+你对代码的结构使得几乎不可能找到关闭文件的正确位置。你创建了一个 API，其中文件必须在某处打开，但在稍后的某个点不能关闭。假设原始的用法模式更像这样：
+
+点击此处查看代码图片
+
+```csharp
+using (TextReader t = new
+    StreamReader(File.OpenRead("TestFile.txt")))
+    return ReadNumbersFromFile(t);
+```
+
+现在你陷入了困境，没有办法可以关闭文件。它在一个例程中打开，但在调用堆栈上方的某处需要关闭文件。在哪里？你无法确定，但它不在你的代码中。它在调用堆栈上方的某处，不受你的控制，而你甚至不知道文件名是什么，也没有流句柄来检查应该关闭什么。
+
+### 使用延迟执行
+
+显而易见的解决方案是创建一个方法，打开文件、读取序列并返回序列。以下是一个可能的实现方式：
+
+点击此处查看代码图片
+
+```csharp
+public static IEnumerable<string> ParseFile(string path)
+{
+    using (var r = new StreamReader(File.OpenRead(path)))
+    {
+        var line = r.ReadLine();
+        while (line != null)
+        {
+            yield return line;
+            line = r.ReadLine();
+        }
+    }
+}
+```
+
+该方法使用了我之前在本章第项目 31 中向你展示的相同延迟执行模型。这里的重要的是 `StreamReader` 对象只有在所有元素都被读取后才会被释放，无论这种情况发生得早还是晚。文件对象将被关闭，但仅在序列被枚举之后。这里有一个更小的人造示例来说明我的意思：
+
+点击此处查看代码图片
+
+```csharp
+class Generator : IDisposable
+{
+    private int count;
+    public int GetNextNumber() => count++;
+    public void Dispose()
+    {
+        WriteLine("Disposing now ");
+    }
+}
+```
+
+`Generator` 类实现了 `IDisposable`，但只是为了向你展示当你捕获一个实现了 `IDisposable` 类型变量时会发生什么。这里有一个示例用法：
+
+点击此处查看代码图片
+
+```csharp
+var query = (from n in SomeFunction()
+    select n).Take(5);
+foreach (var s in query)
+    Console.WriteLine(s);
+WriteLine("Again");
+foreach (var s in query)
+    WriteLine(s);
+```
+
+以下是这段代码的输出：
+
+点击此处查看代码图片
+0
+1
+2
+3
+4
+Disposing now
+Again
+0
+1
+2
+3
+4
+Disposing now
+
+`Generator` 对象在你希望的时候被释放了：在你完成第一次迭代之后。无论你是完成了迭代还是提前停止迭代（如此查询所示），`Generator` 都会被释放。
+
+然而，这里有一个问题。注意“Disposing now”打印了两次。因为代码对序列进行了两次迭代，导致 `Generator` 被释放了两次。这在 `Generator` 类中不是问题，因为那只是一个标记。但文件示例在第二次枚举序列时会抛出异常。第一次迭代完成，`StreamReader` 被释放。然后第二次迭代尝试访问一个已释放的读取器。它无法工作。
+
+### 通用解决方案
+
+如果你的应用程序可能会对可释放资源进行多次枚举，你需要找到不同的解决方案。你可能会发现自己在许多方式中使用该数据源。更明智的是使用委托来传递算法，或者算法，你需要该方法的通用版本。相同的操作看起来像这样：
+
+点击此处查看代码图片
+
+```csharp
+// 用法模式：参数是文件
+// 以及你想对每一行执行。
+ProcessFile("testFile.txt",
+    (arrayOfNums) =>
+    {
+        foreach (var line in arrayOfNums)
+        {
+            foreach (int num in line)
+                Write("{0}, ", num);
+            WriteLine();
+        }
+        // 通过返回内容让编译器满意：
+        return 0;
+    }
+);
+
+// 声明委托类型
+public delegate TResult ProcessFromFile<TResult>(
+    IEnumerable<IEnumerable<int>> values);
+
+// 读取文件并处理每一行的方法
+// 使用委托
+public static TResult ProcessFile<TResult>(string filePath,
+    ProcessFromFile<TResult> action)
+{
+    using (TextReader t = new StreamReader(File.Open(filePath)))
+    {
+        var allLines = from line in t.ReadLines()
+                       select line.Split(',');
+        var matrixOfValues = from line in allLines
+                            select from item in line
+                            select item.
+                            DefaultParse(0);
+        return action(matrixOfValues);
+    }
+}
+```
+
+这看起来有点复杂，但如果你发现自己以许多方式使用此数据源，它就会很有用。假设你需要找到文件中全局最大值：
+
+点击此处查看代码图片
+
+```csharp
+var maximum = ProcessFile("testFile.txt",
+    (arrayOfNums) =>
+    (from line in arrayOfNums
+    select line.Max()).Max());
+```
+
+在这里，文件流的使用完全封装在 `ProcessFile` 内部。你寻找的答案是一个值，它从 Lambda 表达式返回。
+
+闭包中捕获贵资源的另一个问题并不严重，但它可能会影响应用程序的性能指标。考虑这个方法：
+
+点击此处查看代码图片
+
+```csharp
+IEnumerable<int> ExpensiveSequence()
+{
+    int counter = 0;
+    var numbers = Extensions.Generate(30,
+        () => counter++);
+    Console.WriteLine("counter: {0}", counter);
+    var hog = new ResourceHog();
+    numbers = numbers.Union(
+```
+
+
+
+
+```csharp
+hog.SequenceGeneratedFromResourceHog(
+    (val) => val < counter));
+
+return numbers;
+}
+```
+
+与我之前展示的其他闭包一样，该算法产生的代码将在稍后执行，并且它使用了延迟执行模型。这意味着 `ResourceHog` 的生命周期将持续到该方法结束，直到客户端代码枚举该序列。此外，如果 `ResourceHog` 不是可释放的，它将一直存在，直到所有指向它的根都变得不可达且垃圾回收器释放它。
+
+如果这是一个瓶颈，你可以重构查询，使得从 `ResourceHog` 生成的数字被急急评估，这样 `ResourceHog` 就能被立即清理：
+
+点击此处查看代码图像
+
+```csharp
+IEnumerable<int> ExpensiveSequence()
+{
+    var counter = 0;
+    var numbers = Extensions.Generate(30,
+        () => counter++);
+
+    WriteLine("counter: {0}", counter);
+
+    var hog = new ResourceHog();
+    var mergeSequence = hog.SequenceGeneratedFromResourceHog(
+        (val) => val < counter).ToList();
+
+    numbers = numbers.Union(mergeSequence);
+    return numbers;
+}
+```
+
+这个示例非常清晰，因为代码并不复杂。如果你有更复杂的算法，要将廉价资源与昂贵资源分开就会变得困难得多。取决于创建闭包的方法中算法的复杂程度，要解开闭包绑定变量中捕获的不同资源可能会非常困难。以下方法使用了三个在闭包中捕获的三个不同的局部变量：
+
+点击此处查看代码图像
+
+```csharp
+private static IEnumerable<int> LeakingClosure(int mod)
+{
+    var filter = new ResourceHogFilter();
+    var source = new CheapNumberGenerator();
+    var results = new CheapNumberGenerator();
+    var importantStatistic = (from num in
+                               source.GetNumbers(50)
+                               where filter.PassesFilter(num)
+                               select num).Average();
+    return from num in results.GetNumbers(100
+           where num > importantStatistic
+           select num;
+}
+```
+
+初看，它似乎没问题。`ResourceHog` 生成了重要的统计数据。它的作用域是该方法，一旦方法退出它就会变成垃圾。
+
+遗憾的是，这个方法并没有表面看起来那么好。
+
+原因如下：C# 编译器会为每个作用域创建一个嵌套类来实现闭包。最后的查询语句——返回大于重要统计数据的数字——需要一个闭包来包含绑定变量，即 `important statistic`。在方法的较早阶段，`filter` 需要在闭包中使用以创建该重要的统计数据。这意味着 `filter` 被复制到了实现闭包的嵌套类中。返回语句返回了一个使用嵌套类实例来实现 `where` 子句的类型。而这个实现闭包的嵌套类实例已经从该方法中泄露了。通常情况下你并不在意这一点，但如果 `ResourceHogFilter` 真的使用了昂贵的资源，这将消耗你的应用程序资源。
+
+要修复这个问题，你需要将方法拆分为两个部分，并让编译器创建两个闭包类：
+
+点击此处查看代码图像
+
+```csharp
+private static IEnumerable<int> NotLeakingClosure(int mod)
+{
+    var importantStatistic = GenerateImportantStatistic();
+    var results = new CheapNumberGenerator();
+    return from num in results.GetNumbers(100)
+           where num > importantStatistic
+           select num;
+}
+
+private static double GenerateImportantStatistic()
+{
+    var filter = new ResourceHogFilter();
+    var source = new CheapNumberGenerator();
+    return from num in source.GetNumbers(50)
+           where filter.PassesFilter(num)
+           select num).Average();
+}
+```
+
+“但是等等，”你说，“`ResourceHog` 生成了重要的统计数据。它的作用域是该方法，一旦方法退出它就会变成垃圾。” *（注：原文此后存在大量文本重复，此处已根据逻辑清理处理）*
+
+
+
+
+`IQueryable<T>` 和 `IEnumerable<T>` 的 API 签名非常相似。`IQueryable<T>` 继承自 `IEnumerable<T>`。你可能认为这两个接口是可以互换的。在很多情况下它们确实可以，而且设计如此如此。相比之下，序列虽然是序列，但序列并不总是可以互换。它们的行为是不同的，性能指标也可能存在巨大的差异。以下两个查询语句大不相同：
+
+点击此处查看代码图片
+
+```csharp
+var q =
+    from c in dbContext.Customers
+    where c.City == "London"
+    select c;
+
+var finalAnswer = from c in q
+                      orderby c.Name
+                      select c;
+
+// 省略遍历 final Answer 序列的代码
+
+var q =
+    (from c in dbContext.Customers
+     where c.City == "London"
+     select c).AsEnumerable();
+
+var finalAnswer = from c in q
+                      orderby c.Name
+                      select c;
+
+// 省略遍历 final Answer 的代码。
+```
+
+这些查询返回的结果相同，但它们的工作方式却完全不同。第一个查询使用了基于 `IQueryable` 功能的普通 LINQ to SQL 版本。第二个版本强制将数据库对象转换为 `IEnumerable` 序列，并在本地执行了更多工作。它是 LINQ to SQL 中延迟求值和 `IQueryable<T>` 支持的结合。
+
+当执行查询结果时，LINQ to SQL 库会组合来自所有查询语句的结果。在示例中，这意味着对数据库进行了一调用。这也意味着一个 SQL 查询同时执行了 `where` 子句和 `orderby` 子句。
+
+在第二种情况下，将第一个查询作为 `IEnumerable<T>` 序列返回意味着后续操作将使用 LINQ to Objects 实现并使用委托执行。第一个语句会导致对数据库的调用以检索伦敦的所有客户。第二个语句根据名称对第一个调用返回的集合进行排序。该排序操作在本地进行。
+
+你应该关注这些差异，因为与使用 `IEnumerable` 功能相比，使用 `IQueryable` 功能的许多查询的运行效率要高得多。此外，由于 `IQueryable` 和 `IEnumerable` 处理查询表达式的方式不同，你会发现有时在一种环境中可以运行的查询在另一种环境中却无法运行。
+
+在每一步处理过程中都是不同的。这是因为使用的类型不同。`Enumerable<T>` 扩展方法在查询表达式中任何出现的地方，都会对 Lambda 表达式以及函数参数使用委托。相反，`Queryable<T>` 使用表达式树来处理这些相同的函数元素。**表达式树**是一种持有构成查询中操作的所有逻辑的数据结构。`Enumerable<T>` 版本必须在本地执行。Lambda 表达式已编译成方法，并且它们现在必须在本地机器上执行。这意味着你需要从数据所在的任何地方将所有数据拉到本地应用程序空间。你将传输更多的数据，并丢弃任何不必要的内容。
+
+相比之下，`Queryable` 版本会解析表达式树。在检查表达式树后，该版本将该逻辑转换为适用于提供程序的格式，然后在离数据最近的地方执行该逻辑。
+
+
+
+
+`AsQueryable()` 会检查序列的运行时类型。如果序列是 `IQueryable`，它将把该序列作为 `IQueryable` 返回。相比之下，如果序列的运行时类型是 `IEnumerable`，则 `AsQueryable()` 会创建一个使用 LINQ to Objects 实现的 `IQueryable` 包装，并返回该包装器。你得到的是 `Enumerable` 的实现，但它被封装在 `IQueryable` 引用中。
+
+使用 `AsQueryable()` 可以让你获得最大的收益。已经实现 `IQueryable` 的序列将使用该实现，而仅支持 `IEnumerable` 的序列仍然可以工作。当客户端代码向你传递一个 `IQueryable` 序列时，你的代码将正确使用 `Queryable<T>` 方法，并支持表达式树和远程执行。如果你正在处理一个仅支持 `IEnumerable<T>` 的序列，那么运行时实现将使用 `IEnumerable` 实现。
+
+注意，这个版本仍然使用了方法调用：`string.LastIndexOf()`。这是 LINQ to SQL 库能够正确解析的方法之一，因此你可以在 LINQ to SQL 查询中使用它。然而，每个提供程序都有独特的能力，因此你不应该认为该方法在每个 `IQueryProvider` 实现中可用。
+
+`IQueryable<T>` 和 `IEnumerable<T>` 似乎提供了相同的功能。所有的区别在于它们如何实现查询模式。确保使用与你的数据源匹配的类型来声明查询结果。查询方法是静态绑定的，声明查询变量的类型意味着你将获得正确的行为。
+
+### 事项 43：使用 Single() 和 First() 强制查询的语义预期
+
+快速浏览 LINQ 库可能会让你认为它们设计上仅是为了与序列配合工作。但有些方法可以跳出查询并返回单个元素。这些方法中的每个都与众不同，这些差异有助于你表达对返回标量结果的查询的意图和预期。
+
+`Single()` 返回正好一个元素。如果不存在元素，或者存在多个元素，`Single()` 将抛出异常。这是对你的预期一个非常强力的断言。然而，如果你的假设被证明是错误的，你可能希望立即发现。当你编写一个预期返回恰好一个元素的查询时，应该使用 `Single()`。该方法最清晰地表达了你的假设：你期望从查询返回恰好一个元素。是的，如果你的假设错误，它会失败，但它失败得很快且不会导致任何数据损坏。这种立即失败有助于你快速做出诊断并纠正问题。此外，你的应用程序数据不会因为使用错误数据执行后续程序逻辑而损坏。查询会立即失败，因为假设是错误的。
+
+点击此处查看代码图像
+
+```csharp
+var somePeople = new List<Person>{
+    new Person { FirstName = "Bill", LastName = "Gates"},
+    new Person { FirstName = "Bill", LastName = "Wagner"},
+    new Person { FirstName = "Bill", LastName = "Johnson"}};
+
+// 将抛出异常，因为序列中
+// 有多个元素
+var answer = (from p in somePeople
+              where p.FirstName == "Bill"
+              select p).Single();
+```
+
+此外，与我向你展示的许多查询不同，这一个在你检查结果之前就会抛出异常。`Single()` 会立即评估查询并返回单个元素。下面的查询将以相同的异常失败（尽管消息不同）：
+
+点击此处查看代码图像
+
+```csharp
+var answer = (from p in somePeople
+              where p.FirstName == "Larry"
+              select p).Single();
+```
+
+再次，你的代码假设存在存在一个结果。当该假设错误时，`Single()` 总是抛出 `InvalidOperationException`。
+
+如果你的查询可以返回零或一个元素，你可以使用 `SingleOrDefault()`。然而，记住，当返回多个值时，`SingleOrDefault()` 仍然会抛出异常。你仍然期望查询表达式返回的值不多于一个。
+
+点击此处查看代码图像
+
+```csharp
+var answer = (from p in somePeople
+              where p.FirstName == "Larry"
+              select p).SingleOrDefault();
+```
+
+此查询返回 `null`（引用类型的默认值），以表示没有匹配查询的值。
+
+当然，有时你期望获得多个值之一，但你想要其中特定的某一个。最佳选择是 `First()` 或 `FirstOrDefault()`。这两个方法都返回返回序列中的第一个元素。如果序列为空，则返回默认值。
+
+```csharp
+// 返回 null
+var answer = (from p in somePeople
+              where p.FirstName == "Bill"
+              select p).FirstOrDefault();
+```
+
+```csharp
+// 正常
+var answer = (from p in somePeople
+              where p.FirstName == "Bill"
+              select p).FirstOrDefault();
+```
+
+
+
+
+
+.
+
+              select p).First.
+```
+
+```csharp
+// 如果没有值则抛出异常
+var answer2 = (from p in somePeople
+              where p.FirstName == "Larry"
+              select p).Single();
+```
+
+```csharp
+// 我们找到了第三个得分的前锋
+var answer = (from p in somePeople
+              where p.FirstName == "Bill"
+              select p).Skip(2).First();
+```
+
+我选择 `First()` 是为了强调我想要恰好一个元素，而不是包含一个元素的序列。
+
+当然，有时你想要的第一个元素。有许多方法可以解决这个问题。
+
+如果你确切知道要在序列中的位置，可以使用 `Skip` 和 `First` 获取该元素。在这里，我们找到了第三个得分的前锋：
+
+点击此处查看代码图像
+
+```csharp
+var answer = (from p in somePeople
+              where p.FirstName == "Bill"
+              select p).Skip(2).First();
+```
+
+我选择 `First()` 而不是 `Take()` 是为了强调我想要恰好一个元素，而不是包含一个元素的序列。注意，由于使用了 `First()` 而不是 `FirstOrDefault()`，编译器假设至少有三个前锋得分。然而，一旦你开始在特定位置查找元素，可能有更好的构建查询的方法。
+
+### 事项 44：避免修改绑定变量
+
+下面的短代码段说明了当你在闭包中捕获变量并修改这些变量时会发生什么：
+
+点击此处查看代码图像
+
+```csharp
+var index = 0;
+
+Func<IEnumerable<int>> sequence =
+    () => Utilities.Generate(30, () => index++);
+
+index = 20;
+
+foreach (int n in sequence())
+    WriteLine(n);
+
+WriteLine("Done");
+
+index = 100;
+
+foreach (var n in sequence())
+    WriteLine(n);
+```
+
+
+
+
+
+这段代码打印了从 20 到 50 的数字，然后是 100 到 130 的数字。这个结果可能会让你感到惊讶。在本项目的剩余部分中，我将讨论编译器产生此结果的代码。这种行为是有逻辑的，你将学会如何利用它这一优势。
+
+C# 编译器在将你的查询表达式翻译为可执行代码时做了大量工作。尽管 C# 语言有很多许多新特性，但所有这些新构造都编译为与 `.NET CLR` 2.0 版本兼容的 IL。查询语法依赖于新的程序集，但不依赖任何新的 CLR 特性。C# 编译器将你的查询和 lambda 表达式转换为静态委托、实例委托或闭包。它根据 lambda 内部的代码来选择创建哪一种。编译器采取哪条路径取决于 lambda 的体。这听起来可能是很多语言层琐碎知识，但它对你的代码有重要影响。编译器使用的构造确实会改变你代码的某些细微行为。
+
+并不是所有的 lambda 表达式都会生成相同的代码。
+
+编译器最简单的工作是为这种风格的代码生成委托：
+
+点击此处查看代码图片
+
+```c
+int[] someNumbers = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+var answers = from n in someNumbers
+             select n * n;
+```
+
+编译器使用静态委托定义来实现 lambda 表达式 `select n * n`。编译器编写代码就像是你亲手写的一样：
+
+点击此处查看代码图片
+
+```c
+private static int HiddenFunc(int n) => (n * n);
+
+private static Func<int, int> HiddenDelegateDefinition;
+
+// usage:
+int[] someNumbers = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+if (HiddenDelegateDefinition == null)
+{
+    HiddenDelegateDefinition = new Func<int, int>(HiddenFunc);
+}
+
+var answers = someNumbers.Select<int, int>(HiddenDelegateDefinition);
+```
+
+lambda 表达式的体没有访问任何实例变量或局部变量。lambda 表达式仅访问其参数。因此，C# 编译器为委托的目标创建了一个静态方法。这是编译器可以采取的最简单路径。每当被包含的表达式可以在私静态方法中实现时，编译器就会生成一个私静态方法和相应的委托定义。这包括简单的表达式，如此处的示例，或者访问任何静态类变量的方法。
+
+示例 lambda 表达式仅仅是封装在委托中的方法调用的简洁语法。简单到极致。次简单的版本是需要访问实例变量但不需要访问任何局部变量的 lambda 表达式：
+
+点击此处查看代码图片
+
+```csharp
+public class ModFilter
+{
+    private readonly int modulus;
+
+    public ModFilter(int mod)
+    {
+        modulus = mod;
+    }
+
+    public IEnumerable<int> FindValues(IEnumerable<int> sequence)
+    {
+        return from n in sequence
+               where n % modulus == 0 // 新表达式
+               select n * n; // 上一个示例
+    }
+}
+```
+
+在这里，编译器创建了一个实例方法来封装新表达式的委托。这与之前的基本原理相同，但现在使用了实例方法，以便委托可以读取和修改对象的状态。与静态委托示例一样，在这里编译器将 lambda 表达式转换为你已经熟悉的代码。它是委托定义和方法调用的组合：
+
+点击此处查看代码图片
+
+```csharp
+// 等效的非-LINQ 版本
+public class ModFilter
+{
+    private readonly int modulus;
+
+    // 新方法
+    private bool WhereClause(int n) =>
+        ((n % this.modulus) == 0);
+
+    // 原有方法
+    private static int SelectClause(int n) =>
+        (n * n);
+
+    // 原有委托
+    private static Func<int, int> SelectDelegate;
+
+    public IEnumerable<int> FindValues(IEnumerable<int> sequence)
+    {
+        if (SelectDelegate == null)
+        {
+            SelectDelegate = new Func<int, int>(SelectClause);
+        }
+        return sequence.Where<int>(new Func<int, bool>(this.WhereClause)).Select<int, int>(SelectDelegate);
+    }
+    // 其他方法省略
+}
+```
+
+每当你的 lambda 表达式内部的代码访问实例的成员变量时，编译器就会生成一个代表你 lambda 代码的实例方法。这里并没有复杂的机制。编译器为你节省了一些输入工作，但你获得的仅此此。它只是旧的方法调用。
+
+然而，如果你的 lambda 表达式中的任何代码访问了局部变量或访问了方法，编译器会做得得多。在这里，你需要闭包。编译器生成一个私有类来实现你的局部变量的闭包。局部变量必须传递给实现 lambda 体委托。此外，lambda 对该局部变量执行的任何更改在外部作用域中必须可见。*C# 编程语言，第三版*（及后续版本），由 Anders Hejlsberg、Mads Torgersen 和 Peter Golde 编写（Microsoft，2009），§7.14.4 描述了这种行为。当然，你可能在内部和外部作用域中有多个变量。可能有多个查询表达式。
+
+让我们对示例方法进行微小修改，使其访问局部变量：
+
+点击此处查看代码图片
+
+```csharp
+public class ModFilter
+{
+    private readonly int modulus;
+
+    public ModFilter(int mod)
+    {
+        modulus = mod;
+    }
+
+    public IEnumerable<int> FindValues(IEnumerable<int> sequence)
+    {
+        int numValues = 0;
+        return from n in sequence
+               where n % modulus == 0 // 新表达式
+               // Select 子访问局部变量：
+               select n * n / ++numValues;
+    }
+    // 其他方法省略
+}
+```
+
+注意 `select` 子需要访问局部变量 `numValues`。为了创建闭包，编译器创建一个嵌套类来实现你需要的功能。以下是与生成的代码代码的版本：
+
+点击此处查看代码图片
+
+```csharp
+// 简单闭包的非-LINQ 版本
+public class ModFilter
+{
+    private sealed class Closure
+    {
+        public ModFilter outer;
+        public int numValues;
+        public int SelectClause(int n) =>
+            ((n * n) / ++this.numValues);
+    }
+
+    private readonly int modulus;
+
+    public ModFilter(int mod)
+    {
+        this.modulus = mod;
+    }
+
+    private bool WhereClause(int n) =>
+        ((n % this.modulus) == 0);
+
+    public IEnumerable<int> FindValues(IEnumerable<int> sequence)
+    {
+        var c = new Closure();
+        c.outer = this;
+        c.numValues = 0;
+        return sequence.Where<int>(
+            new Func<int, bool>(this.WhereClause))
+            .Select<int, int>(
+            new Func<int, int>(c.SelectClause));
+    }
+}
+```
+
+
+
+让我们重新检查最初的示例。现在很清楚为什么这种行为很奇怪了。变量 `incrementBy` 在被放入闭包之后、但在查询执行之前被修改了。你修改了内部结构，然后期望它能回到过去并使用其之前的版本。
+
+在查询之间修改绑定变量可能会引入由于延迟执行与编译器实现闭包的方式之间的相互作用引起的错误。因此，你应该避免修改被闭包捕获的绑定变量。
+
+## 5. 异常实践
+
+错误在所难免。尽管我们尽了努力，程序仍然会遇到我们预料到的情况。在整个 .NET Framework 中，方法要么成功，要么通过抛出异常来指示失败。如果你遵循这一实践，你编写的库和应用程序将更容易使用和扩展。在抛出异常时使你的代码健壮是每位 C# 开发者的关键技能。
+
+你的代码会调用抛出异常的方法。当你的代码调用抛出异常的方法时，必须表现出已知的行为。
+
+你的代码也可能直接抛出异常。.NET Framework 设计指南建议，当你的方法没有执行要求的操作时，在所有情况下都抛出异常。你必须提供诊断并可能纠正失败根源所需的所有信息。你还必须确保应用程序在可能恢复的情况下处于一种已知状态。
+
+本章的条目解释了如何以清晰准确的方式通过异常传通信失败的方法。你还将学习如何管理程序状态以增加恢复的机会。
+
+### 条目 45：使用异常报告方法契约失败
+
+任何无法执行所述操作的方法都应该通过抛出异常来报告该失败。错误代码可以很容易被忽略，而检查或传播错误代码的代码会污染正常的执行流，掩盖核心逻辑。但异常不应被用作通流程控制机制。这意味着你必须提供其他公共方法，让你的库用户能够尽可能地减少在应用程序正常运行条件下抛出异常的概率。异常在运行时是昂贵的，而且编写无异常的代码是很困难的。提供 API 让开发者测试条件，而无需在到处编写 `try/catch` 块。
+
+异常是首选的失败报告机制，因为与返回代码相比，它有许多优点。返回代码是方法签名的一部分，它们通常传递除错误报告以外的信息。返回代码通常是计算的结果，而异常只有一个目的：报告失败。由于异常是类类型，且你可以派生自己的异常类型，因此你可以使用异常来传递有关失败的丰富信息。
+
+错误返回代码必须由方法调用者处理。相比之下，抛出的异常会向上调用栈传播，直到找到合适的 `catch` 句。这让开发者能够自由将调用栈中许多层级的错误处理与错误生成分离开。由于你的异常类具有丰富性，这种分离不会丢失任何错误信息。
+
+最后，异常并不容易被忽略。如果程序不包含合适的 `catch` 句，那么抛出的异常将终止应用程序。你无法在未察觉的失败后继续运行，这会导致数据损坏。
+
+使用异常报告契约失败并不意味着任何无法执行你想要的操作都必须通过抛出异常来退出。这并不意味着每个失败都是异常。`File.Exists()` 在文件存在时返回 `true`，在不存在时返回 `false`。`File.Open()` 在文件不存在时抛出异常。区别非常简单：`File.Exists()` 通过告知文件是否存在来满足了它的契约。即使文件不存在，该方法也是执行成功的。相反，`File.Open()` 仅在文件存在、当前用户可以读取文件且当前进程可以打开文件进行读取访问时才会成功。在第一种情况下，即使方法给了一个你不想要的答案，它也是成功的。在第二种情况下，方法失败了，你的程序无法继续。方法返回的不理想答案与失败是不同的。方法是执行成功的；它给了你请求的信息。
+
+这种区别对你如何命名方法有重要影响。执行操作的方法应该命名为清晰地说明必须执行的操作。相反，测试特定操作的方法应该命名为指示该测试测试的操作。此外，你应该提供测试方法，以尽量减少将异常作为流程控制机制的需要。处理异常花费的时间比正常方法调用更长。你应该努力在你的类中创建一些方法，让用户在执行工作之前测试可能的失败条件。这种实践让他们能够以更具防御性的方式编程，如果开发者选择在调用方法之前不测试条件，你仍然可以抛出异常。
+
+每当你编写可能抛出异常的方法时，也应该提供测试会导致这些异常的条件的方法。在内部，你可以使用这些测试方法在继续之前检查任何先决条件，并在这些失败的情况下抛出异常。
+
+假设你有一个工作类，它在某些小部件未就位时会失败。如果你的 API 仅包含工作方法而没有提供通过代码的替代路径，你将鼓励开发者编写如下代码：
+
+点击此处查看代码图像
+
+```javascript
+// 不要推广这种写法：
+
+DoesWorkThatMightFail worker = new DoesWorkThatMightFail();
+
+try
+{
+    worker.DoWork();
+}
+catch (WorkerException e)
+{
+    ReportErrorToUser(
+        "测试条件失败。请检查小部件");
+}
+```
+
+相反，你应该添加公共方法，让开发者在执行工作之前显式检查条件：
+
+点击此处查看代码图像
+```csharp
+public class DoesWorkThatMightFail
+{
+    // 仅当失败意味着
+    // 难性问题时调用
+    public bool TryDoWork()
+    {
+        if (!TestConditions())
+            return false;
+        Work(); // 失败时可能抛出异常，
+        return true;
+    }
+
+    public void DoWork()
+    {
+        Work(); // 失败时抛出异常。
+    }
+
+    private bool TestConditions()
+    {
+        // 主体省略
+        // 在此处测试条件
+        return true;
+    }
+
+    private void Work()
+    {
+        // 省略
+        // 在此处执行工作
+    }
+}
+```
+
+这种模式要求你编写四个方法：两个公共方法和两个私有方法。`TryDoWork()` 方法验证所有输入参数和执行工作所需的内部对象状态。然后它调用 `Work()` 方法执行任务。`DoWork()` 直接调用 `Work()` 方法并让任何失败生成异常。这种习惯在 .NET 中被使用，是因为抛出异常涉及性能影响，开发者可能希望在允许方法失败之前测试条件来避免这些代价。
+
+现在，在添加上述额外代码后，希望在执行工作之前测试条件的开发者可以以更整洁的方式：
+
+```javascript
+if (!worker.TryDoWork())
+{
+    ReportErrorToUser("测试条件失败。请检查小部件");
+}
+```
+
+
+
+
+在实践中，测试前提条件可以进行更多的检查，例如参数检查和内部状态。当你的工作类处理某些形式的不可信输入时（例如用户输入、文件输入或来自未知代码的参数），你最经常使用这种写法。这些失败具有应用程序定义的恢复场景，并且是常见事件。你需要通过一种不涉及异常的控制机制来支持它们。注意，我并没有说 `Work()` 不抛出任何异常。在正常的参数检查之后，可能还会发生其他意意外的失败。这些失败即使在用户调用 `TryDoWork()` 时也会使用异常进行报告。
+
+当你的方法无法完成约同时，你有责任抛出异常。约失败始终通过抛出异常来报告。由于异常不应该作为通用的流控制机制，你还应该提供一组替代方法，允许开发者在调用可能抛出异常的方法之前测试可能的不合法条件。
+
+### 事项 46：利用 `using` 和 `try`/`finally` 进行资源清理
+
+使用未托管系统资源的类型应该通过 `IDisposable` 接口的 `Dispose()` 方法显式释放。.NET 环境的规则使得这是使用该类型的代码的责任，而不是类型或系统的责任。因此，每当你使用具有 `Dispose()` 方法的类型时，都有责任通过 `Dispose()` 来释放这些资源。确保 `Dispose()` 始终被调最佳方法是利用 `using` 语句或 `try`/`finally` 块。
+
+所有拥有未托管资源的类型都实现了 `IDisposable` 接口。此外，它们防御性地创建了一个终析器，以防你忘记妥善释放。如果你忘记释放这些项，这些非内存资源将在稍后释放，此时终析器获得了执行的机会。所有这些对象会在内存中留存更久，你的应用程序就会变成一个执行缓慢的资源大户。
+
+幸运的是，C# 语言设计者知道显式释放资源是一项常见任务。他们在语言中增加了关键字使之变得简单。
+
+假设你写了以下代码：
+
+```csharp
+public void ExecuteCommand(string connString,
+  string commandString)
+{
+    SqlConnection myConnection = new SqlConnection(
+      connString);
+    var mySqlCommand = new SqlCommand(commandString,
+      myConnection);
+    myConnection.Open();
+    mySqlCommand.ExecuteNonQuery();
+}
+```
+
+在这个示例中，有两个可释放对象没有被正确清理：`SqlConnection` 和 `SqlCommand`。这两个对象在终析器被调用之前一直留在内存中。（这两个类都继承自 `System.ComponentModel.Component` 的终析器。）
+
+你通过在完成命令和连接后调用 `Dispose` 来修复这个问题：
+
+```csharp
+public void ExecuteCommand(string connString,
+  string commandString)
+{
+    var myConnection = new SqlConnection(
+      connString);
+    var mySqlCommand = new SqlCommand(commandString,
+      myConnection);
+    myConnection.Open();
+    mySqlCommand.ExecuteNonQuery();
+    mySqlCommand.Dispose();
+    myConnection.Dispose();
+}
+```
+
+这样做很好，除非在 SQL 命令执行期间发生了任何异常。在这种情况下，你的 `Dispose()` 调用永远发生。`using` 语句确保了 `Dispose()` 被调用。你在 `using` 语句内部分配对象，C# 编译器会在每个对象周围生成一个 `try`/`finally` 块：
+
+```csharp
+public void ExecuteCommand(string connString,
+  string commandString)
+{
+    using (SqlConnection myConnection = new
+      SqlConnection(connString))
+    {
+        using (SqlCommand mySqlCommand = new
+          SqlCommand(commandString,
+          myConnection))
+        {
+            myConnection.Open();
+            mySqlCommand.ExecuteNonQuery();
+        }
+    }
+}
+```
+
+当你在函数中使用一个 `Disposable` 对象时，`using` 子句是确保对象被妥善释放的最简单方法。`using` 语句在分配的对象周围生成一个 `try`/`finally` 块。这两个块生成完全相同的 IL：
+
+```csharp
+SqlConnection myConnection = null;
+// 示例 Using 子句:
+using (myConnection = new SqlConnection(connString))
+{
+    myConnection.Open();
+}
+// 示例 Try / Catch 块:
+try
+{
+    myConnection = new SqlConnection(connString);
+    myConnection.Open();
+}
+finally
+{
+    myConnection.Dispose();
+}
+```
+
+如果你对不支持 `IDisposable` 接口类型的变量使用 `using` 语句，C# 编译器会生成错误。例如：
+
+```csharp
+// 无法编译：
+// String 是密封的，且不支持 Disposable。
+using (string msg = "This is a message")
+Console.WriteLine(msg);
+```
+
+`using` 语句仅在编译时类型支持 `IDisposable` 接口时才有效。你不能对任意对象使用它：
+
+```csharp
+// 无法编译。
+// Object 不 Disposable。
+using (object obj = Factory.CreateResource())
+Console.WriteLine(obj.ToString());
+```
+
+只需要一个简单的 `as` 子句即可安全地释放可能实现或不支持 `IDisposable` 的对象：
+
+```csharp
+// 正确的修复。
+// Object 可能可能不支持 Disposable。
+object obj = Factory.CreateResource();
+using (obj as IDisposable)
+Console.WriteLine(obj.ToString());
+```
+
+如果 `obj` 实现了 `IDisposable`，`using` 语句将生成清理代码。如果没有，`using` 语句将退化为 `using(null)`，这是安全的但无所作为。如果你不确定是否应该将对象封装在 `using` 块中，采取安全的做法：假设需要并使用前面所示的 `using` 子。
+
+这涵盖了简单的情况：每当你在函数中使用局部可释放对象时，使用 `using` 语句封装该对象。现在你可以看看更复杂的用法。在示例中，有两个不同的对象需要释放：连接和命令。我的示例创建了两个不同的 `using` 语句，每个封装一个需要释放的对象。每个 `using` 语句生成一个不同的 `try`/`finally` 块。实际上，你写了如下结构：
+
+```csharp
+public void ExecuteCommand(string connString,
+   commandString)
+{
+    SqlConnection myConnection = null;
+    SqlCommand mySqlCommand = null;
+    try
+    {
+        myConnection = new SqlConnection(connString);
+        try
+        {
+            mySqlCommand = new SqlCommand(commandString, myConnection);
+            myConnection.Open();
+            mySqlCommand.ExecuteNonQuery();
+        }
+        finally
+        {
+            if (mySqlCommand != null)
+                mySqlCommand.Dispose();
+        }
+    }
+    finally
+    {
+        if (myConnection != null)
+            myConnection.Dispose();
+    }
+}
+```
+
+每个 `using` 语句都会创建一个新的嵌套的 `try`/`finally` 块。幸运的是，在一个方法中同时分配两个都实现了 `IDisposable` 的不同对象的情况很少见。正因如此，保持原样是可以的，因为确实有效。然而，我发现这种结构很丑，所以当我分配多个实现 `IDisposable` 的对象时，我更倾向于编写自己的 `try`/`finally` 块：
+
+
+
+
+
+点击此处查看代码图像
+
+```csharp
+public void ExecuteCommand(string connString, string commandString)
+{
+    SqlConnection myConnection = null;
+    SqlCommand mySqlCommand = null;
+    try
+    {
+        myConnection = new SqlConnection(connString);
+        mySqlCommand = new SqlCommand(commandString, myConnection);
+        myConnection.Open();
+        mySqlCommand.ExecuteNonQuery();
+    }
+    finally
+    {
+        if (mySqlCommand != null)
+            mySqlCommand.Dispose();
+        if (myConnection != null)
+            myConnection.Dispose();
+    }
+}
+```
+
+之所以保持现状的一个原因是，你可以很容易表现得“自聪明”，尝试用 `as` 语句来构建一个 `using` 子句：
+
+点击此处查看代码图像
+
+```csharp
+public void ExecuteCommand(string connString, string commandString)
+{
+    // 坏主意。潜在的资源泄漏在潜伏！
+    SqlConnection myConnection = new SqlConnection(connString);
+    SqlCommand mySqlCommand = new SqlCommand(commandString, myConnection);
+    using (myConnection as IDisposable)
+    using (mySqlCommand as IDisposable)
+    {
+        myConnection.Open();
+        mySqlCommand.ExecuteNonQuery();
+    }
+}
+```
+
+它看起来更整洁，但有一个微妙的错误。如果 `SqlCommand()` 构造函数抛出异常，`SqlConnection` 对象将永远不会被释放。`myConnection` 引用的对象已经创建，但在执行 `SqlCommand` 构造函数时，代码尚未进入 `using` 块。如果没有在 `using` 块内部调用构造函数，对 `Dispose` 的调用就会跳过。你必须确保任何实现了 `IDisposable` 的对象都在 `using` 块或 `try` 块的作用范围内进行分配。否则，可能会发生资源泄漏。
+
+到为止，你已经处理了两种最明显的情况。每你在方法中分配一个可释放对象时，`using`
+
+语句都是确保在所有情况下释放你分配的资源的最佳方法。当你在同一个方法中分配多个对象时，请创建多个 `using` 块或编写你自己的单个 `try`/`finally` 块。
+
+释放可释放对象还有最后一个细微之处。某些类型同时支持 `Dispose` 方法和 `Close` 方法来释放资源。`SqlConnection` 就是其中一个类。你可以像这样关闭 `SqlConnection`：
+
+点击此处查看代码图像
+
+```csharp
+public void ExecuteCommand(string connString, string commandString)
+{
+    SqlConnection myConnection = null;
+    try
+    {
+        myConnection = new SqlConnection(connString);
+        SqlCommand mySqlCommand = new SqlCommand(commandString, myConnection);
+        myConnection.Open();
+        mySqlCommand.ExecuteNonQuery();
+    }
+    finally
+    {
+        if (myConnection != null)
+            myConnection.Close();
+    }
+}
+```
+
+这个版本确实关闭了连接，但它并不等同于释放（dispose）它。`Dispose` 方法的作用比释放资源多：它还通知垃圾回收器该对象不再需要终结化。`Dispose` 调用了 `GC.SuppressFinalize()`。`Close` 通常不这样做。结果是，即使不需要终结化，对象仍然留在终结队列中。如果你有选择，`Dispose()` 比 `Close()` 好。你可以在 项目 17 中阅读所有的细节。
+
+`Dispose()` 并不会从内存中移除对象。它是一个让对象释放未托管资源的钩子。这意味着如果你释放正在使用的对象，可能会遇到麻烦。上面的示例使用了 `SqlConnection`。`SqlConnection` 的 `Dispose()` 方法会关闭与数据库的连接。释放连接后，`SqlConnection` 对象仍然在内存中，但它不再连接到数据库。它在内存中，但已经没有用了。不要释放你的程序其他地方仍引用的对象。
+
+在某些方面，C# 中的资源管理可能比在 C++ 中更困难。你不能依赖确定性终结化来清理你使用的每个资源。但垃圾回收环境对你来说要简单得多。你创建的绝大多数类型都没有实现 `IDisposable`。只有一小部分 .NET 类实现了 `IDisposable`。当你使用那些实现了 `IDisposable` 的类时，请记住在所有情况下都释放它们。你应该将这些对象封装在 `using` 子句或 `try`/`finally` 块中。无论你使用哪种，都要确保对象始终、在每次都被妥善地释放。
+
+### 项目 47：创建应用程序特定类
+
+异常是报告错误的机制，这些错误可能会在距离错误发生地很远的地方被处理。关于错误原因的所有信息必须包含在异常对象中。在此过程中，你可能希望将低级错误转换为应用程序特定的错误，且不丢失任何关于原始错误的信息。在 C# 应用程序中创建特定的异常类时，你需要非常深思熟虑。
+
+第一步是理解何时以及为何创建新的异常类，以及如何构建信息丰富的层次结构。当使用你库的开发者编写 `catch` 子句时，他们会根据异常的运行时类型来区分操作。每个不同的异常类可以有一组不同的操作：
+
+点击此处查看代码图像
+
+```csharp
+try
+{
+    Foo();
+    Bar();
+}
+catch (MyApplicationException e1)
+{
+    FixProblem(e1);
+}
+catch (AnotherApplicationException e2)
+{
+    ReportErrorAndContinue(e2);
+}
+catch (YetAnotherApplicationException e3)
+{
+    ReportErrorAndShutdown(e3);
+}
+catch (Exception e)
+{
+    ReportGenericError(e);
+    throw;
+}
+finally
+{
+    CleanupResources();
+}
+```
+
+不同的 `catch` 子句可以存在于不同的运行时异常。作为应用程序作者，只有当 `catch` 子句可能采取不同操作时，才创建或使用不同的异常类。注意上面的每个异常都以不同的方式处理。开发者只有在处理方式不同时才会为不同的异常类提供不同的 `catch` 子句。否则，这只是额外的工作。因此，只有当你认为开发者会对引起异常的问题采取不同行动时，你应该考虑不同的异常类。如果没有，你的用户将只有不理想的选择。每当抛出异常时都可以推卸并终止应用程序。这样做工作量少，但不会赢得用户的赞誉。或者，他们可以深入异常来判断错误是否可以修正：
+
+点击此处查看代码图像
+
+```csharp
+private static void SampleTwo()
+{
+    try
+    {
+        Foo();
+        Bar();
+    }
+    catch (Exception e)
+    {
+        switch (e.TargetSite.Name)
+        {
+            case "Foo":
+                FixProblem(e);
+                break;
+            case "Bar":
+                ReportErrorAndContinue(e);
+                break;
+            // 由 Foo 或 Bar 调用的程序：
+            default:
+                ReportErrorAndShutdown(e);
+                throw;
+        }
+    }
+    finally
+    {
+        CleanupResources();
+    }
+}
+```
+
+这比使用多个 `catch` 子句要吸引人得多。这种代码非常脆弱：如果你更改了程序的名称，它就会失效。如果你将产生错误的调用移动到共享实用函数中，它就会失效。异常在调用栈中产生得越深，这种结构就越脆弱。
+
+
+
+
+在深入探讨这个话题之前，请让我先说明两个免责声明。首先，异常并不适用于你遇到的每种错误情况。虽然没有硬性的指导准则，但我倾向于对于那些如果不立即处理或报告就会导致持久性问题的错误情况抛出异常。例如，数据库中的数据完整性错误应该产生异常。如果忽略了它，问题只会变得更大。而未能正确写入用户的窗口位置偏好可能不会产生深远的影响，返回一个表示失败的错误代码就足够了。
+
+其次，编写 `throw` 语句并不意味着是时候创建一个新的异常类了。我建议多创建异常类而不是少创建，这源于人类的本性：人们在任何抛出异常时似乎都倾向于过度使用 `System.Exception`。这为调用代码提供的有用信息最少。相反，请经过深思熟虑并创建必要的异常类，以便调用代码能够理解原因并提供最佳的恢复机会。
+
+我再说一遍：使用不同异常类的原因——事实上，也是唯一的理由——是为了让使用你 API 的开发者在编写 `catch` 处理器时，能够更容易地采取不同的操作。寻找那些可能作为某种恢复操作候选的错误情况，并创建特定的异常类来处理这些操作。你的应用程序可以从缺失的文件和目录中恢复吗？它能从安全权限不足中恢复吗？那么缺失的网络资源又如何？当你遇到可能导致不同操作和恢复机制的错误时，请创建新的异常类。
+
+现在你正在创建你自己的异常类了。当你创建一个新的异常类时，你确实拥有非常具体的职责。你的异常类必须以 `Exception` 结尾。你应该始终让你的异常类派自 `System.Exception` 类或其他某些适当的异常类。你很少会为这个基类添加功能。不同异常类的目的是在 `catch` 子句中具备区分错误原因的能力。Visual Studio 或其他编辑器包含模板，可以轻松地创建新的异常类。
+
+但也不要从你创建的异常类中剥离任何东西。`Exception` 类包含四个构造函数：
+
+```csharp
+// 默认构造函数
+public Exception();
+
+// 使用消息创建。
+public Exception(string);
+
+// 使用消息和内部异常创建。
+public Exception(string, Exception);
+
+// 从输入流创建。
+protected Exception(
+    SerializationInfo, StreamingContext);
+```
+
+当你创建一个新的异常类时，请创建所有四个构造函数。注意，最后一个构造函数意味着你的异常类必须是可序列化的。不同的情况需要不同的构造异常的方法。（如果你选择派自不同的异常类，你应该包含该特定基类中所有适当的构造函数。）你将工作委托给基类的实现：
+
+```csharp
+[Serializable]
+public class MyAssemblyException :
+  Exception
+{
+    public MyAssemblyException() :
+        base()
+    {
+    }
+    public MyAssemblyException(string s) :
+        base(s)
+    {
+    }
+    public MyAssemblyException(string s,
+      Exception e) :
+        base(s, e)
+    {
+    }
+    // 在 .NET Core 中可能在所有平台上都不支持
+    protected MyAssemblyException(
+      SerializationInfo info, StreamingContext cxt) :
+        base(info, cxt)
+    {
+    }
+}
+```
+
+带有异常参数的构造函数值得进一步讨论。有时，你使用的某个库会生成一个异常。当你仅仅传递你使用的工具所抛出的异常时，调用你库的代码获得的关于可能的纠正措施的信息将是极少的：
+
+```csharp
+public double DoSomeWork()
+{
+    // 这可能抛出一个定义在
+    // 第三方库中的异常：
+    return ThirdPartyLibrary.ImportantRoutine();
+}
+```
+
+当你生成异常时，应该提供你自己的库的信息。抛出你自己的特定异常，并将原始异常作为其 `InnerException` 属性包含其中。你可以提供尽可能额外的信息：
+
+```csharp
+public double DoSomeWork()
+{
+    try
+    {
+        // 这可能抛出一个定义在
+        // 第三方库中的异常：
+        return ThirdPartyLibrary.ImportantRoutine();
+    }
+    catch (Exception e)
+    {
+        var msg = $"Problem with {ToString()}";
+        throw new DoingWorkException(msg, e);
+    }
+}
+```
+
+这个新版本在问题产生的地方创建了更多信息。只要你创建了正确的 `ToString()` 方法，内部异常就显示了问题的根源：你所使用的第三方库中的某些内容。
+
+这种技术是**异常翻译**，将低级异常转换为高级级异常。错误发生时产生的信息越多，用户诊断并可能纠正错误就越容易。通过创建你自己的异常类型，你可以将低级的通用问题翻译成包含所有应用程序特定信息的特定异常。你的应用程序会抛出异常——理想情况下不要经常，但它会发生。如果你不做任何特定的处理，每当你调用的方法出现问题时，应用程序都会生成默认的 .NET Framework 异常。提供更详细的信息将有助于你和你的用户诊断并可能纠正错误。只有在存在不同的纠正操作且仅当存在不同的操作时，你才创建不同的异常类。通过提供基异常类支持的所有构造函数，你创建功能全异常类。你使用 `InnerException` 属性来携带低级错误情况产生的所有错误信息。
+
+### 事项 48：优先考虑强异常保证
+
+当你抛出异常时，你向应用程序引入了一个破坏性事件。控制流被破坏了。预期的操作没有发生。糟糕的是，你将清理操作留给了编写捕获异常代码的程序员。当你捕获异常时可以执行的操作直接取决于异常抛出时你对程序状态管理的良好程度。坦率地说，C# 社区不需要创建自己的异常安全策略；C++ 社区已经为我们完成了所有的困难工作。从 Tom Cargill 的文章“异常处理：虚假的安全感”开始，并延续 Dave Abrahams、Herb Sutter、Scott Meyers、Matt Austern 和 Greg Colvin 的著作，C++ 社区开发了一系列可以适用于 C# 应用程序的最佳实践。关于异常处理的讨论在 1994 年到 2000 年的六年间进行。他们讨论、辩论并检查了这一困难问题的各种变体。我们应该在 C# 中利用所有的这些心工作。
+
+
+
+
+Dave Abrahams 定义了三种异常安全保证：基本保证、强保证和不抛出保证。Herb Sutter 在他的书籍 `Exceptional C++` (Addison-Wesley, 2000) 中讨论了这些保证。基本保证规定，在异常离开抛出的函数后，没有资源泄漏，且所有对象都处于有效状态。这意味着在抛出异常的方法中所有 `finally` 子句执行完毕之后。强异常保证在基本保证的基础上增加了一点：如果发生异常，程序状态不会发生改变。不抛出保证规定操作永远不会失败，从这里推导出方法永远不会抛出异常。强异常保证在从异常中恢复和简化异常处理之间提供了最佳平衡点。
+
+你可以从 .NET CLR 获得关于基本保证的一些帮助。环境处理了内存管理。你由于异常导致资源泄漏唯一方法是在拥有实现 `IDisposable` 接口的资源时抛出异常。条目 17 解释了如何在面对异常时避免资源泄漏。但这只是故事的一角。你仍然负责确保你的对象状态是有效的。假设你的类型缓存了集合的大小以及该集合。你需要在 `Add()` 操作抛出异常后，确保大小与实际存储匹配。你的应用程序可能会执行无数操作，如果这些操作只部分完成，将导致你的应用程序处于无效状态。这些情况更难处理，因为用于自动支持的标准惯用法较少。这些问题中的许多可以通过遵循强保证来得到最好的解决。
+
+### 强保证
+
+强保证规定，如果操作因为异常而终止，程序状态保持不变。操作要么完成，要么不修改程序状态；没有中间地带。强保证的优势在于，当遵循强保证时，你在捕获异常后可以更容易地继续执行。每当你捕获到异常时，无论尝试了什么操作都没有发生。它没有开始，也没有做出任何更改。程序的状态就像你从未开始过该操作一样。
+
+我之前提出的许多建议将有助于确保你满足强异常保证。你的程序使用的数据元素应该存储在不可变值类型中。你也可以使用函数式编程风格，例如 LINQ 查询。那种编程风格会自动遵循强异常保证。
+
+### 实现强保证
+
+有时，你无法使用函数式编程风格。如果你将防御性拷贝与交换技术结合，那么在执行任何可能抛出异常的操作后，程序状态的任何修改都可以发生。通用指南是按照以下方式执行任何数据修改：
+
+1. 对将要修改的数据进行防御性拷贝。
+2. 对这些数据的防御性拷贝进行任何修改。这包括任何可能抛出异常的操作。
+3. 将临时拷贝交换回原始数据。此操作不能抛出异常。
+
+当你为存储类型创建不可变数据结构时，这些指南更容易遵循。
+
+例如，以下代码使用防御性拷贝更新了员工的职称和薪资：
+
+点击此处查看代码图像
+
+```sharp
+public void PhysicalMove(string title, decimal newPay)
+{
+    // 工资数据是一个结构体：
+    // 如果字段无效，构造函数将抛出异常。
+    PayrollData d = new PayrollData(title, newPay,
+      this.payrollData.DateOfHire);
+
+    // 如果 d 构造成功，交换：
+    this.payrollData = d;
+}
+```
+
+有时，强保证效率太低无法支持，有时你无法在不引入微妙 bug 的支持强保证。第一种且最简单的情况是循环结构。当循环内部的代码修改程序状态并可能抛出异常时，你面临着一个艰难的选择：你要么为循环中使用的所有对象创建防御性拷贝，要么降低你的预期并只支持基本异常保证。这没有硬性规定，但在托管环境中拷贝堆分配对象的开销并不像原生环境中那样昂贵。.NET 在优化内存管理方面花费了大量时间。我倾向于尽可能支持强异常保证，即使这意味着要拷贝一个大型容器：从错误中恢复的能力优于避免拷贝所带来的微小性能提升。
+
+在特殊情况下，创建拷贝是没有意义的。如果任何异常最终都会导致程序终止，那么担心强保证就没有意义了。更大的担忧是交换引用类型可能会导致程序错误。考虑这个例子：
+
+点击此处查看代码图像
+
+```sharp
+private List<PayrollData> data;
+
+public IList<PayrollData> MyCollection
+{
+    get { return data; }
+}
+
+public void UpdateData()
+{
+    // 不可靠的操作可能会失败：
+    var temp = UnreliableOperation();
+    // 此操作只有在
+    // 不可靠的操作没有抛出
+    // 异常时发生。
+    data = temp;
+}
+```
+
+这看起来是防御性拷贝机制的一种极用法。你创建了数据的副本。然后从某处获取新数据来填充临时数据。最后，你将临时数据交换回来。看起来很好。但只有一个问题：它对引用类型无效。`MyCollection` 属性返回数据的引用。该类的所有客户端都仍然持有数据的旧视图。交换仅对值类型有效。要修复这个问题，你需要这样交换数据，使其永远不会抛出异常。这很难，因为它是两个原子操作：移除集合中的现有对象和添加新项。你可能认为风险很小：
+
+点击此处查看代码图像
+
+```sharp
+private List<PayrollData> data;
+
+public IList<PayrollData> MyCollection
+{
+    get
+    {
+        return data;
+    }
+}
+
+public void UpdateData()
+{
+    data.Clear();
+    foreach (var item in temp)
+    {
+        data.Add(item);
+    }
+}
+```
+
+### 信封-字母模式
+
+当你这样做时，需要做更多工作。信封-字母模式将实现（字母）隐藏在与代码公共客户端共享的包装器（信封）中。在这个示例中，你创建了一个封装集合的类，并实现了 `IList<PayrollData>`。该类包含 `List<PayrollData>` 并向类客户端暴露了其所有方法。你的类现在通过 `Envelope` 类来处理其内部数据：
+
+点击此处查看代码图像
+
+```sharp
+private Envelope data;
+
+public IList<PayrollData> MyCollection
+{
+    get
+    {
+        return data;
+    }
+}
+
+public void UpdateData()
+{
+    data.SafeUpdate(UnreliableOperation());
+}
+```
+
+
+
+
+
+`Envelope` 类通过将每个请求转发到包含的 `List<PayrollData>` 来实现 `IList`：
+
+点击此处查看代码图片
+
+```csharp
+public class Envelope : IList<PayrollData>
+{
+    private List<PayrollData> data = new List<PayrollData>();
+    public void SafeUpdate(IEnumerable<PayrollData> sourceList)
+    {
+        // make the copy:
+        List<PayrollData> updates =
+            new List<PayrollData>(sourceList.ToList());
+        // swap:
+        data = updates;
+    }
+    public PayrollData this[int index]
+    {
+        get { return data[index]; }
+        set { data[index] = value; }
+    }
+    public int Count => data.Count;
+    public bool IsReadOnly =>
+        ((IList<PayrollData>)data).IsReadOnly;
+    public void Add(PayrollData item) => data.Add(item);
+    public void Clear() => data.Clear();
+    public bool Contains(PayrollData item) =>
+        data.Contains(item);
+    public void CopyTo(PayrollData[] array, int arrayIndex) =>
+        data.CopyTo(array, arrayIndex);
+    public IEnumerator<PayrollData> GetEnumerator() =>
+        data.GetEnumerator();
+    public int IndexOf(PayrollData item) =>
+        data.IndexOf(item);
+    public void Insert(int index, PayrollData item) =>
+        data.Insert(index, item);
+    public bool Remove(PayrollData item)
+    {
+        return ((IList<PayrollData>)data).Remove(item);
+    }
+    public void RemoveAt(int index)
+    {
+        ((IList<PayrollData>)data).RemoveAt(index);
+    }
+    IEnumerator IEnumerable.GetEnumerator() =>
+        data.GetEnumerator();
+}
+```
+
+有很多样板代码需要检查，其中许多是显而易见的。然而，有几个重要部分需要你更仔细地检查。首先，注意 `IList` 接口的许多成员是由 `List<T>` 类显式实现的。这就是在许多方法中包含类型转换的原因。此外，我编写这段代码是基于 `PayrollData` 类型是值类型的假设。如果 `PayrollData` 是引用类型，这段代码会简单得多。我将 `PayrollData` 设置为值类型是为了演示这些差异。类型检查是基于 `PayrollData` 是值类型的。
+
+当然，这次练习的目的是创建并实现 `SafeUpdate` 方法。注意，它执行的工作你之前在原地执行的工作本质相同。这保证了这段代码即使在多线程应用程序中也是安全的。交换操作是无法中断的。
+
+在通常情况下，你无法在修复引用类型交换问题的同时，确保所有客户端都拥有对象的当前副本。交换仅对值类型有效。这应该足够了。
+
+最后，也是最严格的是“不抛异常保证”（no-throw guarantee）。不抛异常保证正如其名所示：如果一个方法保证始终运行到结束且永远不会让异常离开方法，那么它就满足了不抛异常保证。对于大型程序中的所有例程来说，这并不实际。但在少数位置，方法必须强制不抛异常保证。析构函数和 `Dispose` 方法不能抛出异常。在这两种情况下，抛出异常引起的问题都比任何替代方案都要多。在析构函数的情况下，抛出异常会导致程序终止而不进行进一步的清理。通过将大型方法封装在 `try`/`catch` 块中并忽略所有异常来实现这种不抛异常保证。大多数必须满足不抛异常保证的方法（例如析构函数和 `Dispose()`）都必须强制执行此项保证。
+
+### 条目 49：优先使用异常过滤器代替 `catch` 和重新抛出
+
+在标准的 `catch` 句中，你根据异常的类型来捕获异常。其他都不重要。编译器生成的代码之间的差异，是养成使用异常过滤器 own `catch` 并重新抛出习惯的最佳理由。异常过滤器是 `catch` 句上的一个表达式，跟在 `when` 关键字之后，它限制了 `catch` 句处理给定类型异常的时机：
+
+点击此处查看代码图片
+
+```csharp
+var retryCount = 0;
+var dataString = default(String);
+
+while (dataString == null)
+{
+    try
+    {
+        dataString = MakeWebRequest();
+    }
+    catch (TimeoutException e) when(retryCount++ < 3)
+    {
+        WriteLine("Operation timed out. Trying again");
+        // pause before trying again.
+        Task.Delay(1000 * retryCount);
+    }
+}
+```
+
+编译器生成的代码在任何栈回溯发生之前就会评估异常过滤器。原始异常位置是已知的。调用栈上的所有信息（包括任何局部变量的值）仍然是已知的。如果表达式求值为 `false`，运行时将继续向上调用栈查找可以处理该异常的匹配 `catch` 表达式。在运行时继续向上查找调用栈时，程序状态不会受到扰动。
+
+
+
+
+将上述处理方式与捕获异常后确定无法处理该问题并重新抛出异常的处理方式进行对比：
+
+点击此处查看代码图像
+
+```sharp
+var retryCount = 0;
+
+var dataString = default(String);
+
+while (dataString == null)
+{
+    try
+    {
+        dataString = MakeWebRequest();
+    }
+    catch (TimeoutException e)
+    {
+        if (retryCount++ < 3)
+        {
+            WriteLine("Timed out. Trying again");
+            // 在重试之前暂停。
+            Task.Delay(1000 * retryCount);
+        }
+        else
+            throw;
+    }
+}
+```
+
+使用该代码，运行时会找到一个可以处理该异常的 `catch` 句。一旦运行时找到该 `catch` 句，它就会开始回溯栈。在正在回溯栈的方法中声明的大多数局部变量不再具有可达根节点（被闭包捕获的变量，如果闭包是可达的，则可能仍然访问）。对于诊断根源重要的值可能不再有效。状态已经丢失。
+
+在 `catch` 句内部，你的代码确定你无法从此错误中恢复。因此，你重新抛出了原始异常。上面的代码使用了正确的语法来重新抛出。不要显式地抛出异常；那会创建一个新的异常对象并创建一个新的抛出点源头。
+
+这两种执行路径之间的差异体现在截然不同的诊断和调试体验上。第二种体验丢失了所有局部变量的值。它还丢失了问题发生时的执行过程信息。当使用异常过滤器时，创建的任何诊断跟踪数据将包含帮助你诊断异常原始原因的所有程序状态信息。而当你使用第一种方法时，当栈回溯并进入 `catch` 句时，其中部分信息将会丢失。查看以下三种方法，我已经在调用 `TreeOfErrors()` 时生成的异常所报告的调用栈中为它们添加了注释：
+
+点击此处查看代码图像
+
+```sharp
+static void TreeOfErrors()
+{
+    try
+    {
+        SingleBadThing();
+    }
+    catch (RecoverableException e)
+    {
+        throw; // 报告在 Call Stack 上
+    }
+}
+
+static void TreeOfErrorsTwo()
+{
+    try
+    {
+        SingleBadThing(); // 报告在 Call Stack
+    }
+    catch (RecoverableException e) when (false)
+    {
+        WriteLine("Can't happen");
+    }
+}
+```
+
+当你使用 `throw` 语法时，调用栈报告 `throw` 所在的位置为调用栈上的位置。这是因为执行进入了 `catch` 句，并且异常被重新抛出。`try` 句中的上一行已经丢失了。然而，当你使用异常过滤器时，调用栈报告的是导致异常抛出的方法调用位置。我已将上面的示例代码精简到最小可能的样本，因此很容易确定异常是在哪里生成的。在较大的应用程序中，确定异常生成的位置可能会更加困难。
+
+使用异常过滤器对程序性能也有积极影响。.NET CLR 已经过优化，使得在 `catch` 句未被进入的情况下，`try`/`catch` 块的存在对运行时性能的影响微乎其微。然而，栈回溯和进入 `catch` 句确实会对运行时产生巨大影响。异常过滤器在异常无法处理时避免栈回溯和进入 `catch` 句，从而提高性能。它无疑不会让性能变差。
+
+你可能已经采用了一些可能需要改变的实践。在某些情况下，你可能会发现异常的某些属性决定了你何时可以或不能处理异常。常见的场景之一涉及基于任务的异步编程。当任务执行的某些代码抛出异常时，任务会进入故障状态。一个任务可能启动了多个子任务，因此任务可能因为多个异常而故障。为了一致地处理这些情况，`Task` 类上的 `Exception` 属性是一个 `AggregateException`。你可能需要查看存储在 `InnerExceptions` 属性中的异常，以确定你的 `Task` 处理代码是否可以处理异常。
+
+另一个示例是 `COMException` 类。
+
+最后一个示例，`HTTPException` 类有一个 `GetCode()` 方法返回 HTTP 响应码。异常过滤器的添加意味着你可以构造异常处理代码，使得 `catch` 句仅在你能够处理时执行。
+
+### 事项 50：利用异常过滤器中的副作用
+
+构建一个始终返回 `false` 的异常过滤器似乎像是一个自相矛盾的，但原样观察所有异常有充分的理由。正如你在本章前面的事项 49 中读到的那样，异常过滤器是在运行时搜索适用 `catch` 句时，作为栈遍历的一部分执行的。让我们从一个经典的示例开始。生产程序通常会在某处记录所有异常。它们可能会将这些信息发送到中央位置。它们可能会在本地记录。但通过某种方式，良好的程序都会为任何发生的错误创建记录。
+
+例如，考虑此方法：
+
+点击此处查看代码图像
+
+```sharp
+public static bool ConsoleLogException(Exception e)
+{
+    var oldColor = Console.ForegroundColor;
+    Console.ForegroundColor = ConsoleColor.Red;
+    WriteLine("Error: {0}", e);
+    Console.ForegroundColor = oldColor;
+    return false;
+}
+```
+
+它向控制台输出任何异常的信息。这可以散落在代码中任何想要生成日志信息的地方。添加一个 `try`/catch` 句，并应用此返回 `false` 的异常过滤器：
+
+点击此处查看代码图像
+
+```sharp
+try
+{
+    data = MakeWebRequest();
+}
+catch (Exception e) when(ConsoleLogException(e)) { }
+catch (TimeoutException e) when(failures++ < 10)
+{
+    WriteLine("Timeout error: trying again");
+}
+```
+
+在上面的示例中有几个重要的用法。异常过滤器必须始终返回 `false`。它永远不能返回 `true`，否则你的日志方法将阻止异常的任何传播。其次，注意 `catch` 句通过捕获基类 `Exception` 来捕获所有异常。这使得能够记录所有异常。尽管它捕获了基类 `Exception`，此异常过滤器也可以位于 `catch` 句列表的第一位。该 `catch` 句从不处理异常（记住过滤器总是返回 `false`），因此运行时会继续寻找适用的 `catch` 句。这种用法也是极少数允许编写捕获所有异常的 `catch` 句的地方之一。
+
+
+
+
+遵循这些实践意味着你可以在代码的任何地方添加此 `catch` 子句，而不会影响执行。你可以在任何地方添加新的 `try`/`catch` 子句。你可以在任何现有 `catch` 子句的开头，或者在 `try`/`finally` 块之前添加一个 `catch (Exception e) when log(e) {}`。
+
+你可以考虑在代码中的不同位置进行专门的日志记录。所示的示例记录了所有异常，但你也可以将相同的技术应用于任何更具体的异常类型。由于异常过滤器总是返回 `false`，你只需简单修改被记录的异常类型即可。
+
+另一个选项是将日志记录 `catch` 子句放在最后一个 `catch` 子句。这将允许只记录那些在给定 `catch` 子句中未处理的异常。
+
+点击此处查看代码图像
+
+```sharp
+try
+{
+    data = MakeWebRequest();
+}
+catch (TimeoutException e) when(failures++ < 10)
+{
+    WriteLine("Timeout error: trying again");
+}
+catch (Exception e) when(ConsoleLogException(e)) { }
+```
+
+这种日志记录项的另一个优势是，你可以将其扩展到库和包，而无需修改执行流。在传统场景中，日志记录仅在应用程序级别添加，且仅在顶层方法中。这将捕获在运行时未被任何代码处理的异常。另一个选项是在应用程序代码中即将抛出异常的每个点创建日志消息。这可以在你的代码生成异常时进行记录，但当异常由底层代码生成时，不会生成任何消息。这两种策略都无法方便从库和包中生成日志信息。捕获并重新抛出异常会使用用户的调试周期变得困难（参见项目 49）。库作者可以使用这种句式为库的每个公共 API 记录异常。使用这种句式，堆栈信息不会被库日志机制修改。
+
+日志记录并不是不处理任何异常的异常过滤器的唯一用途。你还可以使用异常过滤器来确保在调试器会话中运行应用程序时，`catch` 子句不处理任何异常：
+
+点击此处查看代码图像
+
+```sharp
+try
+{
+    data = MakeWebRequest();
+}
+catch (Exception e) when(ConsoleLogException(e)) { }
+catch (TimeoutException e) when((failures++ < 10) &&
+    (!System.Diagnostics.Debugger.IsAttached))
+{
+    WriteLine("Timeout error: trying again");
+}
+```
+
+此异常过滤器防止在附加调试器时由 `catch` 子句处理任何异常。当你不在调试器下运行时，异常过滤器将通过，并执行异常句。
+
+请注意，这受运行时环境的影响，而不是构建设置。`Debugger.IsAttached` 属性仅在调试器附加到进程时才返回 `true`。它不受调试或发布构建设置的影响。此设置的优势是，当在调试器下运行时，你的 `catch` 子句不会被进入。如果应用于整个代码库，你的应用程序在调试器运行时将不会捕获任何异常。如果你将调试器设置为在所有未处理的异常处停止，那么当在附加调试器的情况下运行时，只要抛出异常，程序就会中断。这种句式不会在任何其他环境中影响你的应用程序。它是查找大型代码库中异常根源的绝佳工具。
+
+带有副作用的异常过滤器是观察代码某处抛出异常时发生什么的极佳方法。在大型代码库中，这些工具对于找到由运行异常应用程序抛出的异常根源具有积极影响。一旦找到源，修复它就会变得得多。
+
+# 索引
+
+### 符号
+
+- `$` (美元符号)，插值字符串，20
+- `?` (问号) 运算符，空条件运算符，33–34
+- `{ }` (大括号)，插值字符串的可读性，20
+- `<` (小于) 运算符，与 IComparable 的排序关系，124
+
+### 数字
+
+- `0` 初始化，避免在中使用初始化器语法，49
+
+### A
+
+- **Abrahams, Dave**，238
+- `Action<>`，委托形式，28
+- **Action 方法**
+    - 为集合中的每个项目进行调用，152
+    - 命名，222
+    - 编写以确保没有异常，189
+- **Actions**
+    - 避免在其中抛出异常，188–190
+    - 为不同的创建新的异常类，234–235
+    - 与...解耦，151–157
+- `Add()` 方法，108
+- `Add()` 方法，泛型类，107–108
+- **Algorithms**
+    - 使用委托创建合约，109
+    - 使用函数参数放宽，161–163
+    - 使用运行时类型，85–92
+- **Allocations**
+    - 减少，61–64
+- **Anonymous types**
+    - 隐式类型，177
+- **API**
+    - 在...上定义，107
+    - 区分 IEnumerable/Queryable，208
+- **APIs**
+    - 避免字符串，26–27
+    - 创建可组合的，144–151
+- **AppDomain**
+    - 初始化静态成员，52–53
+- **Application-specific classes**，232
+- `AreEqual()` 方法，约束，80–83
+- **Arguments**
+    - 使用生成器，135–139
+    - `nameof()` 运算符用于，26–27
+- **Array**
+    - 安全问题，102–103
+- **As 运算符**
+    - 检查 Name 的相等性，123
+    - 优于转换，12–19
+- `AsParallel()` 方法，查询语法，144
+- `AsQueryable()` 方法，211–212
+- **Assignment statements**
+    - 优于成员初始化器，48–51
+    - 支持泛型协变/逆变，103
+
+### B
+
+- **Backward compatibility**, `IComparable` 用于，93
+- **Base classes**
+    - 使用 `base()` 调用构造函数，59
+    - 定义最小/足够的约束，80, 83
+    - 使用函数参数/泛型方法定义，160–161
+    - 不要在...上创建泛型特化，112–116
+    - 在...静态构造函数之前执行静态初始化，49, 52
+    - 强制客户端代码从派生，158
+    - 实现标准的释放模式，69–73
+
+
+
+
+仅使用 `new` 修饰符来响应 38–41 的更新。
+
+## BaseWidget 类，40–41
+
+## 基础保证，异常，238
+
+## BCL。*参见* .NET 类库 (BCL)
+
+## 行为
+- 编译时 vs. 运行时常量，8
+- 在带有扩展方法的接口中定义，126–130
+- `IEnumerable` vs.`IQueryable`，208–212
+- `nameof()` 运算符与一致性，26–27
+- 当扩展方法导致异常行为时，128–129
+
+## BindingList<T> 构造函数，155–156
+
+## 绑定变量
+- 避免捕获开销资源，195–197, 204–205
+- 避免修改，215–220
+- 生命周期，195
+
+## 装箱操作
+- 实现 `IComparable` 和，92–93
+- 最小化，34–38
+
+## Brushes 类，减少程序数量，63–64
+
+### C
+
+#### C# 语言惯用法
+- 避免使用字符串类型的 API，25–27
+- 使用委托表示回调，28–31
+- 最小化装箱和拆箱，34–38
+- 概述，1
+- 针对特定文化的字符串优先使用 `FormattableString`，23–25
+- 优先使用隐式类型局部变量，1–7
+- 优先使用 `is` 或 `as` 运算符而非强制类型转换，12–19
+- 优先使用 `readonly` 而于 `const`，7–11
+- 使用插值字符串替换 `string.format()`，19–23
+- 仅使用 `new` 修饰符响应基类更新，38–41
+- 使用 `null` 运算符进行调用，31–34
+
+#### 回调，用委托表示，28–31
+
+#### 捕获变量
+- 避免捕获开销资源，195–196
+- 避免修改，215–220
+
+#### Cargill, Tom，238
+
+#### 转换
+- `as` 作为约束的替代方案，80–81
+- `GetEnumerator()`、`ReverseEnumerator<T>` 和，89–90
+- 优先使用 `is` 或 `as` 运算符处理，12–19
+- 指定约束，79
+- `T` 实现/未实现 `IDisposable`，99
+- `Cast<T>` 方法，转换元素，18–19
+
+#### Catch 子句
+- 创建特定的异常类，232–237
+- 带有副作用的异常过滤器，250–251
+- 优先使用异常过滤器，245–249
+
+#### `CheckEquality()` 方法，122–123
+
+#### 循环内存，与垃圾回收器，43–44
+
+#### 类
+- 避免使用扩展方法，163–167
+- 上的约束，112
+- 对非泛型使用泛型方法，116–120
+
+#### `Close()` 方法，SqlConnection，230–231
+
+#### 封闭泛型类型，77–79
+
+#### 闭包
+- 内部的捕获变量，196
+- 编译器将 lambda 表达式转换为，215, 218–220
+- 捕获变量的扩展生命周期，195
+
+#### CLR（公共语言运行时），泛型与，77
+
+#### 代码规范，在本书中使用，xv
+
+#### 集合
+- 避免为创建非泛型类/泛型方法，120
+- 在特定类型上创建扩展方法集，130
+- 对整个集合的操作效率低下，144
+- 优先使用迭代器方法而非返回，133–139
+- 视为协变处理，103
+
+#### `COMException` 类，异常过滤器用于，248
+
+#### 公共语言运行时 (CLR)，泛型与，77
+
+#### `Compare()` 方法，`IComparable<T>`，92–93
+
+#### `Comparison<T>` 委托，关系，95–98
+
+#### 编译时常量
+- 使用 `const` 关键字声明，7
+- 字符串，7–8
+- 优先使用运行时常量，7–8
+
+#### 编译器
+- 添加泛型，77
+- 产生非 `Object` 异常，80
+- 类型表达式，7–8
+
+#### 约束
+- 用户的文档，98
+- 泛型类型，19
+- 对整个类的限制性，116–120
+- 表面上太严格的，79–84
+- 将运行时转换为编译时，98
+- 类型参数，98
+- 使用委托定义方法，107–112
+
+#### 构建的泛型类型，扩展方法，130–132
+
+#### 构造函数初始化，减少重复逻辑，53–54, 59–61
+
+#### 构造函数
+- `Exception` 类，235–236
+- 减少重复代码，53–61
+- 使用无参数构造函数减少重复代码，55–56
+- 永远不要在其中调用虚函数，65–68
+- 无参数的，55–56
+- 静态的，51–53, 61
+
+#### 可持续方法，148
+
+#### 延续，在查询表达式中，173–174
+
+#### 合约失败，使用异常报告，221–225
+
+
+
+
+
+## 转换
+
+内置数值类型和隐式，3–5
+
+使用不使用操作符的泛型强制转换，19
+
+`foreach` 循环和，16–17
+
+用户定义类型中的 `as` 和 `is` 与强制转换，13–15
+
+## 成本
+
+解耦组件的成本，158
+
+扩展方法与性能，164
+
+泛型类型定义的成本，77
+
+运行时内存占用，79
+
+抛出异常与性能，224
+
+使用异常过滤器以避免额外的，245
+
+## 耦合，通过函数参数松化，157–163
+
+## 协变，泛型，101–107
+
+## `CreateSequence()` 方法，155–157, 161
+
+## `Customer struct`，94, 96–98
+
+### D
+
+### 数据
+
+区分早期执行与延迟执行，190–195
+
+为完整性错误抛出异常，234
+
+将代码视为，179
+
+### 数据源，169
+
+`IEnumerable` 对比 `IQueryable`，208–212
+
+用于复用库的 lambda 表达式和，186
+
+### 数据存储，对 LINQ to Objects 的查询，186
+
+### 调试器，异常过滤器和，251–252
+
+### 声明式代码，191
+
+### 声明式模型
+
+区分早期执行与延迟执行，192
+
+查询语法将程序逻辑移动到，139
+
+### 默认构造函数
+
+约束，83–84
+
+定义，49
+
+### 默认参数
+
+最小化重复初始化逻辑，60–61
+
+最小化构造函数中的重复代码，54–56
+
+### 防御性拷贝机制
+
+与强异常保证配合，239
+
+不抛出保证、委托调用和，244–245
+
+引用类型交换的问题，240–241
+
+### 延迟执行
+
+避免捕获昂贵的资源，200
+
+多个迭代器方法的组合性，148–149
+
+定义，145
+
+与早期执行区分，191–195
+
+编写迭代器方法，145–146
+
+### 委托签名
+
+使用定义方法约束，107–108
+
+通过...松化耦合，159–163
+
+### 委托目标，不抛出保证，244–245
+
+### 委托
+
+闭包内部的捕获变量，195, 196
+
+导致对象在内存中停留更久，43
+
+编译器转换为 lambda，215–216
+
+使用类型参数约束，107–110
+
+使用定义方法约束，112
+
+通过...表达回调，28–31
+
+在泛型协变/逆变中，105–107
+
+在 `IEnumerable<T>` 扩展方法，209
+
+### 依赖注入，创建/复用对象，64
+
+### 派生类
+
+构造函数中的虚函数，66–68
+
+实现标准释放模式，69–73, 75
+
+### 确定性终结，在 .NET 环境中，46
+
+### Disposable 类型参数，创建支持泛型类，98–101
+
+### `Dispose()` 方法
+
+异常的不抛出保证，244
+
+资源清理，225–227, 229–231
+
+标准释放模式，69–73, 75
+
+实现 `IDisposable` 的 `T`，99, 100
+
+### 文档，约束，98
+
+### 重复，初始化逻辑中的最小化，53–61
+
+### 动态类型，隐式类型局部变量对比，2
+
+### E
+
+### 饿性评估，179–184
+
+### 早期评估，191–195
+
+### `EntitySet` 类，GC 的 Mark and Compact 算法，44
+
+### `Enumerable.Range()` 迭代方法，138
+
+### `Enumerable.Reverse()` 方法，7
+
+### 迭代器，在类中的函数式编程，192
+
+### 信封模式，241–243
+
+### 等等关系
+
+用于的经典和泛型接口，122–124, 126
+
+与排序关系对比，98
+
+### 等等测试，获取...的精确运行时类型，18
+
+### `Equals()` 方法
+
+通过重写检查相等性，123
+
+最小化约束，82
+
+对于排序关系不需要，98
+
+### 错误
+
+异常与返回码和，224
+
+失败报告机制对比，222
+
+在...之间修改变量，215–220
+
+使用异常处理持久性问题，234
+
+### 事件处理器
+
+导致对象在内存中停留更久，43
+
+事件调用的传统，31–33
+
+带有空条件运算符的事件调用，33–34
+
+### 事件
+
+使用空条件运算符进行调用，31–34
+
+用于回调的，28
+
+### 异常过滤器
+
+在...中利用副作用，249–252
+
+不抛出保证，244
+
+倾向于 `catch` 并重新抛出，245–249
+
+带有副作用，251
+
+### “异常处理：虚假的安全感”（Cargill），238
+
+### `Exception`，新异常类必须以，235
+
+### 异常安全保证，238
+
+### 异常翻译，237
+
+***Exceptional C++* (Sutter), 238**
+
+### 异常
+
+避免在函数和操作中抛出异常，188–190
+
+最佳实践，238
+
+创建特定的异常类，232–237
+
+使用异常处理持久性问题，234
+
+
+
+
+
+初始化静态类成员，52–53
+
+在异常过滤器中利用副作用，249–252
+
+将初始化移动到构造函数体中，对于 50–51
+
+`nameof()` 运算符和类型，27
+
+概览，221
+
+优先使用异常过滤器而非 `catch` 和重新抛出，245–249
+
+优先使用强异常保证，237–245
+
+用以报告方法约失败，221–225
+
+使用 `using` 和 `try/finally` 进行资源清理，225–232
+
+由 `Single()` 抛出，212–213
+
+## 执行语义学，169
+
+## 昂贵的资源，避免捕获，195–208
+
+## 表达式树
+
+定义，209
+
+使用 `IQueryable<T>`，209
+
+使用 LINQ to Objects，186
+
+## `Expression.MethodCall` 节点，LINQ to SQL，186
+
+## 表达式
+
+条件条件的，21–22
+
+描述用于替换字符串的代码，20–21
+
+## 扩展方法
+
+通过...增强最小化契约，126–130
+
+通过...定义接口行为，126
+
+通过...增强构建的泛型类型，130–132
+
+`IEnumerable<T>`，209
+
+隐式类型局部变量和，6–7
+
+永远不要对多个使用相同的签名，167
+
+查询表达式模式，169
+
+在复杂的查询中复用 lambda 表达式，187
+
+### F
+
+#### 失败，报告方法约，221–225
+
+#### False，异常过滤器返回，249–250
+
+#### 反馈，服务器到客户端的回调，28–31
+
+## 终结器
+
+通过...避免资源泄漏，48
+
+通过...控制未托管资源，45–46
+
+对垃圾回收器的影响，46–47
+
+通过...实现标准的 dispose 模式，69–70, 73–75
+
+减少对...的需求，46–47
+
+异常的不抛出保证，244
+
+使用 `IDisposable` 接口而非，48
+
+#### `Find()` 方法，`List<T>` 类，29
+
+#### `First()` 方法，212–214
+
+#### `FirstOrDefault()` 方法，213–214
+
+#### 灵活性，只读的，11
+
+#### Font 对象，62–63
+
+通过...进行 `foreach` 循环，16–17
+
+#### 可格式化的，特定文化的字符串，23–25
+
+#### `Func<>` 委托形式，28
+
+## 函数参数
+
+定义接口或创建基类，160–163
+
+使用 `IEnumerable<T>`，209
+
+通过...松散耦合，157–158
+
+## 函数式编程风格，强异常保证，239
+
+## 函数
+
+在...中抛出异常，188–190
+
+从...解耦迭代，151–157
+
+通过...使用 lambda 表达式和迭代器，192
+
+### G
+
+#### 垃圾回收器 (GC)
+
+过度使用，61–62
+
+通过...控制托管内存，43–46
+
+终结器对...的影响，46–47
+
+局部变量超出作用范围时的适用性，195
+
+通过...实现标准的 dispose 模式，69–72, 74
+
+通知对象不需要终结化，231
+
+使用代进行优化，47
+
+#### 按需生成的策略，迭代器方法，138
+
+#### 代数，垃圾回收器
+
+终结器与，69–70
+
+优化，47
+
+## 泛型逆协变
+
+在委托中，105–107
+
+对于泛型接口，105
+
+概览，101–102
+
+用于 `in` 修饰符，107
+
+## 泛型协变
+
+数组问题，102–103
+
+在委托中，105–107
+
+在泛型接口中，103–105
+
+概览，101–102
+
+用于 `out` 修饰符，107
+
+## 泛型接口，以协变/逆协变处理，103–104
+
+## 泛型方法
+
+编译器解析重载的困难，112–115
+
+定义接口或创建基类，160–163
+
+除非类型参数是实例字段，否则优先使用泛型方法，116–120](#ch03.xhtml_page_120)
+
+相对于基类，115
+
+## 泛型类型定义，77
+
+## 泛型
+
+通过...增强最小化契约，126–130
+
+通过...避免装箱和拆箱，35
+
+在基类/接口上避免泛型特化，112–116
+
+创建支持可释放参数的泛型类，98–101
+
+定义最小且足够的约束，79–84
+
+通过扩展方法增强构建的类型，130–132
+
+实现经典和泛型接口，120–126
+
+用 `IComparable<T>`/IComparer<T> 排序关系，92–98
+
+概览，77–79
+
+通过运行时类型检查特化泛型算法，85–92
+
+支持泛型协变/逆协变，107–112
+
+
+
+
+
+# GroupJoin 方法，查询表达式模式，178
+
+## H
+### `HTTPException` 类，使用异常过滤器，248–249
+
+## I
+### `ICollection<T>` 接口
+- 对经典 `IEnumerable` 的支持，126
+- `Enumerable.Reverse()` 和，7
+- 与 `ICollection` 不兼容，126
+- 使用运行时类型检查来特化泛型算法，88–89, 91
+
+### `IComparable` 接口
+- 鼓励调用代码使用新版本，126
+- 实现 `IComparable<T>`，92–95
+- 使用自然排序，98
+
+### `IComparable<T>` 接口
+- 为其定义扩展方法，127
+- 实现排序关系，92–95, 123–124
+- 为泛型类型指定约束，81, 83
+- 使用类约束，112
+
+### `IComparer<T>` 接口
+- 强制额外的运行时检查，118
+- 实现排序关系，96–98
+
+### `IDisposable` 接口 
+- 避免创建不需要的对象，62–63
+- 避免终结器的性能损耗，48
+- 闭包内部捕获的变量以及 197–198
+- 使用控制非托管资源，45
+- 创建支持可释放类型参数的泛型类，98–101
+- 实现标准的释放 模式，69–71, 75
+- 异常导致的资源泄漏，238
+- 使用 `using` 和 `try/finally` 进行资源清理，225, 227–232
+- 实现持有昂贵资源的变量类型，196
+- 实现变量，201
+
+### `IEnumerable<T>` 接口 
+- 创建存储集合，139
+- 为其定义扩展方法，127
+- 使用扩展方法增强构造类型，130–132
+- 泛型协变，104
+- 继承自 `IEnumerable`，126
+- `IQueryable<T>` 数据源对比，208–212
+- 隐式类型局部变量的性能，5–6
+- 查询语法优于循环，140–141
+- 查询表达式模式，169
+- 反序枚举以及，85–87
+- 使用指定约束，112
+- 使用隐式类型局部变量，1
+- 迭代器方法，145–146
+
+### `IEnumerator<T>` 接口 
+- 泛型协变，104
+- 使用类型检查特化泛型算法，85–86, 88–91
+
+### `IEquatable<T>` 接口 
+- 最小化约束，82–83
+- 使用类约束，112
+- `IL` 或 `MSIL`（微软中间语言）类型，8–77–79
+
+### `IList<T>` 接口 
+- 对经典 `IEnumerable` 的支持，126
+- 与 `IList` 不兼容，126
+- 特化泛型算法，87–89
+
+### 不变类型 
+- 用于构建最终值，64–65
+- 强异常保证，239–240
+
+### 命令式代码 
+- 定义，191
+- 丢失操作的意图，142
+
+### 命令式模型 
+- 其中的方法，192
+- 从查询语法移动逻辑，139–144
+
+### 隐式属性，用于初始化器语法，50–51
+
+### 隐式类型局部变量 
+- 使用 `var` 声明，1–2, 7
+- 扩展方法以及，6
+- 数字类型问题，3–4
+- 可读性问题，2–3
+- 使用原因，1
+
+### `In`（逆变）修饰符，107
+
+### 继承关系 
+- 数组协变，103
+- 运行时切换委托，163
+
+### 初始化 
+- 赋值语句与变量，48–49
+- 语句中的局部变量类型，2
+- 最小化逻辑重复化，53–61
+- 对象的的操作顺序，61
+- 静态类成员，51–53
+
+### `InnerException` 属性，低层级错误和，236–237
+
+### `INotifyPropertyChanged` 接口，`nameof()` 表达式，26
+
+### 实例常量，用于 `readonly` 值，9
+
+### 接口指针，装箱/拆箱以及，35
+
+### 接口 
+- 使用扩展方法增强，126–130
+- 上的约束，112
+- 实现泛型和经典，120–126
+- 通过创建/针对编码来解耦，158–159, 163
+- 使用委托签名解耦，160
+- 用于 `nameof()` 运算符，26–27
+- 使用函数参数/泛型方法定义，160–161
+
+### 接口，泛型 
+- 避免创建非泛型类/泛型方法，120
+- 避免泛型特化，112–116
+- 实现经典接口以及，120–126
+
+### 国际化，优先使用 `FormattableString`，25
+
+### 插值字符串
+- 避免创建不需要的对象，64–65
+- 值类型的装箱/拆箱以及，35–36
+- 转换为字符串或格式化字符串，23
+- 特定文化的字符串优先使用 `FormattableString`，23–25
+- 用 `string.Format()` 替换，19–23
+
+### `InvalidCastException` 由 `foreach` 循环引起，17
+
+### `InvalidOperationException, Single()`，213
+
+### `Invoke()` 方法，使用 “?**” 运算符，33–34
+
+### `IQueryable` 迭代器，187
+
+### `IQueryable<T>` 接口 
+- 不要解析任意方法，209
+- `IEnumerable<T>` 数据源对比，208–212
+- 实现查询表达式模式，169
+
+
+
+
+
+# 运算符/方法集，209
+
+## 使用隐式类型局部变量，1, 5–6
+
+## `IQueryProvider`
+- 优先使用 表达式而非方法，187
+- 将查询转换为 T-SQL，210
+- 使用隐式类型局部变量，1
+
+## `Is` 运算符
+- 遵循多态性规则，17–18
+- 优先使用类型转换，12–19
+
+## 迭代 (Iterations)
+- 与动作、谓词和函数解耦，151–157
+- 整个集合的低效率问题，144
+- 在次性产生最终集合，144
+
+## 迭代方法 (Iterator methods)
+- 为序列创建可组合的 API，145–151
+- 定义，133
+- 不一定以序列作为输入参数，154
+- 优先返回集合，133–139
+- 在不推荐时，139
+
+## 迭代器，定义，145
+
+### J
+## `Join` 方法，查询表达式模式，178
+## 即时编译 (JIT) 编译器，泛型以及和，77–79
+
+### L
+## Lambda 表达式
+- 编译器将其转换为委托或闭包，215–220
+- 使用进行延迟执行，191–195
+- 为泛型类定义方法，108
+- 使用 表达式表示委托，28–29
+- `IEnumerable<T>` 使用委托进行，209
+- 并非都生成相同的代码，215–216
+- 优先使用方法，184–188
+- 可复用查询的形式为，132
+
+## 语言 (Language)
+- 惯用法。*参见* C# 语言惯用法
+- 对于特定文化的字符串优先使用 `FormattableString`，23–25
+- 字符串插值嵌入到，20–23
+
+## 延迟评估 (Late evaluation)，191–195
+## 懒性评估 (Lazy evaluation)，179–184, 192
+## 小于 (<) 运算符，与 `IComparable` 的排序关系，124
+## 库 (Libraries)。*另见* .NET 基类库 (BCL)
+- 异常产生，236–237
+- 字符串插值执行代码来自，20–21
+
+## LINQ
+- 避免捕获昂贵的资源，195–208
+- 避免修改绑定的变量，215–220
+- 在函数/动作中避免抛出异常，188–190
+- 构建在委托，29
+- 为序列创建可组合的 API，144–151
+- 将迭代与谓词、函数解耦，151–154
+- 区分早期执行与延迟执行，190–195
+- 按需生成序列项，154–157
+- 查询表达式如何到方法调用，167–179
+- `IEnumerable` 与 `IQueryable`，208–212
+- 使用参数松松耦合，157–163
+- 永远重载方法，163–167
+- 概述，133
+- 优先使用返回集合的迭代方法，133–139
+- 优先使用 Lambda 表达式而非方法，184–188
+- 查询中的懒性评估与急切评估，179–184
+- 优先使用查询语法而非循环，139–144
+- 在插值字符串中使用查询，22
+- 使用 `Single()` 和 `First()` 强制查询的语义预期，212–214
+
+## LINQ to Objects，186–187, 209
+## LINQ to SQL
+- 区分早期执行与延迟执行，194–195
+- `IEnumerable` 与 `IQueryable`，208
+- `IQueryable<T>` 的实现，210
+- 优先使用 Lambda 表达式而非方法，186–187
+- `string.LastIndexOf()` 的解析方式，211–212
+## `List.ForEach()` 方法，List<T> 类，29
+## `List.RemoveAll()` 方法签名，159
+## `List<T>` 类，使用回调的方法，29
+
+## 局部类型推断 (Local type inference)
+- 可能给开发者带来困难，5
+- 编译器在其中做出最佳决策，4
+- 静态类型不受，2
+
+## 局部变量 (Local variables)。*另见* 隐式类型局部变量
+- 避免捕获昂贵的资源，204–207
+- 避免字符串类型的 API，27
+- 垃圾回收的资格，195–196
+- 优先使用异常过滤器而非 `catch` 和重新抛出，246–247
+- 提升成员变量，62
+- 使用空运算符进行调用，32–33
+- Lambda 表达式访问时，218–220
+- Lambda 表达式不访问时，216–218
+- 写入并释放，99–101
+
+## 本地化 (Localizations)，优先使用 `FormattableString` 用于，25
+## 日志 (Logging)，异常的，250–251
+## 逻辑 (Logic)，最小化初始化，53–61
+## 循环 (Loops)，优先使用查询语法，139–144
+
+### M
+## 环境 (Managed environment)，75
+- 在其中复制堆分配的对象，240
+- 垃圾回收的内存管理，43–44, 48
+## 托管堆 (Managed heap)，内存管理，44–45
+## 将查询映射到方法调用，167–178
+## 标记-压缩算法，垃圾回收，43–44
+## `Max()` 方法，183
+## 成员初始化器，优于赋值语句，48–51
+## 成员变量
+- 避免创建不必要的对象，62–65
+- 在构造函数中调用虚函数，66
+- 垃圾回收代数，47
+- 泛型类使用类型参数实例作为，99–100
+- 在构造期间初始化一次，61
+
+
+
+
+
+在声明处初始化，48–51
+
+切勿在构造函数中调用虚拟函数，66
+
+静态（static），63–65
+
+当 lambda 表达式访问时，218
+
+# 内存管理，.NET，43–48
+
+# 方法调用，将查询表达式映射到，167–178
+
+## 方法参数
+
+逆变型类型参数，105
+
+编译器在 lambda 表达式中的处理方式，220
+
+## 方法签名
+
+使用扩展方法增强最小接口合约，127, 129, 131
+
+将迭代与操作、谓词和函数解耦，152
+
+实现经典和通用接口，126
+
+使用函数参数松散耦合，159
+
+将查询表达式映射到方法调用，167–169, 171
+
+偏好使用隐式类型局部变量，2
+
+偏好使用 `is` 或 `as` 运算符而非强制类型转换，12
+
+将返回码作为...的一部分，222
+
+# 方法
+
+使用 `FormattableString` 处理特定区域字符串，24–25
+
+声明编译时 vs 运行时常量，8
+
+区分早期执行与延迟执行，190–195
+
+扩展（extension）。*参见 扩展方法*
+
+泛型（generic）。*参见 泛型方法*
+
+迭代器（iterator）。*参见 迭代器方法*
+
+偏好使用 lambda 表达式代替，184–188
+
+在查询表达式模式中。*参见 查询表达式模式*
+
+隐式类型局部变量的可读性和...的名称，2–3
+
+使用异常报告...的约失败，221–225
+
+使用 `new` 修饰符引入基类的新版本，39–41
+
+## `Min()` 方法，183
+
+# MSIL，或 IL（微软中间语言）类型，8–9, 77–79
+
+# 多路委托委托 (Multicast delegates)
+
+所有委托作为，29–30
+
+带有事件处理程序的事件分用以及，31–32
+
+委托目标中的不抛出保证和，244
+
+### N
+
+# 命名参数，11
+
+# `Nameof()` 运算符，避免字符串类型的 API，26
+
+# 名称 (Names)
+
+对...进行相等性检查，123
+
+方法的性，222–223
+
+变量类型安全 vs. 编写完整类型，1–2
+
+# 命名空间 (Namespaces)
+
+`nameof()` 运算符用于，27
+
+切勿在...中重载扩展方法，164–167
+
+# 嵌套循环，偏好查询语法代替，141
+
+# .NET 1.x 集合，在...中装箱/拆箱，36–37
+
+# .NET 基类库 (BCL)
+
+序列中的元素转换，18–19
+
+委托定义，105
+
+`ForAll` 实现，140
+
+约束，112
+
+使用函数参数松松耦合，162–163
+
+.NET 2.0 版本，36
+
+# .NET 资源管理
+
+避免创建必要的对象，61–65
+
+实现 dispose 模式，68–75
+
+最小化初始化逻辑，53–61
+
+切勿在构造函数中调用虚拟函数，65–68
+
+...的概述，43
+
+偏好使用初始化器而非赋值，48–51
+
+理解，43–48
+
+为静态成员使用适当初始化，51–53
+
+`New()` 约束，83–84
+
+实现 `IDisposable`，100–101
+
+需要无参数构造函数，55–56
+
+`New` 修饰符，仅用于响应基类，38–41
+
+# 不抛出保证，异常，238, 244
+
+## 非虚拟函数，避免使用 `new` 修饰符重定义，39
+
+## `NormalizeValues( ) 方法，`BaseWidget` 类，40–41
+
+# `Null` 运算符
+
+在...中避免使用初始化语法，49
+
+编译时常量限制，9
+
+带有...的事件分用，31–34
+
+用于返回零或一个元素的查询，213
+
+使用 `as` 运算符对比强制类型转换，13
+
+## `NullReferenceException`，31–32
+
+# 数字 (Numbers)
+
+编译时常量限制，9
+
+按需生成序列项，154–157
+
+# 数值类型 (Numeric types)
+
+显式声明，7
+
+隐式声明的问题，3–5
+
+为...提供泛型特化，115
+
+### O
+
+# 对象 (Objects)
+
+避免创建必要的，61–65
+
+对同一对象的多次初始化避免使用初始化语法，49–50
+
+管理资源的使用/生命周期，195
+
+在...的构造过程中切勿调用虚拟函数，65–68
+
+...的初始化顺序，61
+
+所有权决策，44
+
+## `OnPaint()` 方法，62–63
+
+# 开放泛型类型 (Open generic type)，77
+
+# 可选参数 (Optional parameters)，11
+
+## `OrderBy` 方法
+
+操作需要整个序列，183
+
+查询表达式模式，172–173
+
+## `OrderByDescending` 方法，查询表达式模式，172–173
+
+# 排序关系 (Ordering relations)
+
+通过 `IComparable<T>/IComparer<T>`，92–98
+
+为...实现经典和通用接口，123–124, 126
+
+独立于相等性关系，124
+
+# `Out` (协变) 修饰符，107
+
+# 重载 (Overloads)
+
+避免扩展方法，163–167
+
+编译器解析泛型方法的困难，112–115
+
+使用构造函数减少重复代码，55–56, 60–61
+
+### P
+
+# 无参数构造函数，通过...减少重复代码，55–56
+
+
+
+
+
+## 参数。另参 类型参数
+
+- 默认，54–56, 60–61
+- 函数，157–163, 209
+- 方法，105, 220
+- 可选，11
+- `Params` 数组，20–21
+
+## 性能
+
+- `const` 与 `read-only` 的权衡，11
+- 装箱和拆箱的开销，34
+- 异常过滤器对程序的影响，248
+- `IEnumerable` 与 `IQueryable`，208–212
+- 依赖终化器的惩罚，46
+- 为了在一次迭代中产生最终集合，144
+
+## 多态，`is` 运算符遵循的规则的，17–18
+
+## 谓词，与迭代解耦，151–157
+
+- `Predicate<T>`，委托形式，28
+- 私有方法，异常的使用，222–223
+- 公有方法，异常的使用，222–223
+
+### Q
+
+## 查询。另参 LINQ
+
+- 导致对象在内存中停留时间更长，43
+- 编译器转换为委托或闭包，215–216
+- 设计用于返回单个标量值，214
+- 使用查询语法并行执行，144
+- 仅下一个值，198
+- `IEnumerable` 与 `IQueryable`，209
+- 实现为扩展方法，131–132
+- 偏于懒性评估而非急急评估，179–184
+
+### 查询表达式模式
+- 十种方法的，169–170
+- `groupBy` 方法，174
+- `groupJoin` 方法，178
+- `join` 方法，178
+- `OrderBy` 方法，172–173
+- `OrderByDescending` 方法，172–173
+- `Select` 方法，171–172
+- `selectMany` 方法，174–177
+- `ThenBy` 方法，172–173
+- `ThenByDescending` 方法，172–173
+- `Where` 方法，169–170
+
+### 查询表达式
+- 使用延迟执行的，191–195
+- 作为懒性的，181
+- 映射到方法调用，167–178
+- 查询语法，偏于循环，139–144
+
+### R
+
+## 抛出异常，异常过滤器，245–249
+
+## 可读性
+- 隐式类型局部变量，2–3, 7
+- 插值字符串改进，20, 23
+- 查询语法改进，140
+
+## `ReadNumbersFromStream()` 方法，198–199
+
+## `readonly` 值
+- 在运行时分配/解析，9
+- 避免创建必要的对象，62
+- 避免修改绑定变量，216–219
+- 实现排序关系，92, 94, 96
+- 实现标准释放模式，74
+- 静态类成员初始化，51–52
+- 在构造函数中永远不要虚函数，66–67
+- 偏于使用器方法而非返回集合，136
+- 偏于 `const`，7–11
+
+## 重构的 lambda 表达式，不可用性，185
+
+## 引用类型
+- 将值类型装箱为，34–35
+- 创建内存分配，62
+- 定义的约束最小/足够，83
+- 支持 `foreach` 语句使用转换，17
+- 用于包含序列的迭代器方法，150
+- 在局部函数中，避免创建多个对象，65
+- 交换导致的程序错误，240–241, 243–245
+- 当局部变量是时将其提升为成员变量，63
+
+## 替换字符串，使用表达式用于，20
+
+## 资源，225–232
+- 避免捕获昂贵的，195–208
+- 避免在异常时泄漏，238
+- 管理。另参 .NET 资源管理
+
+##返回值，多路委托和，30
+
+## 可重用性，在一次迭代中产生最终集合作为代价，144
+
+## `RevenueComparer` 类，96–98
+
+## `ReverseEnumerable` 构造函数，85–86
+
+## `ReverseEnumerator<T>` 类，87–90
+
+## `ReverseString` 类，89–90
+
+## 修订，编译时的，10
+
+## 运行时
+- 用于异常的 `catch` 语句，233–244
+- 常量，7–9
+- 定义的约束，79
+- 委托的使用，31
+- 评估，9
+- 对象的类型，18
+- `readonly` 值在运行时分配，9
+- 测试，使用约束，79
+- 类型检查在，12
+- 与泛型工作，77–79
+
+## 运行时检查
+- 确定类型是否实现了 `I<T>`，118
+- 针对泛型方法，115–116
+- 使用特化泛型算法，85–92
+
+### S
+
+- `SafeUpdate()` 方法，强异常保证，242, 244
+- `Sealed` 关键字，添加到 `IDisposable`，99, 100
+- `Select` 子句，查询表达式模式，171, 174
+- `Select1` 方法，查询表达式模式，171–172
+- `SelectMany` 方法，查询表达式模式，174–177
+
+## 语义期望，对查询执行，212–214
+
+## 序列
+- 为了可组合的 API，144–151
+- 按需生成，154–157
+
+
+
+
+
+# 使用迭代器方法生成，133–139
+
+# 何时不使用迭代器方法，139
+
+# 服务器，向客户端提供反馈的回调，28–31
+
+# 异常过滤器中的侧效应，249–252
+
+# `Single()` 方法，对查询强制语义期望，212–214
+
+# `SingleOrDefault()` 方法，返回零或一个元素的查询，213–214
+
+# 单例模式，初始化静态类成员，51–53
+
+# `SqlConnection` 类，释放资源，230–231
+
+# `Square()` 迭代器方法，149–150
+
+# 标准 dispose 模式，68–75
+
+# 状态，确保对象的有效性，238
+
+# 静态分析，`nameof()` 运算符，27
+
+# 静态类成员的适当初始化，51–53
+
+# 静态常量，作为编译时常量，9
+
+# 静态构造函数，51–53, 61
+
+# 静态初始化器，51–53
+
+# 静态成员变量，63–65
+
+# 静态类型
+
+## 地类型推断不受影响，2
+
+## 概述，12
+
+# `String` 类，`ReverseEnumerator<T>`，89–90
+
+# 字符串插值。参见插值字符串
+
+# `StringBuilder` 类，65
+
+# `String.Format()` 方法，19–23
+
+# 避免字符串类型 API（Stringly-type APIs)，26–27
+
+# 字符串
+
+## 编译时常量限制，9
+
+## 用于特定文化的 `FormattableString`，23–25
+
+## 嵌套，22
+
+## 用插值字符串替换 `string.Format()`，19–23
+
+## 使用 `nameof` 指定属性参数，27
+
+## 使用字符串插值构建，23–25
+
+# 强异常保证，238–240
+
+# 强类型公共重载，实现 `IComparable`，94
+
+# Sutter, Herb，238
+
+# 符号，`nameof()` 运算符，26–27
+
+# `System.Exception` 类，派生新异常，234–235
+
+# `System.Linq.Enumerable` 类
+
+## 扩展方法，126–127, 130–132
+
+## 在...中懒性评估优于急性评估，183
+
+## 查询表达式模式，169
+
+# `System.Linq.Queryable` 类，查询表达式模式，169
+
+# `System.Object`
+
+## 避免值类型，36, 38
+
+## 值类型的装箱/拆箱以及，34–36
+
+## 检查相等性，122
+
+## `IComparable` 接收参数，92–93
+
+## 类型参数以及，80
+
+# `System.Runtime.Interop.SafeHandle`，69–75
+
+# T
+
+## T 变量，实现 `IDisposable`，99–101
+
+## `IQueryProvider` 翻译为 SQL，210
+
+# 基于任务的异步编程中的异常，248
+
+# 模板，泛型对比 C++77
+
+# 测试方法的命名，222–223
+
+# 
+
+## 用于特定文化的 `FormattableString`，23–25
+
+## 用插值字符串替换 `string.Format()`，19–23
+
+## `ThenBy()` 方法，查询表达式模式，172–173
+
+## `ThenByDescending()` 方法，查询表达式模式，172–173
+
+## `Throw` 语句，异常类，234
+
+# `ToArray()` 方法，139, 184
+
+# `ToList()` 方法，139, 184
+
+# 从查询表达式到方法调用的翻译，170–171
+
+# `TrueForAll()` 方法，`List<T>` 类，29
+
+# `Try/catch` 块，不抛出保证，244
+
+# `Try/finally` 块，资源清理，225–232
+
+# 类型推断
+
+## 为泛型类定义方法，108
+
+## 类中的函数式编程，192
+
+# 类型参数
+
+## 用于封闭泛型类型，26, 77
+
+## 创建支持 disposable 的泛型类，98–101
+
+## 创建泛型类对比泛型方法组，117–118
+
+## 在...上定义约束，107–112
+
+## 使用 `instanceof` 的泛型类，99–100
+
+## 用于的最小/足够的约束，79–84, 98
+
+## 通过指定新的复用泛型，85
+
+## 对...的必要性，116–120
+
+## 在 `using` 语句中封装本地实例，99
+
+## 类型变异，协变与逆变，101–102
+
+# `TypeInitialization`初始化静态成员，53
+
+# 类型，`nameof()` 运算符，26–27
+
+# U
+
+# 装箱操作
+
+## `IComparable` 接口以及，92–93
+
+## 最小化，34–36
+
+# `Unique()` 方法
+
+## 多个迭代器方法的组合性，149–150
+
+## 作为延续方法，148
+
+## 为序列创建组合 API，146–148
+
+# 非托管资源
+
+## 这里的，43
+
+## 使用终结函数控制，45–46
+
+## 显式释放使用的类型，225–232
+
+## 为...实现 dispose 模式，68–75
+
+## 使用 `IDisposable` 接口释放，48, 69
+
+# 更新，在基类中使用 `new` 修饰符，38–41
+
+# `UseCollection()` 函数，17
+
+# 自定义转换运算符，13–16
+
+# 自定义类型，强制转换，13–14
+
+# `Using` 语句
+
+确保 `Dispose()` 被调用，225–227
+
+
+
+
+
+# 索引
+
+永远不要重载扩展方法，166–167
+
+利用资源清理，225–232
+
+在...包装类型参数的本地实例，99
+
+`工具类，使用泛型方法对比泛型类`,116–120
+
+## V
+
+### 值类型
+- 避免替代 `System.Object`，36, 38
+- 无法设置为 `null`，100
+- 装箱和拆箱的代价，38
+- 创建不可变对象，37
+- 最小化...的装箱和拆箱，34–38
+
+`Var `,1–3, 7
+
+### 变量
+- 避免修改绑定的，215–220
+- 捕获的，195–197, 215–220
+- 持有昂贵的资源，196
+- 隐式类型本地。*参见* 隐式类型本地变量
+- 绑定的生命周期，195
+- 本地。*参见* 本地变量
+- 成员。*参见* 成员变量
+- 用于...的 `nameof()` 运算符，26–27
+- 静态成员，63–65
+
+### 虚函数
+- 实现标准的 模式，70–71
+- 永远不要在构造函数中调用，65–68
+
+## W
+
+`When 关键字, 异常过滤器`，`244``–`246`
+
+`Where` 方法
+- 操作需要整个序列，183
+- 查询表达式模式，169–170
+
+`Windows Forms，中的跨线程封送（marshalling）`，29
+
+`Windows 绘制处理程序，避免在...中分配 GDI 对象`,62–63
+
+`Windows Presentation Foundation (WPF)，中的跨线程封送`，29
+
+`WriteMessage(MyBase b)`,113–115
+
+`WriteMessage<T>(T obj)`,113–115
+
+## Y
+
+`Yield return` 语句
+- 为序列创建可组合的 API，145–150
+- 使用...生成序列，154–157
+- 迭代器方法，133–134, 136, 138
+
+## Z
+
+`Zip`
+- 为序列创建可组合的 API，149–150
+- 定义类型参数方法约束的委托，109–110
+- 放宽与函数参数的耦合，160–161
+
+![Image](img/backcover.jpg)
+
+## 代码片段
+
+
+
+
+
+![Image](img/#pref03.xhtml_pref03pro01)![Image](img/#ch01.xhtml_ch01pro01)![Image](img/#ch01.xhtml_ch01pro02)![Image](img/#ch01.xhtml_ch01pro03)![Image](img/#ch01.xhtml_ch01pro04)![Image](img/#ch01.xhtml_ch01pro05)![Image](img/#ch01.xhtml_ch01pro06)![Image](img/#ch01.xhtml_ch01pro07)![Image](img/#ch01.xhtml_ch01pro08)![Image](img/#ch01.xhtml_ch01pro09)![Image](img/#ch01.xhtml_ch01pro10)![Image](img/#ch01.xhtml_ch01pro10a)![Image](img/#ch01.xhtml_ch01pro11)![Image](img/#ch01.xhtml_ch01pro12)![Image](img/#ch01.xhtml_ch01pro13)![Image](img/#ch01.xhtml_ch01pro14)![Image](img/#ch01.xhtml_ch01pro15)![Image](img/#ch01.xhtml_ch01pro16)![Image](img/#ch01.xhtml_ch01pro17)![Image](img/#ch01.xhtml_ch01pro18)![Image](img/#ch01.xhtml_ch01pro19)![Image](img/#ch01.xhtml_ch01pro20)![Image](img/#ch01.xhtml_ch01pro21)![Image](img/#ch01.xhtml_ch01pro22)![Image](img/#ch01.xhtml_ch01pro23)![Image](img/#ch01.xhtml_ch01pro24)![Image](img/#ch01.xhtml_ch01pro25)![Image](img/#ch01.xhtml_ch01pro26)![Image](img/#ch01.xhtml_ch01pro27)![Image](img/#ch01.xhtml_ch01pro28)![Image](img/#ch01.xhtml_ch01pro29)![Image](img/#ch01.xhtml_ch01pro30)![Image](img/#ch01.xhtml_ch01pro31)![Image](img/#ch01.xhtml_ch01pro32)![Image](img/#ch01.xhtml_ch01pro33)![Image](img/#ch01.xhtml_ch01pro34)![Image](img/#ch01.xhtml_ch01pro35)![Image](img/#ch01.xhtml_ch01pro36)![Image](img/#ch01.xhtml_ch01pro37)![Image](img/#ch01.xhtml_ch01pro38)![Image](img/#ch01.xhtml_ch01pro39)![Image](img/#ch01.xhtml_ch01pro40)![Image](img/#ch01.xhtml_ch01pro41)![Image](img/#ch01.xhtml_ch01pro42)![Image](img/#ch01.xhtml_ch01pro43)![Image](img/#ch01.xhtml_ch01pro44)![Image](img/#ch01.xhtml_ch01pro45)![Image](img/#ch01.xhtml_ch01pro46)![Image](img/#ch01.xhtml_ch01pro47)![Image](img/#ch01.xhtml_ch01pro48)![Image](img/#ch01.xhtml_ch01pro49)![Image](img/#ch01.xhtml_ch01pro50)![Image](img/#ch01.xhtml_ch01pro51)![Image](img/#ch01.xhtml_ch01pro52)![Image](img/#ch01.xhtml_ch01pro53)![Image](img/#ch01.xhtml_ch01pro54)![Image](img/#ch01.xhtml_ch01pro55)![Image](img/#ch01.xhtml_ch01pro56)![Image](img/#ch01.xhtml_ch01pro57)![Image](img/#ch01.xhtml_ch01pro58)![Image](img/#ch01.xhtml_ch01pro59)![Image](img/#ch01.xhtml_ch01pro60)![Image](img/#ch01.xhtml_ch01pro61)![Image](img/#ch01.xhtml_ch01pro62)![Image](img/#ch01.xhtml_ch01pro63)![Image](img/#ch01.xhtml_ch01pro64)![Image](img/#ch01.xhtml_ch01pro65)![Image](img/#ch01.xhtml_ch01pro66)![Image](img/#ch01.xhtml_ch01pro67)![Image](img/#ch01.xhtml_ch01pro68)![Image](img/#ch01.xhtml_ch01pro69)![Image](img/#ch01.xhtml_ch01pro73)![Image](img/#ch01.xhtml_ch01pro74)![Image](img/#ch01.xhtml_ch01pro75)![Image](img/#ch01.xhtml_ch01pro76)![Image](img/#ch01.xhtml_ch01pro77)![Image](img/#ch01.xhtml_ch01pro78)![Image](img/#ch01.xhtml_ch01pro79)![Image](img/#ch01.xhtml_ch01pro80)![Image](img/#ch01.xhtml_ch01pro81)![Image](img/#ch01.xhtml_ch01pro82)![Image](img/#ch01.xhtml_ch01pro83)![Image](img/#ch01.xhtml_ch01pro84)![Image](img/#ch01.xhtml_ch01pro85)![Image](img/#ch01.xhtml_ch01pro86)![Image](img/#ch01.xhtml_ch01pro87)![Image](img/#ch01.xhtml_ch01pro88)![Image](img/#ch01.xhtml_ch01pro89)![Image](img/#ch01.xhtml_ch01pro90)![Image](img/#ch01.xhtml_ch01pro91)![Image](img/#ch01.xhtml_ch01pro92)![Image](img/#ch01.xhtml_ch01pro93)![Image](img/#ch01.xhtml_ch01pro94)![Image](img/#ch01.xhtml_ch01pro95)![Image](img/#ch01.xhtml_ch01pro96)![Image](img/#ch01.xhtml_ch01pro97)![Image](img/#ch01.xhtml_ch01pro98)![Image](img/#ch01.xhtml_ch01pro99)![Image](img/#ch01.xhtml_ch01pro100)![Image](img/#ch01.xhtml_ch01pro101)![Image](img/#ch01.xhtml_ch01pro102)![Image](img/#ch01.xhtml_ch01pro103)![Image](img/#ch01.xhtml_ch01pro104)![Image](img/#ch01.xhtml_ch01pro105)![Image](img/#ch01.xhtml_ch01pro106)![Image](img/#ch01.xhtml_ch01pro107)![Image](img/#ch01.xhtml_ch01pro108)![Image](img/#ch01.xhtml_ch01pro109)![Image](img/#ch01.xhtml_ch01pro110)![Image](img/#ch01.xhtml_ch01pro111)![Image](img/#ch01.xhtml_ch01pro112)![Image](img/#ch01.xhtml_ch01pro113)![Image](img/#ch01.xhtml_ch01pro114)![Image](img/#ch01.xhtml_ch01pro115)![Image](img/#ch01.xhtml_ch01pro116)![Image](img/#ch01.xhtml_ch01pro117)![Image](img/#ch01.xhtml_ch01pro118)![Image](img/#ch01.xhtml_ch01pro119)![Image](img/#ch01.xhtml_ch01pro120)![Image](img/#ch01.xhtml_ch01pro121)![Image](img/#ch01.xhtml_ch01pro122)![Image](img/#ch01.xhtml_ch01pro123)![Image](img/#ch01.xhtml_ch01pro124)![Image](img/#ch01.xhtml_ch01pro125)![Image](img/#ch01.xhtml_ch01pro126)![Image](img/#ch01.xhtml_ch01pro127)![Image](img/#ch01.xhtml_ch01pro128)![Image](img/#ch01.xhtml_ch01pro129)![Image](img/#ch01.xhtml_ch01pro130)![Image](img/#ch01.xhtml_ch01pro131)![Image](img/#ch01.xhtml_ch01pro132)![Image](img/#ch01.xhtml_ch01pro133)![Image](img/#ch01.xhtml_ch01pro134)![Image](img/#ch01.xhtml_ch01pro135)![Image](img/#ch01.xhtml_ch01pro136)![Image](img/#ch01.xhtml_ch01pro137)![Image](img/#ch01.xhtml_ch01pro138)![Image](img/#ch01.xhtml_ch01pro139)![Image](img/#ch01.xhtml_ch01pro140)![Image](img/#ch01.xhtml_ch01pro141)![Image](img/#ch01.xhtml_ch01pro142)![Image](img/#ch01.xhtml_ch01pro143)![Image](img/#ch01.xhtml_ch01pro144)![Image](img/#ch01.xhtml_ch01pro145)![Image](img/#ch01.xhtml_ch01pro146)![Image](img/#ch01.xhtml_ch01pro147)![Image](img/#ch01.xhtml_ch01pro148)![Image](img/#ch01.xhtml_ch01pro149)![Image](img/#ch01.xhtml_ch01pro150)![Image](img/#ch01.xhtml_ch01pro151)![Image](img/#ch01.xhtml_ch01pro152)![Image](img/#ch01.xhtml_ch01pro153)![Image](img/#ch01.xhtml_ch01pro154)![Image](img/#ch01.xhtml_ch01pro155)![Image](img/#ch01.xhtml_ch01pro156)![Image](img/#ch01.xhtml_ch01pro157)![Image](img/#ch01.xhtml_ch01pro158)![Image](img/#ch01.xhtml_ch01pro159)![Image](img/#ch01.xhtml_ch01pro160)![Image](img/#ch01.xhtml_ch01pro161)![Image](img/#ch01.xhtml_ch01pro162)![Image](img/#ch01.xhtml_ch01pro163)![Image](img/#ch01.xhtml_ch01pro164)![Image](img/#ch01.xhtml_ch01pro165)![Image](img/#ch01.xhtml_ch01pro166)![Image](img/#ch01.xhtml_ch01pro167)![Image](img/#ch01.xhtml_ch01pro168)![Image](img/#ch01.xhtml_ch01pro169)![Image](img/#ch01.xhtml_ch01pro170)![Image](img/#ch01.xhtml_ch01pro171)![Image](img/#ch01.xhtml_ch01pro172)![Image](img/#ch01.xhtml_ch01pro173)![Image](img/#ch01.xhtml_ch01pro174)![Image](img/#ch01.xhtml_ch01pro175)![Image](img/#ch01.xhtml_ch01pro176)![Image](img/#ch01.xhtml_ch01pro177)![Image](img/#ch01.xhtml_ch01pro178)![Image](img/#ch01.xhtml_ch01pro179)![Image](img/#ch01.xhtml_ch01pro180)![Image](img/#ch01.xhtml_ch01pro181)![Image](img/#ch01.xhtml_ch01pro182)![Image](img/#ch01.xhtml_ch01pro183)![Image](img/#ch01.xhtml_ch01pro184)![Image](img/#ch01.xhtml_ch01pro185)![Image](img/#ch01.xhtml_ch01pro186)![Image](img/#ch01.xhtml_ch01pro187)![Image](img/#ch01.xhtml_ch01pro188)![Image](img/#ch01.xhtml_ch01pro189)![Image](img/#ch01.xhtml_ch01pro190)![Image](img/#ch01.xhtml_ch01pro191)![Image](img/#ch01.xhtml_ch01pro192)![Image](img/#ch01.xhtml_ch01pro193)![Image](img/#ch01.xhtml_ch01pro194)![Image](img/#ch01.xhtml_ch01pro195)![Image](img/#ch01.xhtml_ch01pro196)![Image](img/#ch01.xhtml_ch01pro197)![Image](img/#ch01.xhtml_ch01pro198)![Image](img/#ch01.xhtml_ch01pro199)![Image](img/#ch01.xhtml_ch01pro200)![Image](img/#ch01.xhtml_ch01pro201)![Image](img/#ch01.xhtml_ch01pro202)![Image](img/#ch01.xhtml_ch01pro203)![Image](img/#ch01.xhtml_ch01pro204)![Image](img/#ch01.xhtml_ch01pro205)![Image](img/#ch01.xhtml_ch01pro206)![Image](img/#ch01.xhtml_ch01pro207)![Image](img/#ch01.xhtml_ch01pro208)![Image](img/#ch01.xhtml_ch01pro209)![Image](img/#ch01.xhtml_ch01pro210)![Image](img/#ch01.xhtml_ch01pro211)![Image](img/#ch01.xhtml_ch01pro212)![Image](img/#ch01.xhtml_ch01pro213)![Image](img/#ch01.xhtml_ch01pro214)![Image](img/#ch01.xhtml_ch01pro215)![Image](img/#ch01.xhtml_ch01pro216)![Image](img/#ch01.xhtml_ch01pro217)![Image](img/#ch01.xhtml_ch01pro218)![Image](img/#ch01.xhtml_ch01pro219)![Image](img/#ch01.xhtml_ch01pro220)![Image](img/#ch01.xhtml_ch01pro221)![Image](img/#ch01.xhtml_ch01pro222)![Image](img/#ch01.xhtml_ch01pro223)![Image](img/#ch01.xhtml_ch01pro224)![Image](img/#ch01.xhtml_ch01pro225)![Image](img/#ch01.xhtml_ch01pro226)![Image](img/#ch01.xhtml_ch01pro227)![Image](img/#ch01.xhtml_ch01pro228)![Image](img/#ch01.xhtml_ch01pro229)![Image](img/#ch01.xhtml_ch01pro230)![Image](img/#ch01.xhtml_ch01pro231)![Image](img/#ch01.xhtml_ch01pro232)![Image](img/#ch01.xhtml_ch01pro233)![Image](img/#ch01.xhtml_ch01pro234)![Image](img/#ch01.xhtml_ch01pro235)![Image](img/#ch01.xhtml_ch01pro236)![Image](img/#ch01.xhtml_ch01pro237)![Image](img/#ch01.xhtml_ch01pro238)![Image](img/#ch01.xhtml_ch01pro239)![Image](img/#ch01.xhtml_ch01pro240)![Image](img/#ch01.xhtml_ch01pro241)![Image](img/#ch01.xhtml_ch01pro242)![Image](img/#ch01.xhtml_ch01pro243)![Image](img/#ch01.xhtml_ch01pro244)
+

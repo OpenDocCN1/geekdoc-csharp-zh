@@ -1,0 +1,525 @@
+- "# C# 初学者指南：C# 编程入门指南与步步指南\n\n\n\n\n\n\n\n\n\n# 引言\n\n感谢阅读《C# 初学者编程》，我我想送给你一份免费的《7\
+  \ 个不为人知的 C# 编程技巧》。\n\n要下载你的副本请访问：[`www.linuxtrainingacademy.com/7-tricks`](http://www.linuxtrainingacademy.com/7-tricks)\n\
+  \n# 第一章：创建你的第一个 C# 程序\n\nC# 是微软顶尖的编程语言，是微软 .NET 框架不可或缺的一部分。C# 是一种完全面向对象且类型安全的语言。如果你正希望使用微软的编程技术开发应用程序，那么\
+  \ C# 是最佳起点。目前 C# 正用于开发 ASP.NET Web 应用程序、Windows Forms 和基于 WPF 的桌面应用程序。随着智能手机的出现，C#\
+  \ 也用于 Windows 手机应用和 Android 应用程序开发。\n\n本书介绍了 C# 语言核心特性的概述。阅读完本书后，你将能够上手微软的高级编程技术，如\
+  \ ASP.NET、WCF、WPF 和 Windows Phone。本书的第一章解释了如何安装 IDE（集成开发环境）以及如何创建你的第一个 C# 应用程序。\n\
+  \n## 内容\n\n- 安装 IDE\n- 创建并运行第一个应用程序\n\n## 1- 安装 IDE\n\n毫无疑问，开发 C# 应用程序的最佳软件是微软的\
+  \ Visual Studio 集成环境。它包含了构建专业 C# 应用程序所需的一切。然而，Visual Studio 的完整版是商业性的。在书中，我们将不花一分钱开发\
+  \ C# 应用程序。为了实现这一点，我们将下载精简版的 `Visual Studio`，它是完全免费的。该软件提供的功能足够开发基础 C# 应用程序。\n\n\
+  - 访问 [`www.linuxtrainingacademy.com/7-tricks`](http://www.linuxtrainingacademy.com/7-tricks)\n\
+  - 向下滚动页面并找到 [`www.linuxtrainingacademy.com/7-tricks/products/visual-studio.aspx`](http://www.linuxtrainingacademy.com/7-tricks/products/visual-studio.aspx)\n\
+  - 出现的页面将要求你使用 `Microsoft Account` 登录。\n- 如果你没有，请在该页面上注册。\n- 创建 ID 后，选择最新版本的 `Visual\
+  \ Studio`。\n- 将下载 `express_full.exe`。\n- 打开 `express_full.exe`。出现安装向导。同意条款和隐私政策并点击\
+  \ `Install` 按钮。\n- 完成。向导将下载开发应用程序所需的组件。\n\n## 2- 创建并运行第一个应用程序\n\n要创建你的第一个 C# 应用程序，请打开上一节下载的\
+  \ `Visual Studio`。按照以下步骤操作：\n\n- 从菜单栏选择 `File` => `New` => `Project`。\n- 在出现的选项中选择\
+  \ `Console Application`。\n- 在 `Name` 和 `Location` 文本框输入你选择的名称和位置。勾选 `Create directory\
+  \ for solution` 并点击 `OK` 按钮。\n\n一旦点击 `OK` 按钮，visual studio 会自动创建一个程序。将默认代码段替换为：\n\
+  \n```csharp\nusing System;\n\nnamespace MyFirstApplication\n{\n    class Program\n\
+  \    {\n        static void Main(string[] args)\n        {\n            Console.WriteLine(\"\
+  Welcome to C#\");\n            Console.Read();\n        }\n    }\n}\n```\n\n- 点击工具栏中绿色三角形旁的\
+  \ `Start` 按钮。你将在控制台中看到代码的输出。你在 `Console.WriteLine` 方法中写的字符串“Welcome to C# 显示在屏幕上。\n\
+  \n在代码中，请记住 C# 中的一切都发生在类内部。`Program` 类是代码执行的起点，因为它包含了 `Main` 方法。当你运行程序时，`static void\
+  \ Main (string [] args)` 方法会被调用。执行的第一条语句是 `Main` 方法内部的第一条语句。要在现有项目中添加新类，只需右键点击项目名称\
+  \ => Add => `Class`。\n\n你已经完成了第一章。在本章中，你学习了如何安装用于开发 C# 应用程序的 IDE。你还开发了第一个 C# 应用程序，它在控制屏幕上打印一个字符串。在下一章中，我们将看看\
+  \ C# 程序可以存储什么类型的数据以及可以对这些数据进行哪些操作。\n\n\n\n\n\n每个程序都需要存储某些数据，并对这些数据执行某些功能。在 C# 中，数据存储在数据类型中，并使用\
+  \ C# 运算符对数据进行操作。在本章中，我们将查看一些最常用的数据类型，以及对数据进行操作的运算符，帮助我们实现一些有意义的功能。\n\n## 目录\n* C#\
+  \ 中的数据类型\n* C# 中的运算符\n\n## 1- C# 中的数据类型\n\n下表演示了每种数据类型的用法以及每个数据类型可以存储的数据范围。\n\n\
+  | 类型 | 表示 | 范围 |\n| :--- | :--- | :--- |\n| bool | 布尔值 | 真 (True) 或 假 (False) |\n\
+  | byte | 8 位无符号整数 | 0 到 255 |\n| char | 16 位 Unicode 字符 | U +0000 到 U +ffff |\n\
+  | decimal | 128 位精确小数，具有 28-29 位有效数字 | (-7.9 x 1028 到 7.9 x 1028) / 100 到 28 |\n\
+  | double | 64 位双精度浮点类型 | (+/-)5.0 x 10-324 到 (+/-)1.7 x 10308 |\n| float | 32 位单精度浮点类型\
+  \ | -3.4 x 1038 到 + 3.4 x 1038 |\n| int | 32 位符号整数类型 | -2,147,483,648 到 2,147,483,647\
+  \ |\n| long | 64 位符号整数类型 | -923,372,036,854,775,808 到 9,223,372,036,854,775,807\
+  \ |\n| sbyte | 8 位符号整数类型 | -128 到 127 |\n| short | 16 位符号整数类型 | -32,768 到 32,767\
+  \ |\n| uint | 32 位无符号整数类型 | 0 到 4,294,967,295 |\n| ulong | 64 位无符号整数类型 | 0 到 18,446,744,073,709,551,615\
+  \ |\n| ushort | 16 位无符号整数类型 | 0 到 65,535 |\n\n表 1.0\n\n## 2- C# 中的运算符\n\n在这一节中，我们将对\
+  \ C# 中的三类运算符进行概览：算术运算符、关系运算符和逻辑运算符。\n\n### 算术运算符\n\nC# 中的算术运算符的功能与现实生活中相同。这些运算符用于在\
+  \ C# 中执行各种数学函数。算术运算符只能应用于数值类型和 `char` 数据类型的操作数。表 1.1 列出了这些运算符及其功能。\n\n| 运算符 | 作用\
+  \ |\n| :--- | :--- |\n| `+` | 加法和一元加 |\n| `-` | 减法和一元减 |\n| `*` | 乘法 |\n| `/` |\
+  \ 除法 |\n| `%` | 取模 |\n| `++` | 递增数字 |\n| `+=` | 递增并赋值 |\n| `-=` | 递减并赋值 |\n| `*=`\
+  \ | 乘法并赋值 |\n| `/=` | 除法并赋值 |\n| `%=` | 取模并赋值 |\n| `--` | 递减 |\n\n表 1.1\n\n查看示例\
+  \ 1 以看到算术运算符的实际用法。\n\n（注：此处原文未提供示例 1 内容，但提到了输出结果）\n输出 1：\n加法：15\n减法：5\n乘法：50\n除法：2\n\
+  取模：0\n\n### 关系运算符\n\n在 C# 中，关系运算符用于比较两个操作数。表 1.2 列出了关系运算符及其功能。\n\n| 运算符 | 作用 |\n\
+  | :--- | :--- |\n| `==` | 检查相等 |\n| `!=` | 检查不相等 |\n| `>` | 左侧大于 |\n| `<` | 左侧小于\
+  \ |\n| `>=` | 左侧大于等于 |\n| `<=` | 左侧小于等于 |\n\n表 1.2\n\n示例 2 演示了 C# 中关系运算符的使用。\n\n\
+  ```csharp\nusing System;\n\nnamespace MyApplication\n{\n    class Program\n    {\n\
+  \        static void Main(string[] args)\n        {\n            int num1 = 10;\n\
+  \            int num2 = 20;\n            if (num1 == num2)\n            {\n    \
+  \            Console.WriteLine(\"num1 等于 num2\");\n            }\n            if\
+  \ (num1 != num2)\n            {\n                Console.WriteLine(\"num1 不等于 num2\"\
+  );\n            }\n            if (num1 > num2)\n            {\n               \
+  \ Console.WriteLine(\"num1 大于 num2\");\n            }\n            if (num1 < num2)\n\
+  \            {\n                Console.WriteLine(\"num1 小于 num2\");\n         \
+  \   }\n            if (num1 >= num2)\n            {\n                Console.WriteLine(\"\
+  num1 大于等于 num2\");\n            }\n            if (num1 <= num2)\n            {\n\
+  \                Console.WriteLine(\"num1 小于等于 num2\");\n            }\n       \
+  \     Console.Read();\n        }\n    }\n}\n```\n\n在示例 2 中，两个整数类型变量 `num1` 和 `num2`\
+  \ 被实例化了一些值；然后，为了比较它们，所有的关系运算符都被顺序应用于它们。如果你无法理解 `if` 语句后面的圆括号，请担心，我们将在下一章详细讨论。示例\
+  \ 2 代码的输出如下：\n\n输出 2：\nnum1 不等于 num2\nnum1 小于 num2\nnum1 小于等于 num2\n\n### 逻辑运算符\n\
+  \n逻辑运算符仅作用于 `Boolean` 操作数。逻辑操作的结果是另一个值。表 1.3 列出了运算符：\n\n| 运算符 | 作用 |\n| :--- | :---\
+  \ |\n| `&` | 与 (AND) |\n| `\\|` | 或 (OR) |\n| `^` | 异或 (XOR) |\n| `&&` | 短路与 (Short\
+  \ Circuit AND) |\n| `!` | 一元非 (NOT) |\n| `&=` | 与并赋值\n| `\\|=` | 或并赋值 |\n| `^=`\
+  \ | 异或并赋值 |\n| `==` | 等于 |\n| `?:` | 三元运算符用于 |\n\n任务：初始化三个整数。如果第一个整数等于第二个整数且都大于第三个整数，则将这三个数相乘；否则，将这三个数相加。显示结果。\n\
+  \n\n\n\n\n逻辑构建是每个程序的核心。逻辑构建涉及做出决定。在日常生活中，我们根据某些标准做出决定。例如，如果天气下雨，我们就决定不在外面玩；如果天气大雾天，我们就会小心开车。我们每天必须做成数百个微小的决定。同样，计算机程序在执行过程中也必须做出决定。根据这些决定，特定的代码将被执行，而另一些代码则不执行。例如，你可能希望程序从用户那里获取关于天气的输入，然后建议用户是否可以在外面玩。在\
+  \ C# 中，这是通过选择语句（也称为控制语句）实现的。在本章中，我们将学习 C# 选择语句。\n\n# 目录\n\n*   If/Else 语句\n*   Switch\
+  \ 语句\n\n## 1- If/Else 语句\n\n`if` 语句用于在语句体中输入的 `test-expression` 求值为真时执行一段代码。`Example1`\
+  \ 展示了 `if` 语句的用法。\n\n### Example1:\n\n```csharp\nusing System;\n\nnamespaceMyCSharpApplication\n\
+  {\n    class Program\n    {\n        static void Main(string[] args)\n        {\n\
+  \            string weather = \"sunny\";\n            if (weather == \"rainy\")\n\
+  \            {\n                Console.WriteLine(\"Don’t play outside, it’s rainy.\"\
+  );\n            }\n            if (weather == \"sunny\")\n            {\n      \
+  \          Console.WriteLine(\"You can play outside, it’s sunny.\");\n         \
+  \   }\n            Console.Read();\n        }\n    }\n}\n```\n\n在 `Example 1` 中，我们初始化了一个字符串类型的变量\
+  \ `weather` 为 `sunny`。然后我们使用了两个 `if` 语句。第一个 `if` 语句判断变量 `weather` 是否包含值 `rainy`。该表达式将返回\
+  \ false，因为变量 `weather` 包含字符串 `sunny`。控制流将转移到下一个 `if` 语句，在那里将对变量 `weather` 与字符串 `rainy`\
+  \ 进行比较。该表达式将返回 true，紧随其后的 `if` 语句后的代码块将执行。`Example1` 的输出显示所示：\n\n**Output1:**\n\n\
+  You can play outside, it’s sunny.\n\n使用 `if` 语句存在一个问题。如果第一个 `if` 语句中的表达式返回真，仍然会与后续的\
+  \ `if` 语句进行比较。这在某些情况下是不理想的。例如，如果我们希望当 `weather` 等于 `rainy` 时，比较 `weather` 与 `sunny`\
+  \ 的下一个 `if` 语句不执行怎么办？在这种情况下，我们使用 `else` 和 `if/else` 语句。`Example2` 展示了这一概念。\n\n###\
+  \ Example2:\n\n```csharp\nusing System;\n\nnamespaceMyCSharpApplication\n{\n   \
+  \ class Program\n    {\n        static void Main(string[] args)\n        {\n   \
+  \         string weather = \"rainy\";\n            if (weather == \"rainy\")\n \
+  \           {\n                Console.WriteLine(\"Don’t play outside, it’s rainy.\"\
+  );\n            }\n            else if (weather == \"sunny\")\n            {\n \
+  \               Console.WriteLine(\"You can play outside, it’s sunny.\");\n    \
+  \        }\n            else\n            {\n                Console.WriteLine(\"\
+  Weather cannot be determined, try again.\");\n            }\n            Console.Read();\n\
+  \        }\n    }\n}\n```\n\n在 `Example2` 中，变量 `weather` 被初始化为 `rainy`。因此，将执行第一个\
+  \ `if` 语句。在 `if` 语句之后，我们使用 `if/else` 语句来判断 `weather` 是否等于 `sunny`。但由于第一个 `if` 语句为真，`if/else`\
+  \ 语句中的条件将不会执行，这与多个 `if` 语句不同，在多个 `if` 语句中，即使第一个 `if` 为真，后续语句中的条件也会被评估。你可以在 `if`\
+  \ 语句之后使用多个 `if/else` 块。如果你需要根据一个条件在两个代码块之间进行选择，也可以在 `if` 语句之后使用一个 `else` 语句。`Example2`\
+  \ 的输出如下：\n\n**Output2:**\n\nDon’t play outside, it’s rainy.\n\n## 2- Switch Statement\n\
+  \n如果你需要进行少量的比较，`if/else` 语句很好用。但在比较次数较的情况下，`switch` 语句是更好的替代方案。为了看到 `switch statement`\
+  \ 的工作原理，让我们直接来看。\n\n### Example3:\n\n```csharp\nusing System;\n\nnamespaceMyCSharpApplication\n\
+  {\n    class Program\n    {\n        static void Main(string[] args)\n        {\n\
+  \            string weather = \"cloudy\";\n            switch (weather)\n      \
+  \      {\n                case \"rainy\":\n                    Console.WriteLine(\"\
+  Don’t play outside, it’s rainy.\");\n                    break;\n              \
+  \  case \"sunny\":\n                    Console.WriteLine(\"You can play outside,\
+  \ it’s sunny.\");\n                    break;\n                case \"cloudy\":\n\
+  \                    Console.WriteLine(\"Wait but play outside, it’s cloudy.\");\n\
+  \                    break;\n                default:\n                    Console.WriteLine(\"\
+  Weather cannot be determined.\");\n                    break;\n            }\n \
+  \           Console.Read();\n        }\n    }\n}\n```\n\nSwitch 语句以 `switch` 关键字开头，后面跟着一对左、右括号。在这些括号内部，我们输入想要比较的变量。在\
+  \ `Example3` 中，我们初始化了 `weather` 并将其赋值为字符串 `cloudy`。在 `switch` 语句中有多个 `case`。每个 `case`\
+  \ 都有一个字符串值，后面跟着一个冒号。在每个 `case` 下都添加了代码段。如果 `case` 匹配，该代码段将执行。如果没有任何 `case` 匹配，则执行\
+  \ `default` 语句。`Example3` 的输出所示：\n\n**Output3:**\n\nWait but play outside, it’s\
+  \ cloudy.\n\n### Exercise 3\n\n**任务：**\n\n初始化一个整数类型变量为随机值。编写一个包含四个 `case` 的 `switch`\
+  \ 语句。一个 `case` 值应该匹配你化的整数。在每个 `case` 语句代码段中显示不同的礼物。针对整数值显示 PS4。\n\n**解决方案：**\n\n\
+  ```csharp\nusing System;\nusing System.Diagnostics;\n\nnamespaceMyCSharpApplication\n\
+  {\n    class Program\n    {\n        static void Main(string[] args)\n        {\n\
+  \            int lottery = 45176;\n            switch (lottery)\n            {\n\
+  \                case 46781:\n                    Console.WriteLine(\"You won a\
+  \ mobile set.\");\n                    break;\n                case 45176:\n   \
+  \                 Console.WriteLine(\"You won a PS4.\");\n                    break;\n\
+  \                case 74217:\n                    Debug.WriteLine(\"Sorry you won\
+  \ nothing.\");\n                    break;\n                case 74193:\n      \
+  \              Debug.WriteLine(\"You won a cinema ticket\");\n                 \
+  \   break;\n                default:\n                    Console.WriteLine(\"Sorry\
+  \ you won nothing.\");\n                    break;\n            }\n            Console.Read();\n\
+  \        }\n    }\n}\n```\n\n# 第 4 章：迭代语句\n\n在编写程序时，你可能想要重复执行一段特定的代码。一种方法是根据你想重复执行的次数编写该代码。然而，这种方法极其不专业，会导致代码冗余。为了解决这个问题，引入了迭代语句。迭代语句的概念可以追溯到最早的编程语言。它们的语法在不同语言可能不同，但核心概念是相同的；目的是按照开发者指定的次数执行代码。迭代语句通常被称为“循环”，因为它们以循环的形式重复执行代码。\n\
+  \n## 内容\n\n*   `For` 循环\n*   `While` 循环\n*   `Do While` 循环\n*   `Foreach` 循环\n\n\
+  ## 1- `For` 循环\n\n\n\n\n\n### for 循环\n\n`for` 循环允许开发者编写一段代码，该代码将按照开发者指定的精确次数执行。当你确切知道代码需要通过的精确迭代次数时，这种循环是完美选择。例如，如果你想在屏幕上打印十次你的名字，`for\
+  \ 循环`就是解决方案，因为你已经知道打印名字到屏幕上的这段代码将执行十次。要查看`for 循环`的运行情况，请查看本章的示例。\n\n### 示例 1:\n\n\
+  ```csharp\nusing System;\n\nnamespace MyCSharpApplication\n{\n    class Program\n\
+  \    {\n        static void Main(string[] args)\n        {\n            for (int\
+  \ i = 1; i<= 10; i++)\n            {\n                Console.WriteLine(\"Welcome\
+  \ to C#\");\n            }\n            Console.Read();\n        }\n    }\n}\n```\n\
+  \n注意`for 循环`的语法；它以左圆括号开始。圆括号内有三个用分号隔开的表达式。第一个表达式 `i=1` 是初始化语句，意味着循环从 `i=1` 开始。该表达式只求值一次。第二个表达式\
+  \ `i<=10` 是条件语句，意味着循环将一直执行，直到该条件返回 `true`。在求值条件语句后，循环体（位于大括号内，大括号后是右圆括号）执行。圆括号内的最后一个表达式是\
+  \ `i++`。这被称为迭代语句；每次执行循环体时，该语句都会执行，然后控制权再次转移到条件语句。循环持续执行，直到条件语句返回 `true`。在示例 1 中，循环从\
+  \ `i=1` 开始，并一直执行到 `i` 小于或等于十为止，每次执行递增 1。这意味着循环将执行 10 次。每次控制台都会打印语句 `\"Welcome to\
+  \ C#\"`，因此输出将包含在屏幕上打印 10 次的 `\"Welcome to C#\"`。\n\n#### 输出 1:\n\n```text\nWelcome\
+  \ to C#\nWelcome to C#\nWelcome to C#\nWelcome to C#\nWelcome to C#\nWelcome to\
+  \ C#\nWelcome to C#\nWelcome to C#\nWelcome to C#\nWelcome to C#\n```\n\n## 2- \"\
+  While\" 循环\n\n`while 循环`会一直执行，直到某个条件变为 `true`。当你不确切知道想要执行某段代码几次时，应该使用 `while 循环`。相反，你希望循环执行到某个特定条件变为\
+  \ `true` 或 `false`。在示例 2 中，我们将再次在屏幕上打印十次 `\"Welcome to C#\"`，这次使用的是 `while 循环`。\n\
+  \n### 示例 2:\n\n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n{\n  \
+  \  class Program\n    {\n        static void Main(string[] args)\n        {\n  \
+  \          int i = 1;\n            while (i<=10)\n            {\n              \
+  \  Console.WriteLine(\"Welcome to C#\");\n                i++;\n            }\n\
+  \            Console.Read();\n        }\n    }\n}\n```\n\n在示例 2 中，我们可以看到`while 循环`在圆括号内只有一个条件语句。这是因为`while\
+  \ 循环`并不知道需要执行多少次。它只知道，除非条件语句变为 `true`，否则它必须执行。如果你在条件语句中写 `true`，`while 循环`将永远执行下去。\n\
+  \n#### 输出 2:\n\n```text\nWelcome to C#\nWelcome to C#\nWelcome to C#\nWelcome to\
+  \ C#\nWelcome to C#\nWelcome to C#\nWelcome to C#\nWelcome to C#\nWelcome to C#\n\
+  Welcome to C#\n```\n\n## 3- \"Do While\" 循环\n\n`do while 循环`的功能上与`while 循环`相似。它只依赖于条件语句。然而，与`while\
+  \ 循环`不同，`do while 循环`至少执行一次。这是因为`do while 循环`的条件语句是在代码块结束时进行求值的。这样，在求值条件语句之前，代码块至少执行一次。示例\
+  \ 3 演示了这一过程。\n\n### 示例 3:\n\n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n\
+  {\n    class Program\n    {\n        static void Main(string[] args)\n        {\n\
+  \            int i = 1;\n            do\n            {\n                Console.WriteLine(\"\
+  Welcome to C#\");\n                i++;\n            }\n            while (i<= 10)\
+  \ ;\n            Console.Read();\n        }\n    }\n}\n```\n\n在示例 3 中，你可以看到`do while\
+  \ 循环`以 `do` 关键字开始，后面跟着代码块。在代码块的末尾你可以看到 `while` 关键字。在这里求值条件，但在到达此点之前，循环已经执行了一次。\n\
+  \n#### 输出 3:\n\n```text\nWelcome to C#\n```\n\n## 4- \"Foreach\" 循环\n\n`foreach\
+  \ 循环`遍历集合中的所有对象。在 C# 中，`foreach 循环`遍历字符串、数组，这些都是可枚举类型。\n\n### 示例 4:\n\n```csharp\n\
+  using System;\n\nnamespace MyCSharpApplication\n{\n    class Program\n    {\n  \
+  \      static void Main(string[] args)\n        {\n            foreach (char c in\
+  \ \"Welcome to C#\")\n            {\n                Console.WriteLine(c);\n   \
+  \         }\n            Console.Read();\n        }\n    }\n}\n```\n\n注意`foreach\
+  \ 循环`的语法；它以左圆括号开始。圆括号内有两个用分号隔开的表达式。第一个表达式 `char c` 是初始化语句，意味着循环从 `char c` 开始。第二个表达式\
+  \ `in \"Welcome to C#\"` 是集合语句，意味着循环将一直执行直到集合耗尽。在求值集合语句后，循环体（位于大括号内，大括号后是右圆括号）执行。\n\
+  \n# 第 5 章：数组\n\n数组用于存储相同类型的多个值。它们存储在连续的内存位置中，这提高了效率。\n\n目录：\n*   数组语法\n*   一维数组\n\
+  *   二维数组\n\n### 1- 数组语法\n\n数组具有以下语法：\n`type [] array-name = new type [size];`\n\n\
+  数组以要存储的元素类型开始，后面跟着方括号，最后是数组名称。在此时，数组仅被声明，没有为它保留内存位置。要初始化数组，使用 `new` 关键字，后跟数组的类型。然后是方括号，在这些方括号内部指定数组的大小。\n\
+  \n### 2- 一维数组\n\n\n\n\n\n在一个方向上存储元素（即以列或行的形式存储）的数组被称为一维数组。我们在上一节中声明的 `salaries`\
+  \ 数组就是一个一维数组。一维数组在数组类型后使用一个方括号初始化。要查看一维数组的实际运行，请查看本章的第一个示例。\n\n### Example1\n\n\
+  ```csharp\nusing System;\n\nnamespace MyCSharpApplication\n{\n    class Program\n\
+  \    {\n        static void Main(string[] args)\n        {\n            int[] salaries\
+  \ = new int[10] { 78, 15, 27, 87, 56, 74, 12, 36, 98, 41 };\n            int a =\
+  \ salaries[0];\n            int b = salaries[5];\n            Console.WriteLine(a\
+  \ + b);\n            salaries[0] = 25;\n            salaries[5] = 25;\n        \
+  \    a = salaries[0];\n            b = salaries[5];\n            Console.WriteLine(a\
+  \ + b);\n            Console.Read();\n        }\n    }\n}\n```\n\n在 `Example1` 中，我们初始化了数组\
+  \ `salaries` 并在初始化时在该数组中存储了 10 个元素。这是在数组中存储元素的方法之一。你初始化数组，并在同一行中，在包含尺寸的方括号之后的大括号内输入元素。在大括号内，你用逗号分隔每个元素。数组具有基于零的存储索引。这意味着数组的第一个元素存储在索引\
+  \ 0 ，而最后一个元素存储在索引 `n-1st` ，其中 `n` 是数组的大小。要访问任何索引处的元素，使用数组名后跟方括号。在方括号内，指定索引。例如，在\
+  \ `Example1` 中，`salaries` 数组索引 0 处的元素存储在整数变量 `a` 中，而索引 5 处的元素存储在变量 `b` 中。控制台上打印了这两个变量的和。然后数组索引零和五被更新为值\
+  \ `25`。在控制台窗口上再次打印了它们的和，现在包含了更新后的值。`Example1` 中代码的输出所示。\n\n**Output1:**\n```\n152\n\
+  50\n```\n\n在第 4 章中，我们学习了 `foreach` 循环，它可以遍历任何项目集或列表。除了 `foreach` 循环外，`for` 循环也可以用于遍历数组。在\
+  \ `Example2` 中，我们将看到如何通过 `for` 和 `foreach` 循环遍历数组。\n\n### Example2\n\n```csharp\n\
+  using System;\n\nnamespace MyCSharpApplication\n{\n    class Program\n    {\n  \
+  \      static void Main(string[] args)\n        {\n            int[] salaries =\
+  \ new int[10] { 78, 15, 27, 87, 56, 74, 12, 36, 98, 41 };\n            for (int\
+  \ i = 0; i < 10; i++)\n            {\n                Console.Write(salaries[i]\
+  \ + \" \");\n            }\n            Console.WriteLine();\n            foreach\
+  \ (int n in salaries)\n            {\n                Console.Write(n + \" \");\n\
+  \            }\n            Console.Read();\n        }\n    }\n}\n```\n\n在 `Example2`\
+  \ 中，`salaries` 数组再次初始化了一些随机变量。我们首先使用 `for` 循环遍历了数组，然后使用 `foreach` 循环遍历了 `salaries`\
+  \ 数组。`Example2` 中代码的输出如下。\n\n**Output2:**\n```\n78 15 27 87 56 74 12 36 98 41\n\
+  78 15 27 87 56 74 12 36 98 41\n```\n\n### 3- 二维数组\n\n一维数组以单列或单行的形式存储数据。二维数组（通常称为数组的数组）以多行多列的形式存储数据。数据以矩阵的形式存储在内存中。要初始化二维数组，你只需要在数组类型后的方括号内放入一个逗号。在左侧，`new`\
+  \ 关键字之后的方括号内，你必须指定数组包含的行数和列数。行和列之间用逗号分隔。查看 `Example3` 以二维数组的实际运行。\n\n### Example3\n\
+  \n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n{\n    class Program\n\
+  \    {\n        static void Main(string[] args)\n        {\n            int[,] salaries\
+  \ = new int[2,3];\n            salaries[0,0] = 10; // 第一行列\n            salaries[0,1]\
+  \ = 20; // 第一行列\n            salaries[0,2] = 30; // 第一行列\n            salaries[1,0]\
+  \ = 40; // 第二行列\n            salaries[1,1] = 50; // 第二行列\n            salaries[1,2]\
+  \ = 60; // 第二行列\n            for (int i = 0; i < 2; i++)\n            {\n      \
+  \          for (int j = 0; j < 3; j++)\n                {\n                    Console.Write(salaries[i,\
+  \ j] + \" \");\n                }\n                Console.WriteLine();\n      \
+  \      }\n            Console.Read();\n        }\n    }\n}\n```\n\n在 `Example1`\
+  \ 中，我们初始化了一个具有两行三列的二维数组 `salaries`。然后我们访问了每个索引并存储了一些随机值。要访问二维数组的特定索引，你编写数组名后跟方括号。在方括号内，你先输入行号、逗号，然后是列号。遍历二维数组需要嵌套的\
+  \ `for` 循环，外层循环遍历每一行，内层循环遍历每一列。这在 `Example3` 中得到了演示。`Example3` 中代码的输出如下。\n\n**Output3:**\n\
+  ```\n10 20 30 \n40 50 60\n```\n\n### 练习 5\n\n**任务：**\n使用嵌套的 `for` 循环，用随机变量初始化一个二维数组，并在屏幕上显示这些元素。\n\
+  \n**解决方案**\n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n{\n    class\
+  \ Program\n    {\n        static void Main(string[] args)\n        {\n         \
+  \   int[,] tables = new int[4,10];\n            for (int i = 2; i < 6; i++)\n  \
+  \          {\n                for (int j = 0; j < 10; j++)\n                {\n\
+  \                    tables[i-2,j] = i * (j+1);\n                }\n           \
+  \ }\n            for (int i = 0; i < 4; i++)\n            {\n                for\
+  \ (int j = 0; j < 10; j++)\n                {\n                    Console.Write(tables[i,\
+  \ j] + \" \");\n                }\n                Console.WriteLine();\n      \
+  \      }\n            Console.Read();\n        }\n    }\n}\n```\n\n\n\n\n这是 `Player`\
+  \ 类的结构。从这个结构中可以假设该类的对象将包含三个变量：`name`、`age` 和 `country`。`player` 对象占用的内存大致等于于变量 `name`、`age`\
+  \ 和 `country` 所占用的内存之和。`Player` 类将创建在与你的 `Program` 类相同的命名空间中。\n\n打开 `Program` 类的代码并进行以下更改。\n\
+  \n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n{\n    class Program\n\
+  \    {\n        static void Main(string[] args)\n        {\n            Player p\
+  \ = new Player();\n            p.name = \"Alan\";\n            p.age = 25;\n   \
+  \         p.country = \"USA\";\n            Console.WriteLine(p.name +,\"+p.age+\"\
+  ,\"+p.country);\n            Console.Read();\n        }\n    }\n}\n```\n\n在上面的 `Program.cs`\
+  \ 文件中，我们在 `Player` 类中创建了一个对象 `p`。要创建任何类的对象，请使用 `new` 关键字后接类的构造函数。我们将在下一节中深入探讨构造函数。现在，假设\
+  \ `Player()` 是 `Player` 类的默认构造函数。调用 `new` 后跟任何类的构造函数将会在内存中创建该类的对象并返回其引用。该引用可以存储在该类的变量中。在示例\
+  \ 1 中，我们在 `Player` 类中创建了一个变量 `p`。该变量 `p` 存储了 `Player` 类中对象的引用。要访问对象的成员，请使用引用变量，然后跟一个点（`.`），最后是你想要访问的属性。例如，如果你想访问对象\
+  \ `p` 的名称，将使用 `p.name`。通过这种方式，我们在 `name`、`age` 和 `country` 中存储了三个随机值。最后，我们在输出控制台上打印了这些值。\n\
+  \n**输出 1：**\nAlan,25,USA\n\n## 2- 构造函数\n\n构造函数是一个创建类对象并将其引用返回给调用函数的函数。构造函数的名称与它所属的类名称完全相同。构造函数没有返回类型，即使是\
+  \ `void` 也没有。构造函数还可以在创建对象时用于初始化类的成员变量。在本章的第二个示例中，我们将看到如何使用构造函数来初始化成员变量。\n\n**示例\
+  \ 2：**\n在示例 1 中创建的 `Player` 类中进行以下更改。\n\n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n\
+  {\n    class Player\n    {\n        public string name;\n        public int age;\n\
+  \        public string country;\n        public Player()\n        {\n          \
+  \  name = \"Scott\";\n            age = 30;\n            country = \"UK\";\n   \
+  \     }\n    }\n}\n```\n\n在上面的代码中，我们创建了一个构造函数来初始化变量 `name`、`age` 和 `country`。`name`\
+  \ 变为 \"Scott\"，`age` 变为 \"30\"，`country` 变为 \"UK\"。当创建此类的对象时，这三个变量将自动初始化，并可以随时打印到屏幕上。为了在控制台上查看它们的值，请在\
+  \ `Program` 类中进行以下更改。\n\n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n\
+  {\n    class Program\n    {\n        static void Main(string[] args)\n        {\n\
+  \            Player p = new Player();\n            Console.WriteLine(p.name +,\"\
+  +p.age+\",\"+p.country);\n            Console.Read();\n        }\n    }\n}\n```\n\
+  \n示例 2 代码的输出如下：\n**输出 2：**\nScott,30,UK\n\n## 参数化构造函数\n\n你也可以通过在创建类对象时向构造函数传递参数来初始化类的成员变量。从调用函数接收参数的构造函数被称为参数化构造函数。示例\
+  \ 3 演示了 C# 中参数化构造函数的用法。\n\n**示例 3：**\n在 `Player` 类中进行以下更改：\n\n```csharp\nusing System;\n\
+  \nnamespace MyCSharpApplication\n{\n    class Player\n    {\n        public string\
+  \ name;\n        public int age;\n        public string country;\n        public\
+  \ Player(string name, int age, string country)\n        {\n            this.name\
+  \ = name;\n            this.age = age;\n            this.country = country;\n  \
+  \      }\n    }\n}\n```\n\n在上面的代码段中，我们在构造函数的括号内输入了三个变量。这些是参数，用逗号分隔。要调用此构造函数，我们必须在调用时传递三个参数。这些参数应该与构造函数中的参数类型匹配。此外，传递的参数的顺序应该与构造函数声明中的参数顺序匹配。例如，在调用此参数化构造函数时，第一个参数应该是\
+  \ `string`，第二个应该是 `integer`（整数），第三个应该是 `string`。在 `Program` 类中进行以下更改以查看它是如何工作的。\n\
+  \n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n{\n    class Program\n\
+  \    {\n        static void Main(string[] args)\n        {\n            Player p\
+  \ = new Player(\"Joseph\", 35, \"Italy\");\n            Console.WriteLine(p.name\
+  \ +,\"+p.age+\",\"+p.country);\n            Console.Read();\n        }\n    }\n\
+  }\n```\n\n示例 3 代码的输出如下：\n**输出 3：**\nJoseph,35,Italy\n\n## 重载构造函数\n\n你可以在类中拥有两个或多个参数化构造函数。当创建类对象时，与调用匹配的构造函数将被调用。这个概念初看起来可能很困惑。本章的第四个示例演示了重载构造函数的概念。\n\
+  \n**示例 4：**\n在 `Player` 类中进行以下更改。\n\n**Player.cs**\n```csharp\nusing System;\n\n\
+  namespace MyCSharpApplication\n{\n    class Player\n    {\n        public string\
+  \ name;\n        public int age;\n        public string country;\n        public\
+  \ Player(string name, int age, string country)\n        {\n            this.name\
+  \ = name;\n            this.age = age;\n            this.country = country;\n  \
+  \      }\n        public Player(string name)\n        {\n            this.name =\
+  \ name;\n        }\n    }\n}\n```\n\n在 `Player` 类中，你可以看到现在有两个参数化构造函数。第一个构造函数与示例\
+  \ 3 类似，接收三个参数。第二个构造函数接收一个参数。创建对象时调用的构造函数取决于构造函数的调用。如果调用包含一个 `string` 类型参数，将调用第二个构造函数。然而，如果调用包含三个参数（`string`、`int`、`string`），将调用第一个构造函数。\n\
+  \n在 `Program` 类中进行以下更改，以查看 `Player` 类中构造函数调用之间的差异。\n\n**Program.cs**\n```csharp\n\
+  using System;\n\nnamespace MyCSharpApplication\n{\n    class Program\n    {\n  \
+  \      static void Main(string[] args)\n        {\n            Player p = new Player(\"\
+  Joseph\", 35, \"Italy\");\n            Player p2 = new Player(\"Susan\");\n    \
+  \        p2.age = 40;\n            p2.country = \"France\";\n            Console.WriteLine(p.name\
+  \ + \",\" + p.age + \",\" + p.country);\n            Console.WriteLine(p2.name +++\"\
+  ,\"+p2.age+\",\"+p2.country);\n            Console.Read();\n        }\n    }\n}\n\
+  ```\n\n示例 4 代码的输出如下：\n**输出 4：**\nJoseph,35,Italy\nSusan,40,France\n\n## 练习 6\n\n\
+  **任务：**\n创建一个名为 `Product` 的类，具有三个属性：`name`、`price` 和 `category`。添加一个初始化这三个属性的参数化构造函数。添加另一个初始化前两个属性的构造函数。在\
+  \ `Program` 类中，通过调用类的两个重载构造函数创建两个 `Product` 类对象。在控制台上显示这两个对象的属性。\n\n**解决方案：**\n\
+  **Product 类：**\n```csharp\nusing System;\nusing System.Collections.Generic;\nusing\
+  \ System.Linq;\nusing System.Text;\nusing System.Threading.Tasks;\n\nnamespace MyCSharpApplication\n\
+  {\n    class Product\n    {\n        public string name;\n        public int price;\n\
+  \        public string category;\n        public Product(string name, int price,\
+  \ string category)\n        {\n            this.name = name;\n            this.price\
+  \ = price;\n            this.category = category;\n        }\n        public Product(string\
+  \ name, int price)\n        {\n```\n\n\n\n\n\n```csharp\nthis.name = name;\nthis.price\
+  \ = price;\n        \n    }\n}\n```\n\n#### Program 类\n\n```csharp\nusing System;\n\
+  \nnamespace MyCSharpApplication\n{\n    class Program\n    {\n        static void\
+  \ Main(string[] args)\n        {\n            Product p = new Product(\"Laptop\"\
+  , 40, \"Electronics\");\n            Product p2 = new Product(\"Apple\", 2);\n \
+  \           p2.category = \"Fruits\";\n            Console.WriteLine(p2.name +\"\
+  ,\"+p2.price+\",\"++p2.category);\n            Console.WriteLine(p.name + \",\"\
+  \ + p.price + \",\" + p.category);\n            Console.Read();\n        }\n   \
+  \ }\n}\n```\n\n# 第 7 章：访问修饰符与方法\n\n在上一章中，我们学习了对象和类，以及如何通过构造函数初始化类的成员变量。我们还学习了不同类型的构造函数。在本章中，我们将学习对象如何通过执行某些功能。在面向对象编程（OOP）中，这是通过方法实现的。然而，在深入方法的细节之前，我们将学习另一个重要的概念：C#\
+  \ 中的访问修饰符。\n\n## 目录\n\n* 访问修饰符\n* C# 中的方法\n\n## 1- 访问修饰符\n\n从本书开始开始，我们一直在变量上使用 `public`\
+  \ 关键字。这是 C# 中提供的五种访问修饰符之一。访问修饰符控制对特定变量的访问。例如，标记为 `public` 的成员变量可以在任何地方访问。然而，标记为\
+  \ `private` 的变量仅在它所属的类内部访问。表 1.0 包含了 C# 的五种访问修饰符及其功能。\n\n| 访问修饰符 | 功能 |\n| :---\
+  \ | :--- |\n| public | 处处可访问 |\n| internal | 仅程序集内的类和友程序集可见 |\n| protected | 仅在类及其派生类中访问\
+  \ |\n| private | 仅在类内部访问 |\n| Protected-internal | 在保护 或 internal 可访问的地方访问 |\n\n\
+  ## 2- 方法\n\n如前所述，C# 的类和对象通过方法起作用。为了理解 C# 中的方法概念，让我们直接进入本章的第一个示例。\n\n### 示例 1：\n\n\
+  向现有项目添加一个名为 `Product` 的新类。`Product` 类的内容类似于下面的代码段。\n\n**Product.cs**\n\n```csharp\n\
+  using System;\n\nnamespace MyCSharpApplication\n{\n    class Product\n    {\n  \
+  \      public string name;\n        public int price;\n        public string category;\n\
+  \n        public Product(string name, int price, string category)\n        {\n \
+  \           this.name = name;\n            this.price = price;\n            this.category\
+  \ = category;\n        }\n\n        public void IncreasePrice()\n        {\n   \
+  \         price += 10;\n        }\n    }\n}\n```\n\n`Product` 类包含三个成员变量：`name`、`price`\
+  \ 和 `category`。该类包含一个初始化这三个变量的构造函数。在构造函数之后，我们添加了一个名为 `IncreasePrice` 的方法。方法的语法非常简单；它以访问修饰符开头，在本例中是\
+  \ `public`。之后是了方法的返回类型。返回类型是方法返回的值的类型。由于我们的 `IncreasePrice` 方法不返回任何值，我们将其返回类型指定为\
+  \ `void`。在返回类型之后，写了方法的名称（在本例中，这是 `IncreasePrice`）。圆括号内包含参数。由于我们不希望 `IncreasePrice`\
+  \ 方法接受任何参数，我们留了空括号。请注意，方法的声明与构造函数的声明非常相似。事实上，构造函数是一个没有返回类型的方法。使用类的对象来调用方法，方法是在类对象后追加点运算符，然后是方法名。修改\
+  \ `Program` 类，使其看起来像下面的代码段所示。\n\n**Program.cs**\n\n```csharp\nusing System;\n\n\
+  namespace MyCSharpApplication\n{\n    class Program\n    {\n        static void\
+  \ Main(string[] args)\n        {\n            Product p = new Product(\"Grapes\"\
+  , 40, \"Food\");\n            Console.WriteLine(\"The price of product \"+p.name+\
+  \ \" is: \"+p.price);\n            p.IncreasePrice();\n            Console.WriteLine(\"\
+  The new price of product \" + p.name + \" is: \" + p.price);\n            Console.Read();\n\
+  \        }\n    }\n}\n```\n\n在 `Program` 中，我们使用参数化构造函数创建了 `Product` 类的对象。变量 `price`\
+  \ 的初始值设置为 40。我们在控制台上显示了这个价格。然后，我们在 `Product` 类的对象 `p` 上调用了 `IncreasePrice` 方法。每调用一次\
+  \ `IncreasePrice` 方法，`price` 变量的值就会增加 10。由于我们只调用了一次此方法，所以价格只增加了 10；新价格将是 40+10 =\
+  \ 50。然后我们在控制台上打印了这个新价格，以确保价格已经增加。示例 1 中代码的输出如下所示：\n\n**输出 1：**\n\n```\nThe price\
+  \ of product Grapes is: 40\nThe new price of product Grapes is: 50\n```\n\n### 向方法传递参数\n\
+  \n就像我们有参数化构造函数一样，我们也有参数化方法。例如，与其每次将 `price` 变量的价格增加 10，我们也可以传递我们的选择。\n\n**示例 2：**\n\
+  \n在第二个示例中，我们将看到如何通过传递一个值来增加价格。`IncreasePrice` 方法可以接受的参数类型在括号中提到。\n\n```csharp\n\
+  using System;\n\nnamespace MyCSharpApplication\n{\n    class Product\n{\n      \
+  \  public string name;\n        public int price;\n        public string category;\n\
+  \n        public Product(string name, int price, string category)\n        {\n \
+  \           this.name = name;\n            this.price = price;\n            this.category\
+  \ = category;\n        }\n\n        public void IncreasePrice(int price)\n     \
+  \   {\n            price += price;\n        }\n    }\n}\n```\n\n```csharp\nusing\
+  \ System;\n\nnamespace MyCSharpApplication\n{\n    class Program\n    {\n      \
+  \  static void Main(string[] args)\n        {\n            Product p = new Product(\"\
+  Grapes\", 40, \"Food\");\n            Console.WriteLine(\"The price of product \"\
+  +p.name+ \" is: \"+p.price);\n            p.IncreasePrice(25);\n            Console.WriteLine(\"\
+  The new price of product \" + p.name + \" is: \" + p.price);\n            Console.Read();\n\
+  \        }\n    }\n}\n```\n\n**输出 2：**\n\n```\nThe price of product Grapes is: 40\n\
+  The new price of product Grapes is: 65\n```\n\n### 从方法返回值\n\n在我们之前的两个示例中，`IncreasePrice`\
+  \ 方法没有返回任何值。方法的返回类型是 `void`。然而，我们也可以通过更改返回类型来强制方法返回一个值。例如，我们可以通过将返回类型更改为 `int`，然后在方法末尾使用\
+  \ `return` 后加上要返回的值，从 `IncreasePrice` 方法获取增加后的价格。这将在示例中解释。\n\n**示例 3：**\n\n如下修改\
+  \ `Product` 和 `Program` 类的代码：\n\n**Product.cs**\n\n```csharp\nusing System;\n\n\
+  namespace MyCSharpApplication\n{\n    class Product\n    {\n        public string\
+  \ name;\n        public int price;\n        public string category;\n\n        public\
+  \ Product(string name, int price, string category)\n        {\n            this.name\
+  \ = name;\n            this.price = price;\n            this.category = category;\n\
+  \        }\n\n        public int IncreasePrice(int price)\n        {\n         \
+  \   this.price += price;\n            return this.price;\n        }\n    }\n}\n\
+  ```\n\n**Program.cs**\n\n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n\
+  {\n    class Program\n    {\n        static void Main(string[] args)\n        {\n\
+  \            Product p = new Product(\"Grapes\", 40, \"Food\");\n            Console.WriteLine(\"\
+  The price of product \"+p.name+ \" is: \"+p.price);\n            Console.WriteLine(\"\
+  The new price of product \" + p.name + \" is: \" + p.IncreasePrice(20));\n     \
+  \       Console.Read();\n        }\n    }\n}\n```\n\n**输出 3：**\n\n```\nThe price\
+  \ of product Grapes is: 40\nThe new price of product Grapes is: 60\n```\n\n## 练习\
+  \ 7\n\n任务：\n\n\n\n\n\n创建一个名为 `Car` 的类。在类内部创建名为 `name` 和 `speed` 的两个变量。使用参数化构造函数初始化这些变量。在\
+  \ `Car` 类中创建一个方法。该方法应接受一个整数值并根据该值减少汽车的速度。该方法将减少后的速度返回给调用函数。在 `Program` 类中，在控制台上显示减少后的速度。\n\
+  \n### 解决方案：\n\n#### Car 类：\n```csharp\nusing System;\nusing System.Collections.Generic;\n\
+  \nnamespace MyCSharpApplication\n{\nclass Car\n{\n    public string name;\n    public\
+  \ int speed;\n    public Car(string name, int speed)\n    {\n        this.name =\
+  \ name;\n        this.speed = speed;\n    }\n\n    public int DecreaseSpeed(int\
+  \ speed)\n    {\n        this.speed -= speed;\n        return this.speed;\n    }\n\
+  }\n}\n```\n\n#### Program 类：\n```csharp\nusing System;\nusing System.Diagnostics;\n\
+  \nnamespace MyCSharpApplication\n{\nclass Program\n{\n    static void Main(string[]\
+  \ args)\n    {\n        Car c = new Car(\"Ford\", 105);\n        Console.WriteLine(\"\
+  Initial Speed of car is \" + c.speed);\n        Console.WriteLine(\"Decreased Speed\
+  \ of car is \" + c.DecreaseSpeed(15));\n        Console.Read();\n    }\n}\n}\n```\n\
+  \n# 第 8 章：继承与多态\n\n在最后两个章节中，我们涵盖了基础面向对象概念（OOP）。在本章中，我们将学习两个高级 OOP 特：继承和多态。和所有其他\
+  \ OOP 概念一样，OOP 中的继承与现实世界的继承概念相似。孩子继承父母的某些特征，同时也具有一些自己特有的特征。在面向对象编程中，这个概念也是类似的。继承也存在于类之间，并用“是一个”（Is-A）关系来标记。例如，“笔记本电脑”是一种产品，“汽车”是一种交通工具，而“员工”是一个人。在这里，“笔记本电脑”是\
+  \ `product` 的子类，“汽车”是 `vehicle` 的子类，而“员工”是 `person` 的子类。多态的概念基于继承；我们将在后的部分进行学习。\n\
+  \n## 目录\n- 继承\n- 多态\n\n## 1- 继承\n\n继承的想法是，子类之间所有共同的特征都在父类中实现，而特定于单个子类的特征在各自的子类中实现。例如，取一个父类\
+  \ `product` 及其子类软件和硬件产品。软件产品和硬件产品都有 `name` 和 `price`。因此，我们可以在父类 `product` 类中同时包含\
+  \ `name` 和 `price` 属性。继承父类的类默认拥有父类的所有属性。然而，软件没有重量，而硬件产品具有一定的重量。这意味着 `weight` 属性是硬件类特有的；因此，它不能在父类中实现。同样，我们假设软件有一个版本号，而硬件没有版本号。在这里，`version`\
+  \ 是软件类特有的，不能在父类中实现。这种场景已经在示例 1 中实现。\n\n### 示例 1：\n\n向你的项目添加三个类（`Product`、`Hardware`\
+  \ 和 `Software`）。这三个类的代码标记应如下：\n\n#### Product.cs\n```csharp\nusing System;\nnamespace\
+  \ MyCSharpApplication\n{\nclass Product\n{\n    public string name;\n    public\
+  \ int price;\n}\n}\n```\n在 `Product` 类中，我们只添加了两个属性：`name` 和 `price`。\n\n#### Software.cs\n\
+  ```csharp\nusing System;\nnamespace MyCSharpApplication\n{\nclass Software : Product\n\
+  {\n    public int version;\n    public Software(string name, int price, int version)\n\
+  \    {\n        this.name = name;\n        this.price = price;\n        this.version\
+  \ = version;\n    }\n}\n```\n（注：此处原文逻辑似乎存在部分重复或乱序，翻译已按原意进行微调以确保逻辑连贯性）\n继承父类的类默认拥有父类的所有属性。然而，软件没有重量，而硬件产品具有一定的重量。这意味着\
+  \ `weight` 属性是硬件类特有的；因此，它不能在父类中实现。同样，我们假设软件有一个版本号，而硬件没有版本号。在这里，`version` 是软件类特有的，不能在父类中实现。这种场景已经在示例\
+  \ 1 中实现。\n\n#### Hardware.cs\n```csharp\nusing System;\nnamespace MyCSharpApplication\n\
+  {\nclass Hardware : Product\n{\n    public int weight;\n    public Hardware(string\
+  \ name, int price, int weight)\n    {\n        this.name = name;\n        this.price\
+  \ = price;\n        this.weight = weight;\n    }\n}\n}\n```\n\n#### Program.cs\n\
+  ```csharp\nusing System;\nnamespace MyCSharpApplication\n{\nclass Program\n{\n \
+  \   static void Main(string[] args)\n    {\n        Software s = new Software(\"\
+  windows\", 150, 3);\n        Hardware h = new Hardware(\"Laptop\", 500, 2);\n  \
+  \      Console.WriteLine(\"Initial Speed of car is \" + s.name);\n        Console.WriteLine(\"\
+  Decreased Speed of car is \" + h.name);\n        Console.Read();\n    }\n}\n```\n\
+  **输出 1：**\n```\nwindows\nLaptop\n```\n\n## 2- 多态\n\n父类可以持有子类对象。父类根据它所持有的引用表现不同的行为。这就是多态。假设\
+  \ `Product` 类有一个方法 `DisplayProduct`，它显示名称。两个子类也有方法 `DisplayProduct`。这里出现的问题：如果在对象上调用\
+  \ `DisplayProduct`，它是 `Product`、`Software` 还是 `Hardware` 类？\n\n### 示例 2\n\n对 `Product`、`Software`\
+  \ 和 `Hardware` 类进行以下修改。\n\n#### Product.cs\n```csharp\nusing System;\nnamespace\
+  \ MyCSharpApplication\n{\nclass Product\n{\n    public string name;\n    public\
+  \ int price;\n    public virtual void DisplayProduct()\n    {\n        Console.WriteLine(\"\
+  This is parent class: \" + name);\n    }\n}\n}\n```\n如果子类要包含与父类相同的方法，该方法在父类中必须标记为\
+  \ `virtual`。这就是为什么我们在父类中将 `DisplayProduct` 方法标记为 `virtual`。当此方法添加到子类中时，必须使用 `override`\
+  \ 关键字标记。这在 `Software` 和 `Hardware` 类中都显示了。\n\n#### Software.cs\n```csharp\nusing\
+  \ System;\nnamespace MyCSharpApplication\n{\nclass Software : Product\n{\n    public\
+  \ int version;\n    public Software(string name, int price, int version)\n    {\n\
+  \        this.name = name;\n        this.price = price;\n        this.version =\
+  \ version;\n    }\n    public override void DisplayProduct()\n    {\n        Console.WriteLine(\"\
+  You bought \" + name + \", version \" + version);\n    }\n}\n}\n```\n\n#### Hardware.cs\n\
+  ```csharp\nusing System;\nnamespace MyCSharpApplication\n{\nclass Hardware : Product\n\
+  {\n    public int weight;\n    public Hardware(string name, int price, int weight)\n\
+  \    {\n        this.name = name;\n        this.price = price;\n        this.weight\
+  \ = weight;\n    }\n    public override void DisplayProduct()\n    {\n        Console.WriteLine(\"\
+  You bought \" + name + \", weight \" + weight);\n    }\n}\n}\n```\n\n\n\n\n\n在 `Program`\
+  \ 类中，我们创建了父类 `Product` 的对象，并在其中存储了 `Product`、`Software` 和 `Hardware` 类对象的引用。然后，我们按顺序调用了\
+  \ `DisplayProduct` 方法。你会发现，在输出中，将根据在 `Product` 类对象中存储的引用，调用不同的 `DisplayProduct`\
+  \ 方法。\n\nProgram.cs\n\n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n\
+  {\n    class Program\n    {\n        static void Main(string[] args)\n        {\n\
+  \            Product p = new Product();\n            p.name = \"Apple\";\n     \
+  \       p.price = 10;\n            p.DisplayProduct();\n\n            p = new Software(\"\
+  windows 7\", 150, 3);\n            p.DisplayProduct();\n\n            p = new Hardware(\"\
+  Laptop\", 500, 2);\n            p.DisplayProduct();\n            Console.Read();\n\
+  \        }\n    }\n}\n```\n\nOutput2:\n```text\nThis is a parent class: Apple\n\
+  You bought windows 7, version 3\nYou bought Laptop, weight 2\n```\n\n# 练习 8\n\n\
+  ### 任务\n创建一个名为 `Shape` 的类。为此类添加一个成员变量 `name`。添加一个名为 `DisplayName` 的方法，该方法使用适当的语句在控制屏幕上显示变量名。创建两个类：`Triangle`\
+  \ 和 `Pentagon`。创建带参数的构造函数来初始化 `Triangle` 和 `Pentagon` 类中的变量名。这些类将实现它们自己的 `DisplayName`\
+  \ 方法。使用测试类（如 `Program.cs`）展示在此场景下如何实现多态。\n\n### 解决方案\n\n#### Shape 类\n```csharp\n\
+  using System;\n\nnamespace MyCSharpApplication\n{\n    class Shape\n    {\n    \
+  \    public string name;\n        public virtual void DisplayName()\n        {\n\
+  \            Console.WriteLine(\"This is a parent class named: \" + name);\n   \
+  \     }\n    }\n}\n```\n\n#### Triangle 类\n```csharp\nusing System;\n\nnamespace\
+  \ MyCSharpApplication\n{\n    class Triangle: Shape\n    {\n        public Triangle\
+  \ (string name)\n        {\n            this.name = name;\n        }\n        public\
+  \ override void DisplayName()\n        {\n            Console.WriteLine (\"This\
+  \ is a child class named: \" + name);\n        }\n    }\n}\n```\n\n#### Pentagon\
+  \ 类\n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n{\n    class Pentagon:\
+  \ Shape\n    {\n        public Pentagon (string name)\n        {\n            this.name\
+  \ = name;\n        }\n        public override void DisplayName()\n        {\n  \
+  \          Console.WriteLine(\"This is a child class named: \" + name);\n      \
+  \  }\n    }\n}\n```\n\n#### Program 类\n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n\
+  {\n    class Program\n    {\n        static void Main(string[] args)\n        {\n\
+  \            Shape s = new Shape();\n            s.name = \"Shape\";\n         \
+  \   s.DisplayName();\n\n            s = new Triangle(\"Triangle\");\n          \
+  \  s.DisplayName();\n\n            s = new Pentagon(\"Pentagon\");\n           \
+  \ s.DisplayName();\n            Console.Read();\n        }\n    }\n}\n```\n\n# 第\
+  \ 9 章：事件与委托\n\n在本章中，我们将学习 C# 中的两个重要概念：`Delegates`（委托）和 `Events`（事件）。C# 的事件处理机制基于这两个概念。C#\
+  \ 中的 `Delegates` 是函数指针。它们持有对函数的引用。它们在调用函数和被调用函数之间提供了解耦。C# 中的 `event` 也是一种 `delegate`\
+  \ 类型。`Events` 用于调用方法。例如，当你点击按钮时，会触发一个事件，该事件会调用所有与该事件相关的方法。在本章中，我们将看到这些概念的运作。\n\n\
+  ### 目录\n* 委托\n* 事件\n\n## 1- 委托\n\n委托是用于调用传递给其构造方法的类。委托存储传递给它的方法的引用。本章的第一个示例演示了如何创建委托以及如何使用它来引用方法。\n\
+  \n示例 1\n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n{\n    public\
+  \ delegate int ChangeIt(int num);\n    class Program\n    {\n        static void\
+  \ Main(string[] args)\n        {\n            ChangeIt c = square;\n           \
+  \ Console.WriteLine(\"The square of 4 is: \"+ c(4));\n            Console.Read();\n\
+  \        }\n        public static int square(int num)\n        {\n            return\
+  \ num * num;\n        }\n    }\n}\n```\n\n在 `Example1` 中，我们使用 `delegate` 关键字创建了一个委托\
+  \ `ChangeIt`。委托只能存储与委托签名完全匹配的方法引用。例如，在示例 1 中，委托的签名是 `ChangeIt(int num)`。这意味着该委托可以调用任何接受整数类型变量作为参数并返回整数类型变量的方法。在\
+  \ `Program` 类中，我们创建了一个名为 `square` 的静态方法。该方法的签名与 `ChangeIt` 委托的签名匹配。在 `Main` 方法内部，我们创建了一个委托类型\
+  \ `ChangeIt` 的变量 `c` 并赋值赋值方法 `square`。要调用该方法，我们只需将参数传递给变量 `c`。例如，如果我们向变量 `c` 传递\
+  \ 4，返回的值将是 16，因为在内部 `c` 会调用 `square` 方法。然后我们在屏幕上显示返回的值。\n\nOutput1:\n```text\nThe\
+  \ square of 4 is: 16\n```\n\n## 2- 事件\n\n事件也是 `delegate` 的一种类型，但在声明时，在委托名称之前添加了\
+  \ `event` 关键字。与委托类似，事件被挂钩到方法上。事件可以执行与事件签名相同的方法。示例 2 演示了如何将方法挂钩到事件以及当事件触发时如何调用这些方法。\n\
+  \n示例 2\n```csharp\nusing System;\n\nnamespace MyCSharpApplication\n{\n    public\
+  \ delegate void DisplayNameHandler();\n    class Program\n    {\n        public\
+  \ static event DisplayNameHandler NameChanged;\n        static void Main(string[]\
+  \ args)\n        {\n            NameChanged += DisplayFruit;\n            NameChanged\
+  \ += DisplayAnimal;\n            NameChanged += DisplayFlower;\n            NameChanged\
+  \ += DisplayColor;\n            NameChanged.Invoke();\n            Console.Read();\n\
+  \        }\n        public static void DisplayFruit()\n        {\n            Console.WriteLine(\"\
+  This is an apple.\");\n        }\n        public static void DisplayAnimal()\n \
+  \       {\n            Console.WriteLine(\"This is a lion.\");\n        }\n    \
+  \    public static void DisplayFlower()\n        {\n            Console.WriteLine(\"\
+  This is a rose.\");\n        }\n        public static void DisplayColor()\n    \
+  \    {\n            Console.WriteLine(\"This is red.\");\n        }\n    }\n}\n\
+  ```\n\n在示例 2 中，我们创建了一个委托 `DisplayNameHandler`。在 `Program` 类中，我们创建了一个类型为 `DisplayNameHandler`\
+  \ 的事件 `NameChanged`。与委托类似，事件被挂钩到方法上。事件可以执行与 `delegate` 签名相同的方法。当事件触发时，会执行一个或多个方法。\n\
+  \nOutput2:\n```text\nThis is an apple.\nThis is a lion.\nThis is a rose.\nThis is\
+  \ red.\n```\n\n\n\n\n```csharp\n{\n    Calculation c = Sum;\n    c(10, 5);\n   \
+  \ Console.WriteLine(c(10, 5));\n    c += Subtract;\n    Console.WriteLine(c(10,\
+  \ 5));\n    Console.Read();\n}\npublic static int Sum(int num1, int num2)\n{\n \
+  \   return num1 + num2;\n}\npublic static int Subtract (int num1, int num2)\n{\n\
+  \    return num1 - num2;\n}}\n```\n\n# 第 10 章：多线程\n\n到此为止，我们一直在处理单线程应用程序，程序遵循单一的执行路径，并且在特定时刻只执行一段代码。这种方法适用于简单的控制台应用程序。然而，在高级\
+  \ GUI 应用程序中，单线程执行会导致无响应和执行延迟。考虑一个 Windows 表单应用程序，在显示在表单上之前必须获取数据。在应用程序获取数据期间，用户在表单的前端无法进行任何操作。如果数据库很大，获取数据将花费更多时间，导致应用程序的前端表现出无响应状态。多线程是解决此类问题的方案。在本章中，我们将学习如何创建线程以及它们如何协同工作以实现异步程序执行。\n\
+  \n## 目录\n\n* 什么是线程？\n* C# 中的线程创建\n* 线程连接 (Join) 与睡眠 (Sleep)\n\n## 1- 什么是线程？\n\n\
+  线程是执行的最小单元。线程运行在进程内部。进程保留了操作系统资源以及一个独占的执行环境。一个进程可以拥有一个或多个线程。在单线程应用程序中，只有一个线程在进程内运行，对所有进程资源和执行环境具有独占访问权限。在多线程应用程序中，多个线程在进程内运行，它们共享多个进程资源，特别是内存和执行环境。资源的共享解决了引入中解释的无响应问题。在多线程应用程序中，一个线程可以从数据库获取数据并存储在共享内存中，而第二个线程可以同时在应用程序的前端显示获取的数据。\n\
+  \n## 2- C# 中的线程创建\n\n在 C# 中创建线程是一个极其简单的过程。你只需要创建一个 `Thread` 类对象。在 `Thread` 类的构造函数中，传递你想要在单独线程中运行的方法委托。接下来，简单地对你创建的对象调用\
+  \ `Start` 方法即可。本章的第一个示例详细演示了线程创建和执行过程。请看它。\n\n### 示例 1：\n\n```csharp\nusing System;\n\
+  using System.Threading;\nnamespace MyCSharpApplication\n{\nclass Program\n{\n  \
+  \  static void Main(string[] args)\n    {\n        Thread t1 = new Thread(DisplayTwo);\n\
+  \        Thread t2 = new Thread(DisplayThree);\n        t1.Start();\n        t2.Start();\n\
+  \        for (int i = 0; i< 100; i++)\n        {\n            Console.Write(\"1\"\
+  );\n        }\n        Console.Read();\n    }\n    static void DisplayTwo()\n  \
+  \  {\n        for (int i = 0; i< 100; i++)\n        {\n            Console.Write(\"\
+  2\");\n        }\n    }\n    static void DisplayThree()\n    {\n        for (int\
+  \ i = 0; i< 100; i++)\n        {\n            Console.Write(\"3\");\n        }\n\
+  \    }\n}\n}\n```\n\n要在程序中执行与线程相关的任务，你需要在代码中导入 `System` 和 `System.Threading` 命名空间。C#\
+  \ 运行时默认为每个程序创建一个线程。这就是运行 `Main` 方法的线程。在示例 2 中，在 `Main` 方法内部，我们创建了两个 `Thread` 类对象。这些对象被命名为\
+  \ `t1` 和 `t2`。在第一个对象 `t1` 的构造函数中，我们传递了 `DisplayTwo` 方法委托。该方法在控制台上显示 100 次数字“2”。该方法在\
+  \ `Main` 方法之后立即定义。同样，在 `t2` 对象的构造函数中，调用了 `DisplayThree` 方法。该方法在屏幕上显示 100 次数字“3”。在\
+  \ `Main` 方法内部初始化 `t1` 和 `t2` 后，对这些对象调用了 `Start` 方法。在线程对象上调用 `Start` 会创建一个新的执行路径，该路径与已执行的线程并行运行。在此时刻，有三个线程正在同时运行：主线程（正在运行\
+  \ `Main` 方法）以及 `t1` 和 `t2` 线程（正在运行 `DisplayTwo` 和 `DisplayThree` 方法）。这意味着现在我们有三个执行路径正在同时执行。这三条路径同时尝试在屏幕上打印数字“1”、“2”和“3”，每个\
+  \ 100 次。示例 1 代码的输出如下：\n\n#### 输出 1\n321231231313132133332212312133223122332213223121121212131313111112122333312312313232321223212123322311233213312312233123112222222222222222222222222222222222222222222222222222。\n\
+  \n## 3- 线程连接 (Join) 与睡眠 (Sleep)\n\n在前节中，我们学习了多个线程如何同时执行。如果你想让一个线程在继续之前完成执行怎么办？要等待一个对象完成执行，调用该对象的\
+  \ `Join` 方法。同样，如果你想让线程停止一段时间，可以在线程类上调用 `Sleep` 方法。该方法接受毫秒或 `TimeSpan` 对象作为参数。\n\n\
+  为了直观看到这一概念，请看第二个示例。\n\n 示例 2：\n\n```csharp\nusing System;\nusing System.Threading;\n\
+  namespace MyApplication\n{\nclass Program\n{\n    static void Main(string[] args)\n\
+  \    {\n        Thread t1 = new Thread(DisplayTwo);\n        t1.Start();\n     \
+  \   t1.Join();\n        Console.WriteLine(\"=========================\");\n    \
+  \    for (int i = 0; i< 100; i++)\n        {\n            Console.Write(\"1\");\n\
+  \            if (i+1 == 50)\n            {\n                Console.WriteLine(\"\
+  \\nThread Sleeps for 5 seconds...\");\n                Thread.Sleep(5000);\n   \
+  \         }\n        }\n        Console.Read();\n    }\n    static void DisplayTwo()\n\
+  \    {\n        for (int i = 0; i< 100; i++)\n        {\n            Console.Write(\"\
+  2\");\n        }\n    }\n}\n}\n```\n\n#### 输出 2\n2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222\n\
+  =========================\n11111111111111111111111111111111111111111111111111\n\
+  Thread Sleeps for 5 seconds...\n11111111111111111111111111111111111111111111111111\n\
+  \n在屏幕上，你会看到这些数字是按顺序排列的，尽管我们先调用了 `DisplayTwo` 方法。这是因为屏幕一次只能被一个线程访问。\n\n\n\n\n\n###\
+  \ 在“Main”方法内部创建两个线程\n其中一个线程应该调用方法，在控制台上显示 100 次“+”。另一个方法应该在屏幕上显示 100 次“X”。“Main”方法应该等待这两个线程都完成，然后在屏幕上显示\
+  \ 20 次“#”。之后它应该等待 3 秒，再次显示“#”，这次显示 60 次。最后，再等待 3 秒，再显示 20 次“#”。\n\n### Solution\n\
+  \n```csharp\nusing System;\nusing System.Threading;\n\nnamespace MyCSharpApplication\n\
+  {\n    class Program\n    {\n        static void Main(string[] args)\n        {\n\
+  \            Thread t1 = new Thread(DisplayPlus);\n            Thread t2 = new Thread(DisplayMultiply);\n\
+  \n            t1.Start();\n            t2.Start();\n\n            t1.Join();\n \
+  \           t2.Join();\n\n            Console.WriteLine(\"\\n==========================================\"\
+  );\n            for (int i = 0; i < 100; i++)\n            {\n                Console.Write(\"\
+  +\");\n                if (i + 1 == 20)\n                {\n                   \
+  \ Console.WriteLine(\"\\nThread Sleeps here for 3 seconds...\");\n             \
+  \       Thread.Sleep(3000);\n                }\n                if (i + 1 == 80)\n\
+  \                {\n                    Console.WriteLine(\"\\nThread Sleeps here\
+  \ for 3 seconds...\");\n                    Thread.Sleep(3000);\n              \
+  \  }\n            }\n            Console.Read();\n        }\n\n        static void\
+  \ DisplayPlus()\n        {\n            for (int i = 0; i < 100; i++)\n        \
+  \    {\n                Console.Write(\"+\");\n            }\n        }\n\n    \
+  \    static void DisplayMultiply()\n        {\n            for (int i = 0; i < 100;\
+  \ i++)\n            {\n                Console.Write(\"X\");\n            }\n  \
+  \      }\n    }\n}\n```\n\n# 作者其他书籍\n\n#### Java 编程\n[http://www.linuxtrainingacademy.com/java-programming]\n\
+  \nJava 是当今最广泛使用且强大的计算机编程语言之一。一旦你学会了用 Java 编程，就可以创建运行在服务器、桌面电脑、平板电脑、手机、蓝光播放机等设备上的软件应用程序。\n\
+  \n此外，如果你想确保你的软件无论在什么操作系统上运行行为都一致，那么 Java 的“编写一次，处运行”哲学非常适合你。Java 的设计是与平台无关，允许你创建运行在\
+  \ Windows、Mac、Solaris 和 Linux 等多种操作系统上的应用程序。\n\n#### JavaScript：JavaScript 编程语言学习指南\n\
+  [http://www.linuxtrainingacademy.com/javascript]\n\nJavaScript 是一种动态计算机编程语言，通常用于网页浏览器来控制网页的行为并与用户进行交互。它允许异步通信，并可以更新网页的部分内容甚至替换整个网页的内容。你将看到\
+  \ JavaScript 用于显示日期和时间信息、在网站上执行动画、验证表单输入、在用户向搜索框输入时提供建议结果等。\n\n#### PHP\n[http://www.linuxtrainingacademy.com/php-book]\n\
+  \nPHP 是最广泛使用的开源服务器端编程语言之一。如果你对开始编程并想获得该语言的基础知识，那么这本书正适合你！像 Facebook 和 Yahoo 这样的流行网站都是由\
+  \ PHP 驱动的。在某种意义上，它是 Web 的语言。\n\n这本书涵盖了 PHP 的核心概念，从基础开始，进入高级的面向对象 PHP。它在过程中解释并演示了一切。你很快就能熟练使用\
+  \ PHP 进行编程。\n\n#### Scrum 精要：面向项目经理、Scrum 师、产品所有者利益相关者的敏捷软件开发与敏捷项目管理\n[http://www.linuxtrainingacademy.com/scrum-book]\n\
+  \n创建软件的时间是有限的，尤其是当你被赋予截止日期时（无论是自定的还是他规定的）。你会希望确保你构建的软件至少是合格的，更重要的是按时交付。你如何平衡质量与时间？这本书深入探讨了这些非常的话题以及更多内容。\n\
+  \n"

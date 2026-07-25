@@ -1,0 +1,290 @@
+- "# C# 可视化编程 - C# 可视化编程 - C# 编程：C# 编程的可视化编程 - C# 编程\n\n\n\n![](img/Image00017.jpg)\n\
+  \n\n\n\n\n## C 与 C++ 导言\n\nC 是一种高级结构化面向对象的编程语言，用于通用编程，由 Dennis Ritchie 在 1969 年至\
+  \ 1973 年间在美国 AT&T 贝尔实验室开发。\n\n1988 年，美国国家标准学会 (ANSI) 将 C 语言正式化。C 的发明是为了编写 UNIX 操作系统。C\
+  \ 是“基本组合编程语言”(BCPL) B 语言的继者。Linux 操作系统、PHP 和 MySQL 都是用 C 编写的。C 曾用汇编语言编写。Simula (1967)\n\
+  \n第一种面向对象的编程语言 C++ (1983) C 语言族中第一种面向对象的编程语言 Java (1995) Sun 的面向对象编程语言 C# (2001)\
+  \ 编程语言\n\n## Java\n\nJava 是一种通用的、高级编程语言。Java 编程语言由一个名为“绿色团队”(Green Team) 的工程师小组开发，他们在\
+  \ 1991 年启动了该语言。随后在 2009 年，甲骨文公司 (Oracle Corporation) 收购了 Sun Microsystems，并获得了两个关键\
+  \ Sun 软件资产的所有权：Java 和 Solaris。2006 年，Sun 开始根据 GNU 通用公共许可证 (GPL) 下提供 Java。甲骨文继续了这个名为\
+  \ Open-JDK 的项目。Sun Microsystems 于 2010 年被甲骨文公司收购。现在 Oracle 拥有 Java 的管理权。\n\n由 Sun\
+  \ 开发的微软面向对象语言\n\n## 什么是 XML？\n\n- XML 代表可扩展标记语言 (Extensible Markup Language)\n-\
+  \ XML 是一种类似于 HTML 的标记语言\n- XML 设计用于存储和传输数据\n- XML 设计为是自描述的\n\n### XML 简化了事情\n\n\
+  - 它简化了数据共享\n- 它简化了数据传输\n- 它简化了平台变更\n- 它简化了数据可用性\n\n许多计算机系统包含不兼容的数据。在不兼容系统（或升级后的系统）之间交换数据对于\
+  \ Web 开发人员来说是一项耗时的任务。大量数据必须转换，且不兼容的数据经常丢失。\n\nXML 以纯文本格式存储数据。这提供了一种独立于软件和硬件的数据存储、传输和共享方式。XML\
+  \ 还更容易扩展或升级到新的操作系统、新应用程序或新浏览器，而不会丢失数据。\n\n## C# 导言\n\nC# 是由 Sun 开发的微软面向对象语言。C# 在\
+  \ 1990 年代后期由 Anders Helsberg 创建，他是 C# 的首席架构师。\n\n## .NET 框架\n\n.NET Framework 定义了两个重要的实体。第一个是通用语言运行时\
+  \ (CLR)，它是执行程序的系统。第二个是 .NET 类库，它提供了面向对象编程的便利。.NET 类库允许程序在运行时访问。通用语言运行时 (CLR) 管理程序的执行。通过\
+  \ JIT 编译器（即时编译）将 MSIL 转换为可执行代码。JIT 代表“即时”(just in time)。\n\n### CLR 的功能\n\nCLR 具有：\n\
+  \n- 代码转换\n- 异常处理\n- 类型安全\n- 性能\n- 平台独立性\n- 独立性\n\n### CLR 的组件\n\nCLR 的关键组件包括：\n\n\
+  - 类加载器 - 在运行时加载所有类。\n- MSIL 到原生代码 - 即时编译器 (JIT) 将 MSIL 转换为原生代码。\n- 代码管理器 - 在运行时管理代码。\n\
+  - 垃圾回收器 - 管理并释放内存。\n- 线程支持 - 支持多线程。\n- 异常处理程序 - 在运行时处理异常。\n\n### CLR 的优势\n\n运行时提供了以下益处：\n\
+  \n- 性能提升。\n- 轻松使用其他语言开发的组件。\n- 支持继承、接口和重载等语言特性。\n- 支持显式线程，用于创建可扩展的应用程序。\n- 支持结构化异常处理。\n\
+  - 支持自定义属性。\n- 垃圾回收。\n- 使用委托提高类型安全性和安全性。\n\n![](img/00001.jpg) 面向对象编程\n\nC# 的核心是面向对象编程\
+  \ (OOP)。面向对象方法论与 C# 不可分，所有的 C# 程序在某种程度上都是面向对象的。由于其对 C# 的重要，在编写简单的 C# 程序之前理解 OOP\
+  \ 基本原理是有用的。\n\n封装是将代码与其操作的数据结合的机制，并使其不受外部干扰和误用。在面向对象的语言中，可以将代码和数据结合，创建一个黑盒。\n\n\
+  多态（源自希腊语，意为“多种形式”）允许一个接口访问通用类。多态的一个简单例子是汽车的方向盘。无论使用什么类型的转向机制，方向盘（接口）都是相同的。\n\n继承是一个对象获取另一个对象属性的过程。这很重要，因为它支持层级分类的概念。如果你想一下，大多数知识通过层级（即自上而下）分类变得易于管理。\n\
+  \n## Visual Studio IDE (集成开发环境)\n\nVisual Studio 是微软的集成开发环境。它允许我们在不离开其良好环境的情况下编辑、编译、运行和调试\
+  \ C# 程序。Visual Studio 提供了便利并有助于管理程序。它对于较大的项目最为有效。\n\n## 新 C# 项目\n\n通过选择“文件 | 新项目”创建一个新的空\
+  \ C# 项目。接下来，选择“空项目”。\n\nVisual C# - 项目\n\n- 控制台应用程序\n- Windows Forms 应用程序\n\n- 控制台应用程序\n\
+  \n此 C# 程序在命令窗口中显示输出。 示例\n\n```\nclass MyClass {\n    static void Main() {\n    \
+  \    Console.Write(\"Welcome\");\n    }\n}\n```\n\n其中 `Console.Write()` 方法用于在屏幕上显示输出，`Console.ReadLine()`\
+  \ 方法在运行时读取数据 ## 数据类型\n\n## 下表显示了支持的数据类型，包括存储大小和范围。`byte` (1), `Boolean` (true /\
+  \ false), `integer` (+/**\n\n\n\n\n\n**`32,767)`, `long` (10 位整数), `single` (4 字节浮点数),\
+  \ `double` (8 字节浮点数), `decimal` (14 字节 29 位整数), `date` (年份 1 到 9999), `string` (字符串)**\n\
+  \n![](img/Image00002.gif)\n\n| 数据类型 | 存储大小 | 范围 |\n| :--- | :--- | :--- |\n| `byte`\
+  \ | 1 字节 | 0 到 255 |\n| `boolean` | 2 字节 | `True` 或 `False` |\n| `integer` | 2 字节\
+  \ | -32,768 到 32,767 |\n| `long` (整数) | 4 字节 | +/- 10 位整数 |\n| `longlong` (长整数)\
+  \ | 8 字节 | +/- 19 位整数 |\n| `single` (单精度浮点数[4 字节]) | -3.4 E38 到 -1.4E-45 |\n| `double`\
+  \ (双精度浮点数 8 字节) | 负值 -1.7E308 到 -4.9E-324；正值 4.9E-324 到 1.7E308 |\n| `currency`\
+  \ (比例缩小整数) | 8 字节 | +/- 15 位 |\n| `decimal` | 14 字节 | +/- 29 位 |\n| `date` | 8 字节\
+  \ | 1000 年 1 月 1 日至 9999 年 12 月 31 日 |\n| `object` | 4 字节 | 任意 `Object` 引用 |\n|\
+  \ `string` (变变长度) | 10 字节 + 字符串长度 | 0 到约 20 亿 |\n| `string` (固定长度) | 字符串长度 | 1 到约\
+  \ 65,400 个 `variant`（带数字） |\n\n## **算术运算符**\n\n- `+` 加法\n- `−` 减法\n- `*` 乘法\n- `/`\
+  \ 除法\n\n使用上述算术运算符，我们可以在 c-sharp 语言中进行许多计算。\n\n```csharp\nint num1, num2, add;\n\
+  num1 = Convert.ToInt32(Console.ReadLine());\nnum2 = Convert.ToInt32(Console.ReadLine());\n\
+  add = num1 + num2;\nConsole.Write(add);\n```\n\n## **关系运算符**\n\n| 运算符 | 含义 |\n|\
+  \ :--- | :--- |\n| `<` | 小于 |\n| `<=` | 小于等于 |\n| `>` | 大于 |\n| `>=` | 大于等于 |\n\
+  | `==` | 等于 |\n| `!=` | 不等于 |\n\n16 bytes 直到 `Double` 范围内的任意数值\n\n```csharp\nint\
+  \ a, b, c;\na = 2;\nb = 3;\nif(a < b)\nConsole.WriteLine(\"a is less than b\");\n\
+  ```\n\n上述代码测试了 a 是否小于 b 并显示结果。\n\n## **字符串与字符**\n\n通常做法是使用 `string` 关键字来声明字符串变量。`String`\
+  \ 类拥有克隆字符串、比较字符串、拼接字符串和复制字符串的方法。该类还提供了在字符串中查找子字符串、查找字符或子字符串索引、替换字符、分割字符串、修剪字符串以及为字符串添加填充的方法。`string`\
+  \ 类还提供了将字符串字符转换为大写或小写的方法。\n\n```csharp\nstring fname, lname;\nfname = \"Rowan\"\
+  ;\nlname = \"Atkinson\";\nfname.Length .ToCharArray() .Empty\n.Substring(index)\n\
+  ```\n\n- 返回给定字符串中字符的数量\n- 它将给定字符串转换为字符数组\n- 它检查给定字符串是否为空\n- 从给定索引返回子字符串\n- `.Join(string,string)`\
+  \ - 并两个字符串\n\n`+` 运算符也用于组合多个字符串。\n\n```csharp\nstring authorDetails = firstName\
+  \ + \" \" + lastName + \" is \" + age + \" years\";\n```\n\n`char` 数据类型表示 .NET 中的一个字符。在\
+  \ .NET 中，文本被存储为顺序的只读 `Char` 对象集合。C# 字符串的末尾没有空终止符；因此，C# 字符串可以包含任意数量的嵌入式空字符（`'\\0'`）。\n\
+  \n```csharp\nchar ch=’A’;\nchar[] chars = { 'M', 'a', 'h', 'e', 's', 'h' };\n```\n\
+  \n## **C# 阶乘程序**\n\n```csharp\nusing System;\n\npublic class FactorialExample\n\
+  {\n    public static void Main(string[] args)\n    {\n        int i,fact=1,number;\n\
+  \        Console.Write(\"Enter any Number: \");\n        number= int.Parse(Console.ReadLine());\n\
+  \        for(i=1;i<=number;i++){\n            fact=fact*i;\n        }\n        Console.Write(\"\
+  Factorial of \" +number+\" is: \"+fact); \n    }\n}\n```\n\n输出：\nEnter any Number:\
+  \ 6\nFactorial of 6 is: 720\n\n## **第二模块**\n\n类与对象介绍 – 导言 - 类、对象、方法、属性和实例变量 - 声明带有方法的类并实例化类的对象\
+  \ - 声明带有参数的方法 - 带有属性和使用 set/get 访问器的 UML 类图 软件工程\n\n## **类、对象、方法、属性和实例变量**\n\n通常做法是使用\
+  \ `string` 关键字来声明字符串变量。`String` 类拥有克隆字符串、比较字符串、拼接字符串和复制字符串的方法。该类还提供了在字符串中查找子字符串、查找字符或子字符串索引、替换字符、分割字符串、修剪字符串以及为字符串添加填充的方法。`string`\
+  \ 类还提供了将字符串字符转换为大写或小写的方法。\n\n```csharp\nstring fname, lname;\nfname = \"Rowan\"\
+  ;\nlname = \"Atkinson\";\nfname.Length .ToCharArray() .Empty\n.Substring(index)\n\
+  ```\n\n- 返回给定字符串中字符的数量\n- 它将给定字符串转换为字符数组\n- 它检查给定字符串是否为空\n- 从给定索引返回子字符串\n- `.Join(string,string)`\
+  \ - 并两个字符串\n\n`+` 运算符也用于组合多个字符串。\n\n```csharp\nstring authorDetails = firstName\
+  \ + \" \" + lastName + \" is \" + age + \" years\";\n```\n\n`char` 数据类型表示 .NET 中的一个字符。在\
+  \ .NET 中，文本被存储为顺序的只读 `Char` 对象集合。C# 字符串的末尾没有空终止符；因此，C# 字符串可以包含任意数量的嵌入式空字符（`'\\0'`）。\n\
+  \n```csharp\nchar ch=’A’;\nchar[] chars = { 'M', 'a', 'h', 'e', 's', 'h' };\n```\n\
+  \n## **C# 阶乘程序**\n\n```csharp\nusing System;\n\npublic class FactorialExample\n\
+  {\n    public static void Main(string[] args)\n    {\n        int i,fact=1,number;\n\
+  \        Console.Write(\"Enter any Number: \");\n        number= int.Parse(Console.ReadLine());\n\
+  \        for(i=1;i<=number;i++){\n            fact=fact*i;\n        }\n        Console.Write(\"\
+  Factorial of \" +number+\" is: \"+fact); \n    }\n}\n```\n\n输出：\nEnter any Number:\
+  \ 6\nFactorial of 6 is: 720\n\n## **第二模块**\n\n类与对象介绍 – 导言 - 类、对象、方法、属性和实例变量 - 声明带有方法的类并实例化类的对象\
+  \ - 声明带有参数的方法 - 带有属性和使用 set/get 访问器的 UML 类图 软件工程\n\n## **类、对象、方法、属性和实例变量**\n\n通常做法是使用\
+  \ `string` 关键字来声明字符串变量。`String` 类拥有克隆字符串、比较字符串、拼接字符串和复制字符串的方法。该类还提供了在字符串中查找子字符串、查找字符或子字符串索引、替换字符、分割字符串、修剪字符串以及为字符串添加填充的方法。`string`\
+  \ 类还提供了将字符串字符转换为大写或小写的方法。\n\n```csharp\nstring fname, lname;\nfname = \"Rowan\"\
+  ;\nlname = \"Atkinson\";\nfname.Length .ToCharArray() .Empty\n.Substring(index)\n\
+  ```\n\n- 返回给定字符串中字符的数量\n- 它将给定字符串转换为字符数组\n- 它检查给定字符串是否为空\n- 从给定索引返回子字符串\n- `.Join(string,string)`\
+  \ - 并两个字符串\n\n`+` 运算符也用于组合多个字符串。\n\n```csharp\nstring authorDetails = firstName\
+  \ + \" \" + lastName + \" is \" + age + \" years\";\n```\n\n`char` 数据类型表示 .NET 中的一个字符。在\
+  \ .NET 中，文本被存储为顺序的只读 `Char` 对象集合。C# 字符串的末尾没有空终止符；因此，C# 字符串可以包含任意数量的嵌入式空字符（`'\\0'`）。\n\
+  \n```csharp\nchar ch=’A’;\nchar[] chars = { 'M', 'a', 'h', 'e', 's', 'h' };\n```\n\
+  \n## **C# 阶乘程序**\n\n```csharp\nusing System;\n\npublic class FactorialExample\n\
+  {\n    public static void Main(string[] args)\n    {\n        int i,fact=1,number;\n\
+  \        Console.Write(\"Enter any Number: \");\n        number= int.Parse(Console.ReadLine());\n\
+  \        for(i=1;i<=number;i++){\n            fact=fact*i;\n        }\n        Console.Write(\"\
+  Factorial of \" +number+\" is: \"+fact); \n    }\n}\n```\n\n输出：\nEnter any Number:\
+  \ 6\nFactorial of 6 is: 720\n\n## **第二模块**\n\n类与对象介绍 – 导言 - 类、对象、方法、属性和实例变量 - 声明带有方法的类并实例化类的对象\
+  \ - 声明带有参数的方法 - 带有属性和使用 set/get 访问器的 UML 类图 软件工程\n\n## **方法**\n\n在 C# 中，我们通过创建一个类来开始。类描述了任务。例如，一个类可能包含存款的方法、取款的方法以及查询余额的方法。到为止，我们使用了汽车的示例来引入类、对象和方法。\n\
+  \n## **类**\n\n现在我们使用带有 `string` 类型的构造器来引入方法。\n\n## **UML 类图**\n\nUML 类图模型类，其构造器有一个类型为\
+  \ string 的名称参数。与操作一样，UML 在类图中类的第三个区域中模型构造器。类图基本上表示了系统的面向对象视图，其本质上是静态的。\n\n**Bank\
+  \ Account**\n+ Owner : String +Balance : Decimal + deposit()\nwithdrawal()\n\n**依赖**\n\
+  \n依赖意味着两个或多个类之间的关系，其中一个类的变化可能会强制另一个类发生变化。然而，它始终会创建一个更弱的关系。依赖表示一个类依赖于另一个类。\n\n**Customer\
+  \ Bank**\n\n\n\n\n\n# 使用属性以及 get 和 set 访问器的软件工程\n\n使用本章早些描述的属性似乎违反了私有数据的概念。虽然提供带有\
+  \ `get` 和 `set` 访问器的属性看起来与将其相应的实例变量设为公共相同，但事实并非如此。公共实例变量可以被程序中的任何属性或方法读取或写入。如果实例变量是私有的，客户端代码只能通过类的非私有属性或方法间接访问该实例变量。这允许类控制数据设置或返回的方式。例如，`get`\
+  \ 和 `set` 访问器可以在私有实例变量中存储的数据格式与客户端偏好的数据格式之间进行转换。\n\n## 控制结构\n\n通常情况下，应用程序中的语句按照其编写顺序一个接一个执行——这一过程被称为顺序执行。各种\
+  \ C# 语句允许你指定下一个要执行的语句不一定是顺序上的下一个语句——这被称为控制转移。\n\n![](img/Image00003.jpg)\n\n它包含两个表示要执行的操作的动作状态。每个动作状态都包含一个动作表达式——例如，“向总分中添加分数”或“向计数器加\
+  \ 1”——它指定了要执行的操作。其他操作可能包括计算或输入输出操作。活动图中的箭头表示转换，指示了动作发生的顺序。\n\n### if 单选择语句\n\n应用程序使用选择语句在备选的方案之间进行选择。例如，假设考试的及格分是\
+  \ 60。\n\n```csharp\nif ( grade >= 60 )\nConsole.WriteLine(\"Passed\");\n```\n\n\
+  上述 C# 语句确定条件 `grade >= 60` 为真为假。如果条件为真，则显示“Passed”，并执行顺序上的下一个 C# 语句。如果条件为假，则忽略输出语句，并执行顺序上的下一个\
+  \ C# 语句。\n\n![](img/Image00004.jpg)\n\n### if…else 双选择语句\n\n`if` 单选择语句仅在条件为真时执行执行指定的动作；否则，将跳过该动作。`if…else`\
+  \ 双选择语句允许你在条件为真时指定一个动作，并在条件为假时指定另一个不同的动作。\n\n```csharp\nif ( grade >= 60 )\nConsole.WriteLine(\"\
+  Passed\");\nelse\nConsole.WriteLine(\"Failed\");\n```\n\n例如，如果 `grade >= 60` 为真，C#\
+  \ 语句将显示“Passed”，但如果 `grade < 60` 为真，则显示“Failed”。在任何情况下，显示完成后，都会执行顺序上的下一个语句。`else`\
+  \ 部分体也进行了缩进。无论你选择何种缩进规范，都应该始终应用于整个应用程序。不遵守统一间距规范的应用程序很难阅读。\n\n![](img/Image00005.jpg)\
+  \ 条件运算符 (?:)\n\nC# 提供了条件运算符 `?:`，它可以替代 `if…else` 语句。这是 C# 唯一的三元运算符——它接受三个操作数。操作数与\
+  \ `?:` 符号共同组成一个条件表达式。第一个操作数（`?` 的左侧）是一个布尔表达式（即评估结果为 `bool` 类型值——真或假的表达式），第二个操作数（在\
+  \ `?` 和 `:` 之间）是布尔表达式为真时条件表达式的值，第三个操作数（`:` 的右侧）是布尔表达式为假时条件表达式的值。\n\n```csharp\n\
+  Console.WriteLine( grade >= 60 ? \"Passed\" : \"Failed\");\n```\n\n例如，该语句显示 `WriteLine`\
+  \ 的条件表达式参数的值。前一个语句中的条件表达式如果布尔表达式 `grade >= 60` 为真，则于字符串 \"Passed\"，如果布尔表达式为假，则于字符串\
+  \ \"Failed\"。\n\n## 嵌套 if…else 语句\n\n![](img/Image00006.gif)\n\n应用程序可以通过将 `if…else`\
+  \ 语句放在其他 `if…else` 语句内部创建创建嵌套 `if…else` 语句来测试多种情况。例如，以下嵌套 `if…else` 语句对于大于等于 90\
+  \ 的考试成绩显示 A，对于 80 到 89 之间的成绩显示 B，对于 70 到 79 之间的成绩显示 C，对于 60 到 69 之间的成绩显示 D，对于所有其他成绩显示\
+  \ F：\n\n```csharp\nif ( grade >= 90 )\nConsole.WriteLine(\"A\");\nelse\nif ( grade\
+  \ >= 80 )\nConsole.WriteLine(\"B\");\nelse\nif ( grade >= 70 )\nConsole.WriteLine(\"\
+  C\");\nelse\nif ( grade >= 60 )\nConsole.WriteLine(\"D\");\nelse\nConsole.WriteLine(\"\
+  F\");\n```\n\n**模块– III**\n\n类与对象：深入探讨 - 引言 - 控制成员的访问 - 使用 `this` 引用引用当前对象的成员 -\
+  \ 索引器 - 默认和无参数构造函数–组合 - 垃圾收集与析构函数- 静态类成员 - 数据抽象与封装 – 对象初始化器– 委托 面对象编程：继承 - 多态、接口和运算符重载-异常处理\n\
+  \n## 控制成员的访问\n\n我们可以使用以下访问修符来指定类型或成员的可访问性：\n\n`public`：类型或成员可以被同一程序集中的任何其他代码或引用它的另一个程序集访问。\n\
+  \n`private`：类型或成员只能被同一类或结构体的代码访问。\n\n`protected`：类型或成员可以被同类或派生类的代码访问。\n\n`internal`：类型或成员可以被同一程序集中的代码访问，但不能从另一个程序集访问。\n\
+  \n类成员（包括嵌套类）可以使用六种访问类型进行声明。结构体成员不能声明为 `protected`，因为结构体不支持继承。\n\n## Reference\n\n\
+  `this` 关键字指向类的实例，并作为扩展方法的第一个参数的修饰。\n\n```csharp\npublic class Employee\n{\n    private\
+  \ string alias;\n    private string name;\n\n    public Employee(string name, string\
+  \ alias)\n    {\n        // 使用 this 来限定类的成员\n        // 而不是构造函数参数。\n        this.name\
+  \ = name;\n        this.alias = alias;\n    }\n}\n```\n\n为了限定被同名隐藏的成员，例如：\n\n##\
+  \ 默认和无参数构造函数\n\n对于声明了至少一个构造函数的类，编译器不会创建默认构造函数。在这种情况下，如果你希望能够无参数调用构造函数，我们必须声明一个无参数构造函数，默认构造函数，无参数构造函数通过空括号调用。\n\
+  \n```csharp\nclass Product\n{\n    public int pid;\n    public string pname;\n\n\
+  \    // 空或无参数构造函数\n    public Product()\n    {\n    }\n\n    public Product(int\
+  \ pid=10,string pname=\"Hammam\")\n    {\n        this.pid = pid;\n        this.pname\
+  \ = pname;\n    }\n\n    public void show()\n    {\n        Console.WriteLine(pid);\n\
+  \        Console.WriteLine(pname);\n    }\n\n    static void Main(string[] args)\n\
+  \    {\n        Product p = new Product();\n        p.show();\n        p.pid = 34;\n\
+  \        Product p2 = new Product(23);\n        p2.show();\n        Console.ReadKey();\n\
+  \    }\n}\n```\n\n在 `p2` 实例中，`pid` 取 23，`pname` 取构造函数的默认值。\n\n\n\n\n通用语言运行时（`CLR`）通过使用垃圾回收器执行自动内存管理，回收不再使用的对象所占用的内存，以便该内存供其他对象使用。当一个对象不再有任何引用时，该对象就可以被销毁了。每个对象都有一个特殊的成员，称为析构函数，它由垃圾回收器在回收对象内存之前调用，用于对对象执行终止清理工作。析构函数的声明方式与无参数构造函数类似，区别是它的名称是类名并以波浪号（`~`）开头，且其头部没有访问修饰符。在垃圾回收器调用对象的析构函数后，该对象就可以进行垃圾回收了。\n\
+  \n```csharp\n~ Product()\n{\n\n}\n```\n\n垃圾回收器的一个问题是，它不保证会在指定的时间执行任务。因此，垃圾回收器可以在对象变为可销毁后的任何时间调用析构函数，并可以在析构函数执行后的任何时间回收内存。\n\
+  \n### 静态成员\n\n每个对象都拥有类中所有实例变量的副本。在某些情况下，某个特定变量的拷贝应该由类的所有对象共享。在这种情况下，使用静态变量。静态变量代表类范围的信息——类的所有对象共享同一份数据。静态变量的声明以关键字\
+  \ `static` 开头。\n\n```csharp\npublic class Employee {\n    public static int count\
+  \ = 0; // 内存中的对象数量\n\n    public static void showLine()\n    {\n        Console.WriteLine(―------------------------------------------);\n\
+  \    }\n}\n```\n\n在上面的示例中，`count` 是静态变量，`showLine()` 是静态函数。\n\n### 数据抽象与封装\n\n类通常会向客户端隐藏其实现细节。抽象成员没有详细的代码。这些代码将在程序的后部分编写。\n\
+  \n它用于向外部世界只显示对象的必要且核心的特征。这意味着显示必要的内容，并将不必要的内容封装在外部。可以通过使用 `private` 访问修饰符来实现隐藏。\n\
+  \n让我们来看这段代码！\n\n```csharp\nabstract class animal {\n    public abstract void eat();\
+  \ \n    public void sound()\n    {\n        Console.WriteLine(\"dog can sound\"\
+  );\n    }\n}\n```\n\n在上面的类中，`animal` 是通用类，不同种类的动物吃不同的食物。`eat()` 方法是抽象方法，稍后编写。方法重写可以通过在被重写的方法之前放置关键字\
+  \ `new` 来完成。\n\n```csharp\nclass dog : animal\n{\n    public override void eat()\
+  \ { \n        Console.WriteLine(\"dog can eat\"); \n    }\n}\n```\n\n在上面的 `dog`\
+  \ 类中重写了 `eat()` 方法。\n\n### 封装\n\n封装定义为“将一个或多个项目封装在一个物理或逻辑包中的过程”。在面向对象编程方法中，封装防止了对实现细节的访问。抽象和封装是面向对象编程的相关特征。\n\
+  \n### 继承\n\n继承允许我们根据另一个类来定义类，这使得创建和维护应用程序变得更容易。这还提供了重用代码功能的机会并加快了实现速度。现有的类被称为基类，新类被称为派生类。在下面的类中，`Rectangle`\
+  \ 是基类，`Tabletop` 是派生类。\n\n```csharp\nclass Rectangle {\n    //成员变量\n    protected\
+  \ double length; protected double width;\n\n    public Rectangle(double l, double\
+  \ w) { \n        length = l;\n        width = w;\n    }\n\n    public double GetArea()\
+  \ {\n        return length * width;\n    }\n\n    public void Display() {\n    \
+  \    Console.WriteLine(\"Length: {0}\", length);\n        Console.WriteLine(\"Width:\
+  \ {0}\", width);\n        Console.WriteLine(\"Area: {0}\", GetArea()); \n    }\n\
+  }//end class Rectangle\n\nclass Tabletop : Rectangle {\n    private double cost;\n\
+  \n    public Tabletop(double l, double w) : base(l, w) { }\n\n    public double\
+  \ GetCost() {\n        double cost;\n        cost = GetArea() * 70;\n        return\
+  \ cost;\n    }\n\n    public void Display() {\n        base.Display();\n       \
+  \ Console.WriteLine(\"Cost: {0}\", GetCost()); \n    }\n}\n```\n\n### 多态\n\n多态一词意味着有许多形式。在面向对象编程范式中，多态通常表示为“一个接口，多个函数”。\n\
+  \n多态可以是静态的或动态的。在`静态多态`中，对函数的响应在编译时确定。在`动态多态`中，它在运行时决定。\n\n### 静态多态\n\n在编译期间将函数与对象绑定的机制称为早期绑定。它也称为静态绑定。C#\
+  \ 提供了两种实现静态多态的技术。它们是——\n\n- 函数重载\n- 运算符重载\n\n```csharp\nclass Printdata {\n    void\
+  \ print(int i) {\n        Console.WriteLine(\"Printing \", i );\n    }\n    void\
+  \ print(double f) {\n        Console.WriteLine(\"Printing \" , f);\n    }\n    void\
+  \ print(string s) {\n        Console.WriteLine(\"Printing \", s);\n    }\n\n   \
+  \ static void Main(string[] args) {\n        Printdata p = new Printdata();\n  \
+  \      // 调用 print 打印整数\n        p.print(5);\n        // 调用 print 打印浮点数\n      \
+  \  p.print(500.263);\n        // 调用 print 打印字符串\n        p.print(\"string\");\n\
+  \    }\n}\n```\n\n在上面的示例中，我们为整数、浮点数和字符串编写了 `print()` 函数。\n\n### 动态多态\n\nC# 允许你创建抽象类来提供接口的部分实现。当派生类继承它时完成实现。抽象类包含抽象方法，由派生类实现。派生类具有更多专门的功能。\n\
+  \n关于抽象类的规则如下：\n\n- 我们无法创建抽象类的实例\n- 我们不能在抽象类之外声明抽象方法\n\n```csharp\nabstract class\
+  \ Shape {\n    public abstract int area();\n}\n\nclass Rectangle: Shape {\n    private\
+  \ int length;\n    private int width;\n\n    public Rectangle(int a = 0, int b =\
+  \ 0) {\n        length = a;\n        width = b;\n    }\n\n    public override int\
+  \ area () {\n        // area 方法在基类中作为抽象成员存在\n        // 在派生类中重写，称为动态多态。\n      \
+  \  Console.WriteLine(\"Rectangle class area :\");\n        return (width * length);\n\
+  \    }\n\n    static void Main(string[] args) {\n        Rectangle r = new Rectangle(10,\
+  \ 7);\n        double a = r.area();\n        Console.WriteLine(\"Area: {0}\",a);\n\
+  \        Console.ReadKey();\n    }\n}\n```\n\n### 第四部分：使用 Windows Forms 图用户界面\n\n\
+  - 简介 - Windows Forms\n- 控件属性与布局 - 标签、文本框和按钮 - 组框和面板 - 复选框和单选框 - NumericUpDown 控件\
+  \ - 鼠标事件处理-键盘事件处理–各种控件 - 多文档界面 (MDI)  - 视觉继承 - 自定义控件\n\n在窗口顶部有一个菜单栏，包含文件、编辑、视图、项目、生成、调试、数据、工具、窗口和帮助菜单。菜单栏下方是工具栏按钮，每个按钮都有定义好的任务，如创建新项目或打开现有项目。工具栏下方有两个标签——这些以标签页视图显示信息并允许用户在之间切换。\n\
+  \n#### 控件描述\n\n**Label** - Label 是 C# 中最常用的控件之一。我们可以使用 Label 控件在页面的固定位置显示文本。\n\n\
+  ```csharp\nlabel1.Text = \"这是我的第一个标签\";\n```\n\n此外可以使用 Image 属性显示图像，或者使用 ImageIndex\
+  \ 和 ImageList 属性的组合。\n\n```csharp\nlabel1.Image = Image.FromFile(\"C:\\\\testimage.jpg\"\
+  );\n```\n\n\n\n\n### **TextBox** - 允许用户通过键盘输入数据。它也可以用于显示可编辑或不可编辑的文本。要在 `TextBox`\
+  \ 控件中显示文本，你可以这样编写：\n\n```cs\ntextBox1.Text = \"welcome to our college\";\n```\n\n\
+  ### **Button** - Windows Forms 控件是封装了用户界面功能的可用组件，用于客户端 Windows 应用程序。按钮是一种控件，它是一种交互式组件，允许用户与应用程序进行通信。`Button`\
+  \ 类直接继承自 `ButtonBase` 类。用户可以使用鼠标、`ENTER` 键或在按钮获得焦点时的 `SPACEBAR`（空格键）点击按钮。\n\n```cs\n\
+  button1.Text = \"Click Here\";\n```\n\n### **CheckBox** - 指定一个可以选中（勾选）或取消选中（未勾选）的选项。\n\
+  \n![](img/Image00008.jpg) `checkBox1.Text = \"Net-informations.com\";`\n\n```cs\n\
+  checkBox1.ThreeState = true;\n```\n\n### **ComboBox** - 提供一个项目列表，用户可以通过点击列表中的项目或在框中输入内容来选择一个项目。\n\
+  \n```cs\ncomboBox1.Items.Add(\"Sunday\");\ncomboBox1.Items.Add(\"Monday\");\ncomboBox1.Items.Add(\"\
+  Tuesday\");\n```\n\n### **ListBox** - 提供一个项目列表，用户可以通过点击一个或多个项目来做出选择。\n\n```cs\n\
+  listBox1.Items.Add(\"Sunday\");\nlistBox1.Items.Add(\"Monday\");\nlistBox1.Items.Add(\"\
+  Tueday\");\n```\n\n### **Radio Button** - 单选按钮（或选项按钮）与其他 `RadioButton` 控件配对使用时，允许用户从一组选择中选择单个选项。当用户点击单选按钮时，它将变为选中状态，所有同组的其他单选按钮将变为未选中状态。\n\
+  \n![](img/Image00009.jpg)\n\n`radioButton1.Checked = true;`\n\n### **NumericUpDown**\
+  \ - `NumericUpDown` 控件允许用户提供一个旋钮（向上/向下）界面，通过向上和向下箭头遍历预定义的数字。例如 `cud` 就是一个 `NumericUpDown`\
+  \ 控件。\n\n```cs\ncud.Maximum = 100 \ncud.Minimum = 0 \ncud.Value = 10;\n```\n\n###\
+  \ **C# Mouse Events**\nWindows 编程的一个重要方面方面是鼠标的使用。\n\n- **Click**: 此事件在释放鼠标按钮时发生，通常在\
+  \ `MouseUp` 事件之前。该事件的处理程序接收一个类型为 `EventArgs` 的参数。当你只需要确定何时发生点击时，请处理此事件。\n- **MouseClick**:\
+  \ 此事件在用户用鼠标点击控件时发生。该事件的处理程序接收一个类型为 `MouseEventArgs` 的参数。当你需要在点击发生时获取有关鼠标的信息时，请处理此事件。\n\
+  - **DoubleClick**: 此事件在双击控件时发生。该事件的处理程序接收一个类型为 `EventArgs` 的参数。当你只需要确定何时发生双击时，请处理此事件。\n\
+  - **MouseDoubleClick**: 此事件在用户用鼠标双击控件时发生。该事件的处理程序接收一个类型为 `MouseEventArgs` 的参数。当你需要在双击发生时获取有关鼠标的信息时，请处理此事件。\n\
+  - **MouseDown**: 此事件在鼠标指针位于控件上且用户按下鼠标按钮时发生。该事件的处理程序接收一个类型为 `MouseEventArgs` 的参数。\n\
+  - **MouseEnter**: 此事件在鼠标指针进入控件的边界或客户区域时发生，取决于控件的类型。该事件的处理程序接收一个类型为 `EventArgs` 的参数。\n\
+  - **MouseHover**: 此事件在鼠标指针停止并停留在控件上时发生。该事件的处理程序接收一个类型为 `EventArgs` 的参数。\n- **MouseLeave**:\
+  \ 此事件在鼠标指针离开控件的边界或客户区域时发生，取决于控件的类型。该事件的处理程序接收一个类型为 `EventArgs` 的参数。\n- **MouseMove**:\
+  \ 此事件在鼠标指针在控件上移动时发生。该事件的处理程序接收一个类型为 `MouseEventArgs` 的参数。\n- **MouseUp**: 此事件在鼠标指针位于控件上且用户释放鼠标按钮时发生。该事件的处理程序接收一个类型为\
+  \ `MouseEventArgs` 的参数。\n- **MouseWheel**: 此事件在控件拥有焦点时用户旋转鼠标轮时发生。该事件的处理程序接收一个类型为\
+  \ `MouseEventArgs` 的参数。你可以使用 `MouseEventArgs` 的 `Delta` 属性来确定鼠标滚动了多少距离。\n\n### **MouseEventArgs\
+  \ Class**\n这为我们提供了关于鼠标刚刚发生了什么的信息。它有一个构造函数，但似乎并不好用。\n\n**属性：（仅限 \"get\")**\n- `X`\
+  \ = 鼠标的 x 坐标（整数）\n- `Y` = 鼠标的 y 坐标（整数）\n- `Location` = 鼠标的位置（`Point`，因此是一个 x-y 对）\n\
+  - `Button` = 按下了哪个鼠标按钮（`MouseButtons` 枚举的成员：`Left`、`Right`、`Middle`、`None` 等）\n\
+  - `Clicks` = 按钮按下并释放的次数（整数）\n- `Delta` = 鼠标旋转的刻度数（整数）\n\n我们需要为 `System.Windows.Forms`\
+  \ 使用 `using` 语句。在 `InitializeComponent` 方法中，我们需要一行：\n\n`this.MouseDown += new MouseEventHandler(this.Form_MouseDown);`\n\
+  \n事件处理程序可能像这样：\n\n```cs\nprivate void Form_MouseDown(object sender, MouseEventArgs\
+  \ e) {\n    switch (e.Button)\n    {\n        case MouseButtons.Left:\n        \
+  \    MessageBox.Show(\"Left Click\");\n            break;\n        case MouseButtons.Right:\n\
+  \            MessageBox.Show(\"Right Click\");\n            break;\n        default:\n\
+  \            break;\n    }\n}\n```\n\n### **Keyboard Events**\n有三种键盘事件：\n\n- **KeyDown**:\
+  \ 当用户按下按键时触发此事件一次。处理程序接收一个类型为 `EventArgs` 的参数。\n- **KeyPress**: 当按键或按键组合产生字符时触发此事件。例如，“Shift”加上“a”产生字符“A”。如果按住按键，`KeyPress`\
+  \ 事件可能会重复，如“AAAAAAAAA”。处理程序接收一个类型为 `KeyPressEventArgs` 的参数。\n- **KeyUp**: 当释放按键时触发此事件。处理程序接收一个类型为\
+  \ `KeyEventArgs` 的参数。\n\n因此事件的顺序为：`KeyDown`、`KeyPress`、KeyUp`。在设计文件中，我们需要一行将处理程序绑定到事件：\n\
+  \n`this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyDemo_KeyDown);`\n\
+  \n### **C# Menu Control**\nWindows Form 上的菜单通过 `MainMenu` 对象创建，它是 `MenuItem` 对象的集合。`MainMenu`\
+  \ 是表单菜单结构的容器，菜单由代表菜单部分的 `MenuItem` 对象组成。\n\n![](img/Image00010.jpg)\n\n我们可以在设计时通过添加\
+  \ `MainMenu` 组件并使用菜单设计器向其追加菜单项为 Windows Forms 添加菜单。将 `MenuStrip` 拖到表单后，你可以在表单菜单栏部分的框中输入值来直接创建菜单项。从下面的图中你可以了解如何在主菜单对象上创建每个菜单项。\n\
+  \n![](img/Image00011.jpg)\n\n### **其他控件**\n\n- **字体对话框**: 字体对话框是一个常用的对话框，显示系统当前安装的字体列表。\n\
+  - **打开文件对话框**: `OpenFileDialog` 组件允许用户浏览计算机或网络上任何计算机的文件夹，并选择一个或多个打开的文件。对话框返回用户在对话框中选择的文件路径和名称。\n\
+  - **打印对话框**: 用户可以使用打印对话框选择打印机、配置打印并执行打印作业。打印对话框提供了一种以符合 Windows 标准实现打印和打印设置对话框的方法。\n\
+  \n### **实现 MDI 表单**\n\n\n\n\n\n多文档界面（MDI）程序可以在其内部显示多个子窗口。这与单文档界面（SDI）应用程序形成对比，后者一次只能操作一个文档。Visual\
+  \ Studio 环境是多文档界面（MDI）的示例，而记事本是 SDI 应用的示例。MDI 应用通常包含一个 `Window`（窗口）菜单项，并带有用于切换窗口或文档的子菜单。\n\
+  \n![](img/Image00012.gif) 只要你将 `IsMdiContainer` 属性设置为 `True`，任何窗口都可以成为 MDI 父容器。`IsMdiContainer\
+  \ = true;`\n\n创建一个新的 C# 项目，然后你将获得一个默认表单 `Form1`。接下在项目中添加另外两个表单（`Form2`、`Form3`）。在你的表单上创建一个菜单，并在菜单点击事件中调用这两个表单。按照这个简单的分步指南创建一个小型\
+  \ MDI 应用程序。\n\n1. 转到 `File->New->Blank Solution`\n2. 在 `Project Types` 中选择 `Visual\
+  \ C# Projects`\n3. 在 `Templates` 中选择 `WindowsApplication`\n4. 在 `Name` 框中输入例如 `myBestMDI`\n\
+  5. 点击浏览按钮选择位置并点击 `OK`\n\n#### 创建主 MDI 表单(frmMDIMain) 作为容器\n\n1. 在 `View->Solution\
+  \ Explorer` 中仅点击一次 `Form1`\n2. 找到属性 `FileName` 并输入 `\"frmMDIMain.cs\"`\n3. 在 `Solution\
+  \ Explorer` 中现在双击 `frmMDIMain`\n4. 找到属性 `(Name)` 并输入 `\"frmMDIMain\"`\n5. 找到属性 `Text`\
+  \ 并输入 `\"This is the Parent\"`\n6. 找到属性 `IsMDIContainer` 并将其设置为 `true`\n7. 找到属性\
+  \ `WindowState` 并将其设置为 `Maximized`\n\n#### 创建子表单 (frmMChild) 以演示多个实例\n\n1. 转到 `Project\
+  \ Menu-Add Windows Forms` 并输入 `frmMChild`\n2. 在 `Solution Explorer` 中现在双击 `frmMChild`\n\
+  3. 找到属性 `Text` 并输入 `\"This is the Multi Instance Child\"`\n4. 找到属性 `size` 并将其设置为\
+  \ `568, 464`\n\n## 模块– V\n\n数据库与 LINQ - 简介 - 关系型数据库 - LINQ to SQL - 使用 LINQ 查询数据库\
+  \ - 动态绑定查询结果 - 使用 LINQ 从多个表中检索数据 - 创建主从视图应用程序 工具与网络资源 案例研究\n\n### 什么是 LINQ？\n\n\
+  LINQ（语言集成查询）是 `C#` 和 `VB.NET` 中的统一查询语法，用于从不同的源和格式检索数据。它集成在 `C#` 或 `VB` 中，消除了编程语言与数据库之间的不匹配，并为不同类型的数据源提供了单一的查询接口。\n\
+  \n例如，SQL 是一种用于从数据库保存和检索数据的结构化查询语言。同样，LINQ 是构建在 `C#` 和 `VB.NET` 中的结构化查询语法，用于从不同的数据源（集合、`ADO.Net\
+  \ DataSet`、`XML Docs`、Web 服务和 `MS SQL Server` 以及其他数据库）\n\n下面的示例演示了一个简单的 LINQ 查询，从包含\
+  \ 'a' 的数组中获取所有字符串。\n\n![](img/Image00013.jpg) LINQ Usage\n\nLINQ 查询以对象形式返回结果。它允许你对结果集使用面向对象的方法，而无需担心将不同格式的结果转换成对象。\n\
+  \n![](img/Image00014.jpg)\n\n```\n// Data source\nstring[] names = {\"Bill\", \"\
+  Steve\", \"James\", \"Mohan\" };\n\n// LINQ Query\nvar myLinqQuery = from nm in\
+  \ names where nm.Contains('a')\nselect nm;\n\n// Query execution\nforeach(var nm\
+  \ in myLinqQuery) Console.Write(nm + \" \");\n```\n\n### 标准查询与运算符\n\nLINQ 中的标准查询运算符实际上是针对\
+  \ `IEnumerable<T>` 和 `IQueryable<T>` 类型的扩展方法。它们定义在 `System.Linq.Enumerable` 和 `System.Linq.Queryable`\
+  \ 类中。LINQ 提供了 50 多个标准查询运算符，提供过滤、排序、分组、聚合、连接等不同功能。\n\n![](img/Image00015.jpg) 查询语法中的标准查询运算符\n\
+  \n### 方法语法中的标准查询运算符\n\n![](img/Image00016.jpg) 查询语法中的标准查询运算符在编译时会被转换为扩展方法，因此两者是相同的。\n\
+  \n**OrderBy**\n\nOrderBy 按升序或降序对集合的值。它默认按升序排序集合，因为这里的 ascending 关键字是可选的。使用 descending\
+  \ 关键字按降序排序集合。\n\n```csharp\nIList<Student> studentList = new List<Student>() {\n\
+  \    new Student() { StudentID = 1, StudentName = \"John\", Age = 18 },\n    new\
+  \ Student() { StudentID = 2, StudentName = \"Steve\", Age = 15 },\n    new Student()\
+  \ { StudentID = 3, StudentName = \"Bill\", Age = 25 },\n    new Student() { StudentID\
+  \ = 4, StudentName = \"Ram\" , Age = 20 },\n    new Student() { StudentID = 5, StudentName\
+  \ = \"Ron\" , Age = 19 } \n};\n\nvar orderByResult = from s in studentList orderby\
+  \ s.StudentName select s;\n\nConsole.WriteLine(\"Ascending Order:\");\nforeach (var\
+  \ std in orderByResult)\n    Console.WriteLine(std.StudentName);\n```\n**Output**\n\
+  Ascending Order:\nBill\nJohn\nRam\nSteve\n\n**GroupBy**\n\nGroupBy 运算符根据某些键值从给定集合返回元素组。\n\
+  \n```csharp\nvar groupedResult = from s in studentList\ngroup s by s.Age;\n\n//iterate\
+  \ each group\nforeach (var ageGroup in groupedResult)\n{\n    Console.WriteLine(\"\
+  Age Group: {0}\", ageGroup.Key); //每个组有一个键\n    foreach(Student s in ageGroup) //每个组有一个内部集合\n\
+  \    {\n        Console.WriteLine(\"Student Name: {0}\", s.StudentName);\n    }\n\
+  }\n```\n**Output**\nAge Group: 18\nStudent Name: John\nAge Group: 15\nStudent Name:\
+  \ Steve\n...正如上面的示例所示，可以使用 `foreach` 循环遍历组，每个组包含一个键和一个内部集合。下图显示了调试视图中的结果。注意每个组具有执行分组的属性名。在上面的示例中，我们使用\
+  \ `Age` 来分组，因此每个组将具有 `Age` 属性名而不是 `Key` 属性名。\n\n```csharp\n// Student collection\n\
+  IList<Student> studentList = new List<Student>() {\n    new Student() { StudentID\
+  \ = 1, StudentName = \"John\", Age = 18 },\n    new Student() { StudentID = 2, StudentName\
+  \ = \"Steve\", Age = 15 },\n    new Student() { StudentID = 3, StudentName = \"\
+  Bill\", Age = 25 },\n    new Student() { StudentID = 4, StudentName = \"Ram\" ,\
+  \ Age = 20 },\n    new Student() { StudentID = 5, StudentName = \"Ron\" , Age =\
+  \ 19 }\n};\n\nIList<Standard> standardList = new List<Standard>() {\n    new Standard(){\
+  \ StandardID = 1, StandardName=\"Standard 1\"},\n    new Standard(){ StandardID\
+  \ = 2, StandardName=\"Standard 2\"},\n    new Standard(){ StandardID = 3, StandardName=\"\
+  Standard 3\"}\n};\n\nvar innerJoinResult = studentList.Join(// 外部序列\n    standardList,\
+  \ // 内部序列\n    student => student.StandardID, // 外部键选择器\n    standard => standard.StandardID,\
+  \ // 内部键选择器\n    (student, standard) => new // 结果选择器\n    {\n        StudentName\
+  \ = student.StudentName, StandardName = standard.StandardName\n    });\n\nforeach\
+  \ (var obj in innerJoinResult)\n{\n    Console.WriteLine(\"{0} - {1}\", obj.StudentName,\
+  \ obj.StandardName);\n}\n```\n**Output**\nJohn - Standard 1\nSteve - Standard 1\n\
+  Bill - Standard 2\nRam - Standard 2\n\n"

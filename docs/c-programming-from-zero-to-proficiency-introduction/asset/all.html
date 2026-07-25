@@ -1,0 +1,1943 @@
+<p><img src="d2d_images/cover.jpg" /></p>
+<p><span id="c001.xhtml"></span></p>
+<p>C# From Zero to proficiency</p>
+<p>(Introduction)</p>
+<p>––––––––</p>
+<p>A step-by-step guide to learn C#.</p>
+<p><span id="toc.xhtml"></span></p>
+<h1>Table of Contents</h1>
+<p><a href="#c001.xhtml">Title Page</a></p>
+<p><a href="#c002.xhtml">C# Programming from Zero to Proficiency
+(Introduction)</a></p>
+<p><a href="#c003.xhtml">1 Introduction to C# programming</a></p>
+<p><a href="#c004.xhtml">2 Thank you</a></p>
+<p><a href="#other.also_by_back_51311_back.xhtml">Also By Patrick
+Felicia</a></p>
+<p><span id="c002.xhtml"></span></p>
+<p>Patrick Felicia</p>
+<p><span style="font-weight: bold">C# From Zero to Proficiency
+</span></p>
+<p>(Introduction)</p>
+<p>Copyright © 2020 Patrick Felicia</p>
+<p>All rights reserved. No part of this book may be reproduced, stored
+in retrieval systems, or transmitted in any form or by any means,
+without the prior written permission of the publisher (Patrick Felicia),
+except in the case of brief quotations embedded in critical articles or
+reviews.</p>
+<p>Every effort has been made in the preparation of this book to ensure
+the accuracy of the information presented. However, the information
+contained in this book is sold without warranty, either expressed or
+implied. Neither the author and its dealers and distributors will be
+held liable for any damages caused or alleged to be caused directly or
+indirectly by this book.</p>
+<p>First published: February 2020</p>
+<p>Published by Patrick Felicia</p>
+<p>Credits</p>
+<p>Author: Patrick Felicia.</p>
+<p><span style="font-weight: bold">Patrick Felicia</span> is a lecturer
+and researcher at Waterford Institute of Technology, where he teaches
+and supervises undergraduate and postgraduate students.  He obtained his
+MSc in Multimedia Technology in 2003 and PhD in Computer Science in 2009
+from University College Cork, Ireland. He has published several books
+and articles on the use of video games for educational purposes,
+including the Handbook of Research on Improving Learning and Motivation
+through Educational Games: Multidisciplinary Approaches (published by
+IGI), and Digital Games in Schools: a Handbook for Teachers, published
+by European Schoolnet. Patrick is also the Editor-in-chief of the
+International Journal of Game-Based Learning (IJGBL), and the Conference
+Director of the Irish Symposium on Game-Based Learning, a popular
+conference on games and learning organized throughout Ireland. He has
+also published books on coding with C# through the creation of
+games.</p>
+<p>Books from the same author</p>
+<p><a href="https://books2read.com/u/m2veDd"
+style="font-weight: bold">JavaScript from Zero to Proficiency
+(Beginner)</a><span style="font-weight: bold">: </span>In this book, you
+will become more comfortable with JavaScript even if you have never
+coded before. This book will teach you how to code from scratch, explain
+programing principles such as variables, methods, statements, and much
+more. You will also learn how JavaScript can be used to add interaction
+to web pages using events, the DOM, and other key JavaScript concepts
+using a step-by-step method.</p>
+<p><a href="https://books2read.com/u/bQ0r64"
+style="font-weight: bold">Unity 5 from Zero to Proficiency
+(Foundations):</a> In this book, you will become more comfortable with
+Unity's interface and its core features by creating a project that
+includes both an indoor and an outdoor environment. This book only
+covers drag and drop features, so that you are comfortable with Unity's
+interface before starting to code (in the next book). After completing
+this book, you will be able to create outdoors environments with
+terrains and include water, hills, valleys, sky-boxes, use built-in
+controllers (First- and Third-Person controllers) to walk around the 3D
+environment and also add and pilot a car and an aircraft.</p>
+<p>Support and Resources for this Book</p>
+<p>A companion website has been set-up for this book, where you can
+download the full project for this book, with all the code throughout
+the book, so that you can check your own code, along with the code
+solutions for the challenges provided in each chapter.</p>
+<p>To avail of this content, you can open the following link:</p>
+<p><a
+href="http://learncsharpforbeginners.wordpress.com/">http://learncsharpforbeginners.wordpress.com/</a></p>
+<p>This site also provides you with the opportunity to subscribe to a my
+mailing list and receive:</p>
+<ul>
+<li>your book in the pdf format (FREE copy) so that you can open it on
+any computer.</li>
+<li>regular updates and tutorials on C#.</li>
+<li>coupons to receive more than 30% discounts on some of my books.</li>
+</ul>
+<p>This book is dedicated to Mathis &amp; Helena</p>
+<p>––––––––</p>
+<div class="decoration-scene-break">
+<div class="decoration-scene-break-inner">
+<img src="d2d_images/scene_break.png" class="decoration-scene-break"
+alt="image" />
+</div>
+</div>
+<p>[  ]</p>
+<p>Preface</p>
+<p><span class="first-scene-phrase"><span
+class="first-in-scene character-t">T</span>his book is part of</span> a
+series entitled <span style="font-weight: bold">C# from Zero to
+Proficiency</span>. In this book series, you have the opportunity to
+learn C# programming from scratch and to become proficient in this
+popular programming language.</p>
+<p>In this book entitled "<span style="font-weight: bold">C# from Zero
+to Proficiency (Introduction)</span>" you will discover how to quickly
+get started with C#; you will learn about how to use variables, methods,
+conditional statements and you will also write your own code.</p>
+<p>What you Need to Use this Book</p>
+<p>To complete the project presented in this book, you only need an
+Integrated Development Environment such as Visual Studio Community.</p>
+<p>In terms of computer skills, all the knowledge introduced in this
+book will assume no prior programming experience from the reader.
+Although this book includes programming, you will be guided
+step-by-step. So for now, you only need to be able to perform common
+computer tasks such as typing, and opening and saving files.</p>
+<p>Who this Book is for</p>
+<p>If you can answer <span style="font-weight: bold">yes</span> to all
+these questions, then this book is for you:</p>
+<ul>
+<li>Are you a total beginner in C# programming?</li>
+<li>Would you like to get started fast with C# concepts?</li>
+<li>Although you may have had some prior exposure to C#, would you like
+to delve more into C#?</li>
+</ul>
+<p>If you can answer yes to all these questions, then this book is <span
+style="font-weight: bold; text-decoration: underline">not</span> for
+you:</p>
+<ul>
+<li>Can you already easily code in C#?</li>
+<li>Are you looking for a reference book on C#?</li>
+<li>Are you an experienced (or at least advanced) C# programmer?</li>
+</ul>
+<p>If you can answer yes to these three questions, you may instead look
+for other books in this series. To see the content and topics covered by
+these books, you can check the official website: <span
+style="font-weight: bold">http://www.learncsharpforbeginners.wordpress.com</span>.</p>
+<p>Improving the Book</p>
+<p>Although great care was taken in checking the content of this book, I
+am human, and some errors could remain in the book. As a result, it
+would be great if you could let me know of any issue or error you may
+have come across in this book, so that it can be solved and the book
+updated accordingly. To report an error, you can email me (<a
+href="mailto:learncsharpforbeginners@gmail.com">learncsharpforbeginners@gmail.com</a>)
+with the following information:</p>
+<ul>
+<li>Name of the book.</li>
+<li>The page where the error was detected.</li>
+<li>Describe the error and also what you think the correction should
+be.</li>
+</ul>
+<p>Once your email is received, the error will be checked, and, in the
+case of a valid error, it will be corrected and the book page will be
+updated to reflect the changes accordingly.</p>
+<p>Supporting the Author</p>
+<p>A lot of work has gone into this book and it is the fruit of long
+hours of preparation, brainstorming, and finally writing. As a result, I
+would ask that you do not distribute any illegal copies of this
+book.</p>
+<p>If some of your friends are interested in the book, you can refer
+them to the book’s official website (<a
+href="http://www.learncsharpforbeginners.wordpress.com/"
+style="font-weight: bold">http://www.learncsharpforbeginners.wordpress.com/</a>)
+where they can either buy the book, enter a monthly draw to be in for a
+chance of receiving a free copy of the book, or to be notified of future
+promotional offers.</p>
+<p>Table of Contents</p>
+<p>1 Introduction to C# programming</p>
+<div class="poetry">
+<p>What is C#</p>
+<p>Choosing a code editor</p>
+<p>Installing Visual Studio</p>
+<p>Creating your first application</p>
+<p>Introduction to C# syntax</p>
+<p>Statements</p>
+<p>Comments</p>
+<p>Variables</p>
+<p>Using variables</p>
+<p>Operators</p>
+<p>Conditional statements</p>
+<p>Methods</p>
+<p>Scope of variables</p>
+<p>A few things to remember when you create your applications
+(checklist)</p>
+<p>Best practices</p>
+<p>Level roundup</p>
+</div>
+<p>2 Thank you</p>
+<p>Content Covered by this Book</p>
+<ul>
+<li>Chapter 1, <a href="#c003.xhtml__Ref494197817"
+style="font-style: italic; text-decoration: none">Introduction to C#
+programming</a>, provides an introduction to general programming
+concepts. including C# syntax, variables and methods. In this chapter,
+you will start to create your first application and combine variables,
+and methods.</li>
+<li>Chapter 2 summarizes the topics covered in this book and provides
+you with more information on the next steps to follow.</li>
+</ul>
+<p>What you Need to Use this Book</p>
+<p>To complete the project presented in this book, you only need Visual
+Studio (e.g., Visual Studio Community). In terms of computer skills, all
+knowledge introduced in this book will assume no prior programming
+experience from the reader. So for now, you only need to be able to
+perform common computer tasks, such as downloading items, opening and
+saving files, be comfortable with dragging and dropping items and
+typing.</p>
+<p>Who this Book is for</p>
+<p>If you can answer <span style="font-weight: bold">yes</span> to all
+these questions, then this book is for you:</p>
+<ol type="1">
+<li>Would you like to learn how to code in C#?</li>
+<li>Would you like to know how to use C# to create simple command-line
+programs?</li>
+<li>Would you like to discover more C# features?</li>
+<li>Although you may have had some prior exposure to C#, would you like
+to delve more into Object-Oriented Programming?</li>
+</ol>
+<p>Who this Book is not for</p>
+<p>If you can answer yes to all these questions, then this book is <span
+style="font-weight: bold; text-decoration: underline">not</span> for
+you:</p>
+<ol type="1">
+<li>Can you already code your own C# code?</li>
+<li>Are you looking for a reference book on C# programming?</li>
+<li>Are you a professional C# developer?</li>
+</ol>
+<p>If you can answer yes to all three questions, you may instead look
+for the other books in the series on the <a
+href="http://www.learncsharpforbeginners.wordpress.com/"
+style="text-decoration: none">official website
+(http://www.learncsharpforbeginners.wordpress.com</a>).</p>
+<p>How you will Learn from this Book</p>
+<p>Because all students learn differently and have different
+expectations of a course, this book is designed to ensure that all
+readers find a learning mode that suits them. Therefore, it includes the
+following:</p>
+<ul>
+<li>A list of the learning objectives at the start of each chapter so
+that readers have a snapshot of the skills that will be covered.</li>
+<li>Each section includes an overview of the activities covered.</li>
+<li>Many of the activities are step-by-step, and learners are also given
+the opportunity to engage in deeper learning and problem-solving skills
+through the challenges offered at the end of each chapter.</li>
+<li>Each chapter ends-up with a quiz and challenges through which you
+can put your skills (and knowledge acquired) to the test. Challenges
+consist in coding, debugging, or creating new features based on the
+knowledge that you have acquired in the chapter.</li>
+<li>The book focuses on the core skills that you need. While some
+sections go into more detail, once concepts have been explained, links
+are provided to additional resources, where necessary.</li>
+<li>The code is introduced progressively and it is also explained in
+detail.</li>
+<li>You also gain access to several videos that help you along the way,
+especially for the most challenging topics.</li>
+</ul>
+<p>Format of each Chapter and Writing Conventions</p>
+<p>Throughout this book, and to make reading and learning easier, text
+formatting and icons will be used to highlight parts of the information
+provided and to make the book easy to read.</p>
+<p>Special Notes</p>
+<p>Each chapter includes resource sections, so that you can further your
+understanding and mastery of C#; these include:</p>
+<ul>
+<li>A quiz for each chapter: these quizzes usually include 10 questions
+that test your knowledge of the topics covered throughout the chapter.
+The solutions are provided on the companion website.</li>
+<li>A checklist: it consists of between 5 and 10 key concepts and skills
+that you need to be comfortable with before progressing to the next
+chapter.</li>
+<li>Challenges: each chapter includes a challenge section where you are
+asked to combine your skills to solve a particular problem.</li>
+</ul>
+<p>Author’s notes appear as illustrated below:</p>
+<p>Author’s suggestions appear in this box.</p>
+<p>Code appears as illustrated below:</p>
+<p>public int score;</p>
+<p>public string playersName = "Sam";</p>
+<p>Checklists that include the important points covered in the chapter
+appear as illustrated below:</p>
+<table style="text-align: justify">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td style="font-size: medium"><p><img src="d2d_images/image004.png"
+width="98" height="98"
+alt="http://cdn2.hubspot.net/hub/377822/file-809787244-png/checklist.png?t=1421359715283" /></p></td>
+<td><ul>
+<li>Item1 for check list.</li>
+<li>Item2 for check list.</li>
+<li>Item3 for check list.</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p>How Can You Learn Best from this Book?</p>
+<ul>
+<li>Talk to your friends about what you are doing.</li>
+</ul>
+<div class="blockquote">
+<p>We often think that we understand a topic until we have to explain it
+to friends and answer their questions. By explaining your different
+projects, what you just learned will become clearer to you.</p>
+</div>
+<ul>
+<li>Do the exercises.</li>
+</ul>
+<div class="blockquote">
+<p>All chapters include exercises that will help you to learn by doing.
+In other words, by completing these exercises, you will be able to
+better understand the topics and gain practical skills (i.e., rather
+than just reading).</p>
+</div>
+<ul>
+<li>Don’t be afraid of making mistakes.</li>
+</ul>
+<div class="blockquote">
+<p>I usually tell my students that making mistakes is part of the
+learning process; the more mistakes you make and the more opportunities
+you have for learning. At the start, you may find the errors
+challenging, or you may find that your application does not work as
+expected until you understand what went wrong.</p>
+</div>
+<ul>
+<li>Challenge yourself.</li>
+</ul>
+<div class="blockquote">
+<p>All chapters include a challenge section where you can decide to take
+on a particular challenge to improve your game or skills. These
+challenges are there for you to think creatively and to apply the
+knowledge that you have acquired in each chapter using a problem-based
+approach.</p>
+</div>
+<ul>
+<li>Learn in chunks.</li>
+</ul>
+<div class="blockquote">
+<p>It may be challenging to go through five or six chapters straight, as
+it may lower your motivation. Instead, give yourself enough time to
+learn, go at your own pace, and learn in small units (e.g., between 15
+and 20 minutes per day). This will do at least two things for you: it
+will give your brain the time to "digest" the information that you have
+just learned, so that you can start fresh the following day. It will
+also make sure that you don’t "burn-out" and that you keep your
+motivation levels high.</p>
+</div>
+<p>Feedback</p>
+<p>While I have done everything possible to produce a book of high
+quality and value, I always appreciate feedback from readers so that the
+book can be improved accordingly. If you would like to give feedback on
+this book, you can email me at <a
+href="mailto:learncsharpforbeginners@gmail.com"
+style="font-weight: bold">learncsharpforbeginners@gmail.com</a>.</p>
+<p>Improving the Book</p>
+<p>Although great care was taken in checking the content of this book, I
+am human, and some errors could remain in the book. As a result, it
+would be great if you could let me know of any issue or error you may
+have come across in this book, so that it can be solved and so that the
+book can be updated accordingly. To report an error, you can email me
+(<a href="mailto:learncsharpforbeginners@gmail.com"
+style="font-weight: bold; text-decoration: none">learncsharpforbeginners@gmail.com</a>)
+with the following information:</p>
+<ul>
+<li>Name of the book.</li>
+<li>The page or section where the error was detected.</li>
+<li>Describe the error and also what you think the correction should
+be.</li>
+</ul>
+<p>Once your email is received, the error will be checked, and, in the
+case of a valid error, it will be corrected, and the book will be
+updated to reflect the changes accordingly.</p>
+<p>Supporting the Author</p>
+<p>A lot of work has gone into this book and it is the fruit of long
+hours of preparation, brainstorming, and finally writing. As a result, I
+would ask that you do not distribute any illegal copies of this
+book.</p>
+<p>This means that if a friend wants a copy of this book, s/he will have
+to buy it through the official channels or the book’s official
+website:</p>
+<p><a href="http://www.learncsharpforbeginners.wordpress.com/"
+style="font-weight: bold; text-decoration: none">http://www.learncsharpforbeginners.wordpress.com</a>.</p>
+<p>If some of your friends are interested in the book, you can refer
+them to the book’s official website <a
+href="http://www.learncsharpforbeginners.wordpress.com/"
+style="font-weight: bold; text-decoration: none">http://www.learncsharpforbeginners.wordpress.com</a>
+where they can either buy the book, or join the mailing list to be
+notified of future promotional offers or enter a monthly draw and be in
+for a chance to receive a free copy of the book.</p>
+<p>[  ]</p>
+<p><span id="c003.xhtml"></span></p>
+<table class="chapter-title-corner-decorations" width="100%">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td class="chapter-title-corner-decoration-left-column"><div
+class="chapter-title-corner-decoration-left-column">
+<img src="d2d_images/chapter_title_corner_decoration_left.png"
+class="chapter-title-corner-decoration-left" alt="image" />
+</div></td>
+<td class="chapter-title-corner-decoration-middle-column"></td>
+<td class="chapter-title-corner-decoration-right-column"><div
+class="chapter-title-corner-decoration-right-column">
+<img src="d2d_images/chapter_title_corner_decoration_right.png"
+class="chapter-title-corner-decoration-right" alt="image" />
+</div></td>
+</tr>
+</tbody>
+</table>
+<div class="chapter-title">
+<div class="chapter-title-decoration-above">
+<div class="chapter-title-decoration-above-inner">
+<img src="d2d_images/chapter_title_above.png"
+class="chapter-title-decoration-above" alt="image" />
+</div>
+</div>
+<h1 class="chapter-title">1<br />
+<span id="c003.xhtml__Ref494197817"></span>Introduction to C#
+programming</h1>
+<div class="chapter-title-decoration-below">
+<div class="chapter-title-decoration-below-inner">
+<img src="d2d_images/chapter_title_below.png"
+class="chapter-title-decoration-below" alt="image" />
+</div>
+</div>
+</div>
+<p><span class="first-chapter-phrase"><span
+class="first-in-chapter character-i">I</span>n this section, we</span>
+will go through an introduction to C# programming and look at key
+aspects that you will need for your games, including:</p>
+<ul>
+<li>C# syntax.</li>
+<li>Variable types and scope.</li>
+<li>Methods.</li>
+</ul>
+<p>So, after completing this chapter, you will be able to:</p>
+<ul>
+<li>Understand key concepts related to C# programming.</li>
+<li>Understand the concepts of variables and methods.</li>
+<li>Create and use your own methods.</li>
+</ul>
+<p>The code solutions for this chapter are included in the <span
+style="font-weight: bold">resource pack</span> that you can download by
+following the instructions included in the section entitled "<span
+style="font-weight: bold">Support and Resources for this
+Book</span>".</p>
+<p><span style="font-weight: bold">What is C#</span></p>
+<p>C# is an object-oriented language developed by Microsoft and has been
+used, in many cases, to develop desktop applications. As it is part the
+.NET framework, it is also used for web development and apps. The fact
+that it is an object-oriented programming language means that a C#
+programme consists of a collection of objects that interact with each
+other.</p>
+<p>C# is used for many applications, including the creation of games,
+especially with the software Unity.</p>
+<p>Choosing a code editor</p>
+<p>In the next sections, you will start to write your own C# code. For
+this purpose, you will need to use a code editor, and more specifically,
+an Integrated Development Environment (IDE). These IDEs include all the
+necessary tools to compile and execute your code.</p>
+<p>Using an Ide will provide you with an easier way to create, organize
+and check your code, with some of the following features:</p>
+<ul>
+<li><span style="font-weight: bold">Text highlighting</span>: so that
+you code is clearer to read and to modify.</li>
+<li><span style="font-weight: bold">Auto-completion</span>: so that you
+don’t have to remember the name of all the variables in your code, or
+the name of some common methods.</li>
+<li><span style="font-weight: bold">Error highlighting</span>: so that
+some obvious errors are highlighted before you even test your code.</li>
+</ul>
+<p>There are many free IDEs available with their advantages and
+drawbacks, including:</p>
+<ul>
+<li>Visual Studio Code.</li>
+<li>Visual Studio Community.</li>
+<li>MonoDevelop.</li>
+<li>NetBeans.</li>
+<li>#Develop.</li>
+<li>Rider.</li>
+</ul>
+<p>All these IDEs considered, we will be using Visual Studio Community
+for this book (although you could use any of the other IDEs if you
+wish).</p>
+<p>You can download Visual Studio Community from the following site: <a
+href="https://visualstudio.microsoft.com/free-developer-offers/">https://visualstudio.microsoft.com/free-developer-offers/</a></p>
+<p>––––––––</p>
+<div class="decoration-scene-break">
+<div class="decoration-scene-break-inner">
+<img src="d2d_images/scene_break.png" class="decoration-scene-break"
+alt="image" />
+</div>
+</div>
+<p><span class="first-scene-phrase"><span
+class="first-in-scene character-i">I</span>nstalling Visual
+Studio</span></p>
+<p>Please download Visual Studio from the official site and follow the
+instructions; you should be able to download and install a version for
+Windows or Mac OS from the following site:</p>
+<p><a
+href="https://visualstudio.microsoft.com/free-developer-offers/">https://visualstudio.microsoft.com/free-developer-offers/</a></p>
+<p>Creating your first application</p>
+<p>After this brief introduction, it is now your turn to code.</p>
+<p>So that you get to experiment with your C# code, please do the
+following after installing Visual Studio:</p>
+<ul>
+<li>Please launch VS (Visual Studio).</li>
+<li>From the main window, select the button labelled <span
+style="font-weight: bold">"New Project"</span>, as illustrated in the
+next figure.</li>
+</ul>
+<p><img src="d2d_images/image012.jpg" width="576" height="184"
+alt="image" /></p>
+<p>Figure 1-1: Creating your project</p>
+<ul>
+<li>In the new window, select the option <span
+style="font-weight: bold">Other &gt; .NET &gt; Console Project
+(C#)</span>, as illustrated in the next figure:</li>
+</ul>
+<p><img src="d2d_images/image008.jpg" width="576" height="239"
+alt="image" /></p>
+<p>Figure 1-2: Creating a Console Project</p>
+<ul>
+<li>By choosing this option, you specify that you will build a project
+that will be executed in the console window.</li>
+<li>Please click on the button labelled <span
+style="font-weight: bold">"Next"</span>.</li>
+<li>In the next window, enter the name and location of your new project
+(for example <span style="font-weight: bold">myFirstproject</span>), as
+illustrated in the next figure.</li>
+</ul>
+<p><img src="d2d_images/image011.jpg" width="576" height="399"
+alt="image" /></p>
+<p>Figure 1-3: Setting-up your Project</p>
+<ul>
+<li>Click on the button labelled "<span
+style="font-weight: bold">Create"</span>.</li>
+</ul>
+<p>Once this is done Visual Studio (VS) will create all the necessary
+folders for your project and the code editor should open as follows.</p>
+<p><img src="d2d_images/image013.jpg" width="576" height="266"
+alt="image" /></p>
+<p>Figure 1-4: Your first code</p>
+<p>By default, you will see that some code has already been created for
+you, as follows:</p>
+<p>using System;</p>
+<p>namespace myFirstProject</p>
+<p>{</p>
+<p>class MainClass</p>
+<p>{</p>
+<p>public static void Main(string[] args)</p>
+<p>{</p>
+<p>Console.WriteLine("Hello World!");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>In the previous code:</p>
+<ul>
+<li>We declare that we will be using the library (or path) called <span
+style="font-weight: bold">System</span>. This is so that we can employ
+some of the useful files (i.e., classes) included in this namespace (or
+library).</li>
+<li>We declare a namespace called <span
+style="font-weight: bold">myFirstProject</span>, and we will see this
+concept later in the book. This is the equivalent of a path or library
+for some of the classes that you will use in your application.</li>
+<li>We declare a class called <span
+style="font-weight: bold">MainClass</span>. As we will see later, your
+application will be made of a collection of classes. One of these
+classes will be the class <span style="font-weight: bold">MainClass
+</span>which the starting point for your application.</li>
+<li>We also declare a method called <span
+style="font-weight: bold">Main</span>. This method will be the starting
+point for our application.</li>
+<li>In this method, and this is the most important part for now, we
+write the text "<span style="font-weight: bold">Hello World"</span> in
+the console window.</li>
+</ul>
+<p>You can now compile and execute this code by pressing the black
+triangle located in the top-left corner of the window.</p>
+<p><img src="d2d_images/image003.jpg" width="164" height="59"
+alt="image" /></p>
+<p>Figure 1-5: Running the project</p>
+<p>You can also proceed as follows to run your application:</p>
+<ul>
+<li>From the top menu, select: <span style="font-weight: bold">Run &gt;
+Run With &gt; Custom Configuration...</span>This will open a window that
+looks like the following figure.</li>
+</ul>
+<p><img src="d2d_images/image007.jpg" width="576" height="502"
+alt="image" /></p>
+<p>Figure 1-6: Running your project with custom settings</p>
+<ul>
+<li>Once the window is open, please leave all the default options as
+they are and then press the button labelled <span
+style="font-weight: bold">Run</span>.</li>
+<li>Once this is done, the console window should appear as follows.</li>
+</ul>
+<p><img src="d2d_images/image001.jpg" width="576" height="139"
+alt="image" /></p>
+<p>Figure 1-7: Your first console application</p>
+<p>As illustrated in the previous figure, the text <span
+style="font-weight: bold">"Hello World"</span> was written and displayed
+in the console window, based on your code.</p>
+<p>We could now change our code so that the message displayed is
+different:</p>
+<ul>
+<li>Please close the console window.</li>
+<li>Back in VS, please edit your code and modify it as follows (new code
+in bold).</li>
+</ul>
+<p>public static void Main(string[] args) </p>
+<p>{</p>
+<p>Console.WriteLine("Hello, this is my fist line of code");</p>
+<p>}</p>
+<p>In the previous code, we just modified the message displayed in the
+console window.</p>
+<ul>
+<li>You can then now run your code and see the new message, as
+follows:</li>
+</ul>
+<p><img src="d2d_images/image006.jpg" width="454" height="142"
+alt="image" /></p>
+<p>Figure 1-8: Displaying your  own message</p>
+<p>Introduction to C# syntax</p>
+<p>When you are using C#, you are communicating with the system asking
+it to perform actions. To communicate with the system, you are using a
+language or a set of words bound by a syntax that the computer and you
+know. This language consists of keywords, key phrases, and a syntax that
+ensures that the instructions are written and (more importantly)
+understood properly.</p>
+<p>In computer science, this language needs to be exact, precise,
+unambiguous, and with a correct syntax. In other words, it needs to be
+<span style="font-weight: bold">exact</span>.</p>
+<p>When writing C# code, you will be following a syntax; this syntax
+will consist of a set of rules that will make it possible for you to
+communicate your instructions unambiguously.  In addition to its syntax,
+C# also uses classes, and your C# applications will, by default, be
+saved as classes.</p>
+<p>In the next section, we will learn how to use this syntax. If you
+have already coded in JavaScript or C#, some of the information provided
+in the rest of this chapter may look familiar and this prior exposure to
+C# will definitely help you. This being said, C# and JavaScript, despite
+some relative similarities, are quite different in many aspects; for
+example, in C#, variables and methods are declared differently.</p>
+<p>When programming in C#, you will be using a specific syntax to
+communicate with the system; this syntax will be made of sentences that
+will be used to convey information on what you would like the computer
+to do; these sentences or statements will include a combination of
+keywords, variables, methods, or events; and the next section will
+explain how you can confidently build these sentences together and
+consequently program in C#.</p>
+<p><span style="font-weight: bold">Statements</span></p>
+<p>When you code in C#, you need to tell the system to execute your
+instructions (e.g., print information) using statements. A statement is
+literally an order or something that you ask the system to do. For
+example, in the next line of code, the statement will tell the system to
+print a message in the <span style="font-weight: bold">Console</span>
+window:</p>
+<p>Console.WriteLine("Hello Word");</p>
+<p>When writing statements, you will need to follow several rules,
+including the following:</p>
+<ul>
+<li><span style="font-weight: bold">The order of statements</span>: each
+statement is executed in the same order as it appears in the
+application. For example, in the next example, the code will print <span
+style="font-weight: bold">hello</span>, then <span
+style="font-weight: bold">world; </span>this is because the associated
+statements are in that particular sequence.</li>
+</ul>
+<p>Console.WriteLine("hello");</p>
+<p>Console.WriteLine("world");</p>
+<ul>
+<li><span style="font-weight: bold">Statements are separated by
+semi-colons</span> (i.e., semi-colon at the end of each statement).</li>
+</ul>
+<p>Note that several statements can be added on the same line, as long
+as they are separated by a semi-colon.</p>
+<p>For example, the next line of code has a correct syntax, as all of
+its statements are separated by a semi-colon.</p>
+<p>Console.WriteLine("hello")<span style="font-weight: bold">;
+</span>Console.WriteLine("world")<span
+style="font-weight: bold">;</span></p>
+<ul>
+<li><span style="font-weight: bold">Multiple spaces are ignored for
+statements</span>; however, it is good practice to add spaces around the
+operators <span style="font-weight: bold">+</span>, <span
+style="font-weight: bold">-</span>, <span
+style="font-weight: bold">/</span>, or <span
+style="font-weight: bold">%</span> for clarity. For example, in the next
+code snippet, we say that <span style="font-weight: bold">a</span> is
+equal to <span style="font-weight: bold">b</span>. You may notice that
+spaces have been included both before and after the operator <span
+style="font-weight: bold">=</span>.</li>
+</ul>
+<p>a = b;</p>
+<ul>
+<li><span style="font-weight: bold">Statements to be executed together
+(e.g., based on the same condition) can be grouped using code
+blocks</span>. In C#, code blocks are symbolized by curly brackets
+(e.g., <span style="font-weight: bold">{</span> or <span
+style="font-weight: bold">}</span>). So, in other words, if you needed
+to group several statements, you would include all of them within the
+same set of curly brackets, as follows:</li>
+</ul>
+<p>{</p>
+<p>Console.WriteLine("hello stranger!");</p>
+<p>Console.WriteLine("today, we will learn about programming");</p>
+<p>}</p>
+<p>As we have seen earlier, a statement usually employs or starts with a
+<span style="font-weight: bold">keyword</span> (i.e., a word that the
+computer knows).  Each of these keywords has a specific purpose, and
+common ones are as follows:</p>
+<ul>
+<li>Printing a message in the <span
+style="font-weight: bold">console</span> window: the keyword is <span
+style="font-weight: bold">Console.WriteLine</span>.</li>
+<li>Declaring a variable: the keyword, in this case, depends on the type
+of the variable that is declared (e.g., <span
+style="font-weight: bold">int</span> for integers, <span
+style="font-weight: bold">string</span> for text, or <span
+style="font-weight: bold">bool</span> for Boolean variables), and we
+will see more about these in the next sections.</li>
+<li>Declaring a method: the keyword to be used depends on the type of
+the data returned by the method. For example, in C#, the name of a
+method is preceded by the keyword <span
+style="font-weight: bold">int</span> when the method returns an <span
+style="font-weight: bold">integer</span>; it is preceded by the keyword
+<span style="font-weight: bold">string</span> when the method returns a
+<span style="font-weight: bold">string</span>, or by the keyword <span
+style="font-weight: bold">void</span> when the method does not return
+any information.</li>
+<li>Marking a block of instructions to be executed based on a condition:
+the keywords are <span style="font-weight: bold">if</span> and <span
+style="font-weight: bold">else</span>.</li>
+<li>Exiting a method: the keyword is <span
+style="font-weight: bold">return</span>.</li>
+</ul>
+<p>Now that you know a bit more about statements, let’s modify your
+initial code to include more statements:</p>
+<ul>
+<li>Please open the file <span
+style="font-weight: bold">Program.cs</span> that we have used earlier in
+VS.</li>
+<li>Add the following code (new code in bold) to it:</li>
+</ul>
+<p>Console.WriteLine("Hello, this is my fist line of code");</p>
+<p>{</p>
+<p>Console.WriteLine("this is my first application");</p>
+<p>Console.WriteLine("This statement and the previous one belong to the
+same block of instructions");</p>
+<p>}</p>
+<p>In the previous code:</p>
+<ul>
+<li>We have created a block of instructions that starts with an opening
+curly bracket and that ends with a closing curly bracket.</li>
+<li>Within this block, we have created two statements based on alert
+boxes; both statements are ending with a semi-colon.</li>
+</ul>
+<p>You can now save your code and run the application; you should see
+two additional messages displayed in the console window (i.e., the ones
+that you have just added).</p>
+<p>For now, using blocks of instructions may look like it will not make
+much of a difference to your coding, and this is true for now. This
+being said, blocks of instructions are very helpful, as we will see
+later, especially when we need to tell the browser to execute a list of
+instructions. This is because, in this case, instead of telling the
+system to execute each instruction individually, we can instead, ask for
+a block of instructions to be executed.</p>
+<p><span style="font-weight: bold">Comments</span></p>
+<p>In C#, you can use comments to explain your code and to make it more
+readable by others. This becomes important as the size of your code
+increases; and it is also important if you work in a team, so that other
+team members can understand your code and make amendments in the right
+places, if and when it is needed.</p>
+<p>Code that is commented is usually not executed. There are two ways to
+comment your code in C# using either <span
+style="font-weight: bold">single-</span> or <span
+style="font-weight: bold">multi-line</span> comments.</p>
+<p>In single-line comments, a <span style="font-weight: bold">double
+forward slash</span> is added at the start of a line or after a
+statement, so that this line (or part thereof) is commented, as
+illustrated in the next code snippet.</p>
+<p>//the next line prints Hello in the console window</p>
+<p>Console.WriteLine("Hello");</p>
+<p>//the next line declares the variable name</p>
+<p>string name;</p>
+<p>name = "Hello";//sets the value of the variable name</p>
+<p>In multi-line comments, any code between the characters forward slash
+and star " <span style="font-weight: bold">/*"</span> and the characters
+star and forward slash <span style="font-weight: bold">"*/"</span> will
+be commented, and this code will not be executed. This is also referred
+as <span style="font-weight: bold">comment blocks</span>.</p>
+<p>/* the next lines after the comments will print the message "hello"
+in the console window</p>
+<p>we then declare the variable name and assign a value</p>
+<p>*/</p>
+<p>Console.WriteLine("Hello");</p>
+<p>string name;</p>
+<p>name = "Hello";//sets the value of the variable name</p>
+<p>//Console.WriteLine("Hello World")</p>
+<p>/*</p>
+<p>string name;</p>
+<p>name = "My Name";</p>
+<p>*/</p>
+<p>In addition to providing explanations about your code, you can also
+use comments to prevent part of your code to be executed. This is very
+useful when you would like to debug your code and find where the error
+or bug might be, using a very simple method. By commenting sections of
+your code, and by using a process of elimination, you can usually find
+the issue quickly. For example, you can comment all the code and run the
+application; then comment half the code, and run the application. If it
+works without no errors, it means that the error is within the code that
+has been commented, and if it does not work, it means that the error is
+in the code that has not been commented. In the first case (when the
+code works), we could then just comment half of the portion of the code
+that has already been commented. So, by successively commenting more
+specific areas of our code, we can get to discover what part of the code
+includes the bug. This process is often called <span
+style="font-weight: bold">dichotomy</span> (as we successively divide a
+code section into two).</p>
+<p>Let’s use comments in our application:</p>
+<ul>
+<li>Please open the file <span
+style="font-weight: bold">Program.cs</span>.</li>
+<li>Modify the code as follows (new code in bold).</li>
+</ul>
+<p>public static void Main(string[] args)</p>
+<p>{</p>
+<p>//Console.WriteLine("Hello, this is my fist line of code");</p>
+<p>Console.WriteLine("Hello, this is my second line of code");</p>
+<p>{</p>
+<p>Console.WriteLine("this is my first application");</p>
+<p>In the previous code, we comment the message <span
+style="font-weight: bold">"Hello this is my first line of code"</span>
+and replace it with the message <span style="font-weight: bold">"Hello
+this is my second line of code"</span>.</p>
+<p>Now that you have made these changes, please save your code and run
+the application; you should see that, this time, the message <span
+style="font-weight: bold">Hello this is my first line of code</span> has
+been replaced with <span style="font-weight: bold">"Hello this is my
+second line of code"</span>.</p>
+<p>We could also use multi-line comments as follows (new code in
+bold).</p>
+<p>Console.WriteLine("Hello, this is my second line of code");</p>
+<p>{</p>
+<p>/*Console.WriteLine("this is my first application");</p>
+<p>Console.WriteLine("This statement and the previous one belong to the
+same block of instructions");*/</p>
+<p>}</p>
+<p>In the previous code, we used a multi-line comment. This means that
+the two lines comprised between /* and */, while they belong to the
+file, will not be executed.</p>
+<p>If you save your code and run the application, you should see that
+the only message displayed onscreen is <span
+style="font-weight: bold">"Hello this is my second line of
+code"</span>.</p>
+<p>––––––––</p>
+<div class="decoration-scene-break">
+<div class="decoration-scene-break-inner">
+<img src="d2d_images/scene_break.png" class="decoration-scene-break"
+alt="image" />
+</div>
+</div>
+<p><span class="first-scene-phrase"><span
+class="first-in-scene character-v">V</span>ariables</span></p>
+<p>Now that you know a bit more about statements and comments, we will
+start to learn more about variables, which are quite important in C#, as
+you will probably use them in most of your programs to perform
+calculations or to work with text.</p>
+<p>So what is a variable?</p>
+<p>A variable can be compared to a container that includes a value that
+may change over time. When using variables, we usually need to: (1)
+declare the variable by specifying its type, (2) assign a value to this
+variable, and (3) possibly combine this variable with other variables
+using operators, as illustrated in the next code snippet.</p>
+<p>int myAge;//we declare the variable myAge</p>
+<p>myAge = 20;// we set the variable myAge to 20</p>
+<p>myAge = myAge + 1; //we add 1 to the variable myAge</p>
+<p>In the previous example, we have declared a variable called <span
+style="font-weight: bold">myAge </span>and its type is <span
+style="font-weight: bold">int </span>(as in <span
+style="font-weight: bold">integer</span>). We save the value <span
+style="font-weight: bold">20</span> in this variable, and we then add
+<span style="font-weight: bold">1</span> to it.</p>
+<p>Note that in C# the variable is declared using its type followed by
+its name. As we will see later, we will also need to use what is called
+an <span style="font-weight: bold">access modifier</span> in order to
+specify how and from where this variable can be accessed.</p>
+<p>Also note that in the previous code, we have assigned the value <span
+style="font-weight: bold">myAge + 1</span> to the variable <span
+style="font-weight: bold">myAge</span>; the <span
+style="font-weight: bold">=</span> operator is an assignment operator;
+in other words, it is there to assign a value to a variable and is not
+to be understood in a strict algebraic sense (i.e., that the values or
+variables on both sides of the <span style="font-weight: bold">=</span>
+sign are equal).</p>
+<p>To make C# coding easier and leaner, you can declare several
+variables of the same type in one statement. For example, in the next
+code snippet, we declare three variables <span
+style="font-weight: bold">v1</span>, <span
+style="font-weight: bold">v2</span>, and <span
+style="font-weight: bold">v3</span> in one statement. This is because
+they are of the same type (i.e., they are <span
+style="font-weight: bold">integers</span>).</p>
+<p>int v1,v2,v3;</p>
+<p>int v4=4, v5=5, v6=6;</p>
+<p>In the code above, the first line declares the variables <span
+style="font-weight: bold">v1</span>, <span
+style="font-weight: bold">v2</span>, and <span
+style="font-weight: bold">v3</span>. All three variables are <span
+style="font-weight: bold">integers</span>. In the second line of code,
+not only do we declare three variables simultaneously, but we also
+initialize them by setting a value for each of these variables.</p>
+<p>When using variables, there are a few things that we need to
+determine including their name, their type and their scope:</p>
+<ul>
+<li><span style="font-weight: bold">Name of a variable: </span>a
+variable is usually given a unique name so that it can be identified
+easily and uniquely. The name of a variable is usually referred to as an
+<span style="font-weight: bold">identifier</span>. When defining an
+identifier, it can contain letters, digits, a minus, an underscore or a
+dollar sign, and it usually begins with a letter. Identifiers cannot be
+keywords (for example the keyword <span style="font-weight: bold">if
+</span>cannot be used as an identifier).</li>
+<li><span style="font-weight: bold">Type of variable:</span> variables
+can hold several types of data, including numbers (e.g., integers,
+doubles or floats), text (e.g., strings or characters), Boolean values
+(e.g., true or false), arrays, or objects (we will see the concept of
+arrays later in this chapter).</li>
+</ul>
+<p>string myName = "Patrick";//the text is declared using double
+quotes</p>
+<p>int currentYear = 2017;//the year needs no decimals and is declared
+as an integer</p>
+<p>float width = 100.45f;//the width is declared as a float (i.e., with
+decimals)</p>
+<ul>
+<li><span style="font-weight: bold">Variable declaration:
+</span>variables need to be declared so that the system knows what you
+are referring to if you use this variable in your code. The first step
+in using a variable is to declare or define this variable. At the
+declaration stage, the variable does not have to be assigned a value, as
+this can be done later. In the next example, we declare a variable
+called <span style="font-weight: bold">myName</span> and then assign the
+value <span style="font-weight: bold">"My Name" </span>to it.</li>
+</ul>
+<p>string myName;</p>
+<p>myName = "My Name"</p>
+<ul>
+<li><span style="font-weight: bold">Scope of a variable:</span> a
+variable can be accessed in specific contexts that depend on where in
+the application the variable was initially declared. We will look at
+this concept later.</li>
+<li><span style="font-weight: bold">Accessibility level: </span>as we
+will see later, a C# program consists of classes; for each of these
+classes, the methods and variables within can be accessed depending on
+their <span style="font-weight: bold">accessibility</span> levels and we
+will look at this principle later.</li>
+</ul>
+<p>Common variable types include:</p>
+<ul>
+<li><span style="font-weight: bold">String</span>: same as text.</li>
+<li><span style="font-weight: bold">Int</span>: integer (1, 2, 3,
+etc.).</li>
+<li><span style="font-weight: bold">Boolean</span>: true or false.</li>
+<li><span style="font-weight: bold">Float</span>: with a fractional
+value (e.g., 1.2f, 3.4f, etc.).</li>
+<li><span style="font-weight: bold">Arrays</span>: a group of variables
+of the same type. If this is unclear, not to worry, this concept will be
+explained further in this chapter.</li>
+</ul>
+<p><span style="font-weight: bold">Using variables</span></p>
+<p>In this section, we will start to use variables and combine them
+using statements and operators. So let’s get started:</p>
+<ul>
+<li>Please add the following code just after the code that you have
+previously created, as follows (new code in bold).</li>
+</ul>
+<p>//Console.WriteLine("Hello, this is my second line of code");</p>
+<p>{</p>
+<p>/*Console.WriteLine("this is my first application");</p>
+<p>Console.WriteLine("This statement and the previous one belong to the
+same block of instructions");*/</p>
+<p>}</p>
+<p>int dateOfBirth = 1990;</p>
+<p>int currentYear = 2017;</p>
+<p>int age = currentYear - dateOfBirth;</p>
+<p>Console.WriteLine("My age is " + age);</p>
+<p>In the previous code:</p>
+<ul>
+<li>We have commented the previous code that displayed <span
+style="font-weight: bold">"Hello, this is my second line of code"</span>
+using the two forward slashes; so this code will not be executed.</li>
+<li>We declare two variables <span
+style="font-weight: bold">dateOfBirth</span> and <span
+style="font-weight: bold">currentYear</span>.</li>
+<li>We then declare a variable called <span
+style="font-weight: bold">age</span>.</li>
+<li>We perform a subtraction between the variable <span
+style="font-weight: bold">currentYear</span> and the variable <span
+style="font-weight: bold">dateOfBirth</span>, and we then save the
+result in the variable called <span
+style="font-weight: bold">age</span>.</li>
+<li>Finally, we print the text "<span style="font-weight: bold">My age
+is </span>", followed by the value of the variable called <span
+style="font-weight: bold">age</span>.</li>
+</ul>
+<p>Note that adding a number and a string is equivalent to concatenating
+these two, so the result of this addition will be a string.</p>
+<p>You can now save your code and run your application; you should see
+the message "<span style="font-weight: bold">My age is 27</span>" in the
+<span style="font-weight: bold">Console</span> window.</p>
+<p><span style="font-weight: bold">Operators </span></p>
+<p>Once we have declared and assigned a value to a variable, we can use
+operators to modify or combine this variable with other variables. There
+are different types of operators available in C#, including arithmetic
+operators, assignment operators, comparison operators and logical
+operators.</p>
+<p>So let's look at each of these.</p>
+<ul>
+<li><span style="font-weight: bold">Arithmetic operators</span> are used
+to perform arithmetic operations including additions, subtractions,
+multiplications, or divisions. Common arithmetic operators include <span
+style="font-weight: bold">+</span>, <span
+style="font-weight: bold">-</span>, <span
+style="font-weight: bold">*</span>, <span
+style="font-weight: bold">/</span>, or <span
+style="font-weight: bold">%</span> (modulo) and their use is illustrated
+in the next code snippet.</li>
+</ul>
+<p>int number1 = 1;// the variable number1 is declared</p>
+<p>int number2 = 1;// the variable number2 is declared</p>
+<p>int sum = number1 + number2;// adding two numbers and store them in
+sum</p>
+<p>int sub = number1 - number2;// subtracting two numbers and store them
+in sub</p>
+<ul>
+<li><span style="font-weight: bold">Assignment operators</span> can be
+used to assign a value to a variable and include <span
+style="font-weight: bold">=</span>, <span
+style="font-weight: bold">+=</span>, <span
+style="font-weight: bold">-=</span>, <span
+style="font-weight: bold">*=</span>, <span
+style="font-weight: bold">/=</span> or <span
+style="font-weight: bold">%= </span>and their use is illustrated in the
+next code snippet.</li>
+</ul>
+<p>int number1 = 1;</p>
+<p>int number2 = 1;</p>
+<p>number1+=1; //same as number1 = number1 + 1;</p>
+<p>number1-=1; //same as number1 = number1 - 1;</p>
+<p>number1*=1; //same as number1 = number1 * 1;</p>
+<p>number1/=1; //same as number1 = number1 / 1;</p>
+<p>number1%=1; //same as number1 = number1 % 1;</p>
+<p>Note that the <span style="font-weight: bold">=</span> operator, when
+used with strings, will concatenate them (i.e., add them one after the
+other to create a new string). When used with a number and a string, the
+same will apply and the result is a string (for example "<span
+style="font-weight: bold">Hello"+1</span> will result in "<span
+style="font-weight: bold">Hello1</span>").</p>
+<ul>
+<li><span style="font-weight: bold">Comparison operators</span> are
+often used for conditions to compare two values. Comparison operators
+include <span style="font-weight: bold">==, !=</span>, <span
+style="font-weight: bold">&gt;</span>, <span
+style="font-weight: bold">&lt;</span>, <span
+style="font-weight: bold">&gt;=</span> and <span
+style="font-weight: bold">&gt;=, </span>and their use is illustrated in
+the next code snippet.</li>
+</ul>
+<p>if (number1 == number2); //if number1 equals number2</p>
+<p>if (number1 != number2); //if number1 and number2 have different
+values</p>
+<p>if (number1 &gt; number2); //if number1 is greater than number2</p>
+<p>if (number1 &gt;= number2); //if number1 is greater than or equal to
+number2</p>
+<p>if (number1 &lt; number2); //if number1 is less than number2</p>
+<p>if (number1 &lt;= number2); //if number1 is less than or equal to
+number2</p>
+<p><span style="font-weight: bold">Conditional statements</span></p>
+<p>While we have looked at simple variables such as numbers or text, and
+how to modify them through operators, we will now look at conditional
+statements.</p>
+<p><span style="font-weight: bold">Conditional statements </span>are
+statements that are performed based on a condition, hence their name.
+Their syntax is usually as follows:</p>
+<p>if (condition) statement;</p>
+<p>This means <span style="font-weight: bold">if the condition is
+verified (or true) then (and only then) the statement is
+executed</span>. When we assess a condition, we test whether a
+declaration (or statement) is true.</p>
+<p>For example, by typing <span style="font-weight: bold">if (a ==
+b)</span>, we mean <span style="font-weight: bold">"if it is true that a
+equals b"</span>. Similarly, if we type <span
+style="font-weight: bold">if (a&gt;=b)</span> we mean <span
+style="font-weight: bold">"if it is true that a equals or is greater
+than b"</span></p>
+<p>As we will see later, we can also combine conditions. For example, we
+can decide to perform a statement if two (or more) conditions are true.
+For example, by typing <span style="font-weight: bold">if (a == b
+&amp;&amp; c == 2)</span> we mean <span style="font-weight: bold">"if a
+equals b and c equals 2"</span>. In this case using the operator <span
+style="font-weight: bold">&amp;&amp;</span> means <span
+style="font-weight: bold">AND</span>, and that both conditions will need
+to be true. We could compare this to making a decision on whether we
+will go sailing tomorrow.</p>
+<p>For example, we could translate the sentence "<span
+style="font-weight: bold">if the weather is sunny and the wind speed is
+less than 5km/h then I will go sailing</span>" as follows.</p>
+<p><span style="font-weight: bold">if (weatherIsSunny</span>  <span
+style="font-weight: bold">== </span> <span
+style="font-weight: bold">true </span> <span
+style="font-weight: bold">&amp;&amp; windSpeed &lt; 5) IGoSailing</span>
+ <span style="font-weight: bold">=</span>  <span
+style="font-weight: bold">true</span>;</p>
+<p>When creating conditions, as for most natural languages, we can use
+the operator <span style="font-weight: bold">OR</span> noted <span
+style="font-weight: bold">||.</span> Taking the previous example, we
+could translate the following sentence "<span
+style="font-weight: bold">if the weather is too hot or the wind is
+faster than 5km/h then I will not go sailing</span> " as follows.</p>
+<p><span style="font-weight: bold">if (weatherIsTooHot</span>  <span
+style="font-weight: bold">== </span> <span
+style="font-weight: bold">true || windSpeed &gt; 5) IGoSailing</span>
+ <span style="font-weight: bold">=</span>  <span
+style="font-weight: bold">false</span>;</p>
+<p>Another example could be as follows.</p>
+<p>if (myName == "Patrick") alert("Hello Patrick");</p>
+<p>else alert ("Hello Stranger");</p>
+<p>In the previous code, we display the text "<span
+style="font-weight: bold">Hello Patrick</span>" if the variable <span
+style="font-weight: bold">myName</span> equals to "<span
+style="font-weight: bold">Patrick</span>"; otherwise, we display the
+message "<span style="font-weight: bold">Hello Stranger</span>".</p>
+<p>When we assess true and false conditions, we are effectively applying
+what is called <span style="font-weight: bold">Boolean logic</span>.
+Boolean logic deals with Boolean numbers that have two values 1 and 0
+(or true and false). By evaluating conditions, we are effectively
+processing Boolean numbers and applying Boolean logic. While you don’t
+need to know about Boolean logic in depth, some operators for Boolean
+logic are important, including the <span
+style="font-weight: bold">!</span> operator. It means <span
+style="font-weight: bold">NOT</span> or "<span
+style="font-weight: bold">the opposite of</span>". This means that if a
+variable is true, its opposite will be false, and vice versa. For
+example, if we consider the variable <span
+style="font-weight: bold">weatherIsGood = true</span>, the value of
+<span style="font-weight: bold">!weatherIsGood</span> will be <span
+style="font-weight: bold">false</span> (its opposite). So the condition
+<span style="font-weight: bold">if (weatherIdGood == false)</span> could
+also be written <span style="font-weight: bold">if
+(!weatherIsGood)</span> which would literally translate as "if the
+weather is <span style="font-weight: bold">NOT</span> good".</p>
+<p>Let’s experiment with conditional statements:</p>
+<ul>
+<li>Please open the file <span
+style="font-weight: bold">Program.cs</span>.</li>
+<li>Add the following code (new code in bold) at the end of the <span
+style="font-weight: bold">Main</span> method:</li>
+</ul>
+<p>Console.WriteLine("My age is " + age);</p>
+<p>Console.WriteLine("Please enter your name: ");</p>
+<p>string nameOfUser = Console.ReadLine();</p>
+<p>if (nameOfUser == "Patrick") Console.WriteLine("Hello Patrick");</p>
+<p>else Console.WriteLine("Hello Stranger");</p>
+<p>In the previous code:</p>
+<ul>
+<li>We write a message that asks the user to enter his/her name.</li>
+<li>We declare the variable <span
+style="font-weight: bold">nameOfUser</span>. This variable will then
+contain the answer (a string) entered by the user.</li>
+<li>We store the name using the method <span
+style="font-weight: bold">Console.ReadLine</span> method, which is a
+method provided by C# to read text entered by the user (after the user
+has pressed the <span style="font-weight: bold">Enter</span>).</li>
+<li>Once the name has been entered by the user, it is stored in the
+variable <span style="font-weight: bold">nameOfUser</span>.</li>
+<li>We then execute a conditional statement based on the value of the
+variable <span style="font-weight: bold">nameOfUser</span>. If the text
+entered is "<span style="font-weight: bold">Patrick</span>" (note that
+this is case-sensitive, so the browser is looking for this exact string,
+accounting for the case of each letter within), then the message "<span
+style="font-weight: bold">Hello Patrick</span>" is displayed. Otherwise,
+the message "<span style="font-weight: bold">Hello Stranger</span>" is
+displayed.</li>
+</ul>
+<p>You can now save your code and run the application, and you should
+see the following window:</p>
+<p><img src="d2d_images/image010.jpg" width="464" height="115"
+alt="image" /></p>
+<p>Figure 1-9: Recording text entered by the user</p>
+<ul>
+<li>As you enter the name <span
+style="font-weight: bold">"Patrick"</span> and press the button labelled
+"<span style="font-weight: bold">OK</span>", the message <span
+style="font-weight: bold">"Hello Patrick" </span>should appear.</li>
+</ul>
+<p><img src="d2d_images/image002.jpg" width="352" height="179"
+alt="image" /></p>
+<p>Figure 1-10: Displaying a message based on the user input</p>
+<ul>
+<li>You can then close the <span
+style="font-weight: bold">console</span> window.</li>
+</ul>
+<p>Now that we have used conditional statements for strings, we can also
+experiment with numbers. So, please amend the code in the file <span
+style="font-weight: bold">Program.cs</span> as follows (new code in
+bold).</p>
+<p>/*int dateOfBirth = 1990;</p>
+<p>int currentYear = 2017;</p>
+<p>int age = currentYear - dateOfBirth;</p>
+<p>Console.WriteLine("My age is " + age);</p>
+<p>Console.WriteLine("Please enter your name: ");</p>
+<p>string nameOfUser = Console.ReadLine();</p>
+<p>if (nameOfUser == "Patrick") Console.WriteLine("Hello Patrick");</p>
+<p>else Console.WriteLine("Hello Stranger");*/</p>
+<p>Console.WriteLine("What is 1 + 1");</p>
+<p>int result = Console.ReadLine();</p>
+<p>if (result == "2") Console.WriteLine("Well done");</p>
+<p>else Console.WriteLine("Sorry, wrong answer"); </p>
+<p>In the previous code:</p>
+<ul>
+<li>We comment the previous code.</li>
+<li>We display text that invites the user to write the solution to the
+question <span style="font-weight: bold">"What is 1 + 1"</span>.</li>
+<li>We declare a variable called <span
+style="font-weight: bold">result</span>.</li>
+<li>We then ask the user to enter his/her guess using the <span
+style="font-weight: bold">Console.ReadLine</span> method.</li>
+<li>Once the answer has been entered, it is stored in the variable <span
+style="font-weight: bold">result</span>.</li>
+<li>We then perform a conditional statement based on the value of the
+variable <span style="font-weight: bold">result</span>. If the text
+entered is "<span style="font-weight: bold">2</span>", then the message
+"<span style="font-weight: bold">Well done</span>" is displayed,
+otherwise, the message "<span style="font-weight: bold">Sorry Wrong
+Answer</span>" is displayed instead.</li>
+</ul>
+<p>Note that in the previous example, we ask for a number to be entered;
+however, because it is entered using <span
+style="font-weight: bold">Console.ReadLine</span>, it will be considered
+as a string by C#. This is the reason why we are using double quotes
+around the number "<span style="font-weight: bold">2</span>" when
+testing the answer; ideally, and we will look into this later, we could
+have converted the entry to a number and the code could have looked like
+the following:</p>
+<p>Console.WriteLine("What is 1 + 1");</p>
+<p>string resultAsString = Console.ReadLine();</p>
+<p>int result = Int32.Parse(resultAsString);</p>
+<p>if (result == 2) Console.WriteLine("Well done");   </p>
+<p>In the previous code:</p>
+<ul>
+<li>We declare the variable <span
+style="font-weight: bold">resultAsAString</span>.</li>
+<li>We convert the answer provided by the user, which is a string so
+far, to an integer (i.e., a number with no decimals).</li>
+<li>This new number is then stored in the variable called <span
+style="font-weight: bold">result</span>.</li>
+<li>The conditional statement now uses the number <span
+style="font-weight: bold">2</span> as a condition as opposed to the
+string "<span style="font-weight: bold">2</span>".</li>
+</ul>
+<p>Note that if you want to copy/paste the code from this book, make
+sure that the double quotes are straight and not curled, otherwise, the
+system may perceive the curled quotes as an error.</p>
+<p>You can now save your code and run your application, and you should
+see, as for the previous example, a text asking you to enter your answer
+to the question "What is 2 + 2".</p>
+<ul>
+<li>After entering the number <span style="font-weight: bold">2</span>
+and pressing the "<span style="font-weight: bold">OK</span>" button, a
+message saying <span style="font-weight: bold">"Well done" </span>should
+appear.</li>
+</ul>
+<p>Methods</p>
+<p>Now that you can declare and combine numbers and strings, it is a
+good time to start looking into methods.</p>
+<p>Methods can be compared to a friend or a colleague to whom you gently
+ask to perform a task, based on specific instructions, and to return
+information afterwards, if need be.</p>
+<p>For example, you could ask your friend the following: "<span
+style="font-weight: bold">Can you please tell me when I will be
+celebrating my 20th birthday given that I was born in 2000</span>". So
+you give your friend (who is good at Math :-)) the information (i.e.,
+the date of birth) and s/he will calculate the year of your 20th
+birthday and give this information back to you. So in other words, your
+friend will be given an input (i.e., the date of birth) and s/he will
+return an output (i.e., the year of your 20th birthday). Methods work
+exactly this way: they are given information (and sometimes not),
+perform an action, and then sometimes, if needed, return
+information.</p>
+<p>In programming terms, a method is a block of instructions that
+performs a set of actions.  It is executed when invoked (or put more
+simply <span style="font-weight: bold">called</span>) from the
+application, or when an event occurs (e.g., when the player has clicked
+on a button; we will see more about events in the next section). As with
+variables, methods are declared and can also be called.</p>
+<p>Methods are very useful because once the code for a method has been
+created, it can be called several times without the need to rewrite the
+same code all over again. Also, because methods can take parameters, a
+method can process these parameters and produce or return information
+accordingly; in other words, they can perform different actions and
+produce different outputs based on the input. As a result, methods can
+do one or all of the following:</p>
+<div class="poetry">
+<p>•  Perform an action.</p>
+<p>•  Return a result.</p>
+<p>•  Take parameters and process them.</p>
+</div>
+<p>A method is usually declared using two keywords followed by its name
+as follows:</p>
+<p>accessType typeOfDataReturned nameOfTheFunction
+(listOfParameters)</p>
+<p>{</p>
+<p>Perform actions here</p>
+<p>}</p>
+<p>In the previous snippet:</p>
+<ul>
+<li>The access type defines the scope of the method or, put simply, from
+where this method will be available (or can be called).</li>
+<li>The type of the data returned can be: void (no data is returned) or
+any type of data that this method could return such as integers,
+Boolean, or strings.</li>
+<li>The previous information is then followed by the name of the
+method.</li>
+<li>The list of parameters can be empty, if this method does not take
+any parameter. Otherwise, it includes a list of parameters preceded by
+their type and separated by a comma; we will cover this aspect
+later.</li>
+</ul>
+<p>Using this template, we could, for example, define the following
+method:</p>
+<p>public void myMethod ()</p>
+<p>{</p>
+<p>Console.WriteLine("hello");</p>
+<p>}</p>
+<p>In the previous code:</p>
+<ul>
+<li>The method is declared as public.</li>
+<li>Its return type is <span style="font-weight: bold">void</span>,
+which means that it does not return any data.</li>
+<li>It takes no parameters.</li>
+<li>When called this method will write the message "<span
+style="font-weight: bold">hello</span>" to the <span
+style="font-weight: bold">console</span>.</li>
+</ul>
+<p>A method can be called using the <span
+style="font-weight: bold">()</span> operator, as illustrated in the next
+code snippet:</p>
+<p>nameOfTheFunction1();</p>
+<p>nameOfTheFunction2(value);</p>
+<p>int test = nameOfFunction3(value);</p>
+<p>In the previous code, a method is called with no parameter (first
+line), or with a parameter (second line). On the third line, a variable
+called <span style="font-weight: bold">test</span> will be set with the
+value returned by the method <span
+style="font-weight: bold">nameOfFunction3</span> which takes one
+parameter.</p>
+<p>Let’s create our very own method:</p>
+<ul>
+<li>Please open the file <span
+style="font-weight: bold">Program.cs</span>, and comment your previous
+code as in the next code snippet; to speed up things, and if you are
+working with Visual Studio, you can select these lines and then press
+simultaneously <span style="font-weight: bold">CTRL + /</span> (or <span
+style="font-weight: bold">APPLE + /</span>).</li>
+</ul>
+<p>//Console.WriteLine("What is 1 + 1");</p>
+<p>//string resultAsString = Console.ReadLine();</p>
+<p>//int result = Int32.Parse(resultAsString);</p>
+<p>//if (result == 2) Console.WriteLine("Well done");</p>
+<p>//else Console.WriteLine("Sorry, wrong answer");</p>
+<ul>
+<li>Then add the following code to the <span
+style="font-weight: bold">Main</span> method:</li>
+</ul>
+<p>int myAge = calculateAge(1990);</p>
+<p>Console.WriteLine("My Age is " + myAge);</p>
+<p>}</p>
+<p>In the previous code:</p>
+<ul>
+<li>We declare a variable called <span
+style="font-weight: bold">myAge</span>.</li>
+<li>We call the method <span
+style="font-weight: bold">calculateAge</span>, passing the number <span
+style="font-weight: bold">1990</span> as a parameter.</li>
+<li>The information (or value) returned by the method is stored in the
+variable <span style="font-weight: bold">myAge</span> and then displayed
+using the <span style="font-weight: bold">alert</span> method.</li>
+</ul>
+<p>We can now create the method called <span
+style="font-weight: bold">calculateAge</span> by adding the following
+code after the method <span style="font-weight: bold">Main</span>.</p>
+<p>public static int calculateAge(int yearOfBirth)</p>
+<p>{</p>
+<p>return (2018 - yearOfBirth);</p>
+<p>}</p>
+<p>In the previous code:</p>
+<ul>
+<li>The method <span style="font-weight: bold">calculateAge</span> is
+declared; it takes one parameter called <span
+style="font-weight: bold">yearOfBirth</span>. So any parameter passed to
+this method will be referred as <span
+style="font-weight: bold">yearOfBirth</span> within this method.</li>
+<li>This method returns the result of the subtraction <span
+style="font-weight: bold">2018 – yearOfBirth</span>.</li>
+<li>When the method is called, <span
+style="font-weight: bold">yearOfBirth</span> is equal to <span
+style="font-weight: bold">1990</span>; so it will return <span
+style="font-weight: bold">28</span> (i.e., <span
+style="font-weight: bold">2018-1990)</span>.</li>
+</ul>
+<p>Note that the new method called <span
+style="font-weight: bold">calculateAge</span> is declared as static;
+this is because, the method main is static by default, and that as a
+result, it can only call a method that is also static. If you forget to
+declare this method as static and try to call it from the <span
+style="font-weight: bold">Main</span> method, the system will generate a
+message saying <span style="font-weight: bold">"An object reference is
+required for the non-static field, method, or property"</span>.</p>
+<p>The Main method is static because it is the entry point of the
+programme, and it is the first method to be called (or invoked) when the
+application is started. It is <span
+style="font-weight: bold">public</span> because it needs to be
+accessible from outside the application. Its return type is <span
+style="font-weight: bold">void</span> because it usually doesn't return
+any data. It includes parameters but these are not compulsory.</p>
+<p>For more information about the <span
+style="font-weight: bold">Main</span> method, please see the official
+documentation here: <a
+href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/"
+style="font-weight: bold; text-decoration: none">https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/</a></p>
+<p>Please save your code, and run the application, and you should see
+the following message in the console window.</p>
+<p><img src="d2d_images/image005.jpg" width="448" height="91"
+alt="image" /></p>
+<p>Figure 1-11: Displaying the value returned by the method</p>
+<p><span style="font-weight: bold">Scope of variables</span></p>
+<p>Whenever you create variables in C#, you will need to be aware of
+their scope so that you use it where its scope makes it possible for you
+to do so. This is particularly important if you use methods, as some
+variables will be used just locally, whereas others will be used
+throughout the class or the application.</p>
+<p>The scope of a variable refers to where you can use this variable in
+an application. In C#, in addition to access modifiers that will be
+covered later in this book, variables can be either <span
+style="font-weight: bold">member variables</span> or <span
+style="font-weight: bold">local variables</span>.</p>
+<ul>
+<li>Member variables can be used in a specific class or throughout your
+application, depending on their access type.</li>
+</ul>
+<p>While we will study classes in detail; put simply, your application
+will be made of several parts called classes. In our case, the entry
+point for our application is a class called <span
+style="font-weight: bold">MainClass</span>.</p>
+<ul>
+<li>Member variables can be declared at the start of the class, using
+the usual declaration syntax, preceded by what is called an access type
+(we will come back to this concept later on). They can then be used
+anywhere in the class (and sometimes outside the class also), as
+illustrated in the next code snippet.</li>
+</ul>
+<p>class MainClass</p>
+<p>{</p>
+<p>public int myVar;</p>
+<p>public void method1()</p>
+<p>{</p>
+<p>myVar = 0;</p>
+<p>}</p>
+<p>public void method2()</p>
+<p>{</p>
+<p>myVar = myVar + 1;</p>
+<p>}</p>
+<p>In the previous code, the member variable <span
+style="font-weight: bold">myVar</span> is declared at the start of the
+class <span style="font-weight: bold">MainClass</span>; it is then
+initialized in <span style="font-weight: bold">method1</span>, and
+updated in <span style="font-weight: bold">method2</span>. Note that the
+variable was declared as public, which means that not only is it
+accessible throughout the class called <span
+style="font-weight: bold">MainClass</span>, but it is also accessible
+from outside this class.</p>
+<ul>
+<li>Local variables are declared (and should only be used) within a
+specific method; hence the term local, because they can only be used
+locally, as illustrated in the next code snippet.</li>
+</ul>
+<p>public void method1()</p>
+<p>{</p>
+<p>int myVar;</p>
+<p>myVar = 0;</p>
+<p>}</p>
+<p>public void method2()</p>
+<p>{</p>
+<p>int myVar2;</p>
+<p>myVar2 = 2;</p>
+<p>}</p>
+<p>In the previous code, <span style="font-weight: bold">myVar</span> is
+a local variable to the method <span
+style="font-weight: bold">method</span>1, and can only be used within
+this method; <span style="font-weight: bold">myVar2</span> is a local
+variable to the method <span style="font-weight: bold">method</span>2,
+and can only be used within this method.</p>
+<p>Note that it is always good to avoid what is called variable
+masking/shadowing, which occurs when you give a local variable the same
+name as a member variable in the same file, as this could lead to
+confusion.</p>
+<p>Classes and member variables can be compared to a city with different
+clubs and societies. The city is made of these different clubs. Each
+club has members. Some of these members can only be accessed if you are
+already part of this specific club where they belong to; other members
+will be available more publically for people who are not part of the
+same club. Because some of these members (for example a treasurer) are
+very powerful and could change significantly the future and safety of
+the club, you may prefer that not everyone outside the club has access
+to them, as it would mean that anyone can ask them to make drastic
+changes to the club. However, all the club members, because they are
+trusted, could be granted access to this treasurer. On the other hand,
+each club could have a PR person in charge of promoting the club. In
+this case, this member could be made public so that anyone outside this
+club can access them to get information about the club (e.g., opening
+hours, features, etc.).</p>
+<p>So let’s experiment with variables and their scope:</p>
+<ul>
+<li>Please add the following code to the file <span
+style="font-weight: bold">Program.cs</span> (new code in bold).</li>
+</ul>
+<p>class MainClass</p>
+<p>{</p>
+<p>public static int myMemberVariable;</p>
+<p>public static void myMethod()</p>
+<p>{</p>
+<p>myMemberVariable = 3;</p>
+<p>Console.WriteLine("The value of myMemberVariable is " +
+myMemberVariable);</p>
+<p>}</p>
+<p>public static void Main(string[] args)</p>
+<p>{</p>
+<p>myMemberVariable = 1;</p>
+<p>Console.WriteLine("The value of myMemberVariable before calling the
+method is " + myMemberVariable);</p>
+<p>myMethod();</p>
+<p>In the previous code:</p>
+<ul>
+<li>We declare a member variable called <span
+style="font-weight: bold">myMemberVariable</span>; because it is
+declared outside any method, this variable will be a member variable and
+accessible throughout our class.</li>
+<li>It is declared as static because it will be called from the <span
+style="font-weight: bold">Main</span> method which is already static by
+default; and as we already know, a static method should only call a
+method that is also static.</li>
+<li>We then call the method <span
+style="font-weight: bold">myMethod</span>.</li>
+<li>In the method called <span
+style="font-weight: bold">myMethod</span>, we set and display the value
+of the variable <span
+style="font-weight: bold">myMemberVariable</span>.</li>
+<li>Finally, when the application is launched, the <span
+style="font-weight: bold">Main</span> method is called (as it is the
+point of entry of our application),</li>
+<li>We set the value of the variable <span
+style="font-weight: bold">myMemberVariable</span> to <span
+style="font-weight: bold">1</span>, and then call the method <span
+style="font-weight: bold">myMethod</span>.</li>
+</ul>
+<p>Please save your code and run your application. You should see a
+window similar to the following figure:</p>
+<p><img src="d2d_images/image000.jpg" width="572" height="87"
+alt="image" /></p>
+<p>Figure 1-12: Using member variables</p>
+<p>.</p>
+<p><span style="font-weight: bold">A few things to remember when you
+create your applications (checklist)</span></p>
+<p>When you start coding, you will, as for any new activity, make small
+mistakes, learn what they are, improve your coding, and ultimately get
+better at writing your applications.  As I have seen in the past with
+students learning programming, there are some common errors that are
+usually made; these don’t make you a bad programmer; on the contrary, it
+is part of the learning process because <span
+style="font-style: italic; font-weight: bold">we all learn by trial and
+error, and making mistakes is part of the learning process</span>.</p>
+<p>So, as you create your first application, set any fear aside, try to
+experiment, be curious, and get to learn the language. It is like
+learning a new foreign language: when someone from a foreign country
+understands your first sentences, you feel so empowered! So, it will be
+the same with C#, and to ease the learning process, I have included a
+few tips and things to keep in mind when writing your applications, so
+that you progress even faster. You don’t need to know all of these by
+now (I will refer to these later on, in the next chapter), but it is so
+that you are aware of it and also use this list if any error occurs. So,
+watch out for these: :-)</p>
+<div class="blockquote">
+<p>•  Each opening bracket has a corresponding closing bracket.</p>
+<p>•  All variables are written consistently (e.g., spelling and case).
+The name of each variable is case-sensitive; this means that if you
+declare a variable <span style="font-weight: bold">myvariable</span> but
+then refer to it as <span style="font-weight: bold">myVariable</span>
+later on in the code, this may trigger an error, as the variable <span
+style="font-weight: bold">myVariable</span> and <span
+style="font-weight: bold">myvariable</span>, because they have a
+different case (upper-case <span style="font-weight: bold">V</span>),
+are seen as two different variables.</p>
+<p>•  As much as possible, declare a variable prior to using it (e.g.,
+<span style="font-weight: bold">int myVar</span>).</p>
+<p>•  For each variable name, all words (except for the first word) have
+a capitalized initial. This is not a strict requirement, however, it
+will make your code more readable.</p>
+<p>•  For each method, all words (except for the first word) have a
+capitalized initial. This is not a strict requirement; however, it will
+make your code more readable.</p>
+<p>•  All statements are ended with a semi-colon.</p>
+<p>•  For <span style="font-weight: bold">if</span> statements the
+condition is within round brackets.</p>
+<p>•  For <span style="font-weight: bold">if</span> statements the
+condition uses the syntax "<span style="font-weight: bold">==</span>"
+rather than "<span style="font-weight: bold">=</span>".</p>
+<p>•  When calling a method, the exact name of this method (i.e.,
+case-sensitive) is used.</p>
+<p>•  When referring to a variable, it is done with regards to the scope
+of the variable (e.g., call local variables locally).</p>
+<p>•  Local variables are declared and can be used within the same
+method.</p>
+<p>•  Member variables are declared outside methods and can be used
+anywhere within a class.</p>
+</div>
+<h2 style="page-break-before: always">Best practices</h2>
+<p><span class="first-scene-phrase"><span
+class="first-in-scene character-a">A</span>s you will start your</span>
+journey through C# coding, you may sometimes find it difficult to
+interpret the errors produced by the browser. However, after some
+practice, you will manage to recognize them, to understand (and also
+avoid) them, and to fix them accordingly. The next list identifies the
+errors that my students often come across when they start coding in
+C#.</p>
+<p>Variable naming</p>
+<ul>
+<li>Use meaningful names that you can understand, especially after
+leaving your code for two weeks.</li>
+</ul>
+<p>string myName = "Patrick";//GOOD</p>
+<p>string b = "Patrick";//NOT SO GOOD</p>
+<ul>
+<li>Capitalize the initial of all words in the name, except for the
+first word.</li>
+</ul>
+<p>bool testIfTheNameIsCorrect = true;// GOOD</p>
+<p>bool testifthenameiscorrect = true; // NOT SO GOOD</p>
+<p>Methods</p>
+<ul>
+<li>Use unique (i.e., different) names (for member and local
+variables).</li>
+<li>Check that all opening brackets have a corresponding closing
+bracket.</li>
+<li>Indent your code.</li>
+<li>Comment your code as much as possible to explain how it works.</li>
+</ul>
+<p>––––––––</p>
+<div class="decoration-scene-break">
+<div class="decoration-scene-break-inner">
+<img src="d2d_images/scene_break.png" class="decoration-scene-break"
+alt="image" />
+</div>
+</div>
+<h2 style="page-break-before: always">Level roundup</h2>
+<p><span class="first-scene-phrase"><span
+class="first-in-scene character-s">S</span>ummary</span></p>
+<p>In this chapter, we have managed to create your very first
+applications. You have become more comfortable with the creation of
+variables and methods, as well as the display of information through the
+console window. Finally, you also learned how to employ conditional
+statements so that processing can be performed based on specific
+conditions. Building on this knowledge, you created simple programs
+where the user enters information and where the program computes and
+outputs a result accordingly. So we have covered some significant ground
+here from no knowledge of C# to creating your first application: well
+done!</p>
+<p>Quiz</p>
+<p>It is now time to test your knowledge. Please specify whether the
+following statements are TRUE or FALSE. The answers are available on the
+next page.</p>
+<ol type="1">
+<li><span style="font-weight: normal">The main point of entry in a C#
+program is the method called </span>Main<span
+style="font-weight: normal">.</span></li>
+<li><span style="font-weight: normal">The </span>Main<span
+style="font-weight: normal"> method is usually </span>public<span
+style="font-weight: normal"> so that it can be called from outside your
+application.</span></li>
+<li><span style="font-weight: normal">The Main method is usually
+declared as </span>static<span style="font-weight: normal">.</span></li>
+<li><span style="font-weight: normal">The command
+</span>Console.WriteLine<span style="font-weight: normal"> displays
+information in the </span><span
+style="font-style: italic; font-weight: normal">Console</span><span
+style="font-weight: normal"> window.</span></li>
+<li>Console.ReadLine <span style="font-weight: normal">records
+information entered by the user in the </span><span
+style="font-style: italic; font-weight: normal">Console</span><span
+style="font-weight: normal"> window.</span></li>
+<li>In C# text values are surrounded by double quotes.</li>
+<li>In C# a local variable can only be used in the method where it was
+initially defined.</li>
+<li>In C# a member variable can be used throughout the class where it
+was declared.</li>
+<li>In C# a method always returns a value.</li>
+<li>In C# a code that is commented is not executed.</li>
+</ol>
+<p>Solutions to the Quiz</p>
+<ol type="1">
+<li>TRUE.</li>
+<li>TRUE.</li>
+<li>TRUE.</li>
+<li>TRUE.</li>
+<li>TRUE.</li>
+<li>TRUE.</li>
+<li>TRUE.</li>
+<li>TRUE.</li>
+<li>FALSE.</li>
+<li>TRUE.</li>
+</ol>
+<p>Checklist</p>
+<table style="text-align: justify">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td style="font-size: medium"><p><img src="d2d_images/image004.png"
+width="98" height="98"
+alt="http://cdn2.hubspot.net/hub/377822/file-809787244-png/checklist.png?t=1421359715283" /></p></td>
+<td><p>You can move to the next chapter if you can do the following:</p>
+<ul>
+<li>Create variables.</li>
+<li>Combine variables.</li>
+<li>Create a method.</li>
+<li>Call a method.</li>
+</ul></td>
+</tr>
+</tbody>
+</table>
+<p>The solutions for the following challenges are included in the <span
+style="font-weight: bold">resource pack</span> that you can download by
+following the instructions included in the section entitled "<span
+style="font-weight: bold">Support and Resources for this
+Book</span>".</p>
+<p>Challenge 1</p>
+<p>Now that you have managed to complete this chapter and that you have
+gathered interesting skills, let’s put these to the test. This
+particular challenge will get you to become more comfortable with
+methods. The solutions are included in the resource pack.</p>
+<p>Create a method called <span
+style="font-weight: bold">calculatePrice</span> that does the
+following:</p>
+<ul>
+<li>Take two parameters called <span
+style="font-weight: bold">nbItems</span> and <span
+style="font-weight: bold">unitPrice</span>.</li>
+<li>Multiply these two numbers and store the result in a variable called
+<span style="font-weight: bold">finalPrice</span>.</li>
+<li>Return the value of the variable <span
+style="font-weight: bold">finalPrice</span>.</li>
+</ul>
+<p>Once the method has been created, call this method using two values
+of your choice and display the result returned by the method in the
+console window.</p>
+<p>Challenge 2</p>
+<p>Create a method that does the following:</p>
+<ul>
+<li>Asks the user for his/her first name.</li>
+<li>Asks the user for his/her first last name.</li>
+<li>Displays the full name (i.e., first name followed by a space,
+followed by the last name) in the console window.</li>
+<li>Once the method has been created, call this method.</li>
+</ul>
+<p><span id="c004.xhtml"></span></p>
+<table class="chapter-title-corner-decorations" width="100%">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td class="chapter-title-corner-decoration-left-column"><div
+class="chapter-title-corner-decoration-left-column">
+<img src="d2d_images/chapter_title_corner_decoration_left.png"
+class="chapter-title-corner-decoration-left" alt="image" />
+</div></td>
+<td class="chapter-title-corner-decoration-middle-column"></td>
+<td class="chapter-title-corner-decoration-right-column"><div
+class="chapter-title-corner-decoration-right-column">
+<img src="d2d_images/chapter_title_corner_decoration_right.png"
+class="chapter-title-corner-decoration-right" alt="image" />
+</div></td>
+</tr>
+</tbody>
+</table>
+<div class="chapter-title">
+<div class="chapter-title-decoration-above">
+<div class="chapter-title-decoration-above-inner">
+<img src="d2d_images/chapter_title_above.png"
+class="chapter-title-decoration-above" alt="image" />
+</div>
+</div>
+<h1 class="chapter-title">2<br />
+Thank you</h1>
+<div class="chapter-title-decoration-below">
+<div class="chapter-title-decoration-below-inner">
+<img src="d2d_images/chapter_title_below.png"
+class="chapter-title-decoration-below" alt="image" />
+</div>
+</div>
+</div>
+<p><img src="d2d_images/image009.jpg" width="153" height="203"
+alt="image" /></p>
+<p><span class="first-chapter-phrase"><span
+class="first-in-chapter character-i">I</span> would like to thank</span>
+you for completing this book. This book has only covered the basics of
+C# and learn more you need to download the book C# Programming from Zero
+to proficiency (Beginner) to learn even more C# programming skills using
+this link:</p>
+<p><a href="https://books2read.com/u/m2Mj9o"
+target="_blank">https://books2read.com/u/m2Mj9o</a></p>
+<p>So that the book can be constantly improved, I would really
+appreciate your feedback. So, <span
+style="font-style: italic; font-weight: bold">please leave me a helpful
+review </span>letting me know what you thought of the book and also send
+me an email (<a href="mailto:learncsharpforbeginners@gmail.com"
+style="font-weight: bold; text-decoration: none">learncsharpforbeginners@gmail.com</a><span
+style="font-weight: bold">)</span> with any suggestions you may have. I
+read and reply to every email.</p>
+<p>I have been publishing books for almost 6 years now, and while it has
+been a very exciting experience, it also demands a lot of energy and
+perseverance to manage to complete and publish these books. After
+publishing over 20 books on the topic of games and programming, I am
+delighted to have managed to help many people to get into coding,
+something that I had hoped but hardly imagined would happen when I first
+started publishing my books. Becoming a self-publishing author, has made
+it possible for me to publish quality, practical and helpful content
+that I know will benefit readers without being restricted by a
+publishing company in terms of content or format. This being said, as a
+self-published author, my work depends heavily on the reviews that I
+receive; without reviews, my books cannot get noticed, and will probably
+fall into oblivion; so if you have enjoyed this book and want to help
+people to find it and benefit from it, please leave a review on the
+ebook store of your choice; this would mean the world to me and also
+help to support my work.</p>
+<p>Thanks so much!!</p>
+<p>[  ]</p>
+<p>[  ]</p>
+<p><span id="other.also_by_back_51311_back.xhtml"></span></p>
+<div id="other.also_by_back_51311_back.xhtml_also-by-page">
+<div class="also-by-page-author">
+<p>Also by Patrick Felicia</p>
+</div>
+<div class="also-by-page-series">
+<p>Beginners' Guides</p>
+<p><a href="https://www.draft2digital.com/catalog/371511">A Beginner's
+Guide to 2D Platform Games with Unity</a></p>
+<p><a href="https://www.draft2digital.com/catalog/620125">A Beginner's
+Guide to 2D Shooter Games</a></p>
+<p><a href="https://www.draft2digital.com/catalog/637874">A Beginner's
+Guide to Puzzle Games</a></p>
+</div>
+<div class="also-by-page-series">
+<p>C# from Zero to Proficiency</p>
+<p><a href="https://www.draft2digital.com/catalog/662007">C# Programming
+from Zero to Proficiency (Introduction)</a></p>
+<p><a href="https://www.draft2digital.com/catalog/662009">C# Programming
+from Zero to Proficiency (Beginner)</a></p>
+</div>
+<div class="also-by-page-series">
+<p>Getting Started</p>
+<p><a href="https://www.draft2digital.com/catalog/395920">Getting
+Started with 3D Animation in Unity</a></p>
+</div>
+<div class="also-by-page-series">
+<p>JavaScript from Zero to Proficiency</p>
+<p><a href="https://www.draft2digital.com/catalog/350966">JavaScript
+from Zero to Proficiency (Beginner)</a></p>
+</div>
+<div class="also-by-page-series">
+<p>Quick Guides</p>
+<p><a href="https://www.draft2digital.com/catalog/519053">A Quick Guide
+to c# with Unity</a></p>
+<p><a href="https://www.draft2digital.com/catalog/617812">A Quick Guide
+to Procedural Levels with Unity</a></p>
+<p><a href="https://www.draft2digital.com/catalog/617819">A Quick Guide
+to 2d Infinite Runners with Unity</a></p>
+<p><a href="https://www.draft2digital.com/catalog/617838">A Quick Guide
+to Artificial Intelligence with Unity</a></p>
+<p><a href="https://www.draft2digital.com/catalog/617844">A Quick Guide
+to Card Games with Unity</a></p>
+</div>
+<div class="also-by-page-series">
+<p>Ultimate Guides</p>
+<p><a href="https://www.draft2digital.com/catalog/618950">The Ultimate
+Guide to 2D games with Unity</a></p>
+</div>
+<div class="also-by-page-series">
+<p>Unity 5 from Proficiency to Mastery</p>
+<p><a href="https://www.draft2digital.com/catalog/617052">Unity from
+Proficiency to Mastery (C# Programming)</a></p>
+</div>
+<div class="also-by-page-series">
+<p>Unity from Proficiency to Mastery</p>
+<p><a href="https://www.draft2digital.com/catalog/255001">Unity from
+Proficiency to Mastery (Artificial Intelligence)</a></p>
+</div>
+<div class="also-by-page-series">
+<p>Unity from Zero to Proficiency</p>
+<p><a href="https://www.draft2digital.com/catalog/166175">Unity from
+Zero to Proficiency (Foundations): a Step-by-step Guide to Creating your
+First Game</a></p>
+<p><a href="https://www.draft2digital.com/catalog/166185">Unity from
+Zero to Proficiency (Beginner)</a></p>
+<p><a href="https://www.draft2digital.com/catalog/166193">Unity from
+Zero to Proficiency (Intermediate)</a></p>
+<p><a href="https://www.draft2digital.com/catalog/371504">Unity from
+Zero to Proficiency (Advanced)</a></p>
+<p><a href="https://www.draft2digital.com/catalog/616746">Unity from
+Zero to Proficiency (Proficient)</a></p>
+</div>
+<div class="also-by-page-series">
+<p>Standalone</p>
+<p><a href="https://www.draft2digital.com/catalog/240550">Becoming
+Comfortable with Unity</a></p>
+</div>
+<div class="also-by-page-author-link">
+<p>Watch for more at <a href="http://www.learntocreategames.com">Patrick
+Felicia’s site</a>.</p>
+</div>
+</div>

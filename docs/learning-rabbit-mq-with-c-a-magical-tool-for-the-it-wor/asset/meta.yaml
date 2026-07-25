@@ -1,0 +1,178 @@
+name: Learning Rabbit MQ with C# A magical tool for the IT wor
+name_cn: C# 学习 RabbitMQ：IT 世界的魔法工具
+slug: learning-rabbit-mq-with-c-a-magical-tool-for-the-it-wor
+toc:
+- - '#'
+  - C# 学习 RabbitMQ：IT 世界的魔法工具
+- - '##'
+  - 添加 Directmessages 类
+- - '##'
+  - 使用 C# 从 RabbitMQ 消费消息
+- - '##'
+  - '创建 RabbitMQConsumer '
+- - '##'
+  - 添加 RabbitMQ.Client NuGet 包
+- - '###'
+  - MessageReceiver 类代码片段
+- - '####'
+  - Main 方法代码片段
+- - '##'
+  - 队列为空
+- - '###'
+  - 发布消息
+- - '##'
+  - 发送消息后的队列
+- - '###'
+  - 从 demoqueue 消费的消息
+- - '#'
+  - 使用 .Net 使用 RabbitMQ Direct 交换器
+- - '##'
+  - 交换器类型
+- - '###'
+  - 交换器详情
+- - '##'
+  - 创建 RequestRabbitMQ
+- - '##'
+  - 添加 RabbitMQ.Client 包
+- - '##'
+  - 添加 Direct 交换
+- - '##'
+  - 添加队列
+- - '##'
+  - 将 request.queue 绑定到交换器
+- - '###'
+  - 'BasicPublish '
+- - '###'
+  - 传递给它的参数
+- - '###'
+  - 主代码片段
+- - '#'
+  - 现在让我们查看队列状态 request.queue
+- - '##'
+  - 创建 RabbitMQConsumer 应用程序
+- - '##'
+  - 添加 RabbitMQ.Client NuGet 包
+- - '###'
+  - MessageReceiver 类代码片段
+- - '###'
+  - 主方法代码片段
+- - '#'
+  - 添加 Topic Exchange（交换机）
+- - '##'
+  - 添加队列
+- - '###'
+  - 将 topic.bombay.queue 绑定到 topic.exchange
+- - '###'
+  - 绑定截图
+- - '##'
+  - 将 topic.delhi.queue 绑定到 topic.exchange
+- - '###'
+  - 绑定截图
+- - '##'
+  - 添加 Topicmessages 类
+- - '###'
+  - 传递给它的参数
+- - '###'
+  - 代码片段
+- - '###'
+  - 主代码片段
+- - '##'
+  - 发布到 "topic.bombay.queue" 的消息
+- - '###'
+  - 现在来看队列状态 "request.queue"
+- - '###'
+  - 将 topic.bombay.queue 绑定到 topic.exchange
+- - '###'
+  - 绑定截图
+- - '###'
+  - 从 topic.bombay.queue 消费的消息
+- - '##'
+  - 发布到 topic_delhi.queue 的消息
+- - '###'
+  - 代码片段
+- - '##'
+  - 发布到 "topic.delhi.queue" 的消息
+- - '###'
+  - RabbitMQConsumer 消费 "topic.delhi.queue" 的 Main 方法代码片段
+- - '##'
+  - 从 topic.delhi.queue 消费消息
+- - '##'
+  - 结论
+- - '#'
+  - 使用 Exchanges 使用 RabbitMQ Fanout
+- - '##'
+  - 什么是 Fanout Exchange？
+- - '##'
+  - 添加 RabbitMQ.Client 程序包
+- - '##'
+  - 添加 Fanout Exchange
+- - '##'
+  - 添加队列
+- - '###'
+  - 将队列 (Bangalore, Chennai, Hyderabad, Mumbai) 绑定到 fanout.exchange
+- - '###'
+  - 绑定快照
+- - '##'
+  - 添加 Fanoutmessages 类
+- - '###'
+  - 代码片段
+- - '###'
+  - 主代码片段
+- - '###'
+  - 发布到 "fanout.exchange" 所有队列的消息
+- - '###'
+  - 现在让我们查看队列状态（Bangalore, Chennai, Hyderabad, Mumbai 队列）
+- - '###'
+  - 创建 RabbitMQConsumer
+- - '###'
+  - 添加 RabbitMQ.Client NuGet 包
+- - '###'
+  - MessageReceiver 类
+- - '###'
+  - 消费 "Mumbai" 队列的主方法代码片段
+- - '###'
+  - 队列有一个我们发布的请求
+- - '###'
+  - 从 Mumbai 队列消费的消息
+- - '###'
+  - 从 Mumbai 队列读取消息后的队列状态
+- - '###'
+  - 从 Bangalore 队列消费的消息
+- - '##'
+  - 结论
+- - '#'
+  - 使用 .Net 应用使用 RabbitMQ Headers 消息交换机
+- - '##'
+  - 什么是 Headers 交换机？
+- - '##'
+  - '创建 RequestRabbitMQ '
+- - '##'
+  - 添加 RabbitMQ.Client NuGet 包
+- - '##'
+  - 添加 Headers 交换机
+- - '###'
+  - 添加队列
+- - '##'
+  - 绑定队列
+- - '###'
+  - 绑定快照
+- - '###'
+  - 绑定快照
+- - '##'
+  - Headersmessages 类
+- - '###'
+  - 主代码片段
+- - '##'
+  - 创建 RabbitMQConsumer 应用程序
+- - '##'
+  - 添加 RabbitMQ.Client NuGet 包
+- - '###'
+  - MessageReceiver 类代码片段
+- - '###'
+  - 消费 "Mumbai" 队列的主方法代码片段
+- - '##'
+  - 队列中有一条我们发布的请求
+- - '###'
+  - 从 ReportPDF 队列消费的消息
+- - '##'
+  - 结论

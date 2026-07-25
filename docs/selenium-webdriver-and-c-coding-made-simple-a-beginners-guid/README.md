@@ -1,0 +1,7 @@
+# Selenium Webdriver 与 C# 编程简单化：编程初学者指南 - 二本书合一
+
+> 原文：[Selenium Webdriver and C# Coding Made Simple： A Beginner’s Guide to Programming - 2 Books in 1]()
+> 
+> 译者：[飞龙](https://github.com/wizardforcel)
+> 
+> 协议：[CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0/)

@@ -1,0 +1,2 @@
++   [Visual Studio 中的 Xamarin：通过 .NET 和 C# 创建 Android 和 iOS 应用，开启你的移动开发职业（英文版）](README.md)
++   [Visual Studio 中的 Xamarin：通过 .NET 和 C# 创建 Android 和 iOS 应用，开启你的移动开发职业（英文版）](xamarin-with-visual-studio-launch-your-mobile-development-ca_0.md)

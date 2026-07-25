@@ -1,0 +1,1926 @@
+- "# Unreal Engine 5 游戏编程设计模式：C++、Java、C# 与蓝图\n\n\n\n\n![](img/Image00000.jpg)\n\n\
+  \n\n\n> *献给 Lilly、Dwayne 和 Madison*\n\n\n\n\n\n\n\n# 引言\n\n本书并不是关于蓝图（Blueprint）设计、人工智能、用户界面、动画等方面的蓝图教程。示例中的实现非常简单，例如将字符串打印到屏幕/视口。为此，本书的重点放在了设计模式本身，而不是虚幻引擎中的各种花架哨。在这一点上，我们进行了非常仔细的考虑和处理，以减少过时性。虚幻引擎的更新非常频繁，导致大部分出版物在正式发表时几乎已经过时了。\n\
+  \n此外，这并不是一本“最佳实践”书籍。请不要将本书作为蓝图最佳实践的参考。本书尝试尽可能遵循“等效”的代码逻辑。为了实现这一目标，我们可能会偏离蓝图的最佳实践，以尽可能真实地模拟代码中的编写方式。Epic\
+  \ 费了大量精力在蓝图中抽象化了常见的编程任务。我鼓励你去学习官方 API，因为很多时候……“会有对应的节点（Node）”。\n\n俗俗说，“死猫有十种死”。每种设计模式的实现都可能存在替代的甚至更好的蓝图实现方式。本书仅提供了许多示例中的一种。\n\
+  \n## 蓝图的怪异与非传统方法论\n\n### 蓝图接口 (Blueprint Interfaces)\n\n虚幻引擎中的蓝图脚本在实现传统编程构造方面有一些不同。最让人困惑的话题（特别是对于软件工程背景的人）是蓝图接口。蓝图接口被广泛引用为“通信”工具。当我听到\
+  \ Epic 的员工在直播培训中这样说时，我几乎几乎发作。文档中也呼应了同样的“通信”概念。我无法告诉你我在阅读蓝图接口的文档时对着电脑屏幕大喊了多少。我会大喊：“不，接口和通信毫无关系！”接口的所有作用只是为实现它的对象定义一个保证的行为契约。然而，我是错的。人们必须放弃对接口的传统理解。必须接受蓝图接口的“通信”设定。在你认为我在抨击虚幻引擎之前，让我为你提供一段来自官方文档关于蓝图接口的精彩摘录：\n\
+  \n*“蓝图接口是一个一个或多个函数的集合——仅有名称，没有实现——它可以被添加到其他蓝图中。任何添加了该接口的蓝图都保证拥有这些函数……这在本质上类似于通用编程中的接口概念”*\n\
+  \n*-`https://docs.unrealengine.com/en-us/Engine/Blueprints/UserGuide/Types/Interface`*\n\
+  \n### 不能在构造脚本（Construction Script）中生成\n\n这个标题自言易懂。为什么在尝试在“构造函数”构建对象时会面临挑战这并不直观。构造脚本是在编辑器运行游戏之前执行的。如果没有可以生成的区域（World），我们就无法“生成”对象。解决方法是使用\
+  \ `Add Actor Component` 节点。可能有更好的方法，但到目前为止这种是有效的。我们在 C++ 蓝图中避免大量使用构造脚本，但在 Java 和\
+  \ C# 的实现中大量使用了。\n\n### 序列节点 (Sequence Node) 的用法\n\n![](img/Image00001.jpg) \n\n\
+  大量使用序列节点来鼓励蓝图整体流程从上到下。这对于大型蓝图的可读性是必要的。大多数蓝图通常是从左到右流向构建的。然而，书籍的垂直空间比水平空间大。\n\n###\
+  \ 折叠节点 (Collapse Node)\n\n![](img/Image00002.jpg) \n\n折叠图节点用于将大型蓝图拆分为易于展示的区块。\n\n\
+  ### 黄色接口 (Yellow Interface)\n\n![](img/Image00003.jpg)\n\n带有黄色调的折叠图表示接口。具体来说，它接受一个对象并检查它是否实现了目标。为了简洁，该节点在图中被单独列出。\n\
+  \n## 创建模式 (Creational Patterns)\n\n创建模式有助于抽象实例化过程。当我们想要将对象与客户端解耦时，使用创建模式。随着对象数量的增加，它们的行为可能会产生。我们不能将每个对象硬编码到客户端中。\n\
+  \n### 建造者模式 (Builder Pattern)\n\n你想封装复杂对象的创建过程吗？建造者模式寻求将构建与实际表示解耦。产品可以容易地切换。\n\n\
+  ## 优点\n- 将对象的构建与表示解耦——轻松切换要构建的产品\n- 以分步的方式进行构建\n\n#### 缺点\n- 需要为每个产品创建建造者\n- 与某些设计模式有重叠\n\
+  \n## 建造者实现\n\n我们想在游戏中建造一些住宿设施，即酒店和旅馆。人们可以轻松地将“酒店”和“旅馆”替换为任何需要构建的东西。然而，必须共享接口，建造者模式才有意义。例如，在蓝图中，我们可以将这个类视为需要物理性地拖入世界中的类。其他的“具体”类则不需要拖入世界。\n\
+  \n***Builder_Main.h***\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n#include\
+  \ \"GameFramework/Actor.h\"\n#include \"Builder_Main.generated.h\"\n\nUCLASS()\n\
+  class DESIGN_PATTERNS_API ABuilder_Main : public AActor\n{\n    GENERATED_BODY()\n\
+  \npublic:\n    // 设置此 actor 的默认值\n    ABuilder_Main();\n\nprivate:\n    // 建造者 Actor\n\
+  \    UPROPERTY(VisibleAnywhere, Category = \"Main\")\n    class AHotelLodgingBuilder*\
+  \ HotelBuilder;\n\n    // 工程师 Actor\n    UPROPERTY(VisibleAnywhere, Category = \"\
+  Main\")\n    class AArchitecturalEngineer* Engineer;\n\nprotected:\n    // 当游戏开始或生成时调用\n\
+  \    virtual void BeginPlay() override;\n\npublic:\n    // 每帧调用\n    virtual void\
+  \ Tick(float DeltaTime) override;\n};\n```\n\n***Builder_Main.cpp***\n```cpp\n#include\
+  \ \"Builder_Main.h\"\n#include \"HotelLodgingBuilder.h\"\n#include \"ArchitecturalEngineer.h\"\
+  \n#include \"Lodging.h\"\n\n// 设置默认值\nABuilder_Main::ABuilderMain()\n{\n    // 设置此\
+  \ actor 每帧调用 Tick。如果不需要，可以关闭它。\n    PrimaryActorTick.bCanEverTick = true;\n}\n\n\
+  // 当游戏开始或生成时调用\nvoid ABuilder_Main::BeginPlay()\n{\n    Super::BeginPlay();\n\n\
+  \    // 生成建造者和工程师\n    HotelBuilder = GetWorld()->SpawnActor<AHotelLodgingBuilder>(AHotelLodgingBuilder::StaticClass());\n\
+  \    Engineer = GetWorld()->SpawnActor<AArchitecturalEngineer>(AArchitecturalEngineer::StaticClass());\n\
+  \n    // 为工程师设置建造者并构建建筑\n    Engineer->SetLodgingBuilder(HotelBuilder);\n    Engineer->ConstructLodging();\n\
+  \n    // 获取工程师的住宿并记录生成的建筑\n    ALodging* Lodging = Engineer->GetLodging();\n   \
+  \ Lodging->LodgingCharacteristics();\n}\n\n// 每帧调用\nvoid ABuilder_Main::Tick(float\
+  \ DeltaTime)\n{\n    Super::Tick(DeltaTime);\n}\n```\n\n\n\n\n}\n\n`Builder` 类的蓝图等价物：\n\
+  \n![图形用户界面描述](img/Image00004.jpg)\n\n`Set hotelBuilder` 和 `Set engineer` 折叠图分别为：\n\
+  \n![](img/Image00005.jpg)\n\n以及\n\n![](img/Image00006.jpg)\n\n`Set hotelBuilder`\
+  \ 折叠图代表了这一行代码：\n\n```cpp\nHotelBuilder = GetWorld()->SpawnActor<AHotelLodgingBuilder>(AHotelLodgingBuilder::StaticClass());\n\
+  ```\n\n`Spawn Actor From Class` 节点类似于传统编程中的 `new` 关键字。要生成的类通过“Class”字样下的下拉框进行选择。Spawn\
+  \ Transform 则取决于个人的特定场景。为了简单起见，我们只需右键点击 Spawn Transform 并选择“Promote to Variable”（提升为变量）。如果没有\
+  \ Spawn Transform，蓝图将产生编译错误。在生成所需的 actor 后，我们设置（或“初始化”）了我们的 `hotelBuilder` 变量。\n\
+  \n相同的基本思想也适用于 `Set engineer` 折叠图。然而，`Architectural Engineer` 需要一个 `LodgingBuilder`\
+  \ 来为工程师设置 Builder，如此行代码所示：\n\n```cpp\nEngineer->SetLodgingBuilder(HotelBuilder);\n\
+  ```\n\n稍后，我们不会对每一个生成活动进行如此详细的说明。请相信有很多生成它们的需求，讨论每一个细节将变成一项冗味的任务。\n\n`Builder_Main`\
+  \ 蓝图继续通过 `Construct Lodging` 函数调用节点运行。该函数在我们之前生成的 `engineer` 上被调用。等价的代码行为：\n\n```cpp\n\
+  Engineer->ConstructLodging();\n```\n\n注意 `Builder_Main` 中的 `Sequence` 节点。当 `Construct\
+  \ Lodging` 函数调用执行完毕后，Sequence 0 完成。然后 Sequence 1 开始执行。`Set lodging` 折叠图如下：\n\n![](img/Image00007.jpg)\n\
+  \n现在，我们通过这行代码等价地执行了获取后设置的操作：\n\n```cpp\nALodging Lodging = Engineer->GetLodging();\n\
+  ```\n\n最后这一行非模板化代码是：\n\n```cpp\nLodging->LodgingCharacteristics();\n```\n\n这行代码和等价蓝图将在稍后讨论。然而，我们需要进行一些验证检查，并确保我们确实构建了一个酒店。我们想要确保\
+  \ `lodging` actor 实现了 `FloorPlan` 接口。`lodging isFloorPlan_int` 折叠图如下：\n\n![](img/Image00008.jpg)\n\
+  \n今后我们将不再显示此接口检查折叠图。请注意，此项检查的折叠图始终带有黄色调。折叠节点内部唯一改变的项是我们正在检查的对象的目标接口。目标接口始终是折叠图名称的一部分。\n\
+  \n现在我们可以讨论在此模式中使用的接口了。首先，我们为所有住宿创建一个平面图（floor plan）接口供实现。美国大多数商业住宿都包含泳池、大堂区域、房间和餐厅。我们还创建了一个住宿\
+  \ builder 接口，供我们特定的住宿 builder 类实现。`FloorPlan` 接口：\n\n***FloorPlan.h***\n```cpp\n\
+  #pragma once\n#include \"CoreMinimal.h\"\n#include \"UObject/Interface.h\"\n#include\
+  \ \"FloorPlan.generated.h\"\n\n// 此类不需要修改。\nUINTERFACE(MinimalAPI)\nclass UFloorPlan\
+  \ : public UInterface\n{\n    GENERATED_BODY()\n};\n\nclass DESIGN_PATTERNS_API\
+  \ IFloorPlan\n{\n    GENERATED_BODY()\n    // 将接口函数添加到此类。这是将被继承以实现此接口的类。\npublic:\n\
+  \    // FloorPlan 的纯虚函数\n    virtual void SetSwimmingPool(FString SwimmingPool)\
+  \ = 0;\n    virtual void SetLobbyArea(FString LobbyArea) = 0;\n    virtual void\
+  \ SetRooms(FString Rooms) = 0;\n    virtual void SetRestaurants(FString Restaurants)\
+  \ = 0;\n};\n```\n\n***FloorPlan.cpp***\n```cpp\n#include \"FloorPlan.h\"\n// 为任何非纯虚的\
+  \ IFloorPlan 函数在此添加默认功能。\n```\n\n等价的蓝图接口非常平庸。以下是代表 `FloorPlan` 接口中函数的节点。\n\n![](img/Image00009.jpg)[](Image00010.jpg)[](Image00011.jpg)[](Image00012.jpg)\n\
+  \n俗语说道：“面向接口编程，而不是面向实现”（Gamma et.al, 1995）。事实上，这是面向对象设计的核心原则之一。面向接口编程的主要益处是减少了子系统之间的实现依赖（Gamma\
+  \ et.al, 1995）。我们在我们的建造模式示例中直观地看到了这一点。具体来说，建造模式将复杂对象的构建过程与其实际表示解耦（Gamma et.al, 1995）。\n\
+  \n`LodgingBuilder` 接口：\n\n***LodgingBuilder.h***\n```cpp\n#pragma once\n#include\
+  \ \"CoreMinimal.h\"\n#include \"UObject/Interface.h\"\n#include \"LodgingBuilder.generated.h\"\
+  \n\n// 此类不需要修改。\nUINTERFACE(MinimalAPI)\nclass ULodgingBuilder : public UInterface\n\
+  {\n    GENERATED_BODY()\n};\n\nclass DESIGN_PATTERNS_API ILodgingBuilder\n{\n  \
+  \  GENERATED_BODY()\n    // 将接口函数添加到此类。这是将被继承以实现此接口的类。\npublic:\n    // LodgingBuilder\
+  \ 的纯虚函数\n    virtual void BuildSwimmingPool() = 0;\n    virtual void BuildLobbyArea()\
+  \ = 0;\n    virtual void BuildRooms() = 0;\n    virtual void BuildRestaurants()\
+  \ = 0;\n    virtual class ALodging GetLodging() = 0;\n};\n```\n\n***LodgingBuilder.cpp***\n\
+  ```cpp\n#include \"LodgingBuilder.h\"\n// 为任何非纯虚的 ILodgingBuilder 函数在此添加默认功能。\n\
+  ```\n\n接下来，我们创建一个实现 `FloorPlan` 接口的 `Lodging` 类。\n\n***Lodging.h***\n\n\n\n\n\n\
+  ```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\
+  \n#include \"FloorPlan.h\"\n#include \"Lodging.generated.h\"\n\nUCLASS()\nclass\
+  \ DESIGN_PATTERNS_API ALodging : public AActor, public IFloorPlan\n{\n    GENERATED_BODY()\n\
+  \npublic:\n    // 设置此 actor 属性的默认值\n    ALodging();\n\nprivate:\n    // 游泳池名称\n\
+  \    FString SwimmingPool;\n    // 大堂区域名称\n    FString LobbyArea;\n    // 房间名称\n\
+  \    FString Rooms;\n    // 餐厅名称\n    FString Restaurants;\n\nprotected:\n    //\
+  \ 当游戏开始或生成时被调用\n    virtual void BeginPlay() override;\n\npublic:\n    // 每帧调用\n\
+  \    virtual void Tick(float DeltaTime) override;\n    // 设置游泳池名称\n    void SetSwimmingPool(FString\
+  \ mySwimmingPool);\n    // 设置大堂区域名称\n    void SetLobbyArea(FString myLobbyArea);\n\
+  \    // 设置房间名称\n    void SetRooms(FString myRooms);\n    // 设置餐厅名称\n    void SetRestaurants(FString\
+  \ myRestaurants);\n    // 记录所有住宿层\n    void LodgingCharacteristics();\n};\n```\n\
+  \n`Lodging.cpp`\n```cpp\n#include \"Lodging.h\"\n\n// 设置默认值\nALodging::ALodging()\n\
+  {\n    // 设置此 actor 每帧调用 Tick()。如果不需要它，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n\n// 当游戏开始或生成时被调用\nvoid ALodging::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  }\n\n// 每帧调用\nvoid ALodging::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n\nvoid ALodging::SetSwimmingPool(FString mySwimmingPool)\n{\n    // 使用传入的字符串设置游泳池名称\n\
+  \    SwimmingPool = mySwimmingPool;\n}\n\nvoid ALodging::SetLobbyArea(FString myLobbyArea)\n\
+  {\n    // 使用传入的字符串设置大堂区域名称\n    LobbyArea = myLobbyArea;\n}\n\nvoid ALodging::SetRooms(FString\
+  \ myRooms)\n{\n    // 使用传入的字符串设置房间名称\n    Rooms = myRooms;\n}\n\nvoid ALodging::SetRestaurants(FString\
+  \ myRestaurants)\n{\n    // 使用传入的字符串设置餐厅名称\n    Restaurants = myRestaurants;\n}\n\
+  \nvoid ALodging::LodgingCharacteristics()\n{\n    // 记录每一层的名称\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"%s\"), SwimmingPool));\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"%s\"), LobbyArea));\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"%s\"), Rooms));\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"%s\"), Restaurants));\n}\n```\n\n\
+  记得主蓝图中的 `LodgingCharacteristics` 节点吗？它在这里：\n\n![自动生成的图形界面描述](img/Image00013.jpg)\n\
+  \nLodging 蓝图还包含了稍后由建筑工程师调用的事件：\n\n![自动生成的图形界面、应用程序描述](img/Image00014.jpg)\n\n蓝图在调用\
+  \ void 接口函数时使用 `Event` 节点。`Lodging` 类的蓝图版本除了设置局部变量外，还会打印传递给函数的字符串值。此外，我们必须通过在类设置的\
+  \ Interfaces 区域中添加它，来确保此蓝图类实现了 `FloorPlan` 接口。\n\n该类是 `HotelLodgingBuilder`。它实现了住宿构建器接口，并为种类型的住宿提供了自定义规格。\n\
+  \n***HotelLodgingBuilder.h***\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n\
+  #include \"GameFramework/Actor.h\"\n#include \"LodgingBuilder.h\"\n#include \"HotelLodgingBuilder.generated.h\"\
+  \n\nUCLASS()\nclass DESIGN_PATTERNS_API AHotelLodgingBuilder : public AActor, public\
+  \ ILodgingBuilder\n{\n    GENERATED_BODY()\n\npublic:\n    // 设置此 actor 属性的默认值\n\
+  \    AHotelLodgingBuilder();\n\nprivate:\n    // 住宿 Actor\n    UPROPERTY(VisibleAnywhere,\
+  \ Category=\"Hotel Lodging\")\n    class ALodging Lodging;\n\nprotected:\n    //\
+  \ 当游戏开始或生成时被调用\n    virtual void BeginPlay() override;\n\npublic:\n    // 每帧调用\n\
+  \    virtual void Tick(float DeltaTime) override;\n    // 创建游泳池\n    virtual void\
+  \ BuildSwimmingPool() override;\n    // 创建大堂区域\n    virtual void BuildLobbyArea()\
+  \ override;\n    // 创建餐厅\n    virtual void BuildRestaurants() override;\n    //\
+  \ 创建房间\n    virtual void BuildRooms() override;\n    // 返回住宿\n    virtual ALodging\
+  \ GetLodging() override;\n};\n```\n\n`HotelLodgingBuilder.cpp`\n```cpp\n#include\
+  \ \"HotelLodgingBuilder.h\"\n#include \"Lodging.h\"\n\n// 设置默认值\nAHotelLodgingBuilder::AHotelLodgingBuilder()\n\
+  {\n}\n\n// 当游戏开始或生成时被调用\nvoid AHotelLodgingBuilder::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  \    // 生成住宿\n    Lodging = GetWorld()->SpawnActor<ALodging>(ALodging::StaticClass());\n\
+  \    // 将其附加到构建器（自己）\n    Lodging->AttachToActor(this, FAttachmentTransformRules::KeepRelative);\n\
+  }\n\n// 每帧调用\nvoid AHotelLodgingBuilder::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n\nvoid AHotelLodgingBuilder::BuildSwimmingPool()\n{\n    if (!Lodging)\n    {\n\
+  \        UE_LOG(LogTemp, Error, TEXT(\"BuildSwimmingPool(): Lodging 为空，确保它已初始化。\n\
+  \        return;\n    }\n    // 设置住宿的游泳池\n    Lodging->SetSwimmingPool(\"Indoor\
+  \ Lagoon\");\n}\n\nvoid AHotelLodgingBuilder::BuildLobbyArea()\n{\n    if (!Lodging)\n\
+  \    {\n        UE_LOG(LogTemp, Error, TEXT(\"BuildLobbyArea(): Lodging 为空，确保它已初始化。\n\
+  \        return;\n    }\n    // 设置住宿的大堂区域\n    Lodging->SetLobbyArea(\"Grand Hall\"\
+  );\n}\n\nvoid AHotelLodgingBuilder::BuildRestaurants()\n{\n    if (!Lodging)\n \
+  \   {\n        UE_LOG(LogTemp, Error, TEXT(\"BuildRestaurants(): Lodging 为空，确保它已初始化。\n\
+  \        return;\n    }\n    // 设置住宿的餐厅\n    Lodging->SetRestaurants(\"5 star Buffet\"\
+  );\n}\n\nvoid AHotelLodgingBuilder::BuildRooms()\n{\n    if (!Lodging)\n    {\n\
+  \        UE_LOG(LogTemp, Error, TEXT(\"BuildRooms(): Lodging 为空，确保它已初始化。\n     \
+  \   return;\n    }\n    // 设置住宿的房间\n    Lodging->SetRooms(\"Luxury Suites\");\n\
+  }\n\nALodging* AHotelLodgingBuilder::GetLodging()\n{\n    // 返回构建器的住宿 Actor（自己）\n\
+  \    return Lodging;\n}\n```\n\n现在我们需要一个建筑工程师来协调住宿的逐步构建。\n\n***ArchitecturalEngineer.h***\n\
+  \n\n\n\n` 标签内容。我根据你提供的逻辑，对 `ArchitecturalEngineer` 相关的代码和描述（以及其中的变量/函数/类名）进行了规范化排版。\n\
+  \n以下是排版后的结果：\n\n[content]\n```cpp\n#include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\
+  \n#include \"LodgingBuilder.h\"\n#include \"ArchitecturalEngineer.generated.h\"\n\
+  \nUCLASS()\nclass DESIGN_PATTERNS_API AArchitecturalEngineer : public AActor\n{\n\
+  \    GENERATED_BODY()\n\npublic:\n    // 设置此 actor 属性的默认值\n    AArchitecturalEngineer();\n\
+  \nprivate:\n    // 构建者 Actor，必须是一个 LodgingBuilder\n    ILodgingBuilder* LodgingBuilder;\n\
+  \nprotected:\n    // 在游戏开始或被生成时调用\n    virtual void BeginPlay() override;\n\npublic:\n\
+  \    // 每帧调用\n    virtual void Tick(float DeltaTime) override;\n    // 创建建筑\n  \
+  \  void ConstructLodging();\n    // 设置构建者 Actor\n    void SetLodgingBuilder(AActor*\
+  \ Builder);\n    // 获取构建者类的 Lodging\n    ALodging* GetLodging();\n};\n```\n\n***ArchitecturalEngineer.cpp***\n\
+  \n```cpp\n#include \"ArchitecturalEngineer.h\"\n#include \"Lodging.h\"\n\n// 设置默认值\n\
+  AArchitecturalEngineer::AArchitecturalEngineer()\n{\n    // 设置此 actor 每帧调用 Tick()。如果不需要，可以关闭它以提高性能。\n\
+  \    PrimaryActorTick.bCanEverTick = true;\n}\n\n// 在游戏开始或被生成时调用\nvoid AArchitecturalEngineer::BeginPlay()\n\
+  {\n    Super::BeginPlay();\n}\n\n// 每帧调用\nvoid AArchitecturalEngineer::Tick(float\
+  \ DeltaTime)\n{\n    Super::Tick(DeltaTime);\n}\n\nvoid AArchitecturalEngineer::SetLodgingBuilder(AActor*\
+  \ Builder)\n{\n    // 转换传递的 Actor 并设置 BuilderLodging\n    LodgingBuilder = Cast<ILodgingBuilder>(Builder);\n\
+  \    if (!LodgingBuilder) // 如果转换失败则记录错误\n    {\n        GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Red, TEXT(\"Invalid Cast! See Output log for more details\"));\n\
+  \        UE_LOG(LogTemp, Error, TEXT(\"SetLodgingBuilder(): The Actor is not a LodgingBuilder!\
+  \ Are you sure that the Actor implements that interface?\"));\n    }\n}\n\nALodging*\
+  \ AArchitecturalEngineer::GetLodging()\n{\n    if (LodgingBuilder)\n    {\n    \
+  \    // 返回构建者的 Lodging\n        return LodgingBuilder->GetLodging();\n    }\n  \
+  \  // 如果构建者为 NULL 则记录\n    UE_LOG(LogTemp, Error, TEXT(\"GetLodging(): Return nullptr\"\
+  ));\n    return nullptr;\n}\n\nvoid AArchitecturalEngineer::ConstructLodging()\n\
+  {\n    // 如果构建者为 NULL 则记录\n    if (!LodgingBuilder)\n    {\n        UE_LOG(LogTemp,\
+  \ Error, TEXT(\"ConstructLodging(): LodgingBuilder is NULL, make sure it's initialized.\"\
+  ));\n        return;\n    }\n    // 创建建筑\n    LodgingBuilder->BuildSwimmingPool();\n\
+  \    LodgingBuilder->BuildLobbyArea();\n    LodgingBuilder->BuildRooms();\n    LodgingBuilder->BuildRestaurants();\n\
+  }\n```\n\n*ArchitecturalEngineer* 构造脚本：\n\n![自动生成的图形界面描述](img/Image00018.jpg)\n\n\
+  *Check lodgingBuilder isValid* 节点：\n\n![](img/Image00019.jpg)\n\n此有效性检查是作为安全机制执行的。我们希望在开始对该对象执行操作之前确保该对象不为空。如果对象确实为空，视口上将打印“Not\
+  \ Valid（无效）”字符串。\n\n*ArchitecturalEngineer* 包含了几个重要的函数，即 `GetLodging` 和 `ConstructLodging`。\n\
+  \n`GetLodging` 函数图表：\n\n![自动生成的图形界面、应用程序描述](img/Image00020.jpg)\n\n`ConstructLodging`\
+  \ 函数图表：\n\n![自动生成的图描述](img/Image00021.jpg)\n\n折叠后的图表表示 `ConstructLodging` 函数的体：\n\
+  \n```cpp\nvoid AArchitecturalEngineer::ConstructLodging()\n{\n    // 如果构建者为 NULL\
+  \ 则记录\n    if (!LodgingBuilder)\n    {\n        UE_LOG(LogTemp, Error, TEXT(\"ConstructLodging():\
+  \ LodgingBuilder is NULL, make sure it's initialized.\"));\n        return;\n  \
+  \  }\n    // 创建建筑\n    LodgingBuilder->BuildSwimmingPool();\n    LodgingBuilder->BuildLobbyArea();\n\
+  \    LodgingBuilder->BuildRooms();\n    LodgingBuilder->BuildRestaurants();\n}\n\
+  ```\n\n`BuildSwimmingPool`, `BuildLobbyArea`, `BuildRooms` 和 `BuildRestaurants`\
+  \ 图表分别为：\n\n![自动生成的包含文本、室内、电子设备的描述](img/Image00022.jpg) ![自动生成的包含文本、室内、电子设备的描述](img/Image00023.jpg)\
+  \ ![自动生成的包含文本、室内、电子设备的描述](img/Image00024.jpg) ![自动生成的包含文本、室内、电子设备的描述](img/Image00025.jpg)\n\
+  \n这是酒店构造的最终截图。\n\n![](img/Image00026.jpg)\n\n\n\n\n\n```cpp\n#include \"FactoryMethod_Main.h\"\
+  \n#include \"OuterRealmPotionShop.h\"\n#include \"InnerRealmPotionShop.h\"\n\n//\
+  \ 设置默认值\nAFactoryMethod_Main::AFactoryMethod_Main()\n{\n    // 设置此 actor 每一帧都调用\
+  \ Tick()。如果你不需要它，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick = true;\n}\n\n//\
+  \ 当游戏开始或 Actor 被生成时调用\nvoid AFactoryMethod_Main::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  \    // 创建商店\n    APotionShop* OuterRealmShop = GetWorld()->SpawnActor<AOuterRealmPotionShop>(AOuterRealmPotionShop::StaticClass());\n\
+  \    APotionShop* InnerRealmShop = GetWorld()->SpawnActor<AInnerRealmPotionShop>(AInnerRealmPotionShop::StaticClass());\n\
+  \    // 创建一个外层生命药水并记录其名称\n    APotion* Potion = OuterRealmShop->OrderPotion(\"Health\"\
+  );\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT(\"\
+  Potion is %s\"), Potion->GetPotionName()));\n    // 创建一个内层生命药水并记录其名称\n    Potion\
+  \ = InnerRealmShop->OrderPotion(\"Health\");\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"Potion is %s\"), Potion->GetPotionName()));\n\
+  \    // 创建一个外层力量药水并记录其名称\n    Potion = OuterRealmShop->OrderPotion(\"Power\");\n\
+  \    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT(\"\
+  Potion is %s\"), Potion->GetPotionName()));\n    // 创建一个内层力量药水并记录其名称\n    Potion\
+  \ = InnerRealmShop->OrderPotion(\"Power\");\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"Potion is %s\"), Potion->GetPotionName()));\n\
+  \    // 创建一个外层技能药水并记录其名称\n    Potion = OuterRealmShop->OrderPotion(\"Skill\");\n\
+  \    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT(\"\
+  Potion is %s\"), Potion->GetPotionName()));\n    // 创建一个内层技能药水并记录其名称\n    Potion\
+  \ = InnerRealmShop->OrderPotion(\"Skill\");\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"Potion is %s\"), Potion->GetPotionName()));\n\
+  }\n\n// 每一帧调用\nvoid AFactoryMethod_Main::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n```\n\n这是 `FactoryMethod_Main` 蓝图的顶层事件图：\n\n![](img/Image00027.jpg) \n\n`Create\
+  \ Shops` 折叠图：\n\n![自动生成的图形用户界面描述](img/Image00028.jpg) \n\n`Create Outer HP` 蓝图：\n\
+  \n![自动生成的图形界面、应用程序描述](img/Image00029.jpg) \n\n`Create Inner HP` 蓝图：\n\n![自动生成的视频游戏截图](img/Image00030.jpg)\
+  \ \n\n`Create Outer PP` 蓝图：\n\n![自动生成的视频游戏截图](img/Image00031.jpg) \n\n`Create Inner\
+  \ PP` 蓝图：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00032.jpg) \n\n`Create Outer SP` 蓝图：\n\
+  \n![自动生成的视频游戏截图](img/Image00033.jpg) \n\n`Create Inner SP` 蓝图：\n\n![自动生成的视频游戏截图](img/Image00034.jpg)\
+  \ \n\n基本上，我们从药水商店订购了不同的药水，然后打印与与我们订购的药水相关的信息。\n\n这些图等同于：\n\n```cpp\nPotion = InnerRealmShop->OrderPotion(\"\
+  Health\");\nGEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT(\"\
+  Potion is %s\"), Potion->GetPotionName()));\n```\n\n创建内层/外层药水的折叠图都包含相同的功能，只是订购的药水不同：\n\
+  \n这结束了 `FactoryMethod_Main` 蓝图。接下来，我们将转向 `Potion` 和 `PotionShop` 类。这两个类都是抽象类。我们可以通过导航到类设置（class\
+  \ settings）并勾选“Abstract”来在蓝图中创建抽象类。如图所示：\n\n![](img/Image0035.jpg) \n\n我们的 `PotionShop`\
+  \ 类实现：\n\n***PotionShop.h***\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n\
+  #include \"GameFramework/Actor.h\"\n#include \"Potion.h\"\n#include \"PotionShop.generated.h\"\
+  \n\nUCLASS()\nclass DESIGN_PATNS_API APotionShop : public AActor\n{\n    GENERATED_BODY()\n\
+  \npublic:\n    // 设置默认值\n    APotionShop();\n\nprotected:\n    // 当游戏开始或 Actor 被生成时调用\n\
+  \    virtual void BeginPlay() override;\n\npublic:\n    // 每一帧调用\n    virtual void\
+  \ Tick(float DeltaTime) override;\n    \n    // 订购、调制并返回特定类型的药水\n    // 纯虚函数，因此在此类不需要实现\n\
+  \    virtual APotion* ConcoctPotion(FString Category) = 0;\n};\n```\n\n***PotionShop.cpp***\n\
+  ```cpp\n#include \"PotionShop.h\"\n\n// 设置默认值\nAPotionShop::APotionShop()\n{\n \
+  \   // 设置此 actor 每一帧都调用 Tick()。如果你不需要它，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n\n// 当游戏开始或 Actor 被生成时调用\nvoid APotionShop::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  }\n\n// 每一帧调用\nvoid APotionShop::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n\nAPotion* APotionShop::OrderPotion(FString Category)\n{\n    // 创建药水并记录其名称\n\
+  \    APotion* Potion = ConcoctPotion(Category);\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"Concocting %s\"), Potion->GetPotionName()));\n\
+  \    // 开始调制过程\n    Potion->Boil();\n    Potion->Bubble();\n    Potion->Brew();\n\
+  \    Potion->Bottle();\n    // 返回创建的药水\n    return Potion;\n}\n```\n\n在这里我们必须稍微偏离传统代码。蓝图中似乎没有可以显式将函数声明为“抽象”的方法。编译器可能足够聪明并在后台完成这一点，但没有关于此功能的公开信息。我们的等同于\
+  \ `ConcoctPotion` 的蓝图：\n\n![](img/Image0036.jpg) \n\n`OrderPotion` 函数蓝图：\n\n![自动生成的图形用户界面、应用程序描述](img/Image0037.jpg)\
+  \ \n\n`Prepare Potion` 折叠图：\n\n![包含文字的图片的室内描述](img/Image0038.jpg) \n\n`GetPotionName`、*Boil*、*Bubble*、*Brew*\
+  \ 和 *Bottle* 在 `Potion` 类中。以下是 `Potion` 类的代码实现：\n\n***Potion.h***\n\n\n\n\n\n```cpp\n\
+  #pragma once\n#include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\n#include\
+  \ \"Potion.generated.h\"\n\nUCLASS()\nclass DESIGN_PATTERNS_API APotion : public\
+  \ AActor\n{\n    GENERATED_BODY()\n\npublic:\n    // 设置此节点属性的默认值\n    APotion();\n\
+  \nprotected:\n    // 此药水的名字\n    FString PotionName;\n    // 此药水的粘稠度\n    FString\
+  \ Gooeyness;\n    // 此药水的血液成分\n    FString Blood;\n    // 此药水中包含的草药\n    TArray<FString>\
+  \ Herbs;\n\nprotected:\n    // 当游戏开始或生成生成时调用\n    virtual void BeginPlay() override;\n\
+  \npublic:\n    // 每帧调用\n    virtual void Tick(float DeltaTime) override;\n    //\
+  \ 煮沸此药水\n    void Boil();\n    // 让此药水产生泡泡\n    void Bubble();\n    // 酿造此药水\n \
+  \   virtual void Brew();\n    // 装瓶此药水\n    void Bottle();\n    // 返回药水名字\n    FString\
+  \ GetPotionName();\n};\n```\n\n***Potion.cpp***\n\n```cpp\n#include \"Potion.h\"\
+  \n\n// 设置默认值\nAPotion::APotion()\n{\n    // 设置此节点每帧调用 Tick()。如果不需要，可以将其关闭以提高性能。\n\
+  \    PrimaryActorTick.bCanEverTick = true;\n    Herbs = TArray<FString>();\n}\n\n\
+  // 当游戏开始或生成生成时调用\nvoid APotion::BeginPlay()\n{\n    Super::BeginPlay();\n}\n\n//\
+  \ 每帧调用\nvoid APotion::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n}\n\
+  \nvoid APotion::Boil()\n{\n    // 志记录煮沸过程\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"Boil %s\"), GetPotionName()));\n\
+  \    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT(\"加入血液...\"\
+  ));\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT(\"加入草药:\
+  \ \"));\n}\n\nvoid APotion::Bubble()\n{\n    // 志记录冒泡过程\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, TEXT(\"冒泡三个月亮和一次日落\"));\n}\n\nvoid APotion::Brew()\n{\n\
+  \    // 志记录酿造过程\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ TEXT(\"低低温酿造\"));\n}\n\nvoid APotion::Bottle()\n{\n    // 志记录装瓶过程\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, TEXT(\"将药剂装入烧瓶\"));\n}\n\nFString APotion::GetPotionName()\n\
+  {\n    // 返回此药水的名字\n    return PotionName;\n}\n```\n\n`Boil` 方法对应的蓝图函数：\n\n![](img/Image00039.jpg)\n\
+  \n`Bubble` 方法对应的蓝图函数：\n\n![](img/Image00040.jpg)\n\n`Brew` 方法对应的蓝图函数：\n\n![](img/Image00041.jpg)\n\
+  \n`Bottle` 方法对应的蓝图函数：\n\n![](img/Image00042.jpg)\n\n`GetPotionName` 方法对应的蓝图函数：\n\
+  \n![](img/Image00043.jpg)\n\n现在我们已经定义了抽象父类，让我们关注具体的创建者吧。\n\n`InnerRealmPotionShop`\
+  \ 具体创建者类：\n\n***InnerRealmPotionShop.h***\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"PotionShop.h\"\n#include \"InnerRealmPotionShop.generated.h\"\n\nUCLASS()\n\
+  class DESIGN_PATTERNS_API AInnerRealmPotionShop : public APotionShop\n{\n    GENERATED_BODY()\n\
+  \npublic:\n    // 调配选定的药水\n    virtual APotion* ConcoctPotion(FString PotionSKU)\
+  \ override;\n};\n```\n\n***InnerRealmPotionShop.cpp***\n\n```cpp\n#include \"InnerRealmPotionShop.h\"\
+  \n#include \"InnerRealmHealthPotion.h\"\n#include \"InnerRealmPowerPotion.h\"\n\
+  #include \"InnerRealmSkillPotion.h\"\n\nAPotion* AInnerRealmPotionShop::ConcoctPotion(FString\
+  \ PotionSKU)\n{\n    // 根据传入的字符串选择生成哪个药水\n    if (PotionSKU.Equals(\"Health\"))\n\
+  \    {\n        return GetWorld()->SpawnActor<AInnerRealmHealthPotion>(AInnerRealmHealthPotion::StaticClass());\n\
+  \    }\n    else if (PotionSKU.Equals(\"Power\"))\n    {\n        return GetWorld()->SpawnActor<AInnerRealmPowerPotion>(AInnerRealmPowerPotion::StaticClass());\n\
+  \    }\n    else if (PotionSKU.Equals(\"Skill\"))\n    {\n        return GetWorld()->SpawnActor<AInnerRealmSkillPotion>(AInnerRealmSkillPotion::StaticClass());\n\
+  \    }\n    return nullptr;\n}\n```\n\n`InnerRealmPotionShop` 的 `ConcoctPotion`\
+  \ 函数蓝图：\n\n![](img/Image00044.jpg)\n\n`Spawn Health Potion` 图表：\n\n![](img/Image00045.jpg)\n\
+  \n`Spawn Power Potion` 图表：\n\n![](img/Image00046.jpg)\n\n`Spawn Skill Potion` 图表：\n\
+  \n![](img/Image00047.jpg)\n\n现在我们已经定义了抽象父类，让我们关注这个创建者可以创建的具体产品。\n\n`InnerRealmHealthPotion`\
+  \ 具体类：\n\n***InnerRealmHealthPotion.h***\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"Potion.h\"\n#include \"InnerRealmHealthPotion.generated.h\"\n\nUCLASS()\n\
+  class DESIGN_PATTERNS_API AInnerRealmHealthPotion : public APotion\n{\n    GENERATED_BODY()\n\
+  \nprotected:\n    // 当游戏开始或生成时调用\n    virtual void BeginPlay() override;\n\npublic:\n\
+  \    // 酿造此药水\n    virtual void Brew() override;\n};\n```\n\n***InnerRealmHealthPotion.cpp***\n\
+  \n```cpp\n#include \"InnerRealmHealthPotion.h\"\n\nvoid AInnerRealmHealthPotion::BeginPlay()\n\
+  {\n    Super::BeginPlay();\n    // 设置成分\n    PotionName = \"Inner Realm Potion\"\
+  ;\n    Gooeyness = \"Mucus Like\";\n    Blood = \"Orc Blood\";\n    // 添加草药\n  \
+  \  Herbs.Add(\"Root of Inner Realm\");\n}\n\nvoid AInnerRealmHealthPotion::Brew()\n\
+  {\n    // 志记录酿造类型\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ TEXT(\"Brewing at High Temperature\"));\n}\n```\n\n`InnerRealmHealthPotion` 蓝图事件图和酿造事件：\n\
+  \n![](img/Image00048.jpg) ![](img/Image00049.jpg)\n\n`InnerRealmPowerPotion` 具体类：\n\
+  \n***InnerRealmPowerPotion.h***\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"Potion.h\"\n#include \"InnerRealmPowerPotion.generated.h\"\n\nUCLASS()\n\
+  class DESIGN_PATTERNS_API AInnerRealmPowerPotion : public APotion\n{\n    GENERATED_BODY()\n\
+  \nprotected:\n    // 当游戏开始或生成时调用\n    virtual void BeginPlay() override;\n\npublic:\n\
+  \    // 酿造此药水\n    virtual void Brew() override;\n};\n```\n\n***InnerRealmPowerPotion.cpp***\n\
+  \n```cpp\n#include \"InnerRealmPowerPotion.h\"\n\nvoid AInnerRealmPowerPotion::BeginPlay()\n\
+  {\n    Super::BeginPlay();\n    // 设置成分\n    PotionName = \"Inner Realm Potion\"\
+  ;\n    Gooeyness = \"Mucus Like\";\n    Blood = \"Orc Blood\";\n    // 添加草药\n  \
+  \  Herbs.Add(\"Root of Inner Realm\");\n    Herbs.Add(\"Sage of Inner Realm\");\n\
+  }\n\nvoid AInnerRealmPowerPotion::Brew()\n{\n    // 志记录酿造类型\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, TEXT(\"Brewing at High Temperature\"));\n}\n```\n\n`InnerRealmPowerPotion`\
+  \ 蓝图事件图和酿造事件：\n\n![](img/Image00050.jpg) ![](img/Image00051.jpg)\n\n`InnerRealmSkillPotion`\
+  \ 具体产品类：\n\n***InnerRealmSkillPotion.h***\n\n\n\n\n\n```cpp\n#pragma once\n#include\
+  \ \"CoreMinimal.h\"\n#include \"Potion.h\"\n#include \"InnerRealmSkillPotion.generated.h\"\
+  \n\nUCLASS()\nclass DESIGN_PATTERNS_API AInnerRealmSkillPotion : public APotion\n\
+  {\n    GENERATED_BODY()\nprotected:\n    // 当游戏开始或被生成时调用\n    virtual void BeginPlay()\
+  \ override;\n\npublic:\n    // 酿药剂\n    virtual void Brew() override;\n};\n```\n\
+  \n`InnerRealmSkillPotion.cpp`\n\n```cpp\n#include \"InnerRealmSkillPotion.h\"\n\n\
+  void AInnerRealmSkillPotion::BeginPlay()\n{\n    Super::BeginPlay();\n    // 设置成分\n\
+  \    PotionName = \"Inner Realm Skill Potion\";\n    Gooeyness = \"Mucus Like\"\
+  ;\n    Blood = \"Orc Blood\";\n    // 添加药草\n    Herbs.Add(\"Root of Inner Realm\"\
+  );\n    Herbs.Add(\"Red Clover of Inner Realm\");\n    Herbs.Add(\"Wildrose of Inner\
+  \ Realm\");\n    Herbs.Add(\"Yarrow of Inner Realm\");\n}\n\nvoid AInnerRealmSkillPotion::Brew()\n\
+  {\n    // 记录酿造类型\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ TEXT(\"Brewing at High Temperature\"));\n}\n```\n\n`InnerRealmSkillPotion` 蓝图事件图和酿造事件：\n\
+  \n![一张自动生成的视频游戏截图](img/Image00052.jpg) ![](img/Image00053.jpg)\n\n我们可以轻松地添加另一个具体的创建者类，如\
+  \ `OuterRealmPotionShop`，并使用与 `InnerRealmPotionShop` 相同的继承方法创建更多具体的产品：\n\n`OuterRealmPotionShop`\
+  \ 类：\n\n`OuterRealmPotionShop.h`\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"PotionShop.h\"\n#include \"OuterRealmPotionShop.generated.h\"\n\nUCLASS()\n\
+  class DESIGN_PATTERNS_API AOuterRealmPotionShop : public APotionShop\n{\n    GENERATED_BODY()\n\
+  public:\n    // 调配选定的药剂\n    virtual APotion* ConcoctPotion(FString PotionSKU) override;\n\
+  };\n```\n\n`OuterRealmPotionShop.cpp`\n\n```cpp\n#include \"OuterRealmPotionShop.h\"\
+  \n#include \"OuterRealmHealthPotion.h\"\n#include \"OuterRealmPowerPotion.h\"\n\
+  #include \"OuterRealmSkillPotion.h\"\n\nAPotion* AOuterRealmPotionShop::ConcoctPotion(FString\
+  \ PotionSKU)\n{\n    // 根据传递的字符串选择生成哪个药剂\n    if (PotionSKU.Equals(\"Health\"))\n\
+  \    {\n        return GetWorld()->SpawnActor<AOuterRealmHealthPotion>(AOuterRealmHealthPotion::StaticClass());\n\
+  \    }\n    else if (PotionSKU.Equals(\"Power\"))\n    {\n        return GetWorld()->SpawnActor<AOuterRealmPowerPotion>(AOuterRealmPowerPotion::StaticClass());\n\
+  \    }\n    else if (PotionSKU.Equals(\"Skill\"))\n    {\n        return GetWorld()->SpawnActor<AOuterRealmSkillPotion>(AOuterRealmSkillPotion::StaticClass());\n\
+  \    }\n    else return nullptr; // 如果字符串无效则返回空\n}\n```\n\n我们将以类似于 `InnererRealmPotionShop`\
+  \ 具体产品的方式，实现一些 `OuterRealmPotionShop` 具体产品：\n\n工厂方法视图打印：\n\n![](img/Image00054.jpg)\n\
+  \n# 编程精英主义者的克星……单例模式（Singleton Pattern）\n\n单例模式经常被单独挑出来作为最常用的设计模式之一，如果不是最糟糕的一个的话。单例就像信用卡，每个人都在使用它们，但如果你不负责任地使用，就会陷入真正的困境。编程纯洁者们憎恶单例模式。事实上，我从未见过任何现代出版的文献在讨论单例模式时不提醒读者避免使用它，这很讽刺。四人小组将单例描述为只有一个实例的类，并提供了一个全局访问点（Gamma\
+  \ et.al, 1995）。\n\n## 优点\n\n- ● 封装唯一实例\n- ● 全局（便于访问）\n\n## 不如人意的之处\n\n- ● 全局（便于修改）\n\
+  - ● 可能产生未知的依赖关系\n\n### 单例模式实现\n\n在 Unreal 中没有明确的方法来创建自定义的单例蓝图。然而，Game Instance（游戏实例）似乎是单例的一种官方解决方案。库存系统是演示单例设计模式的一个绝佳例子。我们希望任何时候都只有一个库存实例。此外，我们希望能够在整个游戏中轻松访问该库存系统。\n\
+  \n主单例类 `Singleton_Main`：\n\n`Singleton_Main.h`\n\n```cpp\n#pragma once\n#include\
+  \ \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\n#include \"Singleton_Main.generated.h\"\
+  \n\nUCLASS()\nclass DESIGN_PATTERNS_API ASingleton_Main : public AActor\n{\n   \
+  \ GENERATED_BODY()\npublic:\n    // 设置此 属性的默认值\n    ASingleton_Main();\nprivate:\n\
+  \    // 此 Actor 的库存\n    UPROPERTY()\n    class AInventory* Inventory;\nprotected:\n\
+  \    // 当游戏开始或被生成时调用\n    virtual void BeginPlay() override;\npublic:\n    // 每帧被调用\n\
+  \    virtual void Tick(float DeltaTime) override;\n};\n```\n\n`Singleton_Main.cpp`\n\
+  \n```cpp\n#include \"Singleton_Main.h\"\n#include \"Inventory.h\"\n\n// 设置默认值\n\
+  ASingleton_Main::ASingleton_Main()\n{\n    // 设置此 Actor 每帧调用 Tick()。如果你不需要可以将其关闭。\n\
+  \    PrimaryActorTick.bEverTick = true;\n}\n\n// 当游戏开始或被生成时调用\nvoid ASingleton_Main::BeginPlay()\n\
+  {\n    Super::BeginPlay();\n    // 创建 4 个库存\n    for (int i = 0; i <= 4; i++)\n\
+  \    {\n        AInventory* SpawnedInventory = GetWorld()->SpawnActor<AInventory>(AInventory::StaticClass());\n\
+  \        if (SpawnedInventory)\n        {\n            // 如果生成成功，将生成的库存赋值给本地并记录成功字符串\n\
+  \            Inventory = SpawnedInventory;\n            GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"%s has been created\"), Inventory->GetName()));\n\
+  \        }\n    }\n}\n\n// 每帧被调用\nvoid ASingleton_Main::Tick(float DeltaTime)\n\
+  {\n    Super::Tick(DeltaTime);\n}\n```\n\n`Singleton_Main` 蓝图事件图：\n\n![](img/Image00055.jpg)\n\
+  \n存在 for 循环是为了演示尝试为我们指定的单例对象创建多个实例。如果设置正确，我们不应该允许创建多个库存实例。\n\n`Create_Inventory_Instance`\
+  \ 折叠图：\n\n![](img/Image00056.jpg)\n\n`Instance_Created_Message` 折叠图：\n\n![](img/Image00057.jpg)\n\
+  \n`Inventory` 类：\n\n`Inventory.h`\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"GameFramework/Actor.h\"\n#include \"Inventory.generated.h\"\n\nUCLASS()\n\
+  class DESIGN_PATTERNS_API AInventory\n{\n    GENERATED_BODY()\npublic:\n    // 设置此\
+  \ 属性的默认值\n    AInventory();\n    // 此类的实例\n    UPROPERTY()\n    class AInventory*\
+  \ Instance;\nprotected:\n    // 当游戏开始或被生成时调用\n    virtual void BeginPlay() override;\n\
+  public:\n    // 每帧被调用\n    virtual void Tick(float DeltaTime) override;\n};\n```\n\
+  \n`Inventory.cpp`\n\n\n\n\n\n```cpp\n#include \"Inventory.h\"\n#include \"Kismet/GameplayStatics.h\"\
+  \n\n// 设置默认值\nAInventory::AInventory()\n{\n    // 设置此 Actor 每帧都调用 Tick()。如果你不需要它，可以关闭它以提高性能。\n\
+  \    PrimaryActorTick.bCanEverTick = true;\n    // 查找该类的现有实例\n    TArray<AActor*>\
+  \ Instances;\n    UGameplayStatics::GetAllActorsOfClass(GetWorld(), AInventory::StaticClass(),\
+  \ Instances);\n    if (Instances.Num() > 1)\n    {\n        // 如果至少存在一个，则将找到的第一个实例设置为实例\n\
+  \        Instance = Cast<AInventory>(Instances[0]);\n        GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"%s already exists\"), Instance->GetName()));\n\
+  \        // 然后销毁此 Actor\n        Destroy();\n    }\n}\n\n// 当游戏开始或生成时调用\nvoid AInventory::BeginPlay()\n\
+  {\n    Super::BeginPlay();\n}\n\n// 每帧调用\nvoid AInventory::Tick(float DeltaTime)\n\
+  {\n    Super::Tick(DeltaTime);\n}\n```\n\n`Inventory` 蓝图构造脚本：\n\n![](img/Image00058.jpg)\n\
+  \nUnreal 中不存在私有构造的概念。因此，我们必须创建另一种方法来防止创建新的单例对象。我们通过检查是否已经存在库存实例来实现。如果库存实例确实存在，则尝试创建的新单例对象将被销毁。\n\
+  \n`isInstance_already_exist` 折叠图：\n\n![](img/Image00059.jpg)\n\n`kill_yourself`\
+  \ 折叠图：\n\n![](img/Image00060.jpg)\n\n单例模式视口屏幕打印：\n\n![](img/Image00061.jpg)\n\n\
+  ### 结构型模式 (Structural Patterns)\n\n我们讨论的结构型模式帮助我们从类和对象组合更大的结构。这种模式类别最重要的目标之一是能够在运行时更改对象的组合。\n\
+  \n### 适应并克服…… 适配器模式 (Adapter Pattern)\n\n大量现代技术使用了包装器（wrapper）的概念。可以将高级编程语言考虑为对低层编程语言的包装。但这些被包装的语言及其客户端语言是如何通信的呢？我们需要某种适配器。GoF\
+  \ 告诉我们，适配器模式允许由于接口不兼容而无法共同工作的类协同工作（Gamma et.al, 1995）。\n\n**优点**\n\n> ● 重用那些与新代码库不兼容的复杂代码\n\
+  > ● 实现相当容易\n\n**缺点**\n\n> ● 可能会为了“把方木钉钉进圆孔”而过度使用\n> ● 难以识别出何时需要新的实现或是否需要使用适配器\n\n\
+  #### 适配器模式的实现\n\n在我们的适配器模式实现中，我们有一个使用弹弓的射击者。我们希望允许我们的射击者射枪。然而，我们希望通过使用适配器模式来使用已经实现的现有代码。\n\
+  \n主适配器类：\n\n`Adapter_Main.h`\n\n```cpp\n#include \"CoreMinimal.h\"\n#include \"\
+  GameFramework/Actor.h\"\n#include \"Adapter_Main.generated.h\"\n\nUCLASS()\nclass\
+  \ DESIGN_PATTERNS_API AAdapter_Main : public AActor\n{\n    GENERATED_BODY()\npublic:\n\
+  \    // 设置此 Actor 属性的默认值\n    AAdapter_Main();\nprivate:\n    // 持有枪的适配器的 Shooter\
+  \ Actor\n    UPROPERTY() class AShooter* Shooter;\nprotected:\n    // 当游戏开始或生成时调用\n\
+  \    virtual void BeginPlay() override;\npublic:\n    // 每帧调用\n    virtual void\
+  \ Tick(float DeltaTime) override;\n};\n```\n\n`Adapter_Main.cpp`\n\n```cpp\n#include\
+  \ \"Adapter_Main.h\"\n#include \"GunAdapter.h\"\n#include \"Shooter.h\"\n\n// 设置默认值\n\
+  AAdapter_Main::AAdapter_Main()\n{\n    // 设置此 Actor 每帧都调用 Tick()。如果你不需要它，可以关闭它以提高性能。\n\
+  \    PrimaryActorTick.bCanEverTick = true;\n}\n\n// 当游戏开始或生成时调用\nvoid AAdapter_Main::BeginPlay()\n\
+  {\n    Super::BeginPlay();\n    // 生成枪适配器\n    AGunAdapter* GunAdapter = GetWorld()->SpawnActor<AGunAdapter>(AGunAdapter::StaticClass());\n\
+  \    // 生成射击者并设置枪适配器\n    Shooter = GetWorld()->SpawnActor<AShooter>(AShooter::StaticClass());\n\
+  \    Shooter->SetSlingShot(GunAdapter);\n    // 射击\n    Shooter->Sling();\n}\n\n\
+  // 每帧调用\nvoid AAdapter_Main::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n```\n\n`Adapter_Main` 蓝图：\n\n![](img/Image00062.jpg)\n\n`Create_Gun_Adapter`\
+  \ 折叠图：\n\n![](img/Image00063.jpg)\n\n`Create_Shooter` 折叠图：\n\n![](img/Image00064.jpg)\n\
+  \n`SlingShot` 接口：\n\n`SlingShot.h`\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"U/Interface.h\"\n#include \"SlingShot.generated.h\"\n\n// 此类不需要修改。\n\
+  INTERFACE(MinimalAPI)\nclass USlingShot : public UInterface\n{\n    GENERATED_BODY()\n\
+  };\n\nclass DESIGN_PATTERNS_API ISlingShot\n{\n    GENERATED_BODY()\n    // ISlingShot\
+  \ 的纯虚函数\n    virtual void Sling() = 0;\n};\n```\n\n`SlingShot.cpp`\n\n```cpp\n#include\
+  \ \"SlingShot.h\"\n// ISlingShot 的实现\n```\n\n`GunAdapter` 类：\n\n`GunAdapter.h`\n\
+  \n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\
+  \n#include \"SlingShot.h\"\n#include \"GunAdapter.generated.h\"\n\nclass AGun;\n\
+  \nUCLASS()\nclass DESIGN_PATTERNS_API GunAdapter : public AActor, public ISlingShot\n\
+  {\n    GENERATED_BODY()\npublic:\n    // 设置此 Actor 属性的默认值\n    GunAdapter();\nprivate:\n\
+  \    // \n    UPROPERTY()\n    AGun* Weapon;\nprotected:\n    // 当游戏开始或生成时调用\n \
+  \   virtual void BeginPlay() override;\npublic:\n    // 每帧调用\n    virtual void Tick(float\
+  \ DeltaTime) override;\n    // 实现接口\n    virtual void Sling() override;\n};\n```\n\
+  \n`GunAdapter.cpp`\n\n```cpp\n#include \"GunAdapter.h\"\n#include \"Gun.h\"\n\n\
+  // 设置默认值\nGunAdapter::GunAdapter()\n{\n    // 设置此 Actor 每帧都调用 Tick()。如果你不需要它，可以关闭它以提高性能。\n\
+  \    PrimaryActorTick.bCanEverTick = true;\n}\n\n// 当游戏开始或生成时调用\nvoid GunAdapter::BeginPlay()\n\
+  {\n    Super::BeginPlay();\n    // 生成武器\n    Weapon = GetWorld()->SpawnActor<AGun>(AGun::StaticClass());\n\
+  }\n\n// 每帧调用\nvoid GunAdapter::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n\nvoid GunAdapter::Sling()\n{\n    if (!Weapon)\n    {\n        UE_LOG(LogTemp,\
+  \ Error, TEXT(\"Sling(): Weapon 为空，请确保它已初始化。\"));\n        return;\n    }\n    //\
+  \ 调用 Fire 函数\n    Weapon->Fire();\n}\n```\n\n`GunAdapter` 蓝图：\n\n![](img/Image00065.jpg)\n\
+  \n`Gun` 类：\n\n`Gun.h`\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n#include\
+  \ \"GameFramework/Actor.h\"\n#include \"Gun.generated.h\"\n\nUCLASS()\nclass DESIGN_PATTERNS_API\
+  \ AGun : public AActor\n{\n    GENERATED_BODY()\npublic:\n    // 设置默认值\n    AGun();\n\
+  protected:\n    // 当游戏开始或生成时调用\n    virtual void BeginPlay() override;\npublic:\n\
+  \    // 每帧调用\n    virtual void Tick(float DeltaTime) override;\n    // 用枪射击\n  \
+  \  virtual void Fire();\n};\n```\n\n`Gun.cpp`\n\n\n\n\n\n```cpp\n#include \"Gun.h\"\
+  \n// 设置默认值\nAGun::AGun()\n{\n    // 设置此 actor（执行者）每帧都调用 Tick()。如果不需要，可以关闭它以提高性能。\n\
+  \    PrimaryActorTick.bCanEverTick = true;\n}\n// 当游戏开始或生成时调用\nvoid AGun::BeginPlay()\n\
+  {\n    Super::BeginPlay();\n}\n// 每帧调用\nvoid AGun::Tick(float DeltaTime)\n{\n  \
+  \  Super::Tick(DeltaTime);\n}\nvoid AGun::Fire()\n{\n    // 打印射击日志\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, TEXT(\"Our gun is firing\"));\n}\n```\n\n`Gun` 图蓝：\n\n![图形用户界面，应用程序自动生成](img/Image00066.jpg)\n\
+  \n`Shooter` 类：\n\n### `Shooter.h`\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"GameFramework/Actor.h\"\n#include \"SlingShot.h\"\n#include \"Shooter.generated.h\"\
+  \n\nUCLASS()\nclass DESIGN_PATTERNS_API AShooter : public AActor, public ISlingShot\n\
+  {\n    GENERATED_BODY()\npublic:\n    // 设置此 actor 属性的默认值\n    AShooter();\nprivate:\n\
+  \    // 射击者的武器，必须是一个弹弓\n    ISlingShot* SlingShot;\nprotected:\n    // 当游戏开始或生成时调用\n\
+  \    virtual void BeginPlay() override;\npublic:\n    // 每帧调用\n    virtual void\
+  \ Tick(float DeltaTime) override;\n    // 设置武器 Actor\n    void SetSlingShot(AActor*\
+  \ SlingShotObj);\n    // 使用弹弓射击\n    void Sling();\n};\n```\n\n### `Shooter.cpp`\n\
+  \n```cpp\n#include \"Shooter.h\"\n// 设置默认值\nAShooter::AShooter()\n{\n    // 设置此\
+  \ actor 每帧都调用 Tick()。如果不需要，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick = true;\n\
+  }\n// 当游戏开始或生成时调用\nvoid AShooter::BeginPlay()\n{\n    Super::BeginPlay();\n}\n//\
+  \ 每帧调用\nvoid AShooter::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n}\n\
+  void AShooter::SetSlingShot(AActor* SlingShotObj)\n{\n    // 转换传递的 Actor 并设置武器\n\
+  \    SlingShot = Cast<ISlingShot>(SlingShotObj);\n    if (!SlingShot) // 如果转换失败则记录错误\n\
+  \    {\n        GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Red, TEXT(\"\
+  转换无效！查看输出日志获取更多详情\"));\n        UE_LOG(LogTemp, Error, TEXT(\"SetSlingShot(): 该\
+  \ Actor 不是弹弓！你确定该 Actor 实现了该接口吗？\"));\n    }\n}\nvoid AShooter::Sling()\n{\n   \
+  \ if (!SlingShot)\n    {\n        UE_LOG(LogTemp, Error, TEXT(\"Sling(): SlingShot\
+  \ 为空，请确保它已初始化。\"));\n        return;\n    }\n    // 射击\n    SlingShot->Sling();\n\
+  }\n```\n\n我们可以看到 `Shooter` 类没有射击枪支的功能。然而，它确实有使用弹弓的功能。这两项技能都基于从武器中发射射物体。我们希望复用弹弓的功能并将其适配到枪支的使用。\n\
+  \n`Shooter` 构造脚本：\n\n![图形用户界面，应用程序自动生成](img/Image00067.jpg)\n\n### Is Sling Shot\
+  \ 宏：\n\n![带有中等置信度的自动生成的视频游戏描述截图](img/Image00068.jpg)\n\n### `Sling` 函数：\n\n![图形用户界面自动生成](img/Image00069.jpg)\n\
+  \n### 适配器模式视口打印：\n\n![](img/Image00070.jpg)\n\n## 装饰强化型敌人……装饰器模式（Decorator Pattern）\n\
+  \n装饰器模式允许运行时向对象添加特性和功能。GoF（设计模式作者）指出，“装饰器为通过子类扩展功能提供了灵活的替代方案”（Gamma et.al, 1995）。\n\
+  \n#### \n- 易于为单个对象添加功能\n- 避免影响同类中的其他对象\n\n#### 缺点\n- 可能会产生 GoF 所说的“许多微小对象”。基本上，所有这些半相似的小对象可能变得难以调试。\n\
+  \n### 装饰器模式实现\n\n我们的实现包含一个初始为近战的敌人。我们想要“装饰”这个敌人，使其成为可以使用投射体的敌人。因此，添加的功能是投射体能力。\n\
+  \n### `Decorator_Main` 类：\n\n### `Decorator_Main.h`\n\n```cpp\n#pragma once\n#include\
+  \ \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\n#include \"Enemy.h\"\n\
+  #include \"Decorator_Main.generated.h\"\n\nUCLASS()\nclass DESIGN_PATTERNS_API Decorator_Main\
+  \ : public AActor\n{\n    GENERATED_BODY()\npublic:\n    // 设置默认值\n    Decorator_Main();\n\
+  public:\n    // 主敌人\n    Enemy* Enemy;\nprotected:\n    // 当游戏开始或生成时调用\n    virtual\
+  \ void BeginPlay() override;\npublic:\n    // 每帧调用\n    virtual void Tick(float\
+  \ DeltaTime) override;\n};\n```\n\n### `Decorator_Main.cpp`\n\n```cpp\n#include\
+  \ \"Decorator_Main.h\"\n#include \"Enemy.h\"\n#include \"MeleeEnemy.h\"\n#include\
+  \ \"ProjectileEnemy.h\"\n// 设置默认值\nDecorator_Main::Decorator_Main()\n{\n    // 设置此\
+  \ actor 每帧都调用 Tick()。如果不需要，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick = true;\n\
+  }\n// 当游戏开始或生成时调用\nvoid Decorator_Main::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  \    // 生成一个具体的敌人\n    Enemy = Cast<AMleeeEnemy>(GetWorld()->SpawnActor<AMleeeEnemy>(AMleeeEnemy::Class()));\n\
+  \    // 生成一个近战敌人并将其设置为具体的敌人\n    Enemy = Cast<ProjectileEnemy>(GetWorld()->SpawnActor<ProjectileEnemy>(ProjectileEnemy::Class()));\n\
+  \    // 生成一个投射体敌人并将其设置为近战敌人\n    Enemy = Cast<AMleeeEnemy>(GetWorld()->SpawnActor<AMleeeEnemy>(AMleeeEnemy::Class()));\n\
+  }\n```\n\n\n\n\n\n![A screenshot of a computer Description automatically generated\
+  \ with medium confidence](img/Image00073.jpg)\n\n### `Enemy_Fight` 折叠后的图：\n\n![](img/Image00074.jpg)\n\
+  \n### `Enemy_Die` 折叠后的图：\n\n![](img/Image00075.jpg)\n\n### `Enemy_GetDamage` 折叠后的图：\n\
+  \n![](img/Image00076.jpg)\n\n### `Enemy_Damage_Message` 折叠后的图：\n\n![](img/Image00077.jpg)\n\
+  \n### `Projectile_Enemy_Actions` 折叠后的图：\n\n![Graphical user interface Description\
+  \ automatically generated](img/Image00078.jpg)\n\n### `Create_Projectile_Enemy`\
+  \ 折叠后的图：\n\n![Graphical user interface, application Description automatically generated](img/Image00079.jpg)\n\
+  \n近战敌人与远程敌人之间的显著区别在于构造。远程敌人的构造函数接受之前创建的敌人作为参数。这样做我们就可以重用它来装饰敌人对象。\n\n### `Projectile_Enemy_Fight`\
+  \ 折叠后的图：\n\n![](img/Image00080.jpg)\n\n### `Projectile_Enemy_Die` 折叠后的图：\n\n![](img/Image00081.jpg)\n\
+  \n### `Projectile_Enemy_GetDamage` 折叠后的图：\n\n![](img/Image00082.jpg)\n\n### `Projectile_Enemy_Damage_Message`\
+  \ 折叠后的图：\n\n![](img/Image00083.jpg)\n\n### `Enemy` 接口：\n\n***Enemy.h***\n\n```cpp\n\
+  #pragma once\n#include \"CoreMinimal.h\"\n#include \"UObject/Interface.h\"\n#include\
+  \ \"Enemy.generated.h\"\n\n// 此类不需要修改。\nUINTERFACE((MinimalAPI))\nclass UEnemy :\
+  \ public UInterface\n{\n    GENERATED_BODY()\n};\n\n/**\n* 组件定义了一个接口，用于可以动态向其添加\n\
+  * 职责的对象\n*/\nclass DESIGN_PATTERNS_API IEnemy\n{\n    GENERATED_BODY()\n    // 将接口函数添加到此类中。该类将通过继承来实现此接口。\n\
+  public: \n    // Enemy 的纯虚函数\n    virtual void Fight() = 0;\n    virtual int GetDamage()\
+  \ = 0;\n    virtual void Die() = 0;\n};\n```\n\n***Enemy.cpp***\n\n```cpp\n#include\
+  \ \"Enemy.h\"\n// 为任何不是纯虚的 IEnemy 函数在此处添加默认功能。\n```\n\n`Enemy` 接口被所有敌人对象共享。`MeleeEnemy`\
+  \ 类：\n\n***MeleeEnemy.h***\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n\
+  #include \"Decorator.h\"\n#include \"MeleeEnemy.generated.h\"\n\n/**\n* 具体的装饰器\n\
+  * 向组件添加职责（可以扩展组件\n* 的状态）\n*/\nUCLASS()\nclass DESIGN_PATTERNS_API AMeleeEnemy :\
+  \ public ADecorator\n{\n    GENERATED_BODY()\npublic: \n    // 开始战斗\n    virtual\
+  \ void Fight() override;\n    // 返回此敌人受到的多少伤害\n    virtual int GetDamage() override;\n\
+  \    // 杀死此敌人\n    virtual void Die() override;\n};\n```\n\n***MeleeEnemy.cpp***\n\
+  \n```cpp\n#include \"MeleeEnemy.h\"\nvoid AMeleeEnemy::Fight()\n{\n    // 调用父类 Fight\
+  \ 函数并记录消息\n    Super::Fight();\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ TEXT(\"敌人投出重拳\"));\n}\n\nint AMeleeEnemy::GetDamage()\n{\n    // 返回基础伤害 + 5\n\
+  \    return Super::GetDamage() + 5;\n}\nvoid AMeleeEnemy::Die()\n{\n    // 调用父类\
+  \ Die 函数并记录消息\n    Super::Die();\n    GEngine->AddOnScreenDebugMessage(-1, 15.f,\
+  \ FColor::Yellow, TEXT(\"敌人在痛苦中扭扎并消散\"));\n}\n```\n\n`MeleeEnemy` 蓝图事件图：\n\n![Graphical\
+  \ user interface, application Description automatically generated](img/Image00084.jpg)\n\
+  \n`MeleeEnemy` 蓝图中的 `GetDamage` 函数：\n\n![A screenshot of a computer Description\
+  \ automatically generated with low confidence](img/Image00085.jpg)\n\n### `ProjectileEnemy`\
+  \ 类：\n\n***ProjectileEnemy.h***\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"Decorator.h\"\n#include \"ProjectileEnemy.generated.h\"\n\nUCLASS()\n\
+  class DESIGN_PATTERNS_API AProjectileEnemy : public ADecorator\n{\n    GENERATED_BODY()\n\
+  public: \n    // 开始战斗\n    virtual void Fight() override;\n    // 返回此敌人受到的多少伤害\n\
+  \    virtual int GetDamage() override;\n    // 杀死此敌人\n    virtual void Die() override;\n\
+  };\n```\n\n***ProjectileEnemy.cpp***\n\n```cpp\n#include \"ProjectileEnemy.h\"\n\
+  void AProjectileEnemy::Fight()\n{\n    // 调用父类 Fight 函数并记录消息\n    Super::Fight();\n\
+  \    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT(\"敌人送了一个飞吻并开枪\"\
+  ));\n}\n\nint AProjectileEnemy::GetDamage()\n{\n    // 返回基础伤害 + 5\n    return Super::GetDamage()\
+  \ + 5;\n}\n\nvoid AProjectileEnemy::Die()\n{\n    // 调用父类 Die 函数\n    Super::Die();\n\
+  \    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT(\"敌人送了一个飞吻并开枪\"\
+  ));\n}\n```\n\n我们可以看到远程敌人比近战敌人造成更多的伤害。\n\n`ProjectileEnemy` 蓝图事件图：\n\n![Graphical\
+  \ interface interface](img/Image00086.jpg)\n\n`ProjectileEnemy` 蓝图中的 `GetDamage`\
+  \ 函数：\n\n![A screenshot of a computer Description automatically generated](img/Image00087.jpg)\n\
+  \n装饰器模式视口：\n\n![](img/Image0088.jpg)\n\n### 外观模式 (Facade Pattern)\n\nGoF 定义外观模式为为一组接口提供一个中心接口。当我们想要简化客户端与复杂系统之间的交互时，外观模式非常有用。\n\
+  \n## 优点\n- 简化了复杂系统的使用\n- 减少了客户端与子系统之间的耦合\n\n#### 缺点\n- 隐藏了子系统的特性\n\n#### 外观模式实现\n\
+  \n太空旅行并不容易。太空旅行最重要的部分是星舰。然而，星舰也有自己的复杂性。这就是`StarFacade` 发挥作用的地方。\n\n外观主类：\n\n***StarFacade.h***\n\
+  \n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\
+  \n#include \"StarShip.h\"\n#include \"StarFacade_Main.generated.h\"\n\nUCLASS()\n\
+  class DESIGN_PATTERNS_API AStarShipFacade_Main : AActor\n{\n    GENERATED_BODY()\n\
+  public: \n    // 设置此 Actor 的默认值\n    AStarShipFacade_Main();\nprotected: \n    //\
+  \ 游戏开始或生成时调用\n    virtual void BeginPlay() override;\npublic: \n    // 每帧调用\n  \
+  \  virtual void Tick(float DeltaTime) override;\n};\n```\n\n***StarFacade.cpp***\n\
+  \n```cpp\n#include \"StarShipFacade_Main.h\"\n#include \"StarShipFacade.h\"\n\n\
+  // 设置默认值\nAStarShipFacade_Main::AStarShipFacade_Main()\n{\n    // 设置此 Actor 每帧调用\
+  \ Tick()。如果不需要，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick = true;\n}\n\n// 游戏开始或生成时调用\n\
+  void AStarShipFacade_Main::BeginPlay()\n{\n    Super::BeginPlay();\n    // 创建星舰外观\
+  \ Actor\n    AStarShipFacade* ShipFacade = GetWorld()->SpawnActor<AStarShipFacade>(AStarShipFacade::StaticClass());\n\
+  \    // 执行所需的任务\n    ShipFacade->Reveille();\n    ShipFacade->PlanOfTheDay();\n\
+  \    ShipFacade->Taps();\n}\n\n// 每帧调用\nvoid AStarShipFacade_Main::Tick(float DeltaTime)\n\
+  {\n    Super::Tick(DeltaTime);\n}\n```\n\n\n\n\n\n从 `Façade_Main` 我们可以看到运行飞星舰是多么简单。这仅仅是一个使用外观模式（Façade\
+  \ pattern）的外壳。复杂性在后面。\n\n### `Façade_Main` 事件图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00089.jpg)\n\
+  \n### `StarShipFacade` 类：\n\n#### `StarShipFacade.h`\n```cpp\n#pragma once\n#include\
+  \ \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\n#include \"StarShipCrewMember.h\"\
+  \n#include \"StarShipFacade.generated.h\"\nUCLASS()\nclass DESIGN_PATTERNS_API AStarShipFacade\
+  \ : public AActor\n{\n    GENERATED_BODY()\npublic:\n    // 设置此 属性的默认值\n    AStarShipFacade();\n\
+  private:\n    // 船员列表\n    TArray<AStarShipCrewMember*> Crew;\n    // 要执行的任务\n \
+  \   UPROPERTY()\n    TArray<FString> Tasks;\nprotected:\n    // 当游戏开始或生成时调用\n  \
+  \  virtual void BeginPlay() override;\nprivate:\n    // 为特定船员执行任务\n    void PerformTasks(TArray<AStarShipCrewMember*>\
+  \ myCrew, TArray<FString> myTasks);\npublic:\n    // 每帧调用\n    virtual void Tick(float\
+  \ DeltaTime) override;\n    // 执行 起床号（Reveille）任务\n    void Reveille();\n    //\
+  \ 执行 每日计划（PlanOfTheDay）任务\n    void PlanOfTheDay();\n    // 执行 熄灯号（Taps）任务\n   \
+  \ void Taps();\n};\n```\n\n#### `StarShipFacade.cpp`\n```cpp\n#include \"StarShipFacade.h\"\
+  \n#include \"StarShipNavigationOfficer.h\"\n#include \"StarShipOperationsOfficer.h\"\
+  \n#include \"StarShipSupplyOfficer.h\"\n// 设置默认值\nAStarShipFacade::AStarShipFacade()\n\
+  {\n    // 设置此 actor 每帧调用 Tick()。如果不需要，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n// 当游戏开始或生成时调用\nvoid AStarShipFacade::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  \    // 初始化列表\n    Crew = TArray<AStarShipCrewMember>();\n    Tasks = TArray<FString>();\n\
+  \    // 生成成员\n    AStarShipNavigationOfficer* NavOfficer = GetWorld()->SpawnActor<AStarShipNavigationOfficer>(AStarShipNavigationOfficer::StaticClass());\n\
+  \    AStarShipOperationsOfficer* OpsOfficer = GetWorld()->SpawnActor<AStarShipOperationsOfficer>(AStarShipOperationsOfficer::StaticClass());\n\
+  \    AStarShipSupplyOfficer* SupOfficer = GetWorld()->SpawnActor<AStarShipSupplyOfficer>(AStarShipSupplyOfficer::StaticClass());\n\
+  \    // 将成员加入船员组\n    Crew.Add(NavOfficer);\n    Crew.Add(OpsOfficer);\n    Crew.Add(SupOfficer);\n\
+  }\n// 每帧调用\nvoid AStarShipFacade::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\nvoid AStarShipFacade::Reveille()\n{\n    // 清空任务列表\n    Tasks.Empty();\n    //\
+  \ 添加要执行的任务\n    Tasks.Add(\"trice_up\");\n    Tasks.Add(\"muster\");\n    // 执行任务\n\
+  \    PerformTasks(Crew, Tasks);\n}\nvoid AStarShipFacade::PlanOfTheDay()\n{\n  \
+  \  // 清空任务列表\n    Tasks.Empty();\n    // 添加要执行的任务\n    Tasks.Add(\"duty\");\n  \
+  \  // 执行任务\n    PerformTasks(Crew, Tasks);\n}\nvoid AStarShipFacade::Taps()\n{\n\
+  \    // 清空任务列表\n    Tasks.Empty();\n    // 添加要执行的任务\n    Tasks.Add(\"liberty_call\"\
+  );\n    Tasks.Add(\"lights_out\");\n    // 执行任务\n    PerformTasks(Crew, Tasks);\n\
+  }\nvoid AStarShipFacade::PerformTasks(TArray<AStarShipCrewMember*> myCrew, TArray<FString>\
+  \ myTasks)\n{\n    // 为每个船员执行传递的任务\n    for (AStarShipCrewMember* Member : myCrew)\n\
+  \    {\n        // 执行任务\n        Member->Task(myTasks);\n    }\n}\n```\n\n`StarShipFacade`\
+  \ 类是该模式精髓所在。`starshipFacade` 事件图：\n\n![图形用户界面描述自动生成](img/Image00090.jpg)\n\n###\
+  \ `将导航官加入船员组` 的折叠图：\n\n![](img/Image00091.jpg)\n\n### `将补给官加入船员组` 的折叠图：\n\n![](img/Image00092.jpg)\n\
+  \n### `将行动务官加入船员组` 的折叠图：\n\n![](img/Image00093.jpg)\n\n### `Reveille` 蓝图函数：\n\n\
+  ![](img/Image00094.jpg)\n\n### `PlanOfTheDay` 蓝图函数：\n\n![](img/Image00095.jpg)\n\
+  \n### `Taps` 蓝图函数：\n\n![](img/Image00096.jpg)\n\n### `Perform Tasks` 蓝图函数：\n\n![](img/Image00097.jpg)\n\
+  \n### 抽象类 `StarShipCrewMember`：\n\n#### `StarShipCrewMember.h`\n```cpp\n#pragma\
+  \ once\n#include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\n#include\
+  \ \"StarShipCrewMember.generated.h\"\nUCLASS()\nclass DESIGN_PATTERNS_API AStarShipCrewMember\
+  \ : public AActor\n{\n    GENERATED_BODY()\npublic:\n    // 设置此 属性的默认值\n    AStarShipCrewMember();\n\
+  protected:\n    // 当游戏开始或生成时调用\n    virtual void BeginPlay() override;\nprivate:\n\
+  \    // 执行传递的任务\n    void Task(const FString& Task);\npublic:\n    // 执行 熄灯任务\n\
+  \    void TurnLightsOut();\n    // 执行 起立三号任务\n    void HeaveOutTriceUp();\n    //\
+  \ 执行 准假假任务\n    void LibertyCall();\n    // 执行 集合点任务\n    void CrewMuster();\n \
+  \   // 执行传递的任务列表\n    void Task(const TArray<FString>& Tasks);\n    // 执行船员职责。它是纯虚函数，在此类中不需要实现\n\
+  \    virtual void Duty() PURE_VIRTUAL(AStarShipCrewMember::Duty, );\n    // 返回船员头衔。它是纯虚函数，在此类中不需要实现\n\
+  \    virtual FString CrewTitle() PURE_VIRTUAL(AStarShipCrewMember::CrewTitle, return\
+  \ \"\"; );\n};\n```\n\n`StarShipCrewMember.cpp`\n\n\n\n\n\n```cpp\n#include \"StarShipCrewMember.h\"\
+  \nAStarShipCrewMember::AStarShipCrewMember() {}\n\nvoid AStarShipCrewMember::BeginPlay()\
+  \ {\n    Super::BeginPlay();\n}\n\nvoid AStarShipCrewMember::TurnLightsOut() {\n\
+  \    // 打印熄灯字符串\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ FString::Printf(TEXT(\"%s taps,t lights out.\"), CrewTitle()));\n}\n\nvoid AStarShipCrewMember::HeaveOutTriceUp()\
+  \ {\n    // 打印收缆字符串\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ FString::Printf(TEXT(\"%s all hands heave out and trice up.\"), CrewTitle()));\n\
+  }\n\nvoid AStarShipCrewMember::LibertyCall() {\n    // 打印休假集合字符串\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"%s liberty call, liberty call.\"\
+  ), CrewTitle()));\n}\n\nvoid AStarShipCrewMember::CrewMuster() {\n    // 打印集合字符串\n\
+  \    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT(\"\
+  %s time for muster.\"), CrewTitle()));\n}\n\nvoid AStarShipCrewMember::Task(const\
+  \ TArray<FString>& Tasks) {\n    // 遍历 Tasks 数组并为每个任务调用 Task() 函数\n    for (const\
+  \ FString& myTask : Tasks) {\n        Task(myTask);\n    }\n}\n\nvoid AStarShipCrewMember::Task(const\
+  \ FString& Task) {\n    // 检查执行哪个任务\n    if (Task.Equals(\"lights_out\")) {\n  \
+  \      TurnLightsOut();\n    } else if (Task.Equals(\"trice_up\")) {\n        HeaveOutTriceUp();\n\
+  \    } else if (Task.Equals(\"liberty_call\")) {\n        LibertyCall();\n    }\
+  \ else if (Task.Equals(\"muster\")) {\n        CrewMuster();\n    } else if (Task.Equals(\"\
+  duty\")) {\n        Duty();\n    } else {\n        // 如果传递的 Task 不存在\n        GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Red, TEXT(\"Undefined task\"));\n    }\n}\n```\n\n`Turn Lights Out`\
+  \ 蓝图函数：\n\n![](img/Image00098.jpg)\n\n`Heave Out Trice Up` 蓝图函数：\n\n![](img/Image00099.jpg)\n\
+  \n`Liberty Call` 蓝图函数：\n\n![](img/Image00100.jpg)\n\n`Crew Muster` 蓝图函数：\n\n![](img/Image00101.jpg)\n\
+  \n`Task` 蓝图函数：\n\n![](img/Image00102.jpg)\n\n`Task Perform` 蓝图函数：\n\n![](img/Image00103.jpg)\n\
+  \n`Duty` 蓝图函数：\n\n![](img/Image00104.jpg)\n\n`Crew Title` 蓝图函数：\n\n![](img/Image00105.jpg)\n\
+  \n`StarShipNavigationOfficer` 类：\n\n***StarShipNavigationOfficer.h***\n```cpp\n\
+  #pragma once\n#include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\n#include\
+  \ \"StarShipCrewMember.h\"\n#include \"StarShipNavigationOfficer.generated.h\"\n\
+  \nUCLASS()\nclass DESIGN_PATTERNS_API AStarShipNavigationOfficer : public AStarShipCrewMember\
+  \ {\n    GENERATED_BODY()\npublic:\n    // 设置此 actor 属性的默认值\n    AStarShipNavigationOfficer();\n\
+  protected:\n    // 当游戏开始或生成时调用\n    virtual void BeginPlay() override;\npublic:\n\
+  \    // 每帧调用\n    virtual void Tick(float DeltaTime) override;\n    // 接口 Duty 函数\
+  \ - 打印职责日志\n    virtual void Duty() override;\n    // 接口 Duty 函数 - 返回头\n    virtual\
+  \ FString CrewTitle() override;\n};\n```\n\n***StarShipNavigationOfficer.cpp***\n\
+  ```cpp\n#include \"StarShipNavigationOfficer.h\"\n// 设置默认值\nAStarShipNavigationOfficer::AStarShipNavigationOfficer()\
+  \ {\n    // 设置此 actor 每帧调用 Tick()。如果不需要，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n\n// 当游戏开始或生成时调用\nvoid AStarShipNavigationOfficer::BeginPlay() {\n\
+  \    Super::BeginPlay();\n}\n\n// 每帧调用\nvoid AStarShipNavigationOfficer::Tick(float\
+  \ DeltaTime) {\n    Super::Tick(DeltaTime);\n}\n\nvoid AStarShipNavigationOfficer::Duty()\
+  \ {\n    // 打印职责字符串\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ FString::Printf(TEXT(\"%s navigates the ship.\"), CrewTitle()));\n}\n\nFString\
+  \ AStarShipNavigationOfficer::CrewTitle() {\n    return \"The Nav Officer\";\n}\n\
+  ```\n\n`StarShipNavigationOfficer` 的 Duty 函数：\n\n![](img/Image0106.jpg)\n\n`StarShipNavigationOfficer`\
+  \ 的 Crew Title：\n\n![](img/Image0107.jpg)\n\n`StarShipOperationsOfficer` 类：\n\n\
+  ***StarShipOperationsOfficer.h***\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"GameFramework/Actor.h\"\n#include \"StarShipCrewMember.h\"\n#include\
+  \ \"StarShipOperationsOfficer.generated.h\"\n\nUCLASS()\nclass DESIGN_PATTERNS_API\
+  \ AStarShipOperationsOfficer : public AStarShipCrewMember {\n    GENERATED_BODY()\n\
+  public:\n    // 设置此 actor 属性的默认值\n    AStarShipOperationsOfficer();\nprotected:\n\
+  \    // 当游戏开始或生成时调用\n    virtual void BeginPlay() override;\npublic:\n    // 每帧调用\n\
+  \    virtual void Tick(float DeltaTime) override;\n    // 接口 Duty 函数 - 打印职责日志\n\
+  \    virtual void Duty() override;\n    // 接口 Duty 函数 - 返回头\n    virtual FString\
+  \ CrewTitle() override;\n};\n```\n\n***StarShipOperationsOfficer.cpp***\n```cpp\n\
+  #include \"StarShipOperationsOfficer.h\"\n// 设置默认值\nAStarShipOperationsOfficer::AStarShipOperationsOfficer()\
+  \ {\n    // 设置此 actor 每帧调用 Tick()。如果不需要，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n\n// 当游戏开始或生成时调用\nvoid AStarShipOperationsOfficer::BeginPlay() {\n\
+  \    Super::BeginPlay();\n}\n\n// 每帧调用\nvoid AStarShipOperationsOfficer::Tick(float\
+  \ DeltaTime) {\n    Super::Tick(DeltaTime);\n}\n\nvoid AStarShipOperationsOfficer::Duty()\
+  \ {\n    // 打印职责字符串\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ FString::Printf(TEXT(\"%s synthesizes and disseminates incoming information.\"\
+  ), CrewTitle()));\n}\n\nFString AStarShipOperationsOfficer::CrewTitle() {\n    return\
+  \ \"The Ops Officer\";\n}\n```\n\n`StarShipOperationsOfficer` 的 Duty 函数：\n\n![](img/Image0108.jpg)\n\
+  \n`StarShipOperationsOfficer` 的 Crew Title：\n\n![](img/Image0109.jpg)\n\n`StarShipSupplyOfficer`\
+  \ 类：\n\n***StarShipSupplyOfficer.h***\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"GameFramework/Actor.h\"\n#include \"StarShipCrewMember.h\"\n#include\
+  \ \"StarShipSupplyOfficer.generated.h\"\n\nUCLASS()\nclass DESIGN_PATTERNS_API AStarShipSupplyOfficer\
+  \ : public AStarShipCrewMember {\n    GENERATED_BODY()\npublic:\n    // 设置此 actor\
+  \ 属性的默认值\n    AStarShipSupplyOfficer();\nprotected:\n    // 当游戏开始或生成时调用\n    virtual\
+  \ void BeginPlay() override;\npublic:\n    // 每帧调用\n    virtual void Tick(float\
+  \ DeltaTime) override;\n    // 接口 Duty 函数 - 打印职责日志\n    virtual void Duty() override;\n\
+  \    // 接口 Duty 函数 - 返回头\n    virtual FString CrewTitle() override;\n};\n```\n\n\
+  ***StarShipSupplyOfficer.cpp***\n\n\n\n\n\n```cpp\n#include \"StarShipSupplyOfficer.h\"\
+  \n// 设置默认值\nAStarShipSupplyOfficer::AStarShipSupplyOfficer()\n{\n    // 设置此 Actor\
+  \ 每帧都调用 Tick()。如果不需要，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick = true;\n}\n\
+  \n// 当游戏开始或被生成时调用\nvoid AStarShipSupplyOfficer::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  }\n\n// 每帧调用\nvoid AStarShipSupplyOfficer::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n\nvoid AStarShipSupplyOfficer::Duty()\n{\n    //打印 Duty 字符串\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"%s ensures there are ample ship supplies.\"\
+  ), CrewTitle()));\n}\n\nFString AStarShipSupplyOfficer::CrewTitle()\n{\n    //返回标题\n\
+  \    return \"The Supply Officer\";\n}\n```\n\n`StarShipSupplyOfficer` 的 `Duty`\
+  \ 函数：\n\n![自动生成的视频游戏截图](img/Image00110.jpg)\n\n`StarShipSupplyOfficer` 的 `CrewTitle`\
+  \ 函数：\n\n![自动生成的图形用户界面应用程序](img/Image00111.jpg)\n\nFacade 模式视口打印：\n\n![](img/Image00112.jpg)\n\
+  \n## 行为模式\n\n我们讨论的行为模式帮助我们确定对象之间如何相互作用。此外，对象的责任也定义在行为模式中。我们必须在行为模式概述中提到通信。对象之间的运行时通信是行为模式实现的基础。\n\
+  \n### 怪物在夜间出没……观察者模式\n\n观察者模式是一种流行的模式，应用于许多不同的软件开发范式。该模式的另一个名称是发布者-订阅者模式。我们有一个广播状态变化的发布者，以及一组监听这些广播的订阅者。\n\
+  \n**优点**\n\n> ● 将发布者从订阅者中抽象出来的极佳方法\n> ● 发布者不需要了解关于订阅者的任何信息\n\n**缺点**\n\n> ● 由于 GoF（设计模式\
+  \ Go）所说的“悬空引用”，必须小心处理取消订阅。\n\n## 观察者模式实现\n\n钟楼是我们观察者模式示例中的发布者。订阅者是一群根据一天中时间改变行为的怪物。当钟楼的时间状态改变时，怪物会收到钟楼的通知。`Observer_Main`\
+  \ 类：\n\n***Observer_Main.h***\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n\
+  #include \"GameFramework/Actor.h\"\n#include \"Observer_Main.generated.h\"\n\nUCLASS()\n\
+  class DESIGN_PATTERNS_API AObserver_Main : public AActor\n{\n    GENERATED_BODY()\n\
+  public:\n    // 设置此 Actor 属性的默认值\n    AObserver_Main();\nprotected:\n    // 当游戏开始或被生成时调用\n\
+  \    virtual void BeginPlay() override;\npublic:\n    // 每帧调用\n    virtual void\
+  \ Tick(float DeltaTime) override;\n};\n```\n\n***Observer_Main.cpp***\n```cpp\n\
+  #include \"Observer_Main.h\"\n#include \"ClockTower.h\"\n#include \"FreakyAllen.h\"\
+  \n#include \"FreakyJeff.h\"\n#include \"FreakySue.h\"\n\n// 设置默认值\nAObserver_Main::AObserver_Main()\n\
+  {\n    // 设置此 Actor 每帧都调用 Tick()。如果不需要，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n\n// 当游戏开始或被生成时调用\nvoid AObserver_Main::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  \    // 生成钟楼\n    AClockTower* ClockTower = GetWorld()->SpawnActor<AClockTower>(AClockTower::StaticClass());\n\
+  \    // 生成第一个订阅者并设置它的钟楼\n    AFreakyAllen* FreakyAllen = GetWorld()->SpawnActor<AFreakyAllen>(AFreakyAllen::StaticClass());\n\
+  \    FreakyAllen->SetClockTower(ClockTower);\n    // 生成第二个订阅者并设置它的钟楼\n    AFreakyJeff*\
+  \ FreakyJeff = GetWorld()->SpawnActor<AFreakyJeff>(AFreakyJeff::StaticClass());\n\
+  \    FreakyJeff->SetClockTower(ClockTower);\n    // 生成第三个订阅者并设置它的钟楼\n    AFreakySue*\
+  \ FreakySue = GetWorld()->SpawnActor<AFreakySue>(AFreakySue::StaticClass());\n \
+  \   FreakySue->SetClockTower(ClockTower);\n    // 钟楼的时间，以便订阅者可以执行自己的例程\n    ClockTower->SetTimeOfDay(\"\
+  Morning\");\n    ClockTower->SetTimeOfDay(\"Midday\");\n    ClockTower->SetTimeOfDay(\"\
+  Evening\");\n}\n\n// 每帧调用\nvoid AObserver_Main::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n```\n\n`Observer_Main` 蓝图事件图：\n\n![自动生成的图形用户界面](img/Image00113.jpg) ![自动生成的图形用户界面应用程序](img/Image00114.jpg)\n\
+  \n`Create ClockTower` 折叠图：\n\n![自动生成的图形用户界面应用程序](img/Image00115.jpg)\n\n`Create\
+  \ FreakyAllen` 折叠图：\n\n![中等置信度生成的计算机截图](img/Image00116.jpg)\n\n`Create FreakyJeff`\
+  \ 折叠图：\n\n![自动生成的视频游戏截图](img/Image00117.jpg)\n\n`Create FreakySue` 折叠图：\n\n![中等置信度生成的计算机截图](img/Image00118.jpg)\n\
+  \n让我们实现 `Subscriber`：\n\n***Subscriber.h***\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"UObject/Interface.h\"\n#include \"Subscriber.generated.h\"\n\n// 此类不需要修改\n\
+  UINTERFACE(MinimalAPI)\nclass USubscriber : public UInterface\n{\n    GENERATED_BODY()\n\
+  };\n\n//向此类中添加接口函数。这是将被继承以实现此接口的类。\nclass DESIGN_PATTERNS_API ISubscriber\n{\n \
+  \   GENERATED_BODY()\npublic:\n    // Subscriber 的纯虚函数\n    virtual void Update(class\
+  \ APublisher* Publisher) = 0;\n};\n```\n\n***Subscriber.cpp***\n```cpp\n#include\
+  \ \"Subscriber.h\"\n// 为任何非纯虚 ISubscriber 函数在此处添加默认功能。\n```\n\n让我们实现 `Publisher`：\n\
+  \n***Publisher.h***\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n#include\
+  \ \"GameFramework/Actor.h\"\n#include \"Subscriber.h\"\n#include \"Publisher.generated.h\"\
+  \n\nUCLASS()\nclass DESIGN_PATTERNS_API APublisher : public AActor\n{\n    GENERATED_BODY()\n\
+  public:\n    // 设置此 Actor 属性的默认值\n    APublisher();\nprivate:\n    // 此发布者的订阅者\n\
+  \    UPROPERTY()\n    TArray<AActor*> Subscribers = TArray<AActor*>();\nprotected:\n\
+  \    // 当游戏开始或被生成时调用\n    virtual void BeginPlay() override;\npublic:\n    // 每帧调用\n\
+  \    virtual void Tick(float DeltaTime) override;\npublic:\n    // 将传递的订阅者添加到列表\n\
+  \    virtual void Subscribe(AActor* Subscriber);\n    // 从列表中移除传递的订阅者\n    virtual\
+  \ void UnSubscribe(AActor* SubscriberToRemove);\n    // 通知所有订阅者发生了某些变化\n    virtual\
+  \ void NotifySubscribers();\n};\n```\n\n***Publisher.cpp***\n\n\n\n\n\n```cpp\n\
+  #include \"Publisher.h\"\n// 设置默认值\nAPublisher::APublisher()\n{\n    // 设置此 Actor\
+  \ 每帧都调用 Tick()。如果不需要，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick = true;\n}\n\
+  // 当游戏开始或被生成时调用\nvoid APublisher::BeginPlay()\n{\n    Super::BeginPlay();\n}\n\n\
+  // 每帧调用一次\nvoid APublisher::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\nvoid APublisher::Subscribe(AActor* Subscriber)\n{\n    // 添加传入的 Subscriber\n\
+  \    Subscribers.Add(Subscriber);\n}\n\nvoid APublisher::UnSubscribe(AActor* SubscriberToRemove)\n\
+  {\n    // 移除传入的 Subscriber\n    Subscribers.Remove(SubscriberToRemove);\n}\n\nvoid\
+  \ APublisher::NotifySubscribers()\n{\n    // 遍历每个 Subscriber\n    for (AActor* Actor\
+  \ : Subscribers)\n    {\n        // 将它们中的每一个转换为具体的 Subscriber\n        ISubscriber*\
+  \ Sub = Cast<ISubscriber>(Actor);\n        if (Sub)\n        {\n            // 通知每一个它们发生了变化，以便它们执行自己的例程\n\
+  \            Sub->Update(this);\n        }\n    }\n}\n```\n\n这是发布者的 `Subscribe`\
+  \ 函数：\n\n![一张自动生成的具有低置信度的计算机描述截图](img/Image00119.jpg)\n\n这是发布者的取消订阅 `Subscribe`\
+  \ 函数：\n\n![图形用户界面，应用程序描述自动生成](img/Image00120.jpg)\n\n这是发布者的 `NotifySubscribers`\
+  \ 函数：\n\n![图形用户界面，应用程序描述自动生成](img/Image00114.jpg)\n\n`ClockTower` 类：\n\n***ClockTower.h***\n\
+  \n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n#include \"Publisher.h\"\n#include\
+  \ \"ClockTower.generated.h\"\n\nUCLASS()\nclass DESIGN_PATTERNS_API AClockTower\
+  \ : public APublisher\n{\n    GENERATED_BODY()\n\npublic:\n    // 设置此 Actor 属性的默认值\n\
+  \    AClockTower();\n\nprivate:\n    // 此钟塔的当前时间\n    FString Time;\n\nprotected:\n\
+  \    // 当游戏开始或被生成时调用\n    virtual void BeginPlay() override;\n\npublic:\n    //\
+  \ 每帧调用一次\n    virtual void Tick(float DeltaTime) override;\n\npublic:\n    // 当此钟塔的时间改变时调用\n\
+  \    void TimeChanged();\n    // 设置此钟塔的时间\n    void SetTimeOfDay(FString myTime);\n\
+  \    // 返回此钟塔的时间\n    FORCEINLINE FString GetTime()\n    {\n        return Time;\n\
+  \    };\n};\n```\n\n***ClockTower.cpp***\n\n```cpp\n#include \"ClockTower.h\"\n\
+  // 设置默认值\nAClockTower::AClockTower()\n{\n    // 设置此 Actor 每帧都调用 Tick()。如果不需要，可以关闭它以提高性能。\n\
+  \    PrimaryActorTick.bCanEverTick = true;\n}\n// 当游戏开始或被生成时调用\nvoid AClockTower::BeginPlay()\n\
+  {\n    Super::BeginPlay();\n}\n\n// 每帧调用一次\nvoid AClockTower::Tick(float DeltaTime)\n\
+  {\n    Super::Tick(DeltaTime);\n}\n\nvoid AClockTower::TimeChanged()\n{\n    //\
+  \ 当时间改变时，此钟塔（作为一个发布者）通知所有订阅者时间已改变\n    NotifySubscribers();\n}\n\nvoid AClockTower::SetTimeOfDay(FString\
+  \ myTime)\n{\n    // 使用传入的参数设置时间并警告时间已改变\n    Time = myTime;\n    TimeChanged();\n\
+  }\n```\n\n`SetTimeOfDay` 函数：\n\n![](img/Image00121.jpg)\n\n`GetTime` 函数：\n\n![](img/Image00122.jpg)\n\
+  \n`TimeChanged` 函数：\n\n![](img/Image00123.jpg)\n\n`FreakyAllen` 类：\n\n让我们来实现我们的变态者们将共享的\
+  \ `Morph` 接口：\n\n***Morph.h***\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"UObject/Interface.h\"\n#include \"Morph.generated.h\"\n\n// 此类不需要修改\n\
+  UINTERFACE(MinimalAPI)\nclass UMorph\n{\n    GENERATED_BODY()\n};\n\nclass DESIGN_PATTERNS_API\
+  \ IMorph\n{\n    GENERATED_BODY()\n    // 向此类添加接口函数。此类将通过被继承以实现此接口。\npublic:\n \
+  \   // Morph 的纯虚拟函数\n    virtual void Morph() = 0;\n};\n```\n\n***Morph.cpp***\n\
+  \n```cpp\n#include \"Morph.h\"\n// 为任何不是纯虚拟的 IMorph 函数在此添加默认功能。\n```\n\n***FreakyAllen.h***\n\
+  \n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\
+  \n#include \"Subscriber.h\"\n#include \"Morph.h\"\n#include \"FreakyAllen.generated.h\"\
+  \n\nclass AClockTower;\n\nUCLASS()\nclass DESIGN_PATTERNS_API AFreakyAllen : public\
+  \ AActor, public ISubscriber, public IMorph\n{\n    GENERATED_BODY()\n\npublic:\n\
+  \    // 设置此 Actor 属性的默认值\n    AFreakyAllen();\n\nprivate:\n    // 此订阅者的钟塔\n    UPROPERTY()\n\
+  \    AClockTower* ClockTower;\n\nprotected:\n    // 当游戏开始或被生成时调用\n    virtual void\
+  \ BeginPlay() override;\n\npublic:\n    // 每帧调用一次\n    virtual void Tick(float DeltaTime)\
+  \ override;\n\npublic:\n    // 当此订阅者被销毁时，它将从钟塔取消订阅\n    virtual void Destroyed()\
+  \ override;\n\npublic:\n    // 当发布者改变状态时，它将执行此订阅者例程\n    virtual void Update(class\
+  \ APublisher* Publisher) override;\n    // 执行此订阅者例程\n    virtual void Morph();\n\
+  \    // 设置此订阅者的钟塔\n    void SetClockTower(AClockTower* myClockTower);\n};\n```\n\
+  \n***FreakyAllen.cpp***\n\n\n\n\n\n```cpp\n#include \"FreakyAllen.h\"\n#include\
+  \ \"Publisher.h\"\n#include \"ClockTower.h\"\n\n// 设置默认值\nAFreakyAllen::AFreakyAllen()\n\
+  {\n    // 设置此 Actor 每一帧调用 Tick()。如果不需要，可以关闭此项以提高性能。\n    PrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n\n// 当游戏开始或被生成时调用\nvoid AFreakyAllen::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  }\n\n// 每帧调用一次\nvoid AFreakyAllen::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n\nvoid AFreakyAllen::Destroyed()\n{\n    Super::Destroyed();\n    // 如果 Clock\
+  \ Tower 为空，则记录错误\n    if (!ClockTower)\n    {\n        UE_LOG(LogTemp, Error, TEXT(\"\
+  Destroyed(): ClockTower is NULL, make sure it's initialized.\"));\n        return;\n\
+  \    }\n    // 如果 Clock Tower 被销毁，则取消订阅\n    ClockTower->UnSubscribe(this);\n}\n\
+  \nvoid AFreakyAllen::Update(APublisher* Publisher)\n{\n    // 执行例程\n    Morph();\n\
+  }\n\nvoid AFreakyAllen::Morph()\n{\n    // 如果 Clock Tower 为空，则记录错误\n    if (!ClockTower)\n\
+  \    {\n        UE_LOG(LogTemp, Error, TEXT(\"Morph(): ClockTower is NULL, make\
+  \ sure it's initialized.\"));\n        return;\n    }\n    // 获取 Clock Tower 的当前时间\n\
+  \    FString Time = ClockTower->GetTime();\n    if (!Time.Compare(\"Morning\"))\n\
+  \    {\n        // 执行早晨例程\n        GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ FString::Printf(TEXT(\"It is %s, so FreakyAllen makes a bowl of cereal\"), Time));\n\
+  \    }\n    else if (!Time.Compare(\"Midday\"))\n    {\n        // 执行中午例程\n    \
+  \    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT(\"\
+  It is %s, so FreakyAllen's right eye starts to twitch\"), Time));\n    }\n    else\
+  \ if (!Time.Compare(\"Evening\"))\n    {\n        // 执行晚间例程\n        GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"It is %s, so FreakyAllen morphs into\
+  \ a blood sucking wogglesnort\"), Time));\n    }\n}\n\nvoid AFreakyAllen::SetClockTower(AClockTower*\
+  \ myClockTower)\n{\n    // 如果传递的 Clock Tower 为空，则记录错误\n    if (!myClockTower)\n\
+  \    {\n        UE_LOG(LogTemp, Error, TEXT(\"SetClockTower(): myClockTower is NULL,\
+  \ make sure it's initialized.\"));\n        return;\n    }\n    // 设置 Clock Tower\
+  \ 并订阅\n    ClockTower = myClockTower;\n    ClockTower->Subscribe(this);\n}\n```\n\
+  \n`FreakyAllen` 构造脚本：\n\n![自动生成的图形界面描述](img/Image00124.jpg) \n\n`isClockTowerValid`\
+  \ 折叠图表：\n\n![包含文本、电子设备、截图的图片自动生成](img/Image00125.jpg) \n\n`Subscribe_FreakyAllen_toClockTower`\
+  \ 折叠图表：\n\n![包含文本、户内的的图片自动生成](img/Image00126.jpg) \n\n`Print_Subscribe_Request`\
+  \ 折叠图表：\n\n![](img/Image00127.jpg) \n\n`FreakyAllen` 事件图：\n\n![自动生成的图形界面描述](img/Image00128.jpg)\
+  \ \n\n`Morning_Morph` 折叠图表：\n\n![](img/Image00129.jpg) \n\n`Midday_Morph` 折叠图表：\n\
+  \n![](img/Image00130.jpg) \n\n`Evening_Morph` 折叠图表：\n\n![](img/Image00131.jpg) \n\
+  \n其他怪物遵循相同的实现方式，除了定义它们各自状态的字符串外（为了简洁起见，这些字符串已移除）。\n\n观察者模式视口打印：\n\n![](img/Image00132.jpg)\
+  \ \n\n# 让雨落下来……状态模式\n\nGoF（设计模式 Go）将状态模式描述为允许对象在其内部状态改变时改变其行为（Gamma 等人，1995）。\n\n\
+  ## 优点\n\n> ● 将特定状态的行为局部化（Gamma 等人，1995）。\n\n## 不够好的之处\n\n> ● 与策略模式相当相似\n\n## 状态模式实现\n\
+  \n我们将实现一个老式的老虎机。正如我们所知，老虎机可以处于几种状态。这些状态分别是：未插入硬币、已插入硬币、无金额、赢得金额。`State_Main` 类：\n\
+  \n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\
+  \n#include \"State_Main.generated.h\"\n\nUCLASS()\nclass AState_Main : public AActor\n\
+  {\n    GENERATED_BODY()\n\npublic:\n    AState_Main();\n\nprotected:\n    virtual\
+  \ void BeginPlay() override;\n\npublic:\n    virtual void Tick(float DeltaTime)\
+  \ override;\n};\n```\n\n```cpp\n#include \"State_Main.h\"\n#include \"OldSchoolMachine.h\"\
+  \n\n// 设置默认值\nAState_Main::AState_Main()\n{\n    // 设置此 Actor 每一帧调用 Tick()。如果不需要，可以关闭此项以提高性能。\n\
+  \    PrimaryActorTick.bCanEverTick = true;\n}\n\n// 当游戏开始或被生成时调用\nvoid AState_Main::BeginPlay()\n\
+  {\n    Super::BeginPlay();\n    // 创建老虎机并将其金额设置为 100\n    OldSchoolMachine* OldSchoolMachine\
+  \ = GetWorld()->SpawnActor<AOldSchoolMachine>();\n    // 输出当前状态\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"It is %s, so FreakyAllen makes a\
+  \ bowl of cereal\"), OldSchoolMachine->GetState()));\n    // 插入硬币并拉下摇杆\n    OldSchoolMachine->InsertCoin();\n\
+  \    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT(\"\
+  It is %s, so FreakyAllen's right eye starts to twitch\"), OldSchoolMachine->GetState()));\n\
+  \    // 插入硬币，拉下摇杆，再次插入硬币\n    OldSchoolMachine->InsertCoin();\n    OldSchoolMachine->PullLever();\n\
+  \    OldSchoolMachine->InsertCoin();\n    // 输出当前状态\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, FString::Printf(TEXT(\"It is %s, so FreakyAllen morphs into\
+  \ a blood sucking wogglesnort\"), OldSchoolMachine->GetState()));\n    // 拉下摇杆\n\
+  \    OldSchoolMachine->PullLever();\n    // 添加 100 美额\n    OldSchoolMachine->RestockDollars(100);\n\
+  \    // 插入硬币并拉下摇杆\n    OldSchoolMachine->InsertCoin();\n    OldSchoolMachine->PullLever();\n\
+  \    // 输出当前状态\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT(\"\
+  It is %s, so FreakyAllen makes a bowl of cereal\"), OldSchoolMachine->GetState()));\n\
+  }\n\n// 每帧调用一次\nvoid AState_Main::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n```\n\n`State_Main` 蓝图事件图：\n\n![](img/Image00133.jpg) \n\n`Create OldSchoolSlotMachine`\
+  \ 折叠节点：\n\n![自动生成的视频游戏描述](img/Image00134.jpg) \n\n`OldSchoolMachine Action Sequence_1`\
+  \ 折叠图表：\n\n![自动生成的图形界面、应用程序描述](img/Image00135.jpg) \n\n`OldSchoolMachine Action\
+  \ Sequence_2` 折叠图表：\n\n![自动生成的视频游戏描述，置信度中等](img/Image00136.jpg) \n\n\n\n\n\n# `OldSchoolSlotMachine\
+  \ Action Sequence_3` 折叠图图：\n\n![一张自动生成的视频游戏描述截图](img/Image00137.jpg)\n\n## `Print\
+  \ Current State` 函数：\n\n![自动生成的图形用户界面描述](img/Image00138.jpg)\n\n## `OldSchoolSlotMachine`\
+  \ 类：\n\n### `OldSchoolSlotMachine.h`\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"GameFramework/Actor.h\"\n#include \"State.h\"\n#include \"OldSchoolSlotMachine.generated.h\"\
+  \n\nUCLASS()\nclass DESIGN_PATTERNS_API AOldSchoolSlotMachine : public AActor\n\
+  {\n    GENERATED_BODY()\n\npublic:\n    // 设置此节点属性的默认值\n    AOldSchoolSlotMachine();\n\
+  \nprivate:\n    // 此老虎机的无金额状态\n    IState* NoDollarsState;\n    // 此老虎机的无硬币状态\n\
+  \    IState* NoCoinState;\n    // 此老虎机的已插入硬币状态\n    IState* CoinInsertedState;\n\
+  \    // 此老虎机的赢奖金额状态\n    IState* WonDollarsState;\n    // 此老虎机的状态\n    IState* State;\n\
+  \    // 此老虎机的金额\n    int Count = 0;\n\nprotected:\n    // 当游戏开始或生成时被调用\n    virtual\
+  \ void BeginPlay() override;\n\npublic:\n    // 每帧被调用一次\n    virtual void Tick(float\
+  \ DeltaTime) override;\n    // 初始化此老虎机\n    void Initialize(int NumberOfDollars);\n\
+  \    // 插入硬币\n    void InsertCoin();\n    // 拒绝硬币\n    void RejectCoin();\n    //\
+  \ 拉动此老虎机的拉杆\n    void PullLever();\n    // 获取此老虎机的当前状态\n    IState* GetState();\n\
+  \    // 获取此老虎机的无金额状态\n    IState* GetNoDollarsState();\n    // 获取此老虎机的无硬币状态\n  \
+  \  IState* GetNoCoinState();\n    // 获取此老虎机的已插入硬币状态\n    IState* GetCoinInsertedState();\n\
+  \    // 获取此老虎机的赢奖金额状态\n    IState* GetWonDollarsState();\n    // 获取当前状态的字符串\n  \
+  \  FString GetCurrentState();\n    // 使用传递的状态设置当前状态\n    void SetState(IState* myState);\n\
+  \    // 从此老虎机发放金额\n    void EmitDollars();\n    // 获取此老虎机中的金额\n    int GetCount();\n\
+  \    // 通过传递的金额补充金额\n    void RestockDollars(int myCount);\n};\n```\n\n### `OldSchoolSlotMachine.cpp`\n\
+  \n```cpp\n#include \"OldSchoolSlotMachine.h\"\n#include \"NoDollarsState.h\"\n#include\
+  \ \"NoCoinState.h\"\n#include \"CoinInsertedState.h\"\n#include \"WonDollarsState.h\"\
+  \n\n// 设置默认值\nAOldSchoolSlotMachine::AOldSchoolSlotMachine()\n{\n    // 设置此节点每帧调用\
+  \ Tick()。如果不需要它，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick = true;\n}\n\n//\
+  \ 当游戏开始或生成时被调用\nvoid AOldSchoolSlotMachine::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  }\n\n// 每帧被调用一次\nvoid AOldSchoolSlotMachine::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n\nvoid AOldSchoolSlotMachine::Initialize(int NumberOfDollars)\n{\n    // 生成无金额状态并将此老虎机设置为该状态\n\
+  \    NoDollarsState = GetWorld()->SpawnActor<ANoDollarsState>(ANoDollarsState::StaticClass());\n\
+  \    NoDollarsState->SetSlotMachine(this);\n    // 生成无硬币状态并将此老虎机设置为该状态\n    NoCoinState\
+  \ = GetWorld()->SpawnActor<ANoCoinState>(ANoCoinState::StaticClass());\n    NoCoinState->SetSlotMachine(this);\n\
+  \    // 生成已插入硬币状态并将此老虎机设置为该状态\n    CoinInsertedState = GetWorld()->SpawnActor<ACoinInsertedState>(ACoinInsertedState::StaticClass());\n\
+  \    CoinInsertedState->SetSlotMachine(this);\n    // 生成赢奖金额状态并将此老虎机设置为该状态\n   \
+  \ WonDollarsState = GetWorld()->SpawnActor<AWonDollarsState>(AWonDollarsState::StaticClass());\n\
+  \    WonDollarsState->SetSlotMachine(this);\n    // 设置金额\n    Count = NumberOfDollars;\n\
+  \    // 如果大于 0，将当前状态设置为无硬币状态\n    if (NumberOfDollars > 0)\n    {\n        State\
+  \ = NoCoinState;\n    }\n    else\n    {\n        State = NoDollarsState;\n    }\n\
+  }\n\nvoid AOldSchoolSlotMachine::InsertCoin()\n{\n    // 根据当前状态执行插入硬币程序\n    State->InsertCoin();\n\
+  }\n\nvoid AOldSchoolSlotMachine::RejectCoin()\n{\n    // 根据当前状态执行拒绝硬币程序\n    State->RejectCoin();\n\
+  }\n\nvoid AOldSchoolSlotMachine::PullLever()\n{\n    // 根据当前状态执行拉拉杆和派奖程序\n    State->PullLever();\n\
+  \    State->Payout();\n}\n\nvoid AOldSchoolSlotMachine::EmitDollars()\n{\n    //\
+  \ 你赢了！\n    State->AddOnScreenDebugMessage(-1, TEXT(\"老虎机刚刚发放了金额为: %d\"), Count);\n\
+  \    // 如果老虎机还有金额，则减少 50\n    if (Count != 0)\n    {\n        Count -= 50;\n   \
+  \ }\n}\n\nvoid AOldSchoolSlotMachine::SetState(IState* myState)\n{\n    // 使用传递的状态设置当前状态\n\
+  \    State = myState;\n}\n\nIState* AOldSchoolSlotMachine::GetState()\n{\n    //\
+  \ 返回当前状态\n    return State;\n}\n\nIState* AOldSchoolSlotMachine::GetNoDollarsState()\n\
+  {\n    // 返回无金额状态\n    return NoDollarsState;\n}\n\nIState* AOldSchoolSlotMachine::GetNoCoinState()\n\
+  {\n    // 返回无硬币状态\n    return NoCoinState;\n}\n\nIState* AOldSchoolSlotMachine::GetCoinInsertedState()\n\
+  {\n    // 返回已插入硬币状态\n    return CoinInsertedState;\n}\n\nIState* AOldSchoolSlotMachine::GetWonDollarsState()\n\
+  {\n    // 返回赢奖金额状态\n    return WonDollarsState;\n}\n\nFString AOldSchoolSlotMachine::GetCurrentState()\n\
+  {\n    // 返回当前状态的名称\n    return \"当前老虎机状态: \" + State->ToString();\n}\n\nint AOldSchoolSlotMachine::GetCount()\n\
+  {\n    // 返回金额\n    return Count;\n}\n\nvoid AOldSchoolSlotMachine::RestockDollars(int\
+  \ myCount)\n{\n    // 将传递的金额加入金额\n    Count += myCount;\n}\n```\n\n## `OldSchoolSlotMachine\
+  \ Initialize` 函数：\n\n![自动生成的图形用户界面描述](img/Image00139.jpg)\n\n`Init No Dollars State`\
+  \ 折叠图：\n\n![自动生成的图形用户界面应用描述](img/Image00140.jpg)\n\n`Init No Coin State` 折叠图：\n\n\
+  ![一张自动生成的视频游戏描述，置信度中等](img/Image00141.jpg)\n\n`Init Coin Inserted State` 折叠图：\n\n\
+  ![自动生成的图形用户界面描述](img/Image00142.jpg)\n\n`Init Won Dollars State` 折叠图：\n\n![自动生成的图形用户界面应用描述](img/Image00143.jpg)\n\
+  \n`InsertCoin` 函数：\n\n![一张包含文字、电子设备的自动生成图片](img/Image00144.jpg)\n\n`RejectCoin`\
+  \ 函数：\n\n![一张包含文字、电子设备和银色的自动生成图片](img/Image00145.jpg)\n\n`PullLever` 函数：\n\n![一张包含文字、电子设备和银色的自动生成图片](img/Image00146.jpg)\n\
+  \n`EmitDollars` 函数：\n\n![](img/Image00147.jpg)\n\n`GetCount` 函数：\n\n\n\n\n\n![](img/Image00148.jpg)\n\
+  \n`RestockDollars` 函数：\n\n![自动生成的视频游戏描述截图](img/Image00149.jpg)\n\n`setState` 函数：\n\
+  \n![具有中等置信度的自动生成时间线描述](img/Image00150.jpg)\n\n`GetCurrentState` 函数：\n\n![自动生成的视频游戏描述截图](img/Image00151.jpg)\n\
+  \n`GetNoDollarsState` 函数：\n\n![自动生成的图形用户界面描述](img/Image00152.jpg)\n\n`GetNoCoinState`\
+  \ 函数：\n\n![自动生成的包含文本、电子产品的图片](img/Image00153.jpg)\n\n`GetCoinInsertedState` 函数：\n\
+  \n![自动生成的图形用户界面、应用程序描述](img/Image00154.jpg)\n\n`GetWonDollarsState` 函数：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00155.jpg)\n\
+  \n`GetCurrentState` 函数：\n\n![自动生成的视频游戏描述截图](img/Image00151.jpg)\n\n### `NoDollarsState`\
+  \ 类\n\n`NoDollarsState.h`\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n\
+  #include \"GameFramework/Actor.h\"\n#include \"State.h\"\n#include \"NoDollarsState.generated.h\"\
+  \n\nUCLASS()\nclass DESIGN_PATTERNS_API ANoDollarsState : public AActor, public\
+  \ IState\n{\n    GENERATED_BODY()\n\npublic:\n    // 设置此 actor 属性的默认值\n    ANoDollarsState();\n\
+  \nprivate:\n    // 此状态的老老虎机\n    UPROPERTY()\n    class AOldSchoolSlotMachine* OldSchoolSlotMachine;\n\
+  \nprotected:\n    // 当游戏开始或生成时被调用\n    virtual void BeginPlay() override;\n\npublic:\n\
+  \    // 每帧调用\n    virtual void Tick(float DeltaTime) override;\n    // 当插入硬币时执行例程\n\
+  \    virtual void InsertCoin() override;\n    // 当硬币被拒绝时执行例程\n    virtual void RejectCoin()\
+  \ override;\n    // 当拉摇杆时执行例程\n    virtual void PullLever() override;\n    // 执行派奖程序\n\
+  \    virtual void Payout() override;\n    // 为老虎机补充资金\n    virtual void RestockDollars()\
+  \ override;\n    // 获取此状态的字符串\n    virtual FString ToString() override;\n    //\
+  \ 设置此状态的老虎机\n    virtual void SetSlotMachine(class AOldSchoolSlotMachine* SlotMachine)\
+  \ override;\n};\n```\n\n`NoDollarsState.cpp`\n\n```cpp\n#include \"NoDollarsState.h\"\
+  \n#include \"OldSchoolSlotMachine.h\"\n\n// 设置默认值\nANoDollarsState::ANoDollarsState()\n\
+  {\n    // 设置此 actor 每帧调用 Tick()。如果不需要，可以关闭以提高性能。\n    PrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n\n// 当游戏开始或生成时被调用\nvoid ANoDollarsState::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  }\n\n// 每帧调用\nvoid ANoDollarsState::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n\nvoid ANoDollarsState::SetSlotMachine(class AOldSchoolSlotMachine* SlotMachine)\n\
+  {\n    // 设置此状态的老虎机\n    OldSchoolSlotMachine = SlotMachine;\n}\n\nvoid ANoDollarsState::InsertCoin()\n\
+  {\n    // 打印插入硬币的字符串\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ TEXT(\"你不能插入赌场币，机器没钱了\"));\n}\n\nvoid ANoDollarsState::RejectCoin()\n{\n    //\
+  \ 打印拒绝硬币的字符串\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT(\"\
+  硬币被拒绝了\"));\n}\n\nvoid ANoDollarsState::PullLever()\n{\n    // 打印拉摇杆的字符串\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, TEXT(\"你拉了摇杆\"));\n}\n\nvoid ANoDollarsState::Payout()\n\
+  {\n    // 打印派奖字符串\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ TEXT(\"你转了，但机器没钱\"));\n}\n\nvoid ANoDollarsState::RestockDollars()\n{\n    //\
+  \ 为老虎机补充资金\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT(\"\
+  没钱的状态\"));\n}\n\nFString ANoDollarsState::ToString()\n{\n    // 返回此状态的字符串\n    return\
+  \ \"没钱\";\n}\n```\n\n`NoDollarsState` 事件：\n\n![自动生成的视频游戏描述截图](img/Image00156.jpg)\n\
+  \n`ToString` 函数：\n\n![自动生成的图形用户界面描述](img/Image00157.jpg)\n\n`NoCoinState` 类\n\n\
+  `NoCoinState.h`\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n#include \"\
+  GameFramework/Actor.h\"\n#include \"State.h\"\n#include \"NoCoinState.generated.h\"\
+  \n\nUCLASS()\nclass DESIGN_PATTERNS_API ANoCoinState : public AActor, public IState\n\
+  {\n    GENERATED_BODY()\n\npublic:\n    // 设置此 actor 属性的默认值\n    ANoCoinState();\n\
+  \nprivate:\n    // 此状态的老虎机\n    UPROPERTY()\n    class AOldSchoolSlotMachine* OldSchoolSlotMachine;\n\
+  \nprotected:\n    // 当游戏开始或生成时被调用\n    virtual void BeginPlay() override;\n\npublic:\n\
+  \    // 每帧调用\n    virtual void Tick(float DeltaTime) override;\n    // 当插入硬币时执行例程\n\
+  \    virtual void InsertCoin() override;\n    // 当硬币被拒绝时执行例程\n    virtual void RejectCoin()\
+  \ override;\n    // 当拉摇杆时执行例程\n    virtual void PullLever() override;\n    // 执行派奖程序\n\
+  \    virtual void Payout() override;\n    // 为老虎机补充资金\n    virtual void RestockDollars()\
+  \ override;\n    // 获取此状态的字符串\n    virtual FString ToString() override;\n    //\
+  \ 设置此状态的老虎机\n    virtual void SetSlotMachine(class AOldSchoolSlotMachine* SlotMachine)\
+  \ override;\n};\n```\n\n`NoCoinState.cpp`\n\n```cpp\n#include \"NoCoinState.h\"\n\
+  #include \"OldSchoolSlotMachine.h\"\n\n// 设置默认值\nANoCoinState::ANoCoinState()\n\
+  {\n    // 设置此 actor 每帧调用 Tick()。如果不需要，可以关闭以提高性能。\n    PrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n\n// 当游戏开始或生成时被调用\nvoid ANoCoinState::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  }\n\n// 每帧调用\nvoid ANoCoinState::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n\nvoid ANoCoinState::SetSlotMachine(class AOldSchoolSlotMachine* SlotMachine)\n\
+  {\n    // 设置此状态的老虎机\n    OldSchoolSlotMachine = SlotMachine;\n}\n\nvoid ANoCoinState::InsertCoin()\n\
+  {\n    // 打印插入硬币的字符串并将状态设为“已插入硬币”\n    GEngine->AddOnScreenDebugMessage(-1, 15.f,\
+  \ FColor::Yellow, TEXT(\"你插入了赌场币\"));\n    OldSchoolSlotMachine->SetState(OldSchoolSlotMachine->GetCoinInsertedState());\n\
+  }\n\nvoid ANoCoinState::RejectCoin()\n{\n    // 打印拒绝硬币的字符串\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, TEXT(\"你没有插入赌场币\"));\n}\n\nvoid ANoCoinState::PullLever()\n\
+  {\n    // 打印拉摇杆的字符串\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ TEXT(\"你转了，但机器里没钱\"));\n}\n\nvoid ANoCoinState::Payout()\n{\n    // 打印派奖字符串\n\
+  \    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT(\"你需要先付钱\"\
+  ));\n}\n\nvoid ANoCoinState::RestockDollars()\n{\n    /*无操作*/\n}\n\nFString ANoCoinState::ToString()\n\
+  {\n    // 返回此状态的字符串\n    return \"等待赌场币\";\n}\n```\n\n\n\n\n\n`NoCoinState` 事件图：\n\
+  \n![一张自动生成的视频游戏描述截图](img/Image00158.jpg) \n\n`ToString` 函数：\n\n![一张自动生成的包含文本、电子描述的图片](img/Image00159.jpg)\
+  \ \n\n`CoinInsertedState` 类：\n\n`CoinInsertedState.h`\n\n```cpp\n#pragma once\n\
+  #include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\n#include \"State.h\"\
+  \n#include \"CoinInsertedState.generated.h\"\n\nUCLASS()\nclass DESIGN_PATTERNS_API\
+  \ ACoinInsertedState : public AActor, public IState\n{\n    GENERATED_BODY()\n\n\
+  public:\n    // 设置此 actor 属性的默认值\n    ACoinInsertedState();\n\nprivate:\n    //\
+  \ 此状态的老老虎机\n    UPROPERTY()\n    class AOldSchoolSlotMachine* OldSchoolSlotMachine;\n\
+  \nprotected:\n    // 当游戏开始或生成时被调用\n    virtual void BeginPlay() override;\n\npublic:\n\
+  \    // 每帧调用\n    virtual void Tick(float DeltaTime) override;\n    // 当插入硬币时执行例程\n\
+  \    virtual void InsertCoin() override;\n    // 当硬币被拒绝时执行例程\n    virtual void RejectCoin()\
+  \ override;\n    // 当拉动摇杆时执行例程\n    virtual void PullLever() override;\n    // 执行派奖例程\n\
+  \    virtual void Payout() override;\n    // 补充老虎机\n    virtual void RestockDollars()\
+  \ override;\n    // 获取此状态的字符串\n    virtual FString ToString() override;\n    //\
+  \ 设置此状态的老虎机\n    virtual void SetSlotMachine(class AOldSchoolSlotMachine* SlotMachine)\
+  \ override;\n};\n```\n\n`CoinInsertedState.cpp`\n\n```cpp\n#include \"CoinInsertedState.h\"\
+  \n#include \"OldSchoolSlotMachine.h\"\n\n// 设置默认值\nACoinInsertedState::ACoinInsertedState()\n\
+  {\n    // 设置此 actor 每帧调用 Tick()。如果不需要，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n\n// 当游戏开始或生成时被调用\nvoid ACoinInsertedState::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  }\n\n// 每帧调用\nvoid ACoinInsertedState::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n\nvoid ACoinInsertedState::SetSlotMachine(AOldSchoolSlotMachine* SlotMachine)\n\
+  {\n    // 设置此状态的老虎机\n    OldSchoolSlotMachine = SlotMachine;\n}\n\nvoid ACoinInsertedState::InsertCoin()\n\
+  {\n    // 记录插入硬币字符串\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ TEXT(\"You cannot insert another casino coin\"));\n}\n\nvoid ACoinInsertedState::RejectCoin()\n\
+  {\n    // 记录拒绝硬币字符串并将状态设置为“无硬币状态”\n    GEngine->AddOnScreenDebugMessage(-1, 15.f,\
+  \ FColor::Yellow, TEXT(\"Casino coin returned\"));\n    OldSchoolSlotMachine->SetState(OldSchoolSlotMachine->GetNoCoinState());\n\
+  }\n\nvoid ACoinInsertedState::PullLever()\n{\n    // 记录拉动摇杆字符串并将状态设置为“已奖金状态”\n \
+  \   GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT(\"You pulled\
+  \ the lever...\"));\n    OldSchoolSlotMachine->SetState(OldSchoolSlotMachine->GetWonDollarsState());\n\
+  }\n\nvoid ACoinInsertedState::Payout()\n{\n    // 记录派奖字符串\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, TEXT(\"No dollars dispensed\"));\n}\n\nvoid ACoinInsertedState::RestockDollars()\n\
+  {\n    /*无*/\n}\n\nFString ACoinInsertedState::ToString()\n{\n    // 返回此状态的字符串\n\
+  \    return \"waiting for lever pull\";\n}\n```\n\n`CoinInsertedState` 蓝图事件图：\n\n\
+  ![一张中等置信度自动生成的计算机截图](img/Image00160.jpg) \n\n`ToString` 函数：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00161.jpg)\
+  \ \n\n`WonDollarsState` 类：\n\n`WonDollarsState.h`\n\n```cpp\n#pragma once\n#include\
+  \ \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\n#include \"State.h\"\n\
+  #include \"WonDollarsState.generated.h\"\n\nUCLASS()\nclass DESIGN_PATTERNS_API\
+  \ AWonDollarsState : public AActor, public IState\n{\n    GENERATED_BODY()\n\npublic:\n\
+  \    // 设置此 actor 属性的默认值\n    AWonDollarsState();\n\nprivate:\n    // 此状态的老虎机\n\
+  \    UPROPERTY()\n    class AOldSchoolSlotMachine* OldSchoolSlotMachine;\n\nprotected:\n\
+  \    // 当游戏开始或生成时被调用\n    virtual void BeginPlay() override;\n\npublic:\n    //\
+  \ 每帧调用\n    virtual void Tick(float DeltaTime) override;\n    // 当插入硬币时执行例程\n  \
+  \  virtual void InsertCoin() override;\n    // 当硬币被拒绝时执行例程\n    virtual void RejectCoin()\
+  \ override;\n    // 当拉动摇杆时执行例程\n    virtual void PullLever() override;\n    // 执行派奖例程\n\
+  \    virtual void Payout() override;\n    // 补充老虎机\n    virtual void RestockDollars()\
+  \ override;\n    // 获取此状态的字符串\n    virtual FString ToString() override;\n    //\
+  \ 设置此状态的老虎机\n    virtual void SetSlotMachine(class AOldSchoolSlotMachine* SlotMachine)\
+  \ override;\n};\n```\n\n`WonDollarsState.cpp`\n\n```cpp\n#include \"WonDollarsState.h\"\
+  \n#include \"OldSchoolSlotMachine.h\"\n\n// 设置默认值\nAWonDollarsState::AWonDollarsState()\n\
+  {\n    // 设置此 actor 每帧调用 Tick()。如果不需要，可以关闭它以提高性能。\n    PrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n\n// 当游戏开始或生成时被调用\nvoid AWonDollarsState::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  }\n\n// 每帧调用\nvoid AWonDollarsState::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\n\nvoid AWonDollarsState::SetSlotMachine(AOldSchoolSlotMachine* SlotMachine)\n\
+  {\n    // 设置此状态的老虎机\n    OldSchoolSlotMachine = SlotMachine;\n}\n\nvoid AWonDollarsState::InsertCoin()\n\
+  {\n    // 记录插入硬币字符串\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ TEXT(\"Please wait, machine is dispensing dollars\"));\n}\n\nvoid AWonDollarsState::RejectCoin()\n\
+  {\n    // 记录拒绝硬币字符串\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ TEXT(\"Chill, you pulled the lever\"));\n}\n\nvoid AWonDollarsState::PullLever()\n\
+  {\n    // 记录拉动摇杆字符串\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow,\
+  \ TEXT(\"Do not pull lever twice!\"));\n}\n\nvoid AWonDollarsState::Payout()\n{\n\
+  \    //派奖时间！从老虎机排出金额\n    OldSchoolSlotMachine->EmitDollars();\n    if (OldSchoolSlotMachine->GetCount()\
+  \ > 0)\n    {\n        // 如果老虎机还有钱，将状态设为无硬币状态\n        OldSchoolSlotMachine->SetState(OldSchoolSlotMachine->GetNoCoinState());\n\
+  \    }\n    else\n    {\n        // 如果老虎机没有钱了，记录它并将状态设为无奖金状态\n        GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, TEXT(\"Machine is now out of cash\"));\n        OldSchoolSlotMachine->SetState(OldSchoolSlotMachine->GetNoDollarsState());\n\
+  \    }\n}\n\nvoid AWonDollarsState::RestockDollars()\n{\n    /*无*/\n}\n\nFString\
+  \ AWonDollarsState::ToString()\n{\n    // 返回此状态的字符串\n    return \"dispensing cash\"\
+  ;\n}\n```\n\n`WonDollarsState` 事件图：\n\n![](img/Image00162.jpg) \n\n`Check Machine\
+  \ Has Dollars` 折叠图：\n\n![](img/Image00163.jpg)\n\n\n\n\n`机器有钱` 折叠图：\n\n![Graphical\
+  \ user interface, application Description automatically generated](img/Image00164.jpg)\
+  \ \n\n`机器没钱` 折叠图：\n\n![A screenshot of a video game Description automatically generated\
+  \ with medium confidence](img/Image00165.jpg) \n\n`ToString` 函数：\n\n![Graphical\
+  \ user interface, application Description automatically generated](img/Image00166.jpg)\
+  \ \n\n`State` 接口：\n\n***State.h***\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"UObject/Interface.h\"\n#include \"State.generated.h\"\n// 此类不需要被修改。\n\
+  UINTERFACE( MinimalAPI )\nclass UState : public UInterface\n{\n    GENERATED_BODY()\n\
+  };\n\nclass DESIGN_PATTERNS_API IState\n{\n    GENERATED_BODY()\n    // 向此类添加接口函数。该类将是被继承以实现此接口的类。\n\
+  public:\n    // State 的纯虚函数\n    virtual void InsertCoin() = 0;\n    virtual void\
+  \ RejectCoin() = 0;\n    virtual void PullLever() = 0;\n    virtual void Payout()\
+  \ = 0;\n    virtual void RestockDollars() = 0;\n    virtual FString ToString() =\
+  \ 0;\n    virtual void SetSlotMachine(class AOldSchoolSlotMachine* SlotMachine)\
+  \ = 0;\n};\n```\n\n***State.cpp***\n\n```cpp\n#include \"State.h\"\n// 为任何不是纯虚的\
+  \ IState 函数添加默认功能。\n```\n\nState 模式视口打印：\n\n![](img/Image00167.jpg) \n\n> 你击沉了我的战舰……\
+  \ 策略模式\n\nGoF（设计模式 Go）将策略模式定义为一种“策略”（Gamma et.al, 1995）。我们希望一组算法是可替换的，并且可以独立地变化。通过下面的示例，这一点变得更加清晰。\n\
+  \n**优点**\n\n> ● 提供了子类化的替代方案（Gamma et.al, 1995）。\n\n**缺点**\n\n> ● 对象的数量可能会出乎意料地增加。\n\
+  \n## 策略模式实现\n\n我们拥有一种对抗海上不同敌人的策略。如果威胁较小，则使用蛮力策略。如果有许多敌人，我们使用分治法策略。如果战斗被认为是徒劳的，则执行撤退策略。`Strategy_Main`\
+  \ 类：\n\n***Strategy_Main.h***\n\n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\
+  \n#include \"GameFramework/Actor.h\"\n#include \"Strategy_Main.generated.h\"\nUCLASS()\n\
+  class DESIGN_PATTERNS_API AStrategy_Main : public AActor\n{\n    GENERATED_BODY()\n\
+  public:\n    // 设置此 actor 属性的默认值\n    AStrategy_Main();\nprotected:\n    // 在游戏开始或生成时调用\n\
+  \    virtual void BeginPlay() override;\npublic:\n    // 每帧调用\n    virtual void\
+  \ Tick(float DeltaTime) override;\n};\n```\n\n***Strategy_Main.cpp***\n\n```cpp\n\
+  #include \"Strategy_Main.h\"\n#include \"BattleShip.h\"\n#include \"BruteForceStrategy.h\"\
+  \n#include \"DivideConquerStrategy.h\"\n#include \"RetreatStrategy.h\"\n// 设置默认值\n\
+  AStrategy_Main::AStrategy_Main()\n{\n    // 设置此 actor 每帧调用 Tick()。如果你不需要，可以关闭它以提高性能。\n\
+  \    PrimaryActorTick.bCanEverTick = true;\n}\n// 在游戏开始或生成时调用\nvoid AStrategy_Main::BeginPlay()\n\
+  {\n    Super::BeginPlay();\n    // 敌人警告日志\n    GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, TEXT(\"一艘小护卫舰想找点麻烦\"));\n    // 生成战舰\n    ABattleShip* BattleShip\
+  \ = GetWorld()->SpawnActor<ABattleShip>(ABattleShip::StaticClass());\n    // 创建蛮力策略并将其设置为战舰\n\
+  \    ABruteForceStrategy* BruteForceStrategy = GetWorld()->SpawnActor<ABruteForceStrategy>(ABruteForceStrategy::StaticClass());\n\
+  \    BattleShip->AlterManeuvers(BruteForceStrategy);\n    // 使用当前策略交战\n    BattleShip->Engage();\n\
+  \    // 敌人警告日志\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT(\"\
+  四艘小护卫舰想找点麻烦\"));\n    // 创建分治策略并将其设置为战舰\n    ADivideConquerStrategy* DivideConquerStrategy\
+  \ = GetWorld()->SpawnActor<ADivideConquerStrategy>(ADivideConquerStrategy::StaticClass());\n\
+  \    BattleShip->AlterManeuvers(DivideConquerStrategy);\n    // 使用当前策略交战\n    BattleShip->Engage();\n\
+  \    // 敌人警告日志\n    GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT(\"\
+  一个航母战斗群想找点麻烦\"));\n    // 创建撤退策略并将其设置为战舰\n    ABreatStrategy* RetreatStrategy =\
+  \ GetWorld()->SpawnActor<ABreatStrategy>(ABreatStrategy::StaticClass());\n    BattleShip->AlterManeuvers(RetreatStrategy);\n\
+  \    // 使用当前策略交战\n    BattleShip->Engage();\n}\nvoid AStrategy_Main::Tick(float\
+  \ DeltaTime)\n{\n    // 此处逻辑在示例中保持结构\n}\n```\n\n`Strategy_Main` Tick 事件：\n\n![](img/Image0168.jpg)\
+  \ \n\n`创建蛮力策略` 图图：\n\n![](img/Image0169.jpg) \n\n`生成战舰` 图图：\n\n![](img/Image0170.jpg)\
+  \ \n\n`执行蛮力策略` 图图：\n\n![](img/Image0171.jpg) \n\n`执行分治策略` 图图：\n\n![](img/Image0172.jpg)\
+  \ \n\n`执行撤退策略` 图图：\n\n![](img/Image0173.jpg) \n\n`BattleShip` 类：\n\n***BattleShip.h***\n\
+  \n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\
+  \n#include \"BattleStrategy.h\"\n#include \"BattleShip.generated.h\"\nUCLASS()\n\
+  class ABattleShip : public AActor\n{\n    GENERATED_BODY()\npublic:\n    ABattleShip();\n\
+  private:\n    // 当前策略\n    IBattleStrategy* BattleStrategy;\nprotected:\n    virtual\
+  \ void BeginPlay() override;\npublic:\n    virtual void Tick(float DeltaTime) override;\n\
+  \    // 改变策略并设置 \"BattleStrategy\" 变量\n    void AlterManeuvers(AActor* myBattleStrategy);\n\
+  \    // 与当前策略交战\n    void Engage();\n};\n```\n\n***BattleShip.cpp***\n\n```cpp\n\
+  #include \"BattleShip.h\"\n// 设置默认值\nABattleShip::ABattleShip()\n{\n}\nvoid ABattleShip::BeginPlay()\n\
+  {\n    Super::BeginPlay();\n}\n// 每帧调用\nvoid ABattleShip::Tick(float DeltaTime)\n\
+  {\n    Super::Tick(DeltaTime);\n}\nvoid ABattleShip::AlterManeuvers(AActor* myBattleStrategy)\n\
+  {\n    // 尝试转换传入的策略并设置为当前\n    BattleStrategy = Cast<IBattleStrategy>(myBattleStrategy);\n\
+  \    // 如果转换失败则记录错误\n    if (!BattleStrategy)\n    {\n        GEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Red, TEXT(\"无效转换！请查看输出日志更多详情\"));\n        UE_LOG(LogTemp, Error,\
+  \ TEXT(\"AlterManeuvers(): 该 Actor 不是 BattleStrategy！你确定该 Actor 实现了该接口吗？\"));\n\
+  \    }\n}\nvoid ABattleShip::Engage()\n{\n    // 如果当前策略为空则记录错误\n    if (!BattleStrategy)\n\
+  \    {\n        UE_LOG(LogTemp, Error, TEXT(\"Engage(): BattleStrategy 为空，请确保它已初始化。\"\
+  ));\n        return;\n    }\n    // 执行当前策略策略\n    BattleStrategy->Maneuver();\n\
+  }\n```\n\n`BattleShip` 脚本：\n\n![Graphical user interface Description automatically\
+  \ generated](img/Image00174.jpg) \n\n`AlterManeuvers` 蓝图函数：\n\n\n\n\n\n![图形用户界面\
+  \ 自动生成](img/Image00175.jpg) \n\n与 `BattleShip` 的构造相同，区别在于在函数内部手动设置了 `BattleStrategy`\
+  \ 变量，因为它在生成时没有暴露。\n\n`engage` 蓝图函数：\n\n![图形用户界面，应用程序 自动生成](img/Image00176.jpg) \n\
+  \n`BattleShipStrategy` 接口：\n\n**BattleShipStrategy.h**\n\n```cpp\n#pragma once\n\
+  #include \"CoreMinimal.h\"\n#include \"UObject/Interface.h\"\n#include \"BattleShipStrategy.generated.h\"\
+  \n// 此类不需要修改。\nUINTERFACE( MinimalAPI )\nclass UBattleShipStrategy : public UInterface\n\
+  {\n    GENERATED_BODY()\n};\n\nclass DESIGN_PATTERNS_API IBattleShipStrategy\n{\n\
+  \    GENERATED_BODY()\n // 向此类中添加接口函数。该类将通过继承以实现此接口。\npublic: \n // BattleShipStrategy\
+  \ 的纯虚函数\n    virtual void Maneuver() = 0;\n};\n```\n\n**BattleShipStrategy.cpp**\n\
+  \n```cpp\n#include \"BattleShipStrategy.h\"\n// 为任何非纯虚 IBattleShipStrategy 函数添加默认功能。\n\
+  ```\n\n### `BruteForceStrategy` 类：\n\n**BruteForceStrategy.h**\n\n```cpp\n#pragma\
+  \ once\n#include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\n#include\
+  \ \"BattleShipStrategy.h\"\n#include \"BruteForceStrategy.generated.h\"\nUCLASS()\n\
+  class DESIGN_PATTERNS_API ABruteForceStrategy : public AActor, public IBattleShipStrategy\n\
+  {\n    GENERATED_BODY()\npublic: \n // 为此 actor 的属性设置默认值\n    AButeForceStrategy();\n\
+  protected: \n // 在游戏开始或生成时调用\n    virtual void BeginPlay() override;\npublic: \n\
+  \ // 每帧调用\n    virtual void Tick(float DeltaTime) override; \n // 执行此策略的 Maneuver\n\
+  \    virtual void Maneuver() override;\n};\n```\n\n**BruteForceStrategy.cpp**\n\n\
+  ```cpp\n#include \"BruteForceStrategy.h\"\n// 设置默认值\nAButeForceStrategy::AButeForceStrategy()\n\
+  { \n // 设置此 actor 每帧调用 Tick()。  \n // 如果不需要，可以关闭它以提高性能。\nPrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n// 在游戏开始或生成时调用\nAButeForceStrategy::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  }\n// 每帧调用\nAButeForceStrategy::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\nAButeForceStrategy::Maneuver()\n{ \n // 执行此类策略的例程\nGEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, TEXT(\"我们可以正面硬刚这些船只\"));\n}\n```\n\n`BruteForceStrategy`\
+  \ 蓝图事件图：\n\n![](img/Image00177.jpg) \n\n### `DivideConquerStrategy` 类：\n\n**DivideConquerStrategy.h**\n\
+  \n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\
+  \n#include \"BattleShipStrategy.h\"\n#include \"DivideConquerStrategy.generated.h\"\
+  \nUCLASS()\nclass DESIGN_PATTERNS_API ADivideConquerStrategy : public AActor, public\
+  \ IBattleShipStrategy\n{\n    GENERATED_BODY()\npublic: \n // 为此 actor 的属性设置默认值\n\
+  \    ADivideConquerStrategy();\nprotected: \n // 在游戏开始或生成时调用\n    virtual void BeginPlay()\
+  \ override;\npublic: \n // 每帧调用\n    virtual void Tick(float DeltaTime) override;\
+  \ \n // 执行此策略的 Maneuver\n    virtual void Maneuver() override;\n};\n```\n\n**DivideConquerStrategy.cpp**\n\
+  \n```cpp\n#include \"DivideConquerStrategy.h\"\n// 设置默认值\nADivideConquerStrategy::ADivideConquerStrategy()\n\
+  { \n // 设置此 actor 每帧调用 Tick()。  \n // 如果不需要，可以关闭它以提高性能。\nPrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n// 在游戏开始或生成时调用\nADivideConquerStrategy::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  }\n// 每帧调用\nADivideConquerStrategy::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\nADivideConquerStrategy::Maneuver()\n{ \n // 执行此类策略的例程\nGEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, TEXT(\"引诱船只分散并逐个击击它们\"));\n}\n```\n\n`DivideConquerStrategy`\
+  \ 蓝图事件图：\n\n![](img/Image00178.jpg) \n\n### `RetreatStrategy` 类：\n\n**RetreatStrategy.h**\n\
+  \n```cpp\n#pragma once\n#include \"CoreMinimal.h\"\n#include \"GameFramework/Actor.h\"\
+  \n#include \"BattleShipStrategy.h\"\n#include \"RetreatStrategy.generated.h\"\n\
+  UCLASS()\nclass DESIGN_PATTERNS_API ARetreatStrategy : public AActor, public IBattleShipStrategy\n\
+  {\n    GENERATED_BODY()\npublic: \n // 为此 actor 的属性设置默认值\n    ARetreatStrategy();\n\
+  protected: \n // 在游戏开始或生成时调用\n    virtual void BeginPlay() override;\npublic: \n\
+  \ // 每帧调用\n    virtual void Tick(float DeltaTime) override; \n // 执行此策略的 Maneuver\n\
+  \    virtual void Maneuver() override;\n};\n```\n\n**RetreatStrategy.cpp**\n\n```cpp\n\
+  #include \"RetreatStrategy.h\"\n// 设置默认值\nARetreatStrategy::ARetreatStrategy()\n\
+  { \n // 设置此 actor 每帧调用 Tick()。  \n // 如果不需要，可以关闭它以提高性能。\nPrimaryActorTick.bCanEverTick\
+  \ = true;\n}\n// 在游戏开始或生成时调用\nARetreatStrategy::BeginPlay()\n{\n    Super::BeginPlay();\n\
+  }\n// 每帧调用\nARetreatStrategy::Tick(float DeltaTime)\n{\n    Super::Tick(DeltaTime);\n\
+  }\nARetreatStrategy::Maneuver()\n{ \n // 执行此类策略的例程\nGEngine->AddOnScreenDebugMessage(-1,\
+  \ 15.f, FColor::Yellow, TEXT(\"全速撤退！\"));\n}\n```\n\n`RetreatStrategy` 蓝图事件图：\n\n\
+  ![](img/Image00179.jpg) \n\n策略模式视图打印：\n\n![](img/Image00180.jpg) \n\n> 创建模式 (Java)\n\
+  \n> 酒店 汽车假日 Inn 建造者模式 (Java)\n\n**建造者模式 UML 图**\n\n![时间线 自动生成](img/Image00181.jpg)\
+  \ \n\n### 建造者模式实现\n\n`Builder` 类包含了 Java 中的 `main` 函数。在蓝图中，我们可以认为该类是真正需要物理拖入游戏世界的那个类。其他的“具体”类不需要物理地拖入世界。\n\
+  \n```java\nclass Builder_Main{\n    public static void main(String[] args) {\n \
+  \       LodgingBuilder hotelBuilder = new HotelLodgingBuilder();\n        ArchitecturalEngineer\
+  \ engineer = new ArchitecturalEngineer(hotelBuilder);\n        engineer.constructLodging();\n\
+  \        Lodging lodging = engineer.getLodging();\n        lodging.lodgingCharacteristics();\n\
+  \    }\n}\n```\n\n\n\n\n\n`Spawn Actor From Class` 节点类似于 Java 及其他语言中的 `new` 关键字。通过“Class”字样下方的下拉框选择要实例化的类。`Spawn\
+  \ Transform` 取决于具体的场景。为了简单起见，我们只需右键点击 `Spawn Transform` 并选择“Promote to Variable”（提升为变量）。如果没有\
+  \ `Spawn Transform`，蓝图将带错误编译。在所需的 Actor 实例化后，我们设置（或“初始化”）我们的 `hotelBuilder` 变量。\n\
+  \n这种相同的基本思想也适用于 `Set engineer` 折叠图表（collapsed graph）。然而，`Architectural Engineer`\
+  \ 需要将一个 `LodgingBuilder` 传递其构造函数，正如这行代码所示：\n\n```\nArchitecturalEngineer engineer\
+  \ = new ArchitecturalEngineer(hotelBuilder);\n```\n\n稍后，我们不会对每个实例化活动都进行如此细节。请相信，有许多、许多实例化\
+  \ Actor 的需求，讨论每一个细节将变成一项枯燥的练习。\n\n`Builder_Main` 蓝图继续执行 `Construct Lodging` 函数调用节点。该函数被调用在我们之前实例化的\
+  \ `engineer` 上。等效的代码行：\n\n```\nengineer.constructLodging();\n```\n\n注意 `Builder_Main`\
+  \ 中的 `Sequence` 节点。`Sequence 0` 在 `Construct Lodging` 函数调用执行后完成。然后 `Sequence 1`\
+  \ 开始执行。`Set lodging` 折叠图表：\n\n![图形用户界面，应用描述自动生成](img/Image00007.jpg)\n\n现在，我们等效地执行了这行代码：\n\
+  \n```\nLodging lodging = engineer.getLodging();\n```\n\n这是 `Builder` 类中的最后一行代码。然而，我们需要进行一些验证检查，并确保我们确实建造了一个酒店。我们想要确保\
+  \ `lodging` Actor 实现了 `FloorPlan` 接口。`lodging isFloorPlan_int` 折叠图表：\n\n![计算机截图描述自动生成，置信度低](img/Image00008.jpg)\n\
+  \n今后，我们将不再显示此接口检查折叠图表。注意，此检查的折叠图表始终带有黄色调。折叠节点内部唯一变化的项是我们要检查对象的**接口。目标接口始终是折叠图表名称的一部分。\n\
+  \n`Builder_Main` 蓝图以一个打印字符串结束执行，让我们知道酒店是否实际建造成功。如果在任何蓝图的某处发生逻辑错误，将打印“Failed to Build\
+  \ a Hotel”（建造失败）。\n\n现在我们可以讨论在此模式中使用的接口了。首先，我们创建一个楼层计划接口供所有住宿场所实现。美国大多数商业住宿场所包含游泳池、大堂区、房间和餐厅。我们还创建了一个住宿构建器接口，供我们特定的住宿构建器类实现。`FloorPlan`\
+  \ 接口：\n\n```\ninterface FloorPlan {\n    public void setSwimmingPool(String swimmingPool);\n\
+  \    public void setLobbyArea(String lobbyArea);\n    public void setRooms(String\
+  \ rooms);\n    public void setRestaurants(String restaurants);\n}\n```\n\n等效的蓝图接口非常平淡。以下是代表\
+  \ `FloorPlan` 接口中函数的节点。\n\n![图形用户界面，应用描述自动生成](img/Image00009.jpg) ![图形用户界面，应用描述自动生成](img/Image00010.jpg)\
+  \ ![图形用户界面，应用描述自动生成](img/Image00011.jpg) ![图形用户界面，应用描述自动生成](img/Image00012.jpg)\n\
+  \n俗话说：“面向接口编程，而不是面向实现”（Gamma et.al, 1995）。事实上，它是面向对象设计的核心原则。面向接口编程的主要优点是减少了子系统之间的实现依赖（Gamma\
+  \ et.al, 1995）。我们在构建器模式（Builder Pattern）示例中亲眼看到了这一点。具体来说，构建模式试图将复杂对象的构建与其实际表示解耦（Gamma\
+  \ et.al, 1995）。\n\n```\ninterface LodgingBuilder {\n    public void buildSwimmingPool();\n\
+  \    public void buildLobbyArea();\n    public void buildRooms();\n    public void\
+  \ buildRestaurants();\n    public Lodging getLodging();\n}\n```\n\n`LodgingBuilder`\
+  \ 接口蓝图的截图与 `FloorPlan` 接口蓝图采用相同的设计，因此为了简洁起见已将其移除。今后，除非认为有助于加深读者的理解，否则将尽可能少显示接口蓝图图像。\n\
+  \n接下来，我们创建实现 `FloorPlan` 接口的 `Lodging` 类。\n\n```\nclass Lodging implements FloorPlan\
+  \ {\n    private String swimmingPool;\n    private String lobbyArea;\n    private\
+  \ String rooms;\n    private String restaurants;\n    @Override\n    public void\
+  \ setSwimmingPool(String swimmingPool) {\n        this.swimmingPool = swimmingPool;\n\
+  \    }\n    @Override\n    public void setLobbyArea(String lobbyArea) {\n      \
+  \  this.lobbyArea = lobbyArea;\n    }\n    @Override\n    public void setRooms(String\
+  \ rooms) {\n        this.rooms = rooms;\n    }\n    @Override\n    public void setRestaurants(String\
+  \ restaurants) {\n        this.restaurants = restaurants;\n    }\n    public void\
+  \ lodgingCharacteristics() {\n        System.out.println(swimmingPool);\n      \
+  \  System.out.println(lobbyArea);\n        System.out.println(rooms);\n        System.out.println(restaurants);\n\
+  \    }\n}\n```\n\n`Lodging` 蓝图：\n\n![图形用户界面，应用描述自动生成](img/Image00183.jpg)\n\n蓝图在调用\
+  \ void 接口函数时使用 `Event` 节点。`Lodging` 蓝图版本在设置局部变量外还会打印传递给函数的字符串。此外，我们必须通过类设置中的 Interfaces\
+  \ 部分来确保此蓝图类实现了 `FloorPlan` 接口。\n\n接下来两个类 `HotelLodgingBuilder` 和 `MotelLodgingBuilder`\
+  \ 实现住宿构建器接口，并为每种类型的住宿提供自定义规格。\n\n```java\nclass HotelLodgingBuilder implements LodgingBuilder\
+  \ {\n    private Lodging lodging;\n    public HotelLodgingBuilder() {\n        this.lodging\
+  \ = new Lodging();\n    }\n    @Override\n    public void buildLobbyArea() {\n \
+  \       lodging.setLobbyArea(\"大堂\");\n    }\n    @Override\n    public void buildRestaurants()\
+  \ {\n        lodging.setRestaurants(\"五星自助餐\");\n    }\n    @Override\n    public\
+  \ void buildRooms() {\n        lodging.setRooms(\"豪华套房\");\n    }\n    @Override\n\
+  \    public void buildSwimmingPool() {\n        lodging.setSwimmingPool(\"室内泳池\"\
+  );\n    }\n    @Override\n    public Lodging getLodging() {\n        return this.lodging;\n\
+  \    }\n}\n```\n\n`HotelLodgingBuilder` 蓝图构造事件图：\n\n![计算机截图描述自动生成，置信度低](img/Image00184.jpg)\n\
+  \n`Set lodging` 折叠图表节点：\n\n![图形用户界面描述自动生成](img/Image00185.jpg)\n\n`Add Child Actor\
+  \ Component` 是无法使用 `Spawn Actor of Class` 节点的折中方案。我们可以在代码中看到 `HotelLodgingBuilder`\
+  \ 构造函数实例化了一个新的 `Lodging` 对象：\n\n```\npublic HotelLodgingBuilder() {\n    this.lodging\
+  \ = new Lodging();\n}\n```\n\n当我们学习状态模式时，我们将看到更动态的方法来绕过构造脚本限制初始化对象。\n\n`HotelLodgingBuilder`\
+  \ 事件图：\n\n![图形用户界面，应用描述自动生成](img/Image00016.jpg)\n\n`isLodgingImplementInterface`\
+  \ 函数类似于黄色折叠图表的自定义接口检查函数。\n\n\n\n\n`isLodgingImplementInterface` 函数：\n\n![Graphical\
+  \ user interface, application Description automatically generated](img/Image00017.jpg)\
+  \ \n\n`MotelLodgingBuilder` 与 `HotelLodgingBuilder` 非常相似。区别在于泳池、大堂区域、房间和餐厅的属性。\n\
+  \n```java\nclass MotelLodgingBuilder implements LodgingBuilder {\n    private Lodging\
+  \ lodging;\n    public MotelLodgingBuilder() {\n        this.lodging = new Lodging();\n\
+  \    }\n    public void buildSwimmingPool() {\n        lodging.setSwimmingPool(\"\
+  Green Slim\");\n    }\n    public void buildLobbyArea() {\n        lodging.setLobbyArea(\"\
+  Economical\");\n    }\n    public void buildRestaurants() {\n        lodging.setRestaurants(\"\
+  Vending Machines\");\n    }\n    public void buildRooms() {\n        lodging.setRooms(\"\
+  Bates Style\");\n    }\n    public Lodging getLodging() {\n        return this.lodging;\n\
+  \    }\n}\n```\n\n为了简洁起见，省略了 `MotelLodgingBuilder` 的蓝图截图。它基本上模仿了 `HotelLodgingBuilder`\
+  \ 的结构。\n\n现在，我们需要一位建筑工程师来协调住宿设施的逐步构建过程。\n\n```java\nclass ArchitecturalEngineer\
+  \ {\n    private LodgingBuilder lodgingBuilder;\n    public ArchitecturalEngineer(LodgingBuilder\
+  \ lodgingBuilder) {\n        this.lodgingBuilder = lodgingBuilder;\n    }\n    public\
+  \ Lodging getLodging() {\n        return this.lodgingBuilder.getLodging();\n   \
+  \ }\n    public void constructLodging() {\n        this.lodgingBuilder.buildSwimmingPool();\n\
+  \        this.lodgingBuilder.buildLobbyArea();\n        this.lodgingBuilder.buildRooms();\n\
+  \        this.lodgingBuilder.buildRestaurants();\n    }\n}\n```\n\n`ArchitecturalEngineer`\
+  \ 脚本：\n\n![A screenshot of a computer Description automatically generated with low\
+  \ confidence](img/Image00186.jpg) \n\n### `Check lodgingBuilder isValid` 节点\n\n\
+  ![A picture containing text, electronics Description automatically generated](img/Image00019.jpg)\
+  \ \n\n此有效性检查作为一种安全机制执行。我们希望在开始对该对象执行操作之前，确保该对象不为空。如果对象确实为空，则会在视口打印“Not Valid”字符串。\n\
+  \n`ArchitecturalEngineer` 包含了几个重要的函数，即 `getLodging` 和 `constructLodging`。\n\n###\
+  \ `getLodging` 函数图\n\n![A screenshot of a computer Description automatically generated\
+  \ with low confidence](img/Image00187.jpg) \n\n### `constructLodging` 函数图\n\n![Graphical\
+  \ user interface Description automatically generated](img/Image00188.jpg) \n\n折叠的图表示了\
+  \ `constructLodging` 函数的体：\n\n```java\npublic void constructLodging() {\n    this.lodgingBuilder.buildSwimmingPool();\n\
+  \    this.lodgingBuilder.buildLobbyArea();\n    this.lodgingBuilder.buildRooms();\n\
+  \    this.lodgingBuilder.buildRestaurants();\n}\n```\n\n`buildSwimmingPool`、`buildLobbyArea`、`buildRooms`\
+  \ 和 `buildRestaurants` 图表分别为：\n\n![Graphical user interface, application Description\
+  \ automatically generated](img/Image00189.jpg) ![Graphical user interface, diagram\
+  \ Description automatically generated](img/Image00190.jpg) ![A picture containing\
+  \ text, electronics Description automatically generated](img/Image00191.jpg) ![A\
+  \ picture containing text, electronics Description automatically generated](img/Image00192.jpg)\
+  \ \n\n这是酒店建造的最终截图。\n\n![Text, chat or text message Description automatically generated](img/Image00026.jpg)\
+  \ \n\n打印到视口的字符串并不令人深刻。然而，这些字符串代表了“可能的情况”。在开发过程中，人们拥有与这些字符串相关的 3D 或 2D 艺术。得益于建造模式，我们有了一个框架来逐个构建不同版本的酒店。\n\
+  \n> 沸与泡，酿与装…… 工厂方法 (Java)\n\n## 工厂方法 UML 图\n\n![Diagram Description automatically\
+  \ generated](img/Image00193.jpg) \n\n## 工厂方法实现\n\n工厂方法设计模式中包含了创建者、具体创建者产品参与者。我们的示例实现使用\
+  \ `PotionShop` 抽象类作为创建者。具体创建者是 `InnerRealmPotionShop` 和 `OuterRealmPotionShop`。这些具体创建者继承自\
+  \ `PotionShop` 抽象类的功能。我们的具体产品是：\n\n- `InnerRealmHealthPotion`（内界健康药水）\n- `InnerRealmPowerPotion`（内界力量药水）\n\
+  - `InnerRealmSkillPotion`（内界技能药水）\n- `OuterRealmHealthPotion`（外界健康药水）\n- `OuterRealmPowerPotion`（外界力量药水）\n\
+  - `OuterRealmSkillPotion`（外界技能药水）\n\n所有这些产品都继承自 `Potion` 抽象类的功能。通过蓝图，我们将实现 `InnerRealmPotionShop`\
+  \ 及其产品，即：\n\n- `InnerRealmHealthPotion`\n- `InnerRealmPowerPotion`\n- `InnerRealmSkillPotion`\n\
+  \n同样的思想和原理适用于创建 `OuterRealmPotionShop` 及其产品。\n\n`FactoryMethod` 类包含了 Java 中的主函数。在蓝图方面，我们可以将这个类考虑为真正需要物理拖入游戏世界的类。其他的“具体”类则不需要物理存在。\n\
+  \n```java\npublic class FactoryMethod {\n    public static void main(String[] args)\
+  \ {\n        PotionShop outerRealmShop = new OuterRealmPotionShop();\n        PotionShop\
+  \ innerRealmShop = new InnerRealmPotionShop();\n        Potion potion = outerRealmShop.orderPotion(\"\
+  Health\");\n        System.out.println(\"Potion is \" + potion.getPotionName() +\
+  \ \"\\n\");\n        potion = innerRealmShop.orderPotion(\"Health\");\n        System.out.println(\"\
+  Potion is \" + potion.getPotionName() + \"\\n\");\n        potion = outerRealmShop.orderPotion(\"\
+  Power\");\n        System.out.println(\"Potion is \" + potion.getPotionName() +\
+  \ \"\\n\");\n        potion = innerRealmShop.orderPotion(\"Power\");\n        System.out.println(\"\
+  Potion is \" + potion.getPotionName() + \"\\n\");\n        potion = outerRealmShop.orderPotion(\"\
+  Skill\");\n        System.out.println(\"Potion is \" + potion.getPotionName() +\
+  \ \"\\n\");\n        potion = innerRealmShop.orderPotion(\"Skill\");\n        System.out.println(\"\
+  Potion is \" + potion.getPotionName() + \"\\n\");\n    }\n}\n```\n\n这是 `FactoryMethod_Main`\
+  \ 蓝图的顶层事件图：\n\n![Graphical user interface Description generated](img/Image00194.jpg)\
+  \ \n\n### `Spawn_Inner_Realm_Shop` 折叠图\n\n![A screenshot of a video game Description\
+  \ automatically generated with medium confidence](img/Image00195.jpg) \n\n`Spawn_Inner_Realm_Shop`\
+  \ 折叠图代表了这一行代码：\n\n`PotionShop innerRealmShop = new InnerRealmPotionShop();`\n\n\
+  主类的大部分折叠在 `Enter_Inner_Realm_Potion_Shop` 中：\n\n![Graphical user interface, application\
+  \ Description automatically generated](img/Image00196.jpg) \n\n基本上，我们从内界药店订购不同的药水，然后打印与我们订购药水相关的信息。\n\
+  \n`Order_Inner_Realm_Health_Potion`、`Order_Inner_Realm_Power_Potion`、`Order_Inner_Realm_Skill_Potion`\
+  \ 折叠图分别为：\n\n![A screenshot of a computer Description automatically generated with\
+  \ low confidence](img/Image00197.jpg) ![A screenshot of a computer Description automatically\
+  \ generated with low confidence](img/Image00198.jpg) ![A picture containing text,\
+  \ electronics, silver Description automatically generated](img/Image00199.jpg) \n\
+  \n这三个图等同于：\n\n\n\n\n\n```\npotion = innerRealmShop.orderPotion(\"Health\");\npotion\
+  \ = innerRealmShop.orderPotion(\"Power\");\npotion = innerRealmShop.orderPotion(\"\
+  Skill\");\n```\n\n打印药水信息的折叠图（collapsed graphs）都包含相同的功能，只是传递了不同的药水：\n\n![图形用户界面，应用程序描述自动生成](img/Image00200.jpg)\n\
+  \n`FactoryMethod_Main`蓝图到此结束。接下来我们将处理 `Potion` 和 `PotionShop` 类。这两个类都是抽象类。我们可以在蓝图中通过导航到类设置并勾选“生成抽象类”来创建抽象类。如图所示：\n\
+  \n![图形用户界面 描述自动生成](img/Image00035.jpg)\n\n我们的 `PotionShop` 类代码实现：\n\n```java\npublic\
+  \ abstract class PotionShop { abstract Potion concoctPotion(String potionSKU); public\
+  \ Potion orderPotion(String category) {Potion potion = concoctPotion(category);System.out.println(\"\
+  Concocting \" + potion.getPotionName());potion.boil();potion.bubble();potion.brew();potion.bottle();\
+  \ return potion; }}\n```\n\n在这里，我们必须稍微偏离传统代码。在蓝图中似乎没有办法显式地将函数声明为“抽象（abstract）”。编译器可能足够聪明，在后台自动完成这一操作，但没有公开信息说明这一功能。我们等同于\
+  \ `concoctPotion` 的蓝图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00036.jpg)\n\n`orderPotion`\
+  \ 函数蓝图：\n\n![](img/Image00201.jpg)\n\n`Set_Concocting_Potion` 折叠图：\n\n![包含文字的图片，橙色，关闭描述自动生成](img/Image00202.jpg)\n\
+  \n`Print_Concocting_Potion_Name` 折叠图：\n\n![](img/Image00203.jpg)\n\n`Boil_Potion`\
+  \ 折叠图：\n\n![](img/Image00204.jpg)\n\n`Bubble_Potion` 折叠图：\n\n![包含文字的图片，电子设备 描述自动生成](img/Image00205.jpg)\n\
+  \n`Brew_Potion` 折叠图：\n\n![包含文字的图片，电子设备 描述自动生成](img/Image00206.jpg)\n\n`Bottle_Potion`\
+  \ 折叠图：\n\n![包含文字的图片，电子设备 描述自动生成](img/Image00207.jpg)\n\n抽象的 `Potion` 类代码：\n\n```java\n\
+  import java.util.ArrayList;public abstract class Potion {String potionName;String\
+  \ gooeyness;String blood;ArrayList < String > herbs=new ArrayList < String>(); void\
+  \ boil() {System.out.println(\"Boil \" + potionName);System.out.println(\"Drop in\
+  \ blood...\");System.out.println(\"Drop in herbs: \"); } void bubble() {System.out.println(\"\
+  Bubble for 3 moons and a sunset\"); } void brew() {System.out.println(\"Brewing\
+  \ at Low Temperature\"); } void bottle() {System.out.println(\"Bottle concoction\
+  \ in flask\"); } public String getPotionName() { return potionName; }{}\n```\n\n\
+  等同于 `boil` 方法的蓝图函数：\n\n![游戏截图 描述自动生成](img/Image00039.jpg)\n\n等同于 `bubble` 方法的蓝图函数：\n\
+  \n![图形用户界面，应用程序描述自动生成](img/Image00040.jpg)\n\n等同于 `brew` 方法的蓝图函数：\n\n![图形用户界面，应用程序描述自动生成](img/Image00041.jpg)\n\
+  \n等同于 `bottle` 方法的蓝图函数：\n\n![图形用户界面，应用程序描述自动生成](img/Image00042.jpg)\n\n等同于 `getPotionName`\
+  \ 方法的蓝图函数：\n\n![手机截图 具有中等置信度自动生成](img/Image00043.jpg)\n\n现在我们已经定义了抽象父类，让我们关注具体的创建者（concrete\
+  \ creator）。\n\n`InnerRealmPotionShop` 具体创建者类：\n\n```java\npublic class InnerRealmPotionShop\
+  \ extends PotionShop {Potion concoctPotion(String potionSKU) { if (potionSKU.equals(\"\
+  Health\")) { return new InnerRealmHealthPotion(); } else if (potionSKU.equals(\"\
+  Power\")) { return new InnerRealmPowerPotion(); } else if (potionSKU.equals(\"Skill\"\
+  )) { return new InnerRealmSkillPotion(); } else return null; } }}\n```\n\n`InnerRealmPotionShop`\
+  \ 蓝图仅包含 `concoctPotion` 函数：\n\n![电脑截图 具有中等置信度自动生成](img/Image00208.jpg)\n\n`New_Concoct_Potion`\
+  \ 折叠图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00209.jpg)\n\n`New_Potion_Potion` 折叠图：\n\
+  \n![电脑截图 具有中等置信度自动生成](img/Image00210.jpg)\n\n`New_Skill__Potion` 折叠图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00211.jpg)\n\
+  \n现在我们已经定义了具体的创建者，让我们关注该创建者可以创建的具体产品（concrete products）。\n\n`InnerRealmHealthPotion`\
+  \ 具体类：\n\n```java\npublic class InnerRealmHealthPotion extends Potion {public InnerRealmHealthPotion()\
+  \ {potionName=\"Inner Realm Potion\";gooeyness=\"Mucus Like\";blood=\"Orc Blood\"\
+  ;herbs.add(\"Root of Inner Realm\"); } void brew() {System.out.println(\"Brewing\
+  \ at High Temperature\"); }}\n```\n\n`InnerRealmHealthPotion` 蓝图构造：\n\n![游戏截图 描述自动生成](img/Image00212.jpg)\n\
+  \n`InnerRealmHealthPotion` 事件图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00049.jpg)\n\n\
+  `InnerRealmPowerPotion` 具体类：\n\n```java\npublic class InnerRealmPowerPotion extends\
+  \ Potion {public InnerRealmPowerPotion() {potionName=\"Inner Realm Potion\";gooeyness=\"\
+  Mucus Like\";blood=\"Orc Blood\";herbs.add(\"Root of Inner Realm\");herbs.add(\"\
+  Sage of Inner Realm\"); } void brew() {System.out.println(\"Brewing at High Temperature\"\
+  ); }}\n```\n\n`InnerRealmPowerPotion` 蓝图构造：\n\n![](img/Image00213.jpg)\n\n`InnerRealmPowerPotion`\
+  \ 事件图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00051.jpg)\n\n`InnerRealmSkillPotion` 具体类：\n\
+  \n```java\npublic class InnerRealmSkillPotion extends Potion {public InnerRealmSkillPotion()\
+  \ {potionName=\"Inner Realm Skill Potion\";gooeyness=\"Mucus Like\";blood=\"Orc\
+  \ Blood\";herbs.add(\"Root of Inner Realm\");herbs.add(\"Red Clover of Inner Realm\"\
+  );herbs.add(\"Wildrose of Inner Realm\");herbs.add(\"Yarrow of Inner Realm\"); }\
+  \ void brew() {System.out.println(\"Brewing at High Temperature\"); }}\n```\n\n\
+  `InnerRealmSkillPotion` 蓝图构造：\n\n![](img/Image00214.jpg)\n\n`InnerRealmSkillPotion`\
+  \ 事件图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00053.jpg)\n\n我们可以轻松地添加另一个具体的创建者类，如 `OuterRealmPotionShop`，并使用与\
+  \ `InnerRealmPotionShop:` 相同的继承方法创建更多具体产品。\n\n\n\n\n\n```java\npublic class OuterRealmPotionShop\
+  \ extends PotionShop {\n    Potion concoctPotion(String potionSKU) {\n        if\
+  \ (potionSKU.equals(\"Health\")) {\n            return new OuterRealmHealthPotion();\n\
+  \        } else if (potionSKU.equals(\"Power\")) {\n            return new OuterRealmPowerPotion();\n\
+  \        } else if (potionSKU.equals(\"Skill\")) {\n            return new OuterRealmSkillPotion();\n\
+  \        } else\n            return null;\n        }\n    }\n}\n```\n\n```java\n\
+  public class OuterRealmHealthPotion extends Potion {\n    public OuterRealmHealthPotion()\
+  \ {\n        potionName = \"Outer Realm Health Potion\";\n        gooeyness = \"\
+  Watery Mess\";\n        blood = \"Dwarf Blood\";\n        herbs.add(\"Root of Outer\
+  \ Realm\");\n    }\n}\n```\n\n```java\npublic class OuterRealmPowerPotion extends\
+  \ Potion {\n    public OuterRealmPowerPotion() {\n        potionName = \"Outer Realm\
+  \ Power Potion\";\n        gooeyness = \"Watery Mess\";\n        blood = \"Dwarf\
+  \ Blood\";\n        herbs.add(\"Root of Outer Realm\");\n        herbs.add(\"Sage\
+  \ of Outer Realm\");\n    }\n}\n```\n\n```java\npublic class OuterRealmSkillPotion\
+  \ extends Potion {\n    public OuterRealmSkillPotion() {\n        potionName = \"\
+  Outer Realm Skill Potion\";\n        gooeyness = \"Watery Mess\";\n        blood\
+  \ = \"Dwarf Blood\";\n        herbs.add(\"Root of Outer Realm\");\n        herbs.add(\"\
+  Red Clover of Outer Realm\");\n        herbs.add(\"Wildrose of Outer Realm\");\n\
+  \        herbs.add(\"Yarrow of Outer Realm\");\n    }\n}\n```\n\n工厂方法的视口打印：\n\n\
+  ![文本，字母描述自动生成](img/Image00054.jpg)\n\n> 编程精英主义的克星……单例模式 (Java)\n\n### 单例模式 UML 图\n\
+  \n![带有中等置信度的图描述自动生成](img/Image00215.jpg)\n\n### 单例模式实现\n\n在 Unreal 中没有一种明确的方法来创建自定义的单例蓝图。然而，游戏实例（Game\
+  \ Instance）似乎是单例的一种原生解决方案。背包系统是演示单例设计模式的一个极佳例子。我们希望在任何时候都只有一个背包实例。此外，我们希望能够在整个游戏中轻松地访问该背包系统。\n\
+  \n主单例类 `Singleton_Main`：\n\n```java\npublic class Singleton_Main {\n    public static\
+  \ void main(String[] args) {\n        Inventory myInventory = Inventory.getInstance();\n\
+  \        System.out.println(myInventory);\n    }\n}\n```\n\n`Singleton_Main` 蓝图事件图：\n\
+  \n![图形用户界面描述自动生成](img/Image00055.jpg)\n\n存在 for 循环是为了演示尝试创建多个指定单例对象实例的操作。如果一切设置正确，我们永远不应该允许创建多个背包实例。\n\
+  \n`Create_Inventory_Instance` 折叠图表：\n\n![视频游戏截图描述自动生成](img/Image00056.jpg)\n\n`Instance_Created_Message`\
+  \ 折叠图表：\n\n![图形用户界面，应用程序描述自动生成](img/Image00057.jpg)\n\n`Inventory` 类：\n\n```java\n\
+  public final class Inventory {\n    private static final Inventory Instance = new\
+  \ Inventory();\n    private Inventory() {}\n    public static Inventory getInstance()\
+  \ {\n        return Instance;\n    }\n}\n```\n\n`Inventory` 蓝图构造脚本：\n\n![图形用户界面，应用程序描述自动生成](img/Image00058.jpg)\n\
+  \n私有构造函数的概念在 Unreal 中并不。因此，我们必须创建另一种方法来防止创建新的单例对象。我们通过检查是否已经存在背包实例来实现。如果背包实例确实存在，则尝试创建的新单例对象将被销毁。\n\
+  \n`isInstance_already_exist` 折叠图表：\n\n![视频游戏截图描述自动生成](img/Image00059.jpg)\n\n`kill_yourself`\
+  \ 折叠图表：\n\n![图形用户界面描述自动生成](img/Image00060.jpg)\n\n单例模式视口屏幕打印：\n\n![文本描述自动生成](img/Image00061.jpg)\n\
+  \n> 结构性模式 (Java)\n\n我们讨论的结构性模式有助于我们从类和对象组合成更大的结构。这种模式分类最重要的目标之一是能够在运行时更改对象的组合。\n\
+  \n> 适应并克服……适配器模式 (Java)\n\n### 适配器模式 UML 图\n\n![图描述自动生成](img/Image00216.jpg)\n\n\
+  ### 适配器模式实现\n\n在我们的适配器模式实现中，有一个使用弹弓的射击者。我们希望允许我们的射击者射击。然而，我们希望通过使用适配器模式利用已实现的代码。\n\
+  \n主适配器类：\n\n```java\npublic class Adapter_Main {\n    public static void main(String[]\
+  \ args) {\n        Shooter shooter = new Shooter(new GunAdapter());\n        shooter.sling();\n\
+  \    }\n}\n```\n\n`Adapter_Main` 蓝图：\n\n![图形用户界面描述自动生成](img/Image00062.jpg)\n\n\
+  `Create_Gun_Adapter` 折叠图表：\n\n![图形用户界面描述自动生成](img/Image00063.jpg)\n\n`Create_Shooter`\
+  \ 折叠图表：\n\n![带有低置信度的电脑描述自动生成](img/Image00064.jpg)\n\n`SlingShot` 接口：\n\n```java\n\
+  public interface SlingShot {\n    void sling();\n}\n```\n\n`GunAdapter` 类：\n\n```java\n\
+  public class GunAdapter implements SlingShot {\n    private Gun weapon;\n    public\
+  \ GunAdapter() {\n        weapon = new Gun();\n    }\n    @Override\n    public\
+  \ void sling() {\n        weapon.fire();\n    }\n}\n```\n\n`GunAdapter` 蓝图：\n\n\
+  ![图形用户界面，应用程序自动生成](img/Image00217.jpg)\n\n`Gun` 类：\n\n```java\npublic class Gun\
+  \ {\n    public void fire() {\n        System.out.println(\"Our gun is firing\"\
+  );\n    }\n}\n```\n\n`Gun` 蓝图：\n\n![包含文字的图片自动生成](img/Image00218.jpg)\n\n`Shooter`\
+  \ 类：\n\n```java\npublic class Shooter implements SlingShot {\n    private SlingShot\
+  \ slingShot;\n    public Shooter(SlingShot slingShot) {\n        this.slingShot\
+  \ = slingShot;\n    }\n    public void sling() {\n        slingShot.sling();\n \
+  \   }\n}\n```\n\n我们可以看到 `Shooter` 类没有射击枪的功能。然而，它具有发射弹弓的功能。这两种技能都基于从武器发射射物。我们希望重用弹弓的功能并将其适配用于使用枪。\n\
+  \n`Shooter` 构造脚本：\n\n![](img/00219.jpg)\n\n`Sling` 函数：\n\n![图形用户界面描述自动生成](img/Image00220.jpg)\n\
+  \n适配器模式视口打印：\n\n![](img/00070.jpg)\n\n> 装饰强大的敌人……装饰器模式 (Java)\n\n## 装饰器模式 UML 图\n\
+  \n![图描述自动生成](img/Image00221.jpg)\n\n### 装饰器模式实现\n\n我们的实现包含一个初始为近战敌人。我们希望“装饰”敌人并创建一个可以使用射物的敌人。因此，添加的功能是投影能力。\n\
+  \n`Decorator_Main` 类：\n\n\n\n\n\n```java\npublic class Decorator_Main {\n    public\
+  \ static void main(String[] args) {\n        System.out.println(\"Melee Enemies\
+  \ are on the horizon\");\n        Enemy enemy = new MeleeEnemy();\n        enemy.fight();\n\
+  \        enemy.die();\n        System.out.println(\"Melee Enemies cause \" + enemy.getDamage()\
+  \ + \"damage.\");\n        System.out.println(\"Enemies are now armed with guns\"\
+  );\n        Enemy projectileEnemy = new ProjectileEnemy(enemy);\n        projectileEnemy.fight();\n\
+  \        projectileEnemy.die();\n        System.out.println(\"Projectile Enemies\
+  \ cause \" + projectileEnemy.getDamage() + \" damage.\");\n    }\n}\n```\n\n我们从\
+  \ `Decorator_Main` 中看到，我们不需要创建一个单独的 `Enemy` 类来添加功能。我们只需要对敌人进行“装饰”，现在我们就有了一个远程射击敌人。实质上，我们通过使用装饰器在运行时改变了敌的行为。\n\
+  \n`Decorator_Main` 蓝图事件图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00222.jpg)\n\n为了可读性，近战敌人和装饰后的远程射击敌人被拆分为独立的折叠图。\n\
+  \n### `Melee_Enemy_Actions` 折叠图：\n\n![包含文本的图片，电子设备描述自动生成](img/Image00223.jpg)\n\n\
+  ### `Create_Enemy` 折叠图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00224.jpg)\n\n### `Enemy_Fight`\
+  \ 折叠图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00074.jpg)\n\n### `Enemy_Die` 折叠图：\n\n![包含文本的图片，电子设备描述自动生成](img/Image00075.jpg)\n\
+  \n### `Enemy_GetDamage` 折叠图：\n\n![包含文本的图片，电子设备描述自动生成](img/Image00076.jpg)\n\n###\
+  \ `Enemy_Damage_Message` 折叠图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00077.jpg)\n\n###\
+  \ `Projectile_Enemy_Actions` 折叠图：\n\n![图形用户界面描述自动生成](img/Image00225.jpg)\n\n###\
+  \ `Create_Projectile_Enemy` 折叠图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00226.jpg)\n\n\
+  近战敌人和远程射击敌人之间的显著区别在于构造。远程射击敌人的构造函数接受之前创建的敌人作为参数。这样我们就可以它来装饰敌人对象。\n\n### `Projectile_Enemy_Fight`\
+  \ 折叠图：\n\n![包含文本的图片，电子设备描述自动生成](img/Image00080.jpg)\n\n### `Projectile_Enemy_Die`\
+  \ 折叠图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00081.jpg)\n\n### `Projectile_Enemy_GetDamage`\
+  \ 折叠图：\n\n![包含文本的图片，电子设备，银色描述自动生成](img/Image00082.jpg)\n\n### `Projectile_Enemy_Damage_Message`\
+  \ 折叠图：\n\n![视频游戏截图描述，置信度中等](img/Image00083.jpg)\n\n### `Enemy` 接口\n\n```java\npublic\
+  \ interface Enemy {\n    void fight(); // 敌人造成的伤害\n    int getDamage();\n    void\
+  \ die();\n}\n```\n\n`Enemy` 接口被所有敌人对象共享。\n\n### `MeleeEnemy` 类：\n\n```java\npublic\
+  \ class MeleeEnemy implements Enemy {\n    @Override\n    public void fight() {\n\
+  \        System.out.println(\"敌人挥出了重拳\");\n    }\n    @Override\n    public int\
+  \ getDamage() {\n        return 5;\n    }\n    @Override\n    public void die()\
+  \ {\n        System.out.println(\"敌人在痛苦中扭扎并消散\");\n    }\n}\n```\n\n`MeleeEnemy`\
+  \ 蓝图事件图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00227.jpg)\n\n`MeleeEnemy` 蓝图中的 `GetDamage`\
+  \ 函数：\n\n![图形用户界面描述自动生成](img/Image00228.jpg)\n\n### `ProjectileEnemy` 类：\n\n```java\n\
+  public class ProjectileEnemy implements Enemy {\n    private Enemy decoratedEnemy;\n\
+  \    public ProjectileEnemy(Enemy decoratedEnemy) {\n        this.decoratedEnemy\
+  \ = decoratedEnemy;\n    }\n    @Override\n    public void fight() {\n        decoratedEnemy.fight();\n\
+  \        System.out.println(\"敌人飞了一个吻并射了击\");\n    }\n    @Override\n    public\
+  \ int getDamage() {\n        return decoratedEnemy.getDamage() + 95;\n    }\n  \
+  \  @Override\n    public void die() {\n        decoratedEnemy.die();\n    }\n}\n\
+  ```\n\n我们可以看到远程射击敌人造成的伤害比近战敌人更多。我们使用了近战伤害属性，并为远程射击敌人将其增加了 95 点。\n\n`ProjectileEnemy`\
+  \ 蓝图事件图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00229.jpg)\n\n`ProjectileEnemy` 蓝图中的 `GetDamage`\
+  \ 函数：\n\n![Image0230.jpg)装饰器模式视口：![自动生成的文本](img/Image0088.jpg) 我们可以看到近战敌人过来了。近战敌人与我们战斗。然后敌人死亡了。然而，我们受到了近战敌人造成的\
+  \ 5 点伤害。随后敌人以远程武器的形式赋予了功能。> 太空旅行看起来很容易\n\n### Facade 模式 (Java)\n\n**Facade 模式 UML**\n\
+  \n### Facade 模式实现\n\n太空并不容易。太空旅行最重要的部分是星舰。然而，星舰有自己的复杂性。这就是 `StarShipFacade` 发挥用场的地方。Facade\
+  \ 类：\n\n```java\npublic class Facade_Main {\n    public static void main(String[]\
+  \ args) {\n        StarShipFacade shipFacade = new StarShipFacade();\n        shipFacade.reveille();\n\
+  \        shipFacade.planOfTheDay();\n        shipFacade.taps();\n    }\n}\n```\n\
+  \n从 `Facade_Main` 我们可以看到运行星舰有多简单。这仅仅是使用 Facade 模式的外壳。复杂性在后面。\n\n`Facade_Main` 事件图：\n\
+  \n![图形用户界面，应用程序描述生成](img/Image00232.jpg)\n\n### `Create_Starship_Facade` 折叠图：\n\n\
+  ![图形用户界面，应用程序描述生成](img/Image00233.jpg)\n\n### `StarShipFacade` 类：\n\n```java\nimport\
+  \ java.util.ArrayList;\nimport java.util.List;\n\npublic class StarShipFacade {\n\
+  \    private final List<StarShipCrewMember> crew;\n    private List<String> tasks;\n\
+  \n    public StarShipFacade() {\n        crew = new ArrayList<>();\n        tasks\
+  \ = new ArrayList<>();\n        crew.add(new StarShipNavigationOfficer());\n   \
+  \     crew.add(new StarShipSupplyOfficer());\n        crew.add(new StarShipOperationsOfficer());\n\
+  \    }\n\n    public void reveille() {\n        tasks.clear();\n        tasks.add(\"\
+  trice_up\");\n        tasks.add(\"muster\");\n        performTasks(crew, tasks);\n\
+  \    }\n\n    public void planOfTheDay() {\n        tasks.clear();\n        tasks.add(\"\
+  duty\");\n        performTasks(crew, tasks);\n    }\n\n    public void taps() {\n\
+  \        tasks.clear();\n        tasks.add(\"liberty_call\");\n        tasks.add(\"\
+  lights_out\");\n        performTasks(crew, tasks);\n    }\n\n    private static\
+  \ void performTasks(List<StarShipCrewMember> crew, List<String> tasks) {\n     \
+  \   for (StarShipCrewMember crewMember : crew) {\n            crewMember.task(tasks);\n\
+  \        }\n    }\n}\n```\n\n\n\n\n\n`StarShipFacade` 类是该模式的核心所在。我们没有使用代码中演示的构建脚本，而是将构建代码放置在事件图中。`StarShipFacade`\
+  \ 事件图：\n\n![图形用户界面 自动生成](img/Image00234.jpg)\n\n`Add Navigation Officer to crew`\
+  \ 折叠图：\n\n![计算机截图，中等置信度 自动生成](img/Image00091.jpg)\n\n`Add Supply Officer to crew`\
+  \ 折叠图：\n\n![图形用户界面，应用程序 自动生成](img/Image00092.jpg)\n\n`Add Operations Officer to\
+  \ Crew` 折叠图：\n\n![图形用户界面，应用程序 自动生成](img/Image00093.jpg)\n\n`Reveille` 蓝图函数：\n\n\
+  ![计算机截图，低置信度 自动生成](img/Image00094.jpg)\n\n`PlanOfTheDay` 蓝图函数：\n\n![手机截图，低置信度 自动生成](img/Image00095.jpg)\n\
+  \n`Taps` 蓝图函数：\n\n![计算机截图，中等置信度 自动生成](img/Image00096.jpg)\n\n`Perform Tasks` 蓝图函数：\n\
+  \n![图形用户界面，应用程序 自动生成](img/Image00097.jpg)\n\n抽象类 `StarShipCrewMember`：\n\n```java\n\
+  import java.util.List;\npublic abstract class StarShipCrewMember {\n    public void\
+  \ turnLightsOut() {\n        System.out.println(crewTitle() + \" taps,taps lights\
+  \ out.\");\n    }\n    public void heaveOutTriceUp() {\n        System.out.println(crewTitle()\
+  \ + \" all hands heave out and trice up.\");\n    }\n    public void libertyCall()\
+  \ {\n        System.out.println(crewTitle() + \" liberty call, liberty call.\");\n\
+  \    }\n    public void crewMuster() {\n        System.out.println(crewTitle() +\
+  \ \" time for muster.\");\n    }\n    private void task(String task) {\n       \
+  \ switch (task) {\n            case \"lights_out\":\n                turnLightsOut();\n\
+  \                break;\n            case \"trice_up\":\n                heaveOutTriceUp();\n\
+  \                break;\n            case \"liberty_call\":\n                libertyCall();\n\
+  \                break;\n            case \"muster\":\n                crewMuster();\n\
+  \                break;\n            case \"duty\":\n                duty();\n \
+  \               break;\n            default:\n                System.out.println(\"\
+  Undefined task\");\n                break;\n        }\n    }\n    public void task(List<String>\
+  \ tasks) {\n        for (String task : tasks) {\n            task(task);\n     \
+  \   }\n    }\n    public abstract void duty();\n    public abstract String crewTitle();\n\
+  }\n```\n\n`Turn Lights Out` 蓝图函数：\n\n![计算机截图，中等置信度 自动生成](img/Image00098.jpg)\n\n\
+  `Heave Out Trice Up` 蓝图函数：\n\n![计算机截图 自动生成](img/Image00099.jpg)\n\n`Liberty Call`\
+  \ 蓝图函数：\n\n![图形用户界面，应用程序 自动生成](img/Image00100.jpg)\n\n`Crew Muster` 蓝图函数：\n\n![计算机截图，中等置信度\
+  \ 自动生成](img/Image00101.jpg)\n\n`Task` 蓝图函数：\n\n![图形用户界面，应用程序 自动生成](img/Image00102.jpg)\n\
+  \n`Perform Tasks` 蓝图函数：\n\n![图形用户界面，应用程序 自动生成](img/Image00103.jpg)\n\n`Duty` 蓝图函数：\n\
+  \n![图形用户界面，应用程序 自动生成](img/Image00104.jpg)\n\n`Crew Title` 蓝图函数：\n\n![图形用户界面，应用程序\
+  \ 自动生成](img/Image00105.jpg)\n\n`StarShipNavigationOfficer` 类：\n\n```java\npublic\
+  \ class StarShipNavigationOfficer extends StarShipCrewMember {\n    @Override\n\
+  \    public void duty() {\n        System.out.println(crewTitle() + \" navigates\
+  \ the ship.\");\n    }\n    @Override\n    public String crewTitle() {\n       \
+  \ return \"Nav Officer\";\n    }\n}\n```\n\n`StarShipNavigationOfficer` 事件图：\n\n\
+  ![计算机截图，中等置信度 自动生成](img/Image00235.jpg)\n\n`StarShipNavigationOfficer` 标题函数：\n\n\
+  ![图形用户界面，应用程序 自动生成](img/Image00236.jpg)\n\n`StarShipOperationsOfficer` 类：\n\n```java\n\
+  public class StarShipOperationsOfficer extends StarShipCrewMember {\n    @Override\n\
+  \    public void duty() {\n        System.out.println(crewTitle() + \" disseminates\
+  \ incoming information.\");\n    }\n    @Override\n    public String crewTitle()\
+  \ {\n        return \"Ops Officer\";\n    }\n}\n```\n\n`StarShipOperationsOfficer`\
+  \ 事件图：\n\n![图形用户界面，应用程序 自动生成](img/Image00237.jpg)\n\n`StarShipOperationsOfficer`\
+  \ 标题函数：\n\n![图形用户界面，应用程序 自动生成](img/Image00238.jpg)\n\n`StarShipSupplyOfficer` 类：\n\
+  \n```java\npublic class StarShipSupplyOfficer extends StarShipCrewMember {\n   \
+  \ @Override\n    public void duty() {\n        System.out.println(crewTitle() +\
+  \ \" ensures there ample supplies.\");\n    }\n    @Override\n    public String\
+  \ crewTitle() {\n        return \"Supply Officer\";\n    }\n}\n```\n\n`StarShipSupplyOfficer`\
+  \ 事件图：\n\n![计算机截图，中等置信度 自动生成](img/Image00239.jpg)\n\n`StarShipSupplyOfficer` 标题函数：\n\
+  \n![图形用户界面，应用程序 自动生成](img/Image00240.jpg)\n\nFaçade 模式视图：\n\n![文本 自动生成](img/Image00112.jpg)\n\
+  \n# 行为模式 (Java)\n\n我们讨论的行为模式有助于确定对象如何交互。此外，对象的责任也在行为模式中定义。我们必须提到行为模式中的通信。运行时对象之间的通信是行为模式的基础。\n\
+  \n# 怪物观察者模式 (Java)\n\n## 观察者模式 UML\n\n![图 自动生成](img/Image00241.jpg)\n\n## 观察者模式实现\n\
+  \n钟是我们观察模式的发布者。订阅者由一组根据一天时间变化的怪物组成。当钟的状态发生变化时，怪物们会收到来自钟的通知。`Observer_Main` 类：\n\n\
+  ```java\npublic class Observer_Main {\n    public static void main(String[] args)\
+  \ {\n        ClockTower clockTower = new ClockTower();\n        FreakyAllen freakyAllen\
+  \ = new FreakyAllen(clockTower);\n        FreakySue freakySue = new FreakySue(clockTower);\n\
+  \        FreakyJeff freakyJeff = new FreakyJeff(clockTower);\n        clockTower.setTimeOfDay(\"\
+  Morning\");\n        clockTower.setTimeOfDay(\"Midday\");\n        clockTower.setTimeOfDay(\"\
+  Evening\");\n    }\n}\n```\n\n`Observer_Main` 蓝图事件图：\n\n![计算机截图，中等置信度 自动生成](img/Image00242.jpg)\n\
+  \n`Create ClockTower` 折叠图：\n\n![图形用户界面，应用程序 自动生成](img/Image00243.jpg)\n\n`Create\
+  \ FreakyAlien` 折叠图：\n\n![图形用户界面，文本，应用程序，聊天或短信消息 自动生成](img/Image00244.jpg)\n\n让我们实现\
+  \ `Subscriber` 接口：\n\n```java\npublic interface Subscriber {\n    public void update(String\
+  \ time);\n}\n```\n\n让我们实现 `Publisher` 接口：\n\n```java\npublic interface Publisher\
+  \ {\n    public void subscribe(Subscriber s);\n    public void unsubscribe(Subscriber\
+  \ s);\n    public void notifySubscribers();\n}\n```\n\n\n\n\n`ClockTower` 类：\n\n\
+  ```java\nimport java.util.ArrayList;\npublic class ClockTower implements Publisher\
+  \ {\n    private ArrayList<Subscriber> subscribers;\n    private String time;\n\
+  \    public ClockTower() {\n        subscribers = new ArrayList<Subscriber>();\n\
+  \    }\n    public void subscribe(Subscriber s) {\n        subscribers.add(s);\n\
+  \    }\n    public void unsubscribe(Subscriber s) {\n        int i = subscribers.indexOf(s);\n\
+  \        if (i >= 0) {\n            subscribers.remove(i);\n        }\n    }\n \
+  \   public void notifySubscribers() {\n        for (Subscriber subscriber : subscribers)\
+  \ {\n            subscriber.update(time);\n        }\n    }\n    public void timeChanged()\
+  \ {\n        notifySubscribers();\n    }\n    public void setTimeOfDay(String time)\
+  \ {\n        this.time = time;\n        timeChanged();\n    }\n    public String\
+  \ getTime() {\n        return time;\n    }\n}\n```\n\n`ClockTower` 蓝图事件图：\n\n![图形用户界面，应用描述自动生成](img/Image00245.jpg)\
+  \ \n\n`setTimeOfDay` 函数：\n\n![图形用户界面，应用描述自动生成](img/Image00121.jpg) \n\n`getTime`\
+  \ 函数：\n\n![图形用户界面，应用描述自动生成](img/Image00122.jpg) \n\n`timeChanged` 函数：\n\n![图形用户界面，应用描述自动生成](img/Image00123.jpg)\
+  \ \n\n让我们来实现我们怪胎们共同共享的 `Morph` 接口：\n\n```java\npublic interface Morph {\n    public\
+  \ void morph();\n}\n```\n\n`FreakyAllen` 类：\n\n```java\npublic class FreakyAllen\
+  \ implements Subscriber, Morph {\n    private String time;\n    private Publisher\
+  \ clockTower;\n    public FreakyAllen(Publisher clockTower) {\n        this.clockTower\
+  \ = clockTower;\n        clockTower.subscribe(this);\n    }\n    public void update(String\
+  \ time) {\n        this.time = time;\n        morph();\n    }\n    public void morph()\
+  \ {\n        if (time.equals(\"Morning\")) {\n            System.out.println(\"\
+  It is \" + time + \", so FreakyAllen makes a bowl of cereal\");\n        } else\
+  \ if (time.equals(\"Midday\")) {\n            System.out.println(\"It is: \" + time\
+  \ + \", so FreakyAllen's right eye starts to twitch\");\n        } else if (time.equals(\"\
+  Evening\")) {\n            System.out.println(\"It is: \" + time + \", so FreakyAllen\
+  \ morphs into a blood sucking wogglesnort\");\n        }\n    }\n}\n```\n\n`FreakyAllen`\
+  \ 脚本：\n\n![图形用户界面，应用描述自动生成](img/Image00246.jpg) \n\n`Subscribe_FreakyAllen_toClockTower`\
+  \ 折叠后的图：\n\n![图形用户界面描述自动生成](img/Image00247.jpg) \n\n`Print_Subscribe_Request` 折叠后的图：\n\
+  \n![视频游戏截图描述自动生成，置信度中等](img/Image00127.jpg) \n\n`FreakyAllen` 事件图：\n\n![图形用户界面，应用描述自动生成](img/Image00248.jpg)\
+  \ \n\n`Morning_Morph` 折叠后的图：\n\n![视频游戏截图描述自动生成，置信度中等](img/Image00129.jpg) \n\n`Midday_Morph`\
+  \ 折叠后的图：\n\n![视频游戏截图描述自动生成，置信度中等](img/Image00130.jpg) \n\n`Evening_Morph` 折叠后的图：\n\
+  \n![图形用户界面，应用描述自动生成](img/Image00131.jpg) \n\n其他怪胎遵循相同的实现方式，但定义它们个人状态的字符串外，这些字符串为了简洁已移除。\n\
+  \n观察者模式视口打印：\n\n![文本描述自动生成](img/Image00132.jpg) \n\n# 让雨下起来……状态模式 (Java)\n\n## 状态模式\
+  \ UML 图\n\n![图描述自动生成](img/Image00249.jpg) \n\n## 状态模式实现\n\n我们将实现一台老式的老虎机。正如我们所知，老虎机可以处于几种状态。这些状态是：未插入硬币、已插入硬币、无金额、赢得金额。“无金额”状态表示老虎机内部缺乏资金。“赢得金额”状态表示玩家赢了。\n\
+  \n `State_Main` 类：\n\n```java\npublic class State_Main {\n    public static void\
+  \ main(String[] args) {\n        OldSchoolSlotMachine oldSchoolSlotMachine = new\
+  \ OldSchoolSlotMachine(100);\n        System.out.println(oldSchoolSlotMachine.getCurrentState());\n\
+  \        oldSchoolSlotMachine.insertCoin();\n        oldSchoolSlotMachine.pullLever();\n\
+  \        System.out.println(oldSchoolSlotMachine.getCurrentState());\n        oldSchoolSlotMachine.insertCoin();\n\
+  \        oldSchoolSlotMachine.pullLever();\n        oldSchoolSlotMachine.insertCoin();\n\
+  \        System.out.println(oldSchoolSlotMachine.getCurrentState());\n        oldSchoolSlotMachine.pullLever();\n\
+  \        oldSchoolSlotMachine.restockDollars(100);\n        oldSchoolSlotMachine.insertCoin();\n\
+  \        oldSchoolSlotMachine.pullLever();\n        System.out.println(oldSchoolSlotMachine.getCurrentState());\n\
+  \    }\n}\n```\n\n`State_Main` 蓝图事件图：\n\n![图形用户界面描述自动生成](img/Image00133.jpg) \n\n\
+  `OldSchoolSlotMachine Action Sequence_1` 折叠后的图：\n\n![图形用户界面，应用描述自动生成](img/Image00250.jpg)\
+  \ \n\n`OldSchoolSlotMachine Action Sequence_2` 折叠后的图：\n\n![图形用户界面，应用描述自动生成](img/Image00251.jpg)\
+  \ \n\n`OldSchoolSlotMachine Action Sequence_3` 折叠后的图：\n\n![图形用户界面，应用描述自动生成](img/Image00252.jpg)\
+  \ \n\n`Print Current State` 函数：\n\n![视频游戏截图描述自动生成，置信度中等](img/Image00253.jpg) \n\n\
+  `OldSchoolSlotMachine` 类：\n\n\n\n\n```java\npublic class OldSchoolSlotMachine {\n\
+  \    State noDollarsState;\n    State noCoinState;\n    State coinInsertedState;\n\
+  \    State wonDollarsState;\n    State state;\n    int count = 0;\n\n    public\
+  \ OldSchoolSlotMachine(int numberOfDollars) {\n        noDollarsState = new NoDollarsState(this);\n\
+  \        noCoinState = new NoCoinState(this);\n        coinInsertedState = new CoinInsertedState(this);\n\
+  \        wonDollarsState = new WonDollarsState(this);\n        this.count = numberOfDollars;\n\
+  \        if (numberOfDollars > 0) {\n            state = noCoinState;\n        }\
+  \ else {\n            state = noDollarsState;\n        }\n    }\n\n    public void\
+  \ insertCoin() {\n        state.insertCoin();\n    }\n\n    public void rejectCoin()\
+  \ {\n        state.rejectCoin();\n    }\n\n    public void pullLever() {\n     \
+  \   state.pullLever();\n        state.payout();\n    }\n\n    void emitDollars()\
+  \ {\n        System.out.println(\"Make It Rain!\");\n        if (count != 0) {\n\
+  \            count = count - 50;\n        }\n    }\n\n    int getCount() {\n   \
+  \     return count;\n    }\n\n    void restockDollars(int count) {\n        this.count\
+  \ += count;\n        System.out.println(\"The Old School Slot Machine was just filled\
+  \ and new dollar count is: \" + this.count);\n        state.restockDollars();\n\
+  \    }\n\n    void setState(State state) {\n        this.state = state;\n    }\n\
+  \n    public State getState() {\n        return state;\n    }\n\n    public State\
+  \ getNoDollarsState() {\n        return noDollarsState;\n    }\n\n    public State\
+  \ getNoCoinState() {\n        return noCoinState;\n    }\n\n    public State getCoinInsertedState()\
+  \ {\n        return coinInsertedState;\n    }\n\n    public State getWonDollarsState()\
+  \ {\n        return wonDollarsState;\n    }\n\n    public String getCurrentState()\
+  \ {\n        return \"Current Slot Machine State: \" + state + \"\\n\";\n    }\n\
+  }\n```\n\n`OldSchoolSlotMachine` 构建脚本：\n\n![自动生成的图形用户界面描述](img/Image00254.jpg)\n\
+  \n`State Initializations` 折叠图：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00255.jpg)\n\n\
+  `initNoDollarsState` 函数：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00256.jpg)\n\n`Create\
+  \ NoDollarsState` 折叠图：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00257.jpg)\n\n`initNoCoinState`\
+  \ 函数：\n\n![自动生成的图形用户界面描述](img/Image00258.jpg)\n\n`Create NoCoinState` 折叠图：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00259.jpg)\n\
+  \n`initCoinInsertedState` 函数：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00260.jpg)\n\n`Create\
+  \ CoinInsertedState` 折叠图：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00261.jpg)\n\n`initWonDollarsState`\
+  \ 函数：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00262.jpg)\n\n`Create WonDollarsState` 折叠图：\n\
+  \n![自动生成的图形用户界面、应用程序描述](img/Image00263.jpg)\n\n`insertCoin` 函数：\n\n![自动生成的包含文本的电子设备](img/Image00264.jpg)\n\
+  \n`rejectCoin` 函数：\n\n![自动生成的包含文本的室内、电子设备](img/Image00265.jpg)\n\n`pullLever` 函数：\n\
+  \n![自动生成的包含文本的电子设备](img/Image00266.jpg)\n\n`emitDollars` 函数：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00147.jpg)\n\
+  \n`getCount` 函数：\n\n![自动生成的包含文本的电子设备](img/Image00148.jpg)\n\n`restockDollars` 函数：\n\
+  \n![自动生成的图形用户界面、应用程序描述](img/Image00267.jpg)\n\n`setState` 函数：\n\n![自动生成的图形用户界面描述](img/Image00268.jpg)\n\
+  \n`getCurrentState` 函数：\n\n![自动生成的图形用户界面、文本、应用程序描述](img/Image00269.jpg)\n\n`getNoDollarsState`\
+  \ 函数：\n\n![自动生成的计算机截图，置信度低](img/Image00270.jpg)\n\n`getNoCoinState` 函数：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00271.jpg)\n\
+  \n`getCoinInsertedState` 函数：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00272.jpg)\n\n`getWonDollarsState`\
+  \ 函数：\n\n![自动生成的图形用户界面描述](img/Image00273.jpg)\n\n`NoDollarsState` 类：\n\n```java\n\
+  public class NoDollarsState implements State {\n    OldSchoolSlotMachine oldSchoolMachine;\n\
+  \n    public NoDollarsState(OldSchoolSlotMachine oldSchoolMachine) {\n        this.oldSchoolMachine\
+  \ = oldSchoolMachine;\n    }\n\n    public void insertCoin() {\n        System.out.println(\"\
+  You cannot insert a casino coin, the machine is out of money\");\n    }\n\n    public\
+  \ void rejectCoin() {\n        System.out.println(\"You have not inserted a casino\
+  \ coin\");\n    }\n\n    public void pullLever() {\n        System.out.println(\"\
+  You turned, but there is money in the machine\");\n    }\n\n    public void payout()\
+  \ {\n        System.out.println(\"No money was paid out\");\n    }\n\n    public\
+  \ void restockDollars() {\n        oldSchoolMachine.setState(oldSchoolMachine.getNoCoinState());\n\
+  \    }\n\n    public String toString() {\n        return \"machine is out of cash\"\
+  ;\n    }\n}\n```\n\n`NoDollarsState` 事件图：\n\n![自动生成的视频游戏截图，置信度中](img/Image00274.jpg)\n\
+  \n`NoDollarsState doConstruction` 函数：\n\n![自动生成的计算机截图，置信度低](img/Image00275.jpg)\n\
+  \n`NoCoinState` 类：\n\n```java\npublic class NoCoinState implements State {\n   \
+  \ OldSchoolSlotMachine oldSchoolMachine;\n\n    public NoCoinState(OldSchoolSlotMachine\
+  \ oldSchoolMachine) {\n        this.oldSchoolMachine = oldSchoolMachine;\n    }\n\
+  \n    public void insertCoin() {\n        System.out.println(\"You inserted a casino\
+  \ coin\");\n        oldSchoolMachine.setState(oldSchoolMachine.getCoinInsertedState());\n\
+  \    }\n\n    public void rejectCoin() {\n        System.out.println(\"You haven't\
+  \ inserted a casino coin\");\n    }\n\n    public void pullLever() {\n        System.out.println(\"\
+  You turned, but there's no casino coin\");\n    }\n\n    public void payout() {\n\
+  \        System.out.println(\"You need to pay first\");\n    }\n\n    public void\
+  \ restockDollars() {\n    }\n\n    public String toString() {\n        return \"\
+  waiting for a casino coin\";\n    }\n}\n```\n\n`NoCoinState` 事件图：\n\n![自动生成的视频游戏截图](img/Image00276.jpg)\n\
+  \n`NoCoinState doConstruction` 函数：\n\n![自动生成的图形用户界面](img/Image00277.jpg)\n\n`CoinInsertedState`\
+  \ 类：\n\n\n\n\n\n```java\npublic class CoinInsertedState implements State {\n   \
+  \ OldSchoolSlotMachine oldSchoolSlotMachine;\n    public CoinInsertedState(OldSchoolSlotMachine\
+  \ oldSchoolSlotMachine) {\n        this.oldSchoolSlotMachine = oldSchoolSlotMachine;\n\
+  \    }\n    public void insertCoin() {\n        System.out.println(\"You cannot\
+  \ insert another casino coin\");\n    }\n    public void rejectCoin() {\n      \
+  \  System.out.println(\"Casino coin returned\");\n        oldSchoolSlotMachine.setState(oldSchoolSlotMachine.getNoCoinState());\n\
+  \    }\n    public void pullLever() {\n        System.out.println(\"You pulled the\
+  \ lever...\");\n        oldSchoolSlotMachine.setState(oldSchoolSlotMachine.getWonDollarsState());\n\
+  \    }\n    public void payout() {\n        System.out.println(\"No dollars dispensed\"\
+  );\n    }\n    public void restockDollars() {\n    }\n    public String toString()\
+  \ {\n        return \"waiting for lever pull\";\n    }\n}\n```\n\n`CoinInsertedState`\
+  \ 蓝图事件图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00278.jpg)\n\n`CoinInsertedState doConstruction`\
+  \ 函数：\n\n![图表描述自动生成](img/Image00279.jpg)\n\n`WonDollarsState` 类：\n\n```java\npublic\
+  \ class WonDollarsState implements State {\n    OldSchoolSlotMachine oldSchoolSlotMachine;\n\
+  \    public WonDollarsState(OldSchoolSlotMachine oldSchoolSlotMachine) {\n     \
+  \   this.oldSchoolSlotMachine = oldSchoolSlotMachine;\n    }\n    public void insertCoin()\
+  \ {\n        System.out.println(\"Please wait, machine is dispensing dollars\");\n\
+  \    }\n    public void rejectCoin() {\n        System.out.println(\"Chill, you\
+  \ already pulled the lever\");\n    }\n    public void pullLever() {\n        System.out.println(\"\
+  Do not pull lever twice!\");\n    }\n    public void payout() {\n        oldSchoolSlotMachine.emitDollars();\n\
+  \        if (oldSchoolSlotMachine.getCount() > 0) {\n            oldSchoolSlotMachine.setState(oldSchoolSlotMachine.getNoCoinState());\n\
+  \        } else {\n            System.out.println(\"Machine is now out of cash\"\
+  );\n            oldSchoolSlotMachine.setState(oldSchoolSlotMachine.getNoDollarsState());\n\
+  \        }\n    }\n    public void restockDollars() {\n    }\n    public String\
+  \ toString() {\n        return \"dispensing cash\";\n    }\n}\n```\n\n`WonDollarsState`\
+  \ 事件图：\n\n![视频游戏截图描述自动生成](img/Image00162.jpg)\n\n`Check Machine Has Dollars` 折叠图：\n\
+  \n![图形用户界面描述自动生成](img/Image00163.jpg)\n\n`Machine Has Dollars` 折叠图：\n\n![计算机截图描述，具有中等置信度](img/Image00280.jpg)\n\
+  \n`Machine Out of Dollars` 折叠图 折叠图：\n\n![图形用户界面、文本、应用程序、聊天或文本消息描述自动生成](img/Image00281.jpg)\n\
+  \n`WonDollarsState doConstruction` 函数：\n\n![包含图形用户界面的图片描述自动生成](img/Image00282.jpg)\n\
+  \n`State` 接口：\n\n```java\npublic interface State {\n    public void insertCoin();\n\
+  \    public void rejectCoin();\n    public void pullLever();\n    public void payout();\n\
+  \    public void restockDollars();\n}\n```\n\nState 模式视口打印：\n\n![文本描述自动生成](img/Image00167.jpg)\n\
+  \n> 你击沉了我的战舰…… 策略模式 (Java)\n\n## 策略模式 UML 图\n\n![图表描述自动生成](img/Image00283.jpg)\n\
+  \n## 策略模式实现\n\n我们有一套应对海上不同敌人的策略。如果威胁很小，则使用暴力策略。如果有很多敌人，我们使用分而治之策略。如果认为战斗是徒劳，则执行撤退策略。`Strategy_Main`\
+  \ 类：\n\n```java\npublic class Strategy_Main {\n    public static void main(String[]\
+  \ args) {\n        System.out.println(\"A tiny frigate wants some trouble\");\n\
+  \        BattleShip battleShip = new BattleShip(new BruteForceStrategy());\n   \
+  \     battleShip.engage();\n        System.out.println(\"Four tiny frigates want\
+  \ some trouble\");\n        battleShip.alterManeuvers(new DivideConquerStrategy());\n\
+  \        battleShip.engage();\n        System.out.println(\"An aircraft carrier\
+  \ group wants some trouble\");\n        battleShip.alterManeuvers(new RetreatStrategy());\n\
+  \        battleShip.engage();\n    }\n}\n```\n\n`Strategy_Main` 蓝图事件图：\n\n![计算机截图描述，具有低置信度](img/Image00168.jpg)\n\
+  \n`Create BruteForceStrategy` 折叠图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00169.jpg)\n\
+  \n`BattleShip` 折叠图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00170.jpg)\n\n`Execute Brute\
+  \ Strategy` 折叠图：\n\n![视频游戏截图描述自动生成](img/Image00171.jpg)\n\n`Execute Divide Conquer\
+  \ Strategy` 折叠图：\n\n![视频游戏截图描述自动生成](img/Image00172.jpg)\n\n`Execute Retreat Strategy`\
+  \ 折叠图：\n\n![视频游戏截图描述自动生成](img/Image00173.jpg)\n\n`BattleShip` 类：\n\n```java\npublic\
+  \ class BattleShip {\n    BattleShipStrategy battleStrategy;\n    public BattleShip(BattleShipStrategy\
+  \ battleStrategy) {\n        this.battleStrategy = battleStrategy;\n    }\n    public\
+  \ void alterManeuvers(BattleShipStrategy battleStrategy) {\n        this.battleStrategy\
+  \ = battleStrategy;\n    }\n    public void engage() {\n        battleStrategy.maneuver();\n\
+  \    }\n}\n```\n\n`BattleShip` 构建脚本：\n\n![图形用户界面描述自动生成](img/Image00284.jpg)\n\n\
+  `alterManeuvers` 蓝图函数：\n\n![图形用户界面描述自动生成](img/Image00175.jpg)\n\n与 `BattleShip`\
+  \ 构建相同，区别在于在函数内部手动设置 `battleStrategy` 变量，因为它没有在生成时暴露。\n\n`engage` 蓝图函数：\n\n![图形用户界面描述自动生成](img/Image00285.jpg)\n\
+  \n`BattleShipStrategy` 接口：\n\n```java\npublic interface BattleShipStrategy {\n \
+  \   void maneuver();\n}\n```\n\n`BruteForceStrategy` 类：\n\n```java\npublic class\
+  \ BruteForceStrategy implements BattleShipStrategy {\n    @Override\n    public\
+  \ void maneuver() {\n        System.out.println(\"We can take these ships head on\"\
+  );\n    }\n}\n```\n\n`BruteForceStrategy` 蓝图事件图：\n\n![图形用户界面描述自动生成](img/Image00177.jpg)\n\
+  \n`DivideConquerStrategy` 类：\n\n```java\npublic class DivideConquerStrategy implements\
+  \ BattleShipStrategy {\n    @Override\n    public void maneuver() {\n        System.out.println(\"\
+  Lure ships away from each other and attack each individually\");\n    }\n}\n```\n\
+  \n`DivideConquerStrategy` 蓝图事件图：\n\n![图形用户界面描述自动生成](img/Image00178.jpg)\n\n`RetreatStrategy`\
+  \ 类：\n\n```java\npublic class RetreatStrategy implements BattleShipStrategy {\n\
+  \    @Override\n    public void maneuver() {\n        System.out.println(\"Full\
+  \ speed away!\");\n    }\n}\n```\n\n`RetreatStrategy` 蓝图事件图：\n\n![图形用户界面描述自动生成](img/Image00179.jpg)\n\
+  \n策略模式视口打印：\n\n![图形用户界面、文本描述自动生成](img/Image00180.jpg)\n\n\n\n\n\n# 使用 C# 的模式\n\n\
+  在本节中，我们将使用 C# 实现我们涵盖的大多数模式。读者会发现，C# 对应的蓝图（Blueprints）与 Java 部分中显示的蓝图完全相同。这一节对于具有\
+  \ Unity 编程背景的人来说将益最多。C# 是 Unity 游戏引擎中高级脚本的通用语言。让我们快速提到一下 `using directive`。它对最终的应用程序或游戏不会产生任何性能影响。此类指令是编译器用于处理长类型名称的“快捷方式”。此外，关于特定模式及其实现的更深入的讨论，请参阅\
+  \ C++ 部分。无论使用哪种语言，讨论的细节保持不变。\n\n## 酒店、旅馆、假日酒店园…… 建造者模式 (C#)\n\nC# 中的建造者模式的 UML 图与\
+  \ Java 的实现相同，因此在此展示了该图。请忽略“Java”类文本。\n\n### 建造者模式 UML 图\n\n![自动生成的具有中等信度的时间线描述](img/Image00181.jpg)\
+  \ \n\n### 建造者模式实现\n\n`Builder` 类包含了 C# 中的主函数。在蓝图方面，我们可以认为这个类是实际上需要物理拖入游戏世界的类。其他的“具体”类则不需要物理地拖入世界。\n\
+  \n```csharp\nusing System;\nnamespace Builder{\n class Builder_Main {\n    static\
+  \ void Main(string[] args) {\n        LodgingBuilder hotelBuilder = new HotelLodgingBuilder();\n\
+  \        ArchitecturalEngineer engineer = new ArchitecturalEngineer(hotelBuilder);\n\
+  \        engineer.constructLodging();\n        Lodging lodging = engineer.getLodging();\n\
+  \        lodging.lodgingCharacteristics();\n    }\n}\n}\n```\n\n`Builder_Main` 类对应的蓝图：\n\
+  \n![自动生成的图形用户界面描述](img/Image00182.jpg) \n\n`Set hotelBuilder` 和 `Set engineer` 折叠图分别是：\n\
+  \n![自动生成的图形用户界面、应用程序](img/Image00005.jpg) \n\n以及\n\n![自动生成的图形用户界面、文本、应用程序](img/Image00006.jpg)\
+  \ \n\n`Set hotelBuilder` 折叠图代表了这一行代码：\n\n```csharp\nLodgingBuilder hotelBuilder\
+  \ = new HotelLodgingBuilder();\n```\n\n`Spawn Actor From Class` 节点类似于 C# 和其他语言中的\
+  \ `new` 关键字。要生成的类是通过“Class”字下方的下拉框选择的。`Spawn Transform` 取决于个人的特定场景。为了简单起见，我们只需右键点击\
+  \ Spawn Transform 并选择“Promote to Variable”。如果没有 Spawn Transform，蓝图将会在错误中编译。在所需的\
+  \ Actor 生成后，我们设置（或“初始化”）我们的 `hotelBuilder` 变量。\n\n相同的基本思想也适用于 `Set engineer` 折叠图。然而，`Architectural\
+  \ Engineer` 需要将 `LodgingBuilder` 传递到它的构造函数中，如此代码所示：\n\n```csharp\nArchitecturalEngineer\
+  \ engineer = new ArchitecturalEngineer(hotelBuilder);\n```\n\n以后，我们不会对每个生成活动进行如此详细的说明。请相信有大量的生成\
+  \ Actor 需求，讨论每一个项将变成一项枯燥的任务。\n\n`Builder_Main` 蓝图通过 `Construct Lodging` 函数调用节点继续执行。该函数在我们之前生成的\
+  \ `engineer` 上调用的。等效的代码行是：\n\n```csharp\nengineer.constructLodging();\n```\n\n注意\
+  \ `Builder_Main` 中的 `Sequence` 节点。一旦 `Construct Lodging` 函数调用执行，Sequence 0 结束。然后\
+  \ Sequence 1 开始执行。`Set lodging` 折叠图：\n\n![自动生成的图形用户界面、应用程序](img/Image00007.jpg)\
+  \ \n\n现在，我们等效地执行这一行代码：\n\n```csharp\nLodging lodging = engineer.getLodging();\n\
+  ```\n\n这是 `Builder` 类中的最后一行代码。然而，我们需要进行一些验证检查，并确保我们确实构建了一个酒店。我们想要确保 `lodging` Actor\
+  \ 实现了 `FloorPlan` 接口。`lodging isFloorPlan_int` 折叠图：\n\n![自动生成的具有低信度的计算机截图](img/Image00008.jpg)\
+  \ \n\n今后我们将不再显示此接口检查折叠图。请注意，此检查的折叠图始终带有黄色调。折叠节点内部唯一变化的项是我们正在检查对象的目标接口。目标接口始终是折叠图名称的一部分。\n\
+  \n`Builder_Main` 蓝图通过打印字符串结束执行，让我们知道酒店是否实际构建成功。如果在任何蓝图的某处发生逻辑错误，将打印“Failed to Build\
+  \ a Hotel”。\n\n现在我们可以讨论在该模式中使用的接口。首先，我们为所有住宿设施创建一个平面图接口供其实现。美国大多数商业住宿设施包含游泳池、大堂区域、房间和餐厅。我们还为我们特定的住宿建造者类创建了一个住宿建造者接口供其实现。`FloorPlan`\
+  \ 接口：\n\n```csharp\nusing System;\ninterface FloorPlan{\n    public void setSwimmingPool(String\
+  \ swimmingPool);\n    public void setLobbyArea(String lobbyArea);\n    public void\
+  \ setRooms(String rooms);\n    public void setRestaurants(String restaurants);\n\
+  }\n```\n\n等效的蓝图接口非常普通。以下是代表 `FloorPlan` 接口中函数的节点。\n\n![自动生成的图形用户界面、应用程序](img/Image00009.jpg)\
+  \ ![自动生成的图形用户界面、应用程序](img/Image00010.jpg) ![自动生成的图形用户界面、应用程序](img/Image00011.jpg)\
+  \ ![自动生成的图形用户界面、应用程序](img/Image00012.jpg) \n\n俗话说，“面向接口编程，而不是面向实现”（Gamma et.al,\
+  \ 1995）。事实上，它是面向对象设计的核心原则。面向接口编程的主要益处是减少了子系统之间的实现依赖（Gamma et.al, 1995）。我们在建造者模式示例中直观地看到了这一点。具体来说，建造者模式将复杂对象的构建与其实际表示解耦（Gamma\
+  \ et.al, 1995）。\n\n```csharp\ninterface LodgingBuilder{\n    public void buildSwimmingPool();\n\
+  \    public void buildLobbyArea();\n    public void buildRooms();\n    public void\
+  \ buildRestaurants();\n    public Lodging getLodging();\n}\n```\n\n`LodgingBuilder`\
+  \ 接口蓝图的截图与 `FloorPlan` 接口蓝图的设计相同，因此为了简洁起见将其移除。今后，除非认为有助于加深读者的理解，否则将尽量减少接口蓝图图像。\n\
+  \n接下来，我们创建一个实现 `FloorPlan` 接口的 `Lodging` 类。\n\n\n\n\n\n```java\nusing System;\n\
+  class Lodging : FloorPlan{\n    private String swimmingPool;\n    private String\
+  \ lobbyArea;\n    private String rooms;\n    private String restaurants;\n\n   \
+  \ public void setSwimmingPool(String swimmingPool) {\n        this.swimmingPool\
+  \ = swimmingPool;\n    }\n\n    public void setLobbyArea(String lobbyArea) {\n \
+  \       this.lobbyArea = lobbyArea;\n    }\n\n    public void setRooms(String rooms)\
+  \ {\n        this.rooms = rooms;\n    }\n\n    public void setRestaurants(String\
+  \ restaurants) {\n        this.restaurants = restaurants;\n    }\n\n    public void\
+  \ lodgingCharacteristics() {\n        Console.WriteLine(swimmingPool);\n       \
+  \ Console.WriteLine(lobbyArea);\n        Console.WriteLine(rooms);\n        Console.WriteLine(restaurants);\n\
+  \    }\n}\n```\n\n`Lodging` 蓝图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00183.jpg) \n\n\
+  蓝图在调用 void 接口函数时使用 `Event` 节点。`Lodging` 类的蓝图版本除了设置本地变量外，还会打印传递给函数的字符串值。此外，我们必须通过在类设置的\
+  \ Interfaces 部分添加，确保该蓝图类实现了 `FloorPlan` 接口。\n\n接下来两个类 `HotelLodgingBuilder` 和 `MotelLodgingBuilder`\
+  \ 实现了住宿构建器接口，并为每种住宿提供了自定义规格。\n\n```java\nclass HotelLodgingBuilder implements LodgingBuilder\
+  \ {\n    private Lodging lodging;\n    public HotelLodgingBuilder() {\n        this.lodging\
+  \ = new Lodging();\n    }\n\n    @Override\n    public void buildLobbyArea() {\n\
+  \        lodging.setLobbyArea(\"Grand Hall\");\n    }\n\n    @Override\n    public\
+  \ void buildRestaurants() {\n        lodging.setRestaurants(\"5 star Buffet\");\n\
+  \    }\n\n    @Override\n    public void buildRooms() {\n        lodging.setRooms(\"\
+  Luxury Suites\");\n    }\n\n    @Override\n    public void buildSwimmingPool() {\n\
+  \        lodging.setSwimmingPool(\"Indoor Lagoon\");\n    }\n\n    @Override\n \
+  \   public Lodging getLodging() {\n        return this.lodging;\n    }\n}\n```\n\
+  \n`HotelLodgingBuilder` 蓝图构造脚本事件图：\n\n![计算机截图描述自动生成，置信度低](img/Image00184.jpg) \n\
+  \n`Set lodging` 折叠图节点：\n\n![图形用户界面描述自动生成](img/Image00185.jpg) \n\n`Add Child Actor\
+  \ Component` 是由于无法使用 `Spawn Actor of Class` 节点的折中方案。我们可以在代码中看到 `HotelLodgingBuilder`\
+  \ 构造函数实例化了一个新的 `Lodging` 对象：\n\n```java\npublic HotelLodgingBuilder() {\n    this.lodging\
+  \ = new Lodging();\n}\n```\n\n当我们学习状态模式时，将看到一种在构造脚本限制附近初始化对象的更具动态的方法。\n\n`HotelLodgingBuilder`\
+  \ 事件图：\n\n![图形用户界面，应用程序描述自动生成](img/Image00016.jpg) \n\n`isLodgingImplementInterface`\
+  \ 函数是一个自定义的接口检查函数，类似于黄色色调的折叠图。\n\n`isLodgingImplementInterface` 函数：\n\n![图形用户界面，应用程序描述自动生成](img/Image00017.jpg)\
+  \ \n\n`MotelLodgingBuilder` 与 `HotelLodgingBuilder` 非常相似。区别在于泳池、大厅区域、房间和餐厅的属性。\n\
+  \n```java\nclass MotelLodgingBuilder : LodgingBuilder {\n    private Lodging lodging;\n\
+  \    public MotelLodgingBuilder() {\n        this.lodging = new Lodging();\n   \
+  \ }\n\n    public void buildSwimmingPool() {\n        lodging.setSwimmingPool(\"\
+  Green Slim\");\n    }\n\n    public void buildLobbyArea() {\n        lodging.setLobbyArea(\"\
+  Economical\");\n    }\n\n    public void buildRestaurants() {\n        lodging.setRestaurants(\"\
+  Vending Machines\");\n    }\n\n    public void buildRooms() {\n        lodging.setRooms(\"\
+  Bates Style\");\n    }\n\n    public Lodging getLodging() {\n        return this.lodging;\n\
+  \    }\n}\n```\n\n`MotelLodgingBuilder` 的蓝图截图为了简洁起见已省略。它基本上模仿了 `HotelLodgingBuilder`\
+  \ 的内容。\n\n现在，我们需要一个建筑工程师来协调住宿的逐步构建。\n\n```java\nclass ArchitecturalEngineer{\n \
+  \   private LodgingBuilder lodgingBuilder;\n    public ArchitecturalEngineer(LodgingBuilder\
+  \ lodgingBuilder) {\n        this.lodgingBuilder = lodgingBuilder;\n    }\n\n  \
+  \  public Lodging getLodging() {\n        return this.lodgingBuilder.getLodging();\n\
+  \    }\n\n    public void constructLodging() {\n        this.lodgingBuilder.buildSwimmingPool();\n\
+  \        this.lodgingBuilder.buildLobbyArea();\n        this.lodgingBuilder.buildRooms();\n\
+  \        this.lodgingBuilder.buildRestaurants();\n    }\n}\n```\n\n`ArchitecturalEngineer`\
+  \ 构造脚本：\n\n![计算机截图描述自动生成，置信度低](img/Image00186.jpg) \n\n`Check lodgingBuilder isValid`\
+  \ 节点：\n\n![包含文字的电子产品图片自动生成](img/Image00019.jpg) \n\n此有效性检查作为一种安全机制执行。我们希望在开始对该对象执行操作之前，确保该对象不为空。如果对象确实为空，视口中将打印“Not\
+  \ Valid”字符串。\n\n`ArchitecturalEngineer` 包含了几个重要的函数，即 `getLodging` 和 `constructLodging`。\n\
+  \n`getLodging` 函数图：\n\n![计算机截图描述自动生成，置信度低](img/Image00187.jpg) \n\n`constructLodging`\
+  \ 函数图：\n\n![图形用户界面描述自动生成](img/Image00188.jpg) \n\n折叠图代表了 `constructLodging` 函数的体：\n\
+  \n```java\npublic void constructLodging() {\n    this.lodgingBuilder.buildSwimmingPool();\n\
+  \    this.lodgingBuilder.buildLobbyArea();\n    this.lodgingBuilder.buildRooms();\n\
+  \    this.lodgingBuilder.buildRestaurants();\n}\n```\n\n`buildSwimmingPool, buildLobbyArea,\
+  \ buildRooms,* 和 `buildRestaurants` 图分别是：\n\n![图形用户界面，应用程序描述自动生成](img/Image00189.jpg)\
+  \ ![图形用户界面，图描述自动生成](img/Image00190.jpg) ![包含文字的电子产品图片自动生成](img/Image00191.jpg) ![包含文字的电子产品图片自动生成](img/Image00192.jpg)\
+  \ \n\n这是酒店建造的最终截图。\n\n![文本、聊天或短信描述自动生成](img/Image00026.jpg) \n\n\n\n\n\n```csharp\n\
+  using System;\nnamespace Singleton\n{\n    class Singleton_Main\n    {\n       \
+  \ static void Main(string[] args)\n        {\n            Inventory myInventory\
+  \ = Inventory.getInstance();\n            Console.WriteLine(myInventory);\n    \
+  \    }\n    }\n}\n```\n\n### `Singleton_Main` 蓝图事件图：\n\n![Graphical user interface\
+  \ Description automatically generated](img/Image00055.jpg)\n\n这里存在一个 for 循环，是为了演示尝试创建多个指定的单例（Singleton）对象实例。如果一切设置正确，我们不应该允许创建多个库存的实例。\n\
+  \n### `Create_Inventory_Instance` 折叠图：\n\n![A screenshot of a video game Description\
+  \ automatically generated](img/Image00056.jpg)\n\n### `Instance_Created_Message`\
+  \ 折叠图：\n\n![Graphical user interface, application Description automatically generated](img/Image00057.jpg)\n\
+  \n### `Inventory` 类：\n\n```csharp\npublic class Inventory {\n    private static\
+  \ readonly Inventory Instance = new Inventory();\n    private Inventory () {}\n\
+  \    public static Inventory getInstance() {\n        return Instance;\n    }\n\
+  }\n```\n\n### `Inventory` 蓝图构造脚本：\n\n![Graphical user interface, application Description\
+  \ automatically generated](img/Image00058.jpg)\n\n虚幻引擎中不存在私有构造函数的概念。因此，我们必须创建另一种方法来防止创建新的单例对象。我们通过检查是否已经存在库存实例来实现这一点。如果库存实例确实存在，则尝试创建的新单例对象将被销毁。\n\
+  \n### `isInstance_already_exist` 折叠图：\n\n![A screenshot of a video game Description\
+  \ automatically generated](img/Image00059.jpg)\n\n### `kill_yourself` 折叠图：\n\n![Graphical\
+  \ user interface, application Description automatically generated](img/Image00060.jpg)\n\
+  \n### 单例模式视图屏幕打印：\n\n![Text Description automatically generated](img/Image00061.jpg)\n\
+  \n---\n\n> 适应并克服…… 适配器模式 (C#)\n\n### 适配器模式 UML 图\n\n![Diagram Description automatically\
+  \ generated](img/Image00216.jpg)\n\n### 适配器模式实现\n\n在我们的适配器模式实现中，有一个使用弹弓弓的射手。我们希望能够让这个射手使用手枪。然而，我们想通过使用适配器模式来利用已经实现的现有代码。\n\
+  \n### 主适配器类：\n\n```csharp\nusing System;\nnamespace Adapter\n{\n    class Adapter_Main\n\
+  \    {\n        static void Main(string[] args)\n        {\n            Shooter\
+  \ shooter = new Shooter(new GunAdapter());\n            shooter.sling();\n     \
+  \   }\n    }\n}\n```\n\n### `Adapter_Main` 蓝图：\n\n![Graphical user interface, application\
+  \ Description automatically generated](img/Image00062.jpg)\n\n### `Create_Gun_Adapter`\
+  \ 折叠图：\n\n![Graphical user interface, application Description automatically generated](img/Image00063.jpg)\n\
+  \n### `Create_Shooter` 折叠图：\n\n![A screenshot of a computer Description automatically\
+  \ generated with low confidence](img/Image00064.jpg)\n\n### `SlingShot` 接口：\n\n\
+  ```csharp\npublic interface SlingShot {\n    void sling();\n}\n```\n\n### `GunAdapter`\
+  \ 类：\n\n```csharp\npublic class GunAdapter : SlingShot {\n    private Gun weapon;\n\
+  \    public GunAdapter() {\n        weapon = new Gun();\n    }\n    public void\
+  \ sling() {\n        weapon.fire();\n    }\n}\n```\n\n### `GunAdapter` 蓝图：\n\n![Graphical\
+  \ user interface, application Description automatically generated](img/Image00217.jpg)\n\
+  \n### `Gun` 类：\n\n```csharp\nusing System;\npublic class Gun {\n    public void\
+  \ fire() {\n        Console.WriteLine(\"Our gun is firing\");\n    }\n}\n```\n\n\
+  ### `Gun` 蓝图：\n\n![A picture containing text, sign Description automatically generated](img/Image00218.jpg)\n\
+  \n### `Shooter` 类：\n\n```csharp\npublic class Shooter : SlingShot {\n    private\
+  \ SlingShot slingShot;\n    public Shooter(SlingShot slingShot) {\n        this.slingShot\
+  \ = slingShot;\n    }\n    public void sling() {\n        slingShot.sling();\n \
+  \   }\n}\n```\n\n我们可以看到 `Shooter` 类没有射击手枪的功能。然而，它确实有发射弹弓的功能。这两项技能都基于从武器中发射射物。我们希望复用弹弓的功能，并将其适配用于手枪的使用。\n\
+  \n### `Shooter` 构造脚本：\n\n![Graphical user interface, application Description automatically\
+  \ generated](img/Image00219.jpg)\n\n### `Sling` 函数：\n\n![Graphical user interface\
+  \ Description automatically generated](img/Image00220.jpg)\n\n### 适配器模式视图打印：\n\n\
+  ![](img/Image00070.jpg)\n\n---\n\n> 装饰强大的敌人…… 装饰器模式 (C#)\n\n## 装饰器模式 UML 图\n\n![Diagram\
+  \ Description automatically generated](img/Image00221.jpg)\n\n### 装饰器模式实现\n\n我们的实现包含一个最初是近战的敌人。我们希望“装饰”这个敌人，并创建一个可以使用射物的敌人。因此，增加的功能是射物能力。\n\
+  \n### `Decorator_Main` 类：\n\n```csharp\nusing System;\nnamespace Decorator\n{\n\
+  \    class Decorator_Main\n    {\n        static void Main(string[] args)\n    \
+  \    {\n            Console.WriteLine(\"Melee Enemies are on the horizon\");\n \
+  \           Enemy enemy = new MeleeEnemy();\n            enemy.fight();\n      \
+  \      enemy.die();\n            Console.WriteLine(\"Melee Enemies cause \" + enemy.getDamage()\
+  \ + \" damage.\");\n            Console.WriteLine(\"Enemies are armed with guns\"\
+  );\n            Enemy projectileEnemy = new ProjectileEnemy(enemy);\n          \
+  \  projectileEnemy.fight();\n            projectileEnemy.die();\n            Console.WriteLine(\"\
+  Projectile Enemies cause \" + projectileEnemy.getDamage() + \" damage.\");\n   \
+  \     }\n    }\n}\n```\n\n我们可以从 `Decorator_Main` 中看到，我们不需要创建一个单独的 `Enemy` 类来添加功能。我们仅仅是“装饰”敌人，现在我们就有了一个射物敌人。实质上，我们使用装饰器在运行时改变了敌人的行为。\n\
+  \n### `Decorator_Main` 蓝图事件图：\n\n![Graphical user interface, application Description\
+  \ automatically generated](img/Image00222.jpg)\n\n近战敌人和被装饰过的射物敌人被拆分为独立的图，以便于读性。\n\
+  \n### `Melee_Enemy_Actions` 折叠图：\n\n![A picture containing text, electronics Description\
+  \ automatically generated](img/Image00223.jpg)\n\n### `Create_Enemy` 折叠图：\n\n![Graphical\
+  \ user interface, application Description automatically generated](img/Image00224.jpg)\n\
+  \n### `Enemy_Fight` 折叠图：\n\n![Graphical user interface, application Description\
+  \ automatically generated](img/Image00074.jpg)\n\n### `Enemy_Die` 折叠图：\n\n![A picture\
+  \ containing text, electronics Description automatically generated](img/Image00075.jpg)\n\
+  \n### `Enemy_GetDamage` 折叠图：\n\n![A picture containing text, electronics Description\
+  \ automatically generated](img/Image00076.jpg)\n\n### `Enemy_Damage_Message` 折叠图：\n\
+  \n![Graphical user interface, application Description automatically generated](img/Image00077.jpg)\n\
+  \n### `Projectile_Enemy_Actions` 折叠图：\n\n![Graphical user interface Description\
+  \ automatically generated](img/Image00225.jpg)\n\n### `Create_Projectile_Enemy`\
+  \ 折叠图：\n\n![Graphical user interface, application Description automatically generated](img/Image00226.jpg)\n\
+  \n近战敌人和射物敌人之间的显著区别在于构造。射物敌人构造函数接受之前创建的敌人作为参数。这样我们就可以复用它来装饰敌人对象。\n\n### `Projectile_Enemy_Fight`\
+  \ 折叠图：\n\n![A picture containing text, electronics Description automatically generated](img/Image00080.jpg)\n\
+  \n### `Projectile_Enemy_Die` 折叠图：\n\n\n\n\n\n![图形用户界面，应用程序自动生成](img/Image00081.jpg)\
+  \ \n\n### `Projectile_Enemy_GetDamage` 折叠图：\n\n![一张包含文本、电子设备、银色的图片，自动生成](img/Image00082.jpg)\
+  \ \n\n### `Projectile_Enemy_Damage_Message` 折叠图：\n\n![一张视频游戏截图，自动生成，中等置信度](img/Image00083.jpg)\
+  \ \n\n### `Enemy` 接口：\n\n```csharp\npublic interface Enemy { \n    void fight ();\
+  \ //敌人造成的伤害 \n    int getDamage (); \n    void die ();\n}\n```\n\n`Enemy` 接口被所有敌人对象共享。\n\
+  \n### `MeleeEnemy` 类：\n\n```csharp\nusing System;\npublic class MeleeEnemy : Enemy\
+  \ { \n    public void fight() { \n        Console.WriteLine(\"The enemy throws heavy\
+  \ punches\"); \n    } \n    public int getDamage() { \n        return 5; \n    }\
+  \ \n    public void die() { \n        Console.WriteLine(\"The enemy writhes in agony\
+  \ and disintegrates\"); \n    }\n}\n```\n\n### `MeleeEnemy` 蓝图事件图：\n\n![图形用户界面，应用程序自动生成](img/Image00227.jpg)\
+  \ \n\n### `MeleeEnemy` 蓝图中的 `GetDamage` 函数：\n\n![图形用户界面自动生成](img/Image00228.jpg)\
+  \ \n\n### `ProjectileEnemy` 类：\n\n```csharp\nusing System;\npublic class ProjectileEnemy\
+  \ : Enemy { \n    private Enemy decoratedEnemy; \n    public ProjectileEnemy(Enemy\
+  \ decoratedEnemy) { \n        this.decoratedEnemy = decoratedEnemy; \n    } \n \
+  \   public void fight() {\n        decoratedEnemy.fight();\n        Console.WriteLine(\"\
+  The enemy blows a kiss and fires a gun\"); \n    } \n    public int getDamage()\
+  \ { \n        return decoratedEnemy.getDamage() + 95; \n    } \n    public void\
+  \ die() { \n        decoratedEnemy.die(); \n    }\n}\n```\n\n我们可以看到，远程攻击敌人造成的伤害比近战敌人更多。我们使用了近战伤害属性，并为远程敌人增加了\
+  \ 95 点。\n\n### `ProjectileEnemy` 蓝图事件图：\n\n![图形用户界面，应用程序自动生成](img/Image00229.jpg)\
+  \ \n\n### `ProjectileEnemy` 蓝图中的 `GetDamage` 函数：\n\n![一张计算机截图，自动生成，低置信度](img/Image00230.jpg)\
+  \ \n\n### 装饰器模式视口打印：\n\n![文本描述自动生成](img/Image00088.jpg) \n\n我们可以看到近战敌人过来了。近战敌人用拳头与我们战斗。然后敌人死亡。然而，我们从近战敌人那里承受了\
+  \ 5 点伤害。随后，近战敌人被赋予了远程攻击的新功能。该敌人既可以挥拳也可以射击，造成 100 点伤害。\n\n# 变态在深夜出没……观察者模式 (C#)\n\
+  \n## 观察者模式 UML 图\n\n![图描述自动生成](img/Image00241.jpg) \n\n## 观察者模式实现\n\n钟楼是我们观察者模式示例中的发布者。订阅者由一群怪人组成，他们根据一天中的时间改变行为。当钟楼的时间状态发生变化时，怪人会收到钟楼的通知。\n\
+  \n### `Observer_Main` 类：\n\n```csharp\nusing System;\nnamespace Observer{\n    class\
+  \ Observer_Main { \n        static void Main(string[] args) {\n            ClockTower\
+  \ clockTower = new ClockTower();\n            FreakyAllen freakyAllen = new FreakyAllen(clockTower);\n\
+  \            FreakySue freakySue = new FreakySue(clockTower);\n            FreakyJeff\
+  \ freakyJeff = new FreakyJeff(clockTower);\n            clockTower.setTimeOfDay(\"\
+  Morning\");\n            clockTower.setTimeOfDay(\"Midday\");\n            clockTower.setTimeOfDay(\"\
+  Evening\");\n        }\n    }\n}\n```\n\n### `Observer_Main` 蓝图事件图：\n\n![一张视频游戏截图，自动生成](img/Image00242.jpg)\
+  \ \n\n### `Create ClockTower` 折叠图：\n\n![图形用户界面，应用程序自动生成](img/Image00243.jpg) \n\n\
+  ### `Create FreakyAllen` 折叠图：\n\n![图形用户界面、文本、应用程序、聊天或文本消息，自动生成](img/Image00244.jpg)\
+  \ \n\n### 让我们实现 `Subscriber` 接口：\n\n```csharp\nusing System;\npublic interface Subscriber\
+  \ { \n    public void update(String time);\n}\n```\n\n### 让我们实现 `Publisher` 接口：\n\
+  \n```csharp\npublic interface Publisher { \n    public void subscribe(Subscriber\
+  \ s); \n    public void unsubscribe(Subscriber s); \n    public void notifySubscribers();\n\
+  }\n```\n\n### `ClockTower` 类：\n\n```csharp\nusing System;\nusing System.Collections.Generic;\n\
+  public class ClockTower : Publisher { \n    private List<Subscriber> subscribers;\
+  \ \n    private String time; \n    public ClockTower() { \n        subscribers =\
+  \ new List<Subscriber>(); \n    } \n    public void subscribe(Subscriber s) { \n\
+  \        subscribers.Add(s); \n    } \n    public void unsubscribe(Subscriber s)\
+  \ { \n        int i = subscribers.IndexOf(s); \n        if (i >= 0) \n         \
+  \   subscribers.RemoveAt(i); \n    } \n    public void notifySubscribers() { \n\
+  \        foreach (Subscriber subscriber in subscribers) {\n            subscriber.update(time);\n\
+  \        } \n    } \n    public void timeChanged() { \n        notifySubscribers();\
+  \ \n    } \n    public void setTimeOfDay(String time) { \n        this.time = time;\n\
+  \        timeChanged(); \n    } \n    public String getTime() { \n        return\
+  \ time; \n    }\n}\n```\n\n### `ClockTower` 蓝图事件图：\n\n![图形用户界面自动生成](img/Image00245.jpg)\
+  \ \n\n### `setTimeOfDay` 函数：\n\n![图形用户界面自动生成](img/Image00121.jpg) \n\n### `getTime`\
+  \ 函数：\n\n![图形用户界面自动生成](img/Image00122.jpg) \n\n### `timeChanged` 函数：\n\n让我们怪人共享的\
+  \ `Morph` 接口：\n\n```csharp\npublic interface Morph {\n    void morph();\n}\n```\n\
+  \n### `FreakyAlien` 类：\n\n```csharp\nusing System;\npublic class FreakyAlien : Subscriber,\
+  \ Morph { \n    private String time; \n    private Publisher clockTower; \n    public\
+  \ FreakyAlien(Publisher clockTower) { \n        this.clockTower = clockTower;\n\
+  \        clockTower.subscribe(this); \n    } \n    public void update(String time)\
+  \ { \n        this.time = time;\n        morph(); \n    } \n    public void morph()\
+  \ { \n        if (time.Equals(\"Morning\")) {\n            Console.WriteLine(\"\
+  It is \" + time + \", so FreakyAlien makes a bowl of cereal\"); \n        } \n \
+  \       else if (time.Equals(\"Midday\")) {\n            Console.WriteLine(\"It\
+  \ is: \" + time + \", so FreakyAlien's right eye starts to twitch\"); \n       \
+  \ } \n        else if (time.Equals(\"Evening\")) {\n            Console.WriteLine(\"\
+  It is: \" + time + \", so FreakyAlien morphs into a blood sucking wogglesnort\"\
+  ); \n        } \n    }\n}\n```\n\n### `FreakyAlien` 构造脚本：\n\n![图形用户界面自动生成](img/Image00246.jpg)\
+  \ \n\n### `Subscribe_FreakyAlien_toClockTower` 折叠图：\n\n![图形用户界面自动生成](img/Image00247.jpg)\
+  \ \n\n### `Print_Subscribe_Request` 折叠图：\n\n![一张视频游戏截图，自动生成，中等置信度](img/Image00127.jpg)\
+  \ \n\n### `FreakyAlien` 事件图：\n\n![图形用户界面，应用程序自动生成](img/Image00248.jpg) \n\n\n\n\n\
+  `Morning_Morph` 折叠图：\n\n![一张自动生成的视频游戏描述截图，置信度中等](img/Image00129.jpg)\n\n`Midday_Morph`\
+  \ 折叠图：\n\n![一张自动生成的视频游戏描述截图，置信度中等](img/Image00130.jpg)\n\n`Evening_Morph` 折叠图：\n\
+  \n![自动生成的视频游戏描述截图](img/Image00131.jpg)\n\n其他变体类遵循相同的实现方式，仅在定义其各自状态的字符串上有所不同，为了简洁起见已将其移除。\n\
+  \n观察者模式的视口打印：\n\n![自动生成的文本描述](img/Image00132.jpg)\n\n# 你击沉了我的战舰……策略模式 (C#)\n\n##\
+  \ 策略模式 UML 图\n\n![自动生成的图表描述](img/Image00283.jpg)\n\n## 策略模式实现\n\n我们有一套应对海战不同敌人的策略。如果威胁较小，则使用暴力策略。如果敌人很多，我们使用分而治策略。如果认为战斗是徒劳的，则执行撤退策略。`Strategy_Main`\
+  \ 类：\n\n```csharp\nusing System;\nnamespace Strategy{\n    class Strategy_Main {\n\
+  \        static void Main(string[] args) {\n            Console.WriteLine(\"A tiny\
+  \ frigate wants some trouble\");\n            BattleShip battleShip = new BattleShip(new\
+  \ BruteForceStrategy());\n            battleShip.engage();\n            Console.WriteLine(\"\
+  Four tiny frigates want some trouble\");\n            battleShip.alterManeuvers(new\
+  \ DivideConquerStrategy());\n            battleShip.engage();\n            Console.WriteLine(\"\
+  An aircraft carrier group wants some trouble\");\n            battleShip.alterManeuvers(new\
+  \ RetreatStrategy());\n            battleShip.engage();\n        }\n    }\n}\n```\n\
+  \n`Strategy_Main` 蓝图事件图：\n\n![一张自动生成的计算机描述截图，置信度低](img/Image00168.jpg)\n\n`Create\
+  \ BruteForceStrategy` 折叠图：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00169.jpg)\n\n`Create\
+  \ Battleship` 折叠图：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00170.jpg)\n\n`Execute Br Force\
+  \ Strategy` 折叠图：\n\n![一张自动生成的视频游戏描述截图，置信度中等](img/Image00171.jpg)\n\n`Execute Divide\
+  \ Conquer Strategy` 折叠图：\n\n![一张自动生成的视频游戏描述截图，置信度中等](img/Image00172.jpg)\n\n`Execute\
+  \ Retreat Strategy` 折叠图：\n\n![一张自动生成的视频游戏描述截图，置信度中等](img/Image00173.jpg)\n\n`BattleShip`\
+  \ 类：\n\n```csharp\npublic class BattleShip {\n    private BattleShipStrategy battleStrategy;\n\
+  \    public BattleShip(BattleShipStrategy battleStrategy) {\n        this.battleStrategy\
+  \ = battleStrategy;\n    }\n    public void alterManeuvers(BattleShipStrategy battleStrategy)\
+  \ {\n        this.battleStrategy = battleStrategy;\n    }\n    public void engage()\
+  \ {\n        battleStrategy.maneuver();\n    }\n}\n```\n\n`BattleShip` 构造脚本：\n\n\
+  ![自动生成的图形用户界面、应用程序描述](img/Image00284.jpg)\n\n`alterManeuvers` 蓝图函数：\n\n![自动生成的图形用户界面描述](img/Image00175.jpg)\n\
+  \n与 `BattleShip` 构造相同，区别在于在函数内部手动设置了 `battleStrategy` 变量，因为它没有像生成时那样被暴露。\n\n`engage`\
+  \ 蓝图函数：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00285.jpg)\n\n`BattleShipStrategy` 接口：\n\
+  \n```csharp\npublic interface BattleShipStrategy {\n    void maneuver();\n}\n```\n\
+  \n`BruteForceStrategy` 类：\n\n```csharp\nusing System;\npublic class BruteForceStrategy\
+  \ : BattleShipStrategy {\n    public void maneuver() {\n        Console.WriteLine(\"\
+  We can take these ships head on\");\n    }\n}\n```\n\n`BruteForceStrategy` 蓝图事件图：\n\
+  \n![自动生成的图形用户界面、应用程序描述](img/Image00177.jpg)\n\n`DivideConquerStrategy` 类：\n\n```csharp\n\
+  using System;\npublic class DivideConquerStrategy : BattleShipStrategy {\n    public\
+  \ void maneuver() {\n        Console.WriteLine(\"Lure ships away from each other\
+  \ and attack each individually\");\n    }\n}\n```\n\n`DivideConquerStrategy` 蓝图事件图：\n\
+  \n![自动生成的图形用户界面描述](img/Image00178.jpg)\n\n`RetreatStrategy` 类：\n\n```csharp\nusing\
+  \ System;\npublic class RetreatStrategy : BattleShipStrategy {\n    public void\
+  \ maneuver() {\n        Console.WriteLine(\"Full speed away!\");\n    }\n}\n```\n\
+  \n`RetreatStrategy` 蓝图事件图：\n\n![自动生成的图形用户界面、应用程序描述](img/Image00179.jpg)\n\n策略模式的视口打印：\n\
+  \n![自动生成的图形用户界面、文本描述](img/Image00180.jpg)\n\n# 结论\n\n就是这些，大家！我们走过了设计模式小巷，并带着蓝图走到了另一侧。与你们合作是一种享受。祝愿你们游戏开发之旅好运！\n\
+  \n![一张包含文字的、圆形的、特写的描述图片](img/Image00286.jpg)\n\n## 来源\n\n设计模式：可重用对象软件元素\n\nAddison-Wesley\
+  \ Longman Publishing Co., Inc. Boston, MA, USA ©1995\n\nISBN:0-201-63361-2\n\n##\
+  \ 作者简介\n\n![一个穿西装打领带的人，置信度中等](img/Image00287.jpg)\n\n**Sonicworkflow 创意监 - Umar\
+  \ Bradshaw**\n\nBradshaw 先生拥有 ABET 认证机构的 MBA 学位和软件工程硕士学位。他进入独立游戏领域已有约十年，在此期间参与了许多不同的数字产品线。\n\
+  \n联系方式：\n\n网站 - https://sonicworkflow.com/\n\nTwitter - https://twitter.com/sonicworkflow/\n\
+  \nInstagram - https://www.instagram.com/sonicworkflow/\n\nDiscord - https://discord.gg/qUsvcWA\n\
+  \n"

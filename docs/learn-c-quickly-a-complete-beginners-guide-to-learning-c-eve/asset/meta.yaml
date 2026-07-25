@@ -1,0 +1,73 @@
+name: Learn C# Quickly： A Complete Beginner’s Guide to Learning C#, Even If You’re
+  New to Programming (Crash Course With Hands-On Project Book 2)
+name_cn: 快速上手 C#：即使是编程新手也能学会的 C# 初学者指南（成课程与实用项目书籍 2）
+slug: learn-c-quickly-a-complete-beginners-guide-to-learning-c-eve
+toc:
+- - '#'
+  - 快速上手 C#：即使是编程新手也能学会的 C# 初学者指南（成课程与实用项目书籍 2）
+- - '##'
+  - 免费赠品 + 源代码
+- - '#'
+  - 第一章：介绍性主题
+- - '##'
+  - 1.1 - 数据类型
+- - '##'
+  - 1.2 - 整数
+- - '##'
+  - 1.3 - 小数
+- - '##'
+  - 1.4 - 字符串
+- - '##'
+  - 1.5 - 布尔值
+- - '##'
+  - 1.6 - Var
+- - '#'
+  - 第二章：分支与循环
+- - '##'
+  - 2.1 - For 循环
+- - '##'
+  - 2.2 - While 循环
+- - '##'
+  - 2.3 - 递归
+- - '##'
+  - 2.4 - If…Else
+- - '##'
+  - 条件编程
+- - '#'
+  - 第 6 章：面向对象编程
+- - '##'
+  - 6.1 - 封装
+- - '##'
+  - 6.2 - 继承
+- - '##'
+  - 6.3 - 抽象
+- - '##'
+  - 6.4 - 多态
+- - '#'
+  - 第 7 章：SOLID 原则
+- - '##'
+  - 7.1 - 单一责任原则
+- - '##'
+  - 7.2 - 开闭原则
+- - '##'
+  - 7.3 - 里氏可替换原则
+- - '##'
+  - 7.4 - 接口隔离
+- - '##'
+  - 7.5 - 依赖倒置原则
+- - '##'
+  - 文件夹结构
+- - '###'
+  - Objects 文件夹逻辑
+- - '####'
+  - Vehicle 类
+- - '####'
+  - Car 类
+- - '####'
+  - Truck 类
+- - '###'
+  - 数据层 (VehicleContext)
+- - '###'
+  - ServiceInterfaces
+- - '#'
+  - 4) `AddVehicleToInventory` 方法接收一个 `IVehicle` 类型对象作为参数...

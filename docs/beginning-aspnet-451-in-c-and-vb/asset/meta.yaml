@@ -1,0 +1,18 @@
+name: Beginning ASP.NET 4.5.1 in C# and VB
+name_cn: C# 和 VB 版 ASP.NET 4.5.1 入门指南
+slug: beginning-aspnet-451-in-c-and-vb
+toc:
+- - '##'
+  - 你在本章中将学习：
+- - '##'
+  - 微软 Web 版 Visual Studio
+- - '###'
+  - HTML5的规则
+- - '####'
+  - 关闭你的元素
+- - '####'
+  - ID选择器 (The ID Selector)
+- - '####'
+  - 类选择器 (The Class Selector)
+- - '####'
+  - 'Standard和HTML控件之间如何进行标准选择和Html控件的区别？ '

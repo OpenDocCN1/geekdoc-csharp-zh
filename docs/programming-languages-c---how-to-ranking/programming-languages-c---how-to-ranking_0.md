@@ -1,0 +1,297 @@
+# C# 编程语言排名指南
+
+
+
+![](img/cover00016.jpeg)
+![](img/image00015.jpeg)
+
+
+## 引言
+
+微软的 `C#` 编程语言在最新的 2020 年第三季度 SlashData 使用率报告中持续下滑。
+
+该报告是是由研究机构 SlashData 发行的《第十九版全球开发者国家经济状况报告》，该机构目前将 `C#` 的使用率排在第 6 位，落后 `JavaScript`、`Python`、`Java`、`C/C++` 和 `PHP`。一年前，`C#` 排名第 4，而在 2017 年第二季度曾位列第 3。
+
+SlashData 表示，“尽管该语言在利用率上有所增长，但 `C#` 在过去三年中在语言网络排名中下降三名的原因通常是因为其与 `C/C++` 和 `PHP` 相比发展速度较慢。”该机构主要通过其定期进行的一系列审查中的调查来估算使用率。
+
+最近，`C#` 在第 18 版审查中的表现并不理想，SlashData 表示该语言“在工作领域改进方面显然正在失去优势 - 可能是因为依赖网络技术进展的跨平台工具的发展。”该机构在新报告中表达了同样的观点。
+
+在编程语言网络规模的排名中，`C#` 的使用人数预计接近 600 万工程师，高于上一版报告的 580 万。
+
+报告中与编程语言网络规模相关的不同特征包括：
+
+*   `JavaScript` 远之是最著名的编程语言，全球有 1240 万工程师在使用它。
+*   `Python` 目前拥有 900 万用户，仅在过去一年内就增加了 220 万名新开发者，在 2020 年初超过了 `Java`。
+*   `Kotlin` 是增长最快的语言网络之一，自 2017 年底以来其规模扩大了一倍多。
+*   “今年，`Go` 在知名度上超过了 `Kotlin`，因为它在 2020 年的大部分时间里吸引了略多一点的新开发者（40 万对比 30 万）。自从 `Swift` 成为所有 Apple 平台开发的默认语言后，`Objective C` 的选择一直在不断减少。这种对 Apple 应用环境的退出导致了 `Objective C` 排名的大幅下降，从第 10 名降至第 12 名，”报告提到。
+
+报告中与编程语言无关的不同特征包括：
+
+*   十个工程师中有四位报告由于 COVID-19，他们在工作/责任方面需要更大的灵活性。
+*   协作工具和平台是工程师主要的专业需求。
+*   到为止，大多数专业工程师（80% 以上）以某种方式参与了 `DevOps`。
+*   持续集成 (`CI`) 和持续交付 (`CD`) 是两个广为人知的 `DevOps` 实践，但每四个开发者中仅有一人使用两者来完全自动化其工作流程。
+*   开发者更喜欢与开源社区合作和交流，而不是参与开源项目。
+*   在采用云技术时，估算和支持/文档占据了工程师的互动时间，但价值绝对是拒绝的主要理由。
+*   新兴技术（例如 `AR` 和 `VR`）尚未完全吸引 OSS（开源）标准。
+*   投入和接受率的变化很小，表明 `DevOps` 已经成熟。`Mist/edge` 计算在对该主题感兴趣的开发者中正在取得立，但总体参与度很低。
+
+第十九届全球开发者经济调查于 2020 年 6 月至 8 月进行，涵盖了 159 个国家的 17,000 多名开发者。该报告可以在提交数据后通过上述链接免费获取。
+
+# 如何学习你的第一种编程语言
+
+编写计算机程序是一项非常有益且有回报的爱好。当看到有人使用你编写的程序让他们的生活变得简单，并说这看起来真的很有价值时，没有什么比这更令人感觉良好的了。大多数人在一生中的某个阶段都切切需要在他们的电脑或手机上完成某些任务但却无法做到。假设你熟悉某门编程语言，那么你很有可能自己就能写一个程序来完成该任务。虽然有大量的编程语言，但其中有很多许多相似之处；这意味着一旦你精通了其中一种语言，基本上你学习另一种语言的速度会快得多。
+
+## 局限性
+
+所有新开发者都应该理解的一点是学习编程语言所需的时间。尽管当你成为专家后，你会想要快速编写许多项目，但请记住，许多项目花费了整组资深工程师很长时间来完成。所以请理解，了解一门甚至几门编程语言并不足以让你考虑到你见过的那些更不可预测的项目。不要把这项新爱好看作是节省大笔资金的方法，因为目前，你那些可能需要付钱的大部分项目编写你自己的版本将超出你的能力范围。
+
+另一个软件工程师需要知道的要点是，那些“24 小时精通编程”的书基本上是假的。更准确的标题应该是“在 10,000 小时内学会编程”。如果你投入 24 小时或七天来学习一种语言，你不会做出下一个 `Windows` 或其他尖端游戏。在短期内学会编写程序是可能的，实际上你熟悉另一种语言只需要你的首选编辑器，但你还称不上专家。成为专家的最好方法类似于学习小提琴；正确的答案是练习、练习、练习。
+
+## 选择你的第一种语言
+
+通常编程初学者学习的主要语言是 `Visual Basic` 或 `Python`。需要理解的主要点是这两种语言完全不同。最简单的区别是成本。`Python` 是完全免费的；你现在只需使用电脑上的内容管理器就可以开始编写 python，但如果你在 Windows 上，你可能需要先引入它。然而 Visual Basic（通常缩写为 `VB`）既免费也不免费。在潜在收益方面，`VB` 对初学者来说可能更容易学习，因为它允许你通过移动各个部分来组装界面（客户看到的部分），就像在某些基础工作应用程序中设计一样。
+
+初学者学习的 `VB` 版本通常是 `Visual Basic 6`，但它已经过时并停止支持了。因此现在学习的版本通常是 `VB.NET`，这对初学者可能简单得多。`VB.NET` 应该在我们所谓的 `IDE`（集成开发环境）中创建。
+
+
+
+
+Python 中同样存在这些工具，然而，它们的利用完全取决于个人意愿。免费的 VB.NET IDE 被称为 `Visual Studio Express`。在编写时，最新的版本是 `Visual Studio Express 2010`。遗憾的是，使用该 IDE 的免费版，你的功能将受到限制，而且你创建的任何项目都无法进行商业化出售。遗憾的是，该 IDE 的完整付费版并不便宜，而且可能不适合专业人士，但幸运的是，学习 VB 使用免费版就足够了。随着时间的推移，现在不再有很多商业程序是用 VB 开发的，但 `Visual Studio` IDE 允许你使用许多不同的语言。你使用它时创建的通用性也将允许你利用 IDE 的力量在许多不同的语言中进行开发。有些人人会认为，几乎每种语言都可以在内容管理器中创建，而且它们无疑是编写代码最灵活的方式。
+
+虽然这实际上是显而易见的（而且我建议你在提高水平后尝试在内容工具中开发以分析），但我强烈建议你用一个正版 IDE 学习你的第一门语言。
+
+虽然通常情况下，人们会先学习 Python 或 VB，而这些大部分是学校教授的内容，但我并不建议学习这两者。我认为，你的第一门语言在它有效地帮助你掌握编程基础之后，应该对你继续保持价值。如果我必须为新手建议其中一种，那将是 `VB.NET`，因为理所当然，计算机程序最不可预测的部分是图形化部分，而在 `VB.NET` 中，由于直观的界面，这非常简单。这两种语言经常被用作演示，因为它们对错误非常宽容，并允许你在不担心许多更复杂问题的情况下，对编程标准建立信心。
+
+对于你们中那些无畏的灵魂 来说，我真的推荐将 `Java` 作为你的第一门语言，尽管它倾向于复杂，因此不是一个作为第一门语言的典型选择。`Java` 程序与其他大多数程序的不同之处在于，它们并不运行在你的 PC 上。客户端下载 `Java`，然后，你的代码运行在所谓的 `VM`（`Virtual Machine`，虚拟机）上。这意味着你的代码运行在 `Java` 提供的特殊区域——你电脑的虚拟副本——并为你处理将其映射到真实机器的解释。这意味着 `Java` 程序是“跨平台”的，意味着它们通常可以在 Windows、Mac、Linux 以及大多数其他工作框架上运行。
+
+`Java` 是一门值得学习的语言，因为它非常广泛且有用。此外，它是非常奇人的，并且对于专业人士和商业工作来说是免费的。然而，与 `VB` 和 `Python` 不同，它不容忍错误，并要求你对一切都非常确定。它还是一种面向对象的编程语言，这是一个非常复杂的问题，我将简要尝试总结一下。像 `Python` 和 `VB` 这样的语言被称为过程化语言，意味着代码行是按顺序一个接一个，而 `Java` 是一种面向对象的语言。面向对象编程是如今编程领域被频繁提到的术语，尽管并非完全适用，但很大程度上被认为是一个明智的主意。
+
+在最基层，面向对象的程序是关于对象的。一个对象是 `class`（类）的“实例”。一个 `class` 是一个用来描述像猫之类的对象的蓝图。`class` 包含了关于猫的信息，如它的名字、年龄和所有者，也包含了“策略”（这些基本上是猫可以执行的活动，如喵喵）。`feline` 类的实例将给你一只特定的猫。尽管如此，这并不是一个 `Java` 练习，所以如果你足够勇敢去用 `Java` 尝试不同的事物，你将自己更详细地学习这一点。`VB.NET` 和 `Python` 都都支持面向对象的开发事件，而 `Java` 可以以过程化的方式使用。
+
+
+
+标准代码。顶级项目（High level projects）是一项非常不起的新特性，允许你编写更整洁、更简洁且更简单的代码。你可以利用顶级项目来探索突破性的思想。本文将介绍如何在 `C# 9.0` 中运行顶级项目。为了运行本文中提供的代码模型，你的框架中应该已经引入了 `Visual Studio 2019`。如果你还没有该版本，可以在此处下载 `Visual Studio 2019`。
+
+请注意，`C# 9.0` 在 `Visual Studio 2019` 的 `16.9 Preview 1` 或更高版本，以及 `.NET 5.0 SDK` 中可用。
+
+## 在 Visual Studio 中创建 .NET Core 控制台应用程序项目
+
+首先，我们需要在 Visual Studio 中创建一个 `.NET Core` 控制台应用程序项目。假设你的框架中已引入 `Visual Studio 2019`，请按照下面的步骤在 `Visual Studio` 中创建另一个 `.NET Core` 控制台应用程序项目。
+
+启动 `Visual Studio` IDE。点击“创建新项目（Make new task）”。
+
+在“新建项目”窗口中，从显示的布局列表中选择“控制台应用 (.NET Core)”。
+
+点击“下一步”。
+
+在“配置你的新项目”窗口中，确定新项目的名称和位置。
+
+点击“创建”。我们将利用此项目在本文的后续部分中使用顶级项目。
+
+## C# 9.0 中的顶级程序模型
+
+我们应该先看一个关于顶级项目如何处理标准代码的示例。在 `C# 9.0` 引入顶级语句之前，这是你为控制台应用编写的基础性代码：
+
+```csharp
+using System;
+namespace IDG_Top_Level_Programs_Demo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+```
+
+在使用 `C# 9.0` 时，我们可以避免繁琐的操作，并利用顶级项目以更简单的方式编写代码。下面的代码段展示了如何利用顶级语句来重构上述代码：
+
+[ 了解首席信息官如何重新思考 IT。即刻下载 CIO 最新的智库报告！ ]
+
+```csharp
+using System;
+Console.WriteLine("Hello World!");
+```
+
+无论如何，当程序运行时，你会在控制台窗口看到显示“Hi World!”字符串。
+
+## 在 C# 9.0 顶级项目中使用语句
+
+你可以在顶级项目中使用语句。下面是一个代码模型，展示了你如何在顶级项目中使用语句。
+
+```csharp
+System.Console.WriteLine(DisplayMessage("Joydip!"));
+System.Console.Read();
+static string DisplayMessage(string name)
+{ 
+    return "Hi, " + name;
+}
+```
+
+当你执行上述程序时，你应该会在控制台窗口看到输出结果“Hi, Joydip!”：
+
+## 在 C# 9.0 顶级项目中使用类
+
+你同样可以在顶级项目中使用类、结构体和枚举。下面的代码片段概述了你如何在顶级项目中使用类。
+
+```csharp
+System.Console.WriteLine(new Author().DisplayMessage("Joydip!"));
+System.Console.Read();
+public class Author
+{
+    public string DisplayMessage(string name)
+    {
+        return "Hi, " + name;
+    }
+}
+```
+
+当你执行上述程序时，输出结果将如图 1 所示。
+
+## C# 9.0 中顶级项目的工作原理
+
+总而言之，顶级项目具体是如何运作的？后台发生了什么？顶级项目基本上是编译器的一个特性。如果你没有编写标准代码，编译器将为你创建它。
+
+参考我们之前编写的后续代码。
+
+```csharp
+using System;
+Console.WriteLine("Hello World!");
+```
+
+下面显示的代码（使用 `SharpLab` 在线工具创建）展示了编译器生成的代码样式：
+
+```csharp
+using System;
+using System.Diagnostics;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security; using System.Security.Permissions;
+[assembly: CompilationRelaxations(8)]
+[assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
+[assembly: Debuggable(DebuggableAttribute.DebuggingModes.Default | DebuggableAttribute.DebuggingModes.DisableOptimizations | DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints | DebuggableAttribute.DebuggingModes.EnableEditAndContinue)] [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
+[assembly: AssemblyVersion("0.0.0.0")]
+[module: UnverifiableCode]
+[CompilerGenerated]
+internal static class <Program>$
+{ 
+    private static void <Main>$(string[] args)
+    {
+        Console.WriteLine("Hello World!");
+    }
+}
+```
+
+如果你查看编译器生成的代码，你会发现编译器创建的静态类上方带有 `[CompilerGenerated]` 标记。顶级项目是 `C# 9.0` 中一项非常不起的新特性，通过它编译器会在后台自动为你创建标准代码。顶级项目对于没有大量记录和逻辑的简单项目非常有用。请注意，你的应用程序中只能有一个文件使用顶级语句；否则，编译器会报错。
+
+
+
+布局概览显示了 Core )"。
+
+Snap Next。
+
+在“设计你的新项目”窗口中，指定新项目的名称和区域。
+
+Snap Create。
+
+我们将利用此项目在本文的后续章节中概述匿名方法、lambda 表达式和代表方法（terminations）的用法。
+
+## C# 中的委托 (Delegates)
+
+C# 中的委托（delegate）被描述为包含绑定在词法作用域（lexical climate）中的自由因素的方法。C# 编程语言将委托视为一种顶级数据类型。这意味着你可以像处理其他顶级数据类型一样，将能力分配给变量、实例化它或在它们之间传递。
+
+委托是一种特定的能力类型，它本质上与它引用的环境相关联。因此，委托可以使用与引用环境相关的因素，无论这些因素是否超出了委托的作用范围。
+
+[ 了解领先首席信息官（CIOs）如何重塑 IT。。立即下载 CIO 最新的智库报告！ ]
+
+### C# 中的基本委托模型
+
+你可以像下面的代码段所示，使用匿名方法来组合委托：
+
+```csharp
+Func<string, string> someFunc = delegate (string someVariable) return "Hi World!";
+```
+
+同样，你可以像下面的代码段所示，使用 lambda 表达式来创建委托：
+
+```csharp
+Func<string, string> someFunc = someVariable => "Hi World!";
+```
+
+注意，上面的两个代码片段都创建了一个接受字符串作为边界并返回另一个字符串的方法。以下是调用我们刚刚创建的这两个方法的方法：
+
+```csharp
+string str = someFunc("This is a demo");
+```
+
+我们来看另一个模型。下面的代码段在一个名为 `x` 的非局部（non-nearby）因素中创建一个整数值。
+
+```csharp
+int x = 10;
+Action conclusion = delegate Console.WriteLine("The worth of the non-nearby factor x is: {0}", x);
+conclusion();
+```
+
+以下是使用 lambda 表达式实现相同操作的方法：
+
+```csharp
+int x = 10;
+Action conclusion = () =>
+{
+    Console.WriteLine("The worth of the non-neighborhood variable x is: {0}", x);
+};
+conclusion();
+```
+
+在这两种情况下，输出将完全如下方图 1 所示。
+
+### 委托捕获的是因素，而不是属性
+
+由于委托绑定到它声明的环境，因此它可以引用作用域之外的因素以及体内部的项。以下是一个描述此点的模型：
+
+```csharp
+int x = 10;
+Action a = delegate {
+    Console.WriteLine($"The worth of x is: {x}"); 
+};
+a();
+```
+
+当执行上述代码时，输出将如图 2 所示出现在控制台窗口。
+
+随后的代码段显示，匿名方法绑定到父方法体中的因素，而不是属性。
+
+```csharp
+int x = 10;
+Action a = delegate {
+    Console.WriteLine($"The worth of x is: {x}"); 
+};
+x = 100;
+a();
+```
+
+当执行上述代码时，输出将如图 3 所示。注意，匿名方法返回的是 10，而不是 100。
+
+### C# 方法是如何工作的？
+
+当 C# 编译器识别出一个定义了超出当前层级方法的代表方法时，该代理及其相关的环境因素会被提升到编译器创建的类中。从那时起，只需一点编译器魔法即可在编译器创建的类的实例之间移动，确保每次实例化委托时，都会调用该类上的一个能力。一旦不再对该类的实例有任何引用，该实例就会像其他情况一样被 GC 回收。
+
+以下是一个根据包含方法的代码片段生成的编译器生成的类示例。`[CompilerGenerated]`
+
+```csharp
+private fixed class <>c__DisplayClass0_0
+{
+    public int x;
+    inner void <M>b__0()
+    {
+        Console.WriteLine(string.Format("The worth of x is: {0}", x)); 
+    } 
+}
+```
+
+为了让 lambda 保持“可调用性”，它引用的因素在声明它们的方法执行完毕后仍应保持存在。为了实现这一点，C# 依赖于类。因此，当 lambda 表达式访问在方法内部声明的变量时，该变量会被提取并放在由编译器创建的另一个类中。这大致就是方法的工作原理！
+
+## MALINA PRONTO

@@ -1,0 +1,394 @@
+name: Unreal Engine 5 Game Programming Design Patterns in C++, Java, C#, and Blueprints
+name_cn: Unreal Engine 5 游戏编程设计模式：C++、Java、C# 与蓝图
+slug: unreal-engine-5-game-programming-design-patterns-in-c-java-c
+toc:
+- - '#'
+  - Unreal Engine 5 游戏编程设计模式：C++、Java、C# 与蓝图
+- - '#'
+  - 引言
+- - '##'
+  - 蓝图的怪异与非传统方法论
+- - '###'
+  - 蓝图接口 (Blueprint Interfaces)
+- - '###'
+  - 不能在构造脚本（Construction Script）中生成
+- - '###'
+  - 序列节点 (Sequence Node) 的用法
+- - '###'
+  - 折叠节点 (Collapse Node)
+- - '###'
+  - 黄色接口 (Yellow Interface)
+- - '##'
+  - 创建模式 (Creational Patterns)
+- - '###'
+  - 建造者模式 (Builder Pattern)
+- - '####'
+  - 优点
+- - '####'
+  - 缺点
+- - '###'
+  - 建造者实现
+- - '#'
+  - 编程精英主义者的克星……单例模式（Singleton Pattern）
+- - '##'
+  - 优点
+- - '##'
+  - 不如人意的之处
+- - '##'
+  - 单例模式实现
+- - '###'
+  - 结构型模式 (Structural Patterns)
+- - '###'
+  - 适应并克服…… 适配器模式 (Adapter Pattern)
+- - '####'
+  - 适配器模式的实现
+- - '###'
+  - '`Shooter.h`'
+- - '###'
+  - '`Shooter.cpp`'
+- - '###'
+  - SlingShot 宏：
+- - '###'
+  - '`Sling` 函数：'
+- - '###'
+  - 适配器模式视口打印：
+- - '##'
+  - 装饰强化型敌人……装饰器模式（Decorator Pattern）
+- - '####'
+  - 缺点
+- - '###'
+  - 装饰器模式实现
+- - '####'
+  - '`Decorator_Main` 类：'
+- - '###'
+  - '`Decorator_Main.h`'
+- - '###'
+  - '`Decorator_Main.cpp`'
+- - '###'
+  - '`Enemy_Fight` 折叠后的图：'
+- - '###'
+  - '`Enemy_Die` 折叠后的图：'
+- - '###'
+  - '`Enemy_GetDamage` 折叠后的图：'
+- - '###'
+  - '`Enemy_Damage_Message` 折叠后的图：'
+- - '###'
+  - '`Projectile_Enemy_Actions` 折叠后的图：'
+- - '###'
+  - '`Create_Projectile_Enemy` 折叠后的图：'
+- - '###'
+  - '`Projectile_Enemy_Fight` 折叠后的图：'
+- - '###'
+  - '`Projectile_Enemy_Die` 折叠后的图：'
+- - '###'
+  - '`Projectile_Enemy_GetDamage` 折叠后的图：'
+- - '###'
+  - '`Projectile_Enemy_Damage_Message` 折叠后的图：'
+- - '###'
+  - '`Enemy` 接口：'
+- - '###'
+  - '`ProjectileEnemy` 类：'
+- - '###'
+  - 外观模式 (Facade Pattern)
+- - '####'
+  - 优点
+- - '####'
+  - 缺点
+- - '####'
+  - 外观模式实现
+- - '###'
+  - '`Façade_Main` 事件图：'
+- - '###'
+  - '`StarShipFacade` 类：'
+- - '####'
+  - '`StarShipFacade.h`'
+- - '####'
+  - '`StarShipFacade.cpp`'
+- - '###'
+  - '`将导航官加入船员组` 的折叠图：'
+- - '###'
+  - '`将补给官加入船员组` 的折叠图：'
+- - '###'
+  - '`将任务官加入船员组` 的折叠图：'
+- - '###'
+  - '`Reveille` 蓝图函数：'
+- - '###'
+  - '`PlanOfTheDay` 蓝图函数：'
+- - '###'
+  - '`Taps` 蓝图函数：'
+- - '###'
+  - '`Perform Tasks` 蓝图函数：'
+- - '###'
+  - 抽象类 `StarShipCrewMember`：
+- - '####'
+  - '`StarShipCrewMember.h`'
+- - '##'
+  - 行为模式
+- - '###'
+  - 怪物在夜间出没……观察者模式
+- - '####'
+  - 观察者模式实现
+- - '#'
+  - 让雨落下来……状态模式
+- - '##'
+  - 优点
+- - '##'
+  - 不够好的之处
+- - '##'
+  - 状态模式实现
+- - '#'
+  - '`OldSchoolSlotMachine Action Sequence_3` 折叠图：'
+- - '##'
+  - '`Print Current State` 函数：'
+- - '##'
+  - '`OldSchoolSlotMachine` 类：'
+- - '###'
+  - '`OldSchoolSlotMachine.h`'
+- - '###'
+  - '`OldSchoolSlotMachine.cpp`'
+- - '##'
+  - '`OldSchoolSlotMachine Initialize` 函数：'
+- - '###'
+  - '`NoDollarsState` 类'
+- - '###'
+  - 策略模式实现
+- - '###'
+  - '`BruteForceStrategy` 类：'
+- - '###'
+  - '`DivideConquerStrategy` 类：'
+- - '###'
+  - '`RetreatStrategy` 类：'
+- - '###'
+  - 建造者模式实现
+- - '###'
+  - '`Check lodgingBuilder isValid` 节点'
+- - '###'
+  - '`getLodging` 函数图'
+- - '###'
+  - '`constructLodging` 函数图'
+- - '##'
+  - 工厂方法 UML 图
+- - '##'
+  - 工厂方法实现
+- - '###'
+  - '`Spawn_Inner_Realm_Shop` 折叠图'
+- - '###'
+  - 单例模式 UML 图
+- - '###'
+  - 单例模式实现
+- - '###'
+  - 适配器模式 UML 图
+- - '###'
+  - 适配器模式实现
+- - '###'
+  - 装饰器模式 UML 图
+- - '###'
+  - 装饰器模式实现
+- - '###'
+  - '`Melee_Enemy_Actions` 折叠图：'
+- - '###'
+  - '`Create_Enemy` 折叠图：'
+- - '###'
+  - '`Enemy_Fight` 折叠图：'
+- - '###'
+  - '`Enemy_Die` 折叠图：'
+- - '###'
+  - '`Enemy_GetDamage` 折叠图：'
+- - '###'
+  - '`Enemy_Damage_Message` 折叠图：'
+- - '###'
+  - '`Projectile_Enemy_Actions` 折叠图：'
+- - '###'
+  - '`Create_Projectile_Enemy` 折叠图：'
+- - '###'
+  - '`Projectile_Enemy_Fight` 折叠图：'
+- - '###'
+  - '`Projectile_Enemy_Die` 折叠图：'
+- - '###'
+  - '`Projectile_Enemy_GetDamage` 折叠图：'
+- - '###'
+  - '`Projectile_Enemy_Damage_Message` 折叠图：'
+- - '###'
+  - '`Enemy` 接口'
+- - '###'
+  - '`MeleeEnemy` 类：'
+- - '###'
+  - '`ProjectileEnemy` 类：'
+- - '###'
+  - Facade 模式 (Java)
+- - '###'
+  - Facade 模式实现
+- - '###'
+  - '`Create_Starship_Facade` 折叠图：'
+- - '###'
+  - '`StarShipFacade` 类：'
+- - '#'
+  - 行为模式 (Java)
+- - '#'
+  - 怪物观察者模式 (Java)
+- - '##'
+  - 观察者模式 (Java)
+- - '##'
+  - 观察者实现
+- - '#'
+  - 让雨起来……状态模式 (Java)
+- - '##'
+  - 状态模式 UML
+- - '##'
+  - 状态模式实现
+- - '###'
+  - 策略模式 UML
+- - '###'
+  - 策略实现
+- - '#'
+  - 使用 C#
+- - '##'
+  - 酒店、旅馆……建造者模式 (C#)
+- - '##'
+  - 建造者模式 UML
+- - '##'
+  - 建造者实现
+- - '###'
+  - '`Singleton_Main` 蓝图：'
+- - '###'
+  - '`Create_Instance` 折叠图：'
+- - '###'
+  - '`Created_Message` 折叠图：'
+- - '###'
+  - '`Inventory` 类：'
+- - '###'
+  - '`Inventory` 构造：'
+- - '###'
+  - '`is_exist` 折叠图：'
+- - '###'
+  - '`kill_yourself` 折叠图：'
+- - '###'
+  - 单例模式视图
+- - '###'
+  - 适配器模式 UML 图
+- - '###'
+  - 适配器模式实现
+- - '###'
+  - 主适配器：
+- - '###'
+  - '`Adapter_Main` 蓝图：'
+- - '###'
+  - '`Create_Gun_Adapter` 折叠图：'
+- - '###'
+  - '`Create_Shooter` 折叠图：'
+- - '###'
+  - SlingShot 接口：
+- - '###'
+  - '`GunAdapter` 类：'
+- - '###'
+  - '`GunAdapter` 蓝图：'
+- - '###'
+  - '`Gun` 类：'
+- - '###'
+  - '`Gun` 蓝图：'
+- - '###'
+  - '`Shooter` 类：'
+- - '###'
+  - '`Shooter` 构造：'
+- - '###'
+  - '`Sling` 函数：'
+- - '###'
+  - 适配器模式视图
+- - '##'
+  - 装饰器模式 UML 图
+- - '###'
+  - 装饰器模式实现
+- - '###'
+  - '`Decorator_Main` 类：'
+- - '###'
+  - '`Decorator_Main` 蓝图图：'
+- - '###'
+  - '`Melee_Enemy_Actions` 折叠图：'
+- - '###'
+  - '`Create_Enemy` 折叠图：'
+- - '###'
+  - '`Enemy_Fight` 折叠图：'
+- - '###'
+  - '`Enemy_Die` 折叠图：'
+- - '###'
+  - '`Enemy_GetDamage` 折叠图：'
+- - '###'
+  - '`Enemy_Damage_Message` 折叠图：'
+- - '###'
+  - '`Projectile_Enemy_Actions` 折叠图：'
+- - '###'
+  - '`Create_Projectile_Enemy` 折叠图：'
+- - '###'
+  - '`Projectile_Enemy_Fight` 折叠图：'
+- - '###'
+  - '`Projectile_Enemy_Die` 折叠图：'
+- - '###'
+  - '`Projectile_Enemy_GetDamage` 折叠图：'
+- - '###'
+  - '`Projectile_Enemy_Damage_Message` 折叠图：'
+- - '###'
+  - '`Enemy` 接口'
+- - '###'
+  - '`MeleeEnemy` 类：'
+- - '###'
+  - '`MeleeEnemy` 蓝图图：'
+- - '###'
+  - '`MeleeEnemy` 蓝图中的 `GetDamage` 函数：'
+- - '###'
+  - '`ProjectileEnemy` 类：'
+- - '###'
+  - '`ProjectileEnemy` 蓝图图：'
+- - '###'
+  - '`ProjectileEnemy` 蓝图中的 `GetDamage` 函数：'
+- - '###'
+  - 装饰器模式视口打印：
+- - '#'
+  - 变态在深夜出没……观察者模式 (C#)
+- - '##'
+  - 观察者模式 UML 图
+- - '##'
+  - 观察者模式实现
+- - '###'
+  - '`Observer_Main` 类：'
+- - '###'
+  - '`Observer_Main` 蓝图事件图：'
+- - '###'
+  - '`Create ClockTower` 折叠图：'
+- - '###'
+  - '`Create FreakyAlien` 折叠图：'
+- - '###'
+  - 让我们实现 `Subscriber` 接口：
+- - '###'
+  - 让我们实现 `Publisher` 接口：
+- - '###'
+  - '`ClockTower` 类：'
+- - '###'
+  - '`ClockTower` 蓝图事件图：'
+- - '###'
+  - '`setTimeOfDay` 函数：'
+- - '###'
+  - '`getTime` 函数：'
+- - '###'
+  - '`timeChanged` 函数：'
+- - '###'
+  - '`FreakyAlien` 类：'
+- - '###'
+  - '`FreakyAlien` 构造脚本：'
+- - '###'
+  - '`Subscribe_FreakyAlien_toClockTower` 折叠图：'
+- - '###'
+  - '`Print_Subscribe_Request` 折叠图：'
+- - '###'
+  - '`FreakyAlien` 事件图：'
+- - '#'
+  - 你击沉了我的战舰……策略模式 (C#)
+- - '##'
+  - 策略模式 UML 图
+- - '##'
+  - 策略模式实现
+- - '#'
+  - 结论
+- - '##'
+  - 来源
+- - '##'
+  - 作者简介

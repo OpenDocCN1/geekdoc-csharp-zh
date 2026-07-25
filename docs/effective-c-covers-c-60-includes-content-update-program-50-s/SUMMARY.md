@@ -1,0 +1,2 @@
++   [高效 C# (涵盖 C# 6.0)，包含内容更新计划)：提升 C# 的 50 种方法 (第 3 版) (高效软件开发系列)](README.md)
++   [高效 C# (涵盖 C# 6.0)，包含内容更新计划)：提升 C# 的 50 种方法 (第 3 版) (高效软件开发系列)](effective-c-covers-c-60-includes-content-update-program-50-s_0.md)

@@ -1,0 +1,2 @@
++   [Microsoft Bot Framework 入门指南：使用 Microsoft Visual Studio 和 C# 创建 Facebook 和 Skype 聊天机器人（本书涵盖了 Microsoft Bot Framework 预览版）](README.md)
++   [Microsoft Bot Framework 入门指南：使用 Microsoft Visual Studio 和 C# 创建 Facebook 和 Skype 聊天机器人（本书涵盖了 Microsoft Bot Framework 预览版）](an-introduction-to-the-microsoft-bot-framework-create-facebo_0.md)

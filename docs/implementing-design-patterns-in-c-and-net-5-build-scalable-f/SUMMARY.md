@@ -1,0 +1,2 @@
++   [C# 和 .NET 5 设计模式实现：使用最常见设计模式构建可扩展、快速且可靠的 .NET 应用程序（英文版）](README.md)
++   [C# 和 .NET 5 设计模式实现：使用最常见设计模式构建可扩展、快速且可靠的 .NET 应用程序（英文版）](implementing-design-patterns-in-c-and-net-5-build-scalable-f_0.md)

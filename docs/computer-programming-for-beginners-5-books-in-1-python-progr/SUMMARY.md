@@ -1,0 +1,2 @@
++   [初学者计算机编程指南：5本合1：Python 编程 + SQL + Arduino + C# + Javascript，快速成为精通](README.md)
++   [初学者计算机编程指南：5本合1：Python 编程 + SQL + Arduino + C# + Javascript，快速成为精通](computer-programming-for-beginners-5-books-in-1-python-progr_0.md)

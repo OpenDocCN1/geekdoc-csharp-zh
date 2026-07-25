@@ -1,0 +1,77 @@
+name: Python： Become A Master In Python ( Python, Python Programming, Computer Programming,
+  Programming Language, JavaScript, C++, C#, Java, Programming)
+name_cn: Python：精通 Python 高级指南
+slug: python-become-a-master-in-python-python-python-programming-c
+toc:
+- - '#'
+  - Python：精通 Python 高级指南
+- - '##'
+  - 引言
+- - '##'
+  - 第 1 章
+- - '###'
+  - Python 是什么以及为什么你应该使用它
+- - '##'
+  - 第 3 章
+- - '###'
+  - Python 中的数据类型
+- - '###'
+  - 数字
+- - '###'
+  - 字符串
+- - '###'
+  - 集合 (Sets)
+- - '###'
+  - 字典 (Dictionaries)
+- - '###'
+  - None
+- - '##'
+  - 第 4 章
+- - '###'
+  - Python 列表
+- - '###'
+  - 定义函数的语法
+- - '###'
+  - 示例
+- - '###'
+  - 示例
+- - '###'
+  - 示例
+- - '###'
+  - 示例
+- - '###'
+  - 语法
+- - '##'
+  - 第 7 章
+- - '###'
+  - 如何在 Python 中处理错误和异常
+- - '###'
+  - 错误
+- - '###'
+  - 异常
+- - '##'
+  - 第 8 章
+- - '###'
+  - Python 运算符
+- - '##'
+  - 第 10 章
+- - '###'
+  - 使用 Python 构建网站
+- - '##'
+  - 黑客技术
+- - '##'
+  - 第 12 章
+- - '###'
+  - 使用 Python 的技巧
+- - '##'
+  - 字典/集合推导式
+- - '###'
+  - 两者唯一的区别是 `:`。
+- - '###'
+  - 强制浮点数除法
+- - '###'
+  - print(result)
+- - '###'
+  - 0.5*
+- - '##'
+  - 总结

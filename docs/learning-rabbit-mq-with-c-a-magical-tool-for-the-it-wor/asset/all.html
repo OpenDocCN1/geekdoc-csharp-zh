@@ -1,0 +1,3426 @@
+<p><img src="images/cover.jpg" /></p>
+<p><span id="cover.xhtml"></span></p>
+<div class="chapter">
+<div style="text-align:center;">
+<p><img src="images/cover.jpg" alt="image" /></p>
+</div>
+</div>
+<p><span id="title.xhtml"></span></p>
+<section class="title bodymatter">
+<h1 class="title"><strong>LEARNING RABBITMQ<br />
+WITH C#</strong></h1>
+<h3 class="aut1">By</h3>
+<h3 class="aut">SAINESHWAR BAGERI</h3>
+<p><img src="images/001-01.jpg" /></p>
+</section>
+<p><span id="copy.xhtml"></span></p>
+<div class="bodymatter">
+<p> </p>
+<p>FIRST EDITION 2019</p>
+<p>Copyright © BPB Publications, INDIA</p>
+<p>ISBN: 978-93-88176-94-1</p>
+<p>All Rights Reserved. No part of this publication can be stored in a
+retrieval system or reproduced in any form or by any means without the
+prior written permission of the publishers.</p>
+<p><strong>LIMITS OF LIABILITY AND DISCLAIMER OF WARRANTY</strong></p>
+<p>The Author and Publisher of this book have tried their best to ensure
+that the programmes, procedures and functions described in the book are
+correct. However, the author and the publishers make no warranty of any
+kind, expressed or implied, with regard to these programmes or the
+documentation contained in the book. The author and publisher shall not
+be liable in any event of any damages, incidental or consequential, in
+connection with, or arising out of the furnishing, performance or use of
+these programmes, procedures and functions. Product name mentioned are
+used for identification purposes only and may be trademarks of their
+respective companies.</p>
+<p>All trademarks referred to in the book are acknowledged as properties
+of their respective owners.</p>
+<p><strong>Distributors:</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr>
+<td><p><strong>BPB PUBLICATIONS</strong></p>
+<p>20, Ansari Road, Darya Ganj<br />
+New Delhi-110002<br />
+Ph: 23254990/23254991</p>
+<p><strong>DECCAN AGENCIES</strong></p>
+<p>4-3-329, Bank Street,<br />
+Hyderabad-500195<br />
+Ph: 24756967/24756400</p></td>
+<td> </td>
+<td><p><strong>BPB BOOK CENTRE</strong></p>
+<p>376 Old Lajpat Rai Market,<br />
+Delhi-110006<br />
+Ph: 23861747</p>
+<p><strong>MICRO MEDIA</strong></p>
+<p>Shop No. 5, Mahendra Chambers, 150<br />
+DN Rd. Next to Capital Cinema, V.T.<br />
+(C.S.T.) Station, MUMBAI-400 001 Ph:<br />
+22078296/22078297</p></td>
+</tr>
+</tbody>
+</table>
+<p> </p>
+<p> </p>
+<p>Published by Manish Jain for BPB Publications, 20, Ansari Road, Darya
+Ganj, New Delhi-110002 and Printed by Repro India Ltd., Mumbai</p>
+</div>
+<p><span id="toc.xhtml"></span></p>
+<section class="chap-title bodymatter">
+<h1 class="chap-title"><strong>Table of Contents</strong></h1>
+<p><a href="#preface.xhtml"><em>Preface</em></a></p>
+<p><a href="#ack.xhtml"><em>Acknowledgements</em></a></p>
+<p><a href="#chap001.xhtml"><strong>• <span class="space">RabbitMQ
+Introduction</span></strong></a></p>
+<p><a href="#chap001.xhtml_sect-001"><span class="space-a">What is
+RabbitMQ?</span></a></p>
+<p><a href="#chap001.xhtml_sect-002"><span class="space-a">Why and when
+should we use RabbitMQ?</span></a></p>
+<p><a href="#chap001.xhtml_sect-003"><span class="space-a">What is
+AMQP?</span></a></p>
+<p><a href="#chap002.xhtml"><strong>• <span class="space">RabbitMQ
+Setup</span></strong></a></p>
+<p><a href="#chap002.xhtml_sect-006"><span class="space-a">What is
+Erlang</span></a></p>
+<p><a href="#chap003.xhtml"><strong>• <span class="space">Installing
+Erlang</span></strong></a></p>
+<p><a href="#chap003.xhtml_sect-008"><span class="space-a">Downloading
+RabbitMQ</span></a></p>
+<p><a href="#chap003.xhtml_sect-009"><span class="space-a">Installing
+RabbitMQ</span></a></p>
+<p><a href="#chap003.xhtml_sect-010"><span class="space-a">Starting
+RabbitMQ Server</span></a></p>
+<p><a href="#chap004.xhtml"><strong>• <span class="space">RabbitMQ
+Exchanges</span></strong></a></p>
+<p><a href="#chap004.xhtml_sect-014"><span class="space-a">What are the
+Exchanges?</span></a></p>
+<p><a href="#chap004.xhtml_sect-026"><span class="space-a">Adding
+Exchanges</span></a></p>
+<p><a href="#chap005.xhtml"><strong>• <span class="space">RabbitMQ
+Queues</span></strong></a></p>
+<p><a href="#chap005.xhtml_sect-028"><span class="space-a">What is the
+Queue?</span></a></p>
+<p><a href="#chap005.xhtml_sect-029"><span class="space-a">Parameters of
+Queues in Details</span></a></p>
+<p><a href="#chap005.xhtml_sect-044"><span class="space-a">Adding
+Queue</span></a></p>
+<p><a href="#chap006.xhtml"><strong>• <span class="space">Binding in
+RabbitMQ</span></strong></a></p>
+<p><a href="#chap006.xhtml_sect-045"><span class="space-a">What is
+Binding</span></a></p>
+<p><a href="#chap007.xhtml"><strong>• <span class="space">RabbitMQ
+Users</span></strong></a></p>
+<p><a href="#chap007.xhtml_sect-048"><span class="space-a">Currently
+Supported by the Management Plugin</span></a></p>
+<p><a href="#chap007.xhtml_sect-053"><span class="space-a">Creating
+Users</span></a></p>
+<p><a href="#chap007.xhtml_sect-054"><span class="space-a">Setting
+Privilege to Access Virtual Hosts</span></a></p>
+<p><a href="#chap008.xhtml"><strong>• <span class="space">RabbitMQ
+Virtual Hosts</span></strong></a></p>
+<p><a href="#chap008.xhtml_sect-055"><span class="space-a">What are
+Virtual Hosts?</span></a></p>
+<p><a href="#chap008.xhtml_sect-056"><span class="space-a">Creating
+Virtual host</span></a></p>
+<p><a href="#chap008.xhtml_sect-057"><span class="space-a">Creating
+Users</span></a></p>
+<p><a href="#chap008.xhtml_sect-058"><span class="space-a">Setting
+Privilege to Access Virtual Hosts</span></a></p>
+<p><a href="#chap009.xhtml"><strong>• <span
+class="space">Connections</span></strong></a></p>
+<p><a href="#chap010.xhtml"><strong>• <span
+class="space">Channels</span></strong></a></p>
+<p><a href="#chap010.xhtml_sect-060"><span class="space-a">Note for
+Mode</span></a></p>
+<p><a href="#chap010.xhtml_sect-061"><span class="space-a">Note for
+Prefetch count</span></a></p>
+<p><a href="#chap011.xhtml"><strong>• <span class="space">Publishing
+Message</span></strong></a></p>
+<p><a href="#chap011.xhtml_sect-062"><span class="space-a">Snapshot
+after Publishing Message</span></a></p>
+<p><a href="#chap012.xhtml"><strong>• <span class="space">Reading
+Message</span></strong></a></p>
+<p><a href="#chap012.xhtml_sect-063"><span class="space-a">Snapshot
+while Reading the Message</span></a></p>
+<p><a href="#chap013.xhtml"><strong>• <span class="space">Delete
+Message</span></strong></a></p>
+<p><a href="#chap014.xhtml"><strong>• <span class="space">Publish
+Message Using C# to RabbitMQ</span></strong></a></p>
+<p><a href="#chap014.xhtml_sect-064"><span class="space-a">Creating
+RequestRabbitMQ Application</span></a></p>
+<p><a href="#chap014.xhtml_sect-065"><span class="space-a">Adding
+RabbitMQ.Client NuGet Package</span></a></p>
+<p><a href="#chap014.xhtml_sect-066"><span class="space-a">Adding Direct
+Exchange</span></a></p>
+<p><a href="#chap014.xhtml_sect-068"><span class="space-a">Adding
+Queue</span></a></p>
+<p><a href="#chap014.xhtml_sect-071"><span class="space-a">Binding the
+Demoqueue with demoExchange</span></a></p>
+<p><a href="#chap014.xhtml_sect-072"><span class="space-a">Adding a
+Directmessages Class</span></a></p>
+<p><a href="#chap014.xhtml_sect-073"><span class="space-a">Consume
+Message Using C# to RabbitMQ</span></a></p>
+<p><a href="#chap014.xhtml_sect-076"><span class="space-a">Adding
+RabbitMQ.Client NuGet Package</span></a></p>
+<p><a href="#chap014.xhtml_sect-080"><span class="space-a">Code snippet
+of MessageReceiver class</span></a></p>
+<p><a href="#chap014.xhtml_sect-082"><span class="space-a">Queue is
+Empty</span></a></p>
+<p><a href="#chap014.xhtml_sect-084"><span class="space-a">Queue after
+Publishing Message</span></a></p>
+<p><a href="#chap015.xhtml"><strong>• <span class="space">Using RabbitMQ
+Direct Message Exchanges with .Net Application</span></strong></a></p>
+<p><a href="#chap015.xhtml_sect-086"><span class="space-a">Types of
+Exchanges</span></a></p>
+<p><a href="#chap015.xhtml_sect-088"><span class="space-a">Creating
+RequestRabbitMQ Application</span></a></p>
+<p><a href="#chap015.xhtml_sect-089"><span class="space-a">Adding
+RabbitMQ.Client NuGet Package</span></a></p>
+<p><a href="#chap015.xhtml_sect-090"><span class="space-a">Adding Direct
+Exchange</span></a></p>
+<p><a href="#chap015.xhtml_sect-091"><span class="space-a">Adding
+Queue</span></a></p>
+<p><a href="#chap015.xhtml_sect-092"><span class="space-a">Binding the
+request.queue with request.exchange</span></a></p>
+<p><a href="#chap015.xhtml_sect-093"><span class="space-a">Adding a
+Directmessages Class</span></a></p>
+<p><a href="#chap015.xhtml_sect-098"><span class="space-a">Now Let's See
+queue status request.queue</span></a></p>
+<p><a href="#chap015.xhtml_sect-099"><span class="space-a">Creating
+RabbitMQConsumer Application</span></a></p>
+<p><a href="#chap015.xhtml_sect-170"><span class="space-a">Adding
+RabbitMQ.Client NuGet Package</span></a></p>
+<p><a href="#chap015.xhtml_sect-104"><span class="space-a">Queue after
+publishing Message</span></a></p>
+<p><a href="#chap015.xhtml_sect-106"><span
+class="space-a">Conclusion</span></a></p>
+<p><a href="#chap016.xhtml"><strong>• <span class="space">Using RabbitMQ
+Topic Message Exchanges with .Net Application</span></strong></a></p>
+<p><a href="#chap016.xhtml_sect-107"><span class="space-a">What is the
+Topic Exchange?</span></a></p>
+<p><a href="#chap016.xhtml_sect-109"><span class="space-a">Creating
+RequestRabbitMQ Application</span></a></p>
+<p><a href="#chap016.xhtml_sect-110"><span class="space-a">Adding
+RabbitMQ.Client NuGet Package</span></a></p>
+<p><a href="#chap016.xhtml_sect-111"><span class="space-a">Adding Topic
+Exchange</span></a></p>
+<p><a href="#chap016.xhtml_sect-112"><span class="space-a">Adding
+Queue</span></a></p>
+<p><a href="#chap016.xhtml_sect-115"><span class="space-a">Binding the
+topic.delhi.queue with topic.exchange</span></a></p>
+<p><a href="#chap016.xhtml_sect-117"><span class="space-a">Adding a
+Topicmessages Class</span></a></p>
+<p><a href="#chap016.xhtml_sect-121"><span class="space-a">Published
+Message to "topic.bombay.queue"</span></a></p>
+<p><a href="#chap016.xhtml_sect-123"><span class="space-a">Creating
+RabbitMQConsumer Application</span></a></p>
+<p><a href="#chap016.xhtml_sect-171"><span class="space-a">Adding
+RabbitMQ.Client NuGet Package</span></a></p>
+<p><a href="#chap016.xhtml_sect-126"><span class="space-a">The queue has
+one Request which we have published</span></a></p>
+<p><a href="#chap016.xhtml_sect-128"><span class="space-a">Published
+Message to topic.delhi.queue</span></a></p>
+<p><a href="#chap016.xhtml_sect-129"><span class="space-a">Published
+Message to "topic.delhi.queue"</span></a></p>
+<p><a href="#chap016.xhtml_sect-131"><span class="space-a">Consumed
+Message from topic.delhi.queue</span></a></p>
+<p><a href="#chap016.xhtml_sect-132"><span
+class="space-a">Conclusion</span></a></p>
+<p><a href="#chap017.xhtml"><strong>• <span class="space">Using RabbitMQ
+Fanout Message Exchanges with .Net Application</span></strong></a></p>
+<p><a href="#chap017.xhtml_sect-133"><span class="space-a">What is a
+Fanout Exchange?</span></a></p>
+<p><a href="#chap017.xhtml_sect-134"><span class="space-a">Adding
+RabbitMQ.Client NuGet Package</span></a></p>
+<p><a href="#chap017.xhtml_sect-135"><span class="space-a">Adding Fanout
+Exchange</span></a></p>
+<p><a href="#chap017.xhtml_sect-136"><span class="space-a">Adding
+Queue</span></a></p>
+<p><a href="#chap017.xhtml_sect-139"><span class="space-a">Adding a
+Fanoutmessages Class</span></a></p>
+<p><a href="#chap017.xhtml_sect-142"><span class="space-a">Published
+Message to all queues of "fanout.exchange"</span></a></p>
+<p><a href="#chap017.xhtml_sect-144"><span class="space-a">Creating
+RabbitMQConsumer Application</span></a></p>
+<p><a href="#chap017.xhtml_sect-173"><span class="space-a">Adding
+RabbitMQ.Client NuGet Package</span></a></p>
+<p><a href="#chap017.xhtml_sect-150"><span
+class="space-a">Conclusion</span></a></p>
+<p><a href="#chap018.xhtml"><strong>• <span class="space">Using RabbitMQ
+Headers Message Exchanges with .Net Application</span></strong></a></p>
+<p><a href="#chap018.xhtml_sect-151"><span class="space-a">What is a
+Headers exchange?</span></a></p>
+<p><a href="#chap018.xhtml_sect-152"><span class="space-a">Creating
+RequestRabbitMQ Application</span></a></p>
+<p><a href="#chap018.xhtml_sect-153"><span class="space-a">Adding
+RabbitMQ.Client NuGet Package</span></a></p>
+<p><a href="#chap018.xhtml_sect-154"><span class="space-a">Adding Fanout
+Exchange</span></a></p>
+<p><a href="#chap018.xhtml_sect-156"><span class="space-a">Binding the
+Queues</span></a></p>
+<p><a href="#chap018.xhtml_sect-158"><span class="space-a">Adding a
+Headersmessages Class</span></a></p>
+<p><a href="#chap018.xhtml_sect-162"><span class="space-a">Creating
+RabbitMQConsumer Application</span></a></p>
+<p><a href="#chap018.xhtml_sect-176"><span class="space-a">Adding
+RabbitMQ.Client NuGet Package</span></a></p>
+<p><a href="#chap018.xhtml_sect-165"><span class="space-a">The queue has
+one request which we have published</span></a></p>
+<p><a href="#chap018.xhtml_sect-167"><span
+class="space-a">Conclusion</span></a></p>
+</section>
+<p><span id="preface.xhtml"></span></p>
+<section class="chap-title bodymatter">
+<h1 class="chap-title"><strong>Preface</strong></h1>
+<p>Learn Rabbitmq with C# is meant for developers, architects, solution
+providers, consultants, and engineers to develop solutions using
+RabbitMQ message queueing with.Net Applications.</p>
+<p>RabbitMQ is an open source and cross-platform message broker which
+Implements AMQP protocol and is lightweight and easy to deploy
+on-premises or in the cloud. It is built on Erlang which is also used by
+WhatsApp for messaging. RabbitMQ provides a way to exchange data between
+applications such as a message sent a Node.js application, or Java
+application can read the from.Net application.</p>
+<p>In a fast-paced world where the applications need to provide fast
+responses to the end user, we develop Bussiness Web applications in the
+form of portals and also use same to send Emails, Messages,
+Notifications to ends Users slowing down the performance of the
+application. Using Rabbitmq, we can remove this burden from the Portal
+by using Exchanges and Queues for handling Messages and
+Notifications.</p>
+<p>RabbitMQ is a Magical Tool for the IT world.</p>
+</section>
+<p><span id="ack.xhtml"></span></p>
+<section class="chap-title bodymatter">
+<h1 class="chap-title"><strong>Acknowledgements</strong></h1>
+<p>I'd like to thank the following people:</p>
+<p>To my parents for supporting and encouraging me.</p>
+<p>To Manish Jain for providing me with the opportunity to write this
+book.</p>
+<p>To Shivprasad Koirala and Sukesh Marla for supporting and encouraging
+me to write this book.</p>
+<p>And to all the other people who played a role in getting this book
+ready. Thanks for your hard work!</p>
+</section>
+<p><span id="chap001.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>RabbitMQ Introduction</strong></h1>
+<section id="chap001.xhtml_sect-001" class="heading section1">
+<h2 class="heading"><strong>What is RabbitMQ?</strong></h2>
+<p>RabbitMQ is an AMQP message broker, it is the most popular open
+source and cross-platform message broker.</p>
+<p>It is built on Erlang which is also used by WhatsApp for
+messaging.</p>
+<p>RabbitMQ is also a way to exchange data between applications such as
+a message sent from .Net application can be read by a Node.js
+application or Java application.</p>
+<p>RabbitMQ is lightweight and easy to deploy on premises and in the
+cloud. It supports multiple messaging protocols. RabbitMQ can be
+deployed in distributed and federated configurations to meet high-scale,
+high-availability requirements.</p>
+<figure>
+<img src="images/011-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap001.xhtml_sect-002" class="heading section1">
+<h2 class="heading"><strong>Why and when should we use
+RabbitMQ?</strong></h2>
+<p>We should use RabbitMQ because it is open source and easy to use with
+many languages such as .Net, Java, Python, Ruby, Node Js.</p>
+<p>We can use RabbitMQ to remove some heavy work from our web
+application such as sending Reports in Emails, in Excel or Pdf format's
+or sending email, SMS or another task such as a trigger to some other
+applications to start processing.</p>
+<p>Nowadays most people do all this task into single application sending
+emails or SMS, reports which bit heavy task which is also handled by IIS
+if you separate this task then IIS will get more space (memory) to serve
+more request.</p>
+<p>After understanding a bit about RabbitMQ next we are going to Install
+Erlang and RabbitMQ on Windows.</p>
+</section>
+<section id="chap001.xhtml_sect-003" class="heading section1">
+<h2 class="heading"><strong>What is AMQP?</strong></h2>
+<p>The <strong>Advanced Message Queuing Protocol</strong>
+(<strong>AMQP</strong>) is an open standard application layer protocol
+for message-oriented, the defining features of AMQP are message
+orientation, queuing, routing (including point-to-point and
+publish-and-subscribe), reliability and security.</p>
+<p>It was developed by JPMorgan and iMatix Corporation.</p>
+<section id="chap001.xhtml_sect-004" class="heading section2">
+<h3 class="heading"><strong>Key Features</strong></h3>
+<p>AMQP was designed with the following main characteristics as
+goals:</p>
+<p>• Security</p>
+<p>• Reliability</p>
+<p>• Interoperability</p>
+<p>• Standard</p>
+<p>• Open</p>
+</section>
+<section id="chap001.xhtml_sect-005" class="heading section2">
+<h3 class="heading"><strong>Various Client Libraries</strong></h3>
+<p>RabbitMQ support various number of operating systems and various
+language and it has various clients for different languages such as:</p>
+<p>1. .Net</p>
+<p>2. Java</p>
+<p>3. Spring Framework</p>
+<p>4. Ruby</p>
+<p>5. Python</p>
+<p>6. PHP</p>
+<p>7. Objective-C and Swift</p>
+<p>8. JavaScript</p>
+<p>9. GO</p>
+<p>10. Perl</p>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+</section>
+<p><span id="chap002.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>RabbitMQ Setup</strong></h1>
+<p>In this part, we are going to learn how to setup RabbitMQ step by
+step:</p>
+<p>1. What is Erlang</p>
+<p>2. Downloading Erlang</p>
+<p>3. Installing Erlang</p>
+<p>4. Downloading RabbitMQ</p>
+<p>5. Installing RabbitMQ</p>
+<p>6. Starting RabbitMQ Server</p>
+<p>7. Enabling web management plugin</p>
+<p>8. Web Management plugin</p>
+<p>9. Conclusion</p>
+<section id="chap002.xhtml_sect-006" class="heading section1">
+<h2 class="heading"><strong>What is Erlang</strong></h2>
+<p>Erlang is a general-purpose programming language and runtime
+environment.</p>
+<p>Erlang has built-in support for concurrency, distribution, and fault
+tolerance.</p>
+<p>Erlang is used in several large telecommunication systems from
+Ericsson.</p>
+<p>Referred from: Referred from: <a
+href="http://erlang.org/faq/introduction.html">http://erlang.org/faq/introduction.html</a></p>
+</section>
+<section id="chap002.xhtml_sect-007" class="heading section2">
+<h3 class="heading"><strong>Link to download Erlang</strong></h3>
+<p><a
+href="http://www.erlang.org/downloads">http://www.erlang.org/downloads</a></p>
+<figure>
+<img src="images/013-01.jpg" alt="jpg" />
+</figure>
+<p>After downloading Erlang now, we are going to install Erlang.</p>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+<p><span id="chap003.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>Installing Erlang</strong></h1>
+<p>In this part, just click on Erlang setup which you have downloaded to
+install.</p>
+<figure>
+<img src="images/014-01.jpg" alt="jpg" />
+</figure>
+<p>After downloading Erlang setup, just install it, after installing we
+are going to download RabbitMQ.</p>
+<section id="chap003.xhtml_sect-008" class="heading section1">
+<h2 class="heading"><strong>Downloading RabbitMQ</strong></h2>
+<p>First, we are going to download RabbitMQ setup for windows from
+link:</p>
+<p><a
+href="https://www.rabbitmq.com/download.html">https://www.rabbitmq.com/download.html</a></p>
+<figure>
+<img src="images/014-02.jpg" alt="jpg" />
+</figure>
+<p>After downloading RabbitMQ, now we are going to Install RabbitMQ.</p>
+</section>
+<section id="chap003.xhtml_sect-009" class="heading section1">
+<h2 class="heading"><strong>Installing RabbitMQ</strong></h2>
+<p>In this part just click on RabbitMQ setup which you have downloaded
+to install.</p>
+<figure>
+<img src="images/015-01.jpg" alt="jpg" />
+</figure>
+<p>After installing Rabbit MQ, search RabbitMQ command prompt and open
+it with admin privilege.</p>
+</section>
+<section id="chap003.xhtml_sect-010" class="heading section1">
+<h2 class="heading"><strong>Starting RabbitMQ Server</strong></h2>
+<p>In this part we are going to open <strong>RabbitMQ Command
+Prompt</strong> with admin privileges for checking status of RabbitMQ
+server.</p>
+<figure>
+<img src="images/015-02.jpg" alt="jpg" />
+</figure>
+<p>After opening command prompt, enter command <strong>"rabbitmqctl
+status"</strong> for checking status of RabbitMQ server. If it shows you
+an error as below snapshot then you need to follow some step given as
+follows:.</p>
+<figure>
+<img src="images/016-01.jpg" alt="jpg" />
+</figure>
+<p><strong>Steps, if you get Error (Authentication failed (rejected by
+the remote node), check the Erlang cookie)</strong></p>
+<p>1. In File Explorer, navigate to your user directory. (Paste
+%userprofile% in the address bar)</p>
+<p>2. If you already have the file .erlang.cookie in there, delete it.
+If not, just go to the next step.</p>
+<p>3. In a second File Explorer, navigate to
+C:\Windows\System32\config\system profile.</p>
+<p>4. Find the file .erlang.cookie and copy it to your user
+directory.</p>
+<p>5. Now your rabbitmqctl should be able to authenticate.</p>
+</section>
+<section id="chap003.xhtml_sect-011" class="heading section2">
+<h3 class="heading"><strong>Links for solution</strong></h3>
+<p>• <a
+href="https://stackoverflow.com/questions/47893899/authentication-failed-rejected-by-the-remote-node-please-check-the-erlang-coo?rq=1">https://stackoverflow.com/questions/47893899/authentication-failed-rejected-by-the-remote-node-please-check-the-erlang-coo?rq=1</a></p>
+<p>• <a
+href="https://stackoverflow.com/questions/28258392/rabbitmq-has-nodedown-error">https://stackoverflow.com/questions/28258392/rabbitmq-has-nodedown-error</a></p>
+<p>After you completed steps, again if you are running the same command
+<strong>"rabbitmqctl status"</strong> then the following screen should
+appear.</p>
+<figure>
+<img src="images/017-01.jpg" alt="jpg" />
+</figure>
+<p>Now we have started server, next we are going to enable web
+management plugin of RabbitMQ.</p>
+</section>
+<section id="chap003.xhtml_sect-012" class="heading section2">
+<h3 class="heading"><strong>Enabling web management plugin</strong></h3>
+<p>For enabling web management plugin, you need to start RabbitMQ
+command prompt with administrator privilege and enter the command
+<strong>rabbitmq-plugins enable rabbitmq_management</strong>.</p>
+<p>After executing this command, you will see following plugins will be
+enabled.</p>
+<figure>
+<img src="images/017-02.jpg" alt="jpg" />
+</figure>
+<p>This screen is same but I have already enabled plugin that's why it
+is showing different messages</p>
+<figure>
+<img src="images/017-03.jpg" alt="jpg" />
+</figure>
+<p>Now you can open web management plugin in the browser.</p>
+</section>
+<section id="chap003.xhtml_sect-013" class="heading section2">
+<h3 class="heading"><strong>Web Management plugin</strong></h3>
+<p>Now to use web management plugin, enter localhost URL in browser
+http://localhost:15672/.</p>
+<p>After entering localhost URL in browser, it will ask for credentials
+for accessing web management plugin.</p>
+<p>The default <strong>Username</strong> and <strong>Password</strong>
+of management plugin is <strong>guest</strong> (Username: "guest" |
+Password: "guest").</p>
+<figure>
+<img src="images/018-01.jpg" alt="jpg" />
+</figure>
+<p>After login with default credentials, below overview screen will
+appear.</p>
+<figure>
+<img src="images/018-02.jpg" alt="jpg" />
+</figure>
+<p>For detail information on all tabs, you can visit: <a
+href="https://www.cloudamqp.com/blog/2015-05-27-part3-rabbitmq-for-beginners_the-management-interface.html#overview">https://www.cloudamqp.com/blog/2015-05-27-part3-rabbitmq-for-beginners_the-management-interface.html#overview</a></p>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+<p><span id="chap004.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>RabbitMQ Exchanges</strong></h1>
+<section id="chap004.xhtml_sect-014" class="heading section1">
+<h2 class="heading"><strong>What are the Exchanges?</strong></h2>
+<p>When a producer creates a message, it is not directly sent to a
+queue, first message is send to exchanges after that a routing agent
+reads and sends it to the appropriate queue with the help of header
+attributes, bindings, and routing keys. There are four types of
+exchanges which route the message in different ways along with that,
+there are various parameters which you can set such as Type, Durability
+Auto-delete, Internal.</p>
+</section>
+<section id="chap004.xhtml_sect-015" class="heading section2">
+<h3 class="heading"><strong>Direct Exchange</strong></h3>
+<p><strong>Direct:</strong> A direct exchange delivers messages to
+queues based on a message routing key. In a direct exchange, the message
+is routed to the queues whose binding key exactly matches the routing
+key of the message.</p>
+<figure>
+<img src="images/019-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap004.xhtml_sect-016" class="heading section2">
+<h3 class="heading"><strong>Fanout Exchange</strong></h3>
+<p><strong>Fanout:</strong> A fanout exchange routes messages to all of
+the queues that are bound to it.</p>
+<figure>
+<img src="images/019-02.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap004.xhtml_sect-017" class="heading section2">
+<h3 class="heading"><strong>Topic Exchange</strong></h3>
+<p><strong>Topic:</strong> The topic exchange does a wildcard match
+between the routing key and the routing pattern specified in the
+binding.</p>
+<figure>
+<img src="images/020-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap004.xhtml_sect-018" class="heading section2">
+<h3 class="heading"><strong>Headers Exchange</strong></h3>
+<p><strong>Headers:</strong> Headers exchanges use the message header
+attributes for routing.</p>
+<figure>
+<img src="images/020-02.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap004.xhtml_sect-019" class="heading section2">
+<h3 class="heading"><strong>Properties Details</strong></h3>
+</section>
+<section id="chap004.xhtml_sect-020" class="heading section2">
+<h3 class="heading"><strong>Name</strong></h3>
+<p>The name will be an exchange name which you will set, it must be
+unique.</p>
+</section>
+<section id="chap004.xhtml_sect-021" class="heading section2">
+<h3 class="heading"><strong>Type</strong></h3>
+<p><strong>Direct:</strong> A direct exchange delivers messages to
+queues based on a message routing key. In a direct exchange, the message
+is routed to the queues whose binding key exactly matches the routing
+key of the message.</p>
+<p><strong>Fanout:</strong> A fanout exchange routes messages to all of
+the queues that are bound to it.</p>
+<p><strong>Topic:</strong> The topic exchange does a wildcard match
+between the routing key and the routing pattern specified in the
+binding.</p>
+<p><strong>Headers:</strong> Headers exchanges use the message header
+attributes for routing.</p>
+</section>
+<section id="chap004.xhtml_sect-022" class="heading section2">
+<h3 class="heading"><strong>Durability</strong></h3>
+<p>Durability is a property of exchange which tells that a message can
+survive server restarts (broker restart).</p>
+<p>There are two types of durability options:</p>
+<p>1. Durable</p>
+<p>2. Transient (Non-Durable)</p>
+<p>1. <strong>Durable:</strong> if you mark exchange as durable then it
+will survive server restarts.</p>
+<p>2. <strong>Transient:</strong> if you mark exchange as Transient then
+it will not survive server restarts.</p>
+<figure>
+<img src="images/021-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap004.xhtml_sect-023" class="heading section2">
+<h3 class="heading"><strong>Auto delete</strong></h3>
+<figure>
+<img src="images/021-02.jpg" alt="jpg" />
+</figure>
+<p>There are two options in auto delete.</p>
+<p>1. Yes</p>
+<p>2. No</p>
+<p>If yes, the exchange will delete itself after at least one queue or
+exchange has been bound to this one, and then all queues or exchanges
+have been unbound. E.g. In this part, if you create an exchange and bind
+it to a queue and as you unbind queue it will delete it's exchange
+also.</p>
+</section>
+<section id="chap004.xhtml_sect-024" class="heading section2">
+<h3 class="heading"><strong>Internal</strong></h3>
+<p>If set, the exchange may not be used directly by publishers, but only
+when bound to other exchanges. Internal exchanges are used to construct
+wiring that is not visible to applications.</p>
+<figure>
+<img src="images/022-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap004.xhtml_sect-025" class="heading section2">
+<h3 class="heading"><strong>Alternate-exchange</strong></h3>
+<p>If there is an issue in publishing message to an exchange you can
+specify alternate exchange it will send a message to another queue.</p>
+<figure>
+<img src="images/022-02.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap004.xhtml_sect-026" class="heading section1">
+<h2 class="heading"><strong>Adding Exchanges</strong></h2>
+<p>To add exchanges, we are first going to log in with default
+credentials and then we are going to choose Exchanges tab.</p>
+<figure>
+<img src="images/023-01.jpg" alt="jpg" />
+</figure>
+<p>After choosing tab you will see <em>"Add a new exchange panel"</em>
+just click on that panel to expand, next after expansion it will ask for
+exchange name for demo we are going to name exchange as
+<strong>"demoexchange"</strong> and in type we are going to choose
+<em>"direct"</em> and click on the add button to create.</p>
+<figure>
+<img src="images/023-02.jpg" alt="jpg" />
+</figure>
+<p>After entering all details, we are going to click on <strong>Add
+exchange</strong> button to create an exchange<strong>.Snapshot after
+adding Exchanges</strong></p>
+</section>
+<section id="chap004.xhtml_sect-027" class="heading section1">
+<h2 class="heading"><strong>Snapshot after adding
+Exchanges</strong></h2>
+<figure>
+<img src="images/024-01.jpg" alt="jpg" />
+</figure>
+<p>In a similar way, we can add various exchanges and with different
+types.</p>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+<p><span id="chap005.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>RabbitMQ Queues</strong></h1>
+<section id="chap005.xhtml_sect-028" class="heading section1">
+<h2 class="heading"><strong>What is the Queue?</strong></h2>
+<p>A Queue is a Buffer that stores messages that are sent from exchanges
+to queues.</p>
+<figure>
+<img src="images/025-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap005.xhtml_sect-029" class="heading section1">
+<h2 class="heading"><strong>Parameters of Queues in
+Details</strong></h2>
+</section>
+<section id="chap005.xhtml_sect-030" class="heading section2">
+<h3 class="heading"><strong>Name:</strong></h3>
+<p>Name of the queue which we can reference in the application. The name
+must be unique and it must not be any system defined queue name.</p>
+</section>
+<section id="chap005.xhtml_sect-031" class="heading section2">
+<h3 class="heading"><strong>Durability:</strong></h3>
+<p>Durability is a property of queue which tells that a message can
+survive server</p>
+<p>restarts (broker restart).</p>
+<p>There are two types of durability options:</p>
+<p>1. Durable</p>
+<p>2. Transient (Non-Durable)</p>
+<p>1. <strong>Durable:</strong> If you mark queue as durable then it
+will survive server restarts.</p>
+<p>2. <strong>Transient:</strong> If you mark exchange as Transient then
+it will not survive server restarts.</p>
+<figure>
+<img src="images/025-02.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap005.xhtml_sect-032" class="heading section2">
+<h3 class="heading"><strong>Auto delete</strong></h3>
+<p>There are two options in auto delete:</p>
+<p>1. Yes</p>
+<p>2. No</p>
+<p>If the queue is exclusive, the durability attribute has no effect
+because the queue will be deleted as soon as client disconnects (or its
+connection is lost). Auto-deleted queues are deleted when the last
+consumer is canceled (or its channel is closed, or its connection is
+lost).</p>
+<p>If there never was a consumer it won't be deleted.</p>
+</section>
+<section id="chap005.xhtml_sect-033" class="heading section2">
+<h3 class="heading"><strong>Arguments</strong></h3>
+<p>Arguments (optional; used by plugins and broker-specific features
+such as message TTL, queue length limit, etc)</p>
+</section>
+<section id="chap005.xhtml_sect-034" class="heading section2">
+<h3 class="heading"><strong>Time-to-live</strong></h3>
+<p>In this part, you can set timespan to a queue which will discard if
+it reaches its lifespan which is set.</p>
+<p>Time will be in milliseconds.</p>
+<figure>
+<img src="images/026-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap005.xhtml_sect-035" class="heading section2">
+<h3 class="heading"><strong>Auto expire</strong></h3>
+<p>In this part, you can set expiry to a queue by setting this
+property.</p>
+<p>This controls for how long a queue can be unused before it is
+automatically deleted.</p>
+<p>Unused means the queue has no consumers, the queue has not been
+redeclared, and <strong>basic.get</strong> has not been invoked for a
+duration of at least the expiration period.</p>
+<figure>
+<img src="images/027-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap005.xhtml_sect-036" class="heading section2">
+<h3 class="heading"><strong>Max Length</strong></h3>
+<p>How many (ready) messages a queue can contain before it starts to
+drop them from its head.</p>
+<p>A maximum number of messages can be set by supplying the x-max-length
+queue declaration argument with a non-negative integer value.</p>
+<figure>
+<img src="images/027-02.jpg" alt="jpg" />
+</figure>
+<p>For example, If you set value x-max-length = 2 and if you publish
+three messages in the queue then only two messages will be there, the
+oldest will be deleted from the queue.</p>
+<figure>
+<img src="images/027-03.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap005.xhtml_sect-037" class="heading section2">
+<h3 class="heading"><strong>Max Length Bytes</strong></h3>
+<p>Total body size for ready messages a queue can contain before it
+starts to drop them from its head.</p>
+<p>Maximum length in bytes can be set by supplying the
+x-max-length-bytes queue declaration argument with a non-negative
+integer value.</p>
+<p> (Sets the "x-max-length-bytes" argument.) <em>1000000 bytes =
+1MB</em></p>
+<p>For example, If you set value <em>x-max-length-bytes = 1000000</em>
+and if you publish messages in queue and the queue size increase more
+than 1 MB then the oldest will be deleted from the queue (drop them from
+its head).</p>
+<figure>
+<img src="images/028-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap005.xhtml_sect-038" class="heading section2">
+<h3 class="heading"><strong>Overflow Behaviour</strong></h3>
+<p>Sets the queue overflow behavior. This determines what happens to
+messages when the maximum length of a queue is reached. Valid values are
+drop-head or reject-publish.</p>
+<figure>
+<img src="images/028-02.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap005.xhtml_sect-039" class="heading section2">
+<h3 class="heading"><strong>Dead Letter Exchange</strong></h3>
+<p>Optional name of an exchange to which messages will be republished if
+they are rejected or expire.</p>
+<figure>
+<img src="images/029-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap005.xhtml_sect-040" class="heading section2">
+<h3 class="heading"><strong>Dead Letter Routing Key</strong></h3>
+<p>Optional replacement routing key to use when a message is
+dead-lettered. If this is not set, the message's original routing key
+will be used.</p>
+<p>For example, if you publish a message to an exchange with routing key
+foo, and that message is dead-lettered, it will be published to its dead
+letter exchange with routing key foo. If the queue the message
+originally landed on had been declared with x-dead-letter-routing-key
+set to bar, then the message will be published to its dead letter
+exchange with routing key bar.</p>
+<figure>
+<img src="images/029-02.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap005.xhtml_sect-041" class="heading section2">
+<h3 class="heading"><strong>Maximum Priority</strong></h3>
+<p>A maximum number of priority levels for the queue to support; if not
+set, the queue will not support message priorities.</p>
+<p>(Sets the "x-max-priority" argument.)</p>
+<p>To declare a priority queue, use the x-max-priority optional queue
+argument. This argument should be a positive integer between 1 and 255,
+indicating the maximum priority the queue should support .</p>
+<figure>
+<img src="images/030-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap005.xhtml_sect-042" class="heading section2">
+<h3 class="heading"><strong>Lazy Mode</strong></h3>
+<p>Set the queue into the lazy mode, keeping as many messages as
+possible on disk to reduce RAM usage; if not set, the queue will keep an
+in-memory cache to deliver messages as fast as possible.</p>
+<p>(Sets the <em>x-queue-mode</em> argument.)</p>
+<figure>
+<img src="images/030-02.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap005.xhtml_sect-043" class="heading section2">
+<h3 class="heading"><strong>Master Locator</strong></h3>
+<p>Set the queue into master location mode, determining the rule by
+which the queue master is located when declared on a cluster of
+nodes.</p>
+<p>(Sets the <em>x-queue-master-locator</em> argument.)</p>
+</section>
+<section id="chap005.xhtml_sect-044" class="heading section1">
+<h2 class="heading"><strong>Adding Queue</strong></h2>
+<p>To create a queue, you need to click on the queue tab in web
+management plugin.</p>
+<figure>
+<img src="images/030-03.jpg" alt="jpg" />
+</figure>
+<p>After clicking on queues tab, you will see add Queue panel with an
+arrow just click on that panel to expand.</p>
+<figure>
+<img src="images/031-01.jpg" alt="jpg" />
+</figure>
+<p>After clicking on Add a new panel queue will expand in that we are
+going enter queue details.</p>
+<p>First, we are going to start with the name of the queue we are going
+to name it as <strong>"demoqueue"</strong> then we are going to choose
+durability as a Durable and final option, we are going set auto delete
+to No and click on Add queue button to create a queue.</p>
+<figure>
+<img src="images/031-02.jpg" alt="jpg" />
+</figure>
+<p>After adding a queue, you can view queue which you have recently
+added, it is located just above add queue panel.</p>
+<figure>
+<img src="images/031-03.jpg" alt="jpg" />
+</figure>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+<p><span id="chap006.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>Binding in RabbitMQ</strong></h1>
+<section id="chap006.xhtml_sect-045" class="heading section1">
+<h2 class="heading"><strong>What is Binding</strong></h2>
+<p>A binding is a connection which we can configure between a queue and
+an exchange.</p>
+<p><strong>Simple words:</strong> A binding is a relationship between an
+exchange and a queue.</p>
+<p>In this part, we are going to bind exchange with queue using routing
+key and this will be used for direct type exchange. The exchange will
+route the request to particular queue on basis of routing key.</p>
+<p>For binding, click on queue name which you have entered
+<strong>"demoqueue",</strong> after that click on it, bindings panel
+will expand, next it will ask for exchange name, enter exchange name
+which we have created <strong>"demoexchange"</strong> and routing key
+<strong>"demokey"</strong> and click on bind button.</p>
+<section id="chap006.xhtml_sect-046" class="heading section2">
+<h3 class="heading"><strong>Queues</strong></h3>
+<figure>
+<img src="images/032-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap006.xhtml_sect-047" class="heading section2">
+<h3 class="heading"><strong>Snapshot after Binding</strong></h3>
+<figure>
+<img src="images/032-02.jpg" alt="jpg" />
+</figure>
+<p><strong>Add binding to this queue</strong></p>
+<figure>
+<img src="images/033-01.jpg" alt="jpg" />
+</figure>
+<p>After binding if you want to unbind it then you can click on
+<strong>Unbind</strong> button to remove binding.</p>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+</section>
+<p><span id="chap007.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>RabbitMQ Users</strong></h1>
+<p>In this part, we are going to learn how to create a new User and give
+permission to New User.</p>
+<p>For creating a New user, we need to login into Web Management Plugin
+using default credentials.</p>
+<figure>
+<img src="images/034-01.jpg" alt="jpg" />
+</figure>
+<p>After logging into the application, we are going to choose
+<strong>Admin</strong> tab.</p>
+<figure>
+<img src="images/034-02.jpg" alt="jpg" />
+</figure>
+<p>After choosing admin tab we can see a default username which is
+"guest" which has "administrator" (Tags) privilege below that we can see
+add new user panel.</p>
+<figure>
+<img src="images/034-03.jpg" alt="jpg" />
+</figure>
+<p>Clicking on <strong>Add a User</strong> panel to create new
+Users.</p>
+<figure>
+<img src="images/035-01.jpg" alt="jpg" />
+</figure>
+<p>Before moving ahead lets first have a look at tags. Tags in this part
+are as rights (privileges) which are assigned to users which are
+created. We can set single or multiple privileges to a user if we want
+multiple privileges then just set privileges as comma-separated
+(administrator, management)</p>
+<div class="section1">
+<h2 class="heading" id="chap007.xhtml_sect-048"><strong>Currently
+Supported by the Management Plugin</strong></h2>
+<section id="chap007.xhtml_sect-049" class="heading section2">
+<h3 class="heading"><strong>Management</strong></h3>
+<p>The user can access the management plugin.</p>
+</section>
+<section id="chap007.xhtml_sect-050" class="heading section2">
+<h3 class="heading"><strong>Policymaker</strong></h3>
+<p>The user can access the management plugin and manage policies and
+parameters for the vhosts they have access to.</p>
+</section>
+<section id="chap007.xhtml_sect-051" class="heading section2">
+<h3 class="heading"><strong>Monitoring</strong></h3>
+<p>The user can access the management plugin and see all connections and
+channels as well as node-related information.</p>
+</section>
+<section id="chap007.xhtml_sect-052" class="heading section2">
+<h3 class="heading"><strong>Administrator</strong></h3>
+<p>The user can do everything monitoring can do, manage users, vhosts,
+and permissions, close other user's connections, and manage policies and
+parameters for all vhosts.</p>
+</section>
+<section id="chap007.xhtml_sect-053" class="heading section1">
+<h2 class="heading"><strong>Creating Users</strong></h2>
+<p>In this part we are going to create new user and we are going to set
+Username as <strong>"demouser</strong>" after that we are going to set
+password as <strong>123456</strong> after that we are going set
+privilege to this user as <strong>"administrator"</strong> (just click
+on Admin link it will set "<strong>administrator"</strong> in tags
+field) finally click on <strong>Add user</strong> to create new
+user.</p>
+<figure>
+<img src="images/036-01.jpg" alt="jpg" />
+</figure>
+<p>After adding a user, you can see all users in all user's panel just
+expand it. After expanding you can see the new user
+<strong>demouser</strong> but in the grid, you can see <em>can access
+virtual hosts</em> columns where it has the value <strong>No
+access</strong> which means we do not have the privilege to virtual
+hosts.</p>
+<figure>
+<img src="images/036-02.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap007.xhtml_sect-054" class="heading section1">
+<h2 class="heading"><strong>Setting Privilege to Access Virtual
+Hosts</strong></h2>
+<p>For setting permission just click on username which we have created
+<strong>demouser.</strong></p>
+<figure>
+<img src="images/036-03.jpg" alt="jpg" />
+</figure>
+<p>After clicking on <strong>demouser</strong> go to permission panel
+which is just below overview panel.</p>
+<p>Just expand permission panel and click on set permission button to
+set permission to demouser.</p>
+<figure>
+<img src="images/037-01.jpg" alt="jpg" />
+</figure>
+<p>Once the permission is set, you'll see the <strong>Current
+permissions</strong> as shown below. Now you should be able to log in as
+this <strong>demouser</strong> to the RabbitMQ Web Management
+Plugin.</p>
+<figure>
+<img src="images/037-02.jpg" alt="jpg" />
+</figure>
+<p>Let's login into RabbitMQ Web Management Plugin with new user
+<strong>demouser.</strong></p>
+<figure>
+<img src="images/038-01.jpg" alt="jpg" />
+</figure>
+<p>Following is the snapshot after logging into RabbitMQ Web Management
+Plugin with new user <strong>demouser.</strong></p>
+<figure>
+<img src="images/038-02.jpg" alt="jpg" />
+</figure>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</div>
+</section>
+<p><span id="chap008.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>RabbitMQ Virtual Hosts</strong></h1>
+<section id="chap008.xhtml_sect-055" class="heading section1">
+<h2 class="heading"><strong>What are Virtual Hosts?</strong></h2>
+<p>Virtual hosts are like a virtual box which contains a logical
+grouping of connections, exchanges, queues, bindings, user permissions,
+policies, and many more things.</p>
+<figure>
+<img src="images/039-01.jpg" alt="jpg" />
+</figure>
+<p>We can create different virtual host and each virtual host will have
+users.</p>
+</section>
+<section id="chap008.xhtml_sect-056" class="heading section1">
+<h2 class="heading"><strong>Creating Virtual host</strong></h2>
+<p>To create a new virtual host, we are first going to log in with
+default credentials and then we are going to choose admin tab.</p>
+<figure>
+<img src="images/039-02.jpg" alt="jpg" />
+</figure>
+<p>After choosing admin tab you will see vertical menus in right part of
+the page in that choose <strong>Virtual Hosts.</strong></p>
+<figure>
+<img src="images/040-01.jpg" alt="jpg" />
+</figure>
+<p>After choosing <strong>Virtual Hosts</strong> you will see the
+default <strong>Virtual Hosts</strong> which is already present below
+that there is a panel <strong>Add a new virtual host</strong> just click
+on it to expand.</p>
+<figure>
+<img src="images/040-02.jpg" alt="jpg" />
+</figure>
+<p>After expanding we can see for adding virtual host we need to add
+Name parameter here, I am entering the name as <strong>demohost</strong>
+next click on <strong>Add a new virtual host</strong> button to create
+<strong>demohost</strong> virtual host.</p>
+<figure>
+<img src="images/040-03.jpg" alt="jpg" />
+</figure>
+<p>After adding a virtual host, we can see the newly added virtual host
+in <strong>All virtual hosts</strong> panel.</p>
+<figure>
+<img src="images/040-04.jpg" alt="jpg" />
+</figure>
+<p>Till now, we have created virtual host but we have not assigned any
+user to this virtual host, let's create new User.</p>
+</section>
+<section id="chap008.xhtml_sect-057" class="heading section1">
+<h2 class="heading"><strong>Creating Users</strong></h2>
+<p>In this part we are going to create new user and we are going to set
+Username as <strong>virtualuser</strong> after that we are going to set
+password as <em>123456,</em> after that we are going set privilege to
+this user as <strong>administrator</strong> (just click on Admin link it
+will set <strong>administrator</strong> in tags field) finally click on
+<strong>Add user</strong> to create new user.</p>
+<figure>
+<img src="images/041-01.jpg" alt="jpg" />
+</figure>
+<p>After adding a user, you can see all users in all user's panel just
+expand it. After expanding you can see the new user
+<strong>virtualuser</strong> but in the grid, you can see <strong>Can
+access virtual hosts</strong> columns where it has the value <strong>No
+access</strong> which means we do not have the privilege to virtual
+hosts.</p>
+<figure>
+<img src="images/041-02.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap008.xhtml_sect-058" class="heading section1">
+<h2 class="heading"><strong>Setting Privilege to Access Virtual
+Hosts</strong></h2>
+<p>For setting permission just click on username which we have created
+<strong>virtualuser.</strong></p>
+<figure>
+<img src="images/041-03.jpg" alt="jpg" />
+</figure>
+<p>After clicking on <strong>virtualuser</strong> go to permission panel
+which is just below overview panel.</p>
+<p>Just expand permission panel and just click on set permission button
+to set permission to <strong>virtualuser.</strong></p>
+<figure>
+<img src="images/042-01.jpg" alt="jpg" />
+</figure>
+<p>The default value is ".*" which allows access to all exchanges and
+queues in the virtual host.</p>
+<p>Once the permission is set, you'll see the <strong>Current
+permission</strong> as shown follows:</p>
+<figure>
+<img src="images/042-02.jpg" alt="jpg" />
+</figure>
+<p>Now you should be able to log in as this <strong>virtualuser</strong>
+to the RabbitMQ Web Management Plugin.</p>
+<p>Let's login into RabbitMQ Web Management Plugin with new user
+<strong>virtualuser.</strong></p>
+<figure>
+<img src="images/042-03.jpg" alt="jpg" />
+</figure>
+<p>Following is the snapshot after logging into RabbitMQ Web Management
+Plugin with new user <strong>virtualuser.</strong></p>
+<figure>
+<img src="images/043-01.jpg" alt="jpg" />
+</figure>
+<p>Now we have completed creating new virtual host along with that we
+have to assign a new user to it.</p>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+<p><span id="chap009.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>Connections</strong></h1>
+<p>A connection is a TCP connection between your application and the
+RabbitMQ broker.</p>
+<p>Referenced from: <a
+href="https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.html">https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.html</a></p>
+<p>In connection tab it will show live connections of both producer of
+message and consumer of the message along with that it will show
+usernames of each connection with the state of connection if you are
+using SSL/TLS then it will indicate in the connection it will mark with
+a dark dot "." It will also show which protocol is been used after that
+in the network it will show from the client and to client network
+utilization.</p>
+<figure>
+<img src="images/044-01.jpg" alt="jpg" />
+</figure>
+<p>If you want to see details of each connection, then click on
+connection name.</p>
+<section id="chap009.xhtml_sect-059" class="heading section1">
+<h2 class="heading">Connections</h2>
+<figure>
+<img src="images/044-02.jpg" alt="jpg" />
+</figure>
+<p>After clicking on connection name, it will show all details of
+connection along with data rates, channels, client properties, runtime
+metric, and finally close connection.</p>
+<figure>
+<img src="images/045-01.jpg" alt="jpg" />
+</figure>
+<p>If you want to close connection, then you can open <strong>Close this
+connection</strong> tab type reason and click on <strong>Force
+Close</strong> button.</p>
+<figure>
+<img src="images/045-02.jpg" alt="jpg" />
+</figure>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+<p><span id="chap010.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>Channels</strong></h1>
+<p>A channel is a virtual connection inside a connection. When you are
+publishing or consuming messages from a queue - it's all done over a
+channel. <strong>Referenced from:</strong> <a
+href="https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.html">https://www.cloudamqp.com/blog/2015-05-18-part1-rabbitmq-for-beginners-what-is-rabbitmq.html</a></p>
+<p>In channel tab it will show live channels of both producer of message
+and consumer of the message along with that it will show mode. There are
+two modes. C - confirm channel will send streaming publish
+confirmations. T -transactional channel is transactional after that it
+will show state of channel. Next details in that we have Unconfirmed
+column it will show Number of published messages not yet confirmed next
+to Unconfirmed column is Prefetch column which shows details of per
+channel limit. Next to Prefetch column is Unacked column the Unacked
+means that the consumer has promised to process them but has not
+acknowledged that they are processed further we have message rates which
+show published and confirmed rates along with delivered and acknowledge
+details.</p>
+<section id="chap010.xhtml_sect-060" class="heading section1">
+<h2 class="heading"><strong>Note for Mode</strong></h2>
+<p>Channel guarantee mode. Can be one of the following, or
+neither:<br />
+C - confirm</p>
+<p>Channel will send streaming publish confirmations.<br />
+T - transactional</p>
+<p>Channel is transactional.</p>
+</section>
+<section id="chap010.xhtml_sect-061" class="heading section1">
+<h2 class="heading"><strong>Note for Prefetch count</strong></h2>
+<p>Channel prefetch counts.</p>
+<p>Each channel can have two prefetch counts: A per-consumer count,
+which will limit each new consumer created on the channel, and a global
+count, which is shared between all consumers on the channel.</p>
+<p>This column shows one, the other, or both limits if they are set.</p>
+<figure>
+<img src="images/046-01.jpg" alt="jpg" />
+</figure>
+<p>If you want to see details of each channel then click on
+<strong>Channel</strong> name <strong><u>[::11:57086 (1)</u></strong> it
+will show all details related to that channel.</p>
+<figure>
+<img src="images/047-01.jpg" alt="jpg" />
+</figure>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+<p><span id="chap011.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>Publishing Message</strong></h1>
+<p>For publishing a message, Login into web management plugin with
+credentials.</p>
+<figure>
+<img src="images/048-01.jpg" alt="jpg" />
+</figure>
+<p>After logging into web management plugin next click on the queue
+<strong>(demoqueue).</strong></p>
+<figure>
+<img src="images/048-02.jpg" alt="jpg" />
+</figure>
+<p>After clicking on demoqueue "queue" just below bindings panel is
+publish message panel in that just enter a message in Payload text area
+and click on publish message.</p>
+<figure>
+<img src="images/048-03.jpg" alt="jpg" />
+</figure>
+<section id="chap011.xhtml_sect-062" class="heading section1">
+<h2 class="heading"><strong>Snapshot after Publishing
+Message</strong></h2>
+<figure>
+<img src="images/049-01.jpg" alt="jpg" />
+</figure>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+<p><span id="chap012.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>Reading Message</strong></h1>
+<p>For reading a message, Login into web management plugin with
+credentials.</p>
+<figure>
+<img src="images/050-01.jpg" alt="jpg" />
+</figure>
+<p>After logging into web management plugin, click on the queue
+(<strong>demoqueue).</strong></p>
+<figure>
+<img src="images/050-02.jpg" alt="jpg" />
+</figure>
+<p>Below published message is Get message, here you can read a message
+from <strong>demoqueue</strong> here in message textbox you can enter
+the count of messages to read from the queue and click on Get Message
+but to get Message.</p>
+<figure>
+<img src="images/050-03.jpg" alt="jpg" />
+</figure>
+<section id="chap012.xhtml_sect-063" class="heading section1">
+<h2 class="heading"><strong>Snapshot while Reading the
+Message</strong></h2>
+<figure>
+<img src="images/051-01.jpg" alt="jpg" />
+</figure>
+<p>After reading the message, the last part we are going to see is
+Deleting Queue.</p>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+<p><span id="chap013.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>Delete Message</strong></h1>
+<p>For deleting a message, Login into web management plugin with
+credentials.</p>
+<div class="section1">
+<figure>
+<img src="images/052-01.jpg" alt="jpg" />
+</figure>
+<p>After logging into web management plugin next click on the queue
+<strong>(demoqueue).</strong></p>
+<p>To delete the message, you can expand delete panel in that you will
+see only delete button. Just click on it to delete.</p>
+<figure>
+<img src="images/052-02.jpg" alt="jpg" />
+</figure>
+<p>After clicking on <strong>Delete Queue</strong> button, a message
+will pop up it will ask for confirmation as shown above below:</p>
+<figure>
+<img src="images/052-03.jpg" alt="jpg" />
+</figure>
+<p>If we click on the <strong>OK</strong> button it will delete the
+queue.</p>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</div>
+</section>
+<p><span id="chap014.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>Publish Message Using C# to
+RabbitMQ</strong></h1>
+<p>In this part, we are going to learn how to Publish a Message to
+RabbitMQ using .Net Application and RabbitMQ.Client in step by step
+way.</p>
+<section id="chap014.xhtml_sect-064" class="heading section1">
+<h2 class="heading"><strong>Creating RequestRabbitMQ
+Application</strong></h2>
+<p>Let's create a simple console application with Name
+<strong>RequestRabbitMQ.</strong></p>
+<figure>
+<img src="images/053-01.jpg" alt="jpg" />
+</figure>
+<p>After creating application, we are going to add
+<strong>RabbitMQ.Client</strong> NuGet package.</p>
+</section>
+<section id="chap014.xhtml_sect-065" class="heading section1">
+<h2 class="heading"><strong>Adding RabbitMQ.Client NuGet
+Package</strong></h2>
+<p>In this part for creating a connection with the RabbitMQ server to
+create request, we need to add <strong>RabbitMQ.Client</strong> package
+from NuGet Package.</p>
+<p>Command to install: Install-Package <strong>RabbitMQ.Client -Version
+5.1.0</strong></p>
+<figure>
+<img src="images/053-02.jpg" alt="jpg" />
+</figure>
+<p>After installing NuGet package of <strong>RabbitMQ.Client</strong>
+next we are going to create an exchange from web admin console.</p>
+</section>
+<section id="chap014.xhtml_sect-066" class="heading section1">
+<h2 class="heading"><strong>Adding Direct Exchange</strong></h2>
+<p>In this part, we are going to create an exchange for doing that we
+have first created a connection to RabbitMQ server using RabbitMQ.Client
+after creating connection next we have passed credentials along with
+HostName to connectionFactory after that we have created a connection by
+calling <strong>CreateConnection</strong> method, next to add exchange
+we have called method <strong>ExchangeDeclare</strong> method and passed
+parameters such as <em>exchange name</em> and <em>exchange
+type.</em></p>
+<section id="chap014.xhtml_sect-067" class="heading section2">
+<h3 class="heading"><strong>Code Snippet</strong></h3>
+<p><code>using RabbitMQ.Client;</code></p>
+<p><code>using System;</code></p>
+<p><code>namespace RequestRabbitMQ</code></p>
+<p><code>{</code></p>
+<p><code>class Program</code></p>
+<p><code>{</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code>{</code></p>
+<p><code>string UserName = "guest";</code></p>
+<p><code>string Password = "guest";</code></p>
+<p><code>string HostName = "localhost";</code></p>
+<p><code>  //Main entry point to the RabbitMQ .NET AMQP</code></p>
+<p><code>client</code></p>
+<p><code>var c o n n e c t i o n F a c t o r y = new</code></p>
+<p><code>RabbitMQ.Client.ConnectionFactory()</code></p>
+<p><code>{</code></p>
+<p><code>UserName = UserName,</code></p>
+<p><code>Password = Password,</code></p>
+<p><code>HostName = HostName</code></p>
+<p><code>};</code></p>
+<p><code>var connect i on =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var model = connection.CreateModel();</code></p>
+<p><code>//// Create Exchange</code></p>
+<p><code>model.ExchangeDeclare("demoExchange",</code></p>
+<p><code>ExchangeType.Direct);</code></p>
+<p><code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code> </code></p>
+<p>Let's check result by running application.</p>
+<figure>
+<img src="images/055-01.jpg" alt="jpg" />
+</figure>
+<p>After adding exchange let's check web management plugin you will see
+we have successfully created exchanges.</p>
+<figure>
+<img src="images/055-02.jpg" alt="jpg" />
+</figure>
+</section>
+</section>
+<section id="chap014.xhtml_sect-068" class="heading section1">
+<h2 class="heading"><strong>Adding Queue</strong></h2>
+<p>Now we are going to add a queue.</p>
+<p>For doing that we are going to add call <strong>QueueDeclare</strong>
+method and pass parameters to it.</p>
+<section id="chap014.xhtml_sect-069" class="heading section2">
+<h3 class="heading"><strong>Method definition:</strong></h3>
+<p><code>/// &lt;summary&gt; Declare a queue.&lt;/summary&gt;</code></p>
+<p><strong><code>[AmqpMethodDoNotlmplement</code></strong><code>(null)]</code></p>
+<p><code>QueueDedareOk QueueDedare(string queue, bool durable, bool exclusive, bool autoDelete, IDictionary&lt;string, object&gt; arguments)</code></p>
+<p>First parameter is queue name <strong>demoqueue.</strong></p>
+<p>The second parameter is Durable <strong>true.</strong></p>
+<p>The third parameter is Exclusive <strong>false.</strong></p>
+<p>The fourth parameter is autodelete <strong>false.</strong></p>
+<p>Fifth parameter is Arguments <strong>null.</strong></p>
+<p><code>// Create Queue</code></p>
+<p><code>model.QueueDeclare("demoqueue", true, false, false, null);</code></p>
+</section>
+</section>
+<section id="chap014.xhtml_sect-070" class="heading section1">
+<h2 class="heading">Code Snippet</h2>
+<p><code>using RabbitMQ.Client;</code></p>
+<p><code>using System;</code></p>
+<p><code>namespace RequestRabbitMQ</code></p>
+<p><code>{</code></p>
+<p><code>class Program</code></p>
+<p><code>{</code></p>
+<p><code>static void Main(string[] args) </code></p>
+<p><code>{</code></p>
+<p><code>string UserName = "guest";</code></p>
+<p><code>string Password = "guest";</code></p>
+<p><code>string HostName = "localhost";</code></p>
+<p><code>//Main entry point to the RabbitMQ .NET AMQP</code></p>
+<p><code>client</code></p>
+<p><code>var connectionFactory = new</code></p>
+<p><code>RabbitMQ.Client.ConnectionFactory() </code></p>
+<p><code>{</code></p>
+<p><code>UserName = UserName,</code></p>
+<p><code>Password = Password,</code></p>
+<p><code>HostName = HostName</code></p>
+<p><code>};</code></p>
+<p><code>var connection =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var model = connection.CreateModel();</code></p>
+<p><code>//// Create Exchange</code></p>
+<p><code>//model.ExchangeDeclare("demoExchange",</code></p>
+<p><code>ExchangeType.Direct);</code></p>
+<p><code>//Console.WriteLine("Creating Exchange");</code></p>
+<p><code>// Create Queue</code></p>
+<p><code> model.QueueDeclare("demoqueue", true, false,</code></p>
+<p><code>false, null);</code></p>
+<p><code>Console.WriteLine("Creating Queue");</code></p>
+<p><code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code> </code></p>
+<p>Let's check the result by running application.</p>
+<figure>
+<img src="images/056-01.jpg" alt="jpg" />
+</figure>
+<p>After adding queue let's check web management plugin you will see we
+have successfully created the queue.</p>
+<figure>
+<img src="images/057-01.jpg" alt="jpg" />
+</figure>
+<p>After adding queue, we are going to bind queue with the exchange.</p>
+</section>
+<section id="chap014.xhtml_sect-071" class="heading section1">
+<h2 class="heading"><strong>Binding the Demoqueue with
+demoExchange</strong></h2>
+<p>In binding, we are going to enter the name of exchange
+<strong>demoExchange</strong> and we are going to enter routing key as
+<strong>directexchange_key.</strong></p>
+<section id="chap014.xhtml_sect-168" class="heading section2">
+<h3 class="heading"><strong>Method definition:</strong></h3>
+<p><img src="images/057-02.jpg" alt="jpg" /></p>
+<p>First parameter is queue name <strong>demoqueue.</strong></p>
+<p>The second parameter is Exchange <strong>demoExchange.</strong></p>
+<p>Third parameter is routing key
+<strong>directexchange_key</strong>.</p>
+<p><code>// Creating Binding</code></p>
+<p><code>model.QueueBind("demoqueue", "demoExchange",</code></p>
+<p><code>"directexchange_key");</code></p>
+<p><code>Console.WriteLine("Creating Binding");</code></p>
+</section>
+<section class="heading section2">
+<h3 class="heading"><strong>Code Snippet</strong></h3>
+<p><code>using RabbitMQ.Client;</code></p>
+<p><code>using System;</code></p>
+<p><code>namespace RequestRabbitMQ </code></p>
+<p><code>{</code></p>
+<p><code>class Program </code></p>
+<p><code>{</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code>{</code></p>
+<p><code>string UserName "guest";</code></p>
+<p><code>string Password "guest";</code></p>
+<p><code>string HostName "localhost"</code></p>
+<p><code>  //Main entry point to the RabbitMQ .NET AMQP</code></p>
+<p><code>client</code></p>
+<p><code>var connectionFactory = new</code></p>
+<p><code>RabbitMQ.Client.ConnectionFactory()</code></p>
+<p><code>{</code></p>
+<p><code>UserName = UserName,</code></p>
+<p><code>Password = Password,</code></p>
+<p><code>HostName = HostName</code></p>
+<p><code>};</code></p>
+<p><code>var    connection    =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var model = connection.CreateMode();</code></p>
+<p><code>//// Create Exchange</code></p>
+<p><code>//model.ExchangeDeclare("demoExchange",</code></p>
+<p><code>ExchangeType.Direct);</code></p>
+<p><code>//Console.WriteLine("Creating Exchange");</code></p>
+<p><code>//// Create Queue</code></p>
+<p><code>//model.QueueDeclare("demoqueue", true,</code></p>
+<p><code>false, false, null);</code></p>
+<p><code>//Console.WriteLine("Creating Queue");</code></p>
+<p><code>// Creating Binding</code></p>
+<p><code>    model.QueueBind("demoqueue", "demoExchange",</code></p>
+<p><code>"directexchange_key");</code></p>
+<p><code>Console.WriteLine("Creating Binding");</code></p>
+<p><code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code> </code></p>
+<figure>
+<img src="images/058-01.jpg" alt="jpg" />
+</figure>
+<p>After creating binding let's check web management plugin you will see
+we have successfully created the binding.</p>
+<figure>
+<img src="images/059-01.jpg" alt="jpg" />
+</figure>
+<p>Now let's create push message to <strong>demoqueue</strong> from a
+console application.</p>
+</section>
+</section>
+<section id="chap014.xhtml_sect-072" class="heading section1">
+<h2 class="heading"><strong>Adding a Directmessages Class</strong></h2>
+<p>We have created a <strong>Directmessage</strong> class, in this class
+we are going to create request and push to RabbitMQ.</p>
+<p>First, we have declared Username, Password, and HostName as constant.
+After that, we have created a method with name
+<strong>SendMessage</strong> in that message we have created a
+connection to RabbitMQ server using RabbitMQ.Client after creating
+connection next we have passed credentials along with HostName to
+connectionFactory.</p>
+<p>Next, we have written a simple message <strong>Direct
+Message</strong> and got it in bytes array form, finally, we are going
+to assign all these values to a BasicPublish method of
+<strong>RabbitMQ.Client</strong>.</p>
+<p>Method definition</p>
+<p><code>/// &lt;summary&gt;</code></p>
+<p><code>/// (Extension method) Convenience overload of BasicPublish.</code></p>
+<p><code>/// &lt;/summary&gt;</code></p>
+<p><code>/// &lt;reraarks&gt;The publication occurs with mandatory*false&lt;/remarks&gt;</code></p>
+<p><strong><code>public static void BasicPublish(this IModel model, string exchange, string routingKey, IBasicProperties basicProperties, byte[] body)</code></strong><code> </code></p>
+<p><strong><code>{</code></strong></p>
+<p><strong><code>model.BasicPublish(exchange, routingKey, false, basicProperties, body);</code></strong></p>
+<p><strong><code>}</code></strong></p>
+</section>
+<section id="chap014.xhtml_sect-075" class="heading section1">
+<h2 class="heading"><strong>The parameter passed to it</strong></h2>
+<p><strong><em>Exchange:</em></strong> demoExchange</p>
+<p><strong><em>Routing key:</em></strong> directexchange_key</p>
+<section id="chap014.xhtml_sect-169" class="heading section2">
+<h3 class="heading"><strong>Code Snippet</strong></h3>
+<p><code>using RabbitMQ.Client;</code><br />
+<code>using System;</code><br />
+<code>using System.Text;</code></p>
+<p><code>namespace RequestRabbitMQ</code></p>
+<p><code>{</code></p>
+<p><code>class Program</code></p>
+<p><code>{</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code>{</code></p>
+<p><code>string UserName = "guest";</code><br />
+<code>string Password = "guest";</code><br />
+<code>string HostName = "localhost";</code></p>
+<p><code>//Main entry point to the RabbitMQ .NET AMQP</code></p>
+<p><code>client</code></p>
+<p><code>var connectionFactory = new</code></p>
+<p><code>RabbitMQ.Client.ConnectionFactory() </code></p>
+<p><code>{</code></p>
+<p><code>UserName = UserName,</code><br />
+<code>Password = Password,</code><br />
+<code>HostName = HostName</code></p>
+<p><code>};</code></p>
+<p><code>var connect i on =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var model = connection.CreateModel();</code></p>
+<p><code>//// Create Exchange</code></p>
+<p><code>//model.ExchangeDeclare("demoExchange",</code></p>
+<p><code>ExchangeType.Direct);</code></p>
+<p><code>//Console.WriteLine("Creating Exchange");</code></p>
+<p><code>//// Create Queue</code></p>
+<p><code>//model.QueueDeclare("demoqueue", true, false,</code></p>
+<p><code>false, null);</code></p>
+<p><code>//Console.WriteLine("Creating Queue");</code></p>
+<p><code>// Creating Binding</code></p>
+<p><code>//model.QueueBind("demoqueue", "demoExchange",</code></p>
+<p><code>"directexchange key");</code></p>
+<p><code>//Console.WriteLine("Creating Binding");</code></p>
+<p><code>var properties = model.CreateBasicProperties();</code><br />
+<code>properties.Persistent = false;</code></p>
+<p><code>byte[] messagebuffer =</code></p>
+<p><code>Encoding.Default.GetBytes("Direct Message");</code></p>
+<p><code>model . BasicPublish ( "demo Exchange" ,</code></p>
+<p><code>"directexchange key", properties, messagebuffer);</code></p>
+<p><code>Console.WriteLine("Message Sent");</code></p>
+<p><code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>  </code></p>
+<p>After completing entire process let's save the application and run,
+after running the application you will see a message on console window
+as "message sent" just for notification.</p>
+<figure>
+<img src="images/061-01.jpg" alt="jpg" />
+</figure>
+<p>After sending a message now let's have a look on the queue
+(demoqueue).</p>
+</section>
+<section class="heading section2">
+<h3 class="heading"><strong>Now Let's See queue status
+"demoqueue"</strong></h3>
+<p>If you see Queues status you will see <strong>Ready "1"</strong>
+which means we have successfully published a message to
+<strong>demoqueue</strong>.</p>
+<figure>
+<img src="images/061-02.jpg" alt="jpg" />
+</figure>
+</section>
+</section>
+<section id="chap014.xhtml_sect-073" class="heading section1">
+<h2 class="heading"><strong>Consume Message Using C# to
+RabbitMQ</strong></h2>
+<p>In this part we are going to learn how to consume messages from
+RabbitMQ using .Net in step by step way.</p>
+<p>Creating RabbitMQConsumer Application</p>
+<p>Let's create another console application for consuming messages from
+a queue with the name <strong>RabbitMQConsumer.</strong></p>
+<figure>
+<img src="images/061-03.jpg" alt="jpg" />
+</figure>
+<p>After creating application next we are going to add
+<strong>RabbitMQ.Client</strong> NuGet package.</p>
+</section>
+<section id="chap014.xhtml_sect-076" class="heading section1">
+<h2 class="heading"><strong>Adding RabbitMQ.Client NuGet
+Package</strong></h2>
+<p>In this part for creating a connection with RabbitMQ server to create
+request, we need to add <strong>RabbitMQ.Client</strong> package from
+NuGet Package.</p>
+<p>Command to install: Install-Package <strong>RabbitMQ.Client -Version
+5.1.0</strong></p>
+<figure>
+<img src="images/062-01.jpg" alt="jpg" />
+</figure>
+<p>After installing <em>RabbitMQ.Client</em> next we are going to add a
+class with name <strong>MessageReceiver.</strong></p>
+</section>
+<section id="chap014.xhtml_sect-080" class="heading section1">
+<h2 class="heading"><strong>Code snippet of MessageReceiver
+class</strong></h2>
+<p>In this part, we have created <em>MessageReceiver</em> class and this
+class inherits <em>DefaultBasicConsumer</em> class which is from
+RabbitMQ.Client next we have to override <em>HandleBasicDeliver</em>
+method this method receives message body next, we are going to write
+these messages as we can see in its console.</p>
+<p><code>using System;</code><br />
+<code>using System.Text;</code><br />
+<code>using RabbitMQ.Client;</code></p>
+<p><code>namespace RabbitMQConsumer </code></p>
+<p><code>{</code></p>
+<p><code>public class MessageReceiver : DefaultBasicConsumer</code></p>
+<p><code>{</code></p>
+<p><code>private readonly IModel _channel;</code></p>
+<p><code>public MessageReceiver(IModel channel)</code></p>
+<p><code>{</code></p>
+<p><code>_channel = channel;</code></p>
+<p><code>}</code></p>
+<p><code>public override void HandleBasicDeliver(string</code></p>
+<p><code>consumerTag, ulong deliveryTag, bool redelivered, string exchange, string routingKey, IBasicProperties properties, byte[] body)</code></p>
+<p><code>{</code></p>
+<p><code>Console.WriteLine($"Consuming Message");</code></p>
+<p><code>Console.WriteLine(string.Concat("Message</code></p>
+<p><code>received from the exchange ", exchange));</code></p>
+<p><code>Console.WriteLine(string.Concat("Consumer tag:</code></p>
+<p><code>", consumerTag));</code></p>
+<p><code>Console.WriteLine(string.Concat("Delivery tag:</code></p>
+<p><code>", deliveryTag));</code></p>
+<p><code>Console.WriteLine(string.Concat("Routing tag: ",</code></p>
+<p><code>routingKey));</code></p>
+<p><code>Console.WriteLine(string.Concat("Message: ",</code></p>
+<p><code>Encoding.UTF8.GetString(body)));</code></p>
+<p><code>_channel.BasicAck(deliveryTag, false);</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>  </code></p>
+<p>After completing with understanding code snippet of MessageReceiver
+class next we are going to call this class in the main method.</p>
+<section id="chap014.xhtml_sect-081" class="heading section2">
+<h3 class="heading"><strong>Code snippet of Main Method</strong></h3>
+<p>In the main method we have created <em>ConnectionFactory</em> class
+and passed credentials and Hostname after that we have created
+connection, next we have created channel and set <em>prefetchCount</em>
+to 1 such that it tells RabbitMQ not to give more than one message to a
+worker at a time, Next, we have created instance of
+<em>MessageReceiver</em> class and passed IModel (channel) to it, in
+final step we have called <strong>BasicConsume</strong> method and
+passed queue name to it <strong>demoqueue</strong> along with this we
+have set autoAck to false and passed the
+<strong>messageReceiver</strong> instance to it.</p>
+<p><code>using System;</code></p>
+<p><code>using System.Collections.Generic;</code></p>
+<p><code>using System.Linq; using System.Text;</code></p>
+<p><code>using System.Threading.Tasks;</code></p>
+<p><code>using RabbitMQ.Client;</code></p>
+<p><code>namespace RabbitMQConsumer</code></p>
+<p><code>{</code></p>
+<p><code>class Program </code></p>
+<p><code>{</code></p>
+<p><code>private const string </code><strong><code>UserName</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>Password</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>HostName</code></strong><code> = "localhost";</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code>{</code></p>
+<p><code>ConnectionFactory connectionFactory = new=</code></p>
+<p><code>ConnectionFactory</code></p>
+<p><code>{</code></p>
+<p><code>HostName = </code><strong><code>HostName,</code></strong><br />
+<code>UserName = </code><strong><code>UserName,</code></strong><br />
+<code>Password = </code><strong><code>Password,</code></strong></p>
+<p><code>var      connection      =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var channel = connection.CreateModel();</code></p>
+<p><code>// accept only one unack-ed message at a time</code></p>
+<p><code>// uint prefetchSize, ushort prefetchCount, bool</code></p>
+<p><code>global</code></p>
+<p><code>channel.BasicQos(0, 1, false);</code></p>
+<p><code>MessageReceiver messageReceiver = new</code></p>
+<p><code>MessageReceiver(channel);</code></p>
+<p><code>channel.BasicConsume("demoqueue", false,</code></p>
+<p><code>messageReceiver);</code></p>
+<p><code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><strong>Note:</strong> prefetchCount</p>
+<p>In order to defeat that we can set the prefetch count with the value
+of 1. This tells RabbitMQ not to give more than one message to a worker
+at a time. Or, in other words, don't dispatch a new message to a worker
+until it has processed and acknowledged the previous one. Instead, it
+will dispatch it to the next worker that is not still busy.</p>
+<p>Now we have complete working mechanism. Let's create request from
+<strong>RequestRabbitMQ</strong> console and consume a message from
+<strong>RabbitMQConsumer</strong> application.</p>
+</section>
+</section>
+<section id="chap014.xhtml_sect-082" class="heading section1">
+<h2 class="heading"><strong>Queue is Empty</strong></h2>
+<figure>
+<img src="images/065-01.jpg" alt="jpg" />
+</figure>
+<p>After we saw that queue (demoqueue) is empty, we are going to publish
+message to demoqueue.</p>
+<section id="chap014.xhtml_sect-083" class="heading section2">
+<h3 class="heading"><strong>Publishing Message</strong></h3>
+<figure>
+<img src="images/065-02.jpg" alt="jpg" />
+</figure>
+<p>After we have published message now let's have a view on (queue)
+demoqueue.</p>
+</section>
+</section>
+<section id="chap014.xhtml_sect-084" class="heading section1">
+<h2 class="heading"><strong>Queue after Publishing Message</strong></h2>
+<figure>
+<img src="images/065-03.jpg" alt="jpg" />
+</figure>
+<p>After we have push message to (queue) demoqueue the console
+application will start consuming it, following is the snapshot:</p>
+<section id="chap014.xhtml_sect-085" class="heading section2">
+<h3 class="heading"><strong>Consumed Message from
+demoqueue</strong></h3>
+<figure>
+<img src="images/065-04.jpg" alt="jpg" />
+</figure>
+<p>Finally, we have completed consuming message from RabbitMQ queue.</p>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+</section>
+<p><span id="chap015.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>Using RabbitMQ Direct Message Exchanges
+with .Net Application</strong></h1>
+<p>In this part, we are going to use Direct Message Exchanges and push
+messages into RabbitMQ using .Net Application and RabbitMQ.Client and
+read messages from RabbitMQ using .Net Application and RabbitMQ.Client
+in step by step way.</p>
+<figure>
+<img src="images/066-01.jpg" alt="jpg" />
+</figure>
+<section id="chap015.xhtml_sect-086" class="heading section1">
+<h2 class="heading"><strong>Types of Exchanges</strong></h2>
+<p>1. Direct</p>
+<p>2. fanout</p>
+<p>3. Headers</p>
+<p>4. Topic</p>
+</section>
+<section id="chap015.xhtml_sect-087" class="heading section2">
+<h3 class="heading"><strong>Details of Exchanges</strong></h3>
+<p>1. <strong>Direct:</strong> A direct exchange delivers messages to
+queues based on a message routing key.<br />
+In a direct exchange, the message is routed to the queues whose binding
+key exactly matches the routing key of the message.</p>
+<p>2. <strong>Fanout:</strong> A fanout exchange routes messages to all
+of the queues that are bound to it.</p>
+<p>3. <strong>Topic:</strong> The topic exchange does a wildcard match
+between the routing key and the routing pattern specified in the
+binding.</p>
+<p>4. <strong>Headers:</strong> Headers exchanges use the message header
+attributes for routing.</p>
+</section>
+<section id="chap015.xhtml_sect-088" class="heading section1">
+<h2 class="heading"><strong>Creating RequestRabbitMQ
+Application</strong></h2>
+<p>Let's Create a simple console application with the name
+<strong>RequestRabbitMQ.</strong></p>
+<figure>
+<img src="images/067-01.jpg" alt="jpg" />
+</figure>
+<p>After creating application next we are going to add
+<strong>RabbitMQ.Client</strong> NuGet package.</p>
+</section>
+<section id="chap015.xhtml_sect-089" class="heading section1">
+<h2 class="heading"><strong>Adding RabbitMQ.Client NuGet
+Package</strong></h2>
+<p>In this part for creating a connection with RabbitMQ server to create
+request, we need to add <strong>RabbitMQ.Client</strong> package from
+NuGet Package. Command to install: - Install-Package <em>RabbitMQ.Client
+-Version 5.1.0</em></p>
+<figure>
+<img src="images/067-02.jpg" alt="jpg" />
+</figure>
+<p>After installing NuGet package of <strong>RabbitMQ.Client</strong>
+next we are going to create an exchange from web admin console.</p>
+</section>
+<section id="chap015.xhtml_sect-090" class="heading section1">
+<h2 class="heading"><strong>Adding Direct Exchange</strong></h2>
+<p>Go to http://localhost:15672/#/exchanges, name exchange as
+request.exchange after entering name , we select Type as direct and
+click on Add exchange button to create.</p>
+<figure>
+<img src="images/067-03.jpg" alt="jpg" />
+</figure>
+<p>After adding exchange <strong>(request.exchange)</strong> next we are
+going to add Queue (request Queue).</p>
+</section>
+<section id="chap015.xhtml_sect-091" class="heading section1">
+<h2 class="heading"><strong>Adding Queue</strong></h2>
+<p>Go to http://localhost:15672/#/queues, add queue: request.queue.</p>
+<figure>
+<img src="images/068-01.jpg" alt="jpg" />
+</figure>
+<p>After adding queue next we are going to bind queue with exchange.</p>
+</section>
+<section id="chap015.xhtml_sect-092" class="heading section1">
+<h2 class="heading"><strong>Binding the request.queue with
+request.exchange</strong></h2>
+<p>In binding, we are going to enter the name of exchange
+<strong>request.exchange</strong> and we are going to enter routing key
+as <strong>directexchange_key.</strong></p>
+<figure>
+<img src="images/068-02.jpg" alt="jpg" />
+</figure>
+<p>Now let's Create Push Message to <strong>request.queue</strong> from
+a console application.</p>
+</section>
+<section id="chap015.xhtml_sect-093" class="heading section1">
+<h2 class="heading"><strong>Adding a Directmessages Class</strong></h2>
+<p>We have created a <strong>Directmessage</strong> class in this class
+we are going to create request and push to RabbitMQ.</p>
+<p>First, we have declared Username, Password, and HostName as constant.
+After that, we have created a method with name
+<strong>SendMessage</strong> in that message we have created a
+connection to RabbitMQ server using RabbitMQ.Client after creating
+connection next we have passed credentials along with HostName to
+connectionFactory. Next, we have written a simple message <strong>Direct
+Message</strong> and got it in bytes array form, finally, we are going
+to assign all these values to a BasicPublish method of
+<strong>RabbitMQ.Client</strong></p>
+</section>
+<section id="chap015.xhtml_sect-094" class="heading section2">
+<h3 class="heading"><strong>BasicPublish View</strong></h3>
+<figure>
+<img src="images/069-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap015.xhtml_sect-095" class="heading section2">
+<h3 class="heading"><strong>The parameter passed to it</strong></h3>
+<p>Exchange: <strong>request.exchange</strong></p>
+<p>Routingkey: <strong>directexchange_key</strong></p>
+</section>
+<section id="chap015.xhtml_sect-096" class="heading section2">
+<h3 class="heading"><strong>Code Snippet</strong></h3>
+<p><code>using RabbitMQ.Client;</code><br />
+<code>using System.Text;</code></p>
+<p><code>namespace RequestRabbitMQ</code></p>
+<p><code>{</code></p>
+<p><code>public class Directmessages </code></p>
+<p><code>{</code></p>
+<p><code>private const string </code><strong><code>UserName</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>Password</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>HostName</code></strong><code> = "localhost";</code></p>
+<p><code>public void SendMessage()</code></p>
+<p><code>{</code></p>
+<p><code>//Main entry point to the RabbitMQ .NET AMQP</code></p>
+<p><code>client</code></p>
+<p><code>var      connectionFactory       =      new</code></p>
+<p><code>RabbitMQ.Client.ConnectionFactory()</code></p>
+<p><code>{</code></p>
+<p><code>UserName = </code><strong><code>UserName,</code></strong><br />
+<code>Password = </code><strong><code>Password,</code></strong><br />
+<code>HostName = </code><strong><code>HostName</code></strong></p>
+<p><code>};</code></p>
+<p><code>var      connection      =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var model = connection.CreateModel();</code></p>
+<p><code>var properties = model.CreateBasicProperties();</code><br />
+<code>properties.Persistent = false;</code></p>
+<p><code>byte [ ]      messagebuffer      =</code></p>
+<p><code>Encoding.Default.GetBytes("Direct Message");</code></p>
+<p><code>model.BasicPublish("request.exchange",</code></p>
+<p><code>directexchange_key", properties, messagebuffer);</code></p>
+<p><code>Console.WriteLine("Message Sent");</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+</section>
+<section id="chap015.xhtml_sect-097" class="heading section2">
+<h3 class="heading"><strong>Main Code snippet</strong></h3>
+<p><code>using System;</code></p>
+<p><code>namespace RequestRabbitMQ</code></p>
+<p><code>{</code></p>
+<p><code>class Program</code></p>
+<p><code>{</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code>{</code></p>
+<p><code>Directmessages       directmessages       =       new</code></p>
+<p><code>Directmessages();</code></p>
+<p><code>directmessages.SendMessage(); Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p>After completing entire process let's save the application and run,
+after running the application you will see a message on console window
+as "message sent" just for notification.</p>
+<figure>
+<img src="images/070-01.jpg" alt="jpg" />
+</figure>
+<p>After sending message now let's have a look on queue
+(<strong>request.queue).</strong></p>
+</section>
+<section id="chap015.xhtml_sect-098" class="heading section1">
+<h2 class="heading"><strong>Now Let's See queue status
+request.queue</strong></h2>
+<p>If you see Queues status you will see <strong>Ready "1"</strong>
+which means we have successfully published a message to
+<strong>request.queue</strong>.</p>
+<figure>
+<img src="images/070-02.jpg" alt="jpg" />
+</figure>
+<p>After publishing message next we are going to create .Net Console
+application for consuming message from queue.</p>
+</section>
+<section id="chap015.xhtml_sect-099" class="heading section1">
+<h2 class="heading"><strong>Creating RabbitMQConsumer
+Application</strong></h2>
+<p>Let's create another console application for consuming messages from
+a queue with the Name <strong>RabbitMQConsumer.</strong></p>
+<figure>
+<img src="images/071-01.jpg" alt="jpg" />
+</figure>
+<p>After creating application , we are going to add
+<strong>RabbitMQ.Client</strong> NuGet package.</p>
+</section>
+<section id="chap015.xhtml_sect-170" class="heading section1">
+<h2 class="heading"><strong>Adding RabbitMQ.Client NuGet
+Package</strong></h2>
+<p>In this part for creating a connection with RabbitMQ server to create
+request, we need to add <strong>RabbitMQ.Client</strong> package from
+NuGet Package.</p>
+<p>Command to install: Install-Package <strong>RabbitMQ.Client -Version
+5.1.0</strong></p>
+<figure>
+<img src="images/071-02.jpg" alt="jpg" />
+</figure>
+<p>After installing RabbitMQ.Client, we are going to add a class with
+name <strong>MessageReceiver.</strong></p>
+</section>
+<section class="heading section2">
+<h3 class="heading"><strong>Code snippet of MessageReceiver
+class</strong></h3>
+<p>In this part, we have created <strong>MessageReceiver</strong> class
+and this class inherits <strong>DefaultBasicConsumer</strong> class
+which is from <strong>RabbitMQ.Client</strong> next we have to override
+<strong>HandleBasicDeliver</strong> method, this method receives message
+body next, we are going to write these messages as we can see in its
+console.</p>
+<p><code>using System;</code></p>
+<p><code>using System.Text;</code></p>
+<p><code>using RabbitMQ.Client;</code></p>
+<p><code>namespace RabbitMQConsumer</code></p>
+<p><code>{</code></p>
+<p><code>public class MessageReceiver : DefaultBasicConsumer </code></p>
+<p><code>{</code></p>
+<p><code>private readonly IModel channel;</code></p>
+<p><code>public MessageReceiver(IModel channel)</code></p>
+<p><code>{</code></p>
+<p><code>channel = channel;</code></p>
+<p><code>}</code></p>
+<p><code>public override void HandleBasicDeliver(string</code></p>
+<p><code>consumerTag, ulong deliveryTag, bool redelivered, string exchange, string routingKey, IBasicProperties properties, byte[] body)</code></p>
+<p><code>{</code></p>
+<p><code>Console.WriteLine($"Consuming Message");</code></p>
+<p><code>Console.WriteLine(string.Concat("Message</code></p>
+<p><code>received from the exchange exchange));</code></p>
+<p><code>Console.WriteLine(string.Concat("Consumer tag:</code></p>
+<p><code>", consumerTag));</code></p>
+<p><code>Console.WriteLine(string.Concat("Delivery tag:</code></p>
+<p><code>", deliveryTag));</code></p>
+<p><code>Console.WriteLine(string.Concat("Routing tag:",</code></p>
+<p><code>routingKey));</code></p>
+<p><code>Console.WriteLine(string.Concat("Message: ",</code></p>
+<p><code>Encoding.UTF8.GetString(body)));</code></p>
+<p><code>_channel.BasicAck(deliveryTag, false);</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>  </code></p>
+<p>After completing understanding code snippet of MessageReceiver class,
+we are going to call this class in the main method.</p>
+</section>
+<section id="chap015.xhtml_sect-100" class="heading section2">
+<h3 class="heading"><strong>Code snippet of main method</strong></h3>
+<p>In the main method we have created <strong>connectionFactory</strong>
+class and passed credentials and Hostname, after that we have created
+connection, next we have created channel and set prefetchCount to 1 such
+that it tells RabbitMQ not to give more than one message to a worker at
+a time, Next, we have created an instance of
+<strong>MessageReceiver</strong> class and passed IModel (channel) to
+it, in final step we have called <strong>BasicConsume</strong> method
+and passed queue name to it <strong>"request.queue"</strong> along with
+this we have set autoAck to false and passed the messageReceiver
+instance to it.</p>
+<p><code>using System;</code></p>
+<p><code>using System.Collections.Generic;</code></p>
+<p><code>using System.Linq;</code></p>
+<p><code>using System.Text;</code></p>
+<p><code>using System.Threading.Tasks;</code></p>
+<p><code>using RabbitMQ.Client;</code></p>
+<p><code>namespace RabbitMQConsumer</code></p>
+<p><code>{</code></p>
+<p><code>class Program</code></p>
+<p><code>{</code></p>
+<p><code>private const string </code><strong><code>UserName</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>Password</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>HostName</code></strong><code> = "localhost";</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code> {</code></p>
+<p><code>ConnectionFactory connectionFactory = new</code></p>
+<p><code>ConnectionFactory</code></p>
+<p><code>{</code></p>
+<p><code>HostName = </code><strong><code>HostName,</code></strong><br />
+<code>UserName = </code><strong><code>UserName,</code></strong><br />
+<code>Password = </code><strong><code>Password,</code></strong></p>
+<p><code>};</code></p>
+<p><code>var      connection      =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var channel = connection.CreateModel();</code></p>
+<p><code>// accept only one unack-ed message at a time</code><br />
+<code>// uint prefetchSize, ushort prefetchCount, bool</code></p>
+<p><code>global</code></p>
+<p><code>channel.BasicQos(0, 1, false);</code></p>
+<p><code>MessageReceiver messageReceiver = new</code></p>
+<p><code>MessageReceiver(channel);</code></p>
+<p><code>channel.BasicConsume("request.queue", false,</code></p>
+<p><code>messageReceiver);</code></p>
+<p><code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>  </code></p>
+<p><strong>Note:</strong> - prefetchCount</p>
+<p>To defeat that, we can set the prefetch count with the value of 1.
+This tells RabbitMQ not to give more than one message to a worker at a
+time. Or, in other words, don't dispatch a new message to a worker until
+it has processed and acknowledged the previous one. Instead, it will
+dispatch it to the next worker that is still free.</p>
+<p>Now we have complete working mechanism Let's create request from
+"<strong>RequestRabbitMQ"</strong> console and consume a message from
+<strong>"RabbitMQConsumer</strong>" application.</p>
+</section>
+<section id="chap015.xhtml_sect-102" class="heading section2">
+<h3 class="heading"><strong>Queue is Empty</strong></h3>
+<figure>
+<img src="images/074-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap015.xhtml_sect-103" class="heading section2">
+<h3 class="heading"><strong>Publishing Message</strong></h3>
+<figure>
+<img src="images/074-02.jpg" alt="jpg" />
+</figure>
+<p>After we h ave published message no w let 's take a look at (queue)
+request.queue.</p>
+</section>
+<section id="chap015.xhtml_sect-104" class="heading section1">
+<h2 class="heading"><strong>Queue after publishing Message</strong></h2>
+<figure>
+<img src="images/075-01.jpg" alt="jpg" />
+</figure>
+<p>After we have push message to (queue) request.queue the console
+application will start consuming it, following is the snapshot:</p>
+</section>
+<section id="chap015.xhtml_sect-105" class="heading section2">
+<h3 class="heading"><strong>Consumed Message from
+request.queue</strong></h3>
+<figure>
+<img src="images/075-02.jpg" alt="jpg" />
+</figure>
+<p>Finally, we have completed consuming message from RabbitMQ queue.</p>
+</section>
+<section id="chap015.xhtml_sect-106" class="heading section1">
+<h2 class="heading"><strong>Conclusion</strong></h2>
+<p>In this part, we have learned how to Produce and consume RabbitMQ
+Direct Message Exchanges with .Net Application in step by step way along
+with that how to connect to RabbitMQ server using
+<strong>RabbitMQ.Client,</strong> how to create direct exchange, queue
+and bindings.</p>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+<p><span id="chap016.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>Using RabbitMQ Topic Message Exchanges
+with .Net Application</strong></h1>
+<p>In this part, we are going to use Topic Message Exchanges and push
+messages into RabbitMQ using .Net Application and RabbitMQ.Client and
+read messages from RabbitMQ using .Net Application and RabbitMQ.Client
+in step by step way.</p>
+<figure>
+<img src="images/076-01.jpg" alt="jpg" />
+</figure>
+<div class="section1">
+<h2 class="heading" id="chap016.xhtml_sect-107"><strong>What is the
+Topic Exchange?</strong></h2>
+<p>The topic exchange does a wildcard match between the routing key and
+the routing pattern specified in the binding.</p>
+<p>In topic exchange, the routing key must not be a simple text such as
+<em>Bombay</em> it must be words delimited by dots such as "*.bombay.*"
+or "#.bombay" or "Bombay.#".</p>
+<p>For example: I have two queues, one for Bombay and the other for
+Delhi then the user must send routing key which will match the pattern
+of routing key, then only that message will be added to queue, else
+message will be lost.</p>
+<section id="chap016.xhtml_sect-108" class="heading section2">
+<h3 class="heading"><strong>Note:</strong></h3>
+<p>* (star) can substitute for exactly one word.</p>
+<p># (hash) can substitute for zero or more words.</p>
+</section>
+<section id="chap016.xhtml_sect-109" class="heading section1">
+<h2 class="heading"><strong>Creating RequestRabbitMQ
+Application</strong></h2>
+<p>Let's create a simple console application with Name
+<strong>RequestRabbitMQ.</strong></p>
+<figure>
+<img src="images/076-02.jpg" alt="jpg" />
+</figure>
+<p>After creating application next we are going to add
+<strong>RabbitMQ.Client</strong> NuGet package.</p>
+</section>
+<section id="chap016.xhtml_sect-110" class="heading section1">
+<h2 class="heading"><strong>Adding RabbitMQ.Client NuGet
+Package</strong></h2>
+<p>In this part for creating a connection with the RabbitMQ server to
+create request, we need to add <strong>RabbitMQ.Client</strong> package
+from NuGet Package.</p>
+<p><strong>Command to install:</strong> - Install-Package
+<strong>RabbitMQ.Client -Version 5.1.0</strong></p>
+<figure>
+<img src="images/077-01.jpg" alt="jpg" />
+</figure>
+<p>After installing NuGet package of <strong>RabbitMQ.Client</strong>
+next we are going to create an exchange from web admin console.</p>
+</section>
+<section id="chap016.xhtml_sect-111" class="heading section1">
+<h2 class="heading"><strong>Adding Topic Exchange</strong></h2>
+<p>Go to http://localhost:15672/#/exchanges, name exchange as
+topic.exchange after entering name, we select Type as topic and click on
+add exchange button to create.</p>
+<p>After adding <strong>topic.exchange</strong> next we are going to Add
+2 Queue.</p>
+</section>
+<section id="chap016.xhtml_sect-112" class="heading section1">
+<h2 class="heading"><strong>Adding Queue</strong></h2>
+<p>In this part we are going to create 2 queues with different routing
+key but for same <strong>topic.exchange</strong> .</p>
+<p>Go to http://localhost:15672/#/queues</p>
+<p>1. topic.bombay.queue</p>
+<p>2. topic.delhi.queue</p>
+<p>Adding first queue with name <strong>topic.bombay.queue</strong>.</p>
+<figure>
+<img src="images/077-02.jpg" alt="jpg" />
+</figure>
+<p>Adding the second queue <strong>topic.delhi.queue</strong>.</p>
+<figure>
+<img src="images/078-01.jpg" alt="jpg" />
+</figure>
+<p>After adding queue, the added queues are displayed.</p>
+<figure>
+<img src="images/078-02.jpg" alt="jpg" />
+</figure>
+<p>After adding queue, we are going to bind queue with
+<strong>topic.exchange.</strong></p>
+</section>
+<section id="chap016.xhtml_sect-113" class="heading section2">
+<h3 class="heading"><strong>Binding the topic.bombay.queue with
+topic.exchange</strong></h3>
+<p>In this part, we are binding <strong>topic.exchange</strong> with a
+<strong>topic.bombay.queue</strong> using a pattern of unique routing
+key <strong>"*.Bombay.*".</strong></p>
+<figure>
+<img src="images/078-03.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap016.xhtml_sect-114" class="heading section2">
+<h3 class="heading"><strong>Snapshot of binding</strong></h3>
+<figure>
+<img src="images/078-04.jpg" alt="jpg" />
+</figure>
+</section>
+</div>
+<section id="chap016.xhtml_sect-115" class="heading section1">
+<h2 class="heading"><strong>Binding the topic.delhi.queue with
+topic.exchange</strong></h2>
+<p>In this part, we are binding <strong>topic.exchange</strong> with a
+<strong>topic.delhi.queue</strong> using a pattern of unique routing key
+<strong>"Delhi.#".</strong></p>
+<figure>
+<img src="images/079-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap016.xhtml_sect-116" class="heading section2">
+<h3 class="heading"><strong>Snapshot of Binding</strong></h3>
+<figure>
+<img src="images/079-02.jpg" alt="jpg" />
+</figure>
+<p>After completing with binding, we are going to publish message.</p>
+</section>
+<section id="chap016.xhtml_sect-117" class="heading section1">
+<h2 class="heading"><strong>Adding a Topicmessages Class</strong></h2>
+<p>We have created a <strong>Topicmessage</strong> class, in this class
+we are going to create request and push to RabbitMQ.</p>
+<p>First, we have declared Username, Password, and HostName as constant.
+After that, we have created a method with name
+<strong>SendMessage</strong> in that message we have created a
+connection to RabbitMQ server using RabbitMQ.Client after creating
+connection next, we have passed credentials along with HostName to
+connectionFactory. Next, we have written a simple message
+<strong>Message from Topic Exchange 'Bombay'</strong> and got it in
+bytes array form, finally, we are going to assign all these values to a
+<strong>BasicPublish</strong> method of
+<strong>RabbitMQ.Client.</strong></p>
+<p>Routing pattern: - "any text .Bombay. any text".</p>
+<p>Examples of routing key:</p>
+<p>"Order.Bombay.Pizza",</p>
+<p>"Book.Bombay.Hotels",</p>
+<p>"Visit.Bombay.Parks",</p>
+<p>"List.Bombay.Colleges".</p>
+</section>
+<section id="chap016.xhtml_sect-118" class="heading section2">
+<h3 class="heading"><strong>The parameter passed to it</strong></h3>
+<p>Exchange: "topic.exchange"</p>
+<p>Routing key: "Message.Bombay.Email"</p>
+</section>
+<section id="chap016.xhtml_sect-119" class="heading section2">
+<h3 class="heading"><strong>Code Snippet</strong></h3>
+<p><code>public class Topicmessages</code></p>
+<p><code>{</code></p>
+<p><code>private const string </code><strong><code>UserName</code></strong><code> = "guest";</code></p>
+<p><code>private const string </code><strong><code>Password</code></strong><code> = "guest";</code></p>
+<p><code>private const string </code><strong><code>HostName</code></strong><code> = "localhost";</code></p>
+<p><code>public void SendMessage()</code></p>
+<p><code>{</code></p>
+<p><code>//Main entry point to the RabbitMQ .NET AMQP</code></p>
+<p><code>client</code></p>
+<p><code>var      connectionFactory      =      new</code></p>
+<p><code>RabbitMQ.Client.ConnectionFactory()</code></p>
+<p><code>{</code></p>
+<p><code>UserName    =   </code><strong><code>UserName</code></strong><code>,Password =</code></p>
+<p><strong><code>Password</code></strong><code>,HostName = </code><strong><code>HostName</code></strong></p>
+<p><code>};</code></p>
+<p><code>va r      connection      =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var model = connection.CreateModel();</code><br />
+<code>var properties = model.CreateBasicProperties();</code><br />
+<code>properties.Persistent = false;</code></p>
+<p><code>byte [ ]      messagebuffer      =</code></p>
+<p><code>Encoding.Default.GetBytes("Message from Topic Exchange</code><br />
+<code>'Bombay' ");</code></p>
+<p><code>model . BasicPublish ("topic . exchange",</code></p>
+<p><code>"Message.Bombay.Email", properties, messagebuffer);</code></p>
+<p><code>Console.WriteLine("Message Sent From :-</code></p>
+<p><code>topic.exchange ");</code></p>
+<p><code>Console . WriteLine ( " Routing Key : -</code></p>
+<p><code>Message.Bombay.Email");</code></p>
+<p><code>Console.WriteLine("Message Sent");</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>  </code></p>
+</section>
+<section id="chap016.xhtml_sect-120" class="heading section2">
+<h3 class="heading"><strong>Main Code snippet</strong></h3>
+<p><code>using System;</code></p>
+<p><code>namespace RequestRabbitMQ</code></p>
+<p><code>{</code></p>
+<p><code>class Program</code></p>
+<p><code>{</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code>{</code></p>
+<p><code>Topicmessages topicmessages = new</code></p>
+<p><code>Topicmessages();</code></p>
+<p><code>topicmessages.SendMessage();</code><br />
+<code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>  </code></p>
+<p>After completing the entire process let's save the application and
+run, after running the application you will see a message on console
+window as "Message sent" just for notification, it means we have
+successfully published a message to queue of "topic.bombay.queue".</p>
+</section>
+<section id="chap016.xhtml_sect-121" class="heading section1">
+<h2 class="heading"><strong>Published Message to
+"topic.bombay.queue"</strong></h2>
+<figure>
+<img src="images/081-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap016.xhtml_sect-122" class="heading section2">
+<h3 class="heading"><strong>Now Let's See queue status
+"request.queue"</strong></h3>
+<p>If you see Queues status, you will see <strong>Ready "1"</strong>
+which means we have successfully published a message to
+<strong>topic.bombay.queue</strong>.</p>
+<figure>
+<img src="images/081-02.jpg" alt="jpg" />
+</figure>
+<p>After publishing a message, next we are going to create .Net Console
+application for consuming message from the queue.</p>
+</section>
+<section id="chap016.xhtml_sect-123" class="heading section1">
+<h2 class="heading"><strong>Creating RabbitMQConsumer
+Application</strong></h2>
+<p>Let's create another console application for consuming messages from
+a queue <strong>RabbitMQConsumer.</strong></p>
+<figure>
+<img src="images/082-01.jpg" alt="jpg" />
+</figure>
+<p>After creating application, we are going to add
+<strong>RabbitMQ.Client</strong> NuGet package.</p>
+</section>
+<section id="chap016.xhtml_sect-171" class="heading section1">
+<h2 class="heading"><strong>Adding RabbitMQ.Client NuGet
+Package</strong></h2>
+<p>In this part for creating a connection with the RabbitMQ server to
+create request, we need to add <strong>RabbitMQ.Client</strong> package
+from NuGet Package.</p>
+<p><strong>Command to install:</strong> Install-Package
+<strong>RabbitMQ.Client -Version 5.1.0</strong></p>
+<figure>
+<img src="images/082-02.jpg" alt="jpg" />
+</figure>
+<p>After installing <strong>RabbitMQ.Client,</strong> we are going to
+add a class <strong>MessageReceiver.</strong></p>
+<section id="chap016.xhtml_sect-124" class="heading section2">
+<h3 class="heading"><strong>Code snippet of MessageReceiver
+class</strong></h3>
+<p>In this part, we have created <strong>MessageReceiver</strong> class
+and this class inherits <strong>DefaultBasicConsumer</strong> class
+which is from <strong>RabbitMQ.Client</strong> next we have to override
+HandleBasicDeliver method, this method receives message body next, we
+are going to write these messages as we can see in its console.</p>
+<p><code>public class MessageReceiver : DefaultBasicConsumer</code></p>
+<p><code>{</code></p>
+<p><code>private readonly IModel _channel;</code></p>
+<p><code>public MessageReceiver(IModel channel)</code></p>
+<p><code>{</code></p>
+<p><code>_channel = channel;</code></p>
+<p><code>}</code></p>
+<p><code>public override void HandleBasicDeliver(string</code></p>
+<p><code>consumerTag, ulong deliveryTag, bool redelivered, string exchange, string routingKey, IBasicProperties properties, byte[] body)</code></p>
+<p><code>{</code></p>
+<p><code>Console.WriteLine($"Consuming Topic Message");</code></p>
+<p><code>Console.WriteLine(string.Concat("Message</code></p>
+<p><code>received from the exchange ", exchange));</code></p>
+<p><code>Console.WriteLine(string.Concat("Consumer tag:</code></p>
+<p><code>", consumerTag));</code></p>
+<p><code>Console.WriteLine(string.Concat("Delivery tag:</code></p>
+<p><code>", deliveryTag));</code></p>
+<p><code>Console.WriteLine(string.Concat("Routing tag: ",</code></p>
+<p><code>routingKey));</code></p>
+<p><code>Console.WriteLine(string.Concat("Message: ",</code></p>
+<p><code>Encoding.UTF8.GetString(body)));</code></p>
+<p><code>_channel.BasicAck(deliveryTag, false);</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>  </code></p>
+<p>After completing with understanding the code snippet of
+<strong>MessageReceiver</strong> class next we are going to call this
+class in the Main method.</p>
+</section>
+</section>
+<section id="chap016.xhtml_sect-125" class="heading section2">
+<h3 class="heading"><strong>Code snippet of Main Method while consuming
+"topic.bombay.queue"</strong></h3>
+<p>In the main method we have created <strong>connectionFactory</strong>
+class and passed credentials and Hostname after that we have created
+connection, next we have created channel and set prefetchCount to 1 such
+that it tells RabbitMQ not to give more than one message to a worker at
+a time, Next, we have created instance of
+<strong>MessageReceiver</strong> class and passed IModel (channel) to
+it, in final step we have called <strong>BasicConsume</strong> method
+and passed queue name to it <strong>"topic.bombay.queue"</strong> along
+with this, we have set autoAck to false and passed the
+<strong>messageReceiver</strong> instance to it.</p>
+<p><code>using System;</code></p>
+<p><code>using RabbitMQ.Client;</code></p>
+<p><code>namespace RabbitMQConsumer</code></p>
+<p><code>{</code></p>
+<p><code>class Program</code></p>
+<p><code>{</code></p>
+<p><code>private const string </code><strong><code>UserName</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>Password</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>HostName</code></strong><code> = "localhost";</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code>{</code></p>
+<p><code>ConnectionFactory connectionFactory = new</code></p>
+<p><code>ConnectionFactory </code></p>
+<p><code>{</code></p>
+<p><code>HostName = </code><strong><code>HostName,</code></strong><br />
+<code>UserName = </code><strong><code>UserName,</code></strong><br />
+<code>Password = </code><strong><code>Password,</code></strong></p>
+<p><code>};</code></p>
+<p><code>var      connection      =</code></p>
+<p><code>connection connectionFactory.CreateConnection();</code></p>
+<p><code>var channel = connection.CreateModel();</code></p>
+<p><code>// accept only one unack-ed message at a time</code><br />
+<code>// uint prefetchSize, ushort prefetchCount, bool</code></p>
+<p><code>global</code></p>
+<p><code>channel.BasicQos(0, 1, false);</code></p>
+<p><code>// ==== prefetchCount</code><br />
+<code>// In order to defeat that we can set the prefetch</code></p>
+<p><code>count with the value of 1</code></p>
+<p><code>// This tells RabbitMQ not to give more than one</code></p>
+<p><code>message to a worker at a time.</code></p>
+<p><code>// Or, in other words, don't dispatch a new</code></p>
+<p><code>message to a worker until it has</code></p>
+<p><code>// processed and acknowledged the previous one.</code></p>
+<p><code>Instead, it will dispatch it to t</code></p>
+<p><code>// the next worker that is not still busy.</code></p>
+<p><code>MessageReceiver messageReceiver = new</code></p>
+<p><code>MessageReceiver(channel);</code></p>
+<p><code>channel.BasicConsume("topic.bombay.queue", false,</code></p>
+<p><code>messageReceiver);</code></p>
+<p><code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p>Now we have complete working mechanism. Let's create request from
+<strong>RequestRabbitMQ</strong> console and consume a message from
+<strong>"RabbitMQConsumer"</strong> application.</p>
+</section>
+<section id="chap016.xhtml_sect-126" class="heading section1">
+<h2 class="heading"><strong>The queue has one Request which we have
+published</strong></h2>
+<p>The following snapshot contains only one message in
+<strong>topic.bombay.queue</strong> which we have published.</p>
+<figure>
+<img src="images/085-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap016.xhtml_sect-127" class="heading section2">
+<h3 class="heading"><strong>Consumed Message from
+topic.bombay.queue</strong></h3>
+<figure>
+<img src="images/085-02.jpg" alt="jpg" />
+</figure>
+<p>After successfully consuming message from
+<strong>topic.bombay.queue,</strong> we are going to publish a message
+to another queue which is <strong>topic.delhi.queue.</strong></p>
+</section>
+<section id="chap016.xhtml_sect-128" class="heading section1">
+<h2 class="heading"><strong>Published Message to
+topic.delhi.queue</strong></h2>
+<p>In <strong>topicmessage</strong> class, I have just made a small
+change in routing key <strong>Delhi.TicketBooking</strong> and message
+which we send to publish a message to
+<strong>topic.delhi.queue.</strong></p>
+<p>Routing pattern: "Delhi. any text"</p>
+<p>Examples of routing key: "Delhi.Pizza", "Delhi.Hotels",
+"Delhi.Parks", "Delhi.Colleges"</p>
+</section>
+<section id="chap016.xhtml_sect-172" class="heading section2">
+<h3 class="heading"><strong>Code Snippet</strong></h3>
+<p><code>public class Topicmessages</code></p>
+<p><code>{</code></p>
+<p><code>private const string </code><strong><code>UserName</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>Password</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>HostName</code></strong><code> = "localhost";</code></p>
+<p><code>public void SendMessage()</code></p>
+<p><code>{</code></p>
+<p><code>//Main entry point to the RabbitMQ .NET AMQP</code></p>
+<p><code>client</code></p>
+<p><code>var      connectionFactory       =       new</code></p>
+<p><code>RabbitMQ.Client.ConnectionFactory()</code></p>
+<p><code>{</code></p>
+<p><code>UserName </code><strong><code>UserName,</code></strong></p>
+<p><code>Password </code><strong><code>Password,</code></strong></p>
+<p><code>HostName </code><strong><code>HostName</code></strong></p>
+<p><code>};</code></p>
+<p><code>var      connection      =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var model = connection.CreateModel();</code></p>
+<p><code>var properties = model.CreateBasicProperties();</code><br />
+<code>properties.Persistent = false;</code></p>
+<p><code>byte[] messagebuffer = Encoding.Default.GetBytes</code></p>
+<p><code>("Message from Topic Exchange 'Delhi' ");</code></p>
+<p><code>model.Basic Publish("topic.exchange",</code></p>
+<p><code>"Delhi.TicketBooking",</code></p>
+<p><code>properties, messagebuffer);</code></p>
+<p><code>Console.WriteLine("Message Sent From :-</code></p>
+<p><code>topic.exchange ");</code></p>
+<p><code>Console.WriteLine("Routing Key :-</code></p>
+<p><code>Delhi.TicketBooking");</code></p>
+<p><code>Console.WriteLine("Message Sent");</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>  </code></p>
+<p>After making changes let's save and run application to publish
+message to <strong>topic.delhi.queue.</strong></p>
+</section>
+<section id="chap016.xhtml_sect-129" class="heading section1">
+<h2 class="heading"><strong>Published Message to
+"topic.delhi.queue"</strong></h2>
+<figure>
+<img src="images/086-01.jpg" alt="jpg" />
+</figure>
+<p>The queue has one request which we have published</p>
+<figure>
+<img src="images/087-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap016.xhtml_sect-130" class="heading section2">
+<h3 class="heading"><strong>Code snippet of Main Method while consuming
+"topic.delhi.queue" from RabbitMQConsumer</strong></h3>
+<p>In this part, I have just changed the queue name to
+<strong>topic.delhi.queue</strong> in RabbitMQConsumer application.</p>
+<p><code>using System;</code></p>
+<p><code>using RabbitMQ.Client;</code></p>
+<p><code>namespace RabbitMQConsumer</code></p>
+<p><code>{</code></p>
+<p><code>class Program</code></p>
+<p><code>{</code></p>
+<p><code>private const string </code><strong><code>UserName</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>Password</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>HostName</code></strong><code> = "localhost</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code>{</code></p>
+<p><code>ConnectionFactory connectionFactory = new</code></p>
+<p><code>ConnectionFactory</code></p>
+<p><code>{</code></p>
+<p><code>HostName = </code><strong><code>HostName,</code></strong><br />
+<code>UserName = </code><strong><code>UserName,</code></strong><br />
+<code>Password = </code><strong><code>Password,</code></strong></p>
+<p><code>};</code></p>
+<p><code>var      connection      =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var channel = connection.CreateModel();</code></p>
+<p><code>// accept only one unack-ed message at a time</code><br />
+<code>// uint prefetchSize, ushort prefetchCount, bool</code></p>
+<p><code>global</code></p>
+<p><code>channel.BasicQos(0, 1, false);</code></p>
+<p><code>// ==== prefetchCount</code><br />
+<code>// In order to defeat that we can set the prefetch</code></p>
+<p><code>count with the value of 1</code></p>
+<p><code>// This tells RabbitMQ not to give more than one</code></p>
+<p><code>message to a worker at a time.</code></p>
+<p><code>// Or, in other words, don't dispatch a new</code></p>
+<p><code>message to a worker until it has</code></p>
+<p><code>// processed and acknowledged the previous one.</code></p>
+<p><code>Instead, it will dispatch it to t</code></p>
+<p><code>// the next worker that is not still busy.</code></p>
+<p><code>MessageReceiver messageReceiver = new</code></p>
+<p><code>MessageReceiver(channel);</code></p>
+<p><code>channel.BasicConsume("topic.delhi.queue", false,</code></p>
+<p><code>messageReceiver);</code></p>
+<p><code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>  </code></p>
+</section>
+<section id="chap016.xhtml_sect-131" class="heading section1">
+<h2 class="heading"><strong>Consumed Message from
+topic.delhi.queue</strong></h2>
+<figure>
+<img src="images/088-01.jpg" alt="jpg" />
+</figure>
+<p>Finally, we have completed consuming message from
+<strong>topic.delhi.queue</strong> queue.</p>
+</section>
+<section id="chap016.xhtml_sect-132" class="heading section1">
+<h2 class="heading"><strong>Conclusion</strong></h2>
+<p>In this part, we have learned how to use Topic Message Exchanges and
+how to create exchange and queue for topic exchange and how to push
+messages into RabbitMQ using .Net Application and RabbitMQ.Client and
+read messages from RabbitMQ using .Net Application and RabbitMQ.Client
+in step by step way.</p>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+<p><span id="chap017.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>Using RabbitMQ Fanout Message Exchanges
+with .Net Application</strong></h1>
+<p>In this part, we are going to use Fanout Message Exchanges and push
+messages into RabbitMQ using .Net Application and RabbitMQ.Client and
+read messages from RabbitMQ using .Net Application and RabbitMQ.Client
+in step by step way.</p>
+<figure>
+<img src="images/089-01.jpg" alt="jpg" />
+</figure>
+<section id="chap017.xhtml_sect-133" class="heading section1">
+<h2 class="heading"><strong>What is a Fanout Exchange?</strong></h2>
+<p>A fanout exchange routes messages to all of the queues that are bound
+to it.</p>
+<p>This exchange is used when you want to publish a common message to
+all queue which is connected to the particular exchange and in fanout
+exchange <strong>routing key</strong> is ignored.</p>
+<p>For example, if a company has updated some guidelines and you want to
+push the guideline to all branches, at that time you can use fanout
+exchange. Creating RequestRabbitMQ Application</p>
+<p>Let's Create a simple console application with
+<strong>RequestRabbitMQ.</strong></p>
+<figure>
+<img src="images/089-02.jpg" alt="jpg" />
+</figure>
+<p>After creating application, we are going to add
+<strong>RabbitMQ.Client</strong> NuGet package.</p>
+</section>
+<section id="chap017.xhtml_sect-134" class="heading section1">
+<h2 class="heading"><strong>Adding RabbitMQ.Client NuGet
+Package</strong></h2>
+<p>In this part for creating a connection with the RabbitMQ server to
+create request, we need to add <strong>RabbitMQ.Client</strong> package
+from NuGet Package.</p>
+<p>Command to install: - <strong>Install-Package RabbitMQ.Client
+-Version 5.1.0</strong></p>
+<figure>
+<img src="images/090-01.jpg" alt="jpg" />
+</figure>
+<p>After installing NuGet package of <strong>RabbitMQ.Client</strong>
+next we are going to create an exchange from web admin console.</p>
+</section>
+<section id="chap017.xhtml_sect-135" class="heading section1">
+<h2 class="heading"><strong>Adding Fanout Exchange</strong></h2>
+<p>Go to http://localhost:15672/#/exchanges, name exchange as
+fanout.exchange after entering name, we select Type as "fanout" and
+click on add exchange button to create.</p>
+<figure>
+<img src="images/090-02.jpg" alt="jpg" />
+</figure>
+<p>After adding <strong>fanout.exchange</strong> next we are going to
+Add 4 Queue and bind it to same exchange.</p>
+</section>
+<section id="chap017.xhtml_sect-136" class="heading section1">
+<h2 class="heading"><strong>Adding Queue</strong></h2>
+<p>In this part we are going to create 4 queues with different routing
+key but for same <strong>fanout.exchange</strong>.</p>
+<p>Go to http://localhost:15672/#/queues</p>
+<p>1. Mumbai</p>
+<p>2. Hyderabad</p>
+<p>3. Bangalore</p>
+<p>4. Chennai</p>
+<p>Adding the first queue with name <strong>Mumbai.</strong></p>
+<figure>
+<img src="images/091-01.jpg" alt="jpg" />
+</figure>
+<p>In a similar way, I have added rest of queues as shown in the
+following snapshot.</p>
+<figure>
+<img src="images/091-02.jpg" alt="jpg" />
+</figure>
+<p>After adding all queues, we are going to bind queues with
+<strong>fanout.exchange.</strong></p>
+</section>
+<section id="chap017.xhtml_sect-137" class="heading section2">
+<h3 class="heading"><strong>Binding the Queues (Bangalore, Chennai,
+Hyderabad, Mumbai) with fanout.exchange</strong></h3>
+<p>In this part, we are binding <strong>fanout.exchange</strong> with
+all queues (Bangalore, Chennai, Hyderabad, Mumbai).</p>
+<p>First queue that we are going to bind is Bangalore.</p>
+<figure>
+<img src="images/091-03.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap017.xhtml_sect-138" class="heading section2">
+<h3 class="heading"><strong>Snapshot of Binding</strong></h3>
+<figure>
+<img src="images/092-01.jpg" alt="jpg" />
+</figure>
+<p>An example is for Bangalore queue, in a similar way we are going to
+do for all rest of queues which are there of fanout exchange (Chennai,
+Hyderabad, Mumbai).</p>
+<p>After completing with binding, we are going to publish message.</p>
+</section>
+<section id="chap017.xhtml_sect-139" class="heading section1">
+<h2 class="heading"><strong>Adding a Fanoutmessages Class</strong></h2>
+<p>We have created a <strong>fanoutmessage</strong> class, in this class
+we are going to create request and push to RabbitMQ.</p>
+<p>First, we have declared Username, Password and HostName as constant.
+After that, we have created a method with name
+<strong>SendMessage</strong> in that message we have created a
+connection to RabbitMQ server using RabbitMQ.Client after creating
+connection next, we have passed credentials along with HostName to
+connectionFactory. Next, we have written a simple message
+<strong>Message is of fanout Exchange type</strong> and got it in bytes
+array form, finally, we are going to assign all these values to a
+BasicPublish method of <strong>RabbitMQ.Client</strong></p>
+<p>While assigning we are going to set exchange as
+<strong>fanout.exchange</strong> and there will not be routing key for
+fanout exchange.</p>
+</section>
+<section id="chap017.xhtml_sect-140" class="heading section2">
+<h3 class="heading"><strong>Code Snippet</strong></h3>
+<p><code>using System;</code></p>
+<p><code>using RabbitMQ.Client;</code></p>
+<p><code>using System.Text;</code></p>
+<p><code>namespace RequestRabbitMQ</code></p>
+<p><code>{</code></p>
+<p><code>public class Fanoutmessages</code></p>
+<p><code>{</code></p>
+<p><code>private const string </code><strong><code>UserName</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>Password</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>HostName</code></strong><code> = "localhost</code></p>
+<p><code>public void SendMessage()</code></p>
+<p><code>{</code></p>
+<p><code>//Main entry point to the RabbitMQ .NET AMQP</code></p>
+<p><code>client</code></p>
+<p><code>var      connectionFactory      =       new</code></p>
+<p><code>RabbitMQ.Client.ConnectionFactory()</code></p>
+<p><code>{</code></p>
+<p><code>UserName = </code><strong><code>UserName,</code></strong><br />
+<code>Password = </code><strong><code>Password,</code></strong><br />
+<code>HostName = </code><strong><code>HostName</code></strong></p>
+<p><code>};</code></p>
+<p><code>var      connection      =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var model = connection.CreateModel();</code></p>
+<p><code>var properties = model.CreateBasicProperties();</code><br />
+<code>properties.Persistent = false;</code></p>
+<p><code>byte[] messagebuffer = Encoding.Default.GetBytes</code></p>
+<p><code>  ("Message is of fanout Exchange type");</code></p>
+<p><code>model.BasicPublish("fanout.exchange", "",</code></p>
+<p><code>properties, messagebuffer);</code></p>
+<p><code>Console.WriteLine("Message Sent From :-</code></p>
+<p><code>fanout.exchange ");</code></p>
+<p><code>Console.WriteLine("Routing Key :- Routing key</code></p>
+<p><code>is Not required for fanout exchange");</code></p>
+<p><code>Console.WriteLine("Message Sent");</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+</section>
+<section id="chap017.xhtml_sect-141" class="heading section2">
+<h3 class="heading"><strong>Main Code snippet</strong></h3>
+<p><code>using System;</code></p>
+<p><code>namespace RequestRabbitMQ</code></p>
+<p><code>{</code></p>
+<p><code>class Program </code></p>
+<p><code>{</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code>{</code></p>
+<p><code>Fanoutmessages fanoutmessages = new</code></p>
+<p><code>Fanoutmessages();</code></p>
+<p><code>fanoutmessages.SendMessage();</code><br />
+<code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>  </code></p>
+<p>After completing the entire process let's save the application and
+run, after running the application you will see a message on console
+window as "Message sent" just for notification it means we have
+successfully published a message to all queues of "fanout.exchange"
+exchange.</p>
+</section>
+<section id="chap017.xhtml_sect-142" class="heading section1">
+<h2 class="heading"><strong>Published Message to all queues of
+"fanout.exchange"</strong></h2>
+<figure>
+<img src="images/094-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap017.xhtml_sect-143" class="heading section2">
+<h3 class="heading"><strong>Now let's see queue status (Bangalore,
+Chennai, Hyderabad, Mumbai) queue</strong></h3>
+<p>If you see Queues status you will see <strong>Ready "1"</strong>
+which means we have successfully published a message to all queues of
+fanout exchanges.</p>
+<figure>
+<img src="images/094-02.jpg" alt="jpg" />
+</figure>
+<p>After publishing a message next we are going to create .Net Console
+application for consuming message from the queue.</p>
+</section>
+<section id="chap017.xhtml_sect-144" class="heading section1">
+<h2 class="heading"><strong>Creating RabbitMQConsumer
+Application</strong></h2>
+<p>Let's create another console application for consuming messages from
+a queue <strong>RabbitMQConsumer.</strong></p>
+<figure>
+<img src="images/094-03.jpg" alt="jpg" />
+</figure>
+<p>After creating application, we are going to add
+<strong>RabbitMQ.Client</strong> NuGet package.</p>
+</section>
+<section id="chap017.xhtml_sect-173" class="heading section1">
+<h2 class="heading"><strong>Adding RabbitMQ.Client NuGet
+Package</strong></h2>
+<p>In this part for creating a connection with the RabbitMQ server to
+create request, we need to add <strong>RabbitMQ.Client</strong> package
+from NuGet package. Command to install: <strong>Install-Package
+RabbitMQ.Client -Version 5.1.0</strong></p>
+<figure>
+<img src="images/095-01.jpg" alt="jpg" />
+</figure>
+<p>After installing <strong>RabbitMQ.Client</strong> next we are going
+to add a class with name <strong>MessageReceiver.</strong></p>
+</section>
+<section class="heading section2">
+<h3 class="heading"><strong>Code snippet of MessageReceiver
+class</strong></h3>
+<p>In this part, we have created <strong>MessageReceiver</strong> class
+and this class inherits <strong>DefaultBasicConsumer</strong> class
+which is from <strong>RabbitMQ.Client</strong> next we have to override
+<strong>HandleBasicDeliver</strong> method this method receives message
+body next, we are going to write these messages as we can see in its
+console.</p>
+<p><code>public class MessageReceiver : DefaultBasicConsumer</code></p>
+<p><code>{</code></p>
+<p><code>private readonly IModel _channel;</code></p>
+<p><code>public MessageReceiver(IModel channel)</code></p>
+<p><code>{</code></p>
+<p><code>_channel = channel;</code></p>
+<p><code>}</code></p>
+<p><code>public override void HandleBasicDeliver(string</code></p>
+<p><code>consumerTag, ulong deliveryTag, bool redelivered, string exchange, string routingKey, IBasicProperties properties, byte[] body)</code></p>
+<p><code>{</code></p>
+<p><code>Console.WriteLine($"Consuming fanout Message");</code></p>
+<p><code>Console.WriteLine(string.Concat("Message</code></p>
+<p><code>received from the exchange ", exchange));</code></p>
+<p><code>Console.WriteLine(string.Concat("Consumer tag:</code></p>
+<p><code>", consumerTag));</code></p>
+<p><code>Console.WriteLine(string.Concat("Delivery tag:</code></p>
+<p><code>", deliveryTag));</code></p>
+<p><code>Console.WriteLine(string.Concat("Routing tag: ",</code></p>
+<p><code>routingKey));</code></p>
+<p><code>Console.WriteLine(string.Concat("Message: ",</code></p>
+<p><code>Encoding.UTF8.GetString(body)));</code></p>
+<p><code>_channel.BasicAck(deliveryTag, false);</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p>After completing with understanding code snippet of
+<strong>MessageReceiver</strong> class next we are going to call this
+class in the main method.</p>
+</section>
+<section id="chap017.xhtml_sect-145" class="heading section2">
+<h3 class="heading"><strong>Code snippet of Main Method while consuming
+"Mumbai" queue</strong></h3>
+<p>In the main method we have created <strong>connectionFactory</strong>
+class and passed credentials and Hostname after that we have created
+connection, next we have created channel and set prefetchCount to 1 such
+that it tells RabbitMQ not to give more than one message to a worker at
+a time. Next, we have created instance of
+<strong>MessageReceiver</strong> class and passed IModel (channel) to
+it, in final step we have called <strong>BasicConsume</strong> method
+and passed queue name to it "<strong>Mumbai</strong>" along with this we
+have set autoAck to false and passed the
+<strong>messageReceiver</strong> instance to it.</p>
+<figure>
+<img src="images/096-01.jpg" alt="jpg" />
+</figure>
+<p><code>using System;</code></p>
+<p><code>using RabbitMQ.Client;</code></p>
+<p><code>namespace RabbitMQConsumer</code></p>
+<p><code>{</code></p>
+<p><code>class Program </code></p>
+<p><code>{</code></p>
+<p><code>private const string </code><strong><code>UserName</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>Password</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>HostName</code></strong><code> = "localhost";</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code>{</code></p>
+<p><code>ConnectionFactory connectionFactory = new</code></p>
+<p><code>ConnectionFactory</code></p>
+<p><code>{</code></p>
+<p><code>HostName = </code><strong><code>HostName,</code></strong><br />
+<code>UserName = </code><strong><code>UserName,</code></strong><br />
+<code>Password = </code><strong><code>Password,</code></strong></p>
+<p><code>};</code></p>
+<p><code>var    connection    =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var channel = connection.CreateModel();</code></p>
+<p><code>// accept only one unack-ed message at a time</code></p>
+<p><code>// uint prefetchSize, ushort prefetchCount, bool</code></p>
+<p><code>global</code></p>
+<p><code>channel.BasicQos(0, 1, false);</code><br />
+<code>// ==== prefetchCount</code></p>
+<p><code>// In order to defeat that we can set the prefetch</code></p>
+<p><code>count with the value of 1</code></p>
+<p><code>// This tells RabbitMQ not to give more than one</code></p>
+<p><code>message to a worker at a time.</code></p>
+<p><code>// Or, in other words, don't dispatch a new</code></p>
+<p><code>message to a worker until it has</code></p>
+<p><code>// processed and acknowledged the previous one.</code></p>
+<p><code>Instead, it will dispatch it to t</code></p>
+<p><code>// the next worker that is not still busy.</code></p>
+<p><code>MessageReceiver messageReceiver = new</code></p>
+<p><code>MessageReceiver(channel);</code></p>
+<p><code>channel.BasicConsume("Mumbai", false,</code></p>
+<p><code>messageReceiver);</code></p>
+<p><code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p>Now, we have complete working mechanism. Let's create request from
+<strong>RequestRabbitMQ</strong> console and consume a message from
+<strong>RabbitMQConsumer</strong> application.</p>
+</section>
+<section id="chap017.xhtml_sect-147" class="heading section2">
+<h3 class="heading"><strong>The queue has one Request which we have
+published</strong></h3>
+<p>The below snapshot shows all queues have one message which we have
+published using fanout exchange.</p>
+<figure>
+<img src="images/098-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap017.xhtml_sect-148" class="heading section2">
+<h3 class="heading"><strong>Consumed Message from Mumbai
+queue</strong></h3>
+<p>This message is only consumed from Mumbai queue, rest of the queues
+are unread till now.</p>
+<figure>
+<img src="images/098-02.jpg" alt="jpg" />
+</figure>
+<p>The status of the queue after reading Message from Mumbai queue.</p>
+<figure>
+<img src="images/098-03.jpg" alt="jpg" />
+</figure>
+<p>In a similar way, if we read a message from Bangalore queue than just
+need to make a change in <strong>"queue name"</strong> in
+<strong>RabbitMQConsumer.</strong></p>
+</section>
+<section id="chap017.xhtml_sect-149" class="heading section2">
+<h3 class="heading"><strong>Consumed Message from Bangalore
+queue</strong></h3>
+<p>We have just changed the name of the queue from Mumbai to Bangalore.
+To read a message from Bangalore queue.</p>
+<p><code>using System;</code></p>
+<p><code>using RabbitMQ.Client;</code></p>
+<p><code>namespace RabbitMQConsumer</code></p>
+<p><code>{</code></p>
+<p><code>class Program</code></p>
+<p><code>{</code></p>
+<p><code>private const string </code><strong><code>UserName</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>Password</code></strong><code> = "guest";</code><br />
+<code>private const string </code><strong><code>HostName</code></strong><code> = "localhost";</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code>{</code></p>
+<p><code>ConnectionFactory connectionFactory = new ConnectionFactory</code></p>
+<p><code>{</code></p>
+<p><code>HostName = </code><strong><code>HostName,</code></strong><br />
+<code>UserName = </code><strong><code>UserName,</code></strong><br />
+<code>Password = </code><strong><code>Password,</code></strong></p>
+<p><code>var       connection       =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var channel = connection.CreateModel();</code></p>
+<p><code>// accept only one unack-ed message at a time</code><br />
+<code>// uint prefetchSize, ushort prefetchCount, bool</code></p>
+<p><code>global</code></p>
+<p><code>channel.BasicQos(0, 1, false);</code></p>
+<p><code>#region MyRegion</code><br />
+<code>// ==== prefetchCount</code></p>
+<p><code>    // In order to defeat that we can set the prefetch</code></p>
+<p><code>count with the value of 1</code></p>
+<p><code>// This tells RabbitMQ not to give more than one</code></p>
+<p><code>message to a worker at a time.</code></p>
+<p><code>// Or, in other words, don't dispatch a new</code></p>
+<p><code>message to a worker until it has</code></p>
+<p><code>// processed and acknowledged the previous one.</code></p>
+<p><code>Instead, it will dispatch it to t</code></p>
+<p><code>// the next worker that is not still busy.</code><br />
+<code>#endregion</code></p>
+<p><code>MessageReceiver messageReceiver = new</code></p>
+<p><code>MessageReceiver(channel);</code></p>
+<p><code>channel.BasicConsume("Bangalore", false,</code></p>
+<p><code>messageReceiver);</code></p>
+<p><code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p>Let's save and run application to red message from Bangalore
+queue.</p>
+<figure>
+<img src="images/100-01.jpg" alt="jpg" />
+</figure>
+<p>The status of the queue after reading Message from Bangalore
+queue.</p>
+<figure>
+<img src="images/100-02.jpg" alt="jpg" />
+</figure>
+<p>Finally, we have learned how fanout exchange works and how we can
+publish messages and consume messages from fanout exchange in step by
+step way.</p>
+</section>
+<section id="chap017.xhtml_sect-150" class="heading section1">
+<h2 class="heading"><strong>Conclusion</strong></h2>
+<p>In this part, we have learned how to use Fanout Message Exchanges and
+how to create exchange and queue for Fanout exchange and how to push
+messages into RabbitMQ using .Net Application and RabbitMQ.Client and
+read messages from RabbitMQ using .Net Application and RabbitMQ.Client
+in step by step way.</p>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>
+<p><span id="chap018.xhtml"></span></p>
+<section class="chap-title-b bodymatter">
+<h1 class="chap-title-b"><strong>Using RabbitMQ Headers Message
+Exchanges with .Net Application</strong></h1>
+<p>In this part, we are going to use Headers Message Exchanges and push
+messages into RabbitMQ using .Net Application and RabbitMQ.Client and
+read messages from RabbitMQ using .Net Application and RabbitMQ.Client
+in step by step way.</p>
+<figure>
+<img src="images/101-01.jpg" alt="jpg" />
+</figure>
+<section id="chap018.xhtml_sect-151" class="heading section1">
+<h2 class="heading"><strong>What is a Headers exchange?</strong></h2>
+<p>Headers exchanges use the message header attributes for routing.</p>
+<p>This exchange is used when you want to send a message to queue but
+this time it will not depend on routing key it will be sent to queue on
+the basis of header attributes.</p>
+</section>
+<section id="chap018.xhtml_sect-152" class="heading section1">
+<h2 class="heading"><strong>Creating RequestRabbitMQ
+Application</strong></h2>
+<p>Let's create a simple console application with Name
+"<strong>RequestRabbitMQ".</strong></p>
+<figure>
+<img src="images/101-02.jpg" alt="jpg" />
+</figure>
+<p>After creating application, we are going to add
+<strong>"RabbitMQ.Client"</strong> NuGet package.</p>
+</section>
+<section id="chap018.xhtml_sect-153" class="heading section1">
+<h2 class="heading"><strong>Adding RabbitMQ.Client NuGet
+Package</strong></h2>
+<p>In this part for creating a connection with the RabbitMQ server to
+create request, we need to add <strong>RabbitMQ.Client</strong> package
+from NuGet Package.</p>
+<p>Command to install: <strong>Install-Package RabbitMQ.Client -Version
+5.1.0</strong></p>
+<figure>
+<img src="images/102-01.jpg" alt="jpg" />
+</figure>
+<p>After installing NuGet package of <strong>"RabbitMQ.Client"</strong>
+next we are going to create an exchange from web admin console.</p>
+<p><strong>Note:</strong></p>
+<p>Headers exchange routes message based on header values instead of
+routing keys.</p>
+<p>A special argument named x-match has 2 values {all, any} where all is
+the default value of a headers binding.</p>
+<p>- x-match = all : means that all the values must match</p>
+<p>- x-match = any : means just one matching header value is
+sufficient</p>
+<p><strong><em>Referenced from:</em></strong> <a
+href="http://javasampleapproach.com/spring-framework/spring-boot/springboot-rabbitmq-headers-exchange">http://javasampleapproach.com/spring-framework/spring-
+boot/springboot-rabbitmq-headers-exchange</a></p>
+</section>
+<section id="chap018.xhtml_sect-154" class="heading section1">
+<h2 class="heading"><strong>Adding Fanout Exchange</strong></h2>
+<p>Go to http://localhost:15672/#/exchanges, name exchange as
+headers.exchange after entering name, we select Type as "headers" and
+click on add exchange button to create.</p>
+<figure>
+<img src="images/102-02.jpg" alt="jpg" />
+</figure>
+<p>After adding <strong>"headers.exchange"</strong> next we are going to
+Add two Queue and bind it to same exchange.</p>
+</section>
+<section id="chap018.xhtml_sect-155" class="heading section2">
+<h3 class="heading"><strong>Adding queue</strong></h3>
+<p>In this part, we are going to create two queues without different
+routing key but for same <strong>"headers.exchange".</strong></p>
+<p>Go to http://localhost:15672/#/queues:</p>
+<p>1. ReportPDF</p>
+<p>2. ReportExcel</p>
+<figure>
+<img src="images/103-01.jpg" alt="jpg" />
+</figure>
+<p>In a similar way, I have added rest of queues as shown in the
+following snapshot.</p>
+<figure>
+<img src="images/103-02.jpg" alt="jpg" />
+</figure>
+<p>After adding all the queues, we are going to bind queues with
+<strong>"headers.exchange".</strong></p>
+</section>
+<section id="chap018.xhtml_sect-156" class="heading section1">
+<h2 class="heading"><strong>Binding the Queues</strong></h2>
+<p>In this part, we are binding <strong>headers.exchange</strong> with a
+<strong>"ReportPDF"</strong> queue and while binding we are going to set
+arguments such as format=pdf and x-match=all these arguments need to be
+passed by producer in the header such that message will be sent to the
+accurate queue.</p>
+<figure>
+<img src="images/104-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap018.xhtml_sect-157" class="heading section2">
+<h3 class="heading"><strong>Snapshot of Binding</strong></h3>
+<figure>
+<img src="images/104-02.jpg" alt="jpg" />
+</figure>
+<p>In this part, we are binding <strong>headers.exchange</strong> with a
+<strong>"ReportExcel"</strong> queue and while binding we are going to
+set arguments such as format=pdf and x-match=all this argument needs to
+be passed by producer in the header such that message will be sent to
+the accurate queue.</p>
+<figure>
+<img src="images/104-03.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap018.xhtml_sect-174" class="heading section2">
+<h3 class="heading"><strong>Snapshot of Binding</strong></h3>
+<figure>
+<img src="images/104-04.jpg" alt="jpg" />
+</figure>
+<p>After binding all arguments to their respective queue, next we are
+going to publish the message for that we are going to add a class.</p>
+</section>
+<section class="heading section1">
+<h2 class="heading"><strong>Adding a Headersmessages Class</strong></h2>
+<p>We have created a <strong>Headersmessages</strong> class, in this
+class we are going to create request and push to RabbitMQ.</p>
+<p>First, we have declared Username, Password, and HostName as constant.
+After that, we have created a method with name
+<strong>"SendMessage"</strong> in that message we have created a
+connection to RabbitMQ server using RabbitMQ.Client after creating
+connection next we have passed credentials along with HostName to
+connectionFactory. Next, we have written a simple message
+<strong>Message to Headers Exchange 'format=pdf'</strong> and got it in
+bytes array form, finally, we are going assign all these values to a
+BasicPublish method of <strong>"RabbitMQ.Client"</strong></p>
+<p>While assigning we are going to set exchange as
+<strong>"headers.exchange"</strong> and there will not be routing key
+for headers exchange.</p>
+</section>
+<section id="chap018.xhtml_sect-158" class="heading section2">
+<h3 class="heading"><strong>Code Snippet</strong></h3>
+<p><code>public class Headersmessages</code></p>
+<p><code>{</code></p>
+<p><code>private const string UserName = "guest";</code></p>
+<p><code>private const string Password = "guest";</code></p>
+<p><code>private const string HostName = "localhost";</code></p>
+<p><code>public void SendMessage()</code></p>
+<p><code>{</code></p>
+<p><code>//Main entry point to the RabbitMQ .NET AMQP</code></p>
+<p><code>client</code></p>
+<p><code>var      connectionFactory      =       new</code></p>
+<p><code>RabbitMQ.Client.ConnectionFactory()</code></p>
+<p><code>{</code></p>
+<p><code>UserName = UserName,</code><br />
+<code>Password = Password,</code><br />
+<code>HostName = HostName</code></p>
+<p><code>};</code></p>
+<p><code>var      connection      =</code></p>
+<p><code>connectionFactory.CreateConnection();</code></p>
+<p><code>var model = connection.CreateModel();</code></p>
+<p><code>var properties = model.CreateBasicProperties();</code><br />
+<code>properties.Persistent = false;</code></p>
+<p><code>Dictionary&lt;string,object&gt; dictionary = new</code></p>
+<p><code>Dictionary&lt;string, object&gt;();</code></p>
+<p><code>dictionary.Add("format", "pdf");</code></p>
+<p><code>properties.Headers = dictionary;</code></p>
+<p><code>byte[]      messagebuffer      =</code></p>
+<p><code>Encoding.Default.GetBytes("Message to Headers</code></p>
+<p><code>Exchange 'format=pdf' ");</code></p>
+<p><code>model.BasicPublish("headers.exchange", "",</code></p>
+<p><code>properties, messagebuffer);</code></p>
+<p><code>Console.WriteLine("Message Sent From :-</code></p>
+<p><code>headers.exchange ");</code></p>
+<p><code>Console.WriteLine("Routing Key :- Does not need</code></p>
+<p><code>routing key");</code></p>
+<p><code>Console.WriteLine("Message Sent");</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+</section>
+<section id="chap018.xhtml_sect-175" class="heading section2">
+<h3 class="heading"><strong>Main Code snippet</strong></h3>
+<p><code>using System;</code></p>
+<p><code>namespace RequestRabbitMQ</code></p>
+<p><code>{</code></p>
+<p><code>class Program</code></p>
+<p><code>{</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code>{</code></p>
+<p><code>Headersmessages headersmessages = new</code></p>
+<p><code>Headersmessages();</code></p>
+<p><code>headersmessages.SendMessage();</code><br />
+<code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p>After completing the entire process, let's save the application and
+run after running the application you will see a message on console
+window as "Message sent" just for notification it means we have
+successfully published a message to queue of "headers. exchange".</p>
+</section>
+<section id="chap018.xhtml_sect-160" class="heading section2">
+<h3 class="heading"><strong>Published Message to Reportpdf queues of
+"Headers.exchange"</strong></h3>
+<figure>
+<img src="images/106-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap018.xhtml_sect-161" class="heading section2">
+<h3 class="heading"><strong>Now let's see queue status</strong></h3>
+<p>If you see queues status of Reportpdf queue you will see
+<strong>Ready "1"</strong> which means, we have successfully published a
+message to Reportpdf queues using headers exchanges.</p>
+<figure>
+<img src="images/107-01.jpg" alt="jpg" />
+</figure>
+<p>After publishing a message next, we are going to create .Net Console
+application for consuming message from the queue.</p>
+</section>
+<section id="chap018.xhtml_sect-162" class="heading section1">
+<h2 class="heading"><strong>Creating RabbitMQConsumer
+Application</strong></h2>
+<p>Let's create another console application for consuming messages from
+a queue with <strong>RabbitMQConsumer.</strong></p>
+<figure>
+<img src="images/107-02.jpg" alt="jpg" />
+</figure>
+<p>After creating application, we are going to add
+<strong>RabbitMQ.Client</strong> NuGet package.</p>
+</section>
+<section id="chap018.xhtml_sect-176" class="heading section1">
+<h2 class="heading"><strong>Adding RabbitMQ.Client NuGet
+Package</strong></h2>
+<p>In this part for creating a connection with the RabbitMQ server to
+create request, we need to add <strong>RabbitMQ.Client</strong> package
+from NuGet Package.</p>
+<p>Command to install: <strong>Install-Package RabbitMQ.Client -Version
+5.1.0</strong></p>
+<figure>
+<img src="images/107-03.jpg" alt="jpg" />
+</figure>
+<p>After installing <strong>RabbitMQ.Client,</strong> we are going to
+add a class with name <strong>"MessageReceiver".</strong></p>
+</section>
+<section id="chap018.xhtml_sect-163" class="heading section2">
+<h3 class="heading"><strong>Code snippet of MessageReceiver
+class</strong></h3>
+<p>In this part, we have created <strong>MessageReceiver</strong> class
+and this class inherits <strong>DefaultBasicConsumer</strong> class
+which is from <strong>RabbitMQ.Client</strong> next we have to override
+<strong>HandleBasicDeliver</strong> method, this method receives message
+body next, we are going to write these messages as we can see in its
+console.</p>
+<p><code>using System;</code></p>
+<p><code>using System.Text;</code></p>
+<p><code>using RabbitMQ.Client;</code></p>
+<p><code>namespace RabbitMQConsumer</code></p>
+<p><code>{</code></p>
+<p><code>public class MessageReceiver : DefaultBasicConsumer</code></p>
+<p><code>{</code></p>
+<p><code>private readonly IModel channel;</code></p>
+<p><code>public MessageReceiver(IModel channel)</code></p>
+<p><code>{</code></p>
+<p><code>channel = channel;</code></p>
+<p><code>}</code></p>
+<p><code>public override void HandleBasicDeliver(string</code></p>
+<p><code>consumerTag, ulong deliveryTag, bool</code></p>
+<p><code>redelivered, string exchange, string routingKey,</code></p>
+<p><code>IBasicProperties properties, byte[] body)</code></p>
+<p><code>{</code></p>
+<p><code>  Console.WriteLine($"Consuming Headers Message");</code><br />
+<code>Console.WriteLine(string.Concat("Message received</code></p>
+<p><code>from the exchange ", exchange));</code></p>
+<p><code>Console.WriteLine(string.Concat("Consumer tag:</code></p>
+<p><code>", consumerTag));</code></p>
+<p><code>Console.WriteLine(string.Concat("Delivery tag:</code></p>
+<p><code>", deliveryTag));</code></p>
+<p><code>Console.WriteLine(string.Concat("Routing tag: ",</code></p>
+<p><code>routingKey));</code></p>
+<p><code>Console.WriteLine(string.Concat("Message: ",</code></p>
+<p><code>Encoding.UTF8.GetString(body)));</code></p>
+<p><code>_channel.BasicAck(deliveryTag, false);</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>  </code></p>
+<p>After completing with understanding code snippet of
+<strong>MessageReceiver</strong> class next we are going to call this
+class in the main method.</p>
+</section>
+<section id="chap018.xhtml_sect-164" class="heading section2">
+<h3 class="heading"><strong>Code snippet of main method while consuming
+"Mumbai" queue</strong></h3>
+<p>In the main method we have created <strong>connectionFactory</strong>
+class and passed credentials and Hostname after that we have created
+connection, next we have created channel and set
+<strong>prefetchCount</strong> to 1 such that it tells RabbitMQ not to
+give more than one message to a worker at a time. Next, we have created
+instance of <strong>MessageReceiver</strong> class and passed IModel
+(channel) to it, in final step we have called
+<strong>"BasicConsume"</strong> method and passed queue name to it
+<strong>"ReportPDF"</strong> along with this we have set autoAck to
+false and passed the <strong>messageReceiver</strong> instance to
+it.</p>
+<figure>
+<img src="images/109-01.jpg" alt="jpg" />
+</figure>
+<p><code>using System;</code></p>
+<p><code>using RabbitMQ.Client;</code></p>
+<p><code>namespace RabbitMQConsumer</code></p>
+<p><code>{</code></p>
+<p><code>class Program</code></p>
+<p><code>{</code></p>
+<p><code>private const string UserName = guest";</code></p>
+<p><code>private const string Password = guest";</code></p>
+<p><code>private const string HostName = localhost";</code></p>
+<p><code>static void Main(string[] args)</code></p>
+<p><code>{</code></p>
+<p><code>ConnectionFactory connectionFactory = new</code></p>
+<p><code>ConnectionFactory</code></p>
+<p><code>{</code></p>
+<p><code>HostName = HostName,</code><br />
+<code>UserName = UserName,</code><br />
+<code>Password = Password,</code></p>
+<p><code>};</code></p>
+<p><code>var connection = connectionFactory.CreateConnection();</code></p>
+<p><code>var channel = connection.CreateModel();</code></p>
+<p><code>// accept only one unack-ed message at a time</code><br />
+<code>// uint prefetchSize, ushort prefetchCount, bool</code></p>
+<p><code>global</code></p>
+<p><code>channel.BasicQos(0, 1, false);</code></p>
+<p><code>// ==== prefetchCount</code></p>
+<p><code>      // In order to defeat that we can set the prefetch</code></p>
+<p><code>count with the value of 1</code></p>
+<p><code>// This tells RabbitMQ not to give more than one</code></p>
+<p><code>message to a worker at a time.</code></p>
+<p><code>// Or, in other words, don't dispatch a new</code></p>
+<p><code>message to a worker until it has</code></p>
+<p><code>// processed and acknowledged the previous one.</code></p>
+<p><code>Instead, it will dispatch it to t</code></p>
+<p><code>// the next worker that is not still busy.</code></p>
+<p><code>MessageReceiver messageReceiver = new</code></p>
+<p><code>MessageReceiver(channel);</code></p>
+<p><code>channel.BasicConsume("ReportPDF", false,</code></p>
+<p><code>messageReceiver);</code></p>
+<p><code>Console.ReadLine();</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p><code>}</code></p>
+<p>Now we have completed with consuming module. Let's consume a message
+from <strong>"ReportPDF"</strong> queue which we have already
+published.</p>
+</section>
+<section id="chap018.xhtml_sect-165" class="heading section1">
+<h2 class="heading"><strong>The queue has one request which we have
+published</strong></h2>
+<p>The following snapshot shows of ReportPDF queue have one message
+which we have published using headers exchange.</p>
+<figure>
+<img src="images/110-01.jpg" alt="jpg" />
+</figure>
+</section>
+<section id="chap018.xhtml_sect-166" class="heading section2">
+<h3 class="heading"><strong>Consumed Message from ReportPDF
+queue</strong></h3>
+<p>The snapshot while consuming message is only consumed from ReportPDF
+queue.</p>
+<figure>
+<img src="images/111-01.jpg" alt="jpg" />
+</figure>
+<p>The status of the queue after reading message from ReportPDF queue.
+Queues</p>
+<figure>
+<img src="images/111-02.jpg" alt="jpg" />
+</figure>
+<p>We have completed consuming messages from ReportPDF queue.</p>
+</section>
+<section id="chap018.xhtml_sect-167" class="heading section1">
+<h2 class="heading"><strong>Conclusion</strong></h2>
+<p>In this part, we have learned how to use headers Message Exchanges
+and how to create exchange and queue for headers exchange and how to
+push messages into RabbitMQ using .Net Application and RabbitMQ.Client
+and read messages from RabbitMQ using .Net Application and
+RabbitMQ.Client in step by step way.</p>
+<p><img src="images/logo.jpg" alt="jpg" /></p>
+</section>
+</section>

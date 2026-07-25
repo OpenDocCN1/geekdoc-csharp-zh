@@ -1,0 +1,130 @@
+- "# C# 编程示例：初学者编程指南\n\n\n\n![](img/rsrc135.jpg)\n![](img/rsrc135.jpg)\n\n\n\n## C#\
+  \ | 打印消息/文本（打印 Hello world 的程序）\n\n我们使用以下两个函数来打印消息/文本或任何值：\n\n- `Console.Write()`：此功能在输出设备上显示文本、值，并在消息后不插入换行。\n\
+  - `Console.WriteLine()`：此功能在设备上显示文本、值，并在消息后添加一个换行。\n\n### 程序\n```csharp\n/*c# 打印消息的基础程序*/\n\
+  using System;\nclass HelloWorld {\n    static void Main() {\n        // 在消息后不插入换行的文本\n\
+  \        Console.Write(\"Hello World,\");\n        Console.Write(\"How are you?\"\
+  );\n        // 换行\n        Console.WriteLine();\n        // 在消息后带有换行行的文本\n     \
+  \   Console.WriteLine(\"Hello World\");\n        Console.WriteLine(\"How are you?\"\
+  );\n        // 像 C 语言一样使用转义序列换行\n        Console.WriteLine(\"Hello World\\nHow are\
+  \ you?\");\n    }\n}\n```\n\n### 输出\n```\nHello World,How are you?\nHello World\n\
+  How are you?\nHello World\nHow are you?\n```\n\n## 打印新行的 C# 程序\n\n在屏幕上打印消息时，可以使用以下方法在消息内部打印换行：\n\
+  \n- 使用 `\\n` - 打印换行\n 使用 使用 `\\x0A` 或 `\\x A`（`\\n` 的 ASCII 字面量）—— 打印换行\n- 使用 `Console.WriteLine()`\
+  \ – 如果我们在过程中写入了消息，则会打印换行\n\n\n\n\n\n# C# 打印新行的 C# 程序\n\n```csharp\nusing System;\n\
+  using System.IO;\nusing System.Text;\nnamespace IncludeHelp\n{\n    class Test\n\
+  \    {\n        // 主方法\n        static void Main(string[] args)\n        {\n   \
+  \         // 使用 \\n\n            Console.WriteLine(\"Hello\\nWorld\");\n       \
+  \     // 使用 \\x0A\n            Console.WriteLine(\"Hello\\x0AWorld\");\n       \
+  \     Console.WriteLine();\n            Console.WriteLine(\"end of the program\"\
+  );\n            //按回车退出程序\n            Console.ReadLine();\n        }\n    }\n}\n\
+  ```\n输出\n```\nHelloWorld\nHelloWorld\nend of the program\n```\n\n## 打印各种数据类型大小的\
+  \ C# 程序\n我们将使用 `sizeof()` 运算符来打印不同数据类型的大小。\n\n```csharp\nusing System;\nusing System.IO;\n\
+  using System.Text;\nnamespace IncludeHelp\n{\n    class Test\n    {\n        //\
+  \ 主方法\n        static void Main(string[] args)\n        {\n            Console.WriteLine(\"\
+  sizeof(int): {0}\", sizeof(int));\n            Console.WriteLine(\"sizeof(float):\
+  \ {0}\", sizeof(float));\n            Console.WriteLine(\"sizeof(char): {0}\", sizeof(char));\n\
+  \            Console.WriteLine(\"sizeof(double): {0}\", sizeof(double));\n     \
+  \       Console.WriteLine(\"sizeof(bool): {0}\", sizeof(bool));\n            //按回车退出程序\n\
+  \            Console.ReadLine();\n        }\n    }\n}\n```\n输出\n```\nsizeof(int):\
+  \ 4\nsizeof(float): 4\nsizeof(char): 2\nsizeof(double): 8\nsizeof(bool): 1\n```\n\
+  \n## C# 程序中 double 到 int 的类型转换\n语法：`int_variable = (int)double_variable;`\n\n示例：\n\
+  输入：\n```csharp\ndouble a = 123456.789;\nint b = 0;\n//类型转换\nb = (int)a;\n```\n输出：\n\
+  ```\na: 123456.789\nb: 123456\n```\n\n```csharp\n// 从 double 到 int 类型转换的 C# 程序\n\
+  using System;\nusing System.IO;\nusing System.Text;\nnamespace IncludeHelp\n{\n\
+  \    class Test\n    {\n        // 主方法\n        static void Main(string[] args)\n\
+  \        {\n            double a = 123456.789;\n            int b = 0;\n       \
+  \     //类型转换\n            b = (int)a;\n            Console.WriteLine(\"value of\
+  \ a: {0}\", a);\n            Console.WriteLine(\"value of b: {0}\", b);\n      \
+  \      //按回车退出程序\n            Console.ReadLine();\n        }\n    }\n}\n```\n输出\n\
+  ```\nvalue of a: 123456.789\nvalue of b: 123456\n```\n\n## 定义不同类型的常量\n常量可以使用 `const`\
+  \ 关键字描述，一旦定义常量，其值永远无法修改。\n\n语法：`const data_type constant_name = value;`\n`const\
+  \ float PI = 3.14f;`\n\n示例：\n输入：\n```csharp\nconst int a = 10;   //整数常量\nConsole.WriteLine(\"\
+  a: {0}\", a);\n```\n输出：\n```\na: 10\n```\n\n```csharp\n// 定义不同类型常量的 C# 程序\nusing\
+  \ System;\nusing System.IO;\nusing System.Text;\nnamespace IncludeHelp\n{\n    class\
+  \ Test\n    {\n        // 主方法\n        static void Main(string[] args)\n       \
+  \ {\n            const int a = 10;   //整数常量\n            const float b = 20.23f;\
+  \ // float 常量\n            const double c = 10.23;  //double 常量\n            const\
+  \ char d = 'Y';      //字符常量\n            const string e = \"Hello\";   //字符串常量\n\
+  \            //打印值\n            Console.WriteLine(\"a: {0}\", a);\n            Console.WriteLine(\"\
+  b: {0}\", b);\n            Console.WriteLine(\"c: {0}\", c);\n            Console.WriteLine(\"\
+  d: {0}\", d);\n            Console.WriteLine(\"e: {0}\", e);\n            //按回车退出程序\n\
+  \            Console.ReadLine();\n        }\n    }\n}\n```\n输出\n```\na: 10\nb: 20.23\n\
+  c: 10.23\nd: Y\ne: Hello\n```\n\n## 演示算术运算符示例的 C# 程序\n示例：\n输入：\n```csharp\nint a\
+  \ = 10;\nint b = 3;\n//运算\nint sum = a + b;\nint sub = a - b;\nint mul = a * b;\n\
+  float div = (float)a / (float)b;\nint rem = a % b;\n```\n输出：\n```\nsum = 13\nsub\
+  \ = 7\nmul = 30\ndiv = 3.333333\nrem = 1\n```\n\n```csharp\n// 演示算术运算符示例的 C# 程序\n\
+  using System;\nusing System.IO;\nusing System.Text;\nnamespace codingex\n{\n   \
+  \ class Test\n    {\n        // 主方法\n        static void Main(string[] args)\n \
+  \       {\n            int a = 10;\n            int b = 3;\n            int sum\
+  \ = a + b;\n            int sub = a - b;\n            int mul = a * b;\n       \
+  \     float div = (float)a / (float)b;\n            int rem = a % b;\n         \
+  \   Console.WriteLine(\"Addition of {0} and {1} is = {2}\", a, b, sum);\n      \
+  \      Console.WriteLine(\"Subtraction of {0} and {1} is = {2}\", a, b, sub);\n\
+  \            Console.WriteLine(\"Multiplication of {0} and {1} is = {2}\", a, b,\
+  \ mul);\n            Console.WriteLine(\"Division of {0} and {1} is = {2}\", a,\
+  \ b, div);\n            Console.WriteLine(\"Remainder of {0} and {1} is = {2}\"\
+  , a, b, rem);\n            Console.ReadLine();\n        }\n    }\n}\n```\n\n## 位运算符示例的\
+  \ C# 程序\n位运算符用于执行位运算：\n- `&` (位与)：当两个位都为 1 时返回 1\n- `|` (位或)：当任意一个位为 1 时返回 1\n-\
+  \ `^` (位异异)：当仅有一个位为 1 时返回 1\n- `~` (位非)：返回操作数的取反\n- `<<` (左移)：将位向左移动\n- `>>` (右移)：将位向右移动\n\
+  \n语法：\n`Operand1 & Operand2`\n`Operand1 | Operand2`\n`Operand1 ^ Operand2`\n`~Operand1`\n\
+  `Operand1 << Operand2`\n`Operand1 >> Operand2`\n\n## 关系运算符示例的 C# 程序\n- `==` (等于)：如果两个操作数相同则返回\
+  \ true\n- `!=` (不等于)：如果两个操作数不相等则返回 true\n- `<` (小于)：如果第一个操作数小于第二个操作数则返回 true\n-\
+  \ `<=` (小于等于)：如果第一个操作数小于或等于第二个操作数则返回 true\n- `>` (大于)：如果第一个操作数大于第二个操作数则返回 true\n\
+  - `>=` (大于或等于)：如果第一个操作数大于或等于第二个操作数则返回 true\n\n## 两个整数求和的 C# 程序\n输入：\n```\nFirst\
+  \ number: 10\nSecond number: 20\n```\n输出：\n```\nAddition of 10 and 20 is = 30\n\
+  ```\n\n```csharp\nusing System;\nclass AddTwoNumbers\n{\n    static void Main()\n\
+  \    {\n        try\n        {\n            //声明两个变量\n            int a = 0;\n \
+  \           int b = 0;\n            //输入数字\n            Console.Write(\"Enter first\
+  \ number: \");\n            a = Convert.ToInt32(Console.ReadLine());\n         \
+  \   Console.Write(\"Enter second number: \");\n            b = Convert.ToInt32(Console.ReadLine());\n\
+  \            //计算和\n            int sum = a + b;\n            Console.WriteLine(\"\
+  Addition of \" + a + \" and \" + b + \" is = \" + sum);\n        }\n        catch\
+  \ (Exception ex)\n        {\n            Console.WriteLine(\"Error: \" + ex.ToString());\n\
+  \        }\n    }\n}\n```\n\n## 交换两个数字的程序\n\n### 1) 使用临时变量交换\n为了交换数字，我们使用一个临时变量来保存值。首先将第一个变量赋值给临时变量，然后将第二个变量赋值给第一个变量，最后将临时变量赋值给第二个变量。\n\
+  \n```csharp\nusing System;\nnamespace swap\n{\n    class ab\n    {\n        static\
+  \ void Main(string[] args)\n        {\n            int a = 5;\n            int b\
+  \ = 3;\n            int temp;\n            temp = a;\n            a = b;\n     \
+  \       b = temp;\n            Console.WriteLine(\"Values after swapping:\");\n\
+  \            Console.WriteLine(\"a=\" + a);\n            Console.WriteLine(\"b=\"\
+  \ + b);\n        }\n    }\n}\n```\n\n### 2) 不使用临时变量交换\n不使用任何额外的变量来交换数字。通过特定的数学运算来实现。\n\
+  \n```csharp\nusing System;\nnamespace swap\n{\n    class ab\n    {\n        static\
+  \ void Main(string[] args)\n        {\n            int a = 10;\n            int\
+  \ b = 20;\n            a = a + b;\n            b = a - b;\n            a = a - b;\n\
+  \            Console.WriteLine(\"Values after swapping:\");\n            Console.WriteLine(\"\
+  a=\" + a);\n            Console.WriteLine(\"b=\" + b);\n        }\n    }\n}\n```\n\
+  \n## 简单 if-else 语句演示\n语法：\n```csharp\nif(test_condition)\n{\n    // 代码块 1\n}\nelse\n\
+  {\n    // 代码块 2\n}\n```\n\n## 多重 if-else 语句的 C# 示例\n```csharp\nusing System;\nusing\
+  \ System.IO;\nusing System.Text;\nnamespace IncludeHelp\n{\n    class Test\n   \
+  \ {\n        // 主方法\n        static void Main(string[] args)\n        {\n      \
+  \      //输入一个整数并检查它是正、负还是零\n            int number;\n            Console.Write(\"\
+  Enter an integer number: \");\n            number = Convert.ToInt32(Console.ReadLine());\n\
+  \            //检查条件\n            if (number > 0)\n                Console.WriteLine(\"\
+  {0} is a positive number\", number);\n            else if (number < 0)\n       \
+  \         Console.WriteLine(\"{0} is a negative number\", number);\n           \
+  \ else\n                Console.WriteLine(\"{0} is Zero\", number);\n          \
+  \  //按回车退出程序\n            Console.ReadLine();\n        }\n    }\n}\n```\n\n## 条件运算符（三元运算符）\n\
+  条件运算符也称为三元运算符，它需要 3 个操作数。它通过 `?` 和 `:` 执行。\n\n语法：`logical ? true_block : false_block`\n\
+  \n```csharp\nusing System;\nusing System.IO;\nusing System.Text;\nnamespace IncludeHelp\n\
+  {\n    class Test\n    {\n        // 主方法\n        static void Main(string[] args)\n\
+  \        {\n            //寻找两个数中的最大值\n            int a;\n            int b;\n \
+  \           //输入数字\n            Console.Write(\"Enter first number : \");\n    \
+  \        a = Convert.ToInt32(Console.ReadLine());\n            Console.Write(\"\
+  Enter second number: \");\n            b = Convert.ToInt32(Console.ReadLine());\n\
+  \            //寻找最大数\n            int large = (a > b) ? a : b;\n            Console.WriteLine(\"\
+  Largest number is {0}\", large);\n        }\n    }\n}\n```\n\n## switch 语句演示\nswitch\
+  \ 语句允许根据变量执行不同的代码块。\n\n```csharp\nusing System;\nusing System.IO;\nusing System.Text;\n\
+  namespace IncludeHelp\n{\n    class Test\n    {\n        // 主方法\n        static\
+  \ void Main(string[] args)\n        {\n            int day;\n            Console.Write(\"\
+  Enter day (0-6): \");\n            day = Convert.ToInt32(Console.ReadLine());\n\
+  \            switch (day)\n            {\n                case 0:\n            \
+  \        Console.WriteLine(\"Sunday\");\n                    break;\n          \
+  \      case 1:\n                    Console.WriteLine(\"Monday\");\n           \
+  \         break;\n                case 2:\n                    Console.WriteLine(\"\
+  Tuesday\");\n                    break;\n                case 3:\n             \
+  \       Console.WriteLine(\"Wednesday\");\n                    break;\n        \
+  \        case 4:\n                    Console.WriteLine(\"Thursday\");\n       \
+  \             break;\n                case 5:\n                    Console.WriteLine(\"\
+  Friday\");\n                    break;\n                case 6:\n              \
+  \      Console.WriteLine(\"Saturday\");\n                    break;\n          \
+  \      default:\n                    Console.WriteLine(\"Invalid Input\");\n   \
+  \                 break;\n            }\n            Console.ReadLine();\n     \
+  \   }\n    }\n}\n```\n"

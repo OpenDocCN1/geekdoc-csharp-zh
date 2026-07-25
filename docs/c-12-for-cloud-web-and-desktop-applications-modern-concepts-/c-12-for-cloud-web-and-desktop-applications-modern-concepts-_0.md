@@ -1,0 +1,7497 @@
+# C# 12 云端、Web 及桌面应用：使用 C# 12 进行软件开发的现代概念与技术
+
+
+
+![](img/cover.jpg)
+
+![封面](img/cover.jpg)
+
+2024 年第一版
+
+
+
+
+
+
+
+
+
+献给
+
+我亲爱的父母：
+
+Carlos Roberto Coutinho de Araujo
+
+Sonia Maria Pereira Vivas
+
+# 关于作者
+
+Thiago 是一位对软件开发以及构建可靠软件过程中的复杂性充满热情的巴西专家。Thiago 拥有超过 12 年的软件开发经验，并曾在 Oi、Accenture、里约 2016 奥运会、Altice Portugal、Vodafone 和 Microsoft 等大公司工作过。
+
+作为内容创作者，Thiago 已经发表了 60 多篇技术文章，帮助了超过 200 万知识寻求者，主要编写 C#、DevOps 和云开发。
+
+# 关于审稿人
+
+*   Tomasz Kocurek 是一位 .NET 开发者。他毕业于克拉科夫 AGH 大学电气工程、自动化、计算机科学和电子学院的应用计算机科学专业。他曾在多个行业工作过：人工智能、机器人制作、加密货币、虚拟现实、医学、电子文档流通、数据保护、交通和导航。他对人工智能感兴趣，尤其是医疗领域。他的硕士论文是使用机器学习进行血液检测。他热爱阅读。他试图在科学的每个领域发现有趣之处。他喜欢谈论新技术。他创建了文档、维基以及一些带有项目信息的应用程序，因为数据是无价的。他对数学、打桥牌和足球感兴趣。
+
+*   Denis Kazakov 在软件行业工作了超过 17 年，在不同的业务和环境中拥有丰富的经验，从大企业到初创公司以及自由职业者。
+
+他从开发者开始，担任过技术和开发领导职务。今天 Denis 的重点是云技术以及使用 Azure 和 .NET 进行开发。Denis 是教育初创公司 `Similearn.com` 的创始人，他现在在那里工作。Denis 经常通过开发者论坛、开源项目和博客文章为 IT 社区做出贡献。Denis 曾四次获得微软授予的 Azure 类“最有价值专业人士 (MVP)”。
+
+*   Dirk Strauss 是一位经验软件开发者，拥有超过 19 年使用 C# 和 Visual Studio 的经验。他有幸与几家公司合作，并向行业内最有才华的人学习。除了专业经验外，他还出版了多本关于 C#、Visual Studio 和 ASP.NET Core 等主题的书。他对编程的热情坚定不，并致力于跟上最新技术，同时与他人分享他的专业知识。
+
+# 致谢
+
+我非常感谢我亲爱的父母和姐姐对我的无条件支持。他们的鼓励支持我走过了这段旅程中的起起伏。尽管他们对软件开发的复杂性感到困惑，但他们对我坚定的信念一直是我的指路明灯。感谢一切；我爱你们。
+
+感谢来自葡萄牙里斯本的朋友们，感谢你们理解我在沉浸于本书深处时偶尔的失踪。你们的耐心、情谊以及偶尔提供的啤酒让这段旅程变得更加忍忍，让深夜的时光更加愉快。感谢你们每位参与了这场冒险；下一轮酒我请客！
+
+感谢来自巴西里约热内卢 Complexo da Chumbada 的童年朋友们，多年来你们不移的支持和情谊是我巨大力量和灵感的来源。从我们社区的街道到这本书的页面，你们的友谊一直是指路明灯。感谢那些无数的记忆、笑声和共同的冒险，它们塑造了今天的我。你们的友谊倍受珍惜，我对我们之间的纽带表示感激。
+
+# 前言
+
+本书涵盖了网络爬虫的许多不同方面以及网络爬虫自动化的重要性。本书还介绍了网络爬虫在实时工业领域的重要性。它展示了数据对于行业是多么重要。本书解决了数据世界中网络爬虫/采集的基础理解问题。它还强调了学习 Python 的重要性，以便刷新 Python 的基本概念。本书提供了关于 Python 在网络爬虫中用处的信息。
+
+本书为网络爬虫学习者采取了实用的方法。它还涵盖了一些实时工业案例。它将涵盖如 Python 基本用于自动化、机器学习等信息。它可以用于轻松的数据处理和转换。被用于不同领域的数据挖掘之中。你可以为金融、零售等不同领域的端到端自动化设计 API 访问框架。
+
+本书分为 14 章。这些章节将涵盖 Python 基础、网络爬虫的基础和高级知识、为什么 Python 更适合网络爬虫、网络爬虫的实时示例等。因此，学习者也可以对网络爬虫工具产生更多兴趣。详细列表如下：
+
+第 1 章：Visual Studio 2022 简介 - 读者将探索重新设计的界面、增强的代码分析工具以及新的调试和测试功能。本章旨在为开发者提供利用 Visual Studio 最新功能提高生产力和效率所需的知识和工具。
+
+第 2 章：C# 12 的新功能 - 无论是经验丰富的还是刚接触 C#，本章都提供了关于不断发展的 C# 环境的宝贵见解，使开发者能够利用最新的工具和进展进行高效编码。
+
+第 3 章：精通 Entity Framework Core - 它探索了数据库优先和代码优先的方法，涵盖了架构创建和数据模型生成。解释了数据建模概念、数据注解和自定义。本章还处理了数据管理任务，如使用 LINQ to Entities 查询和修改数据，并附有示例。
+
+第 4 章：入门 Azure Functions - 涵盖了触发器和绑定，探索了 HTTP、计时、Blob 和队列触发器，提供了详细的设置说明和最佳实践。本章还解释了绑定如何促进与 Blob Storage 和 Cosmos DB 等 Azure 服务交互，通过绑定示例演示数据访问和操作。
+
+
+
+
+
+
+为每种服务提供分步骤的说明和核心概念。从创建和连接 `Azure SQL Database` 实例，到理解 `Cosmos DB` API 以及处理 `Blob Storage` 容器，读者将获得如何在其 `.NET` 应用程序中有效利用这些服务的宝贵见解。
+
+探索了`队列、主题和订阅`等核心概念，为实现提供了实用的说明和最佳实践。从理解消息模式到配置消息会话（message sessions）和死信队列（dead-letter queues）等高级功能，读者将获得使用 `Azure Service Bus` 构建健壮且可扩展的消息解决方案的宝贵见解。
+
+重点关注身份验证，本章引导读者创建和配置 `Key Vault` 实例、存储密钥以及安全地访问敏感数据。通过分步骤的说明以及对身份验证选项（包括客户端证书和 `Azure Active Directory` 身份验证）的覆盖，为开发者提供了知识和工具，以确保其应用程序拥有稳健的安全措施。
+
+
+从概述 `SignalR` 的优势开始，涵盖了使用 `ASP.NET` 和 `Visual Studio` 进行项目设置，探索了如 `WebSockets` 和服务器发送事件（Server-Sent Events）等多种传输协议。
+
+涵盖了微服务架构以及使用 `Web APIs` 的优势。详细介绍了设计可扩展架构的方法，包括服务发现、负载均衡和容错机制。通过探索水平扩展、垂直扩展和自动扩展等扩展技术，提供了实用的说明、最佳实践以及需要避免的陷阱，使开发者能够创建健壮的微服务架构。
+
+从概述 `Docker` 和 `Azure DevOps` 开始，演示了如何自动化 CI-CD 流程。涵盖了构建和部署容器化应用的 `Docker` 命令，解释了 CI-CD 概念及其在简化开发和部署中的作用。本章介绍了如何使用 `Azure DevOps` 配置构建流水线、发布流水线和环境管理。
+
+探索了其在创建各种平台应用方面的作用。本章介绍了 `Blazor Hybrid` 及其与 `.NET MAUI` 的集成，将其与 `Blazor` 进行对比，以突出它们各自的优缺点。解释了 `Blazor Hybrid` 如何让能够构建与 `.NET MAUI` 无缝集成的响应式 `UIs`。
+
+从介绍 `WinUI` 开始，深入探讨它如何促进响应式桌面应用的开发。通过探索`Fluent 设计系统（Fluent Design System）`的原理（包括深度和动态），演示了如何使用 `WinUI` 的`UI `来实现吸引人的用户界面。
+
+使用 `nUnit` 和 `xUnit` 编写有效的单元测试以确保代码可靠性。发现自动化测试框架以提高代码质量。深入使用 `C#` 工具进行调试，掌握`断点（breakpoints）`和`变量检查（variable inspection）`等技术以高效解决错误，最终提升开发者的效率。
+
+
+请点击链接下载书籍的`代码包`和`彩色插图片`：
+
+
+该书的代码包也托管在 GitHub 上：[`github.com/bpbpublications/CSharp12-For-Cloud-Web-and-Desktop-Applications`](https://github.com/bpbpublications/CSharp12-For-Cloud-Web-and-Desktop-Applications)。如果代码有更新，将在现有的 GitHub 仓库中更新。
+
+我们从丰富的书籍和视频目录中提供了代码包，地址为 [`https://github.com/bpbpublications`](https://github.com/bpbpublications)。欢迎去查看！
+
+
+我们对 BPB Publications 的工作感到非常自豪，并遵循最佳实践以确保内容的准确性，为订阅者提供沉浸式的阅读体验。读者是我们的镜子，我们利用他们的反馈来反映并改进出版过程中可能出现的任何人为错误。为了便于我们维护质量并帮助可能因不可预见错误而遇到困难的读者，请通过以下邮箱联系我们：
+
+errata@bpbonline.com
+
+BPB Publications 全体非常感谢您的支持、建议和反馈。
+
+
+加入书籍的 Discord 工作区，获取最新更新、优惠、全球技术动态、新书发布以及与作者交流的机会：
+
+[`discord.bpbonline.com`](https://discord.bpbonline.com)
+
+![](img/fm1.png)
+
+
+
+本章探索了微软交互式开发环境的最新功能和改进。新版本的 `Visual Studio` 为开发者提供了更好的生产力和协作能力。章节涵盖了重大变化，包括引入 64 位架构、性能提升以及与 `Azure` 服务的深度集成。
+
+本章介绍了 IDE 用户界面的重大更新，包括更新的启动窗口、重新设计的搜索体验以及全新的图标。本章还涵盖了增强的代码分析功能，包括代码建议、自动修复和智能代码完成。此外，本章深入探讨了新的调试和测试功能，包括实时单元测试、快照调试和时间旅行调试。
+
+
+本章涵盖了以下主题：
+
+*   实时单元测试
+*   快照调试
+*   时间旅行调试
+## 目标](#contents.xhtml_sc2_3a)
+
+在本章结束时，读者将牢固理解 Visual Studio 2022 引入的主要变化和新功能，包括实时单元测试、快照调试和时间旅行调试。他们将具备必要的知识，以便在云端、Web 和桌面应用程序的 `C#` 开发流中有效利用这些工具。
+## Visual Studio 2019 的重大变化](#contents.xhtml_sc2_4a)
+
+
+
+Visual Studio 2022 与 Visual Studio 2019 相比有了显著改进和增强。这些包括更现代、更直观的用户界面，刷新了视觉主题、简化的工具栏和菜单。性能得到了优化，提供了更快的操作，例如 .NET SDK 风格项目的生成加速、更快的“在文件中查找”功能以及改进的 Git 工具速度。Visual Studio 2022 现在是一个 64 位应用程序，能够更好地利用系统资源。新功能的引入，如代码文件的热重载（Hot Reload）、增强的提交图以及对多个仓库更好的支持，提升了整体开发体验。此外，Razor 和 C# 体验也取得了进展，包括改进的代码导航、更智能的 IntelliCode 建议以及更好的代码格式化。通过这些更改，Visual Studio 2022 为开发者提供了一个更高效、高生产力且愉快的开发环境。
+
+
+Visual Studio 2022 引入了一系列性能改进，增强了开发者的开发体验。这些改进针对 IDE 的各个领域，包括 .NET SDK 风格项目的生成加速、外部源反编译、`Threads Window`（线程窗口）、`Quick Add Item`（快速添加项）、代码覆盖以及 Razor 和 C# 体验。
+
+让我们深入探讨这些增强功能：
+
+*   **.NET SDK 风格项目的生成加速**：Visual Studio 2022 整合了更快速生成时间的优化，特别是针对 `.NET SDK` 风格的项目。通过将生成过程提升了高达 80%，开发者可以感受到等待时间的缩短，从而实现更快的迭代并提高生产力。
+*   **外部源反编译**：此改进允许即使在源文件是外部的情况下也能进行导航和调试，速度比 Visual Studio 2019 快 10 倍。
+*   **在文件中查找**：通过增强的搜索索引、并行处理、更智能的搜索算法、搜索结果预览和高级过滤选项，开发者可以在代码库中以 3 倍的速度定位所需信息，减少了搜索时间并提高了整体生产力。
+*   **Git 工具**：Visual Studio 2022 引入了名为 `Commit Graph`（提交图）的新功能，增强了 IDE 内 Git 提交的可视化和导航。Visual Studio 2022 中的 `Commit Graph` 显示出性能的显著提升，分支历史的平均加载时间减少了 70%。
+*   **线程窗口**：Visual Studio 2022 中的 `Threads Window` 经过了性能改进，为具有许多线程的应用程序提供了更响应、更高效的调试。开发者现在可以轻松地分析和管理线程，对多线程应用程序获得更深的见解，并提高整体调试生产力。
+*   **快速添加项**：Visual Studio 2022 引入了 `New Item`（新建项）菜单命令，加速了向项目添加新项的过程。有了此增强，开发者可以快速添加多个文件和文件夹，简化了项目的创建和修改过程。
+*   **代码覆盖**：Visual Studio 2022 中的代码覆盖分析经过了优化，代码覆盖测试速度快了 35%。开发者现在可以更高效地衡量测试的代码覆盖率，允许他们识别缺乏测试覆盖的代码区域并提高整体代码质量。
+
+凭借 Visual Studio 2022 的这些性能改进，开发者可以期望一个更高效、响应的开发环境。.NET SDK 风格项目的生成加速、外部源反编译、`Threads Window` 的改进、`Quick Add Item` 功能、增强的代码覆盖分析以及优化的 Razor 和 C# 体验共同提升了生产力并简化了开发流程，使开发者能够更高效地交付高质量应用程序。
+
+
+Visual Studio 2022 的重大增强之一是转变为 64 位应用程序。这种从 32 位到 64 位架构的转变为开发者带来了许多优势和益处。
+
+
+*   **增加内存访问**：作为一种 64 位应用程序，Visual Studio 2022 可以利用 64 位系统提供的扩展内存地址空间。这允许 IDE 访问大量内存，使开发者能够在不面对内存限制或性能问题的情况下处理更大、更复杂的项目。开发者现在可以处理包含更多项目的解决方案，利用 64 位架构提供的扩展内存支持。
+*   **与 64 位工具和库的兼容性**：作为 64 位应用程序，Visual Studio 2022 与其他 64 位工具、库和组件无缝集成，确保了兼容性和互操作性。开发者可以充分利用开发生态系统中 64 位技术提供的进步和优化。
+*   **面向未来**：转变为 64 位应用程序为 Visual Studio 2022 的未来增长和可扩展性奠定了基础。它符合行业向 64 位计算的趋势，并确保 IDE 能够满足现代开发环境和技术不断变化的需求。
+
+
+
+基于示例的程序合成（PROSE）技术是微软研究院开发的一种自动化的程序合成框架。它允许开发者根据输入-输出示例自动生成代码，实现快速原型设计和开发。PROSE 利用机器学习和编程语言技术来理解并泛化从提供的示例中提取的模式，减少编写代码所需的人工努力。它已应用于多个领域，包括数据整理、API 使用和代码重构。PROSE 旨在通过基于示例的程序合成自动处理重复编码任务来提高开发者生产力。
+
+Visual Studio 2022 中的 `IntelliCode` 在你输入代码时积极分析代码更改，利用 PROSE 技术识别手动代码修改的常见模式。通过识别开发者通常如何执行可自动代码更改，`IntelliCode` 提供有用的建议以简化你的编码流程。当你执行代码修复或重构时，`IntelliCode` 会在补全列表中显示建议，让你只需点击一下即可完成代码更改。`IntelliCode` 提供的这种智能帮助优化了你的编码体验，让你工作得更高效、更准确。
+
+
+新的 Razor 编辑器引入了额外的代码修复和重构，包括流行的“添加缺失的命名空间”（Add missing usings）重构。它还提供了 Razor 特有的重构，如“将块提取到后台代码”（Extract block to code behind），方便将代码块提取到单独的文件。
+
+导航支持通过组件的“转到定义”（Go to Definition）功能得到了改进，允许在文件内进行快速导航以更好地理解代码。
+
+
+
+
+新的 Razor 编辑器支持最新的编译器功能，提供了更智能的 Razor 语法补全，例如 `<text>` 补全和自动完成。诊断信息经过精简，仅显示最重要的问题，并保持了编译器生成的诊断信息的预期保真度。
+
+
+## 具有新功能的热重载
+`Hot Reload` 技术的引入带来了与 `XAML Hot Reload` 同时无缝代码文件更新，适用于使用 `XAML` 构建 UI 的应用程序。无论您使用的是 `XAML` 还是 `.NET`，可以使用 `Hot Reload`，提供强大的开发体验。`Hot Reload` 与断点、“编辑并继续”(EnC) 以及其他基本功能等熟悉的调试能力无缝集成。
+
+在此版本中，`Hot Reload` 兼容多种类型的应用程序。它可以轻松运行于基于 `XAML` 的应用程序，如 `WPF`、`.NET MAUI` 和 `WinUI 3`，以及其他框架，如 `Windows Forms`、`ASP.NET` Web 应用程序、`Blazor Server`、控制台应用等。本质，只要在现代 `.NET` 运行时配合 `Visual Studio` 调试器使用，`Hot Reload` 就能显著增强您的开发工作流。
+
+
+`Visual Studio 2022` 现在提供对多个仓库的支持，允许您同时处理多达 10 个活跃的 `Git` 仓库。此功能实现了跨多个仓库解决方案的无缝协作和高效管理。您可以在各个仓库之间并发执行 `Git` 操作，简化您的工作流。
+
+例如，在一个大型 Web 项目中，您可能为前端、`API`、数据库、文档以及各种库或依赖项拥有独立的仓库。以前，跨这些仓库的工作需要打开多个 `Visual Studio` 实例。然而，有了多仓库支持，您现在可以在单个 `Visual Studio` 实例中处理、查看和调试所有这些仓库。这种能力通过消除在不同 IDE 实例之间切换的需要，提高了生产力，并允许在多个仓库之间获得统一且连贯的开发体验。
+
+
+行级暂存（Line-staging）允许您将修改过的代码行划分到单独提交中，为管理更改提供了更高的灵活性。可以利用此功能在最终完成提交之前审查您的改动。通过选择性地暂存特定的代码行或区域，您可以将它们标记为已审核，确保在提交前进行彻底的核查。一旦您对暂存的更改感到满意，就可以继续进行提交，从而提供了一种受控且组织化的方法来将您的修改纳入代码库。
+
+## 界面改进与自定义
+`Visual Studio 2022` 引入了全新且现代的外观和感受，提升了整体开发者体验。新设计带来了整洁且直观的界面，为软件开发提供了一个更精简、视觉上吸引力的环境，如下所示所示：
+
+![](img/Figure_1.1.png)
+
+图 1.1：`Visual Studio 2022` 与 `Visual Studio 2019` 图标对比。
+以下是 `Visual Studio 2022` 新外观和感受的关键亮点：
+
+*   更新的视觉主题：IDE 具有精细的视觉主题，符合当代设计原则。界面整合了更新后的图标、更简洁的布局和改进的字体，带来了更具视觉美感且凝聚的体验。
+*   简化的工具栏和菜单：工具栏和菜单经过精简，优先考虑常用命令并减少干扰。这种简化增强了导航，并允许快速访问基本工具和功能，促进了更高效的工作流。
+*   改进的编辑器体验：`Visual Studio 2022` 中的代码编辑器受益于精细的视觉设计，提供了更好的可读性和增强了对代码内容的关注。语法高亮、代码建议和其他编辑功能都经过了优化，提高了可见性和易用性。
+*   可自定义的窗口布局：`Visual Studio 2022` 允许开发者通过自定义窗口布局来个性化他们的工作空间。您可以根据喜好安排工具窗口、窗格和面板，创建一个符合您特定需求并提高生产力的工作空间。
+*   改进的深色主题和自定义主题：`Visual Studio 2022` 中的新深色主题在对比度、强调色和可访问性方面带来了显著增强，确保大多数用户获得更好的视觉体验。此外，`Visual Studio` 市场提供了大量的自定义主题，为您提供了选择最符合您偏好并优化工作流的主题灵活性。无论您选择改进的默认深色主题，还是决定使用自定义的主题定制 `Visual Studio`，我们都努力让您的 `Visual Studio` 体验符合需求和偏好。
+
+`Visual Studio 2022` 的新外观和感受引入了现代且视觉上吸引力的界面，提升了整体用户体验。`Visual Studio 2022` 为开发者创建软件解决方案提供了一个清新且愉快的环境。
+
+
+当您修改代码时，`Live Unit Testing`（实时单元测试）可以对您的更改对现有测试的影响提供宝贵的见解，确保新添加的代码实时被一个或多个相关测试覆盖。这起到了温和提醒，在修复 Bug 和添加功能时优先考虑单元测试，促进了稳健可靠的开发实践。
+
+
+以下步骤概述了 `Live Unit Testing` 的局限性，并提供了如何有效设置它的指南。
+
+要启用 `Live Unit Testing`，请前往 `Test | Live Unit Testing | Start`。快捷键为 `Ctrl E + L`：
+
+
+图 1.2：`Live Unit Testing` 窗口
+
+您可以根据需要进行配置：
+
+
+图 1.3：`Live Unit Testing` 配置窗口
+
+`Live Unit Tests` 执行示例：
+
+![](img/Figure_1.4.png)
+图 1.4：通过单元测试的 `Live Unit Testing` 窗口
+
+### 支持的测试框架
+
+在本书出版时，`Live Unit Testing` 仅适用于 `Visual Studio Enterprise` 版本并支持以下内容：
+*   `xUnit.Net`
+
+
+
+
+
+
+- **xunit**
+    - Visual Studio 适配器最小版本：`xunit.runner.visualstudio` 版本 2.2.0-beta3-build1187
+    - 框架最小版本：`xunit` 版本 1.9.2
+- **NUnit**
+    - 框架最小版本：`NUnit` 版本 3.5.0
+- **MSTest**
+    - Visual Studio 适配器最小版本：`MSTest.TestAdapter` 版本 1.1.4-preview
+    - 框架最小版本：`MSTest.TestFramework` 版本 1.0.5-preview
+
+
+通过右键点击单元测试（Unit Tests），你可以将其包含或排除在实时单元测试（Live Unit Testing）之外：
+
+![](img/Figure_1.5..png)
+
+图 1.5：包含或排除测试方法的窗口
+
+
+- 排除单个单元测试：
+    - NUnit:`[Category("SkipWhenLiveUnitTesting")]`
+    - xUnit:`[Trait("Category", "SkipWhenLiveUnitTesting")]`
+    - MSTest:`[TestCategory("SkipWhenLiveUnitTesting")]`
+    - NUnit:`[assembly: Category("SkipWhenLiveUnitTesting")]`
+    - xUnit:`[assembly: AssemblyTrait("Category", "SkipWhenLiveUnitTesting")]`
+    - MSTest:`[assembly: TestCategory("SkipWhenLiveUnitTesting")]`
+
+你也可以通过右键点击项目来包含或排除整个单元测试项目：
+
+
+图 1.6：包含或排除单元测试项目的菜单选项
+
+## 根据需求进行配置
+
+从“工具 | 选项”（Tools | Options）菜单中，你可以根据需求自定义实时单元测试：
+![](img/Figure_1.7..png)
+
+图 1.7：配置实时单元测试的选项窗口
+
+
+Application Insights 中提供的快照调试器（Snapshot Debugger）能够让你在发生异常时，轻松收集 Web 程序的调试快照。这一宝贵的快照揭示了异常发生准确时刻源代码和变量的精确状态，让你有机会模拟触发该异常的场景。
+
+Application Insights 中快照调试器的主要功能：
+
+- 监控来自 Web 应用的系统日志。
+- 提供在生产环境中诊断、模拟和解决问题所需的关键信息。
+
+## 使用快照调试
+以下步骤说明了快照调试的局限性，并提供了如何无缝设置的完整说明。
+
+### 1. 在应用程序中安装 NuGet 包
+
+`Microsoft.ApplicationInsights.SnapshotCollector`
+### 2. 在应用程序中配置 Application Insights
+
+#### 针对 ASP.NET 
+
+
+```xml
+<TelemetryProcessors>
+  <Add Type="Microsoft.ApplicationInsights.SnapshotCollector.SnapshotCollectorTelemetryProcessor, Microsoft.ApplicationInsights.SnapshotCollector">
+    <!-- 默认值为 true，但你可以通过设置为 false 来禁用快照调试 -->
+    <!-- 快照调试通常在开发模式下禁用，但你可以通过将其设置为 true 来启用它。 -->
+    <!--  DeveloperMode 是活动 TelemetryChannel 上的属性。 -->
+    <IsEnabledInDeveloperMode>false</IsEnabledInDeveloperMode>
+    <!-- 在请求快照之前，我们需要看到异常的多少次。 -->
+    <ThresholdForSnapshotting>1</ThresholdForSnapshotting>
+    <MaximumSnapshotsRequired>3</MaximumSnapshotsRequired>
+    <!-- 我们任何时候跟踪的问题最大数量。 -->
+    <MaximumCollectionPlanSize>50</MaximumCollectionPlanSize>
+    <!-- 重新连接到端点的频率。默认值为 15 分钟。-->
+    <ReconnectInterval>00:15:00</ReconnectInterval>
+    <ProblemCounterResetInterval>1.00:00:00</ProblemCounterResetInterval>
+    <!-- 十分钟内允许的快照最大数量。默认值为 1\。 -->
+    <SnapshotsPerTenMinutesLimit>3</SnapshotsPerTenMinutesLimit>
+    <!-- 每天允许的快照最大数量。 -->
+    <SnapshotsPerDayLimit>30</SnapshotsPerDayLimit>
+    <SnapshotInLowPriorityThread>true</SnapshotInLowPriorityThread>
+    <!-- 同意向微软发送匿名数据以改进此产品。 -->
+    <ProvideAnonymousTelemetry>true</ProvideAnonymousTelemetry>
+    <!-- 在遥测处理器被禁用之前，请求快照的失败请求限制。 -->
+    <FailedRequestLimit>3</FailedRequestLimit>
+</TelemetryProcessors>
+```
+
+2. 针对 ASP.NET Core
+
+1. 创建一个名为 `SnapshotCollectorTelemetryFactory` 的新类：
+```csharp
+using Microsoft.ApplicationInsights.AspNetCore;
+using Microsoft.ApplicationInsights.Extensibility;
+using Microsoft.ApplicationInsights.SnapshotCollector;
+using Microsoft.Extensions.Options;
+internal class SnapshotCollectorTelemetryFactory : ITelemetryFactory
+{
+    private readonly IServiceProvider _serviceProvider;
+    public SnapshotCollectorTelemetryFactory(IServiceProvider serviceProvider) =>
+    _serviceProvider = serviceProvider;
+    public ITelemetry Create(ITelemetryProcessor next)
+        IOptions<SnapshotCollectorConfiguration> snapshotConfigurationOptions = _serviceProvider.GetRequiredService<IOptions<SnapshotCollectorConfiguration>>();
+        return new SnapshotCollectorTelemetryProcessor(next, configuration: snapshotConfigurationOptions.Value);
+    }
+}
+```
+
+
+```csharp
+using Microsoft.ApplicationInsights.AspNetCore;
+using Microsoft.ApplicationInsights.SnapshotCollector;
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddApplicationInsightsTelemetry();
+builder.Services.AddSingleton<ITelemetryProcessorFactory>(sp => new SnapshotCollectorTelemetryFactory(sp));
+```
+
+3. 如果你需要自定义，则需要更新 `appsettings.json`。以下是默认配置：
+
+{
+  "SnapshotCollectorConfiguration": {
+    "IsEnabledInDeveloperMode": false,
+    "ThresholdForSnapshotting": 1,
+    "MaximumSnapshotsRequired": 3,
+    "MaximumCollectionPlanSize": 50,
+    "ProblemCounterResetInterval": "1.00:00:00",
+    "SnapshotsPerTenMinutesLimit": 1,
+    "SnapshotsPerDayLimit": 30,
+    "SnapshotInLowPriorityThread": true,
+    "ProvideAnonymousTelemetry": true,
+    "FailedRequestLimit": 3
+  }
+```
+
+
+
+
+
+
+在本书出版时，以下框架和环境支持快照调试（Snapshot debugging）：
+
+### 框架
+- `.NET Framework 4.6.2` 及更高版本。
+- Windows 上的 `.NET 6.0` 或更高版本。
+### 环境
+- `Azure App Service`
+- `Azure Functions`
+- 运行操作系统 族 4 或更高版本的 `Azure Cloud Services`
+- 运行在 Windows Server 2012 R2 或更高版本上的 `Azure Service Fabric`
+- 运行在 Windows Server 2012 R2 或更高版本的 `Azure Virtual Machines` 和 `Azure Virtual Machine Scale Sets`
+
+# 所需权限和限制条件
+
+以下是所需的权限和限制条件：
+
+- 快照受 Azure 基于角色的访问控制 (`RBAC`) 保护。若要检查快照，您必须被添加到 Application Insights 快照调试器角色中。
+- 快照可能包含敏感数据。
+- 快照默认存储 15 天。可以请求增加存储时间。
+- 快照要求服务器上有可用符号文件，以便解码变量并在 `Visual Studio` 中启用调试。
+- 当使用优化后的构建时，可能无法使用本地变量。
+
+# 时间旅行调试（Time Travelling Debugging）
+
+引入时间旅行调试 (`TTD`)，这是一项开创性的功能，允许您直接从生产环境在 `Visual Studio` 中录制和重放代码执行过程。`TTD` 超越了传统的调试方法，能够在时间轴上进行无缝导航，类似于在本地进行“内层循环”调试。这意味着您可以轻松地在执行时间线上向前或向后移动，同时保留对本地变量（locals）和调用堆栈（call stack）等核心调试功能的访问。
+传统的调试器即使带有如 `IntelliTrace` 等高级工具，通常也只允许在特定断点处停止并只能在时间向前移动。然而，`TTD` 与快照、日志或崩溃转储文件（crash dump files）等方法相比具有显著优势。这些传统技术通常缺乏导致最终失败或 Bug 的执行路径精确细节。`TTD` 通过捕获精确的执行路径填补了这一空白，为问题背景提供了前所未有的深度，超越了快照和其他方法的局限性。
+
+# 使用时间旅行调试
+
+以下步骤说明了时间旅行调试的局限性，并提供了关于如何轻松设置的全面指南。
+
+
+在时间旅行调试中，录制快照是该过程的基本方面。时间旅行调试允许开发者重放和分析代码的执行情况，通过向前向后移动时间来识别并调试问题。录制快照能够在不同的时间点捕获并保存程序状态，便于探索程序行为和识别 Bug。
+
+通过 `Debug | Attach Snapshot debugger` 可以挂载（attach）快照调试器：
+
+![](img/Figure_1.8..png)
+图 1.8: 挂载快照调试器的菜单
+
+选择您的虚拟机并勾选两个选项。不要忘记虚拟机的特殊性。
+
+![](img/Figure_1.9.png)
+
+
+选择一个断点，并在断点设置中，您必须勾选“时间旅行跟踪”（time travel trace）选项。
+
+您将在`Diagnostic Tools`（诊断工具）窗口看到录制的快照。
+
+## 查看快照
+一旦录制了快照，您就可以从 `Diagnostic Tools` 窗口播放它并正常使用调试器。
+
+# 时间旅行调试限制
+
+本书出版时，运行 `TTD` 的要求如下：
+
+- 运行 Windows 且安装了 `ASP.NET 4.8+` 的 `Azure Virtual Machine`
+- `AMD64` Web Apps
+
+# 总结
+
+在本章中，我们深入介绍了 `Visual Studio 2022`，重点关注其主要变化。
+
+
+
+通过清晰的解释和实际示例，我们致力于帮助开发者理解每个新特性的优势和应用，使他们编写出更整洁、高效且易于维护的代码。在本章结束时，读者将对 `C# 11` 和 `C# 12` 的进展有坚实的理解，并掌握在项目中有效利用这些特性的知识和技能。
+
+# C# 11 更新
+本节将讨论 `C# 11` 中引入的重大更新，这些更新提升了开发能力和代码效率。从主构造函数的引入到内联数组，`C# 11` 引入了旨在简化开发流程和提高代码可读性的特性。开发者将探索主构造函数、集合表达式、内联数组、Lambda 表达式中的可选参数、ref readonly 参数、任何类型的别名以及内联数组的引入。理解这些变化使开发者能够利用最新的工具和技术在他们的 `C#` 项目中创建健壮、高效且易于维护的代码。
+
+## 原始字符串字面量
+
+原始字符串字面量引入了表示字符串的新格式。它们可以包含任意文本，包括空格、换行、嵌入引号和其他特殊字符，而无需转义序列。原始字符串字面量的起始需要至少三个双引号（`"""`），其结束也镜像对应相同数量的双引号。通常，一个原始字符串字面量使用单行的三个双引号来初始化字符串，并使用另一行的三个双引号来结束它。注意的是，紧跟起始引号之后且结束引号之前的换行符不被视为最终内容的一部分，如下例所示：
+
+```cs
+This represents a multiline text.
+It spans across various lines.
+Some lines have varying levels of indentation.
+A few start at the first column.
+Quoted text is included within some lines.
+""";
+
+结束双引号左侧的领先空格会被排除在生成的字符串字面量之外。将原始字符串字面量与字符串插值结合使用，允许在输出文本中包含大括号。连续 `$` 字符的数量表示插值的开始和结束，决定了输出中大括号的范围，如下所示：
+
+```csharp
+var locationInfo = $$"""
+Your current location is at {{{Longitude}}, {{Latitude}}}
+```
+
+在上一个示例图中，两个连续的大括号标记了插值的开始和结束。第三组开启和关闭的大括号在重复时，将成为输出字符串的一部分。
+
+## 泛型数学支持
+
+
+*   **接口中的静态虚拟成员**：你可以在接口中包含静态抽象或静态虚拟成员，允许定义具有可重载运算符、静态成员和属性的接口。这便于在泛型类型中使用数学运算符。例如，通过实现 `System.IAdditionOperators<TSelf, TOther, TResult>` 接口，一个类型可以支持加法运算符。额外的接口涵盖了各种数学运算或定义的值。语法细节可以在接口文章中查看。通常，带有静态虚拟方法的接口是泛型的，并对类型参数实施约束以实现声明的接口。
+*   **泛型数学要求**：泛型数学的出现对语言提出了特定的要求。
+*   **无符号右移运算符**：`C# 11` 引入了 `>>>` 运算符，允许直接进行无符号右移。以前，实现无符号右移需要将有符号整数转换为无符号类型，执行移位，然后将结果转换回有符号类型。
+*   **松散移位运算符要求**：`C# 11` 移除了第二个操作数必须是 `int` 或隐式转换为 `int` 的要求。此更改允许实现泛型数学接口的类型被用在这些移位运算符的位置。
+*   **检查和未检查用户定义运算符**：开发者现在有能力定义检查（checked）和未检查（unchecked）的算术运算符。编译器根据当前上下文自动生成对相应变体的调用。关于检查运算符的更多详细信息可以在算术运算符的文章中查看。
+这些增强共同为 `C# 11` 中的泛型数学操作提供了一种更通用、更具表现力的方法，如下代码所示：
+
+```csharp
+public static TResult CalculateSum<T, TResult>(IEnumerable<T> data)
+  where T : INumber<T>
+  where TResult : INumber<TResult>
+{
+    foreach (var value in data)
+    {
+      result += TResult.Create(value);
+    }
+    return result;
+}
+
+  where T : INumber<T>
+  where TResult : INumber<TResult>
+{
+    TResult sum = CalculateSum<T, TResult>(data);
+    return TResult.Create(sum) / TResult.Create(data.Count());
+}
+public static TResult CalculateStandardDeviation<T, TResult>(IEnumerable<T> data)
+  where T : INumber<T>
+  where TResult : IFloatingPoint<TResult>
+{
+    TResult standardDeviation = TResult.Zero;
+    if (data.Any())
+      TResult average = CalculateAverage<T, TResult>(data);
+      TResult sum = CalculateSum<T, TResult>(data.Select((value) => {
+        var deviation = TResult.Create(value) - average;
+        return deviation * deviation;
+      }));
+      standardDeviation = TResult.Sqrt(sum / TResult.Create(data.Count() - 1));
+    }
+}
+```
+
+## 泛型属性
+
+你可以现在定义一个基类为 `Attribute` 的泛型类。这简化了需要 `Type` 参数的属性的语法。类型参数必须遵守 `typeof` 运算符施加的约束。需要元数据标注的类型不允许。例如，以下类型不允许作为类型参数：
+
+*   `dynamic`
+*   `string?`（或空引用类型）
+*   `(int X, int Y)`（或使用 C# 元组语法的任何元组）
+在这种情况下，建议使用底层类型：
+
+*   用 `object` 替换 `dynamic`
+*   优于使用 `string?`
+*   用 `ValueTuple<int, int>` 替换 `(int X, int Y)`
+
+
+```csharp
+public class SampleAttribute : Attribute
+{
+    public SampleAttribute(Type t) => ParamType = t;
+    public Type ParamType { get; }
+```
+
+这是我们使用这种泛型属性的方式：
+
+```csharp
+public class Class1
+    [SampleAttribute(typeof(string))]
+    public string SampleMethod() => default;
+}
+```
+
+在 `C# 11` 发生这些更改后，这是我们声明泛型属性的方式：
+```csharp
+public class SampleAttribute<T> : Attribute { }
+```
+
+这是我们在 `C# 11` 中使用泛型属性的方式：
+
+public class Class1
+{
+    [SampleAttribute<string>()]
+    public string Method() => default;
+}
+```
+## Unicode 转换格式-8 字符串字面量
+
+
+
+
+
+
+因此，我们可以在不引入额外代码复杂性的情况下获得最佳性能，而无需声明用于存储 UTF-8 表示的字段。
+
+通过在字符串字面量后附加 `u8` 后缀，结果类型将变为 `ReadOnlySpan<byte>`。编译器处理字符串数据发射到 DLL 的方式与之前示例涉及返回 `ReadOnlySpan<byte>` 的静态属性的示例完全相同。因此，我们获得了这种方式的性能优势，而不会带来任何相关的不便。
+
+随着 C# 的变化，我们可以这样写代码：
+```csharp
+ReadOnlySpan<byte> SampleStringLiteral = "Sample"u8;
+```
+
+可选参数的默认值无法使用 UTF-8 字符串字面量设置，因为它们是运行时常量而非编译时常量。此外，不允许对 UTF-8 字符串字面量进行字符串插值，因为它们不能在同一个字符串表达式中与 `$` 标记和 `u8` 后缀结合使用。
+
+
+要将 UTF-8 字符串字面量存储为数组，你需要利用 `ReadOnlySpan<T>.ToArray()` 将包含字面量的字节复制到可变数组中。
+
+### 字符串插值表达式中的换行
+
+现在，字符串插值由 `{` 和 `}` 包围的内容允许跨多行。`{` 和 `}` 标记之间的内容被解释为 C#。它接受任何有效的 C# 代码，包括换行符。这一增强简化了字符串插值的可读性，特别是当整合更复杂的 C# 表达式（如模式匹配 switch 表达式或语言集成查询 LINQ 查询）时。
+有了这些变化，现在是可以可能的：
+
+```csharp
+string resultMessage = $"The safety guidelines for {score} are {
+score switch
+{
+    > 80 => "General usage, with daily safety check",
+    > 70 => "Issues must be addressed within 1 week",
+    > 50 => "Issues must be addressed within 1 day",
+    _ => "Issues must be addressed before continued use",
+}}";
+```
+你可能会观察并认为坚持使用 `string.Format` 的传统字符串格式化风格更具可读性。我们可以看到在下方使用了相同示例的字符串格式化：
+
+```csharp
+string resultMessage = string.Format("The safety guidelines for {0} are {1}",
+score,
+score switch
+    > 90 => "Unlimited usage",
+    > 80 => "General usage, with daily safety check",
+    > 70 => "Issues must be addressed within 1 week",
+    > 50 => "Issues must be addressed within 1 day",
+    _ => "Issues must be addressed before continued use"
+});
+
+虽然你的观点有道理，但在某些情况下，字符串插值仍然是优的。值得注意的是，随着 C# 11 的引入，字符串插值经历了性能增强，导致了更短的执行时间和更低的内存消耗。我们在下方提供了字符串拼接方式的比较：
+
+*   在上述字符串拼接方法中效率最低的选项是 `string.Concat()`（接受对象的重载，而非字符串），主要因为它始终对结构体进行装箱（boxing）并生成中间字符串，这通过 ILSpy 的反编译可以观察到。
+*   `+` 和 `string.Concat()`（接受字符串而非对象的重载）表现出略好的性能特征。尽管它们使用了中间字符串，但它们不涉及结构体的装箱。
+*   接下来，`string.Format()` 通常比之前提到的方法高效。它不一定会对结构体装箱，并避免了创建中间字符串，特别是当结构体实现了 `ISpanFormattable` 时，这是一个以前是 .NET 内部的性能增强功能。
+
+### 列表模式
+
+List 模式将模式匹配扩展到以适应列表或数组中的元素序列。例如，当条件序列 `[1, 2, 3]` 代表包含三个整数（1, 2, 和 3）的数组或列表时，该序列求值为为真。这允许使用各种模式匹配元素，例如常量、类型、属性和关系模式。丢弃模式 `_` 用于匹配任何单个元素，而新引入的范围模式 `..` 则用于匹配任何零或多个元素的序列。
+
+有了这些变化，我们可以得到如下代码：
+```csharp
+int[] values = { 2, 4, 6 };
+Console.WriteLine(values is [2, 4, 6]);  // True
+Console.WriteLine(values is [2, 4, 8]);  // False
+Console.WriteLine(values is [2, 4, 6, 8]); // False (示例逻辑检查)
+```
+
+如上文所示，列表模式在每个嵌套模式与输入序列对齐时被视为匹配。列表模式内部，你可以灵活地使用任何模式。如果你的目标是匹配任何元素，可以使用丢弃模式。或者，如果你打算捕获该元素，可以使用 `var` 模式，如下所示：
+
+```csharp
+List<int> elements = new() { 7, 8, 9 };
+{
+    Console.WriteLine($"The lead element in a three-item collection is {initial}.");
+}
+```
+
+让我们深入探讨这些模式的意义：
+丢弃模式在匹配序列中的一个或多个元素时非常有用，前提是我们知道序列的长度。
+
+```csharp
+int[] fibonacciSequence = { 1, 2, 3, 5, 8 };
+bool matchingResult = false; // 匹配失败，长度不匹配
+matchingResult = fibonacciSequence is [_, _, 3, _]; // 匹配失败，3 的位置不对
+```
+matchingResult = fibonacciSequence is [2, _, 3, _, _]; // 匹配成功，单个元素及其位置和长度匹配
+matchingResult = fibonacciSequence is [1, _, _, _, _]; // 匹配成功，多个元素及其位置和长度匹配
+matchingResult = fibonacciSequence is [1, _, 3, _, _]; // 匹配成功
+```
+
+
+
+
+
+
+对于待比较序列长度未知的的情况，范围模式（Range Pattern）变得非常有价值。该模式中的两个点（..）表示这两个点的位置可以存在任意数量的元素。需要注意的是，这两个点在序列中只能使用一次：
+```csharp
+int[] customFibonacci = { 1, 2, 3, 5, 8 };
+bool matchingResult = false;
+
+// 匹配结果为 true，因为 customFibonacci 以元素 8 结尾
+matchingResult = customFibonacci is [.., 8];
+// 匹配结果为 false，3 不是倒数第二个元素
+matchingResult = customFibonacci is [.., 3, _];
+
+// 匹配结果为 true，因为序列以 1 开头并以 8 结尾
+matchingResult = customFibonacci is [1, .., 8];
+
+matchingResult = customFibonacci is [1, ..];
+```
+
+示例所示模式是常量模式（constant pattern），在序列中使用了直接数字。相反，可以使用关系模式（relational patterns），允许包含比较表达式，如下代码所示：
+
+```csharp
+bool matchingResult = false;
+
+// 匹配结果为 false，因为 customFibonacci 以元素 8 结尾
+matchingResult = customFibonacci is [.., <8];
+
+// 匹配结果为 true，3 是倒数第三个元素
+
+// 匹配结果为 false，因为第一个元素不大于 1
+matchingResult = customFibonacci is [>1, .., 8];
+```
+
+Var 模式（Var Pattern）提供了使用 `var` 关键字后接变量名的灵活性，用于捕序列中该位置上的元素。该变量可以在同一作用域内用于各种用途，如下所示，它在模式匹配场景中提供了多灵活性：
+```csharp
+int[] customFibonacci = { 1, 2, 3, 5, 8 };
+
+// 将两个元素赋值给两个变量
+if (customFibonacci is [.., var penultimate, var last])
+{
+    Console.WriteLine($"last = {last}");
+}
+else
+{
+    Console.WriteLine("Pattern did not match!");
+}
+//-------------------------------------------------------
+// Case - 模式不匹配
+//-------------------------------------------------------
+int[] someNumbers = { 1 };
+if (someNumbers is [var firstValue, var secondValue, ..])
+{
+    Console.WriteLine($"secondValue = {secondValue}");
+}
+else
+{
+    Console.WriteLine("Pattern did not match!");
+}
+
+### 文件本地类型 (File-local types)
+
+`file` 修饰符将顶层类型的作用域和可见性限制在声明它的文件中。通常，`file` 修饰符应用于源生成器（source generator）生成的类型。文件本地类型为源生成器提供了一个方便的解决方案，以防止生成类型之间的命名冲突。`file` 修饰符将类型指定为文件本地，如下：
+
+```csharp
+{
+    // implementation
+}
+```
+
+嵌套在文件本地类型内的任何类型同样被限制在声明它的文件可见范围内。程序集中的其他类型可以与文件本地类型共享相同的名称，而不会引起命名冲突。
+文件本地类型不能作为可见性大于文件作用域的成员的返回类型或参数类型。此外，文件本地类型不能作为可见性超过文件作用域的类型的成员。尽管如此，可见性更高的类型可以隐式实现文件本地接口类型。显式实现文件本地接口也是可能的，但此类实现只能在文件作用域内使用。
+
+后续示例演示了一个公共类型使用文件内的机密类型来提供工作方法。此外，该公共类型隐式地实现了文件中定义的本地接口：
+
+```csharp
+// 在 CustomFile.cs 中：
+{
+    int OfferSolution();
+}
+
+file class RestrictedComponent
+{
+}
+
+public class SpecialWidget : ICustomFeature
+{
+    public int OfferSolution()
+    {
+        return performer.PerformTask();
+    }
+}
+```
+
+在另一个源文件中，可以定义与文件本地类型名称相同的类型。然而，如下代码所示，文件本地类型仍然保持隐藏且不可访问：
+```csharp
+// 在 AnotherFile.cs 中：
+public class RestrictedComponent
+{
+    // 这是一个同名的不同类
+}
+
+
+
+
+
+[content]
+```cs
+14. // 使用 ToString 方法显示文章详情
+15. Console.WriteLine(article.ToString());
+16. }
+17. }
+```
+我们遇到了如下错误，如图所示：
+
+![](img/Figure_2.1.png)
+
+图 2.1：尝试初始化未包含必要成员的类时的警告
+
+
+C# 11 编译器保证在构造函数执行期间，将结构体类型中的所有字段初始化为它们的默认值。这一更改确保了任何没有通过构造函数显式初始化的字段或自动属性都会由编译器自动初始化。现在，带有未为所有字段显式赋值的构造函数的结构体可以成功编译，且任何未显式初始化的字段将会被设置为其默认值。
+
+我们可以在下面的示例中看到 C# 11 的变化：
+
+```csharp
+{
+    public ResultInfo(double result)
+    {
+        ResultValue = result;
+    }
+
+    {
+        ResultValue = result;
+        Information = information;
+    }
+
+    public ResultInfo(string information)
+        ResultValue = 0; // double 的默认值
+        Information = information;
+    }
+
+    public double ResultValue { get; init; }
+    public string Information { get; init; } = "Default result";
+    public override string ToString() => $"{ResultValue} ({Information})";
+}
+
+public static void Main()
+{
+    var data1 = new ResultInfo(8.5);
+
+    var data2 = new ResultInfo();
+    Console.WriteLine(data2); // output: 0 (Default result)
+
+    var data3 = default(ResultInfo);
+    Console.WriteLine(data3); // output: 0 (Default result)
+```
+
+每个结构体本质上都有一个公共无参数构造函数。如果你选择为结构体实现无参数构造函数，它必须被声明为 `public`。在结构体包含任何字段初始化器的情况下，则必须显式声明构造函数，该构造函数可以是无参数的，也可以是有参数的。如果结构体声明了字段初始化器但没有任何构造函数，编译器将报告编译错误。当结构体具有显式声明的构造函数（无论带参数还是无参数）时，该结构体的所有字段初始化器都会执行。缺少字段初始化器或未在构造函数中赋值的字段将自动设置为其默认值。
+
+## 对常量字符串进行模式匹配 Span<char> 
+
+在过去的多个版本中，模式匹配允许测试字符串是否持有某个特定的常量值。现在，这种模式匹配逻辑也可以应用于 `Span<char>` 或 `ReadOnlySpan<char>` 类型的变量。
+
+在引入 C# 11.0 之前，仔细研究使用 `Span<T>` 和 `ReadOnlySpan<T>` 的原因是非常关重要的。这些类型提供了表示数据子集的有效手段。具体来说，如果你使用 `someString[4..10]` 切分字符串的一部分，C# 编译器将生成代码来创建一个包含请求字符拷贝的新字符串对象。然而，当使用 `ReadOnlySpan<char>` 时，不会生成新的数据副本。相反，会创建一个新的 `ReadOnlySpan<char>`，它指向相同的底层数据，并引用略小的一部分。
+
+考虑一种情况：要检查的字符串是较大字符串的子字符串。在没有 C# 11.0 的情况下，使用此类示例将需要编写显式管理子字符串的代码，如下所示：
+
+string extractedName = document[startIndex..endIndex];
+```
+
+然而，随着 C# 11.0 的引入，你可以选择不同的方式来表达：
+
+```csharp
+```
+
+创建的 span 没有复制数据；相反，它直接指向 `doc` 字符串中的相关部分。C# 11.0 中的这一新发现的功能允许你在模式匹配中使用名为 `extractedName` 的 `ReadOnlySpan<char>`，如之前的示例所示。
+
+`ReadOnlySpan<char>` 为处理子字符串提供了一种内存高效的方法。它允许你获取一个指向字符串部分或任何字符值序列的 `ReadOnlySpan<char>`，而无需分配新对象。凭借 C# 11.0 引入的增强功能，你可以无缝地在字符串常量模式中使用生成的 `ReadOnlySpan<char>`。
+
+
+类型参数名称和参数名称现在可以在方法属性声明的 `nameof` 表达式作用域内访问。这一增强允许使用 `nameof` 运算符来指示与方法或参数声明本身关联属性中的方法参数名称。这种能力对于结合与可空分析（nullable analysis）相关的属性特别有价值。
+
+在更改之前，我们必须执行如下的操作：
+
+```csharp
+{
+    public void CustomMethod(string customParam)
+    {
+        var className = nameof(CustomClass);
+        var methodName = nameof(CustomMethod);
+        var paramName = nameof(customParam);
+}
+```
+
+现在，我们可以这样做：
+
+```csharp
+{
+    [nameof(TGeneric)]
+    void LocalFunction<TGeneric>(TGeneric parameter)
+    {
+        var customLambda = nameof(parameter);
+        Console.WriteLine(parameter);
+}
+```
+
+## 数值 IntPtr 和 UIntPtr (Numeric IntPtr and UIntPtr)
+
+`nint` 和 `nuint` 类型现在分别与 `System.IntPtr` 和 `System.UIntPtr` 同义：
+*   `nint` 是 `IntPtr` 的别名，就像 `int` 是 `Int32` 的别名一样。
+*   `nuint` 是 `UIntPtr` 的别名，类似于 `uint` 是 `UInt32` 的别名。
+
+在本文编写时，C# 支持以下预定义整数类型：
+
+![](img/Figure_2.2.png)
+图 2.2：整数类型比较
+
+## ref 字段和范围 ref (ref fields and scoped ref)
+
+从 ref 字段开始，这一修改是底层结构改进的一部分。虽然在普通程序员的日常任务中可能不会频繁使用，但它对热路径（hot paths）性能的影响将是可见的。
+
+
+在 C# 11 中，内部类型 `ByReference<T>` 将经历转变，通过将类型定义为 `ref struct` 和 `ref field` 变得所有人可见。因此，在 C# 11 中，内部 `Span` 将采用目前类似于下面的的形式，如下代码所示：
+
+```csharp
+readonly ref struct CustomSpan<T>
+{
+    readonly int _customLength;
+
+    public CustomSpan(ref T customValue)
+    {
+        _customField = ref customValue;
+        _customLength = 1;
+}
+```
+
+
+
+
+关于 `scoped ref`，`ref` 参数具有包含 `scoped` 修饰符的选项，这向编译器指示该引用被限于当前方法的生命周期。这种限制影响了引用的传递、存储或分配存储的方式。这些语言层面的改进使开发者能够编写更高效的代码，而无需诉助于不安全的特性。通过这些增强，编译器可以强制引用变量的生命周期规则，如下例所示：
+
+```csharp
+CustomSpan<int> GenerateCustomSpan(scoped ref int customParameter)
+{
+    // 方法正体
+```
+
+这使得我们能够通过引用传递整数，同时编译器确保它不会被存储在函数作用范围内的任何地方。目标是防止创建不必要的指针和处理程序。
+
+在下面的代码中，我们可以看到这两项增强的进一步用法，同时使用了 `ref` 和 `scoped ref` 功能：
+
+ref struct CustomRefStruct
+{
+    public ref int InternalReference; // 一个 ref 字段
+
+    public CustomRefStruct(ref int data)
+    {
+    }
+}
+
+public class UsageExample
+{
+    public void Demonstrate()
+        int dataValue = 99;
+
+        using CustomRefStruct customStruct =
+            new CustomRefStruct(ref dataValue);
+        scoped ref int localReference =
+            ref customStruct.InternalReference; // scoped ref 变量
+
+        // 在此处使用 localReference
+    }
+}
+```
+
+
+关于方法组转换的 C# 标准现在涵盖了以下方面：
+
+允许（尽管并非强制）利用一个已经包含这些引用的现有委托实例。
+
+在标准的较早版本中，编译器被限制不能重用为方法组转换生成的委托对象。在 C# 11 编译器中，从方法组转换产生的委托对象会被缓存，并随后作为单一委托对象重用。此功能最初作为预览特性在 Visual Studio 2022 版本 17.2 和 .NET 7 Preview 2 中引入。
+当满足某些条件时，会建立从方法组 (§12.2)到兼容委托类型 (§20.4)的隐式转换。如果 `D` 代表委托类型而 `E` 是被分类为方法组的表达式，则仅当 `E` 包含至少一个可以在其正常形式 (§12.6.4.2) 下针对任何参数列表 (§12.6.2) 用的方法时，`D` 才与 `E` 兼容。参数列表的类型和修饰符必须与 `D` 的参数类型和修饰符匹配，详如下。
+
+从方法组 `E` 到委托类型 `D` 转换的编译时应用涉及以下步骤：
+
+1. 选择一个与形式为 `E(A)` 的调用 (§12.8.9.2) 对应的单个方法 `M`，修改如下：
+    * 参数列表 `A` 由表达式组成，每个表达式都被分类为变量，并具有与 `D` 的 `formal_parameter_list` 中对应参数相同的类型和修饰符（`in`、`out` 或 `ref`）。然而，对于 `dynamic` 类型的参数，对应的表达式类型为 `object` 而不是 `dynamic`。
+
+2. 通过考虑 §12.8.9.2 的算法来验证转换的存在，该算法应产生与 `D` 兼容 (§20.4) 的单个最佳方法 `M`。
+
+3. 如果选定的方法 `M` 是实例方法，则与 `E` 关联的实例表达式标识委托的目标对象。
+
+4. 如果选定的方法 `M` 是通过实例表达式成员访问指定的扩展方法，则该实例表达式建立了委托的目标对象。
+此转换的结果是一个类型为 `D` 的值，表示指向所选方法及其目标对象的委托。
+
+接接代码示例展示了方法组转换：
+
+```csharp
+delegate string CustomDelegate1(object data);
+delegate object CustomDelegate3();
+delegate string CustomDelegate4(object data, params object[] args);
+delegate string CustomDelegate5(int value);
+
+class CustomTestClass
+{
+    static void CustomMethodGroup()
+    {
+        CustomDelegate1 delegate1 = CustomMethod; // OK
+        CustomDelegate2 delegate2 = CustomMethod; // OK
+        CustomDelegate3 delegate3 = CustomMethod; // 错误
+        // 不适用
+        // 在正常形式下不适用
+        CustomDelegate5 delegate5 = CustomMethod; // 错误
+        // 适用但不兼容
+    }
+}
+```
+对 `delegate1` 的赋值涉及从方法组 `CustomMethod` 到类型 `CustomDelegate1` 值的隐式转换。
+
+对 `delegate2` 的赋值演示了为具有更少派生（逆变）参数类型和更多派生（协变）返回类型的方法创建委托。
+
+相比之下，对 `delegate3` 的赋值强调了当方法不可时不不存在转换。
+
+
+最后，对 `delegate5` 的赋值示例了委托和方法的参数及返回类型允许仅在引用类型之间存在差异。
+
+
+
+
+在本节中，我们将深入探讨 C# 12 中引入的重要更新，这些更新旨在提高开发者的效率和代码表达能力。从基于模式的接口到全局使用指令（global using directives）的集成，C# 12 引入了多项简化开发工作流和提高代码可读性的特性。开发者将探索基于模式的接口，它允许更灵活的类型声明和改进的代码组织。此外，全局使用指令的集成简化了命名空间管理，减少了样板代码并增强了代码清晰度。理解这些变化使开发者能够有效利用最新的语言特性，在 C# 项目中编写更整洁、更简洁且易于维护的代码。
+
+## 主构造函数 (Primary constructors)
+
+现在，主构造函数不再是 record 类型的特有；它们可以在任何类或 `struct` 中创建。这些构造函数允许参数在整个类体中可访问。显式定义的构造函数必须使用 `this()` 语法调用主构造函数，以确保所有参数都得到了明确赋值。在类中引入主构造函数将防止编译器生成隐式的无参数构造函数。在 `struct` 中，隐式的无参数构造函数会将所有字段（包括主构造函数参数）初始化为 0 位位模式。然而，编译器仅为 record 类型中的主构造函数参数生成公共属性，而在非 record 类或 `struct` 中则不会。
+
+
+```csharp
+public class Client(string clientName)
+{
+    public string Name { get; } = clientName; // 编译器警告
+    public string FullName => clientName;
+}
+
+// Console app
+var client = new Client("Thiago");
+client.ModifyName();
+Console.WriteLine($"Name: {client.Name}"); // Thiago
+```
+
+## 集合表达式 (Collection expressions)
+
+集合表达式允许简洁地创建常见的集合值。它是一种封装在 `[` 和 `]` 括号中的简洁语法，适用于赋值给各种集合类型。例如，考虑初始化一个代表月份字符串元素的 `System.Span<T>`：
+
+Span<string> monthsOfYear = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+foreach (var month in monthsOfYear)
+{
+    Console.WriteLine(month);
+}
+```
+在集合表达式中用 `..` 表示的扩展运算符（spread operator）将将其参数替换为该集合中的元素。该参数必须是集合类型。下面是说明扩展运算符功能的用例：
+
+```csharp
+int[] evenNumbers = [2, 4, 6, 8];
+int[] oddNumbers = [1, 3, 5, 7, 9];
+int[] allNumbers = [..evenNumbers, ..oddNumbers];
+{
+    Console.Write($"{number}, ");
+}
+// 输出:
+// 2, 4, 6, 8, 1, 3, 5, 7, 9,
+```
+## 内联数组 (Inline arrays)
+
+内联数组通过在 `struct` 类型中创建固定大小的数组来增强应用程序性能。内联数组通常由运行时和库开发者使用，它们提供了与安全固定大小缓冲区相似的性能。虽然开发者可能不会直接声明内联数组，但当通过运行时 API 访问 `System.Span<T>` 或 `System.ReadOnlySpan<T>` 对象时，可以从中受益。以下是在 `struct` 中声明内联数组的示例：
+
+```csharp
+[System.Runtime.CompilerServices.InlineArray(7)]
+{
+    private int _element0;
+}
+```
+
+用法与标准数组相同：
+```csharp
+var sampleArray = new SampleArray ();
+for (int i = 0; i < 7; i++)
+{
+    sampleArray[i] = i;
+}
+{
+    Console.WriteLine(i);
+}
+```
+
+## 默认 lambda 参数 (Default lambda parameters)
+Lambda 表达式现在支持默认参数值，并遵循与普通方法或本地函数参数相同的语法和约定，如下例示例所示：
+
+```csharp
+// 定义一个 lambda 表达式按指定的增量增加数字（默认增量为 1）
+var IncrementValue = (int number, int amount = 1) => number + amount;
+
+// 结果
+Console.WriteLine(IncrementValue(10)); // 输出: 11
+Console.WriteLine(IncrementValue(10, 5)); // 输出: 15
+```
+
+你还可以使用 `params` 关键字定义带有参数数组的 lambda 表达式：
+```csharp
+var calculateSum = (params int[] numbers) =>
+{
+    int totalSum = 0;
+    foreach (var num in numbers)
+        totalSum += num;
+};
+
+var emptySum = calculateSum();
+Console.WriteLine(emptySum);
+
+var sequenceNumbers = new[] { 1, 2, 3, 4, 5 };
+Console.WriteLine(totalSum);
+```
+
+通过这些更新，当包含默认参数的方法组赋值给 lambda 表达式时，该 lambda 表达式也会继承该默认参数。同样，带有 params 数组的方法组也可以赋值给 lambda 表达式。具有默认参数或 params 数组的 lambda 表达式并不直接对应 `Func<>` 或 `Action<>`。但是，你可以定义包含默认值的委托类型：
+
+```csharp
+delegate int TotalDelegate(params int[] numbers);
+```
+
+或者你可以使用隐式类型变量 `var` 来定义委托类型。在这种情况下，编译器会确定委托类型。
+
+## ref readonly 参数 (ref readonly parameters)
+`in` 修饰符允许编译器为参数生成临时变量并传递该变量的只读引用。当参数需要转换、涉及从参数类型的隐式转换或代表非变量的值（例如字面量值或属性访问器返回值）时，会生成此临时变量。在 API 强制通过引用传递的情况下，建议使用 `ref readonly` 修饰符代替 `in`。
+
+使用 `in` 参数的方法可能会从性能优化中受益，特别是对于大型 `struct` 类型参数。通过指示可以安全地通过引用传递，声明了 `in` 参数的方法避免了在密集循环或关键代码路径中进行昂贵的拷贝。在调用处显式指定 `in` 可确保参数按引用而非按值传递，这具有两个主要优势：
+
+*   当多个方法仅在是否存在 `in` 上有所不同时，强制编译器选择带有匹配 `in` 参数的方法，从而优先选择按引用的重载。
+*   声明按引用传递参数的意图，表明与 `in` 使用的参数必须代表一个可以直接引用的位置。
+在调用处遗漏 `in` 将提示编译器创建一个临时变量，以只读引的方式传递给方法，从而克服与 `in` 参数相关的限制，例如编译时常量、属性或需要从参数类型到参数类型隐式转换的表达式。
+
+
+
+
+`ref readonly` 修饰符在方法声明中是强制的，但在调用处是可选的。可以使用 `in` 或 `ref` 修饰符。然而，在调用处是不允许使用 `ref readonly` 修饰符的。调用处选择的修饰符可以阐明参数的特征。
+*   仅当参数为可写变量时，才使用 `ref`。
+*   当参数为变量时（无论其是可写的还是 `readonly` 的），请使用 `in`。
+*   如果参数不是变量而是表达式，则不能添加任何一种修饰符。
+
+接后的示例说明了这些条件。考虑以下方法，它利用 `ref readonly` 修饰符表示出于性能考虑，应该通过引用传递大型结构体：
+
+public static void UpdateStruct(ref readonly OptionStruct target)
+{
+    // 省略了实现细节
+}
+```
+
+
+```cs
+UpdateStruct(in struct);
+UpdateStruct(ref struct);
+UpdateStruct(struct);
+// 警告变量应通过 `ref` 或 `in` 传递
+// 警告，但是一个表达式，所以没有变量可以引用
+```
+
+如果变量被声明为 `readonly`，则必须使用 `in` 修饰符；在此语境下使用 `ref` 修饰符会导致编译器错误。
+
+`ref readonly` 修饰符表示该方法期望参数是一个变量，而不是不是变量的表达式。非变量表达式包括常量、方法返回值和属性。当参数不是变量时，编译器会发出警告。
+## 别名 any
+
+在 C# 12 中，`using` 别名指令已增强，允许对任何类型设置别名，而不限于命名类型。这种灵活性允许对元组、指针、数组类型、泛型等设置别名。因此，你现在可以在整个代码库中使用简洁且具描述性的别名，而不是元组的完整结构表示。
+
+考虑以下元组设置别名的示例。首先，声明别名：
+
+using SampleTuple = (int x, int y);
+```
+
+随后，像使用任何其他类型一样使用它。将其作为返回类型、方法参数列表中的，甚至用于实例化该类型的新实例。这种可能性几乎是无限的。
+
+这里是一个演示之前声明的元组别名使用的示例：
+```cs
+SampleTuple CopyTuple(SampleTuple input)
+{
+    return new SampleTuple(input.x, input.y);
+}
+```
+## 结论
+
+总之，本章深入探讨了 C# 11 和 C# 12 中引入的主要变化。从主构造函数到内联数组，我们检查了广泛的旨在提高开发者效率和代码质量的增强。
+
+通过理解这些新特性及其应用，开发者可以释放 C# 的全部潜力，并在快速演进的软件开发格局中保持领先。无论是利用集合表达式编写简洁的代码，还是采用可选参数。
+
+
+
+`Entity Framework Core` 中的数据库优先（Database First）方法用于当我们需要将现有的数据库模型反向工程变为可供应用程序使用的类时。它提供了一种将新项目与现有数据库无缝连接的宝贵能力，这在技术迁移期间特别有用。
+
+数据库优先允许将数据库对象翻译为项目中的相应类。该方法受所有 Entity Framework Core 程序的支持，并能有效地将来自各种数据源的数据字段、数据类型和表关系反映到您项目的编程语言中。
+
+
+## 使用数据库优先方法的益处
+
+数据库优先方法的主要优势之一是它能够将新项目与现有数据库进行无缝连接，无论之前使用了什么技术。此外，它还允许项目架构和数据库建模的并行开发，使不同的团队能够并发工作。随后，可以使用数据库优先方法将项目连接到已创建的数据库。
+
+如果在使用数据库优先方法成功创建实体后，需要更新项目或数据库中的任何对象，您有以下选项：
+*   如果您对代码进行了更改并希望这些更改反映在数据库中，则应该使用 `Migration Commands`（迁移命令）功能。
+*   如果您对数据库进行了更改并希望这些更改反映在您的代码中，则需要重新对数据库进行脚架（scaffold）。
+
+## 实施步骤
+
+在此实现中，我们正在使用一个现有的公共数据库——Northwind 数据库。您可以通过执行以下 SQL 脚本和步骤创建 Northwind 数据库的副本，在本示例中我们将数据库命名为 `SampleThiagoDb`：
+[`raw.githubusercontent.com/microsoft/sql-server-samples/master/samples/databases/northwind-pubs/instnwnd.sql`](https://raw.githubusercontent.com/microsoft/sql-server-samples/master/samples/databases/northwind-pubs/instnwnd.sql)
+
+1.  首先，创建一个针对 `.NET 8.0` 的控制台应用程序，并添加脚架和连接数据库所需的 Nuget 包：
+    *   `Microsoft.EntityFrameworkCore.Design`
+    *   `Microsoft.EntityFrameworkCore.Tools`
+    *   `Microsoft.EntityFrameworkCore.SqlServer`
+2.  获取到 Northwind 数据库的连接字符串。您可以轻松地从 SQL Server 对象资源管理器窗口检索连接字符串，然后如图片所示进入您的数据库的属性：
+
+![](img/Figure_3.1.png)
+
+图 3.1：如何找到您的连接字符串
+
+    ```bash
+    Scaffold-DbContext {Your Connection String} Microsoft.EntityFrameworkCore.SqlServer
+    ```
+
+    输出如下，创建了 `DbContext` 并生成了脚架类：
+
+
+图 3.2：执行 `Scaffold` 命令后生成的脚架类
+
+## 代码优先（Code First）
+
+Entity Framework Core 代码优先（Code First）通过允许您使用 `C#` 类定义数据模型，然后自动生成相应的数据库架构，简化了数据库开发。这种方法简化了应用程序创建和维护数据库的过程。
+通过 `Entity Framework Core` 的代码优先方法，您可以使用熟悉的面向对象原则设计应用程序的实体和关系。通过利用特性（attributes）或流式 API 配置，您可以精细调整数据模型的各个方面，例如指定主键、定义关系和应用约束。
+
+## 使用代码优先方法的益处
+
+代码优先的益处不仅限于初始数据库创建。它提供了无缝的数据库迁移支持，允许您随时间推移演进数据模型而不丢失现有数据。您可以轻松地添加新实体、修改现有实体，并使用迁移（migrations）更新数据库架构以反映这些更改。
+
+
+## 实施步骤
+
+在此实现中，我们正在使用 `Entity Framework Core` 通过代码优先设置一个包含少量实体的数据库。
+
+首先，创建一个针对 `.NET 8.0` 的 Web 应用程序，并添加连接和管理数据库所需的 Nuget 包：
+*   `Microsoft.EntityFrameworkCore`
+*   `Microsoft.EntityFrameworkCore.SqlServer`
+
+创建几个类如下：
+
+```csharp
+{
+    public int Id { get; set; }
+    public string Address { get; set; }
+    public string City { get; set; }
+    public ICollection<Product> Products { get; set; }
+}
+public class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public double Price { get; set; }
+    public string Description { get; set; }
+
+public class Customer
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Address { get; set; }
+    public ICollection<Product> Products { get; set; }
+}
+```
+
+1.  创建 `SampleDbContext` 作为 `DbContext`：
+
+public class SampleDbContext : DbContext
+{
+    public SampleDbContext(DbContextOptions<SampleDbContext> options)
+        : base(options)
+    {
+    }
+    public DbSet<Product> Products { get; set; }
+    public DbSet<Customer> Customers { get; set; }
+    public DbSet<Supermarket> Supermarkets { get; set; }
+}
+```
+
+
+```csharp
+builder.Services.AddDbContext<SampleDbContext>(
+    options => options.UseSqlServer("Data Source=DESKTOP-H20O12E;Initial Catalog=SampleThiagoDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"));
+```
+
+    ```bash
+    Add-Migration InitialCreate
+    ```
+
+    根据输出，您应该拥有包含以下文件的迁移文件夹：
+
+
+图 3.3：生成的迁移文件夹和类
+
+4.  现在，我们必须在包管理器控制台中执行以下命令，它将负责创建数据库：
+    ```bash
+    update-database
+
+    成功完成后，您的数据库将已创建：
+
+![](img/Figure_3.4.png)
+
+图 3.4：执行 `update-database` 命令后生成的数据库
+## LINQ to Entities
+
+LINQ to Entities 允许开发者使用 `C#` 或 `Visual Basic` 等熟悉的编程语言编写查询，使得复杂的数据检索和操作变得更加简单。通过 LINQ to Entities，开发者可以利用 LINQ 的完整功能来编写表达式丰富且类型安全的查询。LINQ to Entities 支持广泛的操作，包括过滤、排序、分组和数据聚合。它还支持复杂的连接操作，并支持各种用于数据处理和转换的 LINQ 操作符和方法。
+
+
+
+
+当使用 LINQ to Entities 时，查询由 `IQueryable<T>` 对象表示。这些对象定义了可以在数据库上执行的查询。LINQ to Entities 驱动程序会将 LINQ 表达式和操作转换为 SQL 查询，并在底层数据库上执行。
+
+LINQ to Entities 的核心优势之一是由于它与 Entity Framework Core 及其组件（如更改跟踪、事务管理和数据库更新）的集成。这种集成允许开发者编写高效且优化的查询，充分利用 Entity Framework Core 的底层能力。
+
+以下是每次执行 LINQ to Entities 查询时在后台运行的逐步步骤：
+1.  从 `ObjectContext` 创建一个 `ObjectQuery<T>` 对象的新实例。
+    `ObjectQuery` 对象表示一个类型化查询，其中 `T` 是结果中返回的实体类型。
+
+2.  基于 `ObjectQuery<T>` 实例组合 LINQ To Entities 查询。
+    `ObjectQuery<T>` 类实现了 `IQueryable<T>`，充当 LINQ to Entities 查询的数据源，指定要检索所需的数据，并允许排序、分组和形状确定。查询存储在变量中，不会立即采取行动或返回数据。LINQ to Entities 支持两种语法：查询表达式和基于方法的方法，LinQ 在 C# 3.0 和 Visual Basic 9.0 中引入。
+
+    首先，必须将 LINQ 代码转换为特定于框架的命令树表示。LINQ 查询由标准运算符和表达式组成，其中运算符是类上的方法，而表达式可以包含广泛的功能。Entity Framework 将运算符和表达式统一到命令树内的单一类型层次结构中，然后用于查询执行。转换过程涉及对查询运算符和表达式均进行相应的转换。
+
+4.  针对数据源执行由命令树表示的查询。
+    在查询执行期间，所有的查询表达式或组件将根据上下文在客户端或服务器上进行求值。
+
+5.  查询具体化返回结果。
+
+## 数据注解 (Data Annotations)
+
+数据注解是应用到类或类属性的属性，用于修改或覆盖源自模型构建约定的配置，而通过映射属性实现的配置可以使用 `OnModelCreating` 中的模型构建 API 进一步覆盖。为了确保使用的清晰和简单，为 EF Core 设计的映射属性是 EF Core 特有的，避免了跨技术之间的任何语义差异。
+
+数据注解的优先级高于约定，但 Fluent API 配置的优先级高于数据注解。因此，你的数据注解可以覆盖约定配置，但 Fluent API 配置可以覆盖数据注解。
+## 最常用的数据注解
+
+下面你可以找到最常用的数据注解列表：
+
+*   `Table`：为 `Entity` 设置表名。
+*   `Column`：设置列名、类型和列顺序。
+*   `Required`：将属性设为必填。
+*   `ForeignKey`：设置实体之间的关系。
+*   `NotMapped`：将属性排除在数据库模型之外。
+
+ 应用数据注解
+
+
+```cs
+public class Supermarket
+{
+    public int Id { get; set; }
+    public string Address { get; set; }
+    public string City { get; set; }
+    public ICollection<Product> Products { get; set; }
+}
+
+public class Product
+{
+    public string Name { get; set; }
+    [Column(TypeName = "money")]
+    public double Price { get; set; }
+    [MaxLength(50, ErrorMessage ="Max length is 50!")]
+    public string Description { get; set; }
+}
+public class Customer
+{
+    public int Id { get; set; }
+    [Column("CustomerName", Order = 5)]
+    public string Name { get; set; }
+    public string Address { get; set; }
+    public int Age { get; set; }
+    public ICollection<Product> Products { get; set; }
+}
+```
+
+为了看到这些更改反映在数据库中，我们必须运行 `add-migration` 命令，然后运行 `update-database` 命令：
+![](img/FIgure_3.5.png)
+
+图 3.5：带有 EF Core 命令输出的程序管理器控制台
+
+在接下来的图中，数据库反映了代码中做的更改：
+
+
+图 3.6：反映代码中更改的数据库
+
+## 数据建模 (Data Modeling)
+
+数据建模是一个基础方面，侧重于定义实体之间的关系。这些关系对于组织数据至关重要。本主题探讨了三种常见的关系：一对一、一对多和多对多。
+理解这些关系及其在 Entity Framework 中的实现对于设计健壮的模型至关重要。下面描述了这些关系，并提供了它们在我们之前的项目中运行的实际示例。为了更好地演示这些关系，创建了 `ProductCategory` 类：
+
+```cs
+public class ProductCategory
+{
+    public int Id { get; set; }
+    public string Description { get; set; }
+}
+```
+
+## 一对一关系 (One-to-one relationship)
+
+
+### 必要的一对一 (Required one-to-one)
+
+在这种场景下，要求 `Product` 必须与 `ProductCategory` 关联：
+
+```cs
+public class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    [Column(TypeName = "money")]
+    public double Price { get; set; }
+    public string Description { get; set; }
+    public ProductCategory? Category { get; set; }
+}
+
+public class ProductCategory
+{
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public int ProductId { get; set; }
+    public Product Product { get; set; } = null!;
+}
+```
+在运行 `add-migration` 命令后紧运行 `update-database` 命令，我们在数据库中得到了这些更改：
+
+![](img/Figure_3.7.png)
+
+图 3.7：反映代码中更改的数据库。
+
+
+
+
+在强制的一对一关系中，主实体（principal entity）应该具有一个或多个主键或备用键属性，例如 `Product.Id`。另一方面，依赖实体（dependent entity）应该具有一个或多个外键属性，例如 `ProductCategory.ProductId`。可选情况下，主实体可以有一个指向依赖实体的引用导航属性，如 `Product.Category`。同样，依赖实体也可以有一个指向主实体的可选引用导航属性，例如 `ProductCategory.Product`。这些组件共同在 Entity Framework Core 中定义并确立了实体之间的一对一关系。
+
+### 可选的一对一
+在这种场景下，我们可能有一个关联到 `ProductCategory` 的 `Product`，同时也可能有一个未关联任何 `ProductCategory` 的 `Product`，从下面的代码中看到：
+
+```csharp
+[Table("NewProductTable")]
+public class Product
+{
+    public string Name { get; set; }
+    [Column(TypeName = "money")]
+    public double Price { get; set; }
+    [MaxLength(50, ErrorMessage ="Max length is 50!")]
+    public string Description { get; set; }
+    public ProductCategory? Category { get; set; }
+
+public class ProductCategory
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public Product? Product { get; set; }
+}
+```
+
+在运行 `add-migration` 命令后执行 `update-database` 命令，数据库中发生了这些变化：
+
+
+图 3.8：ProductId 字段反映了代码中的变化
+
+在可选的一对一关系中，实体之间存在可空导航属性。我们有 `ProductCategory.Product`、`ProductCategory.ProductId` 以及 `Product.Category`。
+
+### 一对多关系
+一对多关系中，一个实体实例与另一个实体的多个实例相关。这种关系实现了高效的数据组织，因为“一”端实体可以维护来自“多”端实体的集合。
+
+#### 强制一对多
+
+在这种场景下，一个 `Product` 关联到 N 个 `ProductCategory`：
+
+[Table("NewProductTable")]
+public class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    [Column(TypeName = "money")]
+    [MaxLength(50, ErrorMessage = "Max length is 50!")]
+    public string Description { get; set; }
+    public ICollection<ProductCategory> Category { get; } = new List<ProductCategory>();
+}
+
+public class ProductCategory
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public int ProductId { get; set; }
+    public Product Product { get; set; } = null!;
+}
+
+在运行 `add-migration` 命令后执行 `update-database` 命令，数据库中发生了这些变化：
+
+![](img/Figure_3.9.png)
+
+图 3.9：数据库反映了代码中的变化
+在一一对多关系中，由主实体 `Product` 代表的“一”端应该具有一个或多个主键或备用键属性。另一方面，由依赖实体 `ProductCategory` 代表的“多”端应该具有一个或多个外键属性，如 `ProductCategory.ProductId`。可选情况下，主实体可以有一个如 `Product.ProductCategories` 的集合导航来引用依赖实体，而依赖实体可以有一个如 `ProductCategory.Product` 的可选引用导航来引用主实体。这些组件在 Entity Framework Core 中定义并确立了一一对多的关系。
+
+#### 可选一对多
+
+在这种场景下，一个 `Product` 关联到 0 到 N 个 `ProductCategory`：
+
+[Table("NewProductTable")]
+public class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    [Column(TypeName = "money")]
+    [MaxLength(50, ErrorMessage = "Max length is 50!")]
+    public string Description { get; set; }
+    public ICollection<ProductCategory> Category { get; } = new List<ProductCategory>();
+}
+
+public class ProductCategory
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public int? ProductId { get; set; }
+    public Product? Product { get; set; } = null!;
+}
+
+在运行 `add-migration` 命令后执行 `update-database` 命令，数据库中发生了这些变化：
+
+![](img/Figure_3.10..png)
+
+图 3.10：数据库反映了代码中的变化
+在可选的一对多关系中，实体之间存在可空导航属性。我们有 `ProductCategory.ProductId` 和 `ProductCategory.Product`。
+
+### 多对多关系
+
+多对多关系表示一个实体的多个实例与另一个实体的多个实例关联。为了方便这种关系，使用了一个中间表。Entity Framework Core 可以透明地处理这种关系，允许从任何侧添加或删除实体。然而，理解后台发生的情况（底层机制）有助于充分利用整体行为。
+
+
+```csharp
+[Table("NewProductTable")]
+public class Product
+{
+    public int Id { get; set; }
+    [Column(TypeName = "money")]
+    public double Price { get; set; }
+    [MaxLength(50, ErrorMessage = "Max length is 50!")]
+    public string Description { get; set; }
+    public List<ProductCategory> ProductCategories { get; } = new List<ProductCategory>();
+}
+public class Supermarket
+{
+    public int Id { get; set; }
+    public string Address { get; set; }
+    [Required(ErrorMessage = "The City is required.")]
+    public string City { get; set; }
+}
+
+public class ProductCategory
+{
+    public int Id { get; set; }
+    public int? ProductId { get; set; }
+    public Product? Product { get; set; } = null!;
+    public Category? Category { get; set; } = null!;
+}
+```
+
+在运行 `add-migration` 命令后执行 `update-database` 命令，数据库中发生了这些变化：
+![](img/Figure_3.11.png)
+
+图 3.11：数据库反映了代码中的变化
+
+## 数据管理
+
+
+对于以下实际示例，我们将继续使用之前为代码 First 方法创建并针对数据建模主题修改的项目。
+
+#### 常规用法
+
+
+
+
+常规用法是指使用 Entity Framework Core 与数据库交互的常用实践和技术。它涉及对实体执行基础的增、删、改、删（CRUD）操作、使用集成语言的查询（LINQ）查询数据库，以及处理实体之间的关系。
+
+Entity Framework Core 中的 `DbContext` 类充当应用程序与数据库之间的桥梁。它代表与数据库的会话，并提供了一组执行数据库操作的 API。开发者可以根据应用程序的需求创建特定的 `DbContext` 子类，并定义 `DbSet` 属性来表示实体集。
+
+创建了一个新的 Web API 控制器来表示 Entity Framework Core 和 `DbContext` 的常规用法，如如下代码块所示，我们对 `Customer` 实体执行了 CRUD 操作：
+
+```csharp
+[Route("api/[controller]")]
+[ApiController]
+public class CustomersNormalEFController : ControllerBase
+    private readonly SampleDbContext sampleDbContext;
+    public CustomersNormalEFController(SampleDbContext dbContext)
+    {
+        sampleDbContext = dbContext;
+    }
+
+    public IActionResult GetById(int id)
+    {
+        return new OkObjectResult(sampleDbContext.Customers.FirstOrDefault(x => x.Id == id));
+    }
+
+    [HttpGet("Customers")]
+    {
+        return Ok(sampleDbContext.Customers.ToList());
+    }
+
+    [HttpPost("Customer")]
+    public IActionResult PostSingle([FromBody] Customer customer)
+        sampleDbContext.Customers.Add(customer);
+        sampleDbContext.SaveChanges();
+        return CreatedAtAction(nameof(GetById), new { id = customer.Id }, customer);
+    }
+
+    [HttpPut("Customer")]
+    {
+        if (!sampleDbContext.Customers.Any(x => x.Id == customer.Id))
+            return NotFound();
+        sampleDbContext.Customers.Update(customer);
+        sampleDbContext.SaveChanges();
+        return NoContent();
+
+    [HttpDelete("Customers/{id}")]
+    public IActionResult Delete(int id)
+    {
+        var obj = sampleDbContext.Customers.Include(x=>x.Products).FirstOrDefault(x => x.Id == id);
+        if (obj ==null)
+        sampleDbContext.Products.RemoveRange(obj.Products);
+        sampleDbContext.Customers.Remove(obj);
+        sampleDbContext.SaveChanges();
+        return NoContent();
+    }
+}
+
+## 工作单元 (Unit of work)
+
+工作单元模式在软件开发中广泛用于管理事务，并确保在处理数据时的原子性和一致性。在 Entity Framework Core 中，可以使用 `DbContext` 类及其底层的更改跟踪机制来实现工作单元模式。
+
+Entity Framework Core 跟踪 `DbContext` 实例内对实体进行的更改。这意味着对实体执行的任何修改、添加或删除都会保留在内存中，直到显式保存到数据库为止。工作单元模式利用这种更改跟踪机制来有效地管理事务。
+通过工作单元模式，开发者可以将多个数据库操作组合为一个事务。通过使用 `DbContext` 的 `BeginTransaction` 以及 `Commit`/`Rollback` 方法，可以对实体的更改作为一个整体提交，或者在发生错误或异常时完全回滚。
+
+创建了一个新的 Web API 控制器来表示使用 Entity Framework Core 的工作单元，如如下代码块所示，我们对 `Customer` 实体执行了 CRUD 操作：
+
+```csharp
+[Route("api/[controller]")]
+public class CustomersUnitOfWorkController : ControllerBase
+{
+    private readonly UnitOfWork unitOfWork;
+    public CustomersUnitOfWorkController(SampleDbContext dbContext)
+    {
+        unitOfWork = new UnitOfWork(dbContext);
+
+    [HttpGet("Customers/{id}")]
+    public IActionResult GetById(int id)
+    {
+        return new OkObjectResult(unitOfWork.CustomerRepository.GetByID(id));
+    }
+    [HttpGet("Customers")]
+    public IActionResult GetAll()
+    {
+        return Ok(unitOfWork.CustomerRepository.Get());
+    }
+
+    public IActionResult PostSingle([FromBody] Customer customer)
+    {
+        unitOfWork.CustomerRepository.Insert(customer);
+        unitOfWork.Save();
+        return CreatedAtAction(nameof(GetById), new { id = customer.Id }, customer);
+    }
+    [HttpPut("Customer")]
+    public IActionResult PutSingle([FromBody] Customer customer)
+    {
+        unitOfWork.CustomerRepository.Update(customer);
+        unitOfWork.Save();
+        return NoContent();
+
+    [HttpDelete("Customers/{id}")]
+    public IActionResult Delete(int id)
+    {
+        var customer = unitOfWork.CustomerRepository.Get(x => x.Id.Equals(id), includeProperties: "Products").FirstOrDefault();
+        foreach (var item in customer.Products)
+            unitOfWork.ProductRepository.Delete(item);
+        }
+        unitOfWork.CustomerRepository.Delete(id);
+        unitOfWork.Save();
+        return NoContent();
+    }
+```
+
+## 仓库模式 (Repository pattern)
+
+仓库模式是一种设计模式，它在应用程序和数据访问层之间提供了一个抽象层。
+
+
+创建仓库接口的具体实现以与底层数据存储交互，在本例中是 Entity Framework Core。它们利用 `DbContext` 及其 `DbSet` 属性来执行所需的操作。
+
+仓库模式通过将数据访问逻辑与应用程序的其他部分分离，促进了关注点分离。这使得可测试性、可维护性，以及在切换数据访问技术时的灵活性得到了提高。
+
+创建了一个新的 Web API 控制器来表示 Entity Framework Core 的仓库模式，如下代码块所示，我们对 `Customer` 实体执行了 CRUD 操作：
+```csharp
+[Route("api/[controller]")]
+[ApiController]
+public class CustomersRepoPatternController : ControllerBase
+{
+    private readonly GenericRepository<Customer> customerRepository;
+    public CustomersRepoPatternController(GenericRepository<Customer> customerRepository, GenericRepository<Product> productRepository)
+    {
+        this.customerRepository = customerRepository;
+        this.productRepository = productRepository;
+    }
+
+    public IActionResult GetById(int id)
+    {
+        return new OkObjectResult(customerRepository.GetByID(id));
+    }
+
+    [HttpGet("Customers")]
+    {
+        return Ok(customerRepository.Get());
+    }
+
+    [HttpPost("Customer")]
+    public IActionResult PostSingle([FromBody] Customer customer)
+        customerRepository.Insert(customer);
+        customerRepository.context.SaveChanges();
+        return CreatedAtAction(nameof(GetById), new { id = customer.Id }, customer);
+    }
+
+    [HttpPut("Customer")]
+    {
+        customerRepository.Update(customer);
+    }
+}
+```
+
+
+
+
+```csharp
+35. customerRepository.context.SaveChanges();
+
+
+38. }
+39. [HttpDelete("Customers/{id}")]
+40. public IActionResult Delete(int id)
+41. {
+42. var customer = customerRepository.Get(x=> x.Id.Equals( id), includeProperties: "Products").FirstOrDefault();
+44. productRepository.Delete(item.Id);
+46. customerRepository.Delete(id);
+47. customerRepository.context.SaveChanges();
+49. return NoContent();
+50. }
+51. }
+
+在 `Program.cs` 中进行了一些更改，以注入上述示例所需的依赖。你可以在下方查看完整的 `Program.cs`：
+
+```csharp
+1. using Microsoft.EntityFrameworkCore;
+2. using WebAppEFCoreCodeFirst.Database;
+5. builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
+6. builder.Services.AddScoped<GenericRepository<Customer>>();
+7. builder.Services.AddScoped<GenericRepository<Product>>();
+8. // 将服务添加到容器中。
+9. builder.Services.AddRazorPages();
+10. builder.Services.AddDbContext<SampleDbContext>(
+13. var app = builder.Build();
+15. // 配置 HTTP 请求管道线。
+16. if (!app.Environment.IsDevelopment())
+17. {
+18. app.UseExceptionHandler("/Error");
+19. // 默认 HSTS 值为 30 天。你可能想在生产场景中更改此，请参见 https://aka.ms/aspnetcore-hsts。
+21. }
+24. app.UseHttpsRedirection();
+25. app.UseStaticFiles();
+26. app.UseMvc();
+27. app.UseRouting();
+29. app.UseAuthorization();
+33. app.Run();
+```
+
+## 结论
+
+总之，本章对 Entity Framework Core (`EF Core`) 及其核心组件进行了全面的探索，包括数据库优先（Database First）、代码优先（Code First）、LINQ to Entities、数据注解（Data Annotations）、数据建模（Data Modeling）和数据管理（Data Management）。在本章中，我们深入探究了掌握 `EF Core` 的各种方法和技术。
+我们首先理解了数据库优先方法，它允许我们从现有的数据库架构中生成实体类和 `DbContext`。我们探索了自定义选项，允许我们根据特定需求对生成的代码进行量身定制。这种方法在处理处理遗留数据库或将 `EF Core` 集成到现有项目时特别有用。接下来，我们讨论了代码优先方法，在那种方法中我们学习了如何定义实体类、配置关系并使用迁移（migrations）生成数据库架构。这种方法对数据库设计提供了灵活性和控制力，是新开发项目（greenfield projects）或数据库架构随应用程序同步开发的场景的理想选择。随后，我们深入研究了 LINQ to Entities 的强大，它赋予了我们在 `EF Core` 中编写富有表现力的查询并执行高级数据操作的能力。通过利用 LINQ 丰富的查询语法和操作符，我们可以高效地检索、过滤和构建数据，以满足应用程序的需求。
+
+数据注解（Data Annotations）被证明是我们工具箱中极具价值的工具，它使我们能够对实体应用验证规则，将其映射到数据库表并定义关系。通过数据注解，我们可以确保数据完整性，简化数据访问并提高我们应用程序的整体效率。
+
+我们还探索了 `EF Core` 中的数据建模领域，涵盖了实体关系、继承和复杂数据类型。通过掌握这些建模技术，我们可以设计出准确表示领域并实现高效数据管理的健壮模型。最后，我们讨论了数据管理，涵盖了数据检索、修改、删除和优化技术等各个方面。我们探索了处理事务、并发控制和有效管理大型数据集的策略。这些技能对于构建能够处理复杂数据场景的高性能应用程序至关重要。
+
+
+
+
+
+
+在本章中，我们的目标是对 Azure Functions 及其实际实现提供全面的理解。我们将从探索 Azure Functions 的核心概念和目的开始，阐明它们在现代应用开发中的相关性。此外，我们将深入探讨 Azure Functions 的关键特性和优势，帮助你掌握它们在构建可扩展且高效解决方案中的意义。
+在探索过程中，我们将对 Azure Functions 与市场上的其他无服务器产品进行对比分析。我们还将解释 Azure Function 绑定（bindings），它们是连接你的函数与外部资源及数据的桥梁。
+
+我们将探索 Azure Functions 提供的各种缩缩选项，并深入研究监控能力，帮助你优化函数的性能。
+
+在本章结束时，我们将引导你完成部署流程，演示如何将 Azure Functions 部署到 Azure 上。此外，你将学习实现用于持续部署的 CI/CD 流水线，以确保无缝且高效的部署工作流。
+
+
+Azure Functions 是 Microsoft Azure 提供的一项无服务器计算服务，允许开发者在云中构建和部署小型、事件驱动的函数。它允许你专注于为特定任务或功能编写代码，而无需管理底层基础设施。Azure Functions 会根据工作负载自动扩展并分配资源，确保高效利用和成本效益。
+
+Azure Functions 的关键特性和优势包括：
+
+*   无服务器架构：Azure Functions 遵循无服务器架构，你将代码作为单个函数编写并部署，而云提供商负责管理基础设施和资源分配。你只需为函数的执行时间付费，消除了对配置和管理服务器的需求。
+*   多语言支持：Azure Functions 支持多种编程语言，包括 C#、`JavaScript`、`Python`、`PowerShell` 和 `TypeScript`。这允许你选择最符合开发偏好和现有代码库的语言。
+*   集成与绑定：Azure Functions 通过绑定与各种 Azure 服务和外部系统无缝集成。绑定允许你将函数连接到数据源、消息队列、存储服务和其他资源，简化了输入和输出操作。
+*   可扩展性和弹性：Azure Functions 根据根据传入的工作负载自动扩展，允许你的应用程序处理高流量和需求激增，而无需人工干预。函数并行执行，并可以进行水平扩展以适应不同的工作负载。
+*   按需付费定价：Azure Functions 提供按需付费的定价模式，根据函数的实际执行时间和消耗的资源进行收费。这对于工作负载变化或不可预测的应用来说极具成本效益。
+*   开发和部署选项：Azure Functions 提供了多种开发和部署选项，包括 Azure Portal、`Visual Studio`、`Visual Studio Code`、`Azure DevOps` 和 `Azure Functions Core Tools`。这种灵活性允许开发者选择他们喜的环境并简化开发和部署。
+*   监控与诊断：Azure Functions 通过 `Azure Application Insights` 提供了内置的监控和诊断功能。你可以监控函数的性能、可用性和使用情况，并设置警报以及查看详细日志以进行故障排除和优化。
+
+Azure Functions 为构建各种应用程序提供了灵活且可扩展的平台，从简单的微服务到复杂的事件驱动架构。凭借其无服务器特性、广泛的语言支持以及与其他 Azure 服务的深度集成，Azure Functions 使开发者能够专注于代码逻辑并交付可扩展且高效的解决方案。
+
+## Azure Function 触发器
+
+Azure Functions 由事件触发，启动特定函数的执行。触发器定义了函数应何时以及如何运行。Azure Functions 支持多种触发器，允许你构建响应不同类型事件的事件驱动型应用程序。
+以下是一些常用的 Azure Function 触发器：
+
+*   HTTP 触发器（HTTP trigger）：HTTP 触发器允许你通过 HTTP 请求调用函数。该触发器对于构建 RESTful API 或处理 Webhooks 非常有用。
+*   计时器触发器（Timer trigger）：计时器触发器允许你在指定的时间间隔或特定时间调度函数的执行。该触发器适用于运行周期性后台任务或执行计划的数据处理。
+*   队列触发器（Queue trigger）：当消息被添加到消息队列时（如 Azure Storage 队列或 Azure Service bus 队列），即可触发函数。该触发器通常用于构建异步处理工作流或解耦系统。
+*   Blob 触发器（Blob trigger）：当在 Azure Blob 存储中检测到新的或更新的 blob 时执行函数。该触发器通常用于处理文件、执行图像或数据转换，或触发数据摄取流水线。
+*   Cosmos DB 触发器（Cosmos DB trigger）：当 Azure Cosmos DB 集合发生更改时执行函数。该触发器对于数据更新、通知或同步任务的实时处理非常有用。
+*   Service bus 触发器（Service bus trigger）：当新消息到达 Azure Service bus 主题或订阅时触发函数。该触发器通常用于构建发布-订阅消息模式或与企业消息系统集成。
+*   Event hub 触发器（Event hub trigger）：Event hub 触发器允许通过从 Azure Event Hub 接收到的事件触发函数。该触发器适用于处理高吞吐量流式数据或构建实时分析解决方案。
+
+这些只是 Azure Functions 中可用触发器的几个示例。每种触发器类型都有自己的属性和配置选项，允许你根据事件源和特定的应用程序需求自定义函数的行为。通过利用这些触发器，你可以构建对系统或外部服务中的各种事件做出敏捷响应的事件驱动应用程序。
+
+
+Azure Function 绑定是一项强大的功能，能够与外部资源和服务实现无缝集成。绑定作为函数与数据源、消息队列、存储服务以及函数交互的其他资源的连接器。
+
+以下是一些常用的 Azure Function 绑定：
+
+*   输入绑定（Input bindings）：输入绑定允许函数从外部源接收数据。示例包括：
+
+
+
+
+
+- `Cosmos DB binding`: 允许向 Azure Cosmos DB 集合读取或写入数据。
+- `Queue storage binding`: 允许接收和处理来自 Azure Storage 队列的消息。
+- `Event grid binding`: 允许订阅来自 Azure Event Grid 的事件，并在特定事件发生时触发函数。
+
+### 输出绑定 (Output bindings)
+输出绑定允许函数将数据发送到外部资源。示例包括：
+- `Blob storage binding`: 允许函数将输出数据写入 Azure Blob 存储。
+- `HTTP binding`: 允许函数发送 HTTP 响应或向外部 API 或服务发送 HTTP 请求。
+- `Queue storage binding`: 允许函数向 Azure Storage 队列添加消息。
+- `Event hub binding`: 允许函数将事件发送到 Azure Event Hubs，用于实时流或分析场景。
+
+### 触发器绑定 (Trigger bindings)
+触发器绑定定义了启动函数执行的事件或条件。示例包括：
+- `HTTP trigger binding`: 在接收到 HTTP 请求时触发函数执行。
+- `Queue trigger binding`: 当向 Azure Storage 队列添加新消息时，启动函数执行。
+- `Cosmos DB trigger binding`: 当 Azure Cosmos DB 集合发生变化时触发函数。
+- `Event Grid trigger binding`: 当特定事件发布到 Azure Event Grid 时触发函数。
+
+绑定提供了一种声明式的方法，用于配置和管理函数与外部资源之间的交互。它们消除了对手动集成代码的需求，并简化了 Azure Functions 的开发和维护。通过利用绑定，你可以轻松将函数与各种数据源、服务和事件发布者集成，从而在应用程序内部实现无缝的数据处理、存储和通信。
+## 实际案例研究
+在这个案例研究中，我们将创建一个带有 `HTTP trigger` 的 Azure Function，并配置两个输出绑定：一个用于在 Azure Storage 账户中创建 `Blob`，另一个用于向 Azure Event Hubs 发布事件。此设置涉及单个触发器和两个输出绑定，使我们能够无缝地处理传入的 HTTP 请求，并将数据存储在 `Blob` 存储中，同时触发事件以便通过 Azure Event 进行进一步处理或分析。通过利用这些绑定，我们可以轻松地将 Azure Function 与多个服务集成，实现高效的数据处理和事件驱动工作流。
+
+### 创建 Azure Function
+要从 Azure 门户创建 Azure Function，请按照以下步骤操作：
+
+2. 通过在搜索栏搜索“Functions”或在服务列表中找到它，进入 Azure Functions 服务。
+3. 点击 `Create Function` 或 `Add to` 以启动函数创建过程。
+4. 在 Function App 创建设置中，提供以下详细信息：
+   - `Function App Name`：为您的 Function App 选择一个唯一的名称。
+   - `Subscription`（订阅）：选择用于创建 Function App 的 Azure 订阅。
+   - `Resource Group`（资源组）：指定 Function App 所属的资源组。
+   - `Hosting Plan`（托管计划）：选择合适的托管计划，例如消费型（无服务器）或 App Service（专用）。
+5. 接下来，配置 `Runtime Stack`（运行时堆栈）设置。
+   - `Runtime Stack`：为您的函数选择语言，例如 C#、JavaScript、Python、PowerShell 或 TypeScript。
+6. 配置 `Storage Account`（存储账户）设置：
+   - `Storage Account`：选择现有的存储账户或创建一个新的以存储函数执行日志和其他元数据。
+7. 可选，配置 `Application Insights`：
+8. 您可能还会发现其他高级设置：
+   - `Region`（区域）：指定部署 Function App 的 Azure 区域。
+   - `Runtime Version`（运行时版本）：选择 Azure Functions 运行时的版本。
+   - `Authentication`（身份验证）：为您的 Function App 配置身份验证选项。
+   - `Networking`（网络）：配置网络设置，例如虚拟网络集成或私有端点。
+9. 提供所有必要设置后，检查您的配置并点击 `Create` 以启动 Azure Function 的创建。
+您应该看到以下确认屏幕：
+
+![](img/Figure_4.1.png)
+
+图 4.1：创建前的 Azure function 设置。
+
+
+![](img/Figure_4.2..png)
+
+图 4.2：Azure Function 概述。
+
+### 选择触发器 (Selecting the trigger)
+
+1. 第一步是选择合适的触发器类型。触发器决定了启动函数执行的事件或条件。它定义了函数何时运行以及什么会触发其执行。
+2. 您将看到一个可用模板列表。选择与所需的触发器类型对应的模板。例如，如果您想根据 HTTP 请求触发函数，请选择 `HTTP trigger` 模板。
+3. 配置触发器属性，例如 `HTTP triggers` 的 `route`（路由）或 `URL path`，或 `timer triggers` 的 `schedule`（计划）。根据您的应用程序需求自定义设置。
+   - 可选，提供额外信息，例如 `HTTP triggers` 的 `authentication level`（身份验证级别），或输入/输出触发器的绑定 `name`（名称）和 `direction`（方向）。
+4. 配置好触发器后，点击 `Create` 或 `Save` 创建带有所选触发器的函数。您将看到创建函数后的后续屏幕。点击 `Create` 继续：
+![](img/Figure_4.3..png)
+
+图 4.3：为 Azure Function 选择触发器。
+
+创建函数后，您将看到输出，表示您的函数已成功创建。此时，您的函数已准备好运行，并且将将提供的样板代码作为起点。此代码是实现符合函数特定需求逻辑的基础。
+
+
+![](img/Figure_4.4..png)
+
+图 4.4：带有 HTTP 触发器的创建函数的输出。
+
+### 选择合适的绑定 (Pickinging an appropriate binding)
+
+
+
+
+现在，让我们开始设置输出绑定，从存储账户（Storage Account）开始。一旦你配置了 Azure 存储账户，就可以在 Azure Function 中设置输出绑定了。输出绑定将允许你的函数在存储账户内的 Blob 容器（Container）中创建并存储数据。按照后续步骤配置输出绑定并建立与存储账户的连接，以下是我为此示例创建的存储账户：
+
+
+图 4.5：最近创建的存储账户概述。
+
+在继续之前，请确保你已经创建了 Azure Event Hub 命名空间（namespace）。你可以在下方看到 Azure Event Hub 命名空间的示例：
+
+![](img/Figure_4.6..png)
+图 4.6：最近创建的 Event Hub 命名空间概述。
+
+此外，确保你的 Azure Event Hub 命名空间内部有一个 Event Hub。你可以在下方看到 Azure Event Hub 的示例：
+
+![](img/Figure_4.7..png)
+
+
+现在，让我们回到 Azure Function，是时候配置输出绑定了。如下所示，配置输出绑定允许你的函数与外部资源和服务进行无缝交互：
+
+![](img/Figure_4.8..png)
+
+图 4.8：为 Azure Function 添加更多输出。
+让我们从设置 Blob 存储绑定开始。此绑定将允许你的 Azure Function 与 Azure Blob 存储交互。你可以通过下面的图片查看如何设置输出：
+
+![](img/Figure_4.9..png)
+
+图 4.9：配置 Azure Blob Storage 为输出。
+
+
+![](img/Figure_4.10..png)
+
+图 4.10：配置 Event Hub 为输出。
+
+在此示例中，我们配置了 Event Hub 在存储账户中注册捕获（capture）：
+![](img/Figure_4.11..png)
+
+图 4.11：Event Hub 捕获设置概述。
+
+在成功设置两个输出绑定后，你的 Azure Function 应该类似于下面的结构，如 图 4.12 所示：
+
+
+图 4.12：添加两个输出后的 Azure Function 流。
+
+是时候更新我们的代码，以便我们可以创建 Blob 并发布事件了。以下是你的 `Run.csx` 文件外观示例：
+
+```csharp
+
+using System.Net;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Primitives;
+using Newtonsoft.Json;
+
+{
+    log.LogInformation("C# HTTP trigger function processed a request.");
+
+    string name = req.Query["name"];
+
+    string requestBody = new StreamReader(req.Body).ReadToEnd();
+    name = name ?? data?.name;
+
+    string responseMessage = string.IsNullOrEmpty(name)
+    ? "This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response."
+    : $"Hello, {name}. This HTTP triggered function executed successfully.";
+
+    outputEventHubMessage = "Message by: " + name;
+    return new OkObjectResult(responseMessage);
+}
+```
+
+以下是你的 `function.json` 文件的示例，它是根据你已配置的绑定自动生成的：
+```json
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "name": "req",
+      "direction": "in",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "name": "outputBlob",
+      "type": "blob",
+      "connection": "samplethiagostorage_STORAGE",
+      "path": "outcontainer/{rand-guid}"
+    },
+    {
+      "name": "outputEventHubMessage",
+      "type": "eventHub",
+      "connection": "eventhubthiago_RootManageSharedAccessKey_EVENTHUB",
+      "eventHubName": "outeventhub"
+    }
+  ]
+}
+
+在 `function.json` 文件中：
+
+- `authLevel`, `name`, `type`, `direction` 和 `methods` 定义了 HTTP 触发器。
+- `$return` 绑定处理 HTTP 响应。
+- `outputBlob` 绑定通过 `connection` 和 `path` 配置 Blob 输出。
+
+
+
+
+
+图 4.16：事件已成功发布到 Event Hub。
+## 结论
+
+在本章中，我们开启了探索 `Azure Functions` 的旅程，并开始使用这一强大的无服务器计算服务。我们首先理解了 `Azure Functions` 的概念和目的，认识了它们的优势，并将其与其他无服务器产品进行了比较。随后，我们深入研究了 `Azure Functions` 的基础构建模块，即 `triggers`（触发器）和 `bindings`（绑定），它们在实现事件驱动的应用开发以及与外部资源的无缝集成方面起着至关重要的作用。
+
+为了巩固理解，我们深入研究了一个实际案例，演示了创建 `Azure Function`、选择合适的 `trigger` 以及配置 `binding` 的过程。这种实践经验让我们亲眼证了如何利用 `Azure Functions` 来解决现实世界的挑战。
+
+
+到此时，你应该对 `Azure Functions` 有了坚实的基础，并具备了创建自己的函数所需的知识和技能。你理解了 `triggers` 和 `bindings` 的强大和灵活，以及它们在构建可扩展的事件驱动应用中的作用。
+
+在接下来的章节中，我们将进入 Azure 强大的数据管理和存储服务的的核心。准备好探索 `Azure SQL` 在稳健的关系型数据管理方面的能力，深入 `Azure Cosmos DB` 构建的全球分布式 NoSQL 数据库世界，并发现 `Azure Blob Storage` 处理非结构化数据的多功能性。本章将使你具备知识和实践技能，以利用这些 Azure 服务来高效地存储、管理和查询你的数据，将你的云应用提升新的高度。
+
+## 要点回顾
+*   **Azure Functions 基础**：
+    *   `Azure Functions` 是无服务器计算资源，允许你响应各种事件运行代码。
+    *   它们具有高度的可扩展性且具有成本效益，因为你只需要为执行期间使用的资源付费。
+*   **触发器与绑定（Triggers and Bindings）**：
+    *   `Triggers` 根据事件或计划（如 `HTTP requests`、定时器或 `queue messages`）启动 `Azure Functions` 的执行。
+    *   `Bindings` 促进与外部资源的交互，允许将输入和输出数据无缝集成到函数中。
+    *   你可以使用 `Azure Portal`、`Visual Studio`、`Azure CLI` 或开发工具创建 `Azure Functions`。
+    *   根据应触发函数执行的事件选择合适的 `trigger` 类型。
+*   **函数配置**：
+    *   在函数内部配置 `input` 和 `output bindings`，以与 `Blob Storage`、`Event Hub` 等多种 Azure 服务进行交互。
+*   **测试与调试**：
+    *   使用 `Azure Functions Core Tools` 等工具在本地测试你的函数。
+*   **部署与扩展**：
+    *   将你的 `Azure Functions` 部署到 Azure 云以供生产环境使用。
+    *   `Azure Functions` 根据需求自动扩展，确保资源效率。
+*   **用例**：
+    *   `Azure Functions` 适用于广泛的用例，包括数据处理、`webhooks`、`IoT event handling` 等。
+
+
+1.  复现案例研究。
+2.  探索其他的 `input bindings`。
+3.  探索其他的 `trigger bindings`。
+4.  探索其他的 `output bindings`。
+
+
+加入书籍 Discord 工作区获取最新更新、优惠、全球科技动态、新发布以及与作者的互动：
+
+[`discord.bpbonline.com`](https://discord.bpbonline.com)
+
+![](img/fm1.png)
+# 第 5 章 Azure SQL, Cosmos DB 和 Blob Storage
+
+## 引言
+
+在当今的数字领域，对高效且可扩展的数据存储和管理解决方案呈指数级增长。Microsoft Azure 提供了一套全面的云服务，满足多样化的数据存储和管理需求。本章将深入研究 Azure 数据服务的三个关键组件：`Azure SQL`、`Cosmos DB` 和 `Blob Storage`。
+
+
+另一方面，`Cosmos DB` 是一个全球分布的多模型数据库服务，旨在无缝处理大规模应用程序。通过 `Cosmos DB`，你可以使用多种模型存储和检索数据，包括 `document`、`key-value`、`column-family`、`graph` 等。其令人赞叹的可扩展性、低延迟性能和全球分布能力使 `Cosmos DB` 成为构建高响应和全球可访问应用的理想选择。在整个章节中，我们将提供 `Cosmos DB` 的概述，重点介绍其关键特性，并讨论说明其在不同领域潜力的实际用法示例。
+
+`Blob Storage` 是本章涵盖的第三个组件，它是 Azure 专门用于存储非结构化数据（如图像、视频、文档和日志）的解决方案。`Blob Storage` 提供了可扩展且具成本效益的存储选项，允许你轻松地在云端管理和访问数据。在本章中，我们将探索 `Blob Storage` 的各种功能，并讨论如何使用它。此外，我们将提供实用示例，展示 `Blob Storage` 处理非结构化数据的优势。
+
+通过本章学习，你将对 `Azure SQL`、`Cosmos DB` 和 `Blob Storage` 有坚固的理解。你将具备有效利用这些服务的知识，使你能够在 Azure 环境中构建稳健且可扩展的解决方案。因此，让我们进入 `Azure SQL`、`Cosmos DB` 和 `Blob Storage` 世界吧！
+## 结构
+
+本章涵盖以下主题：
+
+*   `Azure SQL`、`Cosmos DB` 和 `Blob Storage`
+*   `Azure SQL`
+*   `Blob Storage`
+
+## 目标
+
+在章节结束时，将对 Azure 关键服务有全面的理解，深入研究 `Azure SQL` 的基础及其在数据服务生态系统中的核心作用。探索其功能，强调扩展性和安全性，并从实际示例中获取见解。无缝过渡到 `Cosmos DB`（全球分布的多模型数据库服务），理解多样的数据模型和现实性能属性。关注 `Blob Storage` 作为 Azure 非结构化数据的解决方案，涵盖其扩展性和成本效益。获取有效利用 `Azure SQL`、`Cosmos DB` 和 `Blob Storage` 的技能，使读者能够在 Azure 景观中构建和管理解决方案。
+
+
+
+
+
+本章概述了三种关键 Azure 存储服务，并解释了如何在 .NET 应用程序中使用它们。本章涵盖了 Azure SQL Database、Azure Cosmos DB 和 Azure Blob Storage，并为每个服务提供了实用示例。
+
+
+Azure SQL 是由 Microsoft Azure 提供的全托管关系型数据库服务。它为云端存储和管理关系型数据提供了一个可靠且可扩展的平台。Azure SQL 消除了了管理基础设施的需求，并提供了一系列功能和能力，使开发者能够专注于构建应用程序，而不是管理数据库服务器。
+
+该服务基于 Microsoft SQL Server 引擎构建，支持 SQL Server 环境中使用的各种熟悉工具和技术。Azure SQL 与现有的 SQL Server 应用程序兼容，使得组织能够无缝地将其本地数据库迁移到云端。
+
+### Azure SQL 的关键特性：
+*   **可扩展性**：Azure SQL 可以根据需求扩大或缩小规模，允许应用程序高效地处理不断变化的工作负载。
+*   **高可用性**：它提供了内置的高可用性，具有自动故障转移和冗余功能，确保数据的持续访问。
+*   **安全性**：Azure SQL 提供了强大的安全功能，包括数据加密、威胁检测和身份管理，以保护敏感信息。
+*   **托管服务**：Microsoft 管理底层基础设施，负责补丁、备份和维护等任务，因此使用户可以专注于应用程序开发。
+*   **集成**：Azure SQL 与其他 Azure 服务无缝集成，允许在 Azure 生态系统中进行数据集成、分析和应用程序开发。
+
+
+*   **Web 应用程序**：Azure SQL 常用于 Web 应用程序的后端数据库，提供可扩展且可靠的数据存储解决方案。
+*   **业务关键应用程序**：它适用于构建和管理需要安全且高可用数据存储的业务关键应用程序。
+*   **数据仓库**：Azure SQL 可用于数据仓库，允许组织分析和处理海量结构化数据。
+*   **报告和分析**：它支持报告和分析解决方案，允许用户从数据中获取洞察并生成有意义的报告。
+*   **软件即服务 (SaaS)**：Azure SQL 常被 SaaS 提供商用其多租户应用程序的数据库后端。
+通过利用 Azure SQL，组织可以从 Azure 云环境中全托管、可扩展且安全的关系型数据库服务的优势中受益。它提供了构建和管理高性能应用程序所需的工具和功能，而无需承担基础设施管理的开销，让业务专注于创新和增长。
+
+## 扩展 Azure SQL Server
+
+扩展 Azure SQL Server 涉及调整分配给服务器的资源以满足应用程序和工作负载的需求。Azure SQL Server 提供了多种扩展选项以适应不同的性能和容量需求。以下是扩展 Azure SQL Server 的主要方法：
+
+    *   Azure SQL 提供了两种计算选项：预留（Provisioned）和无服务器（Serverless）。
+    *   预留计算：在此模式下，你为你的 SQL 服务器选择特定数量的计算资源（CPU 和内存）。你可以根据需要扩大或缩小计算资源，但在扩展操作期间可能会涉及停机时间。
+    *   无服务器计算：此模式根据工作负载需求自动扩展计算资源。它允许在无空闲期间自动暂停和恢复服务器，以节省成本。
+*   **扩展存储**
+    *   Azure SQL Server 支持自动存储扩展。存储容量将根据您的数据库大小和使用情况自动调整。您不需要担心手动管理存储。
+*   **弹性池 (Elastic Pool)**
+    *   通过将具有相似资源要求的数据库分组到池中，您可以优化资源利用率和成本效益。
+    *   弹性池提供资源的自动扩展，以满足池内数据库的集体需求。
+*   **超大规模 (Hyperscale)**
+    *   Azure SQL Hyperscale 专为大规模和高需求的工作负载设计。
+    *   它提供了近乎无限的存储容量，并支持动态扩展计算资源而无需任何停机。
+    *   Hyperscale 实现了存储和计算的无缝扩展，以有效处理数据密集型工作负载。
+    *   Azure SQL Server 支持地理复制，允许你在不同的 Azure 区域创建数据库的只读副本。
+    *   复制提供了高可用性，并通过在多个区域之间分发读取工作负载来实现扩展。
+*   **托管实例 (Managed instance)**
+    *   Azure SQL 托管实例是云中的全托管 SQL Server 实例。
+    *   托管实例的扩展涉及选择适当的服务级别并指定所需的计算和存储资源。
+
+
+# 使用示例
+
+在这个实用示例中，我们将演示创建 Web 应用程序并建立与 Azure SQL Server 连接的过程。通过遵循这些步骤，你将能够设置一个与 Azure SQL Server 安全交互以进行数据存储和检索的 Web 应用程序。
+
+## 创建 Azure 资源
+要创建 Azure SQL Server，请遵循以下步骤：
+
+1.  使用你的 Azure 帐户凭据登录 Azure 门户 (`portal.azure.com`)。
+2.  在左侧导航窗格中，点击“创建资源”，并在搜索栏中搜索“SQL Server”。
+3.  从可用资源列表中选择“SQL Server”。
+4.  在“SQL Server”选项卡中，点击“创建”按钮开始创建过程。
+6.  选择要部署的 SQL Server 的所需版本和版本。
+7.  选择访问服务器的身份验证方法。你可以使用系统分配的用户名和密码，或 Azure Active Directory 身份验证。
+8.  配置网络设置（包括防火墙规则），允许从特定的 IP 地址或 Azure 服务访问 SQL Server。
+9.  可选启用高级数据安全功能，如威胁检测和漏洞评估，以增强安全性。
+10. 审核配置设置并点击“查看并创建”以验证你的选择。
+11. 验证后，点击“创建”开始部署过程。Azure 将根据你的规格创建 SQL Server 实例。
+
+
+
+
+
+# 创建 Azure SQL Server
+创建 Azure SQL Server 将为您在 Azure 云中提供一个完全托管且可扩展的关系型数据库服务。它允许您高效地存储和管理数据，确保您的应用程序具有高可用性、安全性和性能。下图是 SQL Server 的概述。
+
+![](img/Figure_5.1.png)
+
+图 5.1：Azure SQL Server 概述
+
+
+成功创建 SQL Server 后，下一步是在服务器内部创建数据库。数据库是组织和存储数据的容器。按照以下步骤在 Azure SQL Server 中创建数据库：
+
+1. 使用您的 Azure 凭据访问 Azure 门户 (`portal.azure.com`)。
+2. 导航到 Azure SQL Server 部分，选择您想要创建数据库的特定服务器。
+3. 在服务器的小窗格中，找到“数据库”部分并点击“创建数据库”按钮。
+5. 指定所需的数据库设置，例如排序规则（collation），它决定了字符数据的排序和比较规则。
+6. 根据您的性能和容量需求选择合适的定价层级。Azure 提供了不同的层级，包括基础（Basic）、标准（Standard）和高级（Premium），每个层级都有不同的性能和功能。
+7. 配置其他设置，例如启用高级威胁保护（Advanced Threat Protection）或启用地冗余备份（Geo-Redundant Backup）以增强安全数据保护。
+8. 审核配置详情并点击“审核并创建”按钮以验证您的选择。
+9. 验证后，点击“创建”启动数据库创建过程。Azure 将指定的 SQL Server 内配置数据库。
+
+
+![](img/Figure_5.2..png)
+
+图 5.2：SQL 数据库概述
+
+# 连接到数据库
+
+
+* `Microsoft.EntityFrameworkCore`
+* `Microsoft.EntityFrameworkCore.SqlServer`
+* `Microsoft.EntityFrameworkCore.Tools`
+
+添加两个类，一个作为我们的 `dbContext`，另一个作为我们的实体（entity）：
+### DbContext 类：
+
+```csharp
+public class SqlServerDBContext : DbContext
+{
+    public SqlServerDBContext(DbContextOptions<SqlServerDBContext> options)
+    {
+    }
+
+    public DbSet<SampleEntity> SampleEntities { get; set; }
+}
+```
+### 实体类：
+
+```csharp
+public class SampleEntity
+{
+    public int Id { get; set; }
+    public DateTime CreationDate { get; set; }
+}
+```
+
+获取连接字符串，此连接字符串正在与 Azure Directory 进行身份验证，但我们选择使用 Sql Server。由于此选择，您可能会项目中看到不同的连接字符串。在图中，您可以看到最近创建的 SQL 数据库的连接字符串部分：
+
+
+图 5.3：SQL 数据库连接字符串。
+
+## 防火墙配置
+
+设置 Azure SQL 数据库时，配置数据库防火墙并将您的 IP 地址加入白名单对于确保数据库的安全受控访问至关重要。默认情况下，Azure SQL 数据库受防火墙保护，该防火墙阻止所有外部连接，以保护您的数据免受未经授权的访问。您可能需要配置 SQL 数据库防火墙将您的 IP 地址加入白名单，以确保来自指定 IP 的应用程序可以安全地连接到 Azure SQL 数据库，如下：
+![](img/Figure_5.4..png)
+
+图 5.4：SQL Server 防火墙设置。
+
+如果未配置防火墙设置，将提示以下错误：
+
+
+消息文本：“无法打开登录请求的服务器 '{0}'。IP 地址为 '{1}' 的客户端未允许访问服务器。”
+
+## 使用连接字符串更新 program.cs：
+
+```csharp
+using SqlServerWebApp.Database;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// 将服务添加到容器中。
+builder.Services.AddRazorPages();
+    options => options.UseSqlServer(
+    "Data Source=thiagosample.database.windows.net;"+
+    "Initial Catalog=thiagodatabase;User ID=testuser;"+
+    "Password=Testpassword##;Connect Timeout=60; "+
+    "Encrypt=True;Trust Server Certificate=False; "+
+    "Application Intent=ReadWrite;Multi Subnet Failover=False»));
+var app = builder.Build();
+
+// 配置 HTTP 请求管道线。
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+    app.UseHsts();
+}
+
+app.UseHttpsirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.MapRazorPages();
+app.Run();
+```
+
+运行迁移（migration）：
+
+
+图 5.5：带有 add-migration 的包管理器。
+
+更新数据库：
+
+![](img/Figure_5.6..png)
+图 5.6：带有 update-database 的包管理器。
+
+通过 Azure Data Studio 验证数据库创建：
+
+![](img/Figure_5.7..png)
+
+
+
+
+
+
+-   内容管理和目录：`Cosmos DB` 可用于管理和提供内容目录，允许对大量结构化数据进行高效查询和检索。
+## Cosmos DB 容器
+
+Azure Cosmos Containers 为 Azure Cosmos DB 的存储和吞吐量提供了扩展性。当您需要在不同的 Azure Cosmos DB 之间采用不同的配置时，它们也具有优势，因为每个容器都可以单独配置。
+
+Azure Cosmos Containers 具有特定的属性，根据所使用的 API 可以系统生成或用户配置。这些属性范围从容器的唯一标识符到清理策略配置。您可以在文档中找到每个 API 的属性列表。
+
+
+-   专用模式（Dedicated mode）：在此模式下，配置的吞吐量专门分配给容器并带有 SLA 保证。
+-   共享模式（Shared mode）：在此模式下，配置的吞吐量在所有运行共享模式的容器之间共享。
+
+Cosmos DB 容器适用于 `Gremlin API` 和 `Table API` 以外的所有 Cosmos DB API。
+
+
+Azure Cosmos DB 提供手动和自动扩展选项，且不会中断服务或影响 Azure Cosmos DB 的 SLA。
+
+通过自动扩展，Azure Cosmos DB 会根据使用情况动态调整您的吞吐量容量，无需手动逻辑或代码。您只需设置最大吞吐量容量，Azure 就会在最大容量 10% 到 100% 的范围内调整吞吐量。
+
+手动扩展允许您根据需要永久地更改吞吐量容量。
+在扩展 Azure Cosmos DB 之前，明智地选择分区键至关重要，以避免热分区（hot partitions），这可能会增加成本并降低性能。
+
+在配置自动扩展时，请考虑以下重要主题：
+
+-   生存时间（TTL）：为容器定义 `TTL`，允许特定项目或所有项目过期。
+-   地理空间配置（Geospatial Configuration）：基于位置查询项目。
+-   几何（Geometry）：在平面坐标系中表示数据。
+-   分区键（Partition Key）：用于分区和扩展的键。
+-   索引策略（Indexing Policy）：定义如何将索引应用于容器项目，包括包含或排除的属性、一致性模式以及自动索引应用。
+
+## 触发器、存储过程和 UDF
+
+
+-   触发器（Triggers）：
+    -   Cosmos DB 中的触发器是事件驱动的，可以定义在集合上，以便在特定数据操作之前或执行自定义逻辑。
+    -   触发器有两种：前置触发器（pre-triggers）和后置触发器（post-triggers）。
+    -   前置触发器在数据操作（插入、更新、删除）之前执行，允许您验证或修改传入的数据。
+    -   后置触发器在数据操作后执行，提供了执行额外操作或触发外部过程的机会。
+-   存储过程（Stored procedures）：
+    -   存储过程是存储并执行在 Cosmos DB 内部的 `JavaScript` 函数。
+    -   它们能够以原子方式执行复杂的服务器端逻辑，包括条件分支、循环和多次数据库操作。
+    -   存储过程可用于执行批量更新、事务操作、数据聚合等。
+    -   它们通常用于通过性能优化，通过减少网络往返次数并将多次操作作为单个工作单元执行来实现。
+-   用户定义函数（UDFs）：
+    -   UDFs 类似于传统编程语言中的函数，可以封装用于数据转换或计算的可重用代码。
+    -   它们可以在 `SQL` 查询内部使用，对从 Cosmos DB 集合中检索的数据执行自定义计算或转换。
+    -   UDFs 通过封装复杂的计算或数据转换，可以极大地增强查询的灵活性和表达能力。
+
+触发器、存储过程和 UDF 提供了扩展 Cosmos DB 基础 CRUD 操作之外功能的的手段。它们允许在数据库内部进行复杂的数据操纵、验证和自定义逻辑执行，减少了与外部系统往返的需求。这些功能通过将处理逻辑推向数据端，有助于提高性能、减少网络流量并简化应用开发。
+
+
+Azure Cosmos DB 更改馈通知服务监控跨容器的更改，并将由这些更改触发的事件分发给多个消费者。
+
+更改馈通知的主要组件包括：
+
+-   监控容器（Monitored container）：插入或更新触发的操作反映在更改馈中的容器。
+-   主机（Host）：托管更改馈处理器的环境。
+-   委托（Delegate）：当更改馈通知触发事件时执行的代码。
+
+更改馈处理器可以托管在支持长时间运行任务的各种 Azure 服务上，例如 `Azure WebJobs`、`Azure Virtual Machines`、`Azure Kubernetes Services` 和 `Azure .NET hosted services`。
+
+通过利用 Cosmos DB 的功能，组织可以构建全球分布、高响应且可扩展的应用程序。它对多种数据模型的支持以及与其他 Azure 服务的无缝集成，使其成为现代应用开发的强大工具。通过 Cosmos DB，开发者可以专注于构建创新解决方案，同时从该服务提供的全球范围和性能优化中受益。
+## Cosmos DB 用于 NoSQL 的示例
+
+在这个实际示例中，我们将引导您创建一个 Web 应用程序并与 Cosmos DB 建立无缝连接的过程。通过遵循这些步骤，您将能够设置一个利用 Cosmos DB 能力进行高效数据存储和检索的健壮 Web 应用。
+
+## 创建 Azure 资源
+
+
+1. 使用您的 Azure 凭据登录 Azure 门户 (`portal.azure.com`)。
+2. 点击门户左上角的“创建资源”按钮 (+)。
+3. 在搜索栏中搜索“Azure Cosmos DB”。
+4. 从搜索结果中选择“Azure Cosmos DB”。
+5. 在“Azure Cosmos DB” 窗格中，点击“创建”按钮开始创建账户过程。
+    - 选择相应的订阅。
+    - 创建新的资源组或选择现有的资源组来包含帐户。
+    - 为您的 Cosmos DB 账户指定唯一的帐户名称。
+    - 根据您的 NoSQL 数据库需求选择所需的 API（例如用于文档数据的 `Core SQL`、`MongoDB`、`Cassandra`、`Gremlin` 或 `Table`）。
+    - 选择希望部署 Cosmos DB 账户的首选位置或区域。
+    - 如果必要，启用多区域写入。
+
+
+
+
+7. 检查配置设置，包括定价层级和额外功能。
+
+
+9. 验证后，点击“Create”（创建）启动配置过程。Azure 将根据您的规范创建 Cosmos DB 账户。
+
+在图中可以看到如何创建一个适用于 NoSQL 的 Azure Cosmos DB：
+
+![](img/Figure_5.8..png)
+图 5.8：Azure Cosmos DB for NoSQL 账户创建。
+
+这是创建 Azure Cosmos DB 账户后的输出：
+
+![](img/Figure_5.9..png)
+
+
+# 连接到数据库
+
+成功创建 Cosmos DB 账户后，你可以通过 Azure 门户访问它。
+
+在 Cosmos DB 账户窗格中，你可以管理 NoSQL 数据库、配置数据复制，并访问主连接字符串等连接设置。
+![](img/Figure_5.10..png)
+
+图 5.10：Azure Cosmos DB 密钥。
+
+现在，在我们的 Web 应用程序中，我们必须安装以下 Nuget 包的最新版本：
+
+
+现在我们创建了三个类：
+
+```csharp
+public class Address
+{
+    public string Id { get; set; }
+    public string City { get; set; }
+    public string StreetAndNumber { get; set; }
+}
+
+public class Person
+    [JsonProperty(PropertyName = "id")]
+    public string Id { get; set; }
+    public DateTime BirthDate { get; set; }
+    public string Name { get; set; }
+    public string LastName { get; set; }
+    public Address Address { get; set; }
+}
+
+public class Vehicle
+{
+    [JsonProperty(PropertyName = "id")]
+    public string Id { get; set; }
+    public string Model { get; set; }
+    public string Make { get; set; }
+}
+```
+
+我们还创建了一个辅助类来向数据库中填充一些数据：
+```csharp
+public static class CreatePerson
+{
+    public static Person GetNewPerson()
+    {
+        Random random = new Random();
+        {
+            BirthDate = DateTime.Now.AddYears(28),
+            Id = random.Next() + "Thiago",
+            Name = "Thiago",
+            LastName = "Araujo",
+            Vehicle = new Vehicle
+                Id = random.Next() + "BMW",
+                Make = "BMW",
+                Model = "116D",
+                Year = random.Next()
+            },
+            Address = new Address
+                Id = random.Next() + "Portugal",
+                City = "Lisbonne",
+                StreetAndNumber = "Avenida da Liberdade, 25"
+            }
+        };
+    }
+```
+
+我们必须更新 `program.cs` 以注入 CosmosDB 客户端：
+
+```csharp
+using Microsoft.Azure.Cosmos;
+// 将服务添加到容器中。
+builder.Services.AddRazorPages();
+
+SocketsHttpHandler socketsHttpHandler = new SocketsHttpHandler();
+// 根据所需的 DNS 刷新计时器自定义此值
+socketsHttpHandler.PooledConnectionLifetime = TimeSpan.FromMinutes(5);
+builder.Services.AddSingleton<SocketsHttpHandler>(socketsHttpHandler);
+
+// 使用 CosmosClient 的单例实例
+builder.Services.AddSingleton<CosmosClient>(serviceProvider =>
+{
+    SocketsHttpHandler socketsHttpHandler = serviceProvider
+    CosmosClientOptions cosmosClientOptions =
+        new CosmosClientOptions()
+        {
+            HttpClientFactory = () => new HttpClient(socketsHttpHandler, disposeHandler: false)
+        };
+    return new CosmosClient(
+        "tBXgs21B8293MdNZZefy8BCt4QaPrLsLhvxecyGDh61HpoUQUSb98Kk5eCfc2I" +
+        "2mOfGkagZgP0MHACDb1"
+    ); // 注意：等等，原始文本在这里被截断了，保留逻辑
+});
+```
+
+
+
+*   备份与灾恢复：它为云端数据备份和创建灾恢复副本提供了一种高效且成本效益的解决方案。
+*   日志与分析：`Blob Storage` 可用于存储应用程序或系统生成的日志，以便后续进行分析和处理以获取运营洞察。
+*   归档与合规性：它适用于需要根据合规性或历史目的进行长期存储的数据归档。
+*   数据分发：`Blob Storage` 支持跨多个区域分发大型数据集，允许用户在全球范围内高效访问数据。
+通过利用 `Blob Storage`，组织可以有效地管理和存储云中的非结构化数据。其可扩展性、成本效益和易于访问的特性使其成为从媒体存储和传输到备份和分析等广泛应用的宝贵工具。无论是小型项目还是大型企业解决方案，`Blob Storage` 都为 Azure 云环境中的非结构化数据管理提供了可靠且高效的方法。
+
+# 扩展 Blob Storage
+
+在 Azure 中扩展 `Blob Storage` 涉及调整存储容量和性能以满足您的数据存储和检索需求。`Blob Storage` 提供灵活的扩展选项，以适应不同的工作负载和存储需求。以下是扩展 `Blob Storage` 的关键方法：
+
+    *   `Blob Storage` 允许通过增加或减少可以存储的数据量来扩展存储容量。
+    *   您可以通过配置额外的存储账户或扩展现有存储账户来增加更多存储，以处理更大的数据量。
+    *   `Azure` 提供几乎无限的存储可扩展性，允许您随着存储需求的增长而向上扩展。
+*   性能扩展
+    *   `Blob Storage` 提供两个性能分层：`Hot`（热存储）和 `cool`（冷存储）。
+    *   `Hot` 访问层提供更高的性能，并针对频繁访问的数据进行了优化。
+    *   您可以根据访问模式和数据检索的频率选择合适的分层，以优化成本和性能。
+*   并行性与吞吐量扩展
+    *   `Azure Blob Storage` 可以通过对存储账户的访问并行化来处理高吞吐量场景。
+    *   通过将工作负载分布到多个存储账户，可以实现更高的吞吐量并降低延迟。
+    *   您可以利用分片、并行处理和负载均衡等技术来优化性能并进行水平扩展。
+*   内容分发网络 (CDN)
+    *   `CDN` 缓存并将 `Blob Storage` 中的内容分发给全球用户，减少延迟并提高性能。
+    *   通过利用 `Azure CDN`，您可以向全球观众分发静态内容（如图像、视频和文档）。
+*   生命周期管理策略
+    *   `Blob Storage` 提供生命周期管理策略，根据根据定义的规则自动移动和删除数据。
+    *   通过配置生命周期管理策略，您可以自动将访问不频繁的数据移动到 `Cool Access Tier` 或将其归档到 `Azure Archive Storage` 以优化成本。
+
+
+# 使用示例
+
+在这个实践示例中，我们将引导您完成创建 Web 应用程序并与 `Azure Blob Storage` 无缝连接的过程。通过遵循这些步骤，您将能够建立一个健壮的 Web 应用，利用 `Azure Blob Storage` 的高效实现非结构化数据的存储和检索。
+
+## 创建 Azure 资源
+要创建 `Azure Storage account`，请按照以下步骤操作：
+
+1.  使用您的 `Azure` 账户凭据登录 `Azure portal` (`portal.azure.com`)。
+2.  点击门户左角的“创建资源”按钮 (+)。
+3.  在搜索栏中搜索“Storage account”或浏览可用服务。
+4.  从搜索结果中选择“Storage account”。
+6.  为存储账户提供必要的详细信息：
+    1.  选择合适的订阅。
+    2.  创建一个新的资源组或选择现有资源组以包含该存储账户。
+    3.  为您的存储账户指定唯一名称。
+    4.  选择您希望部署存储账户的位置或区域。
+    5.  选择所需的性能分层：`Standard`（用于通用存储）或 `Premium`（用于高性能 SSD 存储）。
+    7.  配置其他设置，例如复制选项、访问层和加密。
+8.  审核配置设置，包括定价分层和附加功能。
+9.  点击“审核并创建”按钮验证您的选择。
+10. 验证后，点击“创建”启动配置过程。`Azure` 将根据您的规格创建存储账户。
+
+在下面的图中，我们可以看到最近创建的 `Storage Account` 概述：
+![](img/Figure_5.12..png)
+
+图 5.12：Azure 存储账户概述。
+
+11. 在 `Storage account`窗格中，找到“Blob service”或“Containers”部分，并点击“+ Container”按钮。
+12. 在“创建容器”窗格中，为容器提供唯一名称。名称必须是小写，并可以包含字母、数字和连字符。
+    *   `Private`：仅可通过适当的访问密钥或共享访问签名进行访问。
+    *   `Blob`：允许对容器内的 blobs 进行只读公共访问。
+    *   `Container`：允许对容器及其 blobs 进行公共访问。
+14. 可选地配置高级设置，例如元数据、默认访问级别、保留策略和访问控制。
+15. 点击“确定”或“创建”按钮创建 blob 容器。
+
+
+![](img/Figure_5.13.png)
+
+图 5.13：容器概述。
+
+# 连接到数据库
+在我们的 Web 应用程序中，我们首先添加了以下 Nuget 包：
+
+`Azure.Storage.Blobs`
+
+我们创建了以下类以存储在 `Blob` 中：
+
+public class SampleBlob
+{
+    public int Id { get; set; }
+    public string Description { get; set; }
+    public DateTime CreationDate { get; set; }
+}
+
+从存储账户窗格中，您可以管理存储资源、配置访问控制并访问如主连接字符串和访问密钥之类的连接设置。
+
+从 `Azure portal` 检索连接字符串或访问密钥，以建立应用程序与 `Azure Storage account` 之间的连接。
+
+在下面的图中，我们可以看到存储账户的连接字符串：
+![](img/Figure_5.14.png)
+
+图 5.14：Azure 存储账户访问密钥。
+
+我们更新了 `Index.cshtml.cs` 以存储此新 blob：
+
+using Azure.Storage.Blobs.Models;
+using Azure.Storage.Blobs;
+using Microsoft.AspNetCore.Mvc;
+```
+
+
+
+
+```csharp
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using BlobStorageWebApp.Database;
+
+{
+    public class IndexModel : PageModel
+    {
+        private readonly ILogger<IndexModel> _logger;
+
+        public IndexModel(ILogger<IndexModel> logger)
+            _logger = logger;
+        }
+
+        public async void OnGet()
+        {
+            await CreateBlobAsync();
+
+        public async Task CreateBlobAsync()
+        {
+            // Get a reference to the container
+            BlobContainerClient container = new BlobContainerClient(
+                "DefaultEndpointsProtocol=https;"+
+                "AccountKey=beSfcQhP9KcDeznMNlyLXgEJyDMXrgjaF9+AmmPksH"
+                +"uUbdMcUQp5yQutGWm7tKjBIm33o4G+AStn05yfA==;"+
+                "EndpointSuffix=core.windows.net", "sampleblobcontainer");
+
+            await container.UploadBlobAsync("sampleBlob",
+                BinaryData.FromObjectAsJson<SampleBlob>(
+                { Id = 0, Description = "testing description"
+                , CreationDate = DateTime.Now }));
+        }
+    }
+}
+```
+这是运行项目后的输出：
+
+![](img/Figure_5.15.png)
+
+图 5.15：包含最近创建数据的容器。
+
+## 结论
+
+在本章中，我们深入研究了 `Azure SQL`、`Cosmos DB` 和 `Blob Storage` 的世界，这是 Azure 数据服务的三个基础组件。我们首先了解了 `Azure SQL` 的功能和优势，这是一种全托管的关系型数据库服务，提供了扩展性、安全性和易用性。通过各种用法示例，我们见证了 `Azure SQL` 如何满足从小型项目到企业级解决方案的广泛应用需求。
+
+接下来，我们探索了 `Cosmos DB`，这是一种全球分布的多模型数据库服务，提供了令人印象深刻的扩展性和低延迟性能。我们学习了它在支持各种数据模型方面的通用性以及其全球范围，使其适用于在多个区域之间具有响应性和可用性的应用程序。用法示例突出了 `Cosmos DB` 在不同领域的潜力，展示了它无缝处理大规模应用程序的能力。
+
+最后，我们讨论了 `Blob Storage`，这是 Azure 用于非结构化数据的存储解决方案。凭借其可扩展且具有成本效益的选项，`Blob Storage` 提供了一种管理和访问图像、视频和文档等非结构化数据的方便方法。实际用法演示了 `Blob Storage` 在不同场景下的实用性，强调了它在现代数据管理策略中的重要性。
+
+通过在本章探索 `Azure SQL`、`Cosmos DB` 和 `Blob Storage`，你已经对它们的功能、优势和实际应用有了坚实的理解。你现在已经具备了在 Azure 云环境中有效利用这些服务所需的知识和技能。当你继续你的 Azure 之旅时，请记住考虑你项目的特定需求，并应用最佳实践以确保充分利用这些强大的数据服务。
+
+`Azure SQL`、`Cosmos DB` 和 `Blob Storage` 为构建可扩展的、安全且全球可访问的应用程序提供了坚实的基础。无论你是在进行小型项目还是在管理大型企业级解决方案，这些服务提供了满足你数据存储和管理需求所需的灵活性和可靠性。拥抱可能性，并在未来的努力中继续探索 Azure 数据服务的巨大能力。
+
+在接下来的章节中，我们将进入使用 `Azure Service Bus` 的异步操作动态领域。这个主题揭示了 Azure 生态系统的一个关键侧面，探索了异步操作如何增强分布式系统中的效率和扩展性。我们深入研究 `Azure Service Bus` 这一强大消息服务的功能，并阐明它如何促进解耦组件之间的无缝通信。通过实用的见解和示例，读者将全面理解 `Azure Service Bus` 如何赋能应用程序执行异步操作，从而增强现代云架构的韧性和响应能力。
+
+# 第 6 章利用 Azure Service Bus 释放异步操作的力量
+
+## 引言
+
+在当今动态的格局中，速度、扩展性和高效通信至关重要，掌握异步操作是必不可少的。本章将我们带浸在 `Azure Service Bus` 的领域，这是由 Microsoft Azure 提供的一种健壮的云消息服务，提供了一系列对于有效异步操作至关重要的功能。
+
+我们从探索`队列（Queues）` 开始，它是 `Azure Service Bus` 的基础，消息遵循先入先出（FIFO）方式。队列确保了消息的可靠投递，增强了系统的韧性。我们深入研究了创建队列、发送/接收消息以及处理各种消息处理场景。
+
+转向`主题（Topics）`，我们发现了它们在启用发布/订阅模式方面的强大之处，该模式有助于向多个订阅者高效广播。主题提供了扩展性和灵活性，使我们能够创建和定义`订阅（Subscriptions）`、管理消息过滤并自定义路由。
+
+一个全面的案例研究将引导我们分步实现 `Azure Service Bus`，提供手操作经验和真实世界的见解。我们进阶到高级功能，探索了可以简化与不同客户端交互的`消息会话（Message sessions）`。`消息会话` 有助于管理复杂的工作流并保持消息顺序，从而优化系统性能。
+
+本章的最后高潮是解决错误处理和异常管理——这是分布式系统中的一个关键方面。我们讨论了处理异常的策略、重试消息处理以及实施健壮的错误处理机制。在本章结束时，读者将对 `Azure Service Bus` 有深深刻的理解，并具备构建能够处理大负载的韧性系统的技能。这段旅程有望释放使用 `Azure Service Bus` 进行异步操作的全部潜力。
+
+## 结构
+
+本章涵盖了以下主题：
+
+*   使用 Service Bus 的异步操作
+*   `Azure Service Bus 主题（Topics）`
+*   `Azure Service Bus 订阅（Subscriptions）`
+*   案例研究
+
+## 目标
+
+在本章结束时，你将理解 `Azure Service Bus` 的核心概念，包括队列（Queues）、主题（Topics）和订阅（Subscriptions）。你将学习如何在 `Azure Service Bus` 中创建和管理队列，以实现可靠的消息投递和处理。探索主题和订阅的优势和能力，实现高效的发布/订阅消息模式。通过分步案例研究获得实用的见解，演示 `Azure Service Bus` 的实现。我们将创建主题、定义订阅，并探索消息过滤和路由技术。发现使用消息会话来处理与不同客户端的交互并维护每个会话中的消息顺序。探索高级功能和优化以增强 `Azure Service Bus` 的性能和扩展性。理解异常管理和错误处理策略，以确保应用程序的韧稳定性。学习处理异常、重试消息处理以及实施健壮错误处理机制的最佳实践。读者将获得使用 `Azure Service Bus` 进行异步操作来设计和构建高效可扩展系统所需的知识和技能。
+
+
+
+
+Azure Service Bus 是由 Microsoft Azure 提供的云端消息服务。它为构建分布式应用程序和系统提供了一个强大且可扩展的平台，这些系统要求组件之间进行异步且解耦的通信。Azure Service Bus 多种消息模式，包括 `Queues`（队列）、`Topics`（主题）和 `Subscriptions`（订阅），允许开发者设计灵活且可靠的消息解决方案。
+
+Azure Service Bus 的关键特性和组件包括：
+
+* `Queues`：Azure Service Bus `Queues` 提供了一种可靠的异步消息机制。它们遵循 FIFO（先入先）原则，确保消息按照接收到的顺序进行处理。`Queues` 提供了可靠的消息传递、消息持久性，并支持单向和请求/响应通信模式。
+* `Topics` 和 `Subscriptions`：Azure Service Bus `Topics` 允许使用发布/订阅消息模式。发布到 `Topic` 的消息可以被多个订阅者（即 `Subscriptions`）接收。`Subscriptions` 可以设置特定的过滤器以仅接收相关的消息子集，实现高效的消息分发，并允许组件订阅特定的消息类型或感兴趣的 `Topics`。
+* `Relays`：Azure Service Bus `Relays` 提供了一种将本地服务暴露到云端的方法，或者安全地实现本地与云端服务之间的通信。`Relays` 使用双向通信通道，允许客户端连接到中继端并与背后的服务进行通信。
+* `Message sessions`：Azure Service Bus 支持消息会话，允许将相关的消息分组在一起并按顺序处理。`Message sessions` 对于那些维护顺序和一起处理相关消息至关重要的场景非常有用，例如涉及多个步骤的工作流或事务。
+* `Dead-lettering`：Azure Service Bus 包含死信队列处理功能，可以将无法处理或超过最大交付尝试次数的消息移动到单独的死信 `Queue` 或 `Topic` 中。死信处理提供了一种单独处理失败或毒性消息的机制，使开发者能够有效地诊断并解决问题。
+* `Message transactions`：Azure Service Bus 支持消息事务，允许将多个消息作为单个原子操作的一部分进行发送和处理。这确保了所有消息要么被成功处理，要么在失败时回滚，从而提供了消息处理的一致性和可靠性。
+* `Auto-scaling and high availability`：Azure Service Bus 设计为具有高可用性和可扩展性。它提供跨多个节点的自动负载均衡和消息分区，确保高吞吐量和容错能力。Azure Service Bus 还提供了自动扩展功能，根据工作负载需求动态调整资源。
+* `Management and monitoring`：Azure Service Bus 通过 `Azure portal`、`Azure CLI`、`PowerShell` 和 `REST APIs` 提供全面的管理和监控功能。这些功能允许开发者监控消息吞吐量、管理 `Queues` 和 `Topics` 等实体，并配置消息处理和处理的各个方面。
+
+Azure Service Bus 广泛应用于各种场景，包括企业消息、分布式系统、物联网（IoT）消息、事件驱动架构和混合云集成。它的灵活性、扩展性和可靠性使其构建需要异步通信和不同组件间无缝集成的健壮响应应用程序的核心组件。
+
+## Azure Service Bus Queues
+
+Azure Service Bus `Queues` 是 Azure Service Bus 的核心组件，为构建分布式应用程序提供可靠的异步消息机制。`Queues` 实现了组件之间的解耦通信，允许它们以可靠且有序的方式交换消息。
+
+Azure Service Bus Queues 的关键特性和特征包括：
+
+* `Reliable message delivery`：Azure Service Bus `Queues` 通过遵循 FIFO 原则确保消息传递的可靠性。发送到 `Queue` 的消息按照接收顺序进行存储和处理，确保消息的完整性并保留操作顺序。
+* `Asynchronous communication`：`Queues` 实现了发送者和接收者组件之间的异步通信。发送者组件可以将消息推送到 `Queue` 而无需等待响应，接收者组件可以在准备好处理时从 `Queue` 中检索消息。这种异步模式允许松散耦合并提高系统响应能力。
+* `Message durability`：存储在 Azure Service Bus `Queues` 中的消息是持久的。它们以冗余方式存储在 Azure 基础设施内的多个节点上，确保了高可用性并防止数据丢失。即使组件故障或发生临时网络问题，消息也会保留在 `Queue` 中直到它们被成功处理。
+* `Scalability`：Azure Service Bus `Queues` 设计用于处理高消息吞吐量并实现无缝扩展。它们支持跨多个节点的自动负载均衡和消息分区，允许水平扩展并适应不断增长的工作负载。
+* `One-way and request-response communication`：`Queues` 支持单向消息传递和请求/响应模式。在单向消息中，发送者组件将消息推送到 `Queue` 而不期望响应。在请求/响应场景中，发送者将请求消息放在 `Queue` 中并等待接收者组件的响应消息。
+* `Message Time-to-Live (TTL)`：Azure Service Bus `Queues` 提供了设置消息生存时间（TTL）值的能力。`TTL` 决定了消息在过期并自动删除之前可以在 `Queue` 中留存多久。此功能有助于管理消息留存，并确保消息在指定的时间范围内被处理。
+* `Dead-lettering`：Azure Service Bus `Queues` 包含死信处理功能。如果消息无法被成功处理或超过最大交付尝试次数，可以将其移动到单独的死信 `Queue` 进行进一步分析和处理。死信处理允许有效的错误处理和故障排除。
+* `Management and monitoring`：Azure Service Bus `Queues` 可以通过 `Azure portal`、`Azure CLI`、`PowerShell` 和 `REST APIs` 进行管理和监控。这些工具提供了创建和配置 `Queues`、监控消息吞吐量、跟踪 `Queue` 指标以及管理访问控制和安全设置的功能。
+
+Azure Service Bus `Queues` 广泛应用于各种场景，例如任务卸载、负载均衡、事件驱动架构和分布式系统。它们的可靠性和异步特性使其非常适用于构建需要解耦和有序消息处理的健壮应用程序。
+
+## Session Queues
+
+`Session Queues` 是 Azure Service Bus 中的一种特殊功能，允许将相关的消息分组在一起并由同一个接收者按顺序处理。在普通的 `Queues` 中，消息是独立处理的，它们之间没有内在联系。然而，`session Queues` 实现了 `message sessions`，将逻辑消息流与特定的 `session ID` 关联。
+
+`Session Queues` 对于那些维护消息顺序和分组至关重要的场景特别有用，例如多步骤工作流、事务处理，当任务的不同部分需要由同一个接收者按顺序处理时。
+
+
+
+
+通过利用会话队列（Queues），开发者可以确保会话内的消息按照发送顺序进行处理，并在多个消息处理周期内维护会话状态。这确保了相关消息处理的一性和可靠性，并对复杂的工作流和处理场景提供了更大的控制。
+
+# Azure Service Bus Topics（主题）
+
+Azure Service Bus Topics 是 Azure Service Bus 提供的一项强大消息功能。Topics 支持发布/订阅消息模式，允许消息被发布一次并被多个订阅者接收。Topics 为向感兴趣的方广播消息提供了一种灵活且可扩展的解决方案。
+
+Azure Service Bus Topics 的主要功能和特性包括：
+
+- **发布/订阅消息传递**：Azure Service Bus Topics 遵循发布/订阅消息模式。发布到 `Topic` 的消息不会直接发送给订阅者，而是存储在 `Topic` 中。订阅者可以为 `Topic` 创建 `Subscriptions`（订阅），并根据特定标准或兴趣接收消息。这种解耦模型允许高效的消息分发和组件之间的灵活通信。
+- **消息过滤**：Topics 支持根据用户定义的属性进行消息过滤。`Subscriptions` 可以定义过滤规则，仅接收符合特定标准的消息。此功能允许对递送到订阅者的消息进行精粒度控制，确保每个订阅者都能接收相关且针对性的消息。
+- **消息路由**：Azure Service Bus Topics 提供消息路由能力。发布者可以定义路由规则，根据消息属性决定如何在不同的 `Subscriptions` 之间分发消息。这实现了智能消息路由并选择性地交付给相应的订阅者。
+- **多个订阅**：Topics 支持多个 `Subscriptions`，允许不同的组件或订阅者独立接收消息。每个 `Subscription` 维护自己的游标，允许订阅者按照自己的节奏接收消息并独立管理其消息处理。
+- **有序消息传递**：在每个 `Subscription` 中，消息按照发布顺序递递。这确保了订阅者以顺序且一致的方式接收消息，使 Topics 适用于需要有序消息处理的场景。
+- **消息会话**：Topics 还支持消息会话，允许相关消息分组并按顺序处理。在维护消息顺序和共同处理相关消息重要的场景中，消息会话非常有用，例如多步骤工作流或涉及多消息的事务。
+- **可扩展性和性能**：Azure Service Bus Topics 设计具有高度的可扩展性和性能。它们支持跨多个节点的消息自动负载均衡和分区，允许高吞吐量和水平扩展性。Topics 可以处理大量消息量并支持大量的数量 `Subscriptions`。
+- **管理与监控**：可以通过 Azure 门户、`Azure CLI`、`PowerShell` 和 `REST APIs` 对 Azure Service Bus Topics 进行管理和监控。这些工具提供了创建和配置 `Topics` 及 `Subscriptions`、监控消息吞吐量和 `Subscription` 活动以及管理访问控制和安全设置的能力。
+
+Azure Service Bus Topics 广泛应用于各种场景，包括事件驱动架构、通知、内容分和微服务通信。它们为向多个订阅者广播消息提供了灵活且可扩展的解决方案，确保组件之间高效且解耦的通信。
+
+# Azure Service Bus Subscriptions（订阅）
+
+Azure Service Bus Subscriptions 是 Azure Service Bus Topics 的关键组件。订阅允许根据特定标准或兴趣从 `Topic` 接收并处理消息。它们为订阅者消费发布到 `Topic` 的消息提供了一种灵活且针对的方法。
+
+Azure Service Bus Subscriptions 的主要功能和特性包括：
+
+- **消息过滤**：`Subscriptions` 允许根据用户定义的属性进行消息过滤。通过指定过滤规则，订阅者可以仅接收符合其标准或兴趣的消息。这种过滤能力允许订阅者消费相关消息并避免处理不必要的消息。
+- **选择性消息传递**：Azure Service Bus Subscriptions 提供选择性消息传递。每个 `Subscription` 定义了自己的的一套过滤规则，允许订阅者仅接收符合其标准的消息。这确保了订阅者从 `Topic` 接收到自定义的消息子集。
+- **有序消息传递**：递送到 Azure Service Bus Topic 中 `Subscription` 的消息保持其顺序。这意味着消息的递递和处理顺序与发布时的顺序相同。有序消息传递确保了一致性并帮助订阅者维护操作序列。
+- **多个订阅**：Topics 支持多个 `Subscriptions`，允许不同的组件或订阅者独立接收消息。每个 `Subscription` 维护自己的游标，允许订阅者按照自己的节奏接收消息并独立管理其消息处理。
+- **消息会话**：`Subscriptions` 也支持消息会话，允许相关消息分组并按顺序处理。在维护消息顺序和共同处理相关消息重要的场景中，消息会话非常有用，例如多步骤工作流或涉及多消息的事务。
+- **自动伸缩与性能**：Azure Service Bus Subscriptions 设计具有可扩展性和性能。它们可以处理高消息吞吐量并支持大量的订阅者。`Subscriptions` 得益于 Azure Service Bus 的自动负载均衡和分区功能，确保高效的消息分发。
+- **管理与监控**：可以通过 Azure 门户、`Azure CLI`、`PowerShell` 和 `REST APIs` 对 Azure Service Bus Subscriptions 进行管理和监控。这些工具提供了创建和配置 `Subscriptions`、定义过滤规则、监控 `Subscription` 活动和消息吞吐量以及管理访问控制和安全设置的能力。
+
+Azure Service Bus Subscriptions 通常用于涉及发布/订阅消息模式、事件驱动架构、通知和内容内容的场景。它们为组件根据特定标准消费发布在 `Topic` 上的消息提供了灵活且针对的方法，实现了组件之间解耦且高效的通信。
+
+# Azure Service Bus vs Azure Queue Storage Queues
+
+Azure Service Bus 和 Azure Queue Storage Queues 都充当消息代理，促进分布式系统中不同组件之间的通信。然而，它们具有不同的特性和能力，使它们适用于不同的场景，如下表所示：
+
+| 功能 | Azure Service Bus | Azure Queue Storage Queues |
+| :--- | :--- | :--- |
+| 通信模式 | 发布/订阅、点对点 | 点对点 |
+| 消息排序 | 支持 | 支持 |
+| 消息过滤 | 支持 | 不支持 |
+| 呆信队列 | 支持 | 支持 |
+| 计划递递 | 支持 | 不支持 |
+| 消息会话 | 支持 | 不支持 |
+| 自动伸缩 | 支持 | 支持 |
+| 消息 TTL (生存时间) | 支持 | 支持 |
+| 消息事务 | 支持 | 不支持 |
+| 可靠性与持久性 | 高可靠 | 高可靠 |
+
+
+
+
+
+| 高级功能与灵活性 | 是 | 有限 |
+| :--- | :--- | :--- |
+| 推荐复杂度 | 中/高 | 低 |
+
+表 6.1：Service Bus 与 Queue 存储之间的功能概览
+
+Azure Service Bus 是一种强大且功能丰富的消息服务，支持发布/订阅（Publish/Subscribe）和点对点（Point-to-Point）通信模式。它提供了高级功能，如消息过滤、用于失败消息的死信队列（Dead-letter Queues）、消息调度交付、用于分组相关消息的消息以及对消息事务的支持。对于需要复杂消息处理和通信模式的中高场景，建议使用 Azure Service Bus。
+
+另一方面，Azure Queue Storage Queues 是更基础的消息代理，主要为点对点通信设计。虽然它们提供了可靠的消息投递并支持消息排序，但缺乏 Azure Service Bus 提供的一些高级功能，例如消息过滤、调度交付和消息会话。Azure Queue Storage Queues 更适用于基础消息队列和处理即可的低复杂度场景。
+
+总而言之，Azure Service Bus 是中高复杂度和高性消息需求场景的稳健选择，而 Azure Queue Storage Queues 则为具有简单消息队列需求的低复杂度场景提供了更简单的解决方案。在两者之间选择取决于正在开发的应用程序或系统的特定需求和复杂度。
+
+## 案例研究
+
+在案例研究中，我们正在处理 Azure Service Bus 的各种功能，并实现不同的组件以完成与消息处理和处理相关的任务。为了更好地理解，我们为每个消费者准备了一个控制台应用程序，同时也为发布者准备了一个控制台应用程序。以下是案例研究涉及的任务分解：
+
+*   **发布消息**
+    * 实现一个发送组件向 Azure Service Bus 队列发布消息。
+    * 使用用于 .NET 的 `Azure Service Bus SDK` 向 `Queue` 发送消息。
+*   **消费消息**
+    * 实现一个接收器组件以消费并处理来自 Azure Service Bus 队列的消息。
+    * 处理消息逻辑并实现任何必要的业务逻辑。
+*   **消费消息批**
+    * 实现一个接收器组件以批处理消息。
+    * 通过分批处理消息来提高消息处理效率。
+*   **消息处理器**
+    * 实现一个负责处理消息处理逻辑的消息处理器组件。
+    * 消息处理器将由接收器用于处理单个消息或消息批。
+*   **消费会话**
+    * 实现一个接收器组件以消费并处理来自 Azure Service Bus 会话的消息。
+    * 实现使用 `session IDs` 将相关消息分组的逻辑。
+*   **会话处理器**
+    * 实现一个负责处理基于会话的消息的会话处理器组件。
+    * 会话处理器将由接收器按发送顺序处理会话内的消息。
+*   **消费主题和订阅**
+    * 实现订阅组件以消费并处理来自 Azure Service Bus 主题（Topics）和订阅（Subscriptions）的消息。
+    * 根据不同的标准或兴趣定义多个 `Subscriptions`，并实现选择性消息传递的逻辑。
+*   **使用的 NuGet 包：**
+    * `Azure.Messaging.ServiceBus`
+
+## 创建新的 Azure Service Bus
+
+我们实践案例研究的第一步是创建一个新的 Azure Service Bus 组件，我们需要按照以下步骤操作：
+
+1.  **登录 Azure 门户**：访问 [`https://portal.azure.com`](https://portal.azure.com) 并使用您的 Microsoft Azure 账户登录。
+2.  **创建新资源**：登录后，点击 Azure 门户左侧的“创建资源”按钮 (+)。
+3.  **搜索“Service Bus”**：在搜索栏中输入“Service Bus”，从可用服务列表中选择“Service Bus”。
+4.  **点击“创建”**：在 Service Bus 页面上，点击“创建”按钮开始创建过程。
+5.  **基本信息**：
+    * **订阅**：选择您要创建 Service Bus 命名空间的 `Azure Subscription`。
+    * **资源组**：选择现有的资源组或创建一个新组以包含 Service Bus 命名空间及相关资源。
+    * **命名空间名称**：为您的 Service Bus 命名空间输入唯一名称。该名称在所有 Azure Service Bus 命名空间中必须是全局唯一的。
+    * **区域**：选择您要部署 Service Bus 命名空间的区域。选择地理上靠近您的应用程序或服务的区域以获得最佳性能。
+    * **定价层级**：选择符合您需求的定价层级。Azure Service Bus 提供具有不同功能和定价选项的不同层级。
+    * **虚拟网络**：如果需要，您可以选择启用虚拟网络规则，限制特定虚拟网络访问 Service Bus 命名空间。
+    * **标签**：可选地，您可以添加标签来帮助组织和分类您的 Azure 资源。
+6.  **查看 + 创建**：检查您的配置设置并点击“创建”按钮开始部署过程。
+
+Azure Service Bus 命名空间的部署可能需要几分钟。一旦部署完成，您将在 Azure 门户中看到新的 Azure Service Bus 命名空间。现在您可以开始使用 Service Bus 进行消息队列、发布/订阅消息和其他消息模式来构建分布式应用程序。部署成功后，我们的 Service Bus 命名空间应如下所示：
+
+![](img/Figure_6.1.png)
+
+图 6.1：Azure 门户中的 Service Bus 命名空间
+
+现在我们需要获取 Service Bus 的连接字符串，请按照以下步骤操作：
+
+1.  **访问共享访问策略**：在 Service Bus 命名空间内部，导航到左侧菜单，在“设置”下点击“共享访问策略”。
+2.  **创建或访问现有的共享访问策略**：默认会有一个 `RootManageSharedAccessKey` 策略，它具有完全访问权限。虽然可以使用此策略获取连接字符串，但建议创建一个具有特定权限的自定义策略。
+3.  **创建自定义共享访问策略（可选）**：如果您想创建自定义策略，点击“添加”创建一个新的共享访问策略。赋予它一个名称并根据您的应用程序需求指定所需的权限（例如 `Send`、`Listen`、`Manage`）。
+4.  **获取连接字符串**：在创建或选择所需的共享访问策略后，点击策略名称查看详细信息。连接字符串将在 `Primary Connection String` 字段可用。此连接字符串包含您的应用程序身份验证并连接到 Azure Service Bus 命名空间所需的信息，如下所示：
+
+![](img/Figure_6.2.png)
+
+图 6.2：Service Bus 连接字符串
+
+现在我们需要创建队列（Queue），后续步骤如下：
+
+1.  在 Service Bus 命名空间内部，导航到左侧菜单，在“实体（Entities）”下点击“队列（Queues）”。
+2.  **创建新队列**：点击 `+ Queue` 按钮创建一个队列。
+3.  **配置队列**：
+    * **名称**：为队列输入唯一名称。该名称在 Azure Service Bus 命名空间内必须是全局唯一的。
+    * **启用分区**：默认禁用分区，如果您预计会有高消息吞吐量，可以选择启用它以提高可扩展性。
+
+
+
+
+
+- **重复检测**：你可以启用重复检测，以防止在指定的时间窗口内处理重复消息。
+- **生存时间 (TTL)**：可选地，你可以为 `Queue` 中的消息设置一个 `TTL` 值。超过 `TTL` 的消息将自动从 `Queue` 中删除。
+4. **访问控制（可选）**：配置访问控制以为访问 `Queue` 的不同用户或应用程序设置权限。
+5. **创建队列**：点击“创建（Create）”按钮创建 `Queue`。`Queue`将在 Azure Service Bus 命名空间内配置，如下图所示：
+
+![](img/Figure_6.3..png)
+
+图 6.3：最近创建的 Service Bus 队列
+
+现在我们来创建会话队列，请按照以下步骤操作：
+
+1. 在 Service Bus 命名空间中，导航到左侧菜单，在“实体（Entities）”下，点击“队列”。
+2. **创建新队列**：点击 `+ Queue` 按钮创建一个新的 `Queue`。
+3. **配置队列**：
+    - **名称**：为 `Queue` 输入一个唯一名称。该名称在 Azure Service Bus 命名空间内必须是全局唯一的。
+    - **启用分区**：默认禁用分区，但如果你预计会有高消息吞吐量，可以选择启用它以提高扩展性。
+    - **会话**：要创建一个启用会话的 `Queue`，请勾选“启用会话（Enable session）”复框。这将使 `Queue` 支持消息会话。
+4. **访问控制（可选）**：配置访问控制以为访问 `Queue` 的不同用户或应用程序设置权限。
+5. **创建队列**：点击“创建（Create）”按钮创建启用会话的 `Queue`。`Queue`将在 Azure Service Bus 命名空间内配置，如下所示：
+
+![](img/Figure_6.4..png)
+
+图 6.4：最近创建的 Service Bus 会话队列
+
+要创建主题，请遵循后续步骤：
+
+1. 在 Service Bus 命名空间中，导航到左侧菜单，在“实体（Entities）”下，点击“主题（Topics）”。
+2. **创建新主题**：点击 `+ Topic` 按钮创建一个新的 `Topic`。
+3. **配置主题**：
+    - **名称**：为 `Topic` 输入一个唯一名称。该名称在 Azure Service Bus 命名空间内必须是全局唯一的。
+    - **启用分区**：默认禁用分区，但如果你预计会有高消息吞吐量，可以选择启用它以提高扩展性。
+4. **访问控制（可选）**：配置访问控制以为访问 `Topic` 的不同用户或应用程序设置权限。
+5. **创建主题**：点击“创建（Create）”按钮创建 `Topic`。`Topic`将在 Azure Service Bus 命名空间内配置，如下所示：
+
+![](img/Figure_6.5..png)
+
+图 6.5：最近创建的 Service Bus 主题
+
+现在我们要创建订阅，请按照以下步骤操作：
+
+1. 在 Service Bus 命名空间中，导航到左侧菜单，在“实体（Entities）”下，点击“主题（Topics）”。
+2. **选择主题**：点击你想要创建订阅的 `Topic`。
+3. **创建新订阅**：在选定的 `Topic` 内部，导航到左侧菜单，在“实体（Entities）”下，点击“订阅（Subscriptions）”。
+4. **创建新订阅**：点击 `+ Subscription` 按钮创建一个新的 `Subscription`。
+5. **配置订阅**：
+    - **名称**：为 `Subscription` 输入一个唯一名称。该名称在选定的 `Topic` 内必须是唯一的。
+    - **过滤（可选）**：可选地，你可以为 `Subscription` 设置过滤器，以便根据消息属性仅接收特定的消息。
+6. **访问控制（可选）**：配置访问控制以为访问 `Subscription` 的不同用户或应用程序设置权限。
+7. **创建订阅**：点击“创建（Create）”按钮创建 `Subscription`。`Subscription`将在选定的 Azure Service Bus `Topic` 内配置，如下所示：
+
+![](img/Figure_6.6..png)
+
+图 6.6：最近创建的 Service Bus 订阅
+
+## 发布到 Azure Service Bus (#contents.xhtml_sc3_130a)
+
+发布者组件在我们的分布式应用程序中起着核心作用，利用 .NET 和 C# 结合 Azure Service Bus 来管理关键的消息模式。这个多功能组件在发布消息、传输消息批、处理主题工作以及处理消息会话方面表现出色。
+
+在这个实际案例研究中，发布者组件使用了以下代码：
+
+```csharp
+using Azure.Messaging.ServiceBus;
+using System;
+using System.Threading.Tasks;
+
+string connectionString = "Endpoint=sb://your.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=your-key";
+await ServiceBusClient client = new ServiceBusClient(connectionString);
+ServiceBusSender sender = client.CreateSender("topicname");
+
+ServiceBusMessage message = new ServiceBusMessage("Hello World!");
+await sender.SendMessageAsync(message);
+```
+
+以下是发送批消息的代码：
+
+```csharp
+using Azure.Messaging.ServiceBus;
+using System;
+using System.Threading.Tasks;
+
+string connectionString = "Endpoint=sb://your.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=your-key";
+await ServiceBusClient client = new ServiceBusClient(connectionString);
+ServiceBusSender sender = client.CreateSender("topicname");
+
+using ServiceBusMessageBatch batch = await sender.CreateMessageBatchAsync();
+
+for (int i = 1; i < 10; i++)
+{
+    ServiceBusMessage message = new ServiceBusMessage($"Message {i}");
+    if (!batch.TryAdd(message))
+    {
+        throw new Exception($"The message {i} is too large to fit in the batch.");
+    }
+}
+
+await sender.SendMessagesAsync(batch);
+```
+
+这是带会话发送消息的代码：
+
+```csharp
+using Azure.Messaging.ServiceBus;
+using System;
+using System.Threading.Tasks;
+
+string connectionString = "Endpoint=sb://your.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=your-key";
+await ServiceBusClient client = new ServiceBusClient(connectionString);
+ServiceBusSender sender = client.CreateSender("topicname");
+
+ServiceBusMessage message = new ServiceBusMessage("Hello World!")
+{
+    SessionId = "session1"
+};
+await sender.SendMessageAsync(message);
+```
+
+这是从会话队列接收消息的代码：
+
+```csharp
+using Azure.Messaging.ServiceBus;
+using System;
+using System.Threading.Tasks;
+
+string connectionString = "Endpoint=sb://your.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=your-key";
+await ServiceBusClient client = new ServiceBusClient(connectionString);
+ServiceBusReceiver receiver = client.CreateReceiver("queuename");
+
+await ServiceBusSessionReceiver processor = await receiver.AcceptNextSessionAsync("session1");
+
+while (true)
+{
+    ServiceBusMessage message = await processor.ReceiveMessageAsync();
+    Console.WriteLine(message.Body.ToString());
+    await processor.CompleteMessageAsync(message);
+}
+```
+
+Console.WriteLine("Messages Published!");
+
+这是发布到队列和会话队列后的 Azure 门户：
+
+![](img/Figure_6.7..png)
+
+图 6.7：带有消息的 Service Bus 队列
+
+这是发布到主题和订阅后的 Azure 门户：
+
+![](img/Figure_6.8..png)
+
+
+
+
+
+# 图 6.8：带有消息的 Service Bus Topic
+
+## 消费消息
+
+在此过程中，接收器组件从 `Queue` 中检索消息：
+
+```csharp
+// 更多信息请访问 https://aka.ms/new-console-template
+
+using Azure.Messaging.ServiceBus;
+
+string connectionString = "Endpoint=sb://thiagosample.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=e6Bb5GnhuadJfa1W49kCxwfBztioIAHXU+ASbH7kjrc=";
+string queueName = "samplequeue";
+
+await using ServiceBusClient client = new ServiceBusClient(connectionString);
+
+// 创建用于配置处理器的选项
+var options = new ServiceBusProcessorOptions
+{
+    // 默认情况下或当 AutoCompleteMessages 设置为 true 时，处理器将在执行处理程序后完成消息
+    // 将 AutoCompleteMessages 设置为 false 以自行[完成消息](https://docs.microsoft.com/en-us/azure/service-bus-messaging/message-transfers-locks-settlement#peeklock)
+    // 在两种情况下，如果消息处理程序在未完成消息的情况下抛出异常，处理器将放弃该消息
+    AutoCompleteMessages = false,
+
+    // 我也可以允许多线程
+    MaxConcurrentCalls = 2
+};
+
+// 创建一个我们可以用于处理消息的处理器
+await using ServiceBusProcessor processor = client.CreateProcessor(queueName, options);
+
+// 配置要使用的消息和错误处理程序
+processor.ProcessMessageAsync += MessageHandler;
+processor.ProcessErrorAsync += ErrorHandler;
+
+async Task MessageHandler(ProcessMessageEventArgs args)
+{
+    string body = args.Message.Body.ToString();
+    Console.WriteLine(body);
+
+    // 我们可以评估应用程序逻辑并用它来决定如何完成消息
+    await args.CompleteMessageAsync(args.Message);
+}
+
+Task ErrorHandler(ProcessErrorEventArgs args)
+{
+    // 错误源告诉错误是在处理的哪个点发生的
+    Console.WriteLine(args.ErrorSource);
+    // 可完全限定命名空间
+    Console.WriteLine(args.FullyQualifiedNamespace);
+    // 还有实体路径
+    Console.WriteLine(args.EntityPath);
+    Console.WriteLine(args.Exception.ToString());
+    return Task.CompletedTask;
+}
+
+// 开始处理
+await processor.StartProcessingAsync();
+
+// 由于处理是在后台进行的，我们添加了 Console.ReadKey 以允许处理继续进行，直到按下键。
+Console.ReadKey();
+```
+
+在下方的图中，我们可以看到程序的输出：
+
+![](img/Figure_6.9..png)
+
+图 6.9：消费消息的控制台应用程序输出
+
+## 消费消息批
+
+这种方法不是逐个消费消息，而是允许接收器组件一起处理多条消息，从而优化消息处理并减少通信开销。
+
+以下是本案例中用于消费消息批的代码：
+
+```csharp
+// 更多信息请访问 https://aka.ms/new-console-template
+
+using Azure.Messaging.ServiceBus;
+
+string connectionString = "Endpoint=sb://thiagosample.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=e6Bb5GnhuadJfa1W49kCxwfBztioIAHXU+ASbH7kjrc=";
+string queueName = "samplequeue";
+
+await using ServiceBusClient client = new ServiceBusClient(connectionString);
+
+// 创建一个我们可以用于接收消息的接收器
+await using ServiceBusReceiver receiver = client.CreateReceiver(queueName);
+
+// 接收到的消息类型不同，因为它包含一些服务设置属性
+// 接收了一批消息（在这种情况下最多为 4 条）
+IReadOnlyList<ServiceBusReceivedMessage> receivedMessages = await receiver.ReceiveMessagesAsync(maxMessages: 4);
+Console.WriteLine("批中的消息数量：" + receivedMessages.Count);
+
+// 遍历收到的每条消息
+foreach (ServiceBusReceivedMessage receivedMessage in receivedMessages)
+{
+    // 获取消息正体的字符串形式
+    string body = receivedMessage.Body.ToString();
+    Console.WriteLine(body);
+}
+```
+
+在我们的程序成功执行后，如图像所示，我们有如下输出：
+
+![](img/Figure_6.10.png)
+
+图 6.10：消费消息批的控制台应用程序输出
+
+## 消息处理器
+
+Azure Bus 中消息处理器的概念围绕着构建可靠的机制，以处理来自队列或订阅的入站消息。消息处理器是接收消息、处理消息以及执行所需逻辑的基础组件。
+
+
+
+
+
+要消费会话（session），我们需要以下代码，它将负责连接服务线并接收会话中的消息：
+
+```csharp
+// See https://aka.ms/new-console-template for more information
+
+using Azure.Messaging.ServiceBus;
+
+string connectionString = "Endpoint=sb://thiagosample.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=e6Bb5GnhuadJfa1W49kCxwfBztioIAHXU+ASbH7kjrc=";
+string sessionQueueName = "samplesessionqueue";
+
+await using ServiceBusClient client = new ServiceBusClient(connectionString);
+
+// 创建一个指定会话的接收器
+await using ServiceBusSessionReceiver receiver = await client.AcceptSessionAsync(sessionQueueName, "sampleSessionId");
+
+// 接收的消息类型不同，因为它包含一些服务设置属性
+ServiceBusReceivedMessage receivedMessage = await receiver.ReceiveMessageAsync();
+Console.WriteLine("Session Id: " + receivedMessage.SessionId);
+Console.WriteLine("Body" + receivedMessage.Body);
+
+// 我们也可以使用此接收器设置任意会话状态
+// 该状态特定于会话，而不是针对任何特定消息
+await receiver.SetSessionStateAsync(new BinaryData("brand new state"));
+
+// 完成消息，从而从服务中删除它
+await receiver.CompleteMessageAsync(receivedMessage);
+```
+
+在成功执行我们的会话接收器后，我们得到了以下输出：
+
+![](img/Figure_6.12..png)
+
+图 6.12：消费会话的控制台应用程序输出
+
+## 会话处理器 (Session processor)
+
+会话处理器是一个关键组件，负责处理会话内的消息，确保操作的顺序性和协调性。
+
+以下代码负责创建并执行会话处理器：
+
+```csharp
+// See https://aka.ms/new-console-template for more information
+
+using Azure.Messaging.ServiceBus;
+
+string connectionString = "Endpoint=sb://thiagosample.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=e6Bb5GnhuadJfa1W49kCxwfBztioIAHXU+ASbH7kjrc=";
+string queueName = "samplequeue";
+string sessionQueueName = "samplesessionqueue";
+string topicName = "sampletopic";
+string subscriptionName = "samplesubscription";
+
+// 由于 ServiceBusClient 实现 IAsyncDisposable，我们使用 "await using" 创建它
+await using ServiceBusClient client = new ServiceBusClient(connectionString);
+
+// 创建用于配置处理器的选项
+var options = new ServiceBusSessionProcessorOptions
+{
+    // 默认情况下，在消息处理器返回后，处理器将完成消息
+    // 如果我想对结算进行更细粒度的控制，可以将其设置为 false
+    AutoCompleteMessages = false,
+
+    // 我也可以允许处理多个会话
+    MaxConcurrentSessions = 5,
+
+    // 默认或当 AutoCompleteMessages 设置为 true 时，处理器将在执行消息处理器后完成消息
+    // 将 AutoCompleteMessages 设置为 false 以自行[结算消息](https://docs.microsoft.com/en-us/azure/service-bus-messaging/message-transfers-locks-settlement#peeklock)
+    // 在两种情况下，如果消息处理器在未结算消息的情况下抛出异常，处理器将放弃该消息
+    MaxConcurrentCallsPerSession = 2,
+
+    // 处理可以可选限制为会话 ID 的子集
+    SessionIds = { "sampleSessionId", "sampleSessionId2" },
+};
+
+// 创建一个用于处理消息的会话处理器
+await using ServiceBusSessionProcessor processor = client.CreateSessionProcessor(sessionQueueName, options);
+
+// 配置要使用的消息和错误处理器
+processor.ProcessMessageAsync += MessageHandler;
+processor.ProcessErrorAsync += ErrorHandler;
+
+async Task MessageHandler(ProcessSessionMessageEventArgs args)
+{
+    var body = args.Message.Body.ToString();
+    Console.WriteLine("Session Id: " + args.Message.SessionId);
+    Console.WriteLine("Body" + body);
+
+    // 我们可以评估应用程序逻辑并据此决定如何结算消息
+    await args.CompleteMessageAsync(args.Message);
+
+    // 我们也可以使用此接收器设置任意会话状态
+    // 该状态特定于会话，而不是针对任何特定消息
+    await args.SetSessionStateAsync(new BinaryData("sample state"));
+}
+
+Task ErrorHandler(ProcessErrorEventArgs args)
+{
+    // 错误源告诉我错误是在处理的哪个点发生的
+    Console.WriteLine(args.ErrorSource);
+    // 可完全限定命名空间
+    Console.WriteLine(args.FullyQualifiedNamespace);
+    // 以及实体路径
+    Console.WriteLine(args.EntityPath);
+    // 异常详情
+    Console.WriteLine(args.Exception.ToString());
+    return Task.CompletedTask;
+}
+
+// 开始处理
+await processor.StartProcessingAsync();
+// 由于处理在后台进行，我们添加了 Console.ReadKey 以允许处理一直持续到按下键
+Console.ReadKey();
+```
+
+在成功执行我们的会话处理器后，我们得到了以下输出：
+
+（注：原文在此处缺少该部分的输出图像描述）
+
+## 消费主题与订阅 (Topics and Subscriptions)
+
+此模式允许多个订阅组件根据它们的兴趣或订阅标准从单个主题（Topic）接收消息。
+
+要消费主题和订阅，我们需要以下代码：
+
+```csharp
+// See https://aka.ms/new-console-template for more information
+
+using Azure.Messaging.ServiceBus;
+
+string connectionString = "Endpoint=sb://thiagosample.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=e6Bb5GnhuadJfa1W49kCxwfBztioIAHXU+ASbH7kjrc=";
+string topicName = "sampletopic";
+string subscriptionName = "samplesubscription";
+
+await using ServiceBusClient client = new ServiceBusClient(connectionString);
+
+// 为我们的订阅创建一个接收器，用于接收消息
+await using ServiceBusReceiver receiver = client.CreateReceiver(topicName, subscriptionName);
+
+// 接收的消息类型不同，因为它包含一些服务设置属性
+ServiceBusReceivedMessage receivedMessage = await receiver.ReceiveMessageAsync();
+
+// 获取消息体作为字符串
+string body = receivedMessage.Body.ToString();
+Console.WriteLine(body);
+```
+
+在成功执行我们的程序后，我们得到了以下输出：
+
+![](img/Figure_6.14.png)
+
+图 6.14：消费主题和订阅的控制台应用程序输出
+
+最后，这就是我们的项目解决方案。每个消费者都有一个控制台应用程序，外，发布者也有一个控制台应用程序，如下所示：
+
+![](img/Figure_6.15.png)
+
+图 6.15：带有控制台应用程序的项目解决方案
+
+
+
+
+接下来，我们深入研究了主题（Topics）和订阅（Subscriptions），这使我们能够实现发布/订阅模式。我们发现了如何创建主题、定义订阅，并利用消息过滤和路由技术高效地将消息分发给感兴趣的方。这种灵活性和可扩展性对于构建响应迅速且解耦的系统至关重要。
+
+案例研究提供了宝贵的实操经验，指导我们逐步实施了 `Azure Service Bus`。我们创建了新的 `Azure Service Bus` 实例，定义了主题、订阅和通知，并获得了对真实场景的实践见解。该案例研究使我们具备了在项目中有效应用 `Azure Service Bus` 所需知识和技能。
+
+我们还探索了消息会话（message sessions）的使用，它允许我们处理与不同客户端的交互，并在每个会话内维护消息顺序。消息会话证明是管理复杂工作流和优化分布式系统性能的价值工具。
+
+最后，我们讨论了异常管理和错误处理策略，承认了为意外情况和失败做好准备。我们学习了处理异常、重试消息处理以及实施稳健错误处理机制的最佳实践，以确保应用程序的韧性和稳定性。
+
+通过掌握 `Azure Service Bus` 及其功能，你现在已经了设计和构建利用异步操作的高效且可扩展系统的能力。无论是处理大量负载、解耦组件还是确保可靠的消息传递，`Azure Service Bus` 都提供了你所需的工具和能力。
+
+在你继续旅程时，请记住探索 `Azure Service Bus` 中提供的丰富功能和优化方案。关注最新更新和最佳实践，以最大限地发挥这一强大消息服务的潜力。
+
+拥抱 `Azure Service Bus` 的力量，解锁应用程序中异步操作的全部潜力。凭借在本章中获得的知识，你已经准备好设计、实施和优化能够处理复杂工作流、无缝分配任务并促进高效通信的系统。
+
+在下一章节中，我们将深入探讨 `Azure Key Vault` 这一领域。这一主题是 Azure 安全和身份管理框架的基石。我们将探索 `Azure Key Vault` 在保护加密密钥、机密和证书等敏感信息方面的关键作用。读者将获得安全密钥管理原理、加密以及 `Azure Key Vault` 与云应用程序无缝集成的见解。通过实际示例和用例，本章旨在赋予读者相关知识，通过利用 `Azure Key Vault` 的强大能力增强其基于 Azure 的解决方案的安全态。
+
+加入我们书籍的 Discord 空间
+
+加入书籍的 Discord 工作空间以获取最新更新、优惠、全球科技动态、新发布以及与作者的交流：
+
+`https://discord.bpbonline.com`
+
+![](img/fm1.png)
+
+# 第 7 章使用 Azure Key Vault 保护应用程序
+
+## 引言
+
+在当今互互通的世界里，应用程序和敏感数据的安全至关重要。随着网络威胁和数据泄露的增加，采取稳健的安全措施来保护我们的贵资产已变得必不可少。`Azure Key Vault` 是微软 Azure 提供的一项强大的云端服务，允许您保护应用程序所使用的加密密钥、机密和证书。
+
+在本章中，我们将讨论如何使用 `Azure Key Vault` 保护您的应用程序。我们将从 `Azure Key Vault` 的概述开始，探索其功能和优势。您将全面理解为什么 `Azure Key Vault` 是您应用程序安全策略中的关键组成部分。
+
+身份验证是任何安全系统的重要方面，`Azure Key Vault` 提供了多种身份验证机制以确保只有授权的才能访问。我们将详细探索这些身份验证选项，讨论如何有效地配置和管理它们。
+
+访问策略（Access policies）在控制谁可以在 `Azure Key Vault` 资源上执行什么操作方面起着重要作用。我们将深入研究访问策略的复杂性，学习如何定义细粒度权限并管理它们以维持强大的安全态。
+
+为了提供实践视角，我们将展示一个案例研究，演示如何在真实场景中逐步实施 `Azure Key Vault`。您将见证如何创建 `Azure Key Vault`、定义和管理访问策略，并利用其功能有效地保护您的应用程序。
+
+最后，我们将展示一个如何通过 `.NET` 控制台应用程序访问存储在 `Azure Key Vault` 中的密钥示例。您将学习如何将应用程序与 `Azure Key Vault` 集成，确保密钥的安全检索和利用。
+
+在本章结束时，您将获得使用 `Azure Key Vault` 保护应用程序所需的知识和技能。您将具备保护加密密钥、机密和证书的工具，使您能够构建稳健安全的应用程序以保护您的敏感数据。因此，让我们开启这段之旅，使用 `Azure Key Vault` 加固您的应用程序并防御潜在的安全威胁。
+
+## 结构
+
+本章涵盖了以下主题：
+
+*   Azure Key Vault 概述
+*   Azure Key Vault 身份验证
+*   Azure Key Vault 访问策略
+*   案例研究
+    *   创建 Azure Key Vault
+    *   管理 Key Vault 访问策略
+    *   通过 .Net Web 应用程序访问密钥
+
+## 目标
+
+本章使您对 `Azure Key Vault` 的核心概念有坚实的理解，强调其在保护应用程序方面的关键作用。导航 `Azure Key Vault` 内的多种身份验证机制，优化配置以提高效率。掌握访问策略以定义细粒度权限，并遵循案例研究在真实场景中进行实施。将 `.NET` 控制台应用程序与 `Azure Key Vault` 无缝集成以安全访问密钥。本章赋予您实用的技能和最佳实践，以加固您的应用程序，增强编写韧性安全策略的信心。应用这些见解通过 `Azure Key Vault` 增强您的应用程序的安全性。
+
+## Azure Key Vault 概述
+
+`Azure Key Vault` 是微软 Azure 提供的一项云端密钥库服务，允许您保护项目中的敏感数据，如连接字符串、证书和加密密钥。通过 Key Vault，您可以在不同应用程序之间共享相同的敏感信息，而这些信息对任何开发人员可见。
+
+Key Vault 的主要功能和优势如下：
+
+*   集中密钥管理：`Azure Key Vault` 提供将您的密钥、机密和证书存储在集中位置，便于不同的应用程序访问相同的敏感信息。
+*   安全存储：`Key Vault` 确保您的密钥、机密和证书是安全的，不会被未经许可的人访问。
+*   密钥生命周期管理：`Key Vault` 允许您生成、导入、轮换和删除密钥，使维护更加更加。
+*   机密管理：应用程序连接字符串、API 密钥和密码被视为机密，您可以将其存储在 `Azure Key Vault` 中以便于其管理和安全。
+
+
+
+
+- **访问控制**：Key Vault 通过访问策略提供访问控制。你可以为不同的用户、应用程序或组设置访问策略，通过特定的策略来管理对密钥、密码和证书的访问。访问控制遵循最小权限原则，有助于限制对敏感数据的访问。
+
+- **审计与监控**：Key Vault 记录了在密钥、密码和证书上执行的所有交互和操作。这允许你监控和跟踪访问情况，确保合规性，并为安全事件提供审计轨迹。
+
+- **与 Azure 服务集成**：Azure Key Vault 与其他 Azure 服务（如 `Azure Functions`、`Azure App Service` 和 `Azure Virtual Machines`）集成了无缝衔接。这允许你可以在应用程序中安全地检索和使用密钥与密码，而不会将它们暴露在代码中。
+
+- **对开发者友好的 API**：Key Vault 为各种编程语言提供了 `REST APIs`、`Azure SDKs` 和客户端库，使开发者能够轻松地在应用程序中与其进行交互并利用其功能。
+
+通过利用 `Azure Key Vault`，你可以通过保护敏感信息、简化密钥管理以及实施严格的访问控制策略来增强应用程序的安全性。它为保护加密密钥、密码和证书提供了稳健且可扩展的解决方案，使你能够在 Azure 生态系统中构建安全可靠的应用程序。
+
+## Azure Key Vault 身份验证
+
+Azure Key Vault 提供了多种身份验证机制，以确保对存储的密钥、密码和证书的安全访问。这些身份验证方法为尝试访问 Azure Key Vault 的用户或应用程序提供了不同的验证和授权选项。以下是一些可用的关键身份验证机制：
+
+### Azure Active Directory (Azure AD) 身份验证
+- `Azure AD` 身份验证是验证用户和应用程序访问 `Azure Key Vault` 的推荐方法。- 它利用 `Azure AD` 标识和访问令牌授予对 Key Vault 资源的访问。
+- 用户或应用程序使用其 `Azure AD` 凭据进行身份验证`Azure Key Vault` 使用 `Azure AD` 令牌验证其身份。
+- 此身份验证方法允许细粒度的访问控制，并支持基于角色的访问控制 (`RBAC`)。
+
+### 共享访问签名 (SAS) 身份验证
+- `SAS` 身份验证允许客户端直接与 Azure Key Vault 进行身份验证，而不依赖 `Azure AD`。
+- 它涉及生成具有特定权限和有效期的 `SAS` 令牌。
+- `SAS` 令牌被附加到 Key Vault URL 中，允许客户端进行身份验证并执行授权操作。
+- 此身份验证方法适用于无法或不希望直接与 `Azure AD` 进行身份验证的场景。
+
+### 托管标识身份验证
+- `Azure Key Vault` 支持 `Azure Managed Identity`，这消除了管理和存储凭据的需要。
+- `Managed Identity` 允许部署在 Azure 服务上的应用程序（例如 `Azure Virtual Machines`、`Azure App Service`）获取标识。
+- 应用程序的标识随后被用于向 `Azure Key Vault` 进行身份验证，并可以根据应用程序的标识授予访问权限。
+
+### 服务主体身份验证
+- `Service principal` 身份验证允许应用程序使用 `service principal`（一种非人类标识）进行身份验证。
+- `service principal` 代表应用程序，并被分配了访问 Key Vault 资源的特定权限。
+- 此身份验证方法通常用于应用程序或服务需要在没有用户交互的情况下进行程序化验证的场景。
+
+### 证书身份验证
+- `Certificate` 身份验证涉及使用 `X.509` 证书来验证应用程序或用户。
+- 证书与 `Azure AD` 应用程序或用户关联，私钥被用于身份验证。
+- 此方法适用于需要强客户端身份验证的场景。
+
+通过提供这些身份验证机制，`Azure Key Vault` 为访问存储的密钥、密码和证书提供了灵活性选项。你可以根据应用程序的需求、安全需求以及与 Key Vault 资源交互的客户端类型选择合适的身份验证方法。
+
+## Azure Key Vault 访问策略
+
+Azure Key Vault 访问策略是控制和管理 Key Vault 资源访问不可组成部分。访问策略定义了授予用户、应用程序或安全主体的权限，允许他们对 Key Vault 中存储的密钥、密码和证书执行特定操作。以下是 `Azure Key Vault` 访问策略的关键方面：
+
+### 权限与操作
+- 访问策略决定了可以在 Key Vault 资源上执行的操作，例如读取、写入、删除和管理密钥、密码及证书。
+- 权限可以在细粒度上授予，实现细粒度的访问控制。
+- 常见的权限包括 `get`、`list`、`set`、`update`、`delete`、`backup`、`restore` 等。
+
+### 基于角色的访问控制 (RBAC)
+- `Azure Key Vault` 利用 `Azure RBAC` 来分配访问策略。
+- `RBAC` 允许你向用户、组或应用程序分配角色，从而决定他们在 Key Vault 内的权限。
+- 内置角色包括 `Key Vault Administrator`、`Key Vault Contributor` 和 `Key Vault Reader`，每个角色具有不同层级的访问权限。
+
+### 最小权限原则
+- 访问策略遵循最小权限原则，仅授予执行特定操作所需的必要权限。
+- 通过按需分配权限，你可以最大限度地减少未经授权访问和对 Key Vault 资源的潜在滥用风险。
+
+### 多条访问策略
+- `Azure Key Vault` 允许你定义多个访问策略，每种策略都有其自己的权限集。
+- 这允许你为不同的用户、应用程序或组设置不同级别的访问权限。
+- 当你需要为组织内的不同实体授予不同权限时，多个访问策略将非常有用。
+
+### 访问策略管理
+- 可以通过 `Azure portal`、`Azure CLI`、`Azure PowerShell` 或 `Azure SDKs` 管理和修改访问策略。
+- 你可以根据需要添加、删除或修改访问策略，确保访问权限始终是最新的并符合你的安全需求。
+
+### Azure AD 集成
+- `Azure Key Vault` 与 `Azure Active Directory (Azure AD)` 集成以进行验证和授权。
+- 访问策略与 `Azure AD` 标识绑定，允许你根据 Azure AD 成员向特定的用户、组或应用程序授予访问。
+
+通过有效管理 Azure Key Vault 中的访问策略，你可以控制并保护加密密钥、密码和证书的访问。通过遵循最小权限原则并根据特定的角色和职责分配权限，你可以确保只有授权的实体才能获得访问 Key Vault 资源的所需的权限。
+
+
+
+
+
+通过利用 `Azure Key Vault` 的安全存储和细粒度访问控制，我们将演示如何保护这些关键密钥免于在代码或配置文件中暴露。相反，我们的 Web 应用将遵循最小权限原则，与 `Azure Key Vault` 进行身份验证，并在需要时请求所需的密钥。
+
+在整个案例研究中，我们将展示该方法的分步实现过程，并强调在 `Azure Key Vault` 中保护密钥的最佳实践。通过本研究的最后，你将获得使用 `Azure Key Vault` 保护 Web 应用程序敏感信息的知识和实操技能，从而提升应用程序基础设施的整体安全性。
+
+## 创建 Azure Key Vault
+
+创建 `Azure Key Vault` 涉及几个步骤。在接下来的章节中，概述了使用 Azure 门户创建 `Azure Key Vault` 的高层级流程：
+
+1. 登录 Azure 门户：访问 `https://portal.azure.com` 并使用您的 Azure 账户登录。
+2. 创建新资源：点击 Azure 门户左侧的 `+ Create a resource`（创建资源）按钮。
+3. 搜索 "Key Vault"：在搜索栏中输入 "Key Vault"，并在结果列表中选择 "Key Vault"。
+4. 点击 "Create"：在 Key Vault 概述页上，点击 `Create`（创建）按钮开始创建过程。
+5. 填写基本信息：
+    * Subscription（订阅）：选择您想要用于 Key Vault 的相应 Azure 订阅。
+    * Resource group（资源组）：创建一个新的资源组或选择现有资源组。资源组是 Azure 中资源的逻辑容器。
+    * Key vault name（Key Vault 名称）：为您的 Key Vault 输入一个唯一名称。该名称在所有 Azure Key Vault 实例中必须是全局唯一的。
+    * Region（区域）：选择您希望 Key Vault 所在的 Azure 区域。选择距离应用程序的区域以降低延迟。
+6. 配置访问策略（可选）：您可以选择在创建期间或之后配置访问策略。访问策略控制谁可以访问 Key Vault 以及对其资源执行操作。现在，您可以跳过此步骤，并在稍后设置访问策略。
+7. 配置高级设置（可选）：如果需要，您可以在创建期间设置高级配置，如启用软删除、删除保护和网络访问控制。否则，您可以使用默认设置。
+8. 审核并创建：审核配置详情并点击 `Create`（创建）按钮开始部署。
+9. 等待部署：Key Vault 的创建过程可能需要几分钟。等待部署完成。
+10. 访问您的 Key Vault：一旦成功创建 Key Vault，即可从 Azure 门户访问它。导航到“所有资源”（All resources）或搜索 Key Vault 名称以找到它。
+
+就是这样！您现在已创建一个 `Azure Key Vault`。创建 Key Vault 后，您可以开始安全地存储加密密钥、密钥和证书，并进一步配置访问策略以控制谁可以访问它们以及可以执行哪些操作。您可以在下方查看 Azure Key Vault 的概述页：
+
+![](img/Figure_7.1.png)
+
+图 7.1：最近创建的 Azure Key vault。
+
+## 管理 Key Vault 访问策略
+
+为了确保 Azure Key Vault 内密钥的安全管理，您应该配置访问策略以向授权用户授予适当的权限。按照以下步骤为您的用户授予管理密钥的权限：
+
+1. 导航到 Azure Key Vault：登录 Azure 门户，通过搜索名称或从“所有资源”菜单访问找到您的 Azure Key Vault。
+2. 进入访问策略：在 Key Vault 内部，从左侧导航菜单中选择 `Access policies`（访问策略）选项卡。
+3. 添加访问策略：点击 `Add Access policy`（添加访问策略）按钮，为您的用户定义新的访问策略。
+4. 定义权限：在 `Add Access policy` 面板中，指定您想要授予用户的必要权限。对于管理密钥，请确保选择了 `Get`（获取）和 `Set`（设置）权限。`Get`允许读取密钥，而 `Set`允许创建或更新密钥。
+5. 分配用户或组：在 `Select principal`（选择主体）下，搜索并选择要授予这些权限的用户或组。您可以从您的 Azure AD 用户或组中选择。
+6. 保存访问策略：点击 `Add`（添加）保存访问策略，并将权限应用于指定的用户或组。
+7. 验证访问：保存访问策略后，您的用户现在将拥有管理 Azure Key Vault 内密钥的必要权限。
+
+确保只向受信任的个人或组授予权限并遵循最小权限原则（为用户提供完成任务所需的最小权限至关重要。定期审查和管理访问策略以维护安全环境并有效保护您的敏感数据。您可以在下方查看为我的用户配置的访问策略图片：
+
+![](img/Figure_7.2..png)
+
+图 7.2：我的用户的 Azure Key Vault 策略。
+
+## 访问密钥
+
+为了启动我们的项目，我们将创建一个 Web 应用程序，然后安装下面列出的所需 NuGet 包：
+
+* `Azure.Security.KeyVault.Secrets`
+* `Azure.Identity`
+
+我们可以在下面的图片中看到我们最近创建的带有 NuGet 包的项目解决方案：
+
+![](img/Figure_7.3..png)
+
+图 7.3：Web 应用程序项目解决方案。
+
+为了确保从 Visual Studio 无缝集成并访问 `Azure Key Vault`，务在于使用与创建 Key Vault 相同的账户配置 Azure 服务身份验证。请按照以下步骤验证并设置配置：
+
+1. 验证 Azure 账户：确认您已使用用于创建 Key Vault 的 Azure 账户登录了 Visual Studio。
+2. 打开 Visual Studio：启动 Visual Studio 并进入 `Tools`（工具）菜单。
+3. 选项：从 `Tools` 菜单选择 `Options`（选项）。
+4. Azure 服务身份验证：在 `Options` 窗口中，展开 Azure 类别下的 `Azure Service Authentication`。
+5. 选择账户：确保 `Account Selection`（账户选择）下拉菜单显示的是与 Key Vault 相同的账户。
+6. 验证凭据：如有需要，点击 `Manage Account`（管理账户）验证账户凭据，或在未列表的情况下添加正确的账户。
+7. 身份验证：如果提示，使用 Azure 账户进行身份验证，以确保凭据最新有效。
+
+通过确认 Visual Studio 的 Azure 服务身份验证配置正确，将实现应用程序与 Key Vault 之间的顺畅通信。这种匹配确保了应用程序可以安全地从 Key Vault 获取和管理密钥。
+
+![](img/Figure_7.4..png)
+
+图 7.4：使用我的账户进行 Azure 身份验证。
+
+现在，要在 Azure Key Vault 中安全地创建密钥，请按照以下步骤操作：
+
+1. 导航到 Key Vault：登录 Azure 门户 (`https://portal.azure.com`) 并通过搜索名称或在“所有资源”列表中找到您的 Azure Key Vault。
+2. 密钥：在 Key Vault 内部，从左侧导航菜单中选择 `Secrets`（密钥）。
+3. 添加新密钥：点击 `+ Generate/Import`（生成/导入）按钮创建新密钥。
+4. 定义密钥详细信息：在 `Create a secret`（创建密钥）面板中，提供必要信息：
+    * Name（名称）：为密钥输入一个唯一名称。
+
+
+
+
+
+*   `Value`：输入想要安全存储的实际机密值。
+*   `Content type`（可选）：如果需要，可以指定内容类型，例如 `"text/plain"` 或 `"application/json"`。
+5. 设置激活日期和过期时间（可选）：如果需要，可以为密钥设置激活日期和过期时间。这对于管理密钥的有效期非常有用。
+6. 点击“创建”：填写详细信息后，点击“创建”按钮将密钥添加到您的密钥库（Key Vault）。
+
+现在，密钥已安全地存储在您的 Azure Key Vault 中，并受到 Azure 力安全措施的保护。通过利用 Key Vault 进行密钥管理，您可以确保连接字符串、API 密钥和密码等敏感信息保持安全，且未经授权的用户无法访问。此外，您的 `Web Application` 现在可以使用 `Azure Key Vault APIs` 安全地检索此密钥，从而确保您的敏感数据的机密性和完整性。我们可以从下面的图片看到我们最近创建的密钥：
+
+![](img/Figure_7.5..png)
+
+图 7.5：Azure Key Vault 中的新密钥。
+
+要从 `Web Application` 检索我们的密钥，我们必须如下所示修改 `Index.cshtml.cs`：
+
+```cs
+public class IndexModel : PageModel
+{
+    private readonly ILogger<IndexModel> _logger;
+    public string Message { get; set; }
+
+    public IndexModel(ILogger<IndexModel> logger)
+    {
+        _logger = logger;
+    }
+
+    public void OnGet()
+    {
+        try
+        {
+            SecretClientOptions options = new SecretClientOptions()
+            {
+                Retry =
+                {
+                    Delay= TimeSpan.FromSeconds(2),
+                    MaxDelay = TimeSpan.FromSeconds(16),
+                    MaxRetries = 5,
+                    Mode = RetryMode.Exponential
+                }
+            };
+            var client = new SecretClient(new Uri("https://keyvaultthiago.vault.azure.net/"), new DefaultAzureCredential(), options);
+            KeyVaultSecret secret = client.GetSecret("thiagosecret");
+            Message = secret.Value;
+        }
+        catch (Exception ex)
+        {
+            Message = "An error ocurred while trying to retrieve the secret";
+        }
+    }
+}
+```
+
+为了显示我们的密钥消息，我们必须如下所示更新 `Index.cshtml`：
+
+```razor
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>This is the secret message: @Model.Message</p>
+</div>
+```
+
+以下将是成功的输出：
+
+![](img/Figure_7.6.png)
+
+图 7.6：显示从 Azure Key Vault 检索的密钥的 Web 应用程序。
+
+## 结论](#contents.xhtml_sc2_148a)
+
+在本章中，我们探讨了使用 `Azure Key Vault` 保护应用程序的重要性，并讨论了其实现的各个方面。我们首先概述了 Azure Key Vault，了解了它在确保加密密钥、机密和证书安全方面的能力和优势。
+
+身份验证是保护 Azure Key Vault 的关键因素，我们深入研究了各种身份验证机制，学习了如何有效地配置和管理它们。通过实施强有身份验证措施，您可以确保只有授权的实体才能访问您的敏感数据。
+
+访问策略在控制对 Azure Key Vault 资源的访问方面起着重要作用，我们检查了如何通过访问策略定义和管理细粒度的权限。通过仔细管理这些策略，您可以维持强大的安全态势，并降低未经授权访问的风险。
+
+为了提供实用的视角，我们研究了一个案例，展示了在现实场景中分步实现 Azure Key Vault 的过程。从创建和配置密钥库到定义和管理访问策略，该案例说明了 Azure Key Vault 在保护您的应用程序方面的实际应用。
+
+此外，我们展示了如何通过 `.NET` 控制台应用程序访问存储在 Azure Key Vault 中的密钥示例。这演示了您的应用程序与 Azure Key Vault 的集成，实现了密钥的安全检索和利用。
+
+通过学习本章介绍的知识和技能，您现在拥有了使用 Azure Key Vault 有效保护应用程序的工具和理解。您学习了强效身份验证的重要性、访问策略的意义，以及如何利用 Azure Key Vault 的功能来增强应用程序安全性。
+
+请记住遵守 Azure Key Vault 保护应用程序的最佳实践，并定期检查和更新您的安全措施，以应对潜在威胁。通过将 Azure Key Vault 作为应用程序安全策略不可或缺的一部分，您可以保护您的宝贵资产，确保数据机密性，并在用户之间建立信任。
+
+祝喜你完成本章！你现在具备了相关的知识和技能，可以使用 Azure Key Vault 加固您的应用程序并防御潜在的安全威胁。在当今不断变化的数字格局中，请拥抱这种新的理解，并继续优先考虑应用程序的安全性。
+
+
+
+
+
+在本章结束时，你将掌握关键方面的内容。探索热重载（Hot Reload），这一功能允许实时更改代码以获得即时结果，从而提高开发效率。浏览 Blazor 和 ASP.NET Web 应用程序的安全要点，重点关注身份验证、数据保护和最佳实践。深入研究数据绑定（Data Binding），确保类型安全和代码的可维护性。区分 `azor` 和 `Razor`，理解它们的优势，以便做出明智的 Web 应用开发决策。本章以一个实用的案例研究结束，以强化相关概念。这种全面的理解将使你能够使用 `Blazor` 和 `ASP.NET` 构建动态 Web 应用，赋予开发交互式、功能丰富的应用程序的能力。
+
+# 使用 Blazor 和 .NET 构建 Web 应用
+
+`Blazor` 是一个允许使用 `.NET` 创建交互式客户端 Web 用户界面的框架。通过 `Blazor`，开发者可以使用 `C#` 而不是 `JavaScript` 来构建丰富的 UI，从而获得更熟悉、更高效的开发体验。
+
+使用 `Blazor` 的主要优势之一是在服务器端和客户端之间共享应用程序逻辑，利用两个环境中的 `.NET` 力量。这允许在整个应用程序中实现代码重用和一致性。
+
+`Blazor` 将 UI 渲染为 `HTML` 和 `CSS`，确保了广泛的浏览器，包括移动浏览器。它还与 `Docker` 等现代托管平台无缝集成，实现了易于部署的扩展性。
+
+通过使用 `.NET` 进行客户端 Web 开发，开发者可以使用 `C#` 而不是 `JavaScript` 编写代码。他们可以利用庞大的 `.NET` 库生态系统，受益于 `.NET` 的性能、可靠性和安全性，并在 Windows 上的 `Visual Studio` 或 Windows、Linux 或 macOS 上的 `Visual Studio Code` 等流行的开发环境中工作。在客户端 Web 开发中采用 `Blazor` 和 `.NET` 为开发者提供了一套稳定、功能丰富且易于使用的语言、框架和工具。它为构建混合桌面和移动应用开辟了新的可能性，使其成为现代 Web 开发项目中非常有吸引力的选择。
+
+# 热重载
+
+通过 `.NET` 热重载，你可以将代码更改（包括对样式表的修改）应用到运行中的应用程序中，而无需重启程序或丢失程序的当前状态。此功能适用于所有 `ASP.NET Core 6.0` 及更高版本的项目。
+
+在进行代码更新时，在某些条件下更改将在运行的程序中生效。例如，仅运行一次的启动逻辑（例如 `middleware`（内联中间件委托除外）、已配置的服务以及路由的创建和配置）将重新运行以包含更改。内联中间件委托是在如 `asp.net core` 等框架的中间件函数上下文中使用的委托，这些委托在中间件管道线配置中完全以内联方式实现。这意味着语言开发者可以在中间件配置代码内部定义中间件将执行的逻辑，而无需为定义命名中间件创建单独的方法或类。
+
+在 `Blazor` 应用程序中，`Razor` 组件的渲染由框架自动触发。相反，在 `MVC` 和 `Razor Pages` 应用程序中，热重载将自动刷新浏览器。需要注意的是，删除 `Razor` 组件参数属性不会导致组件重新渲染。要反映此类更改，则需要重启应用程序。
+
+`.NET` 热重载的引入通过在应用程序运行期间提供无缝且即时的代码更新，显著提升了开发体验。它赋予了开发者快速、高效迭代的能力，消除了频繁重启的需要，并让他们专注于构建和完善他们的应用程序。
+
+# 支持的框架和应用程序类型
+
+下表提供了支持 `.NET` 热重载的应用程序类型概述。它强调了在附加调试器时（`F5`）或在不带调试器运行时运行（`Ctrl+F5`）时是否可以使用热重载。此外，它还指示了最低支持是否需要使用 `.NET 6`。值得注意的是，`Ctrl+F5` 支持始终需要 `.NET 6`。该表还包含了包含此热重载功能的 `Visual Studio` 最低版本。
+
+更多细节请参阅下表：
+
+| 应用程序类型 | 需要 .NET 6 | F5 | Ctrl+F5 |
+| :--- | :--- | :--- | :--- |
+| ASP.NET 后代码 | 否 | 16.11 | 17.0 |
+| ASP.NET Razor (Blazor Server 和 ASP.NET Core) | 是 | 17.0 | 17.0 |
+| ASP.NET Razor (Blazor WASM) | 是 | 17.1 | 17.0 |
+| WPF | 否 | 16.11 | 17.0 |
+| WinUI3 | 否 | 16.11 | -- |
+| WinForms | 否 | 16.11 | 17.0 |
+| Console | 否 | 16.11 | 17.0 |
+| .NET MAUI (WinUI 3) | 是 | 17.1 | -- |
+| .NET MAUI (Android) | 是 | 17.1 | -- |
+| .NET MAUI (iOS) | 是 | 17.1 | -- |
+| .NET MAUI Blazor Hybrid (WinUI 3) | 是 | 17.1 | -- |
+| .NET MAUI Blazor Hybrid (Android) | 是 | 17.1 | -- |
+| .NET MAUI Blazor Hybrid (iOS) | 是 | 17.1 | -- |
+
+表 8.1：热重载支持
+
+在 `C#` 中编写代码时，我们可以利用热重载功能进行更改并体验 `.NET` 热重载的优势。这种体验由“继续编辑”机制实现，该机制扩展了支持编辑的范围，超越了以往版本的 `Visual Studio`。改进包括：
+
+- 添加、更新或删除自定义属性（Custom Attributes）
+- 添加或更新 Record 结构体
+- 添加或更新 `#line` 指令
+- 编辑 Switch 表达式
+- 编辑带有 `#line` 指令的文件，包括指令本身的更改
+- 编辑顶级语句
+- 编辑使用任何 C# 10 特性的代码，例如全局使用指令、文件范围命名空间、改进的 lambda 以及无参数结构构造函数
+- 重命名 Lambda 参数
+- 重命名方法的参数
+
+# 不支持的情况
+
+虽然热重载为开发过程中动态更新代码提供了方便高效的方法，但重要的是，某些场景不支持热重载。这些不支持的情况可能是由于代码更改的性质、特定的运行时条件或开发环境的限制。开发者了解这些情况对于确保顺畅有效的编码体验至关重要。通过理解热重载的局限性，开发者可以在需要时做出明智决策并利用替代方案。
+
+- iOS 和 Android 场景下的 Xamarin.Forms，对 UWP 应用的部分支持。
+- 如果 `Visual Studio` 中禁用了“继续编辑”设置。
+- 如果调试配置中的 `PublishTrimmed` 设置为 `True`。
+- 如果调试配置中的 `PublishReadyToRun` 设置为 `True`。
+- 在 `LaunchSettings.json` 文件中未设置 `nativeDebugging` 属性或设置为 `true` 的 WinUI 3 应用程序。
+
+# 配置热重载
+
+为你的开发环境设置热重载是一个简单且快速的过程。只需几个简单的步骤，你就可以启用热重载，并开始在编码工作流中利用其优势。热重载与流行的开发工具和框架无缝集成，可以轻松整合到现有设置中。通过遵循简单的设置说明，你将能够快速利用快速高效的热重载功能，增强你的开发体验并加速代码迭代。
+
+
+
+
+
+要启用并配置热重载，请前往 `Tools | Options | Debbuging | .NET/C++ hot reload`，参考下图：
+
+![](img/Figure_8.1..png)
+
+图 8.1：热重载配置窗口。
+
+如前所述，启用热重载的过程非常简单。热重载的设置包括：
+
+* 在调试时启用热重载和“编辑并继续”。
+    * 此设置允许在附加调试器的情况下启动应用程序（`F5`）时启用热重载，允许在调试过程中即时更新代码。
+* 在不调试的情况下启动时启用热重载。
+    * 此设置允许不附加调试器的情况下启动应用程序（`Ctrl+F5`）时启用热重载，即使在未活动调试状态下也能实时更新代码。
+* 在保存文件时应用热重载。
+    * 此设置会在您保存文件时自动应用任何代码更改，确保更新立即生效。
+
+## 安全性
+
+Blazor Server 和 Blazor WebAssembly 应用在安全考量上有所不同。在运行在服务器端的 `Blazor Server` 应用中，授权检查有能力确定用户可用的 UI 选项（例如菜单项），以及不同应用区域和组件的访问规则。
+
+相反，`Blazor WebAssembly` 应用运行在客户端，授权主要用于确定显示哪些 UI 选项。由于客户端检查可以被用户修改或绕过，`Blazor WebAssembly` 应用无法强制执行授权访问规则。
+
+在 `Razor Pages` 的授权规范方面，它们并不直接适用于可路由的 `Razor components`。然而，如果一个不可路由的 `Razor component` 被嵌入到 `Razor Pages` 应用的页面中，则该页面的授权规范将间接影响该 Razor 组件以及页面的其他内容。
+
+`ASP.NET Core Identity` 是为 HTTP 请求和响应通信设计的，与 `Blazor 应用客户端-服务器通信模型` 并不完美契合。因此，建议利用 `ASP.NET Core Identity` 进行用户管理的 `ASP.NET Core` 应用应选择 `Razor Pages` 而不是 `Razor components` 来处理身份验证相关的 UI 任务（如用户注册、登录、注销和用户管理）。虽然在某些场景下可以构建直接处理身份任务的 `Razor components`，但微软并不认可或提供对这种方法的支持。
+
+需要注意的是，`ASP.NET Core` 抽象（如 `SignInManager<TUser>` 和 `UserManager<TUser>`）在 `Razor components` 中不受支持。关于在 `Blazor` 中使用 `ASP.NET Core Identity` 的详细指南，你可以通过以下链接参考“[将 ASP.NET Core Identity 骨架到 Blazor Server 应用](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity)](https://learn.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity)。
+
+考虑这些安全因素并遵循推荐实践，将有助于确保在 Blazor 应用中有效实现授权和身份验证机制。
+
+`Blazor` 利用 `ASP.NET Core` 中已有的身份验证机制来验证用户身份。所采用的具体机制取决于 `Blazor 应用` 的托管模型，是 `Blazor Server` 还是 `Blazor WebAssembly`。
+
+### Blazor server 验证
+
+`Blazor Server` 通过与客户端的 `SignalR` 连接运行基于 `SignalR` 的应用身份验证在连接建立时处理。身份验证可以基于 Cookie 或或其他令牌令牌（bearer token），但身份验证完全通过 `SignalR hub` 在电路（circuit）内部管理。
+
+`Blazor Server` 应用内置的 `AuthenticationStateProvider` 服务从 `ASP.NET Core` 的 `HttpContext.User` 获取身份验证状态数据。这就是身份验证状态与现有 `ASP.NET Core` 身份验证机制集成的方式。
+
+### Blazor WebAssembly 验证
+
+在 `Blazor WebAssembly` 中，重要的是承认身份验证检查可能会被绕过，因为所有客户端代码都可以被用户访问和修改。这一特性不仅适用于 `Blazor WebAssembly`，也适用于其他客户端应用技术，包括 JavaScript 单页应用（SPA）框架和跨操作系统的原生应用。开发者在 `Blazor WebAssembly` 应用中实现身份验证机制时，应意识到这种固有本质。
+
+为了处理 `Blazor WebAssembly` 中的身份验证，我们必须使用内置或自定义的 `AuthenticationStateProvider` 服务。`AuthenticationStateProvider` 作为 `AuthorizeView` 组件和 `CascadingAuthenticationState` 组件用于检索用户身份验证状态的底层服务。
+
+通常，你不会直接与 `AuthenticationStateProvider` 交互。相反，建议使用 `AuthorizeView` 组件或 `Task<AuthenticationState>`。使用这些方法的优点是它们能够自动处理底层身份验证状态数据更改的通知。
+
+直接使用 `AuthenticationStateProvider` 有一个缺点，当身份验证状态数据发生变化时，组件不会收到自动通知。因此，通常倾向于使用提供的高级组件或方法，来实现无缝且可靠的身份验证状态管理。
+
+## 授权
+
+授权验证在用户成功身份验证后立即开始；如果用户无法身份验证，则不需要授权验证。授权是根据已验证的用户身份和分配的权限，控制对 `Blazor 应用` 内特定组件、页面或操作的访问的过程。它涉及实施安全措施（如身份验证以验证用户身份）以及授权（确定用户是否拥有执行某些操作或查看特定内容的必要权限）。
+
+`Blazor` 提供了内置的授权功能，包括 `AuthorizeView` 组件和 `Authorize` 特性，它们允许开发者轻松地应用授权规则并根据角色或策略限制访问。通过利用这些功能，开发者可以确保只有授权用户才能操作 `Blazor 应用` 中的敏感功能或查看机密信息，确保只有具有相应角色、声明或满足策略的已验证用户才能访问受限的功能。
+
+### AuthorizeView 组件
+
+`Blazor` 中的 `AuthorizeView` 组件提供了根据用户的授权状态选择性显示或隐藏 UI 内容的功能。当不需要在过程逻辑中使用用户身份即可显示特定数据时，此功能非常有用。
+
+通过在 `Razor 页面`中使用 `AuthorizeView` 组件，开发者可以访问类型为 `AuthenticationState` 的上下文变量（Razor 语法中的 `@context`），该变量提供了有关当前登录用户的关键信息。
+
+### Authorize 特性
+
+在 `Razor components` 中，你可以使用 `[Authorize]` 特性进行授权。该特性支持基于角色和基于策略的授权。要实现基于角色的授权，可以指定 `Roles` 参数，而 `Policy` 参数则用于基于策略的授权。
+
+
+
+
+
+如果未指定角色或策略，`[Authorize]` 属性将应用默认策略，即已身份验证的用户被授权，而未身份验证的用户未被授权。在用户未获得授权且应用未使用 `Router` 组件自定义未授权内容的情况下，框架会自动显示回退消息“Not Authorized（未授权）”。
+
+## 数据绑定
+
+Razor 组件通过使用 `@bind` Razor 指令属性提供了简便的数据绑定功能，该属性可以应用于字段、属性或 Razor 表达式。需要注意的是，UI 是在组件渲染时更新的，而不是在修改字段或属性值时立即更新。通常，字段和属性的更新会在事件处理程序代码执行后反映在 UI 上，因为组件会在事件触发后进行重新渲染。
+
+要将属性或字段绑定到其他文档对象模型 (DOM) 事件，可以包含 `@bind:event="{EVENT}"` 属性，并将 `{EVENT}` 替换为所需的 DOM 事件。此外，您可以使用 `@bind:after="{EVENT}"` 属性并配合 DOM 事件占位符，在绑定过程后执行异步逻辑。值得提到，分配的 C# 方法仅在绑定值被同步赋值时才会执行。
+
+对于双向数据绑定，组件支持定义一对参数：`@bind:get` 和 `@bind:set`。`@bind:get` 指定要绑定的值，而 `@bind:set` 定义了处理值变化的回调。需要注意的是，`@bind:get` 和 `@bind:set` 修饰符应该始终一起使用。
+
+请注意，使用事件回调参数配合 `@set`（例如 `[Parameter] public EventCallback<string> ValueChanged { get; set; }`）是不支持的。相反，建议将一个返回 `Action` 或 `Task` 的方法传递给 `@bind:set`。
+
+最后，必须记住 Razor 属性绑定是区分大小写的。有效的属性包括 `@bind`、`@bind:event` 和 `@bind:after`。任何带有大写字母的变体，例如 `@Bind/@bind:Event/@bind:aftEr` 或 `@BIND/@BIND:EVENT/@BIND:AFTER` 都被视为无效。
+
+## 双向数据绑定
+
+除非使用 `@bind` 语法，Blazor 不会自动同步文档对象模型（DOM）元素与 .NET 变量之间的值。这是因为 Blazor 无法感知在事件处理程序中修改 .NET 变量值的意图。在之前的 Blazor 版本中，双向数据绑定是通过将元素绑定到属性，并通过其设置器（setter）控制属性值来实现的。
+
+为了在 Blazor 中实现有效的双向数据绑定，建议使用 `@bind:get` 和 `@bind:set` 修饰符代替事件处理程序。仅通过事件处理程序无法实现双向数据绑定。通过利用 `@bind:get` 和 `@bind:set` 修饰符，您可以无缝地建立双向绑定。
+
+通过使用 `@bind:get` 和 `@bind:set` 修饰符，您不仅可以通过 `@bind:set` 管理 .NET 变量的底层值，还可以通过 `@bind:get` 将 .NET 变量的值绑定到元素的值。这种综合方法确保了您的 Blazor 应用中有效的双向数据绑定。
+
+## 链式数据绑定
+
+在需要将子组件的属性绑定到其父组件属性的场景下，常见的做法是建立链式绑定。这涉及多个级别的同步绑定。要实现这一点，您可以在父组件的参数中使用 `@bind-{PROPERTY}` 语法。只需将 `{PROPERTY}` 占位符替换为想要绑定的属性名称即可。
+
+然而，需要注意的是，链式绑定无法在子组件内部直接使用 `@bind` 语法实现。相反，您需要定义一个事件处理程序和一个单独的值，以便从子组件更新父组件的属性。
+
+尽管如此，父组件仍然可以使用 `@bind` 语法与子组件建立数据绑定。
+
+按照命名规范，与参数关联的 `EventCallback<TValue>` 应该使用组件参数名称加上 "Changed" 后缀进行命名。命名规范遵循 `{PARAMETER NAME}Changed` 语法，其中 `{PARAMETER NAME}` 代表实际的参数名称。
+
+要触发与绑定关联的委托并通知更改，可以使用 `EventCallback.InvokeAsync`，它会使用提供的参数调用委托，并为更新后的属性派发事件通知。
+
+## Blazor vs Razor
+
+将 Blazor 与 Razor 进行比较，类似于 Java 与 JavaScript 的比较，尽管它们在命名上有相似之处，但它们是完全不同的。
+
+Blazor 是一个强大的框架，它将 Razor 组件的灵活性与直接在浏览器中运行 C# 代码以及利用 Razor 视图引擎的能力结合在一起。与主要侧重于基于服务器的架构和服务器端模板的 Razor 不同，Blazor 通过允许使用 C# 而不是 JavaScript 启用客户端逻辑来扩展功能。
+
+Razor 组件是任何 Blazor 应用的基础构建块，将标记和代码组合成内聚的单元。这些组件以 `.razor` 扩展名实现，允许开发者使用 Razor 语法创建动态用户界面。通过 Blazor 客户端托管模型，您可以在客户端充分利用 Razor 组件的所有潜力。
+
+## 最佳实践
+
+Blazor 开发的最佳方法是遵循某些推荐的实践，以确保应用程序高效、可维护且高质量。这些最佳实践涵盖了 Blazor 开发的各个方面，包括代码组织、性能优化、安全性和用户体验。通过遵循这些最佳实践，开发者可以增强 Blazor 应用的可靠性、可扩展性和整体成功率。以下列出了最佳实践并按类别分组：
+
+### Blazor Server
+
+#### 避免使用 `IHttpContextAccessor` 或 `HttpContext`。
+
+- 在 `IHttpContextAccessor` 中无法保证 `HttpContext` 的存在，即使可以访问 `HttpContext`，它也不一定持有启动 Blazor 应用的上下文。
+- 要将请求状态传递给 Blazor 应用，推荐的方法是在初始渲染期间使用根组件参数。这允许无缝集成并方便访问所需数据。或者，应用程序也可以在根组件的初始化周期事件期间将相关数据复制到作用域服务中。这确保了数据在整个应用程序中的可用性及一致性。
+
+#### 避免使用单例服务共享状态
+
+- 在 Blazor 应用中传递请求状态时必须非常小心，因为可能会引入安全漏洞。例如，在 Blazor Server 应用中，多个应用会话在同一个服务器进程中共存，存在跨电路（circuit）泄漏用户状态的风险。由于 Blazor Server 应用位于服务器内存中。
+- 如果设计得当，可以在 Blazor 应用中使用状态化单例服务。通过遵循特定的设计考虑，这些服务可以有效地跨请求维护其状态并提供一致的功能。
+
+#### authorize 属性
+
+- 建议仅将该属性应用于通过 Blazor Router 访问的 `@page` 组件。
+
+
+
+
+
+要控制页面内特定部分的授权，应该使用 `AuthorizeView` 组件。通过遵循这一实践，开发者可以有效地在 Blazor 应用程序中管理并执行授权规则。
+
+## 双向绑定
+
+- 在对具有 get/set 访问器的属性实现双向绑定时，必须丢弃 `EventCallback.InvokeAsync` 返回的 `Task`。
+- 为了实现有效的双向数据绑定，强烈建议使用 `@bind:get` 和 `@bind:set` 饰符。
+
+## 实际案例研究
+
+在这个实际案例研究中，我们将深入探讨 Blazor Server App 开发的世界。我们将涵盖关键主题，如创建 Blazor Server App 项目、利用热重载（hot reload）功能实现无缝代码更新、实现授权和身份验证，以及掌握数据绑定。
+
+我们将从创建一个 Blazor Server App 项目开始，理解它的结构和配置。然后，我们将探索热重载功能，它允许在开发期间即时更新代码，使开发过程更快、更高效。
+
+接下来，我们将深入 Blazor Server App 中的授权和身份验证。我们将探索如何建立用户身份、强制基于角色的访问以及验证用户声明（claims），以确保应用程序的安全。
+
+最后，我们将揭示 Blazor Server 数据绑定的力量。我们将学习如何在数据和用户界面之间建立动态连接，实现自动更新和同步。
+
+加入我们这个实际案例研究，获得使用 Blazor Server 创建健壮且交互式 Web 应用程序的经验和最佳实践。
+
+## 创建 Blazor Server App 项目
+
+在本节中，我们将探索创建 Blazor Server App 项目的过程。我们将介绍设置 Blazor Server 应用程序所需的步骤，包括创建项目、理解项目结构以及配置基本设置。在本节结束时，你将为开始 Blazor Server 开发之旅奠下坚实的基础。让我们一起开始使用 Blazor Server 构建强大的 Web 应用程序吧！
+
+第一步是添加一个类型为 Blazor Server App 的项目，如图所示：
+
+![](img/Figure_8.2..png)
+
+图 8.2：创建一个类型为 Blazor Server App 的新项目
+
+我们将项目命名为 `SampleBlazorApp`，因为 Visual Studio 创建了所有这些文件。
+
+![](img/Figure_8.3.png)
+
+图 8.3：Blazor Server App 解决方案资源管理器
+
+让我们了解这些文件的用途：
+
+- `launchSettings.json`:
+  这是一个在调试应用程序时起着至关重要作用的配置文件。它作为重要配置信息的存储空间，允许你定义各种设置以确保应用程序顺畅运行。这包括指定应用程序应该运行的预期环境，确保无缝的调试体验。通过 `launchSettings.json`，你可以灵活地在调试过程中自定义和精调应用程序的行为。
+
+- `wwwroot`:
+  Web 根目录（Web Root folder）是你的应用程序中存储所有公共静态资产的指定位置。它是 HTML、CSS、JavaScript、图像和其他客户端直接访问的文件的中央存储库。通过在 Web Root 文件夹中组织应用程序的静态资产，你可以确保这些文件的易于检索和高效交付，从而增强你的 Web 应用程序的用户体验。
+
+- `Data` 文件夹：它包含要在应用程序中显示的数据和服务。
+  - `WeatherForecast.cs`: `WeatherForecastService` 使用的类模型。该类模型用于 `FetchData.razor` 组件。
+  - `WeatherForecastService.cs`: 该服务用于在 `FetchData.razor` 组件中显示数据。该类在 `Program.cs` 中定义了单例依赖注入。
+
+- `Pages` 文件夹：包含构成应用程序的可路由组件/页面（`.razor`），每个页面的路由使用 `@page` 指令指定。
+  - `_Host.cshtml`: 每当用户请求应用程序的任何页面时都会渲染此页面。定义了根 `App` 组件（`App.razor`）渲染的位置。该页面在 `Program.cs` 类的 `MapFallbackToPage` 方法中定义。
+  - `Counter.razor`: 计数组件用于计数页面。
+  - `Error.cshtml` 和 `Error.cshtml.cs`: 错误页面，当发生未处理的异常时，用户会被重定向到此页面。
+  - `FetchData.razor`: 用于 `FetchData` 页面的 Razor 组件。使用 `WeatherForecastService` 管理数据。
+  - `Index.razor`: `Index` 组件和首页。
+
+- `Shared` 文件夹：包含与其他页面共享的组件和样式表。
+  - `MainLayout.razor`: Razor MainLayout 组件和应用程序的默认布局。它在 `App.razor` 中定义。
+  - `NavMenu.razor`: Razor NavMenu 组件和应用程序的导航菜单。`MainLayout` 组件渲染 `NavMenu`。
+  - `SurveyPrompt.razor`: Razor SurveyPrompt 组件。它被 `Index` 组件调用。
+
+- `_Imports.razor`: 文件由常用的 Razor 指令组成，通常包含在应用程序的组件（`.razor`）中，例如用于命名空间的 `@using` 指令。它允许在组件中方便地导入和引用必要的命名空间。
+- `App.razor`: 应用程序的根组件。负责使用 Router 组件进行客户端路由。
+- `appsettings.json`: 应用程序级设置。
+- `Program.cs`: 应用程序入口。包含所有的依赖注入配置和管道。
+
+如果我们按下 F5 或 CTRL + F5，可以看到应用程序在浏览器中运行：
+
+![](img/Figure_8.4..png)
+
+图 8.4：在浏览器中运行的 Blazor Server App。
+
+此外，还会启动一个带有应用程序设置的命令提示符。
+
+![](img/Figure_8.5.png)
+
+图 8.5：由 Visual Studio 启动的命令提示符
+
+## 热重载的工作
+
+首先，我们按照之前提到的启用热重载。然后，我们在项目以调试模式（F5）运行时进行更改，并在 Razor 组件和 C# Weather Forecast 服务中进行测试。随着项目在调试模式下运行，如下所示 组件 组件已更新。
+
+更新前的 Counter 组件：
+1. `@page "/counter"`
+2. `@attribute [Authorize]`
+3. `<PageTitle>Counter</PageTitle>`
+4. `<h1>Counter</h1>`
+5. `<p role="status">Current count: @currentCount</p>`
+6. `<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>`
+7. `@code {`
+8. `private int currentCount = 0;`
+9. `private void IncrementCount()`
+10. `{`
+11. `currentCount++;`
+12. `}`
+13. `}`
+
+更新后的 Counter 组件：
+1. `@page "/counter"`
+2. `<PageTitle>Counter</PageTitle>`
+3. `<h1>Counter</h1>`
+4. `<p role="status">Current count: @currentCount</p>`
+5. `<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>`
+6. `@code {`
+7. `private int currentCount = 0;`
+8. `private void IncrementCount()`
+9. `{`
+10. `currentCount = currentCount + 2;`
+11. `}`
+12. `}`
+
+在保存文件之前，我们的计数页面如下：
+
+![](img/Figure_8.6..png)
+
+图 8.6：没有更改的计数页面。
+
+
+
+
+文件已保存，我们现在有了该页面，如图 8.7 所示。页面会自动更新以反映代码更改，无需重新生成或部署。
+
+![](img/Figure_8.7..png)
+
+图 8.7：更改后的计数器页面。
+
+## 授权与身份验证
+
+在本示例中，我们使用由 `SQL Server` 实例管理的 Identity 引擎，账户和角色存储在数据库中。以下是实现授权和身份验证所需的步骤：
+
+1. 需要的 Nuget 包：
+    * `Microsoft.AspNetCore.Identity.EntityFrameworkCore`
+    * `Microsoft.AspNetCore.Identity.UI`
+    * `Microsoft.EntityFrameworkCore`
+    * `Microsoft.EntityFrameworkCore.SqlServer`
+    * `Microsoft.EntityFrameworkCore.Tools`
+
+2. `Program.cs` 必须更新如下：
+
+```csharp
+using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Web;
+using SampleBlazorApp.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<SampleBlazorAppContext>(
+    options => options.UseSqlServer("Data Source=DESKTOP-H20O12E;Initial Catalog=SampleThiagoIdentityDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<SampleBlazorAppContext>();
+
+// 将服务添加到容器。
+builder.Services.AddRazorPages();
+builder.Services.AddServerSideBlazor();
+builder.Services.AddSingleton<WeatherForecastService>();
+
+var app = builder.Build();
+
+// 配置 HTTP 请求管道。
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+    // 默认的 HSTS 值为 30 天。你可能想在生产场景中更改它，请参见 https://aka.ms/aspnetcore-hsts。
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapBlazorHub();
+app.MapFallbackToPage("/_Host");
+
+app.Run();
+```
+
+3. `App` 组件也必须更新如下：
+
+```xml
+<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(App).Assembly">
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+            <FocusOnNavigate RouteData="@routeData" Selector="h1" />
+        </Found>
+        <NotFound>
+            <PageTitle>Not found</PageTitle>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <p role="alert">抱歉，此地址没有内容。</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>
+```
+
+4. 添加一个类型为 `Identity` 的新脚手架项。你可以在左侧的 Identity 子菜单中找到它，如下所示：
+
+![](img/Figure_8.8..png)
+
+图 8.8：添加 Identity 脚手架项。
+
+5. 勾选“覆盖所有文件”选项并设置你的 `DbContext` 类：
+
+![](img/Figure_8.9.png)
+
+图 8.9：设置 Identity 脚手架项。
+
+结果是我们创建了以下类：
+
+![](img/Figure_8.10.png)
+
+图 8.10：Identity 脚手架过程创建的项。
+
+6. 在 Package Manager Console 窗口中运行以下命令后，我们在数据库中建立了 Identity：
+    * `Add migration`
+    * `Update-database`
+
+数据库中创建的表负责管理用户账户、身份验证和授权：
+
+![](img/Figure_8.11.png)
+
+图 8.11：数据库中创建的表。
+
+7. 修改 `FetchData` 组件，添加 `Authorize` 特性并尝试访问它。
+
+`FetchData` 组件中的代码：
+
+```razor
+@page "/fetchdata"
+@attribute [Authorize]
+@using SampleBlazorApp.Data
+@inject WeatherForecastService ForecastService
+
+<PageTitle>Weather forecast</PageTitle>
+
+<h1>Weather forecast</h1>
+
+<p>此组件演示了从服务获取数据。</p>
+
+@if (forecasts == null)
+{
+    <p><em>加载中...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Temp. (C)</th>
+                <th>Temp. (F)</th>
+                <th>Summary</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+                <tr>
+                    <td>@forecast.Date.ToShortDateString()</td>
+                    <td>@forecast.TemperatureC</td>
+                    <td>@forecast.TemperatureF</td>
+                    <td>@forecast.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+```
+
+（注：此处代码块已根据要求保持不翻译）
+
+在尝试访问 `FetchData` 页面时，输出为“Not Authorized”（未授权）消息：
+
+![](img/Figure_8.12.png)
+
+图 8.12：使用 `Authorize` 特性后的 Fetch 页面。
+
+注册新账户，前往：
+
+![](img/Figure_8.13.png)
+
+图 8.13：注册新账户。
+
+我们成功创建了账户：
+
+![](img/Figure_8.14.png)
+
+图 8.14：账户已创建并准备好使用。
+
+现在，我们可以再次访问 `FetchData` 页面：
+
+（注：此处代码块已根据要求保持不翻译）
+
+
+
+
+这是使用 C# 的 `get` 和 `set` 访问器后的 `Counter` 组件。请注意，我们没有使用输入框中的数字。我们始终从 0 开始递增之前的数字。你可以查看下面的完整代码块：
+
+```html
+@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p>
+  <input @bind="IncrementCount" />
+</p>
+
+<p>
+  <code>inputValue`: @currentCount
+</p>
+
+@code {
+  private int currentCount = 0;
+
+  private int IncrementCount
+  {
+    get => currentCount;
+    set => currentCount = currentCount + 1;
+  }
+}
+```
+
+运行代码后，我们得到：
+
+![](img/Figure_8.20.png)
+
+图 8.20：事件发生之前的计数器页面。值来自 C# 对象。
+
+在更改输入值后，之前的数字得到了递增。我们没有考虑输入值，而是递增加了之前的 `inputValue`：
+
+![一张带有文本的图像、截图、字体、自动生成的数字描述](img/Image185677.png)
+
+图 8.21：事件发生后的计数器页面。值来自 C# 对象。
+
+## 结论 (#contents.xhtml_sc2_173a)
+
+在本章，我们涵盖了使用 Blazor 和 ASP.NET 构建动态 Web 应用程序。我们介绍了许多对于创建交互和响应式 Web 应用至关重要的主题。
+
+我们探索了热重载（hot reload）的便利性和生产力，允许开发者进行实时代码更改并立即看到影响。此功能加速了开发周期并减少了停机时间，带来了更高效、愉快的开发体验。
+
+我们强调了在 Web 应用程序中实施稳健安全措施的重要性。从身份验证和授权到保护敏感数据，我们强调了采用最佳实践的重要性，以确保我们的应用程序保持安全并免受潜在威胁的影响。
+
+我们发现了数据绑定的益处，它促进了类型安全并增强了代码的可维护性。通过利用这一功能，我们可以放心地在组件之间进行数据绑定，并受益于编译时验证和 `IntelliSense` 支持。
+
+我们探索了 `Blazor` 和 `Razor` 这两个用于 Web 应用开发的强大技术之间的区别。通过理解它们的独特优势和用例，我们对如何为特定的项目需求选择最合适的方法 string 了见解。
+
+通过掌握这些概念，我们现在具备了开发基于 Blazor 和 ASP.NET 的动态 Web 应用程序所需的知识和技能。`Blazor` 的客户端能力与 `ASP.NET` 稳健的 Web 开发框架的结合，使我们能够创建高度交互且功能丰富的应用程序。
+
+在你继续 Web 应用开发之旅时，进一步探索并关注 Blazor 和 ASP.NET 不断演进的功能和进展至关重要。这些技术为构建提供引人用户体验的尖端 Web 应用提供了丰富的可能性。
+
+我们希望本章为你提供了宝贵的见解和实用知识，以开启你自己的动态 Web 应用项目。请记住利用这里涵盖的概念和技术，创建出满足用户需求的卓越 Web 应用程序。
+
+感谢加入我们这一关于使用 Blazor 和 ASP.NET 构建动态 Web 应用程序的激动探索。在开启你的下一个项目时，请继续突破 Web 开发的边界并不断创新。
+
+在接下来的章节中，我们将沉浸在带有 `SignalR` 和 `ASP.NET` 的实时通信世界中。这个主题标志着我们对 `SignalR` 的关键探索——`SignalR` 是一个用于实时 Web 功能的强大库，它与 `ASP.NET` 无缝集成，实现了客户端与服务器之间的动态双向通信。当我们处理实时通信的复杂之处时，读者将发现 `SignalR` 在创建交互和响应式 Web 应用方面的强大之处。通过实际演示和见解，本章旨在赋予读者实现实时功能的知识，将传统的 Web 体验转变为动态且吸引人的平台。
+
+### 加入我们书籍的 Discord 空间
+
+加入书籍的 Discord 工作区以获取最新更新、优惠、全球科技动态、新版本发布以及与作者的交流会议：
+
+https://discord.bpbonline.com
+
+![](img/fm1.png)
+
+# 第 9 章 使用 SignalR 和 ASP.NET 进行实时通信 #contents.xhtml_ch09a
+
+## 引言 (#contents.xhtml_sc2_174a)
+
+在当今快速节奏的数字世界中，用户期望应用程序能够提供实时更新和交互。无论是实时聊天、协作编辑还是动态数据可视化，提供实时通信的能力对于构建吸引人且交互式的应用程序至关重要。
+
+在本章中，我们将探索 `SignalR`，这是 `ASP.NET` 提供的一个强大框架，它简化了为你的应用程序添加实时功能的过程。通过 `SignalR`，你可以轻松地在服务器和客户端之间建立双向通信通道，实现无缝且瞬间的数据交换。
+
+我们将首先深入研究 `SignalR` 的配置方面。你将学习如何在你的 `ASP.NET` 应用程序中设置和配置 `SignalR`，确保你有一个坚实的基础来构建构建。我们将探索各种选项和设置，允许你根据特定需求自定义 `SignalR` 的行为。
+
+接下来，我们将深入研究实时通信场景中身份验证和授权的关键方面。你将发现如何安全保护你的 `SignalR` 连接，确保只有授权用户才能访问并与你的实时功能进行交互。
+
+一旦我们对基础知识有了固定的理解，我们将探索 `SignalR` 的流枢纽（Streaming Hub）功能。流 Hub 允许你构建实时流场景，客户端可以从服务器接收连续的数据流。我们将研究如何实现流 Hub、处理数据集以及优化以实现高效流。
+
+## 结构 (#contents.xhtml_sc2_175a)
+
+本章涵盖了以下主题：
+
+*   使用 SignalR 和 ASP.NET 进行实时通信
+*   配置
+*   身份验证与授权
+*   流 Hub (Streaming hub)
+*   案例研究
+
+## 目标 (#contents.xhtml_sc2_176a)
+
+在本章结束时，你将掌握 `SignalR` 和 `ASP.NET` 实时通信的关键方面，涵盖配置细节、身份验证和授权。配置见解包括 `SignalR` 的设置以及自定义选项的探索。身份验证和授权的重要性将指导实现安全的 `SignalR` 连接。流 Hub 将揭秘，涵盖了客户端到服务器和服务器到客户端的流。在最后，一个全面的案例研究展示了真实世界的实现，为实际应用提供了分步指南。读者将深刻地理解 `SignalR` 的能力，从初始设置到安全通信以及实际应用集成。
+
+
+
+
+
+通过利用 SignalR，开发者可以构建交互式且响应式的 Web 应用程序，为连接的客户端提供无缝且瞬时的更新。这种双向通信能力允许高效的数据交换，实现实时协作、实时更新和交互式用户体验。
+
+## 何时使用 SignalR
+
+SignalR 非常适用于各种需要实时通信和频繁更新的应用程序。以下是 SignalR 可以发挥用处的一些示例：
+
+*   高频更新的应用：`SignalR` 是涉及实时数据更新应用程序的理想选择，例如在线游戏、社交网络、地图和 GPS 应用。它允许向所有连接的客户端即时传递更新，提供平滑且交互式的用户体验。
+*   协作应用：`SignalR` 能够在白板或团队会议应用等程序中实现实时协作。多个用户可以同时工作，实时查看对方的更改，并促进无缝协作。
+*   带有通知的应用：`SignalR` 可用于向连接的客户端发送即时通知，适用于需要实时警报和更新的应用。这包括电子邮件应用程序、聊天系统以及任何其他即时通知至关重要的场景。
+*   任何需要即时通信的应用：`SignalR` 可应用于服务器与客户端之间必须进行即时通信的广泛领域。这包括实时监控系统、金融交易平台、体育赛事直播等。
+
+总而言之，`SignalR` 是多用途的，适用于各种需要实时通信、频繁更新和即时内容交付的场景。它的功能赋予了开发者在不同领域创建交互和响应式应用程序的能力。
+
+## 消息传输
+
+SignalR 支持多种传输方法，以便在客户端和服务器之间建立实时连接。`SignalR` 支持以下传输方法：
+
+*   WebSockets：它在客户端和服务器之间提供了一个全双工通信通道，允许低延迟的高效实时数据传输。
+*   服务器发送事件 (SSE)：这是一种单向通信方法，服务器通过单个 HTTP 连接向客户端发送持续更新。
+*   长轮询 (Long polling)：长轮询是一种技术，客户端向服务器发送请求并保持连接开启状态，直到服务器有新数据要发送。一旦服务器响应数据或发生超时，客户端立即发送新请求。
+
+## Hubs（中枢）
+
+Hubs 是 `SignalR` 的核心组件，负责管理客户端与服务器之间的通信。当后端服务器接收到 Hub 的消息时，它会根据消息中提供的方法名自动调用相应的客户端代码。
+
+SignalR 支持两种内置的 Hub 协议来传输消息：
+
+*   基于 JSON 的文本协议：消息在发送到客户端之前会被序列化为 JSON 格式。
+*   基于 MessagePack 的二进制协议：消息使用高效的 MessagePack 格式进行序列化，这减小了负载大小并提升了性能。
+
+## SignalR 方法
+
+SignalR 方法用于在服务器和连接的客户端之间发送消息。以下是一些常用方法：
+
+*   `Clients.All.SendAsync`：调用 Hub 上的指定方法并将对象发送给所有连接的客户端。
+*   `Clients.Caller.SendAsync`：调用 Hub 上的指定方法并将对象发送回调用者本身。
+*   `Clients.Client({connectionId}).SendAsync`：根据连接 ID 调用 Hub 上的指定方法并将对象发送给指定的客户端。
+*   `Groups.AddToGroupAsync`：将客户端添加到指定的组，允许向该组的客户端发送定向消息。
+*   `Clients.Group({group}).SendAsync`：调用 Hub 上的指定方法并将对象发送给指定组中的所有客户端。
+
+这些方法在各种场景下实现了服务器与客户端之间的高效通信和消息传递。
+
+总体而言，`SignalR` 提供了灵活的消息传输方式、用于管理通信的强大 Hub，以及向特定客户端或组发送消息的便捷方法。
+
+## 配置
+
+配置对于充分发挥 SignalR 在实时通信中的潜力起着至关的作用。通过理解和利用各种配置选项，开发者可以微调 `SignalR` 的行为以符合应用程序的特定需求。从建立连接设置和管理 Hub 配置，到优化性能和可扩展性，掌握 `SignalR` 的配置允许在云、Web 和桌面应用程序中实现无缝集成并高效利用实时能力。无论是调整消息大小限制、启用传输协议，还是配置连接超时，配置良好的 `SignalR` 环境都能确保服务器与客户端之间可靠且高性能的实时通信，创造出引人入胜且具有交互性的用户体验。
+
+ASP.NET Core SignalR 在编码消息时支持两种协议：JSON 和 MessagePack。每个协议都有自己的一套序列化配置选项，为适应特定需求和优化消息编码以实现高效通信提供了灵活性。
+
+### JSON 编码
+
+在 SignalR 协议的 JSON 编码中中，每条消息都表示为一个独立的 JSON 对象，作为底层传输消息的唯一内容。需要注意的是，JSON 对象中的所有属性名都是大小敏感的。文本编码和解码的责任由底层协议实现，这要求 JSON 字符串以所用特定传输预期的格式进行编码。例如，当采用 ASP.NET Sockets 传输时，始终使用 UTF-8 编码进行文本表示。
+
+要在 `SignalR` 服务端配置 JSON 序列化，你可以利用 `AddJSONProtocol` 扩展方法。该方法位于 `Startup` 类的 `ConfigureServices` 方法中 `AddSignalR` 方法之后。使用 `AddJSONProtocol` 时，你可以传递一个接收选项对象的委托，并在该对象中访问 `PayloadSerializerOptions` 属性。该属性允许你使用 `System.Text.JSON.JsonSerializerOptions` 对象配置参数和返回值的序列化。
+
+## MessagePack 编码
+
+MessagePack 是一种高效且紧凑的二进制序列化格式，适用于对性能和带宽优化要求高的场景。与 JSON 相比，MessagePack 产生的消息更小，有利于减少网络流量。然而，由于其二进制特性，除非通过 MessagePack 解析器处理，否则在检查网络跟踪和日志时消息是不可读的。SignalR 意识到了 MessagePack 的重要性，并内置了对该格式的支持，为客户端和服务器提供了专门的 API 以无缝使用 MessagePack 序列化。
+
+要在服务端启用 MessagePack Hub 协议，只需在应用程序中安装 `Microsoft.AspNetCore.SignalR.Protocols.MessagePack` 包。在 `Startup.ConfigureServices` 方法中，调用 `AddSignalR` 时添加 `AddMessagePackProtocol` 方法即可启用服务端的 MessagePack 支持。
+
+目前，在 JavaScript 客户端无法配置 MessagePack 序列化。
+
+
+
+
+
+# 服务器配置选项
+
+本节探索了各种配置选项，允许开发者实现最佳性能和自定义。从控制传输协议到身份验证和授权设置，学习如何优化您的服务器应用程序以提高效率和适应性。通过下这些选项，您可以释放服务器配置选项的潜力，并将应用程序提升到控制和功能的新水平，下方的主要选项所示：
+
+### `ClientTimeoutInterval`
+- 如果服务器在特定间隔内没有收到任何消息，则认为客户端已断开。建议将超时间隔设置为该间隔的两倍，以实现更可靠的断开检测。
+- 默认值：`30s`
+
+### `HandshakeTimeout`
+- 仅在严重网络延迟导致握手超时错误的情况下，调整握手超时间隔。
+- 默认值：`15s`
+
+### `KeepAliveInterval`
+- 为了确保连接保持开启，如果服务器在特定间隔内没有发送任何消息，则会自动发送 ping 消息。在调整 `KeepAliveInterval` 时，建议同时更新客户端上的 `ServerTimeout` 或 `serverTimeoutInMilliseconds` 设置。`ServerTimeout` 或 `serverTimeoutInMilliseconds` 的推荐值为 `KeepAliveInterval` 的两倍，以维持可靠且不中断的连接。
+- 默认值：`15s`
+
+### `SupportedProtocols`
+- 枢支持多种协议，默认允许服务器上所有注册的协议。但是，可以通过从支持协议列表中移除特定协议，为单个枢禁用这些特定协议。这为根据每个特定枢的需要自定义协议支持提供了灵活性。
+
+### `EnableDetailedErrors`
+- 默认情况下，`Hub` 方法不会向客户端返回详细的异常消息，以保护敏感信息。
+
+### `StreamBufferCapacity`
+- 用于缓冲客户端上传流的缓冲区最大项目数决定了缓冲限制。当达到此限制时，调用的处理将被临时阻塞，直到服务器处理流项目。这有助于维持受控的数据流，并防止过量的缓存压垮服务器。
+- 默认值：`10`
+
+### `MaximumReceiveMessageSize`
+- 单个入站枢 消息的最大尺寸是指对消息大小施加的限制。增加此值可能会增加拒绝服务 (DoS) 攻击的风险，因为较大的消息需要更多的处理资源。在容纳合法消息大小和缓解与大负载相关的潜在风险之间取得平衡至关重要。
+- 默认值：`32kb`
+
+### `MaximumParallelInvocationsPerClient`
+- 在队列之前，从客户端并发调用枢方法的最大最大数量。
+- 默认值：`1`
+
+### `DisableImplicitFromServicesParameters`
+- 如果枢方法所需的依赖项已在 DI 容器中注册，它们将在调用期间自动解析并作为参数提供给该方法。这简化了在枢方法内部访问和利用依赖项的过程，提升了应用程序的模块化和可维护性。
+- 默认值：`false`
+
+# 高级 HTTP 配置
+
+要配置有关传输和内存缓冲区管理的高级设置，可以使用 `HttpConnectionDispatcherOptions`。通过在 `Program.cs` 文件中向 `MapHub` 方法传递委托，可以自定义这些选项。通过访问 `HttpConnectionDispatcherOptions`，您可以对应用程序行为的各个方面进行控制，允许根据特定需求进行微调和优化，下方的主要优化设置所示：
+
+### `ApplicationMaxBufferSize`
+- 服务器在应用背压之前对客户端接收到的字节进行缓冲，由设置的最大字节数决定。如果增加此值，服务器可以更快的速度接收更大的消息而不产生背压，但可能导致更高的内存消耗。在快速接收大消息和高效管理内存之间取得平衡至关重要。
+- 默认值：`64kb`
+
+### `TransportMaxBufferSize`
+- 服务器在观察背压之前对应用发送的字节进行缓冲，由设置的最大字节数决定。如果增加此值，服务器可以更快地缓冲更大的消息而无需等待背压，但可能导致更高的内存消耗。在高效缓冲大消息和有效管理内存消耗之间找到平衡至关重要。
+- 默认值：`64kb`
+
+### `AuthorizationData`
+- `IAuthorizeData` 对象列表通过执行指定的授权要求，决定客户端连接到枢的授权权限。
+
+### `Transports`
+- 默认启用所有传输，这意味着对客户端可以使用何种传输建立连接没有限制。
+
+### `LongPolling`
+- SignalR 中的 `Long Polling`（轮轮）传输提供了特定选项。
+#### `PollTimeout`
+- 可以配置服务器在终止单个轮询请求之前向客户端发送消息的最大等待时间。减少此值会导致客户端更频繁地发出轮询请求，从而实现更快的消息传递。
+- 默认值：`90s`
+
+### `WebSockets`
+- 默认值：
+### `CloseTimeout`
+- 当服务器关闭时，有一个指定的时间间隔，客户端应在此期间关闭连接。如果客户端未在此间隔内关闭，连接将由服务器终止。
+- 默认值：`5s`
+#### `SubProtocolSelector`
+- 可以利用委托将 `Sec-WebSocket-Protocol` 头部设置为自定义值。此委托接收来自客户端的请求值作为输入，并负责返回 `Sec-WebSocket-Protocol` 头部所需的值。通过使用此委托，您可以灵活地根据特定需求自定义并控制 `Sec-WebSocket-Protocol` 头部的值。
+- 默认值：`Null`
+
+### `MinimumProtocolVersion`
+- 指定最小协议版本，以限制客户端使用较新版本。
+- 默认值：`0`
+
+### `CloseOnAuthenticationExpiration`
+- 启用身份验证过期跟踪可以在令牌过期时自动关闭连接。通过设置此选项，可以确保在身份验证令牌过期及时终止连接，增强安全性并防止未经授权的访问。
+- 默认值：`false`
+
+# 客户端配置选项
+
+
+
+
+
+在 .NET Client 中，日志配置是通过 `ConfigureLogging` 方法实现的。该方法允许你注册日志提供程序和过滤器，这与在服务器上的配置类似。通过利用 `ConfigureLogging`，你可以自定义客户端应用程序的日志行为，实现全面的监控、故障排除和分析。由于可以灵活地选择和配置日志提供程序及过滤器，你可以有效地管理和跟踪客户端的活动，确保最佳性能并解决潜在问题，如下所示的日志配置示例：
+
+```csharp
+var connection = new HubConnectionBuilder()
+  .WithUrl("https://example.com/chathub")
+  .ConfigureLogging(logging => {
+    logging.SetMinimumLevel(LogLevel.Information);
+    logging.AddConsole();
+  })
+  .Build();
+```
+
+### 配置允许的传输方式
+
+SignalR 使用的传输方式可以在 `WithUrl` 调用期间（或 JavaScript 中的 `withUrl`）进行配置。通过对 `HttpTransportType` 的值进行按位或（OR）操作，你可以指定客户端允许使用的传输方式。默认情况下，所有传输方式都是启用的，提供了灵活性和兼容性。然而，通过自定义传输配置，你可以限制客户端仅使用指定的传输方式，从而根据你的应用程序需求确保最佳性能和针对性的网络通信，如下代码示例所示：
+
+```csharp
+var connection = new HubConnectionBuilder()
+  .WithUrl("https://example.com/chathub",
+    HttpTransportType.WebSockets | HttpTransportType.LongPolling)
+  .Build();
+```
+
+### 配置 Bearer 身份验证
+
+要在 SignalR 请求中包含身份验证数据，请使用 `AccessTokenProvider` 选项（JavaScript 中的 `accessTokenFactory`）。在 .NET Client 中，访问令牌通过 `Authorization` 头部作为“Bearer Authentication”令牌传递。在 JavaScript Client 中，访问令牌作为 Bearer 令牌使用，除非浏览器 API 限制了头部的使用（例如 Server-Sent Events 和 WebSockets 请求）。在这种情况下，访问令牌作为名为 `access_token` 的查询字符串参数提供，如下代码示例中的身份验证配置：
+
+```csharp
+var connection = new HubConnectionBuilder()
+  .WithUrl("https://example.com/chathub", options => {
+    options.AccessTokenProvider = async () => {
+      // 获取并返回访问令牌。
+    };
+  })
+  .Build();
+```
+
+### 其他选项
+
+SignalR 提供了一套全面的客户端选项，这些超了基础配置，允许你精调和增强 SignalR 客户端的行为。这些额外的客户端选项使你能够优化性能、自定义连接并适应特定需求，如下文所示的主要选项：
+
+- `ServerTimeout`：
+    - 为了建立稳健的连接，设置合适的服务器活动超时至关重要。应仔细选择此值，以留出足够的时间，让从服务器发送的 ping 消息在指定的超时间隔内成功传输并被接收。建议将服务器活动超时设置为至少是服务器 `KeepAliveInterval` 两倍的值。这个额外的缓冲区为 ping 消息到达客户端提供了充足的时间，最大限度地减少了过早断线的风险。
+    - 默认值：30s
+- `HandshakeTimeout`：
+    - 修改初始服务器握手超时被认为是一种高级设置，仅适用于由于严重的网络延迟导致握手超时错误的情况。调整此超时时间时务必谨慎，并仅在必要时进行调整。
+    - 默认值：15s
+- `KeepAliveInterval`：
+    - 在 SignalR 中，客户端保活间隔决定了客户端向服务器发送 ping 消息的频率。这些 ping 消息是维护连接健康的关键机制。每当客户端发送任何消息时，保活计时器重置并启动一个新的间隔。
+    - 默认值：15s
+- `AccessTokenProvider`：
+    - 通过调用返回字符串的函数可以获取 HTTP 请求中的 Bearer 身份验证令牌。该字符串一旦作为身份令牌提供，即可对受保护资源进行安全授权的访问。
+    - 默认值：null
+- `SkipNegotiation`：
+    - 启用此选项将跳过协商步骤，直接使用 WebSockets 传输建立连接。需要注意的是，此功能仅在 WebSockets 传输是唯一启用传输时才可用。但请注意，在使用 Azure SignalR Service 时无法启用此设置。
+    - 默认值：false
+- `ClientCertificates`：
+    - 一个可以包含以身份验证请求的 TLS 证书集合，确保通信安全且可靠。
+    - 默认值：空
+- `Cookies`：
+    - 一个可以包含在每个 HTTP 请求中的 HTTP Cookie 集合，用于提供额外信息或维护状态通信。
+    - 默认值：空
+- `Credentials`：
+    - 凭据可以随每个 HTTP 请求发送，以确保访问受保护资源的身份验证和授权。
+    - 默认值：空
+- `CloseTimeout`：
+    - 在 WebSockets 语文中，客户端可以指定在客户端启动关闭过程后服务器确认关闭请求的最大超时时间。如果服务器未在指定时间内确认关闭，客户端将与服务器断开连接。此超时设置有助于确保 WebSocket 连接的及时终止，防止长时间等待并允许实现顺畅高效的通信。
+    - 默认值：5s
+- `Headers`：
+    - 一个可以包含在每个 HTTP 请求中的额外 HTTP 头部映射，用于提供额外信息或进行定制。
+    - 默认值：空
+- `HttpMessageHandlerFactory`：
+    - `HttpMessageHandler` 委托用于配置或替换发送请求的 HTTP 消息处理器。它接收默认处理器作为参数，并必须返回一个非空值。你可以修改默认处理器的设置并返回它，或者创建一个新的处理器实例。请确保从提供的处理器中复制必要的设置到新处理器中，以确保功能正常。
+    - 默认值：null
+- `Proxy`：
+    - 要使用的代理。
+    - 默认值：null
+- `UseDefaultCredentials`：
+    - 如果要使用默认凭据，请启用 Windows 身份验证。
+    - 默认值：false
+- `WebSocketConfiguration`：
+    - 委托用于配置额外的 WebSocket 选项。它接收一个 `ClientWebSocketOptions` 实例，可以使用其对选项进行自定义。
+    - 默认值：null
+- `ApplicationMaxBufferSize`：
+    - 增加此值允许应用程序在应用背压之前缓冲从服务器接收的更多字节。这可以更更快地处理较大的消息，但可能会增加内存消耗。
+    - 默认值：1mb
+- `TransportMaxBufferSize`：
+    - 增加此值允许传输层在观察到背压之前缓冲用户应用程序发送的更多字节。这可以更更快地缓冲较大的消息，但可能会增加内存消耗。
+    - 默认值：1mb
+
+
+
+
+SignalR 可以利用 ASP.NET Core 身份验证建立连接与用户之间的关联。这允许从 hub 内部的 `HubConnectionContext.User` 属性访问身份验证数据。通过利用身份验证，hub 能够调用与特定用户关联的所有连接的方法。需要注意的是，多个连接可以关联到单个用户。
+
+当 hub 方法需要授权时，SignalR 会为授权处理程序提供一个自定义资源。该资源由 `HubInvocationContext` 实例表示。`HubInvocationContext` 提供了对各种信息的访问权限，包括 `HubCallerContext`，它包含了与与调用相关的连接和用户的详细信息。此外，它还包含了被调用的 hub 方法名称以及传递给该方法的参数。此上下文是在您的 SignalR 应用程序中执行授权检查并做出明智决策的宝贵资源。
+
+### Cookie 身份验证
+
+在基于浏览器的应用程序中，Cookie 身份验证能够将现有的用户凭据与 SignalR 连接无缝集成。当使用浏览器客户端时，不需要额外的配置。如果用户已登录应用程序，SignalR 连接将自动继承此身份验证。
+
+Cookies 是浏览器特定的传输访问令牌的机制，但它们也可以被非浏览器客户端使用。在 .NET Client 中，你可以在 `WithUrl` 方法中配置 `Cookies` 属性以提供身份验证所需的 Cookie。然而，从 .NET 客户端使用 Cookie 身份验证需要应用程序提供一个 API 端点来交换身份验证数据以获取所需的 Cookie。这使得应用程序客户端和服务器组件之间无无缝身份验证。
+
+### Bearer 令牌身份验证
+
+服务器验证令牌并利用它来识别关联的用户。此验证过程仅在连接建立期间发生。一旦连接建立，服务器不会自动重新验证令牌以检查在连接寿命期间令牌是否被撤销。因此，确保访问令牌在整个连接期间保持有效至关重要，以维持不中断的身份验证，如下面的 SignalR 连接示例所示：
+
+```csharp
+var connection = new HubConnectionBuilder()
+.WithUrl("https://example.com/chathub", options =>
+{
+options.AccessTokenProvider = () => Task.FromResult(_myAccessToken);
+})
+.Build();
+```
+
+### Identity server JWT 身份验证
+
+身份服务器配置在服务器上，并使用 JWT Bearer 中间件，如下例所示：
+
+```csharp
+builder.Services.AddAuthentication(options =>
+{
+options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+options.Authority = "Authority URL";
+options.Events = new JwtBearerEvents
+{
+OnMessageReceived = context =>
+{
+var accessToken = context.Request.Query["access_token"];
+var path = context.HttpContext.Request.Path;
+if (!string.IsNullOrEmpty(accessToken) &&
+(path.StartsWithSegments("/hubs/chat")))
+{
+context.Token = accessToken;
+}
+return Task.CompletedTask;
+}
+};
+});
+```
+
+### Windows 身份验证
+
+如果应用中配置了 Windows 身份验证，SignalR 可以利用该身份保护 hub。然而，要向单个用户发送消息，需要添加自定义的用户 ID 提供程序。需要注意的是，Windows 身份验证系统不提供名称标识声明（name identifier claim），SignalR 依赖它来确定用户名。
+
+请注意，虽然 Microsoft Edge 支持 Windows 身份验证，但并非所有浏览器都支持。例如，在 Chrome 和 Safari 中尝试使用 Windows 身份验证和 WebSockets 将失败。在这种情况下，客户端将尝试回退到可能起作用的其他传输方式，如下例所示：
+
+```csharp
+var connection = new HubConnectionBuilder()
+.WithUrl("https://example.com/chathub", options =>
+{
+options.UseDefaultCredentials = true;
+})
+.Build();
+```
+
+### 声明 (Claims)
+
+在身份验证用户的应用程序中，要从用户声明中派导出 SignalR 用户 ID，你可以实现 `IUserIdProvider` 接口并注册该实现。通过实现此接口，你可以指定 SignalR 如何根据用户的声明创建用户 ID，如下例所示，我们从用户声明中获取电子邮件值：
+
+```csharp
+public class SampleEmailProvider : IUserIdProvider
+{
+public virtual string GetUserId(HubConnectionContext connection)
+{
+return connection.User?.FindFirst(ClaimTypes.Email)?.Value!;
+}
+}
+```
+
+### hub 及其 hub 方法的授权策略
+
+要对 hub 中的方法强制身份验证，可以将 `[Authorize]` 特性应用到 hub 本身。默认情况下，hub 中的所有方法都需要身份验证才能被访问。此属性确保只有经过身份验证的用户才能调用 hub 方法。
+
+此外，你可以通过提供构造函数参数和属性来自定义 `[Authorize]` 特性，将访问限制为匹配特定策略的用户。例如，你可以指定一个名为 `SampleAuthorizationPolicy` 的自定义授权策略，只有符合该策略的用户才被允许访问 hub。
+
+此外，如果你想按方法应用授权，可以将 `[Authorize]` 特性应用到单个 hub 方法上。在这种情况下，如果当前用户不满足应用到方法的策略，则将向调用者返回错误，指示缺少权限。
+
+通过利用 `[Authorize]` 特性，你可以强制执行身份验证和授权规则来控制对 hub 方法的访问，并确保经过授权的用户可以调用它们。
+
+```csharp
+[Authorize("SampleAuthorizationPolicy")]
+public class SampleHub : Hub
+{
+public override async Task OnConnectedAsync()
+{
+await Clients.All.SendAsync("ReceiveSystemMessage", $"{Context.UserIdentifier} joined.");
+await base.OnConnectedAsync();
+}
+
+[Authorize("Administrators")]
+public void BanUser(string userName)
+{
+// ... 将用户封出聊天室（只有管理员才能执行的操作） ...
+}
+}
+```
+
+### 授权处理程序
+
+默认情况下，SignalR 提供了一个健的内置授权框架，允许你对用户进行身份验证和授权。然而，在某些场景下，你可能需要实现自定义逻辑来执行额外的访问限制或业务规则。这就是自定义授权策略用用场。
+
+自定义授权策略让你能够定义自己的规则和标准，以授予或拒绝对 SignalR 应用程序中特定功能或能力的访问。通过自定义策略，你可以灵活地控制谁可以执行某些操作，例如发送消息、加入特定组或访问敏感数据。
+
+### 流式传输 hub (Streaming hub)
+
+
+
+
+
+在 ASP.NET Core SignalR 中，你可以利用流式（streaming）通过片段或块在客户端和服务器之间传输数据。流式传输在数据随时间逐渐到达的场景中特别有用，它允许在每个片段可用时立即将其发送到客户端或服务器。
+
+通过流式传输，你不需要等待整个数据集准备好后再发送。相反，你可以在数据片段可用时就开始发送，从而提供更具响应性且更高效的通信机制。
+
+这种能力实现了实时数据流和处理，使其适用于实时更新、媒体流传输和处理大型数据集等各种用例。
+
+通过利用 ASP.NET Core SignalR 的流式功能，你可以在应用程序中实现更高效的数据传输、改进的响应能力并增强实时能力。
+
+## 服务器到客户端的流式 hub
+
+ASP.NET Core SignalR 允许你在服务器和客户端之间执行流式传输。你可以选择从流式 hub 方法返回 `IAsyncEnumerable<T>` 或 `ChannelReader<T>`。
+
+要返回 `IAsyncEnumerable<T>`，你可以将 hub 方法编写为异步迭代器方法。这种方法简化了实现，并确保恰当地返回 `ChannelReader`。你还可以在异步迭代器方法中包含 `CancellationToken` 参数以处理客户端取消订阅。
+
+在使用服务器到客户端的流式 hub 方法时，处理客户端断开连接至关重要。通过接受 `CancellationToken` 参数，你可以检测客户端何时从流中取消订阅。你可以使用此令牌优雅地停止服务器操作并释放任何相关资源。
+
+使用这些技术，你可以有效地在客户端和服务器之间传输数据，确保妥善处理客户端的订阅、取消订阅和断开。
+
+## 客户端到服务器的流式 hub
+
+当 hub 方法接受一个或多个类型为 `ChannelReader<T>` 或 `IAsyncEnumerable<T>` 的对象时，它将自动变为客户端到服务器的流式 hub 方法。这允许客户端向服务器发送流式数据。
+
+在以下示例中，你可以看到如何读取从客户端发送的流式数据。客户端将数据写入 `ChannelWriter<T>`，而服务器上的 hub 方法从相应的 `ChannelReader<T>` 读取这些数据。
+
+通过利用此功能，你可以在客户端和服务器之间建立流式连接，实现高效且持续的数据传输。
+
+## 案例研究
+
+欢迎来到案例研究，我们将在开发实时聊天应用程序应用于 SignalR 配置、身份验证与授权以及自定义策略的概念。本案例研究将为你提供一个实用的演示，展示这些元素如何结合创建一个安全且高效的实时通信平台。
+
+在整个案例研究过程中，我们将专注于构建一个健壮的聊天应用程序，使用户能够实时交换消息。我们将从在 ASP.NET 应用程序中配置 SignalR 开始，为实时通信奠定坚实的基础。这包括设置必要的 hub、建立连接以及定义预期的行为。
+
+接下来，我们将处理身份验证和授权这一关键方面。我们将实现一个安全的登录系统，并探索 SignalR 可用的 Entity Framework Identity 身份验证机制。我们还将深入研究自定义策略的创建，以控制对聊天应用程序的访问，确保只有经过身份验证的用户才能参与。
+
+为了增强用户体验并保持聊的完整性，我们将实现一个示例自定义策略。我们将探索如何使用 SignalR 内置的授权框架来实现这些策略，使你能够根据特定需求定制聊天应用程序。
+
+现在，让我们开启这段案例研究之旅程吧，我们将汇聚 SignalR、身份验证、授权和自定义策略的力量，创建一个安全且功能丰富的实时聊天应用程序。准备好进入带有 SignalR 的激人的实时通信世界吧！
+
+### 项目设置
+
+首先，我们创建一个类型为 Web Application 的项目，并添加客户端库 `@microsoft/signalr@latest`。
+
+要执行此操作，你应该右键点击项目 | `Add` | `Client-side library`。如下所示所示搜索 SignalR 库：
+
+![](img/Figure_9.1.png)
+
+图 9.1：添加 SignalR 客户端库。
+
+在成功添加客户端库后，你的项目应该如下图所示：
+
+![](img/Figure_9.2..png)
+
+图 9.2：添加 SignalR 客户端库后的项目解决方案。
+
+### 创建 Hub
+
+现在，让我们创建一个负责客户端之间通信的 Hub。
+
+添加一个新类，它必须继承自 `Hub`。示例 `Hub` 类如下：
+
+```csharp
+public class SampleHub : Hub
+{
+    public async Task SendMessageToAll(string message)
+    {
+        await Clients.All.SendAsync("ReceiveMessage", message);
+    }
+    public async Task SendMessageToCaller(string message)
+    {
+        await Clients.Caller.SendAsync("ReceiveMessage", message);
+    }
+    public async Task SendMessageToUser(string connectionId, string message)
+    {
+        await Clients.Client(connectionId)
+        .SendAsync("ReceiveMessage", message);
+    }
+    public async Task JoinGroup(string group)
+    {
+        await Groups.AddToGroupAsync(Context.ConnectionId, group);
+    }
+    public async Task SendMessageToGroup(string group, string message)
+    {
+        await Clients.Group(group).SendAsync("ReceiveMessage", message);
+    }
+    public override async Task OnConnectedAsync()
+    {
+        await Clients.All.SendAsync("UserConnected", Context.ConnectionId);
+    }
+    public override async Task OnDisconnectedAsync(Exception ex)
+    {
+        await Clients.All.SendAsync("UserDisconnected", Context.ConnectionId);
+        await base.OnDisconnectedAsync(ex);
+    }
+}
+```
+
+有了 Hub，我们必须准备客户端代码，该客户端代码应与我们的 Hub 通信。这里的示例客户端代码命名为 `Chat.js`，内容如下：
+
+```javascript
+"use strict";
+var connection = new signalR.HubConnectionBuilder()
+.withUrl("/sampleHubRoute").build();
+connection.on("ReceiveMessage", function (message) {
+    var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+    var div = document.createElement("div");
+    div.innerHTML = msg + "<hr/>";
+    document.getElementById("messages").appendChild(div);
+});
+connection.on("UserConnected", function (connectionId) {
+    var groupElement = document.getElementById("group");
+    var option = document.createElement("option");
+    option.text = connectionId;
+    option.value = connectionId;
+    groupElement.add(option);
+});
+connection.on("UserDisconnected", function (connectionId) {
+    var groupElement = document.getElementById("group");
+    for (var i = 0; i < groupElement.length; i++) {
+        if (groupElement.options[i].value == connectionId) {
+            groupElement.remove(i);
+        }
+    }
+});
+connection.start().catch(function (err) {
+    return console.error(err.toString());
+});
+document.getElementById("sendButton").addEventListener("click", function (event) {
+    var message = document.getElementById("message").value;
+    var user = document.getElementById("userInput").value;
+    var groupElement = document.getElementById("group");
+    var groupValue = groupElement
+    .options[groupElement.selectedIndex].value;
+});
+```
+
+
+
+
+
+```javascript
+var finalMessage = `${user} says ${message}`;
+
+if (groupValue === "All" || groupValue === "Myself") {
+  var method = groupValue === "All" ? "SendMessageToAll" : "SendMessageToCaller";
+  connection.invoke(method, finalMessage)
+    .catch(function (err) {
+      return console.error(err.toString());
+    });
+} else if (groupValue === "PrivateGroup") {
+  connection.invoke("SendMessageToGroup", "PrivateGroup", finalMessage)
+    .catch(function (err) {
+      return console.error(err.toString());
+    });
+} else {
+  connection.invoke("SendMessageToUser", groupValue, finalMessage)
+    .catch(function (err) {
+      return console.error(err.toString());
+    });
+}
+
+event.preventDefault();
+});
+
+document.getElementById("joinGroup").addEventListener("click", function (event) {
+  connection.invoke("JoinGroup", "PrivateGroup")
+    .catch(function (err) {
+      return console.error(err.toString());
+    });
+  event.preventDefault();
+});
+```
+
+现在，我们更新 `Index.cshtml` 页面以利用我们之前创建的客户端代码。以下是更新后的 `Index.cshtml` 代码：
+
+```html
+@page
+@model IndexModel
+@{
+  ViewData["Title"] = "Home page";
+}
+<div class="container">
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <div class="col-6">
+      <input type="button" id="joinGroup" value="Join Private Group" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">发送消息给</div>
+    <div class="col-4">
+      <select id="group">
+        <option value="All">所有人</option>
+        <option value="Myself">我自己</option>
+        <option value="PrivateGroup">私有群</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">用户</div>
+    <div class="col-4"><input type="text" id="userInput" /></div>
+  </div>
+  <div class="row">
+    <div class="col-2">消息</div>
+    <div class="col-4"><input type="text" id="message" /></div>
+  </div>
+  <div class="row">&nbsp;</div>
+  <div class="row">
+    <div class="col-6">
+      <input type="button" id="sendButton" value="发送消息"/>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <hr />
+  </div>
+</div>
+<div class="row">
+  <div class="col-6">
+    <ul id="messages"></ul>
+  </div>
+</div>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/js/chat.js"></script>
+```
+
+最后，我们应该在项目启动时配置 SignalR。为了实现这一点，你的 `Program.cs` 应该如下所示：
+
+```csharp
+using WebAPPSignalR;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using WebAPPSignalR.Data;
+using Microsoft.AspNetCore.SignalR;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// 向容器添加服务。
+builder.Services.AddRazorPages();
+builder.Services.AddSignalR();
+
+var app = builder.Build();
+
+// 配置 HTTP 请求流水线。
+if (!app.Environment.IsDevelopment())
+{
+  app.UseExceptionHandler("/Error");
+  // 默认的 HSTS 值为 30 天。
+  // 你可能想在生产场景中更改此值，请参考 https://aka.ms/aspnetcore-hsts。
+  app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.MapRazorPages();
+app.MapHub<SampleHub>("/sampleHubRoutePattern");
+app.Run();
+```
+
+之后，你可以通过按下 F5 运行项目，在 DevTools 控制台中，你应该能看到关于连接 SignalR 的成功消息，如下所示：
+
+![](img/Figure_9.3..png)
+
+图 9.3：带有成功消息的 Visual studio 调试控制
+
+以下错误消息是无法连接 SignalR 时常见的错误：
+
+![](img/1.png)
+
+图 9.4：带有错误的 Chrome DevTools 控制台
+
+该错误消息是无法连接 SignalR 时的常见错误：要修复之前的错误，你应该打开提示并执行以下两个命令：
+
+* `dotnet devcerts clean`
+* `dotnet devcerts https --trust`
+
+第一个命令负责删除所有证书，而第二个命令负责信任它们。
+
+该错误消息是无法连接 SignalR 时的常见错误：在此示例中，我们使用由 SQL Server 管理的身份引擎，帐户和角色保存在数据库中。所需的 NuGet 包：
+
+* `Microsoft.AspNetCore.Identity`
+* `Microsoft.AspNetCore.Identity.UI`
+* `Microsoft.EntityFrameworkCore`
+* `Microsoft.EntityFrameworkCore.SqlServer`
+* `Microsoft.EntityFrameworkCore.Tools`
+* `Microsoft.AspNetCore.SignalR`
+
+该错误消息是无法连接 SignalR 时的常见错误：检查左侧的身份（identity）子菜单：
+
+![](img/Figure_9.5..png)
+
+图 9.5：添加身份项
+
+该错误消息是无法连接 SignalR 时的常见错误：你可以在生成的文件中找到它：
+
+![](img/Figure_9.6..png)
+
+图 9.6：设置身份项
+
+该错误消息是无法连接 SignalR 时的常见错误：作为结果，我们拥有了以下类：
+
+![](img/Figure_9.7..png)
+
+图 9.7：解决方案中的项
+
+该错误消息是无法连接 SignalR 时的常见错误：现在，`Program.cs` 必须更新如下以连接如下：
+
+```csharp
+using WebAPPSignalR;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using WebAPPSignalR.Data;
+using Microsoft.AspNetCore.SignalR;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// 向容器添加服务。
+builder.Services.AddRazorPages();
+builder.Services.AddSignalR();
+
+builder.Services.AddDbContext<WebAPPSRContext>(options =>
+  options.UseSqlServer("Data Source=DESKTOP-H2012;Initial Catalog=SignalRDb;Integrated Security=True;Connect Timeout=30;Encrypt=False;Multi Subnet Failover=False;Trust Server Certificate=False"));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+  options.SignIn.RequireConfirmedAccount = true)
+  .AddEntityFrameworkStores<WebAPPSRContext>();
+
+var app = builder.Build();
+
+// 配置 HTTP 请求流水线。
+if (!app.Environment.IsDevelopment())
+{
+  app.UseExceptionHandler("/Error");
+  // 默认的 HSTS 值为 30 天。
+  // 你可能想在生产场景中更改此值，请参考 https://aka.ms/aspnetcore-hsts。
+  app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapRazorPages();
+app.MapHub<SampleHub>("/sampleHubRoutePattern");
+app.Run();
+```
+
+在创建所有对象并设置项目启动后，我们需要包包控制台中运行命令。这些命令负责在数据库中创建并设置我们的身份引擎：
+
+* `Add migration`
+* `Update-database`
+
+成功执行命令后，这些是数据库中创建的表。这些表负责管理用户帐户、身份验证和授权。你可以在图中看到自动生成的表：
+
+![](img/Figure_9.8..png)
+
+图 9.8：带有创建表的 SQL Server
+
+现在，我们需要更新项目对象以实现身份验证和授权。为了利用授权和身份验证，需要以下更改：
+
+我们的 Hub 类必须添加 `[Authorize]` 特性：
+
+```csharp
+[Authorize]
+public class SampleHub : Hub
+{
+  public async Task SendMessageToAll(string message)
+  {
+    string userName = Context.User.Identity.Name;
+    await Clients.All.SendAsync("ReceiveMessage", userName, message);
+  }
+}
+```
+
+
+
+
+```csharp
+$"User {userName} says « + message);
+}
+
+public async Task SendMessageToCaller(string message)
+{
+    string userName = Context.User.Identity.Name;
+    await Clients.Caller.SendAsync("ReceiveMessage",
+    $"User {userName} says « + message);
+}
+
+public async Task SendMessageToUser(string connectionId, string message)
+{
+    string userName = Context.User.Identity.Name;
+    await Clients.Client(connectionId)
+    .SendAsync("ReceiveMessage",
+    $"User {userName} says « + message);
+}
+
+public async Task JoinGroup(string group)
+{
+    await Groups.AddToGroupAsync(Context.ConnectionId, group);
+}
+
+public async Task SendMessageToGroup(string group, string message)
+{
+    string userName = Context.User.Identity.Name;
+    await Clients.Group(group).SendAsync("ReceiveMessage",
+    $"User {userName} says «+ message);
+}
+
+public override async Task OnConnectedAsync()
+{
+    await Clients.All.SendAsync("UserConnected",
+    Context.ConnectionId);
+    await base.OnConnectedAsync();
+}
+
+public override async Task OnDisconnectedAsync(Exception ex)
+{
+    await Clients.All.SendAsync("UserDisconnected",
+    Context.ConnectionId);
+    await base.OnDisconnectedAsync(ex);
+}
+```
+
+我们正在使用来自登录用户的身份信息，因此不再需要文本框让用户输入其用户名。因此，我们从 `Index.cshtml` 中删除了用户名输入：
+
+```html
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6">
+            <input type="button" id="joinGroup" value="加入私群" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">发送消息给</div>
+        <div class="col-4">
+            <select id="group">
+                <option value="All">所有人</option>
+                <option value="Myself">我自己</option>
+                <option value="PrivateGroup">私群</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">消息</div>
+        <div class="col-4"><input type="text" id="message" /></div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6">
+            <input type="button" id="sendButton" value="发送消息"/>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <ul id="messages"></ul>
+        </div>
+    </div>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/js/chat.js"></script>
+```
+
+`Chat.js` 也已更新，以反映之前页面中的更改：
+
+```javascript
+"use strict";
+var connection = new signalR.HubConnectionBuilder()
+    .withUrl("/sampleHubRoutePattern").build();
+
+connection.on("ReceiveMessage", function (message) {
+    var msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+    var div = document.createElement("div");
+    div.innerHTML = msg + "<hr>";
+    document.getElementById("messages").appendChild(div);
+});
+
+connection.on("UserConnected", function (connectionId) {
+    var groupElement = document.getElementById("group");
+    var option = document.createElement("option");
+    option.text = connectionId;
+    option.value = connectionId;
+    groupElement.add(option);
+});
+
+connection.on("UserDisconnected", function (connectionId) {
+    var groupElement = document.getElementById("group");
+    for (var i = 0; i < groupElement.length; i++) {
+        if (groupElement.options[i].value == connectionId) {
+            groupElement.remove(i);
+        }
+    }
+});
+
+connection.start().catch(function (err) {
+    console.error(err.toString());
+});
+
+document.getElementById("sendButton").addEventListener("click", function (event) {
+    var message = document.getElementById("message").value;
+    var groupElement = document.getElementById("group");
+    var groupValue = groupElement.options[selectedIndex].value;
+    if (groupValue === "All" || groupValue === "Myself") {
+        var method = groupValue === "All" ? "SendMessageToAll" : "SendMessageCaller";
+        connection.invoke(method, message).catch(function (err) {
+            console.error(err.toString());
+        });
+    } else if (groupValue === "PrivateGroup") {
+        connection.invoke("SendMessageGroup", "PrivateGroup", message).catch(function (err) {
+            console.error(err.toString());
+        });
+    }
+});
+```
+
+
+
+
+```cs
+builder.Services.AddRazorPages();
+builder.Services.AddSignalR();
+
+var app = builder.Build();
+
+// 配置 HTTP 请求管道程序。
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error");
+    // 默认的 HSTS 值为 30 天。
+    // 你可能需要在生产场景中更改它，
+    // 请参见 https://aka.ms/aspnetcore-hsts。
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+app.MapRazorPages();
+app.MapHub<SampleHub>("/sampleHubRoutePattern");
+
+app.Run();
+```
+
+此外，我们必须更新 Hub 以执行此自定义策略。更新 `samplehub.cs`：
+
+```cs
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.SignalR;
+
+namespace WebAPPSignalR
+{
+    [Authorize]
+    public class SampleHub : Hub
+    {
+        [Authorize("SamplePolicyName")]
+        public async Task SendMessageToAll(string message)
+        {
+            string userName = Context.User.Identity.Name;
+            await Clients.All.SendAsync("ReceiveMessage", $"User {userName} says « + message);
+        }
+
+        [Authorize("SamplePolicyName")]
+        public async Task SendMessageToCaller(string message)
+        {
+            string userName = Context.User.Identity.Name;
+            await Clients.Caller.SendAsync("ReceiveMessage", $"User {userName} says « + message);
+        }
+
+        public async Task SendMessageToUser(string connectionId, string message)
+        {
+            string userName = Context.User.Identity.Name;
+            await Clients.Client(connectionId).SendAsync("ReceiveMessage", $"User {userName} says « + message);
+        }
+
+        public async Task JoinGroup(string group)
+        {
+            await Groups.AddToGroupAsync(Context.ConnectionId, group);
+        }
+
+        public async Task SendMessageToGroup(string group, string message)
+        {
+            string userName = Context.User.Identity.Name;
+            await Clients.Group(group).SendAsync("ReceiveMessage", $"User {userName} says «+ message);
+        }
+
+        public override async Task OnConnectedAsync()
+        {
+            await Clients.All.SendAsync("UserConnected", Context.ConnectionId);
+            await base.OnConnectedAsync();
+        }
+
+        public override async Task OnDisconnectedAsync(Exception ex)
+        {
+            await Clients.All.SendAsync("UserDisconnected", Context.ConnectionId);
+            await base.OnDisconnectedAsync(ex);
+        }
+    }
+}
+```
+
+在运行项目并尝试向自己发送消息后，我们得到了此输出：
+
+![](img/Figure_9.11..png)
+
+图 9.11：我的用户向自己发送消息
+
+## 结
+
+在本章中，我们探索了实时通信的迷人世界，以及 `SignalR` 如何结合 `ASP.NET` 帮助你构建具有吸引力和交互性的应用程序。
+
+我们首先理解了实时通信在当今数字格局中的重要性，以及它是如何增强用户体验的。`SignalR` 作为一个强大的框架，简化了为应用程序添加实时能力的过程，实现了服务器与客户端之间无缝的双向通信。
+
+我们深入研究了 `SignalR` 的配置方面，确保你有一个坚实的基础。通过理解各种配置选项和设置，你可以自定义 `SignalR` 以适应你特定的应用程序需求，从而实现最佳的性能和可扩展性。
+
+身份验证和授权是实时通信场景中至关重要的考虑，我们探索了如何保护 `SignalR` 连接。通过实现稳健的身份验证机制，你可以控制对实时功能的访问，确保只有经过授权的用户才能与你的应用程序交互。
+
+此外，我们深入探讨了 `SignalR` 的 `Streaming Hub`（流式中心）功能，它支持实时流传输场景。你学习了如何实现流式中心并优化性能，以实现大型数据集的高效流传输。这些知识使你能够构建向客户端提供连续数据流的应用程序，通过实时更新丰富用户体验。
+
+为了巩固你的理解，我们以一个全面的案例研究结束了本章。你按照步骤进行操作，并见证了 `SignalR` 和 `ASP.NET` 在现实场景中的实际实现。
+
+# 第 10 章：使用 Web APIs 实现微服务
+
+## 引言
+
+本章提供了关于如何使用 `Web APIs` 构建可扩展且具韧性的微服务的深度指南。本章侧重于扩展性，这是构建基于微服务的应用程序的关键挑战之一。
+
+本章首先提供了微服务架构的概述，以及使用 `Web APIs` 构建微服务的优势。然后，它解释了如何设计可扩展的微服务架构，包括服务发现、负载均衡和容错等主题。
+
+接着，本章深入探讨了可用于微服务应用程序的各种扩展技术，包括水平扩展、垂直扩展和自动伸缩。它提供了实现每种扩展技术的逐步说明，并附带了最佳实践和需要避免的常见陷阱。
+
+为了提供实用的案例研究，本章演示了构建一个简单但功能完整的微服务应用程序，该程序整合了章中讨论的所有扩展技术。它展示了如何设计可扩展的微服务架构、如何实现扩展技术以及如何使用 `Web APIs` 在微服务之间通信。
+
+## 结构
+
+本章涵盖以下主题：
+
+*   使用 `WebAPIs` 实现 `MicroServices`
+*   异步通信
+*   `RabbitMQ`
+*   `MicroServices` 可扩展性
+*   水平扩展
+*   垂直扩展
+*   编排器 (Orchestrators)
+*   最常用的架构模式
+*   `Backend for frontend` (BFF)
+*   `Command Query Responsibility Segregation` (命令职责分离)
+*   `Domain Driven Design` (领域驱动设计)
+*   案例研究
+
+
+
+
+
+本章将为你提供关于微服务的的基础见解，包括概述和异步通信。它深入探讨了扩展性，涵盖了水平扩展和垂直扩展，以及相关的考虑因素、优势和精细化管理。文中概述了扩展的实践实践，并介绍了关键的微服务架构模式，阐明了它们在可扩展性和韧性方面的作用。一个详细的案例研究将引导你实现一个基于微服务的应用程序，应用 `BFF` 设计模式，并探索同步和异步通信。本章为使用 `Web APIs` 构建可扩展且具韧性的微服务提供了理论见解和实操技能，涵盖了扩展策略、架构模式和现实世界中的应用。
+
+# 使用 WebAPIs 实现微服务
+
+微服务架构是一种软件开发方法，它强调将复杂的应用程序分解为更小的、独立的服务。每个服务都设计用于执行特定的业务能力，并可以独立地进行开发、部署和扩展。这些服务通过定义良好的 `APIs` 相互通信，使其能够无缝协同工作。微服务提供了许多优势，包括提高可扩展性、灵活性和韧性。它们允许团队并行工作，为每个服务使用不同的技术，并轻松地替换或升级单个组件。然而，管理分布式系统的复杂性以及确保服务之间有效的通信是需要解决的挑战。通过适当的设计和实现，微服务可以帮助组织构建高度模块化和适应性的系统，能够快速响应变化的业务需求。
+
+# 异步通信
+
+在处理微服务架构时，异步通信至关重要，在尝试扩展这些微服务时，它是必不可少的。通过异步通信，我们可以在微服务之间进行通信，也可以在后台处理更重的负载的同时，对原始请求提供即时响应。这使我们拥有更好的响应能力。
+
+通过在后台处理更重的负载，我们可以对微服务之间处理的负载拥有更高的控制力，这种方法提供了多种优势：
+
+*   **提高响应能力**：微服务不需要停下来等待响应，可以在等待异步操作响应的同时，在后台继续处理其他任务。
+*   **提高韧性**：如果一个微服务失败或不可用，它不会影响其他微服务，因为它们可以继续独立运行并异步处理消息。当微服务修复并恢复上线时，它将处理队列中的所有请求。
+*   **可扩展性和负载均衡**：异步通信通过在不同处理器之间共享交换的消息，促进了微服务的水平扩展。这种方法允许我们在该处理器的所有实例之间扩展负载并进行负载均衡。
+*   **松耦合和灵活性**：异步通信促进了微服务之间的松耦合。只要消息合约保持兼容，它们就可以独立演进而不影响其他服务。
+
+为了实现异步通信，微服务向指定的通道或队列发布消息。然后，我们有其他微服务作为这些消息的消费者，并异步处理请求。
+
+让我们探索如何使用 `RabbitMQ` 处理异步通信。
+
+# RabbitMQ
+
+`RabbitMQ` 是一个开源消息中间件，充当发布者和监听者之间交换消息的可靠中间人。它实现了消息队列协议，能够跨越各种通道和路由进行无缝通信。通过 `RabbitMQ`，发布者可以将消息发送到特定队列，监听者可以在准备绪时消费这些消息。这种消息生产者和消费者之间的解耦允许系统不同组件之间进行灵活且可扩展的通信。`RabbitMQ` 提供了强大的功能，如消息持久化、消息路由和对多种消息模式的支持。它广泛用于分布式系统、微服务架构以及可靠消息交换至关重要的异步通信场景。
+
+在 `RabbitMQ` 的主要特性和关键词中，下面重点列出了几个重要的，并对每一个进行了简要解释：
+
+*   **消息代理 (Message broker)**：`RabbitMQ` 作为消息代理，促进系统不同组件之间的消息交换。它确保了消息的可靠交付和高效路由。
+*   **消息队列协议**：`RabbitMQ` 实现消息队列协议，定义了交换消息的规则和格式。该协议允许发布者将消息发送到特定队列，监听者从这些队列中消费消息。
+*   **消息 (Message)**：消息在从发布者到监听者的通道中起着至关重要的作用。这些消息包含广泛的信息，从基础文本到复杂的序列化对象。它们是数据的载体，实现了 `RabbitMQ` 系统内部不同组件之间的无缝通信和信息交换。无论是传输简单的文本内容还是复杂的序列化对象，消息都促进了数据在整个 `RabbitMQ` 基础设施中的高效。
+*   **通道 (Channel)**：作为发布者和监听者之间的逻辑通信线路。它在已建立的连接内运行，利用各种协议促进消息传输。通过利用通道，发布者可以高效地向监听者发送消息，实现 `RabbitMQ` 系统内部的无缝通信和数据交换。通道增强了消息传输的灵活性和多功能性，为不同组件之间提供了可靠且高效的通信手段。
+*   **队列 (Queue)**：`RabbitMQ` 队列遵循先先出 (`FIFO`) 原则，为发布者和监听者之间提供了存储消息的机制。消息按照接收顺序存储在队列中，并由监听者按相同顺序检索和处理。这确保了消息保持原始顺序，并以公平一致的方式进行处理。
+*   **连接 (Connection)**：形成服务器与客户端之间通信的基础。它通过利用协议建立两者之间的链接。一旦建立连接，就允许创建和运行通道，通道作为 `RabbitMQ` 系统内部的逻辑通信路径。连接充当桥梁，促进了服务器与客户端之间消息和数据的交换，实现了无缝通信与协作。
+*   **发布-订阅模型 (Publisher-subscriber model)**：`RabbitMQ` 支持发布-订阅模型，发布者将消息发送到特定队列，订阅者（或监听者）根据需要消费这些消息。这种解耦实现了异步通信和灵活扩展。
+*   **消费者 (Consumer)**：消费者是连接到 `RabbitMQ` 客户端的组件，监听特定队列以消费消息。它检索并处理发布在队列上的消息。
+*   **发布者 (Publisher)**：发布者是连接到 `RabbitMQ` 客户端的组件，将消息发送到特定队列进行发布。它负责产生并将消息传递到指定的队列，以便进一步处理或分发。
+
+
+
+
+
+## 概念
+
+### 通知 (Notification)
+在微服务上下文中，通知对于监控服务健康至关重要，可以根据特定指标自定义触发告报。这些通知作为跟踪微服务性能、可用性和整体健康状况的机制。通过定义阈值和条件，可以设置通知来主动检测并报告任何与预期行为的异常或偏差。这使得团队能够及时响应和干预，允许团队处理潜在问题并维持服务的平稳运行。可自定义通知为根据系统的特定需求和要求定制告报提供了灵活性，确保在触发关键事件或指标时，及时通知相关的利益相关者。
+
+### 死信 (Dead letter)
+死信用于存储无法被其预定监听者消费的消息。这可能发生在消息被监听者拒绝、队列满或消息达到过期时间时。死信队列作为一种回退机制，允许这些未处理的消息被重定向并存储，以便进行进一步的分析或替代处理。通过利用死信，`RabbitMQ` 提供了一种处理和管理在原始环境中无法消费的消息的方法，确保了系统中消息可靠性和容错性。
+
+### 路由 (Route)
+`RabbitMQ` 路由在根据路由键（routing keys）和交换机（exchanges）确保消息投递到相应队列方面起着至关重要的作用。这些路由作为将消息引导至预期接收者的机制能够在 `RabbitMQ` 系统内实现精确高效的消息分布。通过评估与每条消息相关的路由键，`RabbitMQ` 路由决定了消息应该交付的目标队列。这确保了消息到达对处理它们感兴趣的特定消费者或服务，以结构化和组织化的方式促进有效的通信和消息处理。
+
+### 虚拟主机 (Virtual host)
+与 `SQL Server` 数据库相比，`RabbitMQ` 虚拟主机可以被视为 `SQL Server` 数据库。就像 `SQL Server` 中的数据库一样，`RabbitMQ` 中的虚拟主机是一个自包含的环境，拥有自己的一套设置和配置。每个虚拟主机都独立于其他主机运行，拥有自己的通道（channels）、绑定（bindings）、协议、用户和其他相关属性。它提供了资源的逻辑隔离，允许不同的应用程序或服务在各自的虚拟主机内隔离运行。这种隔离确保了一个虚拟主机中的设置和实体不会干扰或影响其他虚拟主机中的内容，为消息环境提供了某种程度的自主性和控制力。
+
+### 交换机 (Exchange)
+在 `RabbitMQ` 中，交换机在根据属性将消息路由到其相应队列方面起着关键作用。交换机充当路由代理，接收发布者的消息并决定其目标队列。路由决策通过评估属性做出，例如消息的路由键、报头（headers）或其他指定的标准。然后，交换机将消息转发到匹配定义的路由规则的适当队列中。这种机制实现了精确且有针对性的消息投递，确保消息到达专门感兴趣消费它们的队列。通过利用交换机，`RabbitMQ` 提供了一种灵活且可配置的路由机制，支持各种消息分布模式，并促进了发布者和消费者之间的有效通信。`RabbitMQ` 提供了几种类型的交换机：
+
+- **直接交换机 (Direct exchange)**：此交换机根据消息的路由键与队列绑定中指定的路由键之间的精确匹配，将消息投递到队列。
+- **主题交换机 (Topic exchange)**：发送到主题交换机的消息根据路由键定义的模式路由到队列。通配符如 `*`（匹配单个单词）和 `#`（匹配零或多个单词）允许根据特定模式进行灵活路由。
+- **泛洪交换机 (Fanout exchange)**：泛洪交换机将消息广播到绑定它的所有队列。路由键被忽略，消息分发到所有队列。
+- **报头交换机 (Headers exchange)**：报头交换机使用消息报头而不是路由键进行路由决策。报头与绑定中指定的报头进行匹配，以确定适当的目标队列。
+
+### 绑定 (Bindings)
+`RabbitMQ` 绑定将队列与交换机连接起来，定义了交换机与队列之间的关系。它们根据路由规则决定消息如何从交换机路由到特定队列（队列）。
+
+# 使用 RabbitMQ 的主要优势
+
+- **多平台通信**：`RabbitMQ` 支持在 `JSON` 等常用语言中进行消息序列化和反序列化，实现了不同平台和技术之间的无缝通信。
+- **异步操作**：`RabbitMQ` 允许异步消息传递，确保服务在等待响应时不会锁定或阻塞。这实现了组件之间高效且非阻塞的通信。
+- **开源且社区驱动**：`RabbitMQ` 是一个开源消息中间件，拥有充满活力的社区致力于其开发和改进。这确保了持续的增强、错误修复以及大量资源和支持的可用性。
+- **多语言支持**：`RabbitMQ` 与多种编程语言兼容，允许开发者使用其偏好的语言进行消息生产和消费。这种灵活性促进了语言多样性，并允许团队使用其偏好的技术栈工作。
+- **多协议支持**：`RabbitMQ` 支持用于交换消息的多种协议。它与流行的消息协议兼容，如高级队列队列协议 (`AMQP`)、消息队列遥测传输协议 (`MQTT`) 等。这种通用性允许不同系统和技术的无缝集成。
+- **可靠性与容错性**：`RabbitMQ` 通过提供消息持久化、交付确认和持久性队列等功能确保消息的可靠投递。它还支持集群和镜像队列等容错设置，跨节点间复制消息以实现高可用性和数据冗余。
+- **可扩展性**：`RabbitMQ` 设计用于处理高消息吞吐量，并通过添加节点来水平扩展以分分消息处理负载。这允许应用程序适应不断增长的工作负载并高效处理峰值流量。
+- **灵活的路由和消息模式**：`RabbitMQ` 提供各种交换机类型和路由机制，实现了灵活的消息路由并支持不同的消息模式，如发布/订阅、请求/响应和基于主题的过滤。这种灵活性允许分布式系统中实现复杂的通信模式。
+- **死信队列 (Dead-letter queues)**：`RabbitMQ` 提供了死信队列，捕获无法成功处理的消息。此功能允许对失败的消息进行适当处理和分析，有助于消息系统的诊断和调试。
+- **管理与监控 (Management and monitoring)**：`RabbitMQ` 提供了友好的管理界面和全面的监控功能。这些工具允许管理员监控队列、连接、消息速率和其他指标，帮助他们了解系统性能、排排除问题并进行有效的资源管理。
+
+
+
+
+
+## 扩展性与集成
+
+- 扩展性与集成：RabbitMQ 提供了一个插件系统，允许通过额外的功能和协议来扩展其功能。它与其他系统和框架良好地集成，使其与现代软件开发中广泛使用的各种工具和技术兼容。
+
+通过利用这些优势，RabbitMQ 赋予开发者构建健壮且灵活的消息解决方案的能力，促进不同组件和系统之间的高效通信。
+
+## 微服务可扩展性
+
+可扩展性是构建微服务应用程序的关键方面，使其能够处理不断增加的负载并适应不断变化的需求。在本节中，我们将深入探讨微服务可扩展性主题，探索三种关键策略：水平扩展性、垂直扩展性和编排器。
+
+微服务可扩展性是指通过添加资源或在系统范围内重新分配工作负载，高效有效地处理增长需求的能力。它在确保微服务能够处理增加的流量、保持最佳性能并提供无缝用户体验方面发挥着至关重要的作用。
+
+水平扩展涉及通过向系统添加更多微服务实例在水平方向上扩展应用程序。这种方法允许将工作负载分布到多个实例上，从而提高性能、增强可用性并更易实现负载均衡。
+
+另一方面，垂直扩展侧重于通过增加分配给单个微服务的资源来扩展该微服务。这可能涉及升级硬件、增加内存容量或增强处理能力。当微服务需要更多资源来高效处理特定任务时，垂直扩展特别有用。
+
+除了水平扩展和垂直扩展之外，我们还将探索编排器在管理和协调扩展过程中的作用。编排器（如 `Kubernetes` 或 `Docker Swarm`）提供了容器化和编排能力，允许在跨机器集群上对微服务进行高效的部署、扩展和管理。
+
+通过理解并实施这些扩展性策略并有效利用编排器，基于微服务的应用程序可以实现必要的灵活性、性能和韧性，以适应不同的负载并确保无缝的用户体验。
+
+## 水平扩展性
+
+水平扩展也称为向外扩展（scaling out），是一种通过向系统添加更多微服务实例来增加微服务应用程序容量的策略。水平扩展不是升级单个微服务，而是侧重于将工作负载分布到多个实例上，从而提高性能、可用性并更易于进行负载均衡。你可以从下图中看到水平扩展的工作原理：
+
+![](img/Figure_10.1.png)
+
+图 10.1：水平扩展工作原理的可视化解释。
+
+在对微服务进行水平扩展时，你会在多个服务器或虚拟机上复制它，创建一个实例集群。每个实例都是独立的，可以处理部分入的请求或工作负载。这种工作负载的分布确保了整个系统能够处理增加的流量并提供无缝的用户体验。
+
+水平扩展具有多项优势：
+
+- 提高性能和吞吐量：通过添加更多微服务实例，你可以并发处理数量更多的请求，从而提高系统的整体性能和吞吐量。工作负载分布在多个实例上，减轻了每个单个微服务的处理负担。
+- 提高容错能力和可用性：通过水平扩展，如果微服务的某个实例故障或出现问题，其他实例可以继续处理请求，确保了高可用性和容错性。这种冗余有助于防止单点故障，并最大限度地减少故障对整个系统的影响。
+- 负载均衡：水平扩展促进了负载均衡，因为请求可以使用各种负载均衡策略分布到多个实例上。这确保了每个实例都得到优化利用，并防止任何特定微服务实例的过载。
+- 弹性：水平扩展实现了弹性，允许你根据需求增加或减少微服务实例的数量。你可以动态地添加或删除实例以适应不同的负载，确保资源的高利用。
+
+然而，水平扩展也带来了一些考虑因素：
+
+- 增加复杂性：管理多个微服务实例增加了部署、配置以及实例之间同步的复杂性。需要适当的编排和管理工具来处理扩展性并确保实例之间的一致性。
+- 通信与一致性：在水平扩展微服务时，你需要确保实例之间的通信和数据一致性。可以使用消息队列或分布式数据库等技术来同步跨实例的数据。
+- 状态管理：如果微服务维护状态信息（如用户会话），水平扩展该微服务需要仔细考虑状态管理策略。可以使用会话亲性或分布式会话管理技术来处理跨实例的状态。
+
+当微服务的工作负载可以被多个实例独立划分和处理时，水平扩展特别有效。通过将工作负载负载到各个实例，你可以在基于微服务的应用程序中提高性能、容错能力以及处理不同负载的灵活性。
+
+## 垂直扩展性
+
+垂直扩展也称为向内扩展（scaling up），是一种通过为单个微服务分配更多资源来增加其容量的策略。在微服务的语境下，垂直扩展涉及升级硬件或调整分配给特定微服务的资源，以处理增加的负载或性能需求。你可以从下图中看到垂直扩展的工作原理：
+
+![](img/Figure_10.2..png)
+
+图 10.2：垂直扩展工作原理的可视化解释
+
+在对微服务进行垂直扩展时，你专注于通过增加 CPU 功率、内存、存储容量或网络带宽等因素来增强其能力。这可以通过升级底层基础设施来实现，例如迁移到更强大的服务器、添加更多 RAM 或增加 CPU 核心数。
+
+以下是垂直扩展提供的优势：
+
+- 提高性能：通过为微服务分配额外资源，你增强它的处理能力，使其能够处理更多并发请求并高效执行复杂计算。这导致响应时间的缩短和整体性能的提升。
+- 简化维护：通过垂直扩展，你处理的是微服务的单个实例，更容易管理和维护。升级、补丁和监控工作可以集中在单个垂直扩展的微服务上，而不是管理多个实例。
+- 成本效益：在某些情况下，垂直扩展可能比水平扩展更具成本效益，因为可以通过升级现有基础设施来利用它，而不是投资额外的服务器或虚拟机。
+
+然而，垂直扩展也有其局限性：
+
+
+
+
+
+- **天花板限制**：单个微服务实例的垂直扩展有一个最大限制。最终，你可能会达到一个点，此时进一步的垂直扩展变得不切实际或成本高昂。
+- **单点故障**：由于垂直可扩展性关注的是微服务的单个实例，如果该实例发生故障，整个服务可能会宕机。需要建立冗余措施和容错机制来降低这种风险。
+- **灵活性受限**：垂直扩展性适用于单个微服务，这意味着每个微服务可能有独特的扩展性需求。对于具有不同资源需求的不同微服务，进行独立扩展可能具有挑战性。
+
+当微服务的性能受限于资源限制的瓶颈时，垂直扩展性最为适用。通过升级分配给微服务的资源，你可以增强其能力并高效地处理增加的负载。然而，仔细监控资源使用情况并对未来可能出现的任何瓶颈或限制进行计划至关重要。
+
+## 编排器 (Orchestrators)
+
+编排器通过提供容器化和编排能力，在微服务应用程序的可扩展性中发挥着至关重要的作用。它们帮助管理和协调跨机器集群的微服务的部署、扩展和管理。一些流行的编排器包括 `Kubernetes`、`Service Fabric`、`Docker Swarm` 和 `Apache Mesos`。
+
+在讨论微服务时，编排的主要角色如下：
+
+- **部署与容器化**：编排器通过将微服务封装在容器中促进微服务的部署。容器为微服务提供了轻量且隔离的运行环境，确保跨不同环境的一致部署，并简化打包和分发过程。
+- **可扩展与负载均衡**：编排器根据需求自动扩展微服务实例的数量来实现水平扩展。它们监控资源使用情况，并动态添加或删除实例以平衡负载并确保资源的最优利用。诸如 `round-robin` 或 `least-connection` 等负载均衡技术将传入的请求分发到可用的微服务实例。
+- **服务发现**：编排器协助系统中微服务的发现和注册。它们为微服务提供了相互发现和通信的机制，允许进行动态扩展和扩展之间的无缝通信。服务注册表和基于 `DNS` 的服务发现通常用于促进编排环境中的服务发现。
+- **健康监控与自愈**：编排器持续监控微服务的健康和可用性。它们可以检测故障或无响应的实例，并自动执行自愈操作，例如重新启动故障实例或将其重新调度到健康的节点上。这有助于确保整个系统的高可用性和韧性。
+- **配置管理**：编排器提供了跨不同环境管理微服务配置的能力。它们实现了中心化的配置管理，允许动态更新并确保跨实例的配置的一致性。
+- **滚动部署与版本控制**：编排器支持滚动部署，允许逐步部署新版本的微服务，而不会导致系统停机或中断。它们支持滚动更新、`canary deployments`（金丝雀发布）或蓝绿部署，确保微服务不同版本之间的平滑过渡。
+- **资源管理**：编排器通过管理计算资源（如 `CPU`、`memory` 和 `storage`）到微服务实例的分配来优化资源分配。它们确保根据负载高效分配资源，并优先考虑关键服务。
+
+通过利用编排器，微服务架构可以实现增强的可扩展性、灵活性可管理性。编排器简化了微服务部署、扩展和维护任务的管理，实现了资源的高利用、服务之间的无缝通信以及健壮的容错机制。
+
+## 最常用的架构模式
+
+在使用 Web APIs 实现微服务的语境下，考虑能够增强整个系统设计、扩展性和可维护性的各种架构模式至关重要。本节重点讨论一些最常用的架构模式：前端后端 (`BFF`)、命令与查询职责分离 (`CQRS`)、领域驱动设计 (`DDD`) 和 `circuit breaker`（断路器）。
+
+这些架构模式为解决基于微服务的应用程序中的特定挑战提供了宝贵的指导和最佳实践。每种模式都有其独特的优势和考虑因素，允许开发者在设计和实现微服务架构时做出明智的决策。
+
+在接下来的章节中，我们将详细探索这些模式，理解它们的核心概念、优势以及它们如何被有效地应用到微服务环境中。通过熟悉这些架构模式，我们可以利用它们的优势来构建可扩展、韧性强且可维护的微服务应用程序。
+
+## 前端后端 (Backend for frontend)
+
+前端后端 (`BFF`) 设计模式是一种用于微服务应用程序的常用架构模式，旨在提高前端客户端与微服务后端之间通信的效率和灵活性。
+
+在微服务架构中，不同的前端应用或客户端在数据检索和处理方面可能有特定的需求或偏好。`BFF` 模式旨在通过引入一个名为前端后端的中间层来解决这些问题。
+
+`BFF` 模式的核心思想是为每个前端客户端或用户界面创建一个专用的后端服务。该后端服务充当客户端与底层微服务之间的网关或代理。它负责将从多个微服务检索的数据进行聚合、转换和适配，将其转换为针对特定需求优化的格式。
+
+`BFF` 模式具有多项优势：
+
+- **定制化数据与展示**：每个前端客户端对数据检索和展示可能有独特的需求。`BFF` 服务允许对数据和展示逻辑进行定制，以匹配每个客户端的特定需求。它可以从多个微服务聚合数据，执行数据转换，并根据客户端的要求格式响应，减少不必要的数据传输并提高客户端应用程序的性能。
+- **降低客户端复杂度**：通过为每个客户端提供专用的后端服务，`BFF` 模式简化了客户端代码，并降低了处理各种微服务交互的复杂性。客户端应用程序只需要与 `BFF` 服务通信，由它抽象了处理多个微服务及其 API 的复杂性。
+- **提升性能**：`BFF` 服务通过并行从多个微服务获取必要数据来优化数据检索，从而减少客户端与后端之间的往返次数。它还可以实现缓存机制或预取策略以进一步增强性能。
+
+
+
+
+
+*   安全与授权：BFF 服务可以集中处理安全和授权逻辑，处理客户端请求的身份验证和授权。它可以执行安全策略、验证用户权限，并确保客户端仅接收其授权访问的数据。
+*   版本控制与演进：BFF 模式允许为不同的前端客户端对后端服务进行独立的版本控制和演进。每个 BFF 服务都可以进行更新或修改，以满足特定客户端不断变化的需求，而不会影响其他客户端或底层微服务。
+
+需要注意的是，BFF 模式引入了额外的复杂性，需要仔细的设计和维护。然而，当实施良好时，它通过为每个前端客户端提供定制的后端服务，极大地提高了微服务应用的整体性能、定制化安全性。
+
+## 命令查询职责分离
+
+命令查询职责分离（`CQRS`）设计模式是一种基于微服务的应用程序中广泛使用的架构模式，它通过使用独立的模型和通道将读、写操作的关注点分离。
+
+在传统的单体架构中，读、写操作通常使用相同的数据模型。然而，随着应用程序复杂性的增加和可扩展性要求的提高，将命令（写操作）与查询（读操作）的处理分离，对于优化性能、可扩展性和可维护性是有益的。这就是 `CQRS` 模式发挥作用的地方。
+
+在 `CQRS` 模式中，应用程序的数据模型被分为两个独立的模型：命令模型和查询模型：
+
+*   命令模型：
+    *   `Command Model` 负责处理修改应用程序状态的写操作或命令。
+    *   它封装了处理和应用命令所需的业务逻辑和验证规则。
+    *   它更新数据存储并发布事件或通知，以通信已发生的更改。
+    *   它关注一致性和事务完整性，确保所有更改都成功应用。
+*   查询模型：
+    *   `Query Model` 负责处理从应用程序状态中检索数据的读操作或查询。
+    *   它提供了专门为高效查询和检索设计的优化数据表示或投影。
+    *   它可以对数据进行反规范化或转换，以支持不同的读取用例并提高查询性能。
+    *   它可能使用针对读密集型操作优化的专用数据存储或缓存机制。
+
+`CQRS` 中命令模型和查询模型的分带来了若干益处：
+
+*   性能与可扩展性：通过分离读、写操作，你可以根据其特定目的优化数据模型和存储机制。这允许根据负载特征独立地扩展每个模型。`Query Model` 可以针对快速高效的读取进行深度优化，而 `Command Model` 则可以优先考虑一致性和事务操作。
+*   增强的灵活性：`CQRS` 允许专门为不同的读取用例定制数据表示和投影。这允许实现优化的查询、更快的响应时间以及更佳的用户体验。
+*   解耦与独立：命令模型和查询模型的的分允许在开发、部署和可扩展性方面实现解耦和独立。每个模型都可以独立开发和演进，能够在需要时实现新功能或扩展组件的灵活性和敏捷性。
+*   事件驱动架构：`CQRS` 通常与事件驱动架构密切相关。当发生变化时，命令模型发布事件，其他微服务或组件可以消费这些事件进行实时更新，进一步增强解耦性和响应能力。
+*   与微服务的对齐：`CQRS` 与微服务架构的原则高度契合。每个微服务都可以拥有自己的命令和查询模型，使团队专注于特定的职责，并更容易扩展和演进单个微服务。
+
+值得注意的是，与传统的基于 `CRUD` 的方法相比，实现 `CQRS` 会引入额外的复杂性。它需要仔细考虑数据一致性、事件驱动通信以及命令模型与查询模型之间的同步。然而，在复杂且可扩展的应用程序中适当使用，`CQRS` 可以提供显著的性能和灵活性优势，允许微服务架构中进行高效的读写操作。
+
+## 领域驱动设计
+
+领域驱动设计（`DDD`）是一种设计模式和方法论，专注于理解和建模软件应用程序的核心领域。它强调领域专家、开发者和利益相关者之间的协作方法，以捕获业务领域并在软件设计中表达它。
+
+当应用于微服务架构时，`DDD` 提供了一套原则和模式，用于设计单个微服务及其交互。以下是微服务中 `DDD` 设计模式的概述：
+
+*   边界上下文（Bounded context）：
+    *   `DDD` 定义了 `Bounded Context` 概念，代表应用程序内部一个特定的业务领域。
+    *   微服务架构中的每个微服务通常对应一个 `Bounded Context`。
+    *   `Bounded Contexts` 封装了领域逻辑，并定义了该范围内一致性和语言的边界。
+*   聚合根（Aggregate）：
+    *   一个 `Aggregate` 是 `Bounded Context` 内部一组被视为单个单元的相关对象簇。
+    *   `Aggregates` 封装了领域逻辑，维护一致性边界并确保不变性（invariant）。
+    *   微服务通常与一个或多个 `Aggregates` 对齐，专注于特定的业务能力。
+*   上下文映射（Context mapping）：
+    *   `Context mapping` 指定义边界上下文之间关系和交互的技术。
+    *   它定义了微服务之间如何通信和协作。
+    *   根据微服务之间特定的集成需求，可以应用不同的上下文映射模式，例如共享内核（Shared Kernel`）、生产者-消费者（Customer-Supplier）或反腐层层（Anti-Corruption Layer）。
+*   通用语言（Ubiquitous language）：
+    *   `DDD` 强调在领域专家和开发者之间使用一种共享语言，即 `Ubiquitous language`。
+    *   `Ubiquitous language` 用于建模微服务中的领域概念、行为和关系。
+    *   它有助于将业务理解与软件实现相结合，并促进有效的沟通与协作。
+*   聚合设计（Aggregate design）：
+    *   `DDD` 为设计 `Aggregates` 提供了指导，包括识别 `Aggregates`、定义 `Aggregate roots` 以及管理 `Aggregates` 内部的一致性。
+    *   `Aggregates` 的设计应确保在微服务边界内的事务一致性并执行业务规则。
+*   领域事件（Domain events）：
+    *   `Domain events` 是 `DDD` 和微服务通信的重要方面。
+    *   `Domain events` 代表领域内发生的事件，可以用于微服务间的通信和最终一致性。
+    *   事件由微服务发布，并被其他微服务消费以触发操作或更新其本地状态。
+*   战略设计（Strategic design）：
+    *   `DDD` 鼓励进行战略设计决策，使整体微服务架构与业务目标保持一致。
+
+
+
+
+战略设计涉及定义上下文映射模式、`Aggregate`（聚合）边界以及整体系统架构，以确保扩展性、可维护性和业务敏捷性。
+
+通过在微服务架构中应用 `DDD`，重点转向了理解和建模核心领域，从而产生更具可维护性、可扩展性且符合业务需求的微服务。`DDD` 有助于准确捕获业务需求，实现领域专家与开发者之间的有效协作，并确保微服务架构能够反映业务领域的复杂性。
+
+## 案例研究
+
+在本次案例研究中，我们正在实现 `Backend for Frontend (BFF)` 设计模式，其中一个 `Weather Microservice`（天气微服务）作为两个不同 `BFF` 的前端服务。这些 `BFF` 服务于具有不同天气偏好的客户端，其中一个关注炎热天气，另一个关注寒冷天气。此外，我们还整合了一个事件处理器来高效处理异步请求。
+
+对于居住在炎热地区的客户端，一个 `BFF` 专门用于满足它们的特定需求。它编排请求并从底层微服务检索相关数据，将其聚合并转换为适用于客户端的格式。同样，为偏好冷天气的客户端提供的 `BFF` 则提供了专门的接口，并检索特定其偏好的数据。
+
+为了处理异步请求和事件，我们采用了事件处理器。该组件以异步方式高效地处理事件，确保 `BFFs` 能够处理并发请求并保持响应。事件处理器在管理数据流方面起着至关重要的作用，在后台处理事件的同时允许 `BFFs` 保持高性能和可扩展性。
+
+总体，`BFF` 设计模式、`weather microservice` 和事件处理器的结合使我们能够根据客户端的偏好提供定制化的天气信息。通过抽象复杂性、处理异步请求并为炎热和寒冷天气客户端提供定制响应，确保了无缝的用户体验，正如我们在图中更好地描述这一过程所示：
+
+![](img/Figure_10.3..png)
+
+图 10.3：表示实际研究案例的图。
+
+要开始我们的实际案例研究，请按照以下步骤操作：
+
+1. 添加一个新的 `Web API` 项目作为我们的前端微服务。
+2. 添加一个新的 `Console Application Project`（控制台应用程序项目），在这个新的控制台中，我们需要添加以下包：
+    * 添加 `nuget package`
+        * `RabbitMQ.Client`
+3. 添加两个新的 `Web API` 项目，它们将成为我们的 `BFFs`。我们将它们命名为 `BFFOne` 和 `BFFTwo`：
+    * 添加 `nuget packages`
+        * `Newtonsoft.Json`
+        * `RabbitMQ.Client`
+
+最后，这就是我们拥有的项目解决方案。这 3 个 `Web APIs` 与控制台应用程序基本上相同，如下所示：
+
+![](img/Figure_10.4..png)
+
+图 10.4：包含所有 4 个项目的解决方案管理器。
+
+现在，让我们修改项目以应用异步通信的 `BFF` 设计模式。需要对项目进行一些修改以表示该设计模式。
+
+首先，让我们调整 `MicroServiceWebAPI` 项目。我们将天气摘要分为炎热摘要和寒冷摘要，这些摘要将作为我们的数据库工作。
+
+这是 `MicroServiceWebAPI` 项目的 `WeatherForecastController`。
+
+```csharp
+[ApiController]
+[Route("[controller]")]
+public class WeatherForecastController : ControllerBase
+{
+    private static readonly string[] HotSummaries = new[] { "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching" };
+    private static readonly string[] ColdSummaries = new[] { "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy" };
+
+    private readonly ILogger<WeatherForecastController> _logger;
+
+    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    {
+        _logger = logger;
+    }
+
+    [HttpGet(Name = "GetWeatherForecast")]
+    public IEnumerable<WeatherForecast> Get([FromQuery] string weather)
+    {
+        switch (weather.ToLower())
+        {
+            case "cold":
+                return Enumerable.Range(1, 5).Select(index =>
+                    new WeatherForecast
+                    {
+                        Date = DateTime.Now.AddDays(index),
+                        TemperatureC = Random.Shared.Next(-20, 15),
+                        Summary = ColdSummaries[Random.Shared.Next(ColdSummaries.Length)]
+                    }).ToArray();
+            case "hot":
+                return Enumerable.Range(1, 5).Select(index =>
+                    new WeatherForecast
+                    {
+                        Date = DateTime.Now.AddDays(index),
+                        TemperatureC = Random.Shared.Next(15, 55),
+                        Summary = HotSummaries[Random.Shared.Next(HotSummaries.Length)]
+                    }).ToArray();
+            default:
+                return Enumerable.Empty<WeatherForecast>();
+        }
+    }
+}
+```
+
+所有 3 个项目中的 `WeatherForecast` 类也做了一个小小的更改：
+
+```csharp
+public class WeatherForecast
+{
+    public DateTime Date { get; set; }
+    public int TemperatureC { get; set; }
+    public int TemperatureF => (int)(TemperatureC * 9 / 5) + 32;
+    public string Summary { get; set; }
+}
+```
+
+现在，让我们更新两个 `BFF` 控制器。每个 `BFF` 在获取天气时都会向微服务发送关于天气的特定信息。
+
+```csharp
+[ApiController]
+[Route("[controller]")]
+public class WeatherForecastController : ControllerBase
+{
+    private readonly ILogger<WeatherForecastController> _logger;
+
+    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    {
+        _logger = logger;
+    }
+
+    [HttpGet(Name = "GetWeatherForecast")]
+    public async Task<IEnumerable<WeatherForecast>> Get()
+    {
+        var result = new List<WeatherForecast>();
+        string baseURL = "https://localhost:7173/";
+        string url = baseURL + "weather=hot";
+        using (HttpClient client = new HttpClient())
+        {
+            using (HttpResponseMessage responseMessage = await client.GetAsync(url))
+            {
+                using (HttpContent content = responseMessage.Content)
+                {
+                    string data = await content.ReadAsStringAsync();
+                    result = JsonConvert.DeserializeObject<List<WeatherForecast>>(data);
+                }
+            }
+        }
+        return result;
+    }
+
+    [HttpPost]
+    public void Post([FromBody] WeatherForecast weatherForecast)
+    {
+        var factory = new ConnectionFactory() { HostName = "localhost" };
+        using (var connection = factory.CreateConnection())
+        using (var channel = connection.CreateModel())
+        {
+            channel.QueueDeclare(queue: "weatherForecastSampleQueue", durable: false, exclusive: false, autoDelete: false, arguments: null);
+            string message = "From BFF One, Date: " + weatherForecast.Date + ", Temperature in Cº: " + weatherForecast.TemperatureC + " and Summary: " + weatherForecast.Summary;
+            var body = Encoding.UTF8.GetBytes(message);
+            channel.BasicPublish(exchange: "", routingKey: "weatherForecastSampleQueue", basicProperties: null, body: body);
+        }
+    }
+}
+```
+
+来自冷天气 BFF 的 `WeatherForecastController` 专门为处理寒冷天气场景设计，正如你在下方代码所示：
+
+
+
+
+
+```csharp
+public WeatherForecastController(ILogger<WeatherForecastController> logger)
+{
+    _logger = logger;
+}
+
+[HttpGet(Name = "GetWeatherForecast")]
+public async Task<IEnumerable<WeatherForecast>> Get()
+{
+    var result = new List<WeatherForecast>();
+    string baseURL = "https://localhost:7173/";
+    string url = baseURL + "WeatherForecast?weather=cold";
+    using (HttpClient client = new HttpClient())
+    {
+        using (HttpResponseMessage responseMessage = await client.GetAsync(url))
+        {
+            using (HttpContent content = responseMessage.Content)
+            {
+                string data = await content.ReadAsStringAsync();
+                result = JsonConvert.DeserializeObject<List<WeatherForecast>>(data);
+            }
+        }
+    }
+    return result;
+}
+
+[HttpPost]
+public void Post([FromBody] WeatherForecast weatherForecast)
+{
+    var factory = new ConnectionFactory()
+    {
+        HostName = "localhost"
+    };
+    using (var connection = factory.CreateConnection())
+    using (var channel = connection.CreateModel())
+    {
+        channel.QueueDeclare(
+            queue: "weatherForecastSampleQueue",
+            durable: false, exclusive: false, autoDelete: false,
+            arguments: null);
+        string message = "From BFF Two, Date: "
+            + weatherForecast.Date + ", Temperature in Cº: "
+            + weatherForecast.TemperatureC + " and Summary: "
+            + weatherForecast.Summary;
+        var body = Encoding.UTF8.GetBytes(message);
+        channel.BasicPublish(exchange: "",
+            routingKey: "weatherForecastSampleQueue",
+            basicProperties: null, body: body);
+    }
+}
+```
+
+事件处理器负责订阅队列并处理其入的消息。
+
+以下是事件处理器的 `Program.cs`：
+
+```csharp
+// 更多信息请访问 https://aka.ms/new-console-template
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
+using System;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+Console.WriteLine("Hello, World!");
+var factory = new ConnectionFactory() { HostName = "localhost" };
+string queueName = "weatherForecastSampleQueue";
+using (var rabbitMqConnection = factory.CreateConnection())
+{
+    using (var rabbitMqChannel = rabbitMqConnection.CreateModel())
+    {
+        Thread.Sleep(5000);
+        rabbitMqChannel.QueueDeclare(queue: queueName,
+            durable: false,
+            exclusive: false,
+            autoDelete: false,
+            arguments: null);
+        rabbitMqChannel.BasicQos(prefetchSize: 0, prefetchCount: 1,
+            global: false);
+        int messageCount = Convert.ToInt16(rabbitMqChannel.MessageCount(queueName));
+        Console.WriteLine(" Listening to the queue. This channels has {0} messages on the queue", messageCount);
+        var consumer = new EventingBasicConsumer(rabbitMqChannel);
+        consumer.Received += (model, ea) =>
+        {
+            var message = Encoding.UTF8.GetString(ea.Body.ToArray());
+            Console.WriteLine(" Weather Forecast received: " + message);
+            rabbitMqChannel.BasicAck(deliveryTag: ea.DeliveryTag,
+                multiple: false);
+            Thread.Sleep(1000);
+        };
+        rabbitMqChannel.BasicConsume(queue: queueName,
+            autoAck: false,
+            consumer: consumer);
+    }
+}
+```
+
+在按下 `F5` 运行项目之前，你必须配置解决方案以同时调试所有项目。
+
+右键点击项目解决方案 | `Properties`：
+
+![](img/Figure_10.5..png)
+
+图 10.5：解决方案属性窗口
+
+从 BFF 1 发起 GET 请求，我们在下方的 Swagger 中看到了如下输出：
+
+![](img/Figure_10.6..png)
+
+图 10.6：BFF 1 的 GET 请求响应
+
+从 BFF 1 发起 POST 请求，我们在下方的 Swagger 中看到了如下输出：
+
+![](img/Figure_10.7..png)
+
+图 10.7：BFF 1 的 POST 请求响应
+
+从 BFF 1 发起 GET 请求，我们在下方的 Swagger 中看到了如下输出：
+
+![](img/Figure_10.8..png)
+
+图 10.8：BFF 1 的 GET 请求响应
+
+从 BFF 1 发起 POST 请求，我们在下方的 Swagger 中看到了如下输出：
+
+![](img/Figure_10.9..png)
+
+图 10.9：BFF 1 的 POST 请求响应
+
+从 BFF 1 发起 GET 请求，我们在下方的 Swagger 中看到了如下输出：
+
+![](img/Figure_10.10..png)
+
+图 10.10：BFF 1 的 GET 请求响应
+
+从 BFF 1 发起 POST 请求，我们在下方的 Swagger 中看到了如下输出：
+
+![](img/Figure_10.11..png)
+
+图 10.11：BFF 1 的 POST 请求响应
+
+
+
+
+
+在接下来的章节中，我们将探索使用 Docker 和 Azure DevOps 进行持续集成与持续部署（CI/CD）的动态领域图景。CI/CD 是现代软件开发的支柱，本章将探讨它们与 Docker 技术以及 Azure DevOps 服务的无缝集成。我们将深入研究 Docker 在容器化中发挥的关键作用，确保跨越不同环境的一致性。它与 Azure DevOps 的协同效应增强了 CI/CD 流水线的效率，实现了自动化测试、部署和交付。加入我们，揭示这种集成的力量，提供实用的见解和策略，以简化您的开发工作流并提高软件交付过程的敏捷性。
+
+加入我们书籍的 Discord 空间
+
+加入书籍 Discord 工作区，获取最新更新、优惠、全球科技动态、新发布以及与作者的互动：
+
+`https://discord.bpbonline.com`
+
+![](img/fm1.png)
+
+# 第 11 章 使用 Docker 和 Azure DevOps 实现 CI/CD
+
+## 引言
+
+本章提供了关于如何使用 Docker 和 Azure DevOps 为容器化应用实现持续集成和持续部署（CI/CD）流水线的实用指南。章节首先概述了 Docker 及其在容器化中的作用。随后介绍了 Azure DevOps，并解释了如何使用它来自动化容器化应用的 CI/CD 过程。
+
+接着，本章将详细介绍构建和部署容器化应用所需的各种 Docker 命令。它解释了如何构建 Docker 镜像、将其推送到 Docker Hub，以及将其部署到 Azure 容器注册表。然后，本章概述了持续集成和持续部署，以及它们如何用于简化应用的开发和部署过程。它解释了如何使用 Azure DevOps 自动化 CI/CD 过程，包括配置构建流水线、发布流水线和环境管理等主题。
+
+为了提供实用的案例研究，本章将演示如何构建一个示例容器化应用、使用 Azure DevOps 设置 CI/CD 流水线，并将应用部署到生产环境。
+
+## 结构
+
+本章涵盖了以下主题：
+
+*   概述
+*   Docker
+    *   Docker 容器
+    *   容器镜像
+    *   Docker 镜像
+    *   容器镜像与 Docker 镜像
+    *   Docker 对你应用的优势
+    *   理解 Dockerfile
+    *   Docker 命令
+*   Azure DevOps
+*   持续集成
+    *   持续集成的益处
+*   持续部署
+    *   持续部署的益处
+*   案例研究
+    *   创建 Dockerfile
+    *   创建 Docker 镜像
+    *   应用持续集成
+    *   应用持续部署
+
+## 目标
+
+在本章中，读者将掌握 Docker 在容器化中作用的基础知识，并深入研究 Azure DevOps 这一全面的 DevOps 平台。通过探索 Docker 命令，他们将学习构建和部署容器化应用，理解 CI 在软件开发中的重要性。配置 Azure DevOps 流水线可以实现 CI 过程自动化，对 CD 的益处产生深入解。本章展示了 Azure DevOps 在 CD 流水线自动化中的作用，强调了发布流水线和环境管理。通过实践经验和实用的案例研究，读者将获得使用 Docker 和 Azure DevOps 高效设置 CI/CD 流水线的技能，确保对容器化和 DevOps 实践有全面的理解。
+
+## 概述
+
+在 Azure DevOps 中结合 Docker 进行 CI 和 CD，允许团队自动化容器化应用的构建、测试和部署。它利用了流行的容器化平台 Docker 的功能，以及微软提供的全面 DevOps 工具集 Azure DevOps。
+
+通过将 Docker 集成到 Azure DevOps 流水线，开发者可以轻松地构建 Docker 镜像、将其推送到镜像仓库，并将其部署到各种环境（包括开发、测试和生产环境）。这种集成促进了在容器化环境中实现一致且可靠的应用部署。
+
+通过 CI，每当开发者推送代码时，代码更改就会自动构建、测试并集成到共享仓库中。这确保了应用始终处于可部署状态，从而实现更快的反馈并减少集成问题。
+
+CD 在 CI 的基础上更进一步实现了部署过程自动化，允许容器化应用无缝交付到不同的环境。Azure DevOps 提供了配置发布流水线、定义部署策略以及协调将 Docker 容器部署到 Azure Kubernetes Service (AKS)、Azure App Service 或其他目标平台的功能。
+
+Docker 和 Azure DevOps 的结合还提供了扩展性、可移植性和可复现等优势。Docker 的容器化技术使应用程序能够在不同环境中一致地运行，减少了部署和兼容性挑战。Azure DevOps 提供了一个管理 CI 和 CD 流水的中央平台，促进了协作、版本控制和对整个应用程序生命周期的监控。
+
+通过在 Azure DevOps 中利用 Docker 进行 CI 和 CD，开发团队可以实现更快的上市时间、更高的软件质量，并在响应客户需求方面具有更大的敏捷性。它使团队能够专注于为用户交付价值，同时确保部署过程的一致性、可靠性和效率。
+
+## Docker
+
+Docker 是一个开源平台，彻底改变了应用程序的开发、打包和执行。其快速的设置过程允许轻松创建和部署 Docker 容器，在高效管理环境方面提供了时间优势。
+
+Docker 的主要优势之一是能够将应用程序打包成 Docker 镜像，然后这些镜像可以在 Docker 容器中运行。这些容器之间相互隔离，确保了它们可以在具有不同或相同配置的同时，在 Docker 镜像的所有实例中保持一致的行为。
+
+通过使用 Docker，开发者可以将应用程序封装成可移植且自包含的单元，使其能够在不同环境中轻松地复现和部署。这消除了兼容性问题，并保证了无论底层基础设施如何，应用程序行为的一致性。
+
+此外，Docker 简化了依赖管理并确保了应用运行环境的可复现性。开发者可以在 Docker 镜像中指定必要的依赖，使其更容易在各个平台上维护和分发应用程序。
+
+总之，Docker 为开发者提供了用于打包和部署应用的强大工具集，增强了效率、可移植性和可复现性。通过利用 Docker 的容器化技术，开发者可以简化开发流程，并自信地在各种环境中部署具有一致行为的应用程序。
+
+### Docker 容器
+
+Docker 容器作为一个自包含的实体运行，其进程与主机上运行的其他进程相互隔离。每个容器在自己的环境中运行，允许进行单独设置，而不影响或不受外部进程的影响。
+
+Docker 容器的关键功能包括：
+
+
+
+
+
+- 跨平台兼容性：Docker 容器可以在任何操作系统上运行，为不同环境之间提供了灵活性和可移植性。
+- 隔离与控制：每个容器都在其隔离且独立的设置中运行，创建一个受控的环境，应用程序可以在其中不受外部因素干扰可靠地运行。
+- 多功能性：Docker 容器可以部署在各种机器上，包括虚拟机或云实例，实现了跨不同基础设施的无缝部署。
+- 基于镜像的架构：多个 Docker 镜像可以在一个容器内并发运行，在保持分离和封装的同时，便于多样化应用程序的执行。
+- 易于管理：Docker 容器处理非常简单。通过几个简单的命令，你就可以轻松地创建、启动、停止、删除或移动容器，从而对应用程序部署和资源利用进行高效管理。
+
+通过利用 Docker 容器，开发者可以利用隔离环境的优势，简化应用程序的部署，增强可扩展性，并确保跨系统行为的一致性。这种方法简化了开发流程，促进了协作并提高了可复现性，使 Docker 现代软件开发和部署工作流中不可或缺的工具。
+
+## 容器镜像
+
+Docker 容器镜像包含了软件二进制文件、脚本、配置及其依赖项，确保每次在 Docker 容器中实例化时都能以相同的方式运行。通过你的 Docker 容器镜像，你可以根据需要轻松多次复制你的软件，这在对软件进行垂直或水平扩展容时非常有用。
+
+Docker 容器镜像镜像的关键特性和优势包括：
+- 配置管理：Docker 容器镜像允许你定义并存储容器所需的所有配置。这包括环境变量、网络设置、文件系统映射等，确保了容器实例之间的一致性。
+- 依赖管理：通过将依赖项封装在 Docker 容器镜像中，你消除了手动安装的需求，并确保所有必需组件均随时可用。这使得安装应用程序变得更容易，减少了兼容性问题。
+- 可移植性和可复现性：你可以轻松地存储和分发 Docker 容器镜像，并在公共或私有仓库中共享它。从此 Docker 容器镜像创建的每个镜像必须具有相同的行为，无论不同环境之间存在差异。
+- 版本控制与回滚：Docker 容器镜像像 NuGet 包一样具有版本控制。这允许你管理已安装的软件版本以实现快速回滚，也有助于在不同环境中回溯问题，并按版本组织不同的功能。
+- 可扩展性与性能：Docker 镜像提供了一个轻量且高效的运行环境。由于容器化应用程序共享机器硬件（这意味着我们在同一台主机上运行多个容器），更容易管理资源利用并扩展这些 Docker 容器镜像。
+
+通过利用 Docker 镜像，开发者可以简化部署流程，简化应用程序管理，并促进不同环境之间的一性和可复现性。通过创建、共享和复制容器镜像的能力，Docker 促进了协作并加速了软件开发生命周期。
+
+## Docker 镜像
+
+Docker 镜像包含了无缝打包和部署应用程序的所有必要组件。它封装了各种任务，包括还原 NuGet 包、下载额外的 Docker 镜像、构建、测试和打包你的应用程序。
+
+Docker 镜像的关键特性和优势包括：
+- 依赖管理：Docker 镜像允许你定义和管理应用程序依赖，确保所有所需的包和库在镜像中均可用。这消除了手动安装并简化了部署流程。
+- 可复现性：Docker 镜像为运行应用程序提供了一致且可复现的环境。通过将所有必需的任务和依赖项封装在镜像中，你可以确保应用程序在不同环境和部署中行为一致。
+- 可移植性：Docker 镜像具有可移植性且与平台无关。一旦创建镜像，它就可以共享并部署到任何支持 Docker 的机器或平台上，从而可以在各种环境中移动和运行应用程序而不会产生兼容性问题。
+- 构建与测试自动化：Docker 镜像实现了构建和测试过程的自动化。你可以在镜像内定义必要的步骤和命令来执行构建、测试和打包应用程序等任务，确保整个开发和部署生命周期的一致性和可靠性。
+- 版本控制与回滚：Docker 镜像支持版本控制，允许你随时间跟踪和管理镜像的变化。这允许根据需要无缝回滚到之前的版本，为管理应用程序更新和维护稳定性提供了安全保障。
+
+通过利用 Docker 镜像，开发者可以简化应用程序的打包、部署和测试。镜像对任务和依赖的封装简化了开发工作流，促进了可复现性，并确保了跨环境的行为一致。通过 Docker 镜像，你拥有了一个强大的工具可以在容器化环境中实现高效可靠的应用程序交付。
+
+## 容器镜像 与 Docker 镜像
+
+在 Docker 的语境下，Docker Container images 和 Docker images 这两个术语经常互用。然而，如果我们想进行区分，可以考虑以下内容：
+- Docker 镜像：Docker images 术语指的是创建 Docker 容器的标准化的只读模板。Docker 镜像是一个独立的、可执行的包，包含了运行应用程序所需的一切，包括代码、运行时、系统工具、库和依赖项。Docker 镜像是使用 `Dockerfile` 创建的，其中包含了如何构建镜像的指令。
+- Docker 容器镜像：Docker container images 术语可以专门强调我们所指的是用于配置和运行 Docker 容器的镜像。Docker 容器镜像本质上与 Docker 镜像相同。它们是可移植的、自包含的单元，包含了在容器化环境中运行应用程序的所有必要组件。
+
+总结来说，Docker 容器镜像和 Docker 镜像指的是同一个概念：用于创建 Docker 容器的自包含模板。Docker images 术语更为常用，而 Docker container images 则可以用于强调使用镜像进行配置和运行容器的语境。
+
+## Docker 对你的应用程序的优势
+
+将应用程序容器化提供了许多优势，最显著的优势是：
+- 快速部署：容器化实现了应用程序的快速部署。通过 Docker 镜像，你可以在几秒内启动容器，允许应用程序快速高效地扩展。
+- 一致的软件：容器化应用程序在不同环境中表现出一致的行为。一旦我们有了 Docker 镜像，你就可以确保软件在每次部署时都具有相同的行为。
+
+
+
+
+
+-   平台无关：你可以将 Docker 镜像部署在任何支持 Docker 的平台上，无论操作系统是什么，无论是部署在本地服务器还是云端。
+-   易于纵向扩展：容器化简化了纵向扩展，使你能够近实时地扩展应用程序。你可以通过调整分配给容器的资源来缩小或扩展，从而适应工作负载需求并优化资源利用。
+-   易于水平扩展：你可以轻松添加或删除带有 Docker 镜像的容器，最大限度地利用主机资源，并通过在所有容器之间分担负载来提高性能。
+
+通过使用容器化，你可以对软件获得更多控制权，使其更容易管理、部署和扩展。这些优势让你能够快速交付应用程序，在不同环境中保持一致性，并优化资源利用以增强性能和可扩展性。
+
+## 理解 Dockerfile
+
+Dockerfile 在为应用程序创建 Docker 镜像的过程中起着至关重要的作用。它像一个蓝图，概述了一系列供 Docker 执行的有序步骤，以生成所需的 Docker 镜像。
+
+通过利用 Dockerfile，你可以定义创建应用程序镜像所需的特定配置和依赖。Dockerfile 中的每一步都经过精心设计，以确保镜像构建的准确性和一致性。
+
+Dockerfile 充当指令集，引导 Docker 分层组装镜像。这些指令涵盖了各种任务，包括设置基础镜像、安装必要的依赖、复制应用程序代码、配置运行时环境以及定义可执行命令。
+
+通过 Dockerfile，你对镜像创建过程拥有完全控制权，允许根据应用程序的需求进行定制和微调。通过按正确的顺序指定步骤，你可以确保精确且高效地创建 Docker 镜像。
+
+总而言之，Dockerfile 是 Docker 镜像创建工作流中的基础组件。它让你能够定义必要的步骤和配置，提供了一种一致且可重复的方法来生成专门为你的应用程序定制的 Docker 镜像。
+
+### Dockerfile 示例
+
+```dockerfile
+# 设置使用的基础镜像
+FROM node:14-alpine
+
+# 设置容器内部的工作目录
+WORKDIR /app
+
+# 复制 package.json 和 package-lock.json 文件
+COPY package*.json ./
+
+# 安装依赖
+RUN npm install
+
+# 将应用程序代码复制到容器中
+COPY . .
+
+#为应用程序设置环境变量
+ENV PORT=3000
+
+# 暴露应用程序将监听的端口
+EXPOSE $PORT
+
+# 指定运行应用程序的命令
+CMD ["node", "app.js"]
+```
+
+在这个示例中，Dockerfile 从 `node:14-alpine` 镜像开始，它提供了安装了 Node.js 的轻量级 Linux 发行版。工作目录设置为 `/app`，`package.json` 和 `package-lock.json` 文件被复制到容器中。
+
+接下来，使用 `RUN npm install` 命令安装依赖。然后使用 `COPY . .` 命令将应用程序代码复制到容器。
+
+设置环境变量 `PORT` 为 `3000`，指定应用程序将监听的端口。`EXPOSE` 指令暴露该端口以允许外部访问。
+
+最后，`CMD` 命令指定了运行应用程序的命令，在此情况下为 `node app.js`。
+
+此 Dockerfile 可用于为你的 Node.js Web 应用程序构建 Docker 镜像，让你轻松地在不同环境中对其进行容器化和部署。
+
+## 用于多阶段构建的 Dockerfile
+
+多阶段 Dockerfile 引入了一个强大的概念，能够实现高效且精简的镜像构建。它的特点是 Dockerfile 中存在多个 `FROM` 语句，每个 `FROM` 语句代表构建过程的一个不同阶段。这种方法允许你利用和重用来自之前阶段的产物，从而优化最终镜像的大小和性能。
+
+通过采用多阶段构建，你可以利用构建时依赖和运行时依赖之间的清晰分离。这种分离确保了最终镜像中仅包含必要的组件，从而实现更小、更安全的部署。
+
+这里是一个多阶段 Dockerfile 的示例：
+
+```dockerfile
+### 构建阶段
+FROM node:14-alpine as build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+### 生产阶段
+FROM nginx:alpine as production
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
+
+在这个示例中，Dockerfile 包含两个阶段：构建阶段和生产阶段。
+
+构建阶段从 `node:14-alpine` 基础镜像开始，在其中安装必要的依赖、复制应用程序代码，并执行构建命令（`npm run build`）。
+
+生产阶段从 `nginx:alpine` 基础镜像开始。它使用 `COPY --from=build` 命令将上一个阶段的构建结果（`/app/dist`）复制到最终镜像中。这确保了生产镜像中只包含编译和优化后的资产。
+
+生成的镜像明显较小，并且仅包含运行应用程序所需的运行时依赖。它可以轻松高效地部署，从而提高性能并减少攻击面。多阶段 Dockerfile 是优化镜像大小和安全性的宝贵技术。
+
+## Docker 命令
+
+Docker 提供了一套全面的命令，这些命令对于创建、管理以及与容器和镜像交互是基础。这些核心 Docker 命令让你能够有效管理你的容器化环境：
+
+-   `docker build`：此命令根据 Dockerfile 中指定的指令构建 Docker 镜像。它用于创建一个包含应用程序所需所有必要依赖和配置的自定义镜像。
+-   `docker run`：通过此命令，你可以从特定的 Docker 镜像实例化容器并启动运行。它设置了镜像中定义的容器运行时环境、网络和其他配置，使应用程序能够以隔离且灵活的方式运行。
+-   `docker ps`：此命令列出系统中正在运行的容器。它提供了容器 ID、名称、状态和资源使用情况等价值信息。`docker ps` 命令允许你有效地监控和管理运行中的容器。
+-   `docker stop`：当你需要停止一个或多个运行中的容器时，`docker stop` 命令非常有用。它会优雅地停止指定的容器，允许受控的关闭和资源释放。
+-   `docker rm`：此命令允许你从系统中删除一个或多个容器。它会永久删除指定的容器并释放系统资源。妥清理不再需要的容器对于高效利用资源至关重要。
+
+
+
+
+
+## Docker 命令
+
+- `Docker rmi`: 当你想从本地仓库删除一个或多个 Docker 镜像时，可以使用 `docker rmi` 命令。它会删除指定的镜像并释放磁盘空间。此命令有助于管理你的镜像仓库，并确保你只保留必要的镜像。
+- `Docker image`: `docker image` 命令是一个管理 Docker 镜像的多功能工具。它允许你列出、构建、标记、检查并执行执行与 Docker 镜像相关的各种操作。该命令提供了系列功能，可以有效管理你的镜像集合。
+
+通过利用这些关键 Docker 命令（如 `build`、`run`、`ps`、`stop`、`rm`、`rmi` 和 `image`），你可以高效地创建、管理和与容器及镜像交互，实现应用程序无缝开发、部署和维护。
+
+## Azure DevOps
+
+Azure DevOps 是微软提供的一套全面的开发工具和服务，支持整个 DevOps 生命周期。它允许团队高效地计划、开发、测试和部署应用程序，促进协作、自动化以及持续集成和交付。
+
+Azure DevOps 提供了一系列功能和能力，可以单独使用或作为集成套件使用。这些包括：
+
+- **项目管理**：`Azure Boards` 提供敏捷计划和跟踪能力，允许团队管理工作项、跟踪进度并使工作流可视化。
+- **源码控制**：`Azure Repos` 为代码仓库提供版本控制，支持 `Git` 和 Team Foundation 版本控制 (`TFVC`)。它实现了代码更改的协作、分支和合并。
+- **CI/CD**：`Azure Pipelines` 自动化构建、测试和部署过程，允许团队将流水线定义为代码并实现持续集成和交付。它支持多种编程语言和平台。
+- **制品管理**：`Azure Artifacts` 提供了一个集中仓库，用于管理和共享依赖项，例如 `NuGet` 包、`npm` 包和 `Maven` 制品。它能够方便地进行制品版本化、发布和消费。
+- **测试管理**：`Azure Test Plans` 便于测试用例管理、探索性测试和测试执行。它帮助团队计划、跟踪和分析测试工作，确保整个开发生命周期中的质量。
+- **协作**：`Azure Boards`、`Azure Repos` 和 `Azure Pipelines` 与 `Microsoft Teams` 等流行协作工具集成，实现跨团队无缝通信、可见性和透明度。
+- **分析与洞察**：`Azure DevOps` 提供内置的分析和报告功能，提供代码质量、流水线性能、工作项跟踪等方面的洞察。这种数据驱动的方法帮助团队做出明智的决策并持续改进他们的流程。
+
+Azure DevOps 支持各种开发场景，可适用于任何规模的项目，从小团队到企业级部署均可。它与其他 Azure 服务以及流行的开发工具良好集成，提供了灵活性和扩展性。
+
+通过利用 `Azure DevOps`，开发团队可以简化其工作流、改进协作、自动化流程，并实现更快、更可靠的软件应用程序交付。
+
+## 持续集成
+
+持续集成是一种至关重要的开发实践，它促进代码更改频繁集成到共享仓库中，每当开发者推送提交（push a commit）时会自动触发。它促进了自动化构建过程，并允许使用分析代码的工具，及时检测并突出任何出现的问题。
+
+### 持续集成的好处
+
+我们在下方列出了持续集成过程的主要益处：
+
+- **更快的集成**：通过定期集成代码更改，`CI` 极大地地减少了多个开发者在同一项目工作时经常出现的冲突和集成挑战。它确保更改被持续合并和测试，从而实现更顺、更高效的开发过程。
+- **稳健的仓库**：`CI` 通过强制定期提交更改的实践，促进了稳健且更新的代码仓库。这有助于维护可靠且可访问的代码库，允许团队有效协作并减少代码分化的概率。
+- **使用单元测试进行业务规则验证**：`CI` 鼓励使用单元测试来验证业务规则和功能需求。通过将测试集成到 `CI` 过程中，开发者可以确保代码更改符合预期行为，并尽早发现潜在的回归，提高代码可靠性并减少调试花费的时间。
+- **早期发现问题**：`CI` 允许在代码库出现问题时立即进行识别，防止其演变成更大的问题。通过利用自动化代码分析工具，可以尽早检测潜在的 bug、语法错误和样式违规，使开发者能够及时处理。
+- **增加项目状态可见性**：`CI` 通过生成构建报告和通知增强了项目状态的可见性。这使得利益相关者能够在整个开发生命周期监控应用程序的进度、稳定性和质量，促进透明度和有效的决策。
+- **代码质量检查**：`CI` 允许团队在构建过程中引入代码质量检查工具。这些工具根据预定义的编码标准、最佳实践和性能指标对代码进行评估。通过集成代码质量检查，开发者可以保持一致的编码标准并提高软件的整体质量。
+
+通过采用持续集成，开发团队可以体验更顺畅的协作、更快的集成周期、更早的错误检测、更高的代码质量以及增强的项目透明度。这些优势最终会导致生产力提高、开发风险降低以及更有效地交付可靠的软件解决方案。
+
+## 持续部署
+
+持续部署是一种软件交付方法，它将构建和部署过程自动化，并将软件快速可靠地部署到生产环境。通过自动化整个部署阶段，它消除了手动和耗时步骤的需求，简化了发布过程并节省了价值的时间和资源。
+
+### 持续部署的好处
+
+以下是持续部署的关键优势：
+
+- **增强安全性**：持续部署允许实施各种部署技术和模式，例如蓝绿部署。这些技术确保了部署的可靠性，并地减少了停机或中断的风险。通过采用稳健的部署策略，组织可以放心地地发布软件，因为他们知道有安全保障。
+- **加速交付**：通过持续部署，部署过程中不再需要繁琐的手工步骤。一切都通过定义良好的脚本和流水线实现自动化。这种自动化显著加快了交付过程，减少了人为错误，并为新功能和错误修复提供了更快的上市时间。
+- **成本效益**：通过自动化部署过程，持续部署消除了对资源密集的人工部署活动的需求。开发者和运维团队可以专注于他们的核心任务（如编写代码和维护基础设施），而不是花费数小时在重复且易出错的部署任务上。这种具有成本效益的方法优化了资源分配并提高了团队的整体生产力。
+
+
+
+
+
+## 改进团队协作
+
+* 改进团队协作：持续部署消除了由于手动部署错误或遗漏步骤而导致团队成员之间产生争论或缺乏自信的可能性。通过可靠且自动化的部署流程，团队可以更和谐、更有信心地共同工作。重点可以转向协作解决问题和创新，而不是忙于处理生产环境中的“救火”。
+
+通过采用持续部署，组织可以实现更安全、更快速、更具成本效益且协作的软件交付。它赋予了团队持续交付高质量软件的能力并降低了风险，使其能够快速响应变化的市场需求并更频繁地为客户交付价值。
+
+## 案例研究
+
+在这一实际案例研究中，我们将把本章学习的概念和技术应用于上一章中创建的关于 SignalR 项目。我们的目标是演示以下操作的逐步实现过程：
+
+1.  **创建 Dockerfile**：我们将创建一个 `Dockerfile`，它是一个包含构建 Docker 镜像指令的文本文件。`Dockerfile` 定义了应用程序所需的环境、依赖项和配置。我们将仔细编写 `Dockerfile`，以确保预期的运行环境并包含任何必要的构建步骤。
+2.  **构建 Docker 镜像**：使用 `Dockerfile`，我们将构建一个 Docker 镜像。该镜像是一个轻量、可移植且自包含的包，包含了运行应用程序所需的所有内容。我们将遵循最佳实践并利用 `Docker` 命令高效地构建镜像，并考虑镜像大小、缓存和分层等因素。
+3.  **应用 CI 和 CD**：一旦拥有了 Docker 镜像，我们将使用 `Azure DevOps` 将其集成到 CI/CD 流水线中。我们将配置构建流水线，每当有更改推送到存储库时，都会自动构建 Docker 镜像。这将确保镜像与最新的代码更改和依赖项保持同步。
+
+接下来，我们将设置发布流水线，将 Docker 镜像部署到指定的目标环境，例如开发环境、暂存环境或生产环境。发布流水线将处理部署过程，包括容器注册表身份验证、镜像标记以及协调到目标平台的部署等步骤。
+
+在整个实践案例研究中，我们将探索构建 Docker 镜像、实现 CI 以及使用 `Azure DevOps` 协调 CD 的各种配置选项、设置和最佳实践。通过跟随这些操作示例，你将获得创建 `Dockerfile`、构建 Docker 镜像以及为容器化应用程序自动化 CI/CD 流程的实践经验。
+
+下面的项目解决方案将作为我们应用本案例研究涵盖的概念和实践的重点，如下所示：
+
+![](img/Figure_11.1.png)
+图 11.1：带有 Dockerfile 的项目解决方案
+
+## 创建 Dockerfile
+
+`Dockerfile` 必须与 `.csproj` 位于同一目录下。本示例使用的 `Dockerfile` 是最简单的，如下：
+
+```dockerfile
+1. FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build-env
+2. WORKDIR /App
+4. # Copy everything
+5. COPY . ./
+6. # Restore as distinct layers
+7. RUN dotnet restore
+8. # Build and publish a release
+9. RUN dotnet publish -c Release -o out
+11. # Build runtime image
+12. FROM mcr.microsoft.com/dotnet/aspnet:7.0
+13. WORKDIR /App
+14. COPY --from=build-env /App/out .
+15. ENTRYPOINT ["dotnet", "WebAPPSignalR.dll"]
+```
+
+上面的 `Dockerfile` 负责构建项目并发布镜像。
+
+## 创建 Docker 镜像
+
+现在我们已经有了 `Dockerfile`，下一步是根据它创建一个 Docker 镜像。创建镜像需要以下步骤：
+
+1.  打开 `cmd`。
+2.  切换目录到 `Dockerfile` 所在的目录。
+3.  执行以下命令。此命令将创建一个名为 `webapp-thiago-image` 的镜像：
+
+```bash
+docker build -t webapp-thiago-image -f Dockerfile .
+```
+
+这是命令的输出：
+
+![](img/Figure_11.2..png)
+图 11.2：带有镜像创建命令输出的命令提示符
+
+验证镜像是否成功创建，我们可以通过执行以下命令查看命令提示符的输出：
+
+```bash
+docker images
+```
+
+![](img/Figure_11.3..png)
+图 11.3：列出 Docker 所有镜像命令的命令提示符
+
+接下来我们可以在 `Docker Desktop` 中看到这些镜像：
+
+![](img/Figure_11.4..png)
+图 11.4：带有最近创建镜像的 Docker desktop
+
+## 运行镜像
+
+既然我们已经创建了镜像，让我们运行它看看它是否成功创建。下面的命令将使用我们的镜像创建一个 Docker 容器并暴露端口：
+
+```bash
+docker run -d -p 5000:80 webapp-thiago-image
+```
+
+我们在命令提示符中有以下输出：
+
+![images/Image181972.png]
+图 11.5：带有运行镜像输出的命令提示符
+
+从 `Docker Desktop` 中，我们可以看到使用镜像创建的容器正在指定的端口上运行：
+
+![](img/Figure_11.6..png)
+图 11.6：运行镜像的 Docker desktop
+
+## 应用持续集成
+
+由于我们已经测试了 `Dockerfile` 并确认它现在运行正常，现在是时候应用持续集成，以确保我们每次向存储库推送更改时都有更新的镜像。要继续操作，读者需要将他们的项目上传到 `Azure DevOps`。我们可以从下图看到：
+
+![](img/Figure_11.7..png)
+图 11.7：运行镜像的浏览器
+
+现在，我们将创建一个新的流水线：
+
+![](img/Figure_11.8..png)
+图 11.8：带有代码的存储库
+
+选择最近创建的存储库：
+
+![](img/Figure_11.9..png)
+图 11.9：本示例中使用的存储库
+
+从空的 `.yml` 开始，粘贴以下我们将使用的 `.yml` 代码：
+
+```yaml
+1. # Docker
+2. Build a Docker image
+3. # https://docs.microsoft.com/azure/devops/pipelines/languages
+5. trigger:
+6.   - main
+8. resources:
+9.   - repo: self
+11. variables:
+12.   tag: $(BuildId)
+13. stages:
+14.   - stage: Build
+15.     displayName: Build image
+16.     jobs:
+17.       - job: Build
+18.         displayName: Build
+19.         pool:
+20.           vmImage: ubuntu-latest
+21.         steps:
+22.           - task: Docker@2
+23.             inputs:
+24.               containerRegistry: dockerVivastaa
+25.               repository: vivastaa/devops
+26.               command: build
+27.               Dockerfile: **/Dockerfile`
+28.           - task: Docker@2
+29.             inputs:
+30.               containerRegistry: dockerVivastaa
+31.               repository: vivastaa/devops
+32.               command: logout
+33.               Dockerfile: **/Dockerfile`
+34.           - task: Docker@2
+35.             inputs:
+36.               containerRegistry: dockerVivastaa
+37.               repository: vivastaa/devops
+38.               command: login
+39.               Dockerfile: **/Dockerfile`
+40.           - task: Docker@2
+41.             inputs:
+42.               containerRegistry: dockerVivastaa
+43.               repository: vivastaa/devops
+44.               command: push
+45.               Dockerfile: **/Dockerfile`
+```
+
+上面的 `.yml` 包含四个任务，这些任务用黄色高亮：
+
+*   第一个任务是构建项目并创建 Docker 镜像。
+
+
+
+
+
+- 这是一个由于 Azure DevOps 认证问题导致的变通方案，我们必须确保已经从容器注册中注销。
+- 现在，我们将重新登录。
+- 我们推送第一步中创建的镜像。
+
+在之前的 `.yml` 文件中，有一些对 `dockerVivastaa` 的引用，这是一个连接（service connection）。它处理 Azure DevOps 与本案例中使用的 Docker 容器仓库之间的连接。我们可以从下面的图中看到 `dockerVivastaa` 服务连接：
+
+![](img/Figure_11.11..png)
+
+图 11.11：用于 Docker 容器仓库的 Azure DevOps 服务连接
+
+接下来的图片显示正在使用的 Docker 容器仓库：
+
+![](img/Figure_11.12..png)
+
+图 11.12：本示例中使用的 Docker 容器仓库
+
+保存 `.yml` 并运行流水线后，我们得到了如下所示的输出。
+
+要从 Azure DevOps 的 Pipelines 部分手动启动流水线，请按照以下步骤操作：
+
+1. 导航到您的 Azure DevOps 项目，并在左侧边栏中选择 `Pipelines`。
+2. 在 `Pipelines` 部分，您将看到所有流水线的列表。找到您想要运行的流水线。
+3. 点击流水线名称打开其详情页。
+4. 在流水线详情页上，点击右上角的 `Run pipeline` 按钮。
+5. 将弹出一个对话框，允许您选择分支并为运行配置任何参数。
+6. 配置好所需的设置后，点击 `Run` 启动流水线：
+
+![](img/Figure_11.13.png)
+
+图 11.13：构建执行的输出
+
+验证镜像是否已上传到我们的 Docker 容器仓库中：
+
+![](img/Figure_11.14.png)
+
+图 11.14：带有最近上传镜像的 Docker 容器仓库
+
+## 应用持续部署
+
+现在我们每次都更新了镜像，并且向仓库推送了更改，那么现在是时候发布此镜像了。持续部署过程在持续集成过程成功后立即启动。
+
+持续部署过程将从 Docker 容器仓库获取最新镜像，并将其发布到运行在 Azure 上的 Web App。
+
+让我们创建一个新的发布流水线，从产物（Artifact）开始，这将是我们之前在持续集成过程中创建的构建版本。让我们先将产物添加到流水线中。然后，我们添加一个 `Azure App Service Deploy` 任务并根据我们的设置进行配置，如下所示：
+
+![](img/Figure_11.15.png)
+
+图 11.15：部署任务配置设置
+
+配置完成后，我们可以部署流水线，输出结果应该是这样的：
+
+![](img/Figure_11.16.png)
+
+图 11.16：发布部署的输出
+
+在 Azure 门户中验证我们的 Web App，如如下所示，它已成功部署：
+
+![](img/Figure_11.17.png)
+
+图 11.17：成功部署后 Azure 门户中的 Web App
+
+## 结论
+
+在本章中，我们探索了使用 Docker 和 Azure DevOps 为容器化应用实现 CI/CD 流水线。我们首先理解了 Docker 的基础及其在容器化中的作用，随后概述了 Azure DevOps 作为全面的 DevOps 平台。通过结合使用 Docker 和 Azure DevOps，我们可以简化 CI/CD 流程，确保应用程序部署的一性和高效。
+
+我们涵盖了用于构建和部署容器化应用的关键 Docker 命令，使我们能够有效地打包和分发应用程序。此外，我们讨论了 CI 的概念及其在自动化代码构建和测试中的重要性，从而提高了开发效率和软件质量。
+
+此外，我们深入研究了 CD 并学习了 Azure DevOps 如何自动化 CD 流水线，允许在不同环境之间进行无缝的应用部署。通过在 Azure DevOps 中配置构建流水线、发布流水线并管理环境，我们实现了精简且自动化的 CI/CD 工作流。
+
+通过实际案例研究，我们应用了知识和技能构建了一个示例容器化应用，使用 Azure DevOps 建立了一个完整的 CI/CD 流水线，并成功地将应用程序部署到生产环境。这种实践经验巩固了我们对结合 Docker 和 Azure DevOps 的 CI/CD 流程的理解。
+
+掌握本章涵盖的概念和技术，你现在已经具备了为容器化应用实现高效可扩展的 CI/CD 流水线的能力。利用 Docker 和 Azure DevOps，你可以确保应用程序部署的一致性和可靠，实现更快的交付和更高的软件质量。通过 CI/CD，你可以增强开发流程，快速响应变化的需求，并更有效地为用户交付价值。在接下来的章节中，你将探索 .NET MAUI 的强大功能和 Blazor Hybrid 的独特之处。该章将从 .NET MAUI 的全面概述开始，深入探讨其基本概念和能力，为多平台应用开发建立坚实基础。发现 Blazor 和 Blazor Hybrid 之间的区别，并获得何时利用每种技术的见解。
+
+### 加入我们书籍的 Discord 
+
+加入书籍的 Discord 工作空间以获取最新更新、优惠、全球科技动态、新发布以及与作者的互动：
+
+[`discord.bpbonline.com`](https://discord.bpbonline.com)
+
+![](img/fm1.png)
+
+# 第 12 章：使用 .NET MAUI 和 Blazor Hybrid 构建多平台应用
+
+## 引言
+
+欢迎来到使用 .NET Multiplatform App UI (MAUI) 和 Blazor Hybrid 构建多平台应用的精彩世界。在本章中，我们将开启一段结合 .NET MAUI 能力与 Blazor Hybrid 创新方法的旅程，创建出跨平台无缝运行的尖端应用。
+
+在第一部分中，我们将为您提供 .NET MAUI 的全面概述，它是 Xamarin.Forms 的演进。我们将探索它的功能、优势以及它如何赋予开发者为 iOS、Android、macOS 和 Windows 构建原生应用的能力。理解 .NET MAUI 的基础非常重要，因为它为我们后续的探索奠定了基础。
+
+接下来，我们将深入探讨 Blazor 和 Blazor Hybrid 之间的区别。Blazor 允许开发者使用 C# 和 .NET 构建 Web 应用，而 Blazor Hybrid 引入了一种将 Web 技术与原生应用开发的革命性概念。通过理解这些差异，我们将了解到 Blazor Hybrid 如何增强我们的跨平台开发流程。
+
+本章的核心在于深度案例研究，我们将在引导你逐步实现使用 .NET MAUI 和 Blazor Hybrid 构建的多平台应用。你将学习如何从零创建一个 .NET MAUI 项目并设置 Blazor Hybrid UI，我们将利用 Web 技术构建交互式界面。通过遵循这个实践示例，你将获得实践经验，并对 .NET MAUI 与 Blazor Hybrid 的集成有坚实的理解。
+
+因此，无论你是好奇最新进展的资深 .NET 开发者，还是渴望探索跨平台开发潜力的人，本章都将让你具备构建功能丰富的通用应用程序的能力，以适应不同的平台和受众。
+
+让我们进入使用 .NET MAUI 和 Blazor Hybrid 构建多平台应用的世界，开启全球用户创造突破性体验的可能性。
+
+## 结构
+
+本章涵盖了以下主题：
+
+- .NET MAUI 概述
+- Blazor 和 Blazor Hybrid 的区别
+
+
+
+
+
+## 逐步实施的案例研究
+
+*   创建 .NET MAUI 项目
+*   从桌面客户端使用 Blazor Hybrid UI
+*   从移动客户端使用 Blazor Hybrid UI
+
+## 目标](#contents.xhtml_sc2_250a)
+
+在本章中，我们将讨论 `.NET MAUI` 的核心知识，探索构建健壮跨平台应用的核心概念。区分 `Blazor` 和 `Blazor Hybrid`，理解 Web 框架及其在不同平台上的混合集成。通过逐步实施的案例研究来创建一个多平台应用，将 `.NET MAUI` 与 `Blazor Hybrid UI` 无缝融合。在原生应用中利用 `HTML`、`CSS` 和 `C#` 等网络技术构建响应式界面。通过单一代码库，在 iOS、Android、macOS 和 Windows 上轻松地创建跨平台应用。发现 `.NET MAUI` 和 `Blazor Hybrid` 的力量，提升在各种平台上开发创新且功能丰富的应用的开发技能，激发创造力并保持在现代开发的前沿。
+
+## .NET MAUI 概述](#contents.xhtml_sc2_251a)
+
+`.NET MAUI` 是一个由微软开发的强大框架，也是 `Xamarin.Forms` 的下一次演进。它允许开发者通过单一代码库为 iOS、Android、macOS 和 Windows 构建原生应用。`.NET MAUI` 的主要目的是简化跨平台应用开发，并为各种平台提供一致且统一的开发体验。
+
+`.NET MAUI` 的关键特性和组件：
+
+*   跨平台开发：通过 `.NET MAUI`，开发者可以编写一次代码并部署到多个平台，与为每个平台开发独立的原生应用相比，节省了时间和精力的。
+*   统一 API：`.NET MAUI` 提供了统一的 `API` 层，这意味着开发者可以通过单一代码库访问特定平台的功能。这简化了开发过程，并允许跨平台提供无缝用户体验。
+*   自适应 UI：`.NET MAUI` 提供了自适应 `UI` 能力，允许开发者创建能够自动适应不同屏幕尺寸和方向的用户界面。这确保了应用在各种设备上具有最佳外观和功能。
+*   原生性能：`.NET MAUI` 应用在每个平台上以原生应用的形式运行，利用原生控件和 `APIs`。这产生了高性能且响应迅速的应用，为用户提供原生的外观和感受。
+*   热重载（Hot reload）：`.NET MAUI` 支持热重载功能，允许开发者在开发期间立即查看更改而无需重启应用程序。这加速了开发过程并提高了生产力。
+*   Xamarin 社区生态系统：作为 `Xamarin.Forms` 的继任者，`.NET MAUI` 得益强大的库、工具和社区支持生态系统，让开发者更容易为项目找到资源和解决方案。
+*   支持 .NET 6：`.NET MAUI` 构建在 `.NET 6` 之上，为 `.NET` 生态系统带来了新功能、改进和优化。这确保开发者可以利用 `.NET` 框架的最新进展。
+
+`.NET MAUI` 旨在提供多功能且精简的开发体验，允许开发者通过单一代码库目标多个平台接触更广泛的受众。无论你是资深 `.NET` 开发者还是跨平台开发的新手，`.NET MAUI` 都提供了一个令人兴奋的机会，来创建现代且功能丰富的应用，满足各种设备上多样化的用户需求。
+
+## Blazor 与 Blazor Hybrid 的区别](#contents.xhtml_sc2_252a)
+
+`Blazor` 和 `Blazor Hybrid` 是 `.NET` 生态系统中两种相关但不同的技术，允许开发者构建 Web 应用程序和混合跨平台应用。让我们探索 `Blazor` 和 `Blazor Hybrid` 之间的主要区别：
+
+| 特性 | Blazor | Blazor Hybrid |
+| --- | --- | --- |
+| 应用类型 | Web 应用 | 跨平台应用 (iOS, Android, macOS, Windows) |
+| 执行位置 | 客户端（WebAssembly 或使用 `SignalR` 的服务端） | 与目标平台的类原生集成 |
+| 技术 | 使用 `HTML`、`CSS`、Razor 语法 | 在原生环境中使用网络技术和 Razor 语法 |
+| 应用样式 | 单页应用 (SPA) | 具有类原生用户体验的混合应用 |
+| 服务端依赖 | 服务端运行时需要 Web 服务器 | 与原生组件和 `APIs` 集成 |
+| 与 .NET MAUI 的集成 | 通常不与 `.NET MAUI` 相关 | 通常与 `.NET MAUI` 配合使用 |
+| 代码共享 | 特定于 Web 代码，共享较少 | 促进不同平台之间的代码共享 |
+
+表 12.1：`Blazor` 与 `Blazor Hybrid` 的区别。
+
+总结来说，`Blazor` 主要关注在浏览器中运行的 Web 应用，而 `Blazor Hybrid` 设计用于创建结合网络技术与原生应用开发的跨平台应用。`Blazor Hybrid` 利用 `.NET MAUI` 将其范围扩展到各种平台，并为用户提供更类原生的体验。
+
+## 逐步实施的案例研究](#contents.xhtml_sc2_253a)
+
+在跨平台应用开发领域，实践经验往往是最好的老师。这就是为什么我们设计了这个详尽的逐步实施案例研究，引导你完成使用 `.NET MAUI` 和 `Blazor Hybrid` 构建多平台应用的过程。
+
+该案例研究分为三个关键部分，每个部分都关注开发过程中的一个重要方面。
+
+### 创建 .NET MAUI 项目](#contents.xhtml_sc3_254a)
+
+首先，让我们从创建 `.NET MAUI` 项目开始，如下所示：
+
+![](img/Figure_12.1.png)
+
+图 12.1：基于 `.NET MAUI App` 模板创建新项目。
+
+Visual Studio 将为我们提供准备好运行的项目。我们的项目解决方案必须像下面所示，现在按下 `F5`：
+
+![](img/Figure_12.2.png)
+
+图 12.2：带有模板项目的 Visual Studio 解决方案。
+
+### 从桌面客户端使用 Blazor Hybrid UI](#contents.xhtml_sc3_255a)
+
+在本地设置 `Blazor Hybrid` 是构建无缝融合网络技术与原生开发应用的关键步骤。这一过程构成了开发环境的基础，使能够利用 `Blazor Hybrid` 和 `.NET MAUI` 的力量。
+
+在本节中，我们将引导你完成配置 `Blazor Hybrid` 开发环境所需的必要步骤。无论你是寻求扩展技能的资深开发者，还是渴望探索跨平台开发可能的新手，本指南都将提供所需的知识和工具。
+
+如果你第一次按下 `F5`，你可能会收到以下消息，提示你应该将设备设置为开发者模式：
+
+![](img/Figure_12.3.png)
+
+图 12.3：Visual Studio 提示你应启用开发者模式。
+
+要启用开发者模式，我们需要进入`隐私与安全`，然后如下所示启用`开发者模式`：
+
+![](img/Figure_12.4.png)
+
+图 12.4：Windows 隐私与安全控制面板。
+
+在成功设置开发者模式后，我们现在可以作为 Windows 桌面应用程序运行项目，结果如下：
+
+![](img/Figure_12.5.png)
+
+图 12.5：作为 Windows 桌面应用程序运行的 `Blazor Hybrid` 项目。
+
+
+
+
+一旦设置好开发环境，就是时候深入探索 Blazor Hybrid 的核心了。我们将提供实用的示例和逐步说明，帮助您在您的 Android 原生应用中利用 Web 技术的力量，实现独特且动态的用户体验。
+
+在将项目作为 Windows 桌面应用程序运行之后，我们现在将使用 Android 模拟器将项目作为移动项目运行，如下方的所示：
+
+![](img/Figure_12.6..png)
+
+图 12.6：从 Android 模拟器运行项目。
+
+这是您第一次运行 Android 模拟器，那么您需要先按照以下步骤通过创建一个 Android 设备来完成设置：
+
+![](img/Figure_12.7..png)
+
+图 12.7：为 Android 模拟器创建 Android 设备。
+
+将弹出一个新窗口，显示模拟器的下载，如下所示：
+
+![](img/Figure_12.8..png)
+
+图 12.8：下载 Pixel 5 Android 模拟器。
+
+在成功设置 Android 模拟器后，我们终于可以从 Android 设备运行我们的项目了：
+
+![](img/Figure_12.9.png)
+
+图 12.9：在 Pixel 5 Android 模拟器上运行的 Blazor Hybrid 项目。
+
+注意：我们没有对从 Visual Studio 模板创建的原项目进行任何更改。
+
+处理 Blazor Hybrid UI 是一项令人兴奋的尝试，为开发者提供了无缝的体验。这项技术的优之处在于它能够融合 Web 开发和原生应用开发，创建出类似于 Web 应用程序的组件。最棒的部分是它非常简单。
+
+Blazor Hybrid UI 赋予开发者构建丰富的交互性和响应式设计组件的能力，就像在 Web 应用中看到的那样。通过使用熟悉的 Web 技术（如 `HTML`、`CSS` 和 `C#`），您可以轻松地构建出动态的用户界面，并带有事件处理和实时更新。
+
+因此，无论您是习惯于 Web 开发，还是一个资深的应用开发者，您都会发现创建 Blazor Hybrid UI 组件是一个直观的过程。这种易用性结合 `.NET MAUI` 的强大，使其成为一个令人兴奋的平台，让您的应用开发想法变为现实，同时为您的用户提供跨平台的引人入胜且无缝的体验。让我们深入细节，发现使用 Blazor Hybrid UI 到底有多易上手和多功能。
+
+## 结论
+
+在整个探索过程中，我们从理解 `.NET MAUI` 的本质开始，并发现了它是如何简化构建多平台原生应用的流程。通过学习 `Blazor` 和 `Blazor Hybrid` 之间的关键区别，我们对 Web 技术与原生应用开发的集成潜力获得了宝贵的见解。
+
+本章的亮点是全面的案例研究，我们带您通过了使用 `.NET MAUI` 和 `Blazor Hybrid` 实现多平台应用的实际过程。通过遵循逐步说明，您亲身体验了结合这些技术来创建在各种设备上无缝运行的交互且多功能用户界面的力量。
+
+当您继续您的开发者之旅时，请记住技术世界在不断演变。保持好奇心并不断学习，对于在快速变化的跨平台应用开发领域保持领先至关重要。
+
+我们希望您能受到进一步对 `.NET MAUI` 和 `Blazor Hybrid` 进行实验，将这些领先技术整合到您自己的项目中，并探索它们彻底我们构建应用方式的潜力。
+
+感谢您加入我们的这段冒险！祝您在创建对全球用户生活产生积极影响的卓越多平台应用时取得成功并获得满足。
+
+在接下来的章节“介绍 `WinUI`：Windows 桌面和 UWP 应用的原生 UX”中，我们将讨论 `WinUI` 的基础知识，这是微软为 Windows 桌面和通用 平台（UWP）应用程序提供的原生用户体验（UX）框架。概述提供了关于 `WinUI` 在增强 Windows 平台应用程序视觉和交互方面作用的见解。涵盖主题包括 `WinUI` 的核心概念、它与 Windows 开发的集成，以及它创建现代响应式用户界面的能力。本章旨在让开发者对 `WinUI` 有基础理解，使他们利用该框架构建沉浸式且用户友 Windows 应用程序。
+
+# 第 13 章 Windows UI 库：打造原生 Windows 体验
+
+## 引言
+
+在本章中，我们将讨论 Windows UI 库 (`WinUI`)，它是 Windows 桌面和通用 平台（UWP）应用的原生用户体验（UX）框架。我们将探索 `WinUI` 强大且视觉吸引力的能力，以及 Fluent 设计系统（Fluent Design System）的优雅，这是微软用于创建现代应用程序的设计语言。
+
+通过 `WinUI`，开发者可以构建无缝融入用户环境的原生 Windows 应用程序，在不同的设备和外形上提供一致且沉浸的体验。无论您是为传统的桌面电脑还是前端的 UWP 设备开发程序，`WinUI` 都提供了您所需的工具和组件，以创建在 Windows 平台上感觉如家一般的应用程序。
+
+我们将从概述 `WinUI` 开始，理解它作为 Windows 应用原生 UX 的重要性以及它是如何增强整体用户体验的。然后，我们将深入 Fluent 设计系统，它是构建美观直观界面的基础。通过遵循逐步案例研究，您将见证一个概念转变为功能完整的 `WinUI` 驱动的应用程序，并在过程中学习关键的实现技术。
+
+让我们讨论 `WinUI`，我们将在发现设计和开发惊人 Windows 应用程序的艺术，它们吸引用户并留下深刻印象。
+
+## 结构
+
+本章涵盖了以下主题：
+
+*   介绍 `WinUI`：Windows 桌面和 UWP 应用的原生 UX
+*   Fluent 设计系统
+*   带有逐步实现的案例研究
+    *   创建项目
+    *   设计 UI
+    *   实现缓存
+    *   页面之间的数据传输
+
+## 目标
+
+在本章中，您将掌握 `WinUI` 在构建 Windows 应用原生 UX 方面的重要性，探索 Fluent 设计系统及其原则。通过逐步案例研究，从设置到部署构建真实的应用程序。学习设计吸引人的 UI 并无缝实现应用逻辑。在本章结束时，您将能够自如地部署 `WinUI` 应用，准备好在 Windows 桌面和 UWP 平台上创建愉悦的用户体验。
+
+## Windows UI 简介
+
+`WinUI` 是由微软开发的一种现代原生 UX 框架。它是构建原生 Windows 应用程序的主要 UI 框架，支持 Windows 桌面和 UWP 应用。`WinUI` 赋予开发者创建具有视觉吸引力、响应式且高性能应用程序的能力，这些应用程序可以无缝适应各种 Windows 设备和外形。
+
+
+
+
+
+# WinUI 与 Fluent 设计系统
+
+*   **一致的设计语言**：以 `Fluent Design System` 为核心，`WinUI` 允许开发者实现一致且具有视觉吸引力的用户界面。`Fluent Design System` 提供了一套设计原则和组件，可在不同的设备和平台之间创建流畅且沉浸的体验。
+*   **模块化与兼容性**：`WinUI` 采用模块化设计，允许开发者仅使用他们需要的组件，从而减小应用程序的大小并确保更好的性能。它向后兼容，使得升级现有应用程序和利用最新功能变得更容易。
+*   **性能与响应能力**：`WinUI` 针对性能进行了优化，确保快速渲染和流畅动画，从而提供响应迅速且交互性的用户体验。
+*   **开源**：微软对 `WinUI` 采取了开源开发，允许社区积极贡献以改进。这促进了创新、更快的错误修复和功能增强。
+*   **支持 XAML 和 C++**：`WinUI` 同时支持 `XAML` 和 `C++`，满足不同编程背景和偏好的开发者。`XAML` 允许声明式的 UI 设计方法，而 `C++` 则允许更细粒度的控制和性能优化。
+*   **Windows 应用生态系统**：`WinUI` 允许开发者构建运行在各种 Windows 设备上的应用程序，包括桌面电脑、笔记本电脑、平板电脑、二一设备、Xbox 和 Surface Hub。它是 `Universal Windows Platform (UWP)` 的组成部分，为 Windows 应用提供了一致的开发模型。
+*   **定期更新与改进**：作为微软提供最佳开发者体验承诺的一部分，`WinUI` 接收定期更新和改进，确保开发者能够跟上  最新进展。
+
+无论您是在创建传统的 Windows 桌面应用程序，还是针对最新的 `UWP` 设备，`WinUI` 都能赋予您构建现代且视觉惊艳的与 Windows 生态系统无缝集成应用程序的能力。通过利用 `Fluent Design System` 并借助 `WinUI` 的性能优化，您可以提供令用户惊喜并符合 Windows 平台高标准的用户体验。
+
+## Fluent 设计系统
+
+`Fluent Design System` 是微软的一种全面设计语言，旨在各种设备和平台上创建具有视觉吸引力、直观且迷人的用户体验。`Fluent Design System` 于 2017 年引入，此前被称为 `Microsoft Design Language 2`，从此已成为 Windows 用户界面和应用程序设计的重要组成部分。
+
+### Fluent 设计系统的核心原则
+
+以下是 `Fluent Design System` 的核心原则：
+
+*   **光、深度与运动**：`Fluent Design System` 使用光、深度和运动来创建更具沉浸感和动态的用户体验。通过对光和阴影的巧妙运用，元素看起来更具实体感交互性，而动画和过渡增加了运动感和生机。
+*   **材质 (Material)**：`Fluent Design System` 将 `material` 作为用户界面的基本构建模块。`Materials` 具有独特的视觉属性，如光、深度和纹理，允许设计师和开发者创建凝聚且一致的 UI 元素。
+*   **运动（有目的的动画）**：运动在 `Fluent Design System` 中起着至关重要的作用，因为动画不仅增强了视觉吸引力，还为用户提供了上下文和反馈。有目的的动画帮助用户更好地理解过渡和交互，使 UI 更直观。
+*   **比例与一致性**：`Fluent` 强调跨扩展性和一致性。无论应用程序运行在桌面电脑、平板电脑还是智能手机上，设计语言都能确保一致的用户体验，适应不同的屏幕尺寸和输入方法。
+*   **亚克力 (Acrylic)：透明度与层**：`Acrylic` 是 `Fluent Design System` 中的一种设计组件，专注于透明度和分效果。它允许开发者创建一个半透明的背景层，为 UI 增加深度和维度，同时保持可读性和清晰。
+*   **显示高亮 (Reveal highlight)**：`Reveal highlight` 是 `Fluent Design` 的另一个关键元素，在与 UI 元素交互时提供视觉反馈。当用户悬停或与元素交互时，它会产生微妙的高亮响应，使交互更加愉快且响应迅速。
+*   **连接动画 (Connected animations)**：`Connected animations` 实现了不同 UI 状态和元素之间的无缝过渡。例如，在页面或面板之间导航时，连接动画保持了视觉连续性，增强了整体用户体验。
+
+### Fluent 设计系统的应用
+
+`Fluent Design System` 主要用于在 Windows 上设计和开发应用程序，包括通用 Windows 平台 (`UWP`) 应用和 Windows 桌面应用程序。通过利用 `Fluent Design System` 的原则和组件，开发者可以创建与整个 Windows 生态系统一致的视觉惊艳、一致且用户友好的应用程序。
+
+总体而言，`Fluent Design System` 允许开发者和设计师打造现代、沉浸式且迷人的用户界面，这些界面能够吸引用户的注意力，提高可用性并提升 Windows 应用生态系统的整体质量。随着微软继续演进 `Fluent Design System`，它仍然是开发者在广泛的 Windows 设备上为用户提供惊喜体验应用程序的重要工具。
+
+## 带有分步实现的案例研究
+
+在本节中，我们将通过一个实际案例研究，演示如何使用 `WinUI` 和 `Fluent Design System` 分步实现 Windows 应用程序。
+
+### 创建项目
+
+设置新项目以利用 `WinUI` 构建原生 Windows 应用程序。
+
+1. 打开 Visual Studio 并选择“创建新项目”。
+2. 为您的应用程序选择 `Blank App (Universal Windows)`（空白应用（通用 Windows））模板：
+
+![](img/Figure_13.1.png)
+图 13.1：`WinUI` 项目模板
+
+3. 确保选择 `WinUI` 作为 UI 框架。
+4. 配置项目设置，例如项目名称、位置和目标平台。
+5. 您的项目解决方案如下：
+
+![](img/Figure_13.2.png)
+图 13.2：`WinUI` 空白项目解决方案
+
+6. 安装 NuGet 包：
+`Microsoft.UI.Xaml`
+
+### 设计用户界面
+
+使用 `Fluent Design System` 的原则创建具有视觉吸引力且直观的用户界面。
+
+让我们从 `Connected Animation` 过渡开始。在您的项目解决方案中添加两张不同的图像并将其命名为 `SourceImage` 和 `DestinationImage`。我们还需要添加新页面，并将此页面命名为 `DestinationAnimation`。
+
+将以下代码添加到 `MainPage.xaml`。此代码设置了图像属性及其 `PointerPressed` 事件：
+
+```xml
+<TextBlock HorizontalAlignment="Center" Text="Navigation animation"/>
+<Image x:Name="SourceImage"
+    HorizontalAlignment="Center" VerticalAlignment="Top"
+    Width="200" Height="200"
+    Stretch="Fill"
+    Source="/Images/SourceImage.png"
+    PointerPressed="SourceImage_PointerPressed"/>
+```
+
+现在，我们将以下代码添加到 `MainPage.xaml.cs`。此代码处理了事件以及动画：
+
+```csharp
+private void SourceImage_PointerPressed(object sender, PointerRoutedEventArgs e)
+{
+    Frame.Navigate(typeof(DestinationAnimation), null,
+    new SuppressNavigationTransitionInfo());
+}
+
+protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+{
+```
+
+
+
+
+
+## 8. ConnectedAnimationService.GetForCurrentView()
+
+```csharp
+ConnectedAnimationService.GetForCurrentView()
+.PrepareToAnimate("forwardAnimation", SourceImage);
+
+}
+```
+
+在我们的目标页面中，我们还需要添加以下代码块。首先，我们必须更新 `DestinationAnimation.xaml` 以如下所示添加图像属性：
+
+```xml
+<Grid>
+    <Image x:Name="DestinationImage"
+        Width="400" Height="400"
+        Stretch="Fill"
+        Source="/Images/DestinationImage.png"/>
+</Grid>
+```
+
+我们还需要更新 `DestinationAnimation.xaml.cs` 来接收对象并设置动画，如下代码所示：
+
+```csharp
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    base.OnNavigatedTo(e);
+    ConnectedAnimation animation =
+        ConnectedAnimationService.GetForCurrentView()
+        .GetAnimation("forwardAnimation");
+    if (animation != null)
+    {
+        animation.TryStart(DestinationImage);
+    }
+}
+```
+
+当我们按下 `F5` 运行项目并点击图像时，我们可以看到动画正在发生。
+
+## 实现缓存
+
+在 Windows 应用程序语境下，缓存通常指的是将频繁访问或计算的数据存储在临时存储空间做法。这样做是为了通过避免冗余的计算或数据获取操作来提高性能和响应速度。
+
+在 WinUI 应用中，你可以在多种场景下实现缓存：
+
+*   **数据检索**：如果你的应用程序从远程服务器获取数据，你可以将获取的数据本地缓存。后续对相同数据的请求可以从缓存中读取，而不是发起新的网络请求。
+*   **UI 元素状态**：如果你的应用程序涉及复杂的 UI 元素或视图，你可以缓存这些元素的状态。这在不同页面或视图之间导航时特别有用。
+*   **资源加载**：缓存可以应用于频繁使用的资源（如图像或样式），确保它们在需要时快速加载。
+*   **性能优化**：通过缓存计算或数据处理的中间结果，你可以减少重复计算相同结果的需求。
+
+虽然 WinUI 本身可能没有特定的缓存 API，但你可以使用标准的 C# 和 .NET 机制在应用程序中实现缓存。例如，你可以使用内存缓存、本地存储，或利用适合你应用程序要求的第三方缓存库。
+
+在实现缓存时，务必考虑缓存过期、内存管理以及应用程序的具体需求等因素。
+
+对于通用 Windows 应用程序（UWP）的缓存，我们必须在页面构造函数中如下设置缓存属性：
+
+```csharp
+public MainPage()
+{
+    this.NavigationCacheMode = NavigationCacheMode.Enabled;
+    this.InitializeComponent();
+}
+```
+
+这些缓存选项及其描述：
+
+| Value | Enum | Description |
+| :--- | :--- | :--- |
+| Disabled | 0 | 页面从不缓存，每次访问都会创建页的新实例。 |
+| Enabled | 2 | 页面被缓存，但当帧缓存大小超过限制时，缓存实例会被丢弃。 |
+| Required | 1 | 页面被缓存，无论帧的缓存大小如何，每次访问都会重用缓存实例。 |
+
+表 13.1：导航缓存模式选项
+
+## 页面之间的数据传输
+
+促进应用程序不同页面之间平滑的数据转换。
+
+我们正在创建一个简单的表单并将其表单数据发送到另一个页面，基于用户数据显示个性化内容。
+
+首先，我们创建一个新页面并将其命名为 `NewPage`。然后我们必须向 `MainPage.xaml` 中添加以下代码。此代码创建了一个 `RadioButton` 组件、一些文本框和一个关联了点击事件的按钮：
+
+```xml
+<TextBlock HorizontalAlignment="Center" Text="Happiness form"/>
+<TextBlock HorizontalAlignment="Center" Text="Enter your name"/>
+<TextBox muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
+    HorizontalAlignment="Center" Width="200" x:Name="name"/>
+<muxc:RadioButtons x:Name="feelings" HorizontalAlignment="Center">
+    <muxc:RadioButtons.Header>
+        <StackPanel Orientation="Horizontal">
+            <SymbolIcon Symbol="Highlight"/>
+            <TextBlock Text="How are you feeling today?" Margin="8,0,0,0"/>
+        </StackPanel>
+    </muxc:RadioButtons.Header>
+    <x:String>Good</x:String>
+    <x:String>Very good</x:String>
+    <x:String>Amazing</x:String>
+</muxc:RadioButtons>
+<HyperlinkButton muxc:AnimatedIcon.State="normal" Content="OK"
+    Click="HyperlinkButton_Click"
+    HorizontalAlignment="Center"/>
+```
+
+在 `MainPage.xaml.cs` 中，我们应该添加以下代码来处理按钮点击并将表单数据发送到新页面：
+
+```csharp
+private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+{
+    PayloadDTO payloadDTO = new PayloadDTO();
+    if (!string.IsNullOrEmpty(name.Text))
+    {
+        payloadDTO.Name = name.Text;
+    }
+    if (feelings.SelectedItem != null)
+    {
+        payloadDTO.Feel = feelings.SelectedItem.ToString();
+    }
+    Frame.Navigate(typeof(NewPage), payloadDTO);
+}
+```
+
+现在我们必须在 `NewPage.xaml` 中处理数据检索。让我们通过向 `NewPage.xaml` 添加以下代码来开始显示数据：
+
+```xml
+<StackPanel VerticalAlignment="Center">
+    <TextBlock x:Name="greeting" HorizontalAlignment="Center"/>
+    <TextBlock x:Name="dateAndTime" HorizontalAlignment="Center"/>
+    <HyperlinkButton Content="go back" HorizontalAlignment="Center"/>
+</StackPanel>
+```
+
+现在我们必须更新 `NewPage.xaml.cs` 来接收数据并显示它。此外，我们应该处理按钮事件。为此，我们必须插入以下代码：
+
+```csharp
+protected override void OnNavigatedTo(NavigationEventArgs e)
+{
+    if (e.Parameter is PayloadDTO payload && payload.Name != null && payload.Feel != null)
+    {
+        greeting.Text = $"Hello, {payload.Name}. We are happy to know you are feeling {payload.Feel}";
+    }
+    else
+    {
+        greeting.Text = "Hello!";
+    }
+    dateAndTime.Text = $"Today is {DateTime.UtcNow}";
+    base.OnNavigatedTo(e);
+}
+```
+
+以下将是结果，主页面：
+
+![Figure 13.3.png]
+表 13.3：主页面表单数据
+
+以下是新页面：
+
+![Figure 13.4.png]
+表 13.4：显示数据的新页面。
+
+以下是每个页面的源代码：
+
+主页 UI 源码：
+
+`MainPage.xaml`:
+
+```xml
+<Page x:Class="WinUISampleProject.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinUISampleProject"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    NavigationCacheMode="Enabled">
+
+    <StackPanel VerticalAlignment="Center">
+        <TextBlock HorizontalAlignment="Center" Text="Hello World!"/>
+        <TextBlock HorizontalAlignment="Center" Text="Navigation animation"/>
+        <Image x:Name="SourceImage"
+            HorizontalAlignment="Center" VerticalAlignment="Top"
+            Width="200" Height="200"
+            Stretch="Fill"
+            Source="/Images/SourceImage.png"
+            PointerPressed="SourceImage_PointerPressed"/>
+    </StackPanel>
+</Page>
+```
+
+
+
+
+25. `<TextBlock HorizontalAlignment="Center" Text="输入您的姓名"/>`
+
+26. `<TextBox`
+
+27. `muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"`
+
+28. `HorizontalAlignment="Center" Width="200" x:Name="name"/>`
+
+29. `<muxc:RadioButtons x:Name="feelings"`
+
+30. `HorizontalAlignment="Center">`
+
+31. `<muxc:RadioButtons.Header>`
+
+32. `<StackPanel Orientation="Horizontal">`
+
+33. `<SymbolIcon Symbol="Highlight"/>`
+
+34. `<TextBlock Text="你今天心情如何?"`
+
+35. `Margin="8,0,0,0"/>`
+36. `</StackPanel>`
+37. `</muxc:RadioButtons.Header>`
+
+38. `<x:String>良好</x:String>`
+39. `<x:String>非常好</x:String>`
+40. `<x:String>极棒</x:String>`
+41. `</muxc:RadioButtons>`
+42. `<HyperlinkButton muxc:AnimatedIcon.State="normal"`
+43. `Content="确定" Click="HyperlinkButton_Click"`
+44. `HorizontalAlignment="Center"/>`
+45. `</StackPanel>`
+46. `</Page>`
+
+主页 C# 代码，用于缓存模式并配置所有事件：
+
+`MainPage.xaml.cs`:
+
+```csharp
+public sealed partial class MainPage : Page
+{
+    public MainPage()
+    {
+        this.NavigationCacheMode = NavigationCacheMode.Enabled;
+        this.InitializeComponent();
+    }
+    private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+    {
+        PayloadDTO payloadDTO = new PayloadDTO();
+        if (!string.IsNullOrEmpty(name.Text))
+            payloadDTO.Name = name.Text;
+        if (feelings.SelectedItem != null)
+            payloadDTO.Feel = feelings.SelectedItem.ToString();
+
+        Frame.Navigate(typeof(NewPage), payloadDTO);
+    }
+    private void SourceImage_PointerPressed(object sender, PointerRoutedEventArgs e)
+    {
+        Frame.Navigate(typeof(DestinationAnimation), null,
+            new SuppressNavigationTransitionInfo());
+    }
+    protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+    {
+        ConnectedAnimationService.GetForCurrentView()
+            .PrepareToAnimate("forwardAnimation", SourceImage);
+    }
+}
+```
+
+新页面 UI 代码，包含设计和表单组件：
+
+`NewPage.xaml`:
+
+```xml
+<Page x:Class="WinUISampleProject.NewPage"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+xmlns:local="using:WinUISampleProject"
+xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+mc:Ignorable="d"
+Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+NavigationCacheMode="Enabled">
+<StackPanel VerticalAlignment="Center">
+<TextBlock x:Name="greeting" HorizontalAlignment="Center"/>
+<TextBlock x:Name="dateAndTime" HorizontalAlignment="Center"/>
+<HyperlinkButton Content="点击返回" Click="HyperlinkButton_Click" HorizontalAlignment="Center"/>
+</StackPanel>
+</Page>
+```
+
+新页面的 C# 代码，包含按钮事件：
+
+`NewPage.xaml.cs`:
+
+```csharp
+public sealed partial class NewPage : Page
+{
+    public NewPage()
+    {
+        this.InitializeComponent();
+    }
+    private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+    {
+        Frame.Navigate(typeof(MainPage));
+    }
+    protected override void OnNavigatedTo(NavigationEventArgs e)
+    {
+        if (e.Parameter is PayloadDTO && ((PayloadDTO)e.Parameter).Name != null
+            && ((PayloadDTO)e.Parameter).Feel != null)
+        {
+            var payload = (PayloadDTO)e.Parameter;
+            greeting.Text = $"你好， {payload.Name}. 我们很高兴知道你现在很 {payload.Feel}";
+        }
+        else
+        {
+            greeting.Text = "你好!";
+        }
+        dateAndTime.Text = $"今天是 {DateTime.UtcNow}";
+        base.OnNavigatedTo(e);
+    }
+}
+```
+
+
+
+
+在软件开发领域，测试和调试是确保代码可靠性和稳定性的关键方面。单元测试允许我们孤立地验证代码中的单个单元，确保每个组件都能按预期工作。此外，调试是一项本质技能，可以帮助我们在代码行为不符合预期时识别并解决问题。在本章中，我们将使用 `xUnit` 探索单元测试的基础基础知识，`xUnit` 是一个流行的测试框架，它提供了一种稳健且高效的方法来编写单元测试。我们将学习如何创建测试用例、执行用例并解释结果，以确保我们的代码按预期运行。使用 Mock（模拟）是本章将涵盖的另一个核心概念。Mock 帮助我们模拟代码中某些组件或依赖项的行为，使我们能够关注被测试的单元。理解如何有效利用 Mock 对于编写全面且高效的单元测试至关重要。
+
+最后，我们将讨论如何掌握调试。即使是最熟练的开发者也会经常遇到 bug。能够高效地识别、隔离并解决这些问题是优秀开发者脱颖而出的关键。我们将探索各种调试技术和工具，这些将使你成为一个更熟练的问题解决者。在本章结束时，你将获得编写健壮的单元测试、有效使用 Mock 以及自信应对调试过程所需的知识和技能。
+
+## 结构
+
+本章涵盖了以下主题：
+
+*   使用 `xUnit` 进行单元测试
+*   Mock 的使用
+*   掌握调试
+*   应用 `xUnit` 和 Mock
+
+## 目标
+
+在本章中，我们将探索一段软件测试和调试的结构化旅程。探索单元测试的作用、`xUnit` 框架以及编写高效测试。深入研究断言（assertions）、Mock 以及用于可扩展测试代码的高级技术。掌握调试基础、工具和最佳实践。将知识应用于真实场景。熟练掌握 `xUnit` 进行全面测试。精通调试，交付更高质量的软件。这一详尽的章节涵盖了从基础到高级策略的所有内容，确保你已准备好应对软件开发旅程中的任何测试或调试挑战。
+
+## 使用 xUnit 进行单元测试
+
+*   在编写本书书时，`xUnit` 是 .NET 最常用的测试框架，它为开发者编写单元测试提供了一种简单且高效的方法。使用 `xUnit` 创建的单元测试旨在验证小段孤立的代码（例如类方法），无论执行单元测试多少次，都必须得到相同的结果。我们可以通过以下内容更好地了解使用 `xUnit` 的单元测试及其主要功能：测试方法结构：`xUnit` 测试定义为测试类中的公共方法。这些方法根据命名约定识别为测试用例，其中方法名必须以 `Fact` 或 `Theory` 开始。`Fact_TestMethod1` 或 `Theory_TestMethod1` 是测试方法命名的示例。
+*   **断言（Assertions）**：`xUnit` 拥有广泛的内置断言方法，使其更容易将你的预期结果与测试方法返回的真实结果进行验证。
+*   **Theory 和数据驱动测试**：`xUnit` 支持使用 `Theory` 特性进行数据驱动测试。这允许你使用不同的输入数据运行同一个测试方法，从而能够验证不同的场景。
+*   **测试固件（Test fixtures）**：你可以使用 `xUnit` 的测试固件，它们是在测试用例运行之前和/之后运行的代码块。这允许你在测试用例运行之前配置所需的依赖项，并在完成测试断言后清理使用的资源。
+*   **测试集合（Test collections）**：`xUnit` 允许将相关的测试类分组到集合中。这在处理共享公共设置或需要按特定顺序运行测试时大有益。
+*   **测试输出和日志（Test output and logging）**：`xUnit` 提供了捕捉和报告测试输出及日志的功能。这对于理解测试执行期间发生了什么很有用。
+*   **并行测试执行（Parallel test execution）**：通过 `xUnit`，你可以并行运行不同的测试，提高测试执行速度，并在软件更改期间获得更快的输出。
+*   **可扩展性（Extensibility）**：`xUnit` 设计为可扩展，允许你创建自定义测试运行器、报告器和其他扩展，以根据你的特定需求定制测试框架。
+*   **测试发现与执行（Test discovery and execution）**：`xUnit` 使用反射自动发现并执行测试方法。测试发现定位测试程序集中的所有测试方法，测试执行则运行它们并报告结果。
+*   **与持续集成（CI）集成**：`xUnit` 与 CI 工具集成良好，可以轻松地将自动化测试整合到你的开发流水线中。
+
+使用 `xUnit` 进行单元测试促进了测试驱动开发（TDD）方法，开发者在实现相应功能之前先编写测试。通过遵循这一实践，开发者可以确保他们的代码符合预期要求，并且更不容易产生 bug。`xUnit` 简洁直观的语法结合其强大的功能，使其成为希望为 .NET 应用创建可靠且可维护的单元测试开发者的绝佳选择。
+
+## 使用 Mock
+
+在软件测试中，Mock 是在单元测试期间模拟真实依赖项（如外部服务、数据库或复杂组件）行为的对象。Mock 允许开发者隔离被测试的单元，并仅关注其行为，而无需涉及实际依赖项。以下是 Mock 在测试中如何使用的概述：
+
+*   **隔离依赖项（Isolating dependencies）**：在测试单元时，将其从依赖项中隔离出来是关重要的，以确保测试关注单元自身的逻辑。Mock 充当这些依赖项的替代品，提供模拟真实依赖项行为的可控响应，而无需实际使用它们。
+*   **移除外部依赖项（Removing external dependencies）**：在单元测试中使用真实的依赖项（特别是外部服务或数据库）可能会导致测试缓慢、不可靠且难以控制。通过用 Mock 替换这些依赖项，测试将变得更快、具有确定性且不受外部因素影响。
+*   **可控行为（Controlled behavior）**：Mock 被配置为对特定输入提供预测响应，允许开发者控制被模拟依赖项的行为。这确保了被测试单元暴露在各种场景中，从而实现全面的覆盖。
+*   **消除副作用（Eliminating side effects）**：某些依赖项在测试期间可能会产生不必要的副作用，例如发送实际电子邮件或写入真实数据库。Mock 防止了这些副作用的发生，使测试更具预测性和可重复性。
+*   **测试驱动开发（Test-driven development）**：Mock 常用于 TDD 实践，开发者在实现实际功能之前编写测试。通过使用 Mock，开发者可以为尚未开发的组件创建测试，从而增量地构建系统。
+*   **集成测试与单元测试（Integration testing vs. unit testing）**：在集成测试中，通常使用真实的依赖项来验证不同组件之间的交互。但在单元测试中，倾向于使用 Mock 以关注单个孤立单元。
+*   **Mock 框架（Mocking frameworks）**：为了方便创建和管理 Mock，开发者通常使用 Mock 框架，如用于 C# 的 `Moq`、用于 Java 的 `Mockito` 或用于 JavaScript 的 `Sinon`。这些框架提供了定义 Mock 行为并验证测试期间如何使用 Mock 的 API。
+
+
+
+
+- **验证调用**：除了设置行为外，mock（模拟对象）还可以用于验证某些方法是否被带有特定参数调用。这允许开发者确保被测试的单元与其依赖项正确交互。
+- **测试代码简单性**：通过提供受控的响应并避免复杂的设置，mock 简化了测试代码，使其更易阅读、编写和维护。
+- **mock 的局限性**：虽然 mock 是单元测试的强大工具，但它们确实存在局限性。过度使用 mock 会导致测试变得脆弱，并与实现细节紧密耦合，从而随着代码的演进而降低测试的有效性。
+
+使用得当，mock 可以通过隔离单元、加快测试速度以及为依赖项提供受控行为来增强单元测试的有效性。通过在真实的单元测试中结合 mock，开发者可以实现全面的测试策略，从而提高软件的质量和稳定性。
+
+# 精通调试
+
+调试是识别、分析和解决软件代码中问题或错误的过程。对于软件开发人员来说，确保应用程序的可靠性、正确性和性能是一项至关重要的技能。调试涉及系统地调查意外行为或错误的来源并寻找解决方案。调试过程概述如下：
+
+* **识别问题**：调试的第一步是识别存在的问题。这可能是通过用户报告的问题、意外行为或失败的用例发现的。理解症状对于有效调试非常重要。
+* **重现问题**：一旦识别出问题，开发者需要一致地重现问题。这涉及识别触发 bug 的步骤或条件并在受控环境中复制，以验证可能的修复方案。
+* **检查代码**：问题可以重现后，开发者检查相关代码，寻找逻辑错误或意外后果。
+* **使用调试工具**：调试通常通过使用集成开发环境 (IDE) 或特定语言的调试器来实现。这些工具允许开发者设置断点、检查变量值、逐步执行代码并观察运行状态。
+* **设置断点**：断点是代码中的标记，用于在特定点暂停执行。当程序到达断点时，开发者可以检查变量的状态和调用栈，帮助理解程序的流程。
+* **逐步执行代码**：调试器允许开发者逐行执行代码，进入（step into）或跳过（step over）函数调用。这有助于观察代码的行为并识别问题所在。
+* **检查变量**：在调试期间，开发者可以检查运行时的变量值，以识别可能导致问题的错误或数据。
+* **修复问题**：一旦确定了问题的根源，开发者就可以实施。这可能涉及修正逻辑错误、调整算法或修复实现错误。
+* **回归测试**：修复完成后，开发者运行回归测试以确保更改没有引入新问题且原始问题已解决。
+* **持续改进**：调试是一个迭代过程，开发者不断提高自己的调试技巧。他们从之前的调试经验中学习，并编写更健壮的代码以减少未来的问题。
+
+调试是软件开发生命周期中不可或的一部分，需要技术技能、分析思维和对细节的关注。有效的调试可以提高软件质量、减少维护工作并提高客户满意度。这是开发者不断完善和利用以创建可靠韧性系统的技能。
+
+# 应用 xUnit 和 mock
+
+在这个实践示例中，我们将在《Visual Studio 2022 简介》创建的项目实现 xUnit 和 mock：
+
+1. 让我们如图所示向解决方案添加 xUnit 项目：
+
+![](img/Figure_14.1.png)
+
+图 14.1：Visual Studio xUnit 模板项目
+
+2. 现在向项目添加以下 NuGet 包：
+
+[`www.nuget.org/packages/Moq`](https://www.nuget.org/packages/Moq)
+
+此外，原始项目中添加了如下接口：
+
+```csharp
+public interface ICalculate
+{
+    int Sum();
+}
+```
+
+我们的 `Calculate` 类更新为继承该接口，如下：
+
+```csharp
+public class Calculate : ICalculate
+{
+    public Calculate(int numberA, int numberB)
+    {
+        this.NumberA = numberA;
+        this.NumberB = numberB;
+    }
+
+    private int NumberA { get; set; }
+    private int NumberB { get; set; }
+
+    public int Sum() { return NumberA + NumberB; }
+}
+```
+
+使用 xUnit 的单元测试如下：第一个单元测试是普通测试，我们创建了 `Calculate` 类的实例。第二个使用 mock 模拟接口并设置预期输出。我们还使用了 `InlineData` 属性。单元测试类代码如下：
+
+```csharp
+public class UnitTest1
+{
+    [Fact]
+    public void Test()
+    {
+        //arrange
+        Calculate calculate = null;
+
+        //act
+        calculate = new Calculate(2, 5);
+        var result = calculate.Sum();
+
+        //assert
+        Assert.Equal(7, result);
+    }
+
+    [Theory]
+    [InlineData(1, 8)]
+    [InlineData(5, 2)]
+    public void Test2(int a, int b)
+    {
+        //arrange
+        Mock<ICalculate> calculate = new Mock<ICalculate>();
+        calculate.Setup(x => x.Sum()).Returns(a + b);
+
+        //act
+        var result = calculate.Object.Sum();
+
+        //assert
+        Assert.Equal(a + b, result);
+    }
+}
+```
+
+3. 如果我们运行单元测试，将成功输出了以下图形：
+
+![](img/Figure_14.2.png)
+
+图 14.2：Visual Studio 测试资源管理器窗口
+
+你也可以调试你的单元测试方法。在 Visual Studio 上，相应的快捷键是 `Ctrl R + T`。你可以如图所示看到正在调试的单元测试：
+
+![](img/Figure_14.3.png)
+
+图 14.3：单元测试方法已调试
+
+# 总结
+
+我们希望这次在测试和调试世界的旅程让你感到既有启发性又有实用性。使用 xUnit 进行单元测试赋予了你编写自动化测试的能力，以验证代码中单个单元的正确性。你现在理解了测试在软件开发生命周期中的重要性，并拥有构建测试套件的工具，对代码库充满信心。
+
+使用 mock 的知识扩展了你的测试视野，使你在编写单元测试时能够隔离组件和依赖。这种技术使你能够创建更专注、更高效的测试，以适应不同的场景。
+
+
+
+
+随着你在软件开发征程中不断前行，请始终记住，可靠的代码是卓越软件产品的骨干。将测试和调试视为开发工作流中不可或缺的一部分，它们将成为你成功的支柱。
+
+## 加入我们书籍的 Discord 社区
+
+加入本书籍的 Discord 工作区，获取最新更新、优惠、全球科技动态、新版本发布以及与作者的互动：
+
+[`discord.bpbonline.com`](https://discord.bpbonline.com)
+
+![](img/fm1.png)
+
+# 索引
+
+### A
+- 高级消息队列协议 (AMQP) 255
+- ASP.NET 175
+- 身份验证，SignalR
+    - bearer token 身份验证 219
+    - cookie 身份验证 219
+    - identity server JWT 身份验证 220
+    - Windows 身份验证 221
+- Azure DevOps 291
+    - 功能 291, 292
+- Azure Function 79, 80
+    - 优势 81, 82
+    - 案例研究 84
+    - 创建 84-86
+    - 输出，测试 94-96
+- Azure Function 绑定 83
+    - 输入绑定 83
+    - 输出绑定 83
+    - 选择 88-93
+    - 触发器绑定 83
+- Azure Function 触发器 82
+    - blob 触发器 82
+    - Cosmos DB 触发器 82
+    - event grid 触发器 82
+    - event hub 触发器 82
+    - HTTP 触发器 82
+    - 队列触发器 82
+    - 选择 86, 87
+    - service bus 触发器 82
+    - timer 触发器 82
+- Azure Key Vault 161
+    - 访问策略，管理 168
+    - 身份验证 163
+    - Azure AD 身份验证 164
+    - 案例研究 166
+    - 证书身份验证 164
+    - 创建 166, 167
+    - 功能 163
+    - 密钥访问 169-173
+    - 托管身份身份验证 164
+    - 概述 162
+    - 策略 165, 166
+    - SAS 身份验证 164
+    - 服务主体身份验证 164
+- Azure Service Bus 130
+    - 异步操作 130
+    - 案例研究 137, 138
+    - 组件 131
+    - 创建 138-143
+    - 功能 131
+    - 消息批处理 148, 149
+    - 消息处理器 150-152
+    - 消息消费 146-148
+    - 发布 143-146
+    - 会话处理器 153-156
+    - 会话消费 152, 153
+    - 主题和订阅 156, 157
+    - 与 Azure 队列 136, 137
+    - Azure Service Bus 队列 132, 133
+    - 功能 132
+    - 会话队列 133
+    - Azure Service Bus 订阅 135
+    - 功能 135
+    - Azure Service Bus 主题 133, 134
+    - 功能 133, 134
+- Azure SQL 99, 101
+    - 数据库连接 105-109
+    - 示例 101
+    - 功能 101
+    - 服务器创建 103-105
+    - 服务器扩展 102, 103
+    - 使用示例 103
+
+### B
+- 前端后端 (BFF) 261
+    - 优势 261, 262
+    - 案例研究 265-278
+- Blazor 175, 176
+    - 授权与身份验证 192-201
+    - 最佳实践 184, 185
+    - 实践案例研究 185, 186
+    - 与 Blazor Hybrid 309, 310
+    - 与 Razor 184
+- Blazor Hybrid 307
+- Blazor Server App 项目
+    - 创建 186-189
+- Blazor WebAssembly 应用 180
+- Blob Storage 100, 120
+    - Azure 资源创建 123-125
+    - 数据库连接 125-127
+    - 示例 121
+    - 功能 121
+    - 扩展 122, 123
+    - 使用示例 103
+
+### C
+- C# 11 19
+- C# 11 更新 21
+- 别名类型 48
+- 集合表达式 44
+- 默认 lambda 参数 45
+- 内联数组 45
+- 原始构造函数 43
+- 文件局部类型 30-36
+- 泛型属性 24
+- 泛型数学支持 22
+- IntPtr 38
+- 列表模式 27-30
+- 对 `Span<char>` 的模式匹配 36
+- 原始字符串字量 21
+- ref 字段 38, 39
+- ref readonly 参数 47, 48
+- 作用域 ref 39
+- UTF-8 字符串字量 25
+- 警告波 42, 43
+- C# 12 19
+- C# 12 更新 43
+- CI/CD 流线
+    - 案例研究 294, 295
+    - 使用 Docker 在 Azure DevOps 中 282, 283
+- SignalR 客户端配置选项 215
+    - 额外选项 216-218
+    - 允许的传输配置 215
+    - bearer 身份验证配置 216
+    - 日志配置 215
+- 命令查询责任分离 (CQRS) 261, 262
+- 代码优先 55
+    - 优势 55
+    - 实现 55-57
+
+
+
+
+
+# 命令模型 262
+# 查询模型 263
+# 提交图 3
+# 通用语言运行时 (CLR) 59
+
+## 持续部署 293
+- 应用 304, 305
+- 优势 293, 294
+
+## 持续集成 292
+- 应用 298-303
+- 优势 292, 293
+
+## Cosmos DB 99, 109
+- 账户, 创建 113, 114
+- 更改馈送通知服务 112, 113
+- Cosmos 容器 110
+- 数据库, 连接到 115-120
+- 示例 110
+- 功能 109, 110
+- 扩展缩 111
+- 存储过程 112
+- 触发器 111, 112
+- NoSQL 用法示例 113
+- 用户定义函数 (UDFs) 112
+
+## CRUD 操作 70
+## 跨平台应用开发 310
+- Blazor 混合 UI, 从桌面客户端使用 312, 313
+- Blazor 混合 UI, 从移动客户端使用 313-316
+- .NET MAUI 项目, 创建 310, 311
+
+# D
+## 数据注解 59
+- 应用 59-61
+- 常用注解 59
+## 数据库优先方法 52, 53
+- 优势 53
+- 实现 53, 54
+## 数据绑定 182, 183
+- 链式绑定 183, 184
+- 示例 201-204
+- 双向数据绑定 183
+## 数据管理 70
+- 正常用法 70
+- 存储库模式 74-76
+- 工作单元 72
+## 数据建模 61
+- 多对多关系 68, 69
+- 一对多关系 65
+- 一对一关系 62
+- `DbContext` 类 105
+- 调试 335, 338
+- 概述 339
+## 拒绝服务 (DoS) 攻击 213
+## 回弃模式 28
+## Docker 283, 284
+- 应用优势 287
+- Docker 命令 290
+- `docker build` 290
+- `docker image` 291
+- `docker ps` 290
+- `docker rm` 291
+- `docker rmi` 291
+- `docker run` 290
+- `docker stop` 290
+## Docker 容器 284
+- 功能 284
+- Docker 容器镜像 284
+- 优势 285
+- `Dockerfile` 287-289
+- 创建 295, 296
+- 多阶段构建 289, 290
+- Docker 镜像 285, 286
+- 创建 296, 297
+- 运行 297, 298
+## 文档对象模型 (DOM) 元素 183
+## 领域驱动设计 (DDD) 261, 264
+- 原则 264, 265
+
+# E
+## Entity Framework Core (EF Core) 52
+- 精通 52
+
+# F
+## 先进先出 (FIFO) 方法 129
+## Fluent 设计系统 319
+- 应用 320
+- 关键原则 319, 320
+
+# H
+## 水平扩展性 256
+- 优势 257
+- 考虑因素 258
+- 热重载工作 190, 191
+
+# I
+## 集成开发环境 (IDEs) 339
+## IntelliCode 4
+## 物联网 (IoT) 消息传递 132
+
+# L
+## 语言集成查询 (LINQ) 26, 51, 70
+## LINQ to Entities 58, 59
+## 单元测试 70
+- 根据需求定制 70
+- 支持的框架 79
+- 测试方法 79, 80
+- 测试项目 79, 80
+- 使用 70, 71
+
+# M
+## 多对多关系 68, 69
+## MessagePack 211
+## 消息队列传输 255
+- 会话 152
+- 架构模式 261
+- 异步通信 251, 250
+- 水平扩展性 256
+- 垂直扩展性 256-258
+- 编排器 259, 260
+## Microsoft 设计 319
+- 示例 337
+- 应用 340-342
+- 调试 338
+## .NET 热重载 177
+- 配置 179, 180
+- 支持的框架 177, 178
+- 不支持的场景 178, 179
+## .NET MAUI 307
+- 组件 309
+- 概述 308
+
+# O
+## 对象关系映射 (ORM) 工具 51
+## 一对多关系 65
+- 可选的一对多 66, 67
+- 强制的一对多 65, 66
+## 一对一关系 62
+- 可选的一对一 63, 64
+- 强制的一对一 62, 63
+- 编排器 259, 260
+
+# P
+## 程序合成示例 (PROSE) 4
+
+# R
+## RabbitMQ 251, 252
+- 优势 254, 255
+- 功能 252-254
+## 原始字符串字面量 21
+## Razor 184
+## 存储库模式 74-76
+
+# S
+## SampleThiagoDb 53
+## 扩展扩展 256
+## 安全, Blazor 180, 181
+- 授权 182
+- 授权属性 182
+
+
+
+
+
+## AuthorizeView 组件 182
+
+# Blazor
+## Blazor 服务端认证 181
+## Blazor WebAssembly 认证 181
+
+## 会话队列 133
+
+# SignalR 208
+
+# HTTP 配置
+## 高级 HTTP 配置 213-215
+## 身份验证 219, 232-242
+## 授权 219, 232-42
+## 授权处理程序 222, 223
+## 案例研究 224-232
+## 声明 221
+## 客户端配置选项 215
+## 配置 210, 211
+## 自定义授权策略 243-247
+## 示例 209
+## 节点 (Hubs) 209, 210
+## 节点及节点方法的授权 222
+## JSON 编码 211
+## MessagePack 编码 211
+## 消息传输层 209
+## 方法 210
+## 实时通信 208
+## 服务器配置选项 211-213
+
+# 快照调试器
+## 快照调试器 11
+## 快照调试 11
+## 所需权限和限制 15
+## 支持的框架和环境 14, 15
+## 使用 11-14
+
+# SQL Server
+## SQL Server 管理 104
+## 流式传输 223
+## 客户端到服务器流式传输 224
+## 服务器到客户端流式传输 223
+
+# Team
+## Team Foundation 版本控制 291
+## 测试驱动开发 337
+## 生存时间 (TTL) 值 132
+## 时间旅行调试 15
+## 限制 17
+## 快照，录制 16, 17
+## 快照，查看 17
+## 使用 16
+## 工作单元 72
+## 单元测试 335
+## 使用 xUnit 336, 337
+
+# 通用 Windows
+## 通用 Windows  (UWP) 应用 320
+
+# 变量
+## 模式 30
+## 垂直扩展性 256-258
+## 优势 259
+## 限制 259
+
+# Visual Studio
+## Visual Studio 2022 2, 3
+## 64 位支持 3, 4
+## 提交图 (Commit Graph) 3
+## 亮点 6, 7
+## 带有新功能的热重载 (Hot Reload) 5
+## 交互式暂存支持 6
+## 界面改进与自定义 6
+## 多多存储库支持 5
+## 性能改进 2, 3
+## Razor 编辑器改进 4, 5
+## 更智能 IntelliCode 4
+
+# Web
+## Web API 249
+## 微服务实现 250
+## 使用 Blazor 和 .NET 的 Web 应用 176
+
+# WinUI
+## WinUI 318
+## 优势 318, 319
+## 案例研究 320
+## WinUI 项目
+## 缓存实现 323, 324
+## 创建 321
+## 页面间数据传输 324-333
+## 用户界面设计 322, 323
+
+# xUnit
+## xUnit 336
+## 应用 340-342
+## 使用 xUnit 进行单元测试 336
+

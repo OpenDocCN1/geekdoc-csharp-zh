@@ -1,0 +1,2995 @@
+- fmt: '
+
+    ![](cover.jpeg)
+
+
+    # C#: Programming Basics for Absolute Beginners
+
+    Nathan Clark
+
+
+    ## Table of Contents
+
+    - [Introduction](#part0000_split_003.html__Toc467520635)
+
+    - [The Basics of C#](#part0000_split_004.html__Toc467520636)
+
+    - [Variables and Data Types](#part0000_split_012.html__Toc467520637)
+
+    - [Working on the Operators](#part0000_split_017.html__Toc467520638)
+
+    - [Conditional Statements Used](#part0000_split_023.html__Toc467520639)
+
+    - [Creating and Using Objects](#part0000_split_028.html__Toc467520640)
+
+    - [Defining Classes in C#](#part0000_split_036.html__Toc467520641)
+
+    - [Conclusion](#part0000_split_046.html__Toc467520642)
+
+    - [About the Author](#part0000_split_047.html__Toc467520643)
+
+
+    © Copyright 2016 by Nathan Clark - All rights reserved.
+
+
+    This document is presented with the desire to provide reliable, quality information
+    about the topic in question and the facts discussed within. This eBook is sold
+    under the assumption that neither the author nor the publisher should be asked
+    to provide the services discussed within. If any discussion, professional or legal,
+    is otherwise required a proper professional should be consulted.
+
+
+    This Declaration was held acceptable and equally approved by the Committee of
+    Publishers and Associations as well as the American Bar Association.
+
+
+    The reproduction, duplication or transmission of any of the included information
+    is considered illegal whether done in print or electronically. Creating a recorded
+    copy or a secondary copy of this work is also prohibited unless the action of
+    doing so is first cleared through the Publisher and condoned in writing. All rights
+    reserved.
+
+
+    Any information contained in the following pages is considered accurate and truthful
+    and that any liability through inattention or by any use or misuse of the topics
+    discussed within falls solely on the reader. There are no cases in which the Publisher
+    of this work can be held responsible or be asked to provide reparations for any
+    loss of monetary gain or other damages which may be caused by following the presented
+    information in any way shape or form.
+
+
+    The following information is presented purely for informative purposes and is
+    therefore considered universal. The information presented within is done so without
+    a contract or any other type of assurance as to its quality or validity.
+
+
+    Any trademarks which are used are done so without consent and any use of the same
+    does not imply consent or permission was gained from the owner. Any trademarks
+    or brands found within are purely used for clarification purposes and no owners
+    are in anyway affiliated with this work.
+
+
+    # Introduction
+
+
+    Congratulations on purchasing `C#: Programming Basics for Absolute Beginners and
+    thank you for doing so.
+
+
+    The following chapters will discuss how to get started with the `C#` programming
+    language and how you are going to be able to use this for your own personal programming
+    needs. Many people are worried about being able to use a programming language
+    in their own lives. It may look complicated or they feel that all the rules and
+    moving things around will just make it too hard to handle. But `C#` is a great
+    option because it is simple to use, works with Windows devices, as well as several
+    others, and you won’t look at the rules and feel confused right from the start.
+
+
+    This guidebook is going to take the time to look at some of the different aspects
+    of `C#` programming and even go through creating a few different codes so that
+    you can get some practice. Sometimes getting into the coding process and giving
+    it a try while learning, can make things so much easier to understand and avoids
+    all the confusion and worry in the process. `C#` is a very easy program to use
+    and you are going to love how easy it is to get started with.
+
+
+    In addition to learning how this code works, you will learn all the other basics
+    that come with using `C#` programming language. We will talk about variables,
+    constants, comments, and so much more. Whether you just want to get a bit of experience
+    with the programming world or you are ready to increase your computer programming
+    knowledge and learn something new, `C#` is a great option to get started with
+    and you are going to love how easy it is to use. This guidebook will give you
+    all the tips that you need to understand this language and to get started right
+    away.
+
+
+    There are plenty of books on this subject on the market, thanks again for choosing
+    this one! Every effort was made to ensure it is full of as much useful information
+    as possible, please enjoy!
+
+
+    # The Basics of C#
+
+
+    When it comes to getting started with programming languages, many people run away
+    in fear. Programming is hard and difficult for some people to understand and unless
+    you have some experience or have worked with computers before, it is difficult
+    to always understand what is going on in the instructions. This chapter will start
+    with some of the basics that you need to get down in order to really learn about
+    `C#` and how to use this great programming language.
+
+
+    ## Why Use the C# Language?
+
+
+    There are a number of programming languages that you can use to make your own
+    codes from home. All of them have benefits and negatives that will determine whether
+    you want to use them or not. Sometimes it is a matter of how clean the code looks
+    and other times it may be based on the type of computer you are using or the program
+    that you want to design.
+
+
+    In this guidebook, we are going to spend some time looking at `C#` and showing
+    all the great things that you can do with this programming language. Even as a
+    beginner, there are things that you can learn with this program that will make
+    the process easy while still providing some of the bells and whistles.
+
+
+    So why would you choose to go with the `C#` program compared to going with some
+    of the other choices such as `Java`, `C++` and `Python`? Here are some of the
+    benefits that you should consider:
+
+
+    - Have lots of functions in the library—if you are just getting starting and want
+    to learn how to write out functions, there are a ton of them inside of the `C#`
+    library so you will be able to use whenever you need some help. You can place
+    these inside the code if you need it, or even make changes to have it work in
+    your particular code.
+
+    - Automatic disposal of functions—most programming languages will require you
+    to go through and manually delete any item that you don’t want there. This can
+    take a lot of time and will waste space on your memory if you don’t take care
+    of it enough. But with `C#`, you will find that the program will delete the functions
+    and objects that don’t have a value attached to them. This will help you to clear
+    out the memory on your computer and saves a lot of time and space on your computer.
+
+    - Easy to work with—`C#` is one of the easiest programs for you to work with.
+    While it may not be as simple of a language as `Python`, it is on the easier side
+    and you will find that the code is not clunky and you will be able to read through
+    it pretty easily once the code is done. There are also options for writing comments
+    so you will be able to leave some clarification in the code if someone else needs
+    to use it later.
+
+    - Does well with Windows computers as well as others—this programming language
+    was originally used in order to work with Windows computers and help you to design
+    a program for them. But it also works well with some other systems such as `Mac`,
+    `Linux`, and more as long as you download `.NET` on it. Windows has some great
+    products that are easy to use, especially for beginners, so you are sure to get
+    great results when you get started.
+
+    - Works with `.NET` which helps make it easy—this is a program that already comes
+    with the Windows computers, but you can add it to some of the other systems in
+    order to make `C#` accessible on these computers as well.
+
+    '
+  raw: "\n\n![](cover.jpeg)\n\nC#\n\nProgramming Basics for Absolute Beginners\n\n\
+    Nathan Clark\n\n# \n\nTable of Contents\n\n[Introduction](#part0000_split_003.html__Toc467520635)\n\
+    \n[The Basics of C#](#part0000_split_004.html__Toc467520636)\n\n[Variables and\
+    \ Data Types](#part0000_split_012.html__Toc467520637)\n\n[Working on the Operators](#part0000_split_017.html__Toc467520638)\n\
+    \n[Conditional Statements Used](#part0000_split_023.html__Toc467520639)\n\n[Creating\
+    \ and Using Objects](#part0000_split_028.html__Toc467520640)\n\n[Defining Classes\
+    \ in C#](#part0000_split_036.html__Toc467520641)\n\n[Conclusion](#part0000_split_046.html__Toc467520642)\n\
+    \n[About the Author](#part0000_split_047.html__Toc467520643)\n\n© Copyright 2016\
+    \ by Nathan Clark - All rights reserved.\n\nThis document is presented with the\
+    \ desire to provide reliable, quality information about the topic in question\
+    \ and the facts discussed within. This eBook is sold under the assumption that\
+    \ neither the author nor the publisher should be asked to provide the services\
+    \ discussed within. If any discussion, professional or legal, is otherwise required\
+    \ a proper professional should be consulted.\n\nThis Declaration was held acceptable\
+    \ and equally approved by the Committee of Publishers and Associations as well\
+    \ as the American Bar Association.\n\nThe reproduction, duplication or transmission\
+    \ of any of the included information is considered illegal whether done in print\
+    \ or electronically. Creating a recorded copy or a secondary copy of this work\
+    \ is also prohibited unless the action of doing so is first cleared through the\
+    \ Publisher and condoned in writing. All rights reserved.\n\nAny information contained\
+    \ in the following pages is considered accurate and truthful and that any liability\
+    \ through inattention or by any use or misuse of the topics discussed within falls\
+    \ solely on the reader. There are no cases in which the Publisher of this work\
+    \ can be held responsible or be asked to provide reparations for any loss of monetary\
+    \ gain or other damages which may be caused by following the presented information\
+    \ in any way shape or form.\n\nThe following information is presented purely for\
+    \ informative purposes and is therefore considered universal. The information\
+    \ presented within is done so without a contract or any other type of assurance\
+    \ as to its quality or validity.\n\nAny trademarks which are used are done so\
+    \ without consent and any use of the same does not imply consent or permission\
+    \ was gained from the owner. Any trademarks or brands found within are purely\
+    \ used for clarification purposes and no owners are in anyway affiliated with\
+    \ this work.\n\n# \n\nIntroduction\n\nCongratulations on purchasing C#: Programming\
+    \ Basics for Absolute Beginners and thank you for doing so.\n\nThe following chapters\
+    \ will discuss how to get started with the C# programming language and how you\
+    \ are going to be able to use this for your own personal programming needs. Many\
+    \ people are worried about being able to use a programming language in their own\
+    \ lives. It may look complicated or they feel that all the rules and moving things\
+    \ around will just make it too hard to handle. But C# is a great option because\
+    \ it is simple to use, works with Windows devices, as well as several others,\
+    \ and you won’t look at the rules and feel confused right from the start.\n\n\
+    This guidebook is going to take the time to look at some of the different aspects\
+    \ of C# programming and even go through creating a few different codes so that\
+    \ you can get some practice. Sometimes getting into the coding process and giving\
+    \ it a try while learning, can make things so much easier to understand and avoids\
+    \ all the confusion and worry in the process. C# is a very easy program to use\
+    \ and you are going to love how easy it is to get started with.\n\nIn addition\
+    \ to learning how this code works, you will learn all the other basics that come\
+    \ with using C# programming language. We will talk about variables, constants,\
+    \ comments, and so much more. Whether you just want to get a bit of experience\
+    \ with the programming world or you are ready to increase your computer programming\
+    \ knowledge and learn something new, C# is a great option to get started with\
+    \ and you are going to love how easy it is to use. This guidebook will give you\
+    \ all the tips that you need to understand this language and to get started right\
+    \ away.              \n\nThere are plenty of books on this subject on the market,\
+    \ thanks again for choosing this one! Every effort was made to ensure it is full\
+    \ of as much useful information as possible, please enjoy!\n\n# \n\nThe Basics\
+    \ of C#\n\nWhen it comes to getting started with programming languages, many people\
+    \ run away in fear. Programming is hard and difficult for some people to understand\
+    \ and unless you have some experience or have worked with computers before, it\
+    \ is difficult to always understand what is going on in the instructions. This\
+    \ chapter will start with some of the basics that you need to get down in order\
+    \ to really learn about C# and how to use this great programming language.\n\n\
+    ## Why Use the C# Language?\n\nThere are a number of programming languages that\
+    \ you can use to make your own codes from home. All of them have benefits and\
+    \ negatives that will determine whether you want to use them or not. Sometimes\
+    \ it is a matter of how clean the code looks and other times it may be based on\
+    \ the type of computer you are using or the program that you want to design.\n\
+    \nIn this guidebook, we are going to spend some time looking at C# and showing\
+    \ all the great things that you can do with this programming language. Even as\
+    \ a beginner, there are things that you can learn with this program that will\
+    \ make the process easy while still providing some of the bells and whistles.\n\
+    \nSo why would you choose to go with the C# program compared to going with some\
+    \ of the other choices such as Java, C++ and Python? Here are some of the benefits\
+    \ that you should consider:\n\n*   Have lots of functions in the library—if you\
+    \ are just getting started and want to learn how to write out functions, there\
+    \ are a ton of them inside of the C# library so you will be able to use whenever\
+    \ you need some help. You can place these inside the code if you need it, or even\
+    \ make changes to have it work in your particular code.\n\n*   Automatic disposal\
+    \ of functions—most programming languages will require you to go through and manually\
+    \ delete any item that you don’t want there. This can take a lot of time and will\
+    \ waste space on your memory if you don’t take care of it enough. But with C#,\
+    \ you will find that the program will delete the functions and objects that don’t\
+    \ have a value attached to them. This will help you to clear out the memory on\
+    \ your computer and saves a lot of time and space on your computer.\n\n*   Easy\
+    \ to work with—C# is one of the easiest programs for you to work with. While it\
+    \ may not be as simple of a language as Python, it is on the easier side and you\
+    \ will find that the code is not clunky and you will be able to read through it\
+    \ pretty easily once the code is done. There are also options for writing comments\
+    \ so you will be able to leave some clarification in the code if someone else\
+    \ needs to use it later.\n\n*   Does well with Windows computers as well as others—this\
+    \ programming language was originally used in order to work with Windows computers\
+    \ and help you to design a program for them. But it also works well with some\
+    \ other systems such as Mac, Linux, and more as long as you download .NET on it.\
+    \ Windows has some great products that are easy to use, especially for beginners,\
+    \ so you are sure to get great results when you get started.\n\n*   Works with\
+    \ .NET which helps make it easy—this is a program that already comes with the\
+    \ Windows computers, but you can add it to some of the other systems in order\
+    \ to make C# accessible on these computers as well."
+  toc: []
+  trans: '
+
+
+    ![](img/cover.jpeg)
+
+
+    # C#：零基础学者编程入门
+
+    Nathan Clark
+
+
+    ## 目录
+
+    - 介绍
+
+    - C# 基础
+
+    - 变量与数据类型
+
+    - 操作符使用
+
+    - 使用的条件语句
+
+    - 对象的创建与使用
+
+    - 在 C# 中定义类
+
+    - 结语
+
+    - 关于作者
+
+
+    © Copyright 2016 Nathan Clark - 版权所有。
+
+
+    本文档的呈现旨在就所涉及的主题及文中讨论的实事提供可靠、高质量的信息。本电子书的销售基于以下假设：书中作者或出版商都不应被要求提供书中讨论的服务。如果需要任何其他专业或法律方面的讨论，应咨询合适的专业人士。
+
+
+    本声明已获得出版商协会委员会以及美国律师协会的认可并一致批准。
+
+
+    无论是以印刷形式还是电子形式对包含的任何信息进行复制、复制或传输均被视为非法行为。除非事先获得出版者的许可并获得书面同意，否则禁止对本作品制作录制的副本或副本。保留所有权利。
+
+
+    后续页面中包含的任何信息均被认为是准确真实的，因疏忽或通过任何使用或误用书中讨论的话题而导致的任何责任均由读者自行承担。在任何情况下，本书的出版者均不对因以任何形式或方式遵循所提供的信息而可能导致的任何资金损失或其他损害承担责任，或被要求赔偿。
+
+
+    以下信息仅供参考之用，因此被认为是通用的。书中呈现的信息是在没有合同或任何其他关于其质量或有效性的保证的情况下提供的。
+
+
+    使用的任何商标均为未经许可使用，对这些商标的任何使用并不意味着获得了所有者的同意或许可。书中发现的任何商标或品牌纯用于说明，所有者均以任何方式与本作品无关。
+
+
+    # 介绍
+
+
+    感谢购买《C#：零基础学者编程入门》，并感谢你的支持。
+
+
+    接下来的章节将讨论如何开始学习 `C#` 语言，以及你将如何利用它来满足你个人的编程需求。很多人担心自己无法在生活中使用编程语言。它看起来可能很复杂，或者他们觉得所有的规则和各种组件的移动会让它变得太难以处理。但
+    `C#` 是一个非常好的选择，因为它简单易，可以在 Windows 设备以及其他几种设备上运行，你从一开始就不会因为这些规则而感到困惑。
+
+
+    本指南将花时间研究 `C#` 编程的各个方面，甚至会编写一些不同的代码以便你进行练习。有时，在学习过程中进入编码流程并尝试一下，会让事情变得更容易理解，并避免整个过程中的所有困惑和担忧。`C#`
+    是一个非常易用的程序，你将会爱上它上手的简单。
+
+
+    除了学习这些代码是如何运行的，你还将学习使用 `C#` 编程语言涉及的所有其他基础知识。我们将讨论变量、常量、注释等更多内容。无论你只是想在编程世界获得一点经验，还是准备好增加你的计算机编程知识并学习新东西，`C#`
+    都是一个极好的入门选择，你将爱上它的易用性。本指南将为你提供理解这种语言并立即上手的所有技巧。
+
+
+    市场上有许多关于这个主题的书，再次感谢你选择这一本！我们已尽一切努力确保它包含尽可能有用的信息，请尽情享受！
+
+
+    # C# 基础
+
+
+    在涉及到学习编程语言时，许多人因为恐惧而逃避。编程对某些人来说是困难且难以理解的，除非你有一些经验或以前接触过计算机，否则很难始终理解指令中发生了什么。本章将从你需要掌握基础知识开始，以便真正学习
+    `C#` 以及如何使用这门出色的编程语言。
+
+
+    ## 为什么要使用 C# 语言？
+
+
+    你有许多编程语言可以用来在家里编写自己的代码。它们都有自己的优缺点，这些因素决定了你是否想要使用它们。有时这取决于代码看起来有多整洁，而有时则可能基于你正在使用的计算机类型或你想要设计的程序。
+
+
+    在本指南中，我们将花费一些时间研究 `C#`，并展示你用这门编程语言可以做的所有棒的事情。即使是初学者，你也可以通过这个程序学习到一些东西，让过程变得简单，同时又能提供一些华丽的功能。
+
+
+    那么，为什么选择 `C#` 程序而不是选择 `Java`、`C++` 和 `Python` 等其他选择呢？以下是一些你应该考虑的优点：
+
+
+    字体 库中有许多函数可用——如果你只是刚开始并想学习如何编写函数，`C#` 库中有大量的函数，因此你需要在帮助时可以使用它们。你可以根据需要将它们放入代码中，甚至对其进行修改以适应你的特定代码。
+
+    - 函数的自动释放——大多数编程语言要求你手动删除任何不需要的项。这可能花费大量时间，如果你处理不当，还会浪费内存空间。但使用 `C#`，你会发现程序会自动删除那些没有关联值的函数和对象。这将帮助你清理计算机内存并节省大量空间。
+
+    - 易于操作——`C#` 是最易用的程序之一。虽然它可能没有 `Python` 那么简单，但它属于容易的一，你会发现代码并不笨拙，一旦代码完成后，你可以轻松地阅读。还有编写注释的选项，如果以后其他人需要使用，可以在代码中留下一些说明。
+
+    - 适用于 Windows 及其他系统——这门编程语言最初是为了配合 Windows 计算机工作并帮助你为它们设计程序。但它也适用于其他系统，如 `Mac`、`Linux`
+    等，只要在上面下载了 `.NET`。Windows 有许多易于使用的产品，特别是对于初学者，所以当你开始时一定会会获得良好的结果。
+
+    - 通过 `.NET` 使其变得简单——这是一个 Windows 计算机自带的程序，但你也可以将其添加到其他一些系统中，以便 `C#` 也能在这些计算机上运行。
+
+
+    '
+- fmt: "\n* Similar to C and C++. This makes it really easy to work with this program\
+    \ and learn the basics before going on to these other programs. Even if you choose\
+    \ to stick with this programming language, you are going to find that it is powerful\
+    \ enough to do most of the coding that you want without all the hassle of some\
+    \ of the other programs.\n\nWhile you have a lot of choices to make when it comes\
+    \ to picking out a coding language that will help you to make some great programs\
+    \ while still being simple enough to learn as a beginner, the `C#` is one of the\
+    \ best ones you can choose from for all the great benefits and things that you\
+    \ can do with it.\n\n## What You Need\n\nLet’s start out with some of the things\
+    \ that you will need in order to use this programming language. First, the computer\
+    \ you are using should have a `.NET` framework as well as the development kit\
+    \ that is used for Windows computers. Most of the modern operating systems from\
+    \ Windows, with those starting on Windows Vista and above, will have this framework\
+    \ already on the computer so you won’t have to install anything new on your computer.\n\
+    \nIf you are working on a computer that doesn’t have the `.NET` framework, you\
+    \ are able to download it for free. You just need to visit [www.microsoft.com](http://www.microsoft.com)\
+    \ and then search for the framework to get started.\n\nOne thing to note is that\
+    \ if you plan to use a Linux, UNIX, or Mac computer, you will need to choose `Mono\
+    \ Project` rather than the `.NET` framework. This kit will help you to create\
+    \ programs with `C#` on these computers. You can go to [www.monoproject.com](http://www.monoproject.com)\
+    \ to get this proper framework.\n\n## Learning the C# Language\n\nWhen it comes\
+    \ to using a Windows computer, `C#` is one of the best programming languages you\
+    \ can find. It is compatible with the `.NET` framework that is on most modern\
+    \ Windows computers and this language is simple, flexible, and still has a lot\
+    \ of power with it. If you are new to programming and like the simplicity of using\
+    \ Windows products, then the `C#` language is the right one for you.\n\nJust like\
+    \ working with the `Java` language, `C#` isn’t going to support any code pointers\
+    \ or even multiple inheritances. Rather, it is going to offer type checking and\
+    \ memory collection. It also has some of the powerful features that programmers\
+    \ like from `C++`, such as overloading, enumerations, and preprocessor directives\
+    \ so you can get the simplicity and the power that you are looking for out of\
+    \ this program.\n\n## Trying Out Your First Program with C#\n\nThe best way to\
+    \ learn some about programming with `C#` is to try writing some of the programs.\
+    \ So let’s dive in and get started writing a simple program with this language\
+    \ to help you get your feet wet and learn a bit more about this option:\n\n* Launch\
+    \ the text editor of your choice. If you are on a Windows computer, `Notepad`\
+    \ is a great option. If you are on Linux, `vim` or `vi` are good options to try\
+    \ out.\n\n* Type the following code:\n\n```csharp\nclass FirstProgram\n{\n   \
+    \ static void Main()\n    {\n        Console.WriteLine(\"Using C# is fun.\");\n\
+    \    }\n}\n```\n\n* Now you can access the command prompt and type:\n\n`csc FirstProgram.cs`\n\
+    \nAfter you issue this command, the compiler for `C#` will process this file and\
+    \ then create a `.exe` file in the same location as your code. For example, if\
+    \ you saved the original file on the desktop, you should see a new program come\
+    \ up called `FirstProgram.exe` right in the same place. If there is an error in\
+    \ the code that you wrote, you will see an error message come up.\n\nNow you can\
+    \ run this application by entering `FirstProgram.exe` into the command prompt.\
+    \ If everything was done correctly, you should see that the command prompt will\
+    \ display the message: “Using C# is fun.”\n\n## Analyzing This Program\n\nAs you\
+    \ can see, creating a program on this language is not too complicated. You will\
+    \ need to go through a few steps, but you can make the message and the results\
+    \ as simple or as complicated as you want. Now that you have had a chance to create\
+    \ your `C#` program, it is time to go over what you just did (if you notice there\
+    \ were quite a few lines there for just writing out the simple statement) so that\
+    \ you can understand this program later.\n\n* The first line—this is the line\
+    \ that will consist of the keyword and the identifier. The keyword is going to\
+    \ be a word that will have special functions inside the language. With the keyword\
+    \ above, you are creating a `class` for the program. The identifier is going to\
+    \ help you to identify the method, variable, and class that you want in the program.\
+    \ `FirstProgram` is the name of the class you are creating in this situation.\n\
+    \n* In the third line, you are defining the method. `Main()` will act as the starting\
+    \ point for any application on the computer. Programs will start executing on\
+    \ the `Main()` method, no matter where they are placed inside the code. There\
+    \ are usually two words that will go before the method, mainly `void` and `static`.\
+    \ In this case, `static` is going to inform the language compiler that the method\
+    \ will not create an object within the class. When using `void`, you are telling\
+    \ the compiler that `Main()` won’t return a value.\n\n* In the fifth line, you\
+    \ will see the final part of the code. This is the line where you will write your\
+    \ message. The method known as `WriteLine()` captured the combination of characters\
+    \ (or the sentence) and will then print it on the screen when you request.\n\n\
+    In addition, you probably also noticed that there were braces in place that were\
+    \ used to tell the computer that there are code blocks throughout the code to\
+    \ help separate things out. Keep in mind that `C#` will use a semicolon (`;`)\
+    \ (as noted in the code above) just like `Java` and `C`.\n\n## C# Comments\n\n\
+    This programming language will allow you to leave some comments within the code.\
+    \ This is going to be a line that will provide some more information regarding\
+    \ the code that you added. The compiler is going to ignore the lines so your comments\
+    \ will have no bearing on what comes out on the computer. But this can be a great\
+    \ way to remember what you were trying to do in the code or to show other programmers\
+    \ what you are working on.\n\n`C#` will allow for two types of comments. The first\
+    \ one is the single line comment. This kind will start with two forward slashes.\
+    \ The amount of words you say should be pretty small so you can keep them on a\
+    \ single line. If you go over more than one line, you will notice that the program\
+    \ sends you an error message. A good way to write this out is:\n\n```csharp\n\
+    static void Main()\n{\n    //I have a pet.\n}\n```\n\nYou can also use multi-line\
+    \ comments. Sometimes you can’t keep the comment to just one line and you will\
+    \ need to add in something different to allow the code to go over two or more\
+    \ lines. Luckily, `C#` does allow you to write these kinds of comments, as long\
+    \ as you begin it with `/*` and end it with `*/`. An example of this is:\n\n```csharp\n\
+    static void Main()\n{\n    /*The C# compiler should ignore this line.*/\n}\n```\n\
+    \nThis makes it easier to write a longer piece of comment, in order to explain\
+    \ things in more detail, without having it come up on the screen in your code.\
+    \ Comments can be your best friend when it comes to working on the code. It is\
+    \ going to help others know what they are supposed to do with the code, such as\
+    \ letting them know what they should put within the brackets at a particular part,\
+    \ explain what you are working on with that code, and more. You should be careful\
+    \ with the comments and not necessarily put them after each line of the code,\
+    \ but using them when needed can make things easier.\n\n## Things to Remember\
+    \ With C#\n\nSome of the things that you remember when it comes to creating a\
+    \ `C#` program include:\n\n* All `C#` programs will exist inside of a `class`.\n\
+    \n* You should start all of the executions that you want inside the program using\
+    \ `Main()`.\n"
+  raw: '*   Similar to C and C++. This makes it really easy to work with this program
+    and learn the basics before going on to these other programs. Even if you choose
+    to stick with this programming language, you are going to find that it is powerful
+    enough to do most of the coding that you want without all the hassle of some of
+    the other programs.
+
+
+    While you have a lot of choices to make when it comes to picking out a coding
+    language that will help you to make some great programs while still being simple
+    enough to learn as a beginner, the C# is one of the best ones that you can choose
+    from for all the great benefits and things that you can do with it.
+
+
+    ## What You Need
+
+
+    Let’s start out with some of the things that you will need in order to use this
+    programming language. First, the computer you are using should have a “.NET” framework
+    as well as the development kit that is used for Windows computers. Most of the
+    modern operating systems from Windows, with those starting on Windows Vista and
+    above, will have this framework already on the computer so you won’t have to install
+    anything new on your computer.
+
+
+    If you are working on a computer that doesn’t have the .NET framework, you are
+    able to download it for free. You just need to go visit [www.microsoft.com](http://www.microsoft.com)
+    and then search for the framework to get started.
+
+
+    One thing to note is that if you plan to use a Linux, UNIX, or Mac computer, you
+    will need to choose Mono Project rather than the .NET framework. This kit will
+    help you to create programs with C# on these computers. You can go to [www.monoproject.com](http://www.monoproject.com)
+    to get this proper framework.
+
+
+    ## Learning the C# Language
+
+
+    When it comes to using a Windows computer, C# is one of the best programming languages
+    that you can find. It is compatible with the .NET framework that is on most modern
+    Windows computers and this language is simple, flexible, and still has a lot of
+    power with it. If you are new to programming and like the simplicity of using
+    Windows products, then the C# language is the right one for you.
+
+
+    Just like working with the Java language, C# isn’t going to support any code pointers
+    or even multiple inheritances. Rather, it is going to offer type checking and
+    memory collection. It also has some of the powerful features that programmers
+    like from C++, such as overloading, enumerations, and preprocessor directives
+    so you can get the simplicity and the power that you are looking for out of this
+    program.
+
+
+    ## Trying Out Your First Program with C#
+
+
+    The best way to learn some about programming with C# is to try writing some of
+    the programs. So let’s dive in and get started writing a simple program with this
+    language to help you get your feet wet and learn a bit more about this option:
+
+
+    *   Launch the text editor of your choice. If you are on a Windows computer, Notepad
+    is a great option. If you are on Linux, vim or vi are good options to try out.
+
+
+    *   Type the following code:
+
+
+    class FirstProgram
+
+
+    {
+
+
+         static void Main()
+
+
+         {
+
+
+              Console.WriteLine(“Using C# is fun.”);
+
+
+         }
+
+
+    }
+
+
+    *   Now you can access the command prompt and type:
+
+
+    csc FirstProgram.cs
+
+
+    After you issue this command, the compiler for C# will process this file and then
+    create a .exe file in the same location as your code. For example, if you saved
+    the original file on the desktop, you should see a new program come up called
+    “FirstProgram.ee.” right in the same place. If there is an error in the code that
+    you wrote, you will see an error message come up.
+
+
+    Now you can run this application by entering “FirstProgram.exe.” into the command
+    prompt. If everything was done correctly, you should see that the command prompt
+    will display the message: “Using C# is fun.”
+
+
+    ## Analyzing This Program
+
+
+    As you can see, creating a program on this language is not too complicated.  You
+    will need to go through a few steps, but you can make the message and the results
+    as simple or as complicated as you want. Now that you have had a chance to great
+    your C# program, it is time to go over what you just did (if you notice there
+    were quite a few lines there for just writing out the simple statement) so that
+    you can understand this program later.
+
+
+    *   The first line—this is the line that will consist of the keyword and the identifier.
+    The keyword is going to be a word that will have special functions inside the
+    language. With the keyword above, you are creating a class for the program. The
+    identifier is going to help you to identify the method, variable, and class that
+    you want in the program. “FirstProgram” is the name of the class you are creating
+    in this situation.
+
+
+    *   In the third line, you are defining the method. Main() will act as the starting
+    point for any application on the computer. Programs will start executing on the
+    Main() method, no matter where they are placed inside the code. There are usually
+    two words that will go before the method, mainly void and static. In this case,
+    static is going to inform the language compiler that the method will not create
+    an object within the class. When using void, you are telling the compiler that
+    Main() won’t return a value.
+
+
+    *   In the fifth line, you will see the final part of the code. This is the line
+    where you will write your message. The method known as WriteLine() captured the
+    combination of characters (or the sentence) and will then print it on the screen
+    when you request.
+
+
+    In addition, you probably also noticed that there were braces in place that were
+    used to tell the computer that there are code blocks throughout the code to help
+    separate things out. Keep in mind that C# will use a semicolon (as noted in the
+    code above) just like Java and C.
+
+
+    ## C# Comments
+
+
+    This programming language will allow you to leave some comments within the code.
+    This is going to be a line that will provide some more information regarding the
+    code that you added. The compiler is going to ignore the lines so your comments
+    will have no bearing on what comes out on the computer. But this can be a great
+    way to remember what you were trying to do in the code or to show other programmers
+    what you are working on.
+
+
+    C# will allow for two types of comments. The first one is the single line comment.
+    This kind will start with two forward slashes. The amount of words that you say
+    should be pretty small so you can keep them on a single line. If you go over to
+    more than one line, you will notice that the program sends you an error message.
+    A good way to write this out is:
+
+
+    static void Main()
+
+
+    {//I have a pet.}
+
+
+    You can also use multi-line comments. Sometimes you can’t keep the comment to
+    just one line and you will need to add in something different to allow the code
+    to go over two or more lines. Luckily, C# does allow you to write these kinds
+    of comments, as long as you begin it with the symbols /* and end it with */. An
+    example of this is:
+
+
+    static void Main()
+
+
+    {
+
+
+    /*The C# compiler should ignore this line.*/
+
+
+    }
+
+
+    This makes it easier to write a longer piece of comment, in order to explain things
+    in more detail, without having it come up on the screen in your code or having
+    an error sign come up when you are working on the code.
+
+
+    Comments can be your best friend when it comes to working on the code. It is going
+    to help others know what they are supposed to do with the code, such as letting
+    them know what they should put within the brackets at a particular part, explain
+    what you are working on with that code, and more. You should be careful with the
+    comments and not necessarily put them after each line of the code, but using them
+    when needed can make things easier.
+
+
+    ## Things to Remember With C#
+
+
+    Some of the things that you should remember when it comes to creating a C# program
+    include:
+
+
+    *   All C# programs will exist inside of a class.
+
+
+    *   You should start all of the executions that you want inside the program using
+    Main().'
+  toc: []
+  trans: "\n\n* 类似于 C 和 C++。这使得操作该程序变得非常容易，并且可以在学习其他程序之前先掌握基础知识。即使你决定坚持使用这种编程语言，你会发现它足够强大，可以完成你的大部分编码，而无需像某些其他程序那样繁琐。\n\
+    \n在选择一种编程语言时，你有很多选择，既要能帮助你编写出色的程序，又要对初学者来说易于学习。而 `C#` 凭借其提供的巨大优势和可以用它实现的功能，是你可以选择的最佳语言之一。\n\
+    \n## 你需要什么\n\n让我们从使用这种编程语言所需的一些内容开始吧。首先，你使用的电脑应该拥有 `.NET` 框架以及用于 Windows 电脑的开发工具包。大多数现代\
+    \ Windows 系统（从 Windows Vista 及以上版本）已经预装了该框架，因此你不需要在电脑上安装任何新内容。\n\n如果你在没有 `.NET`\
+    \ 框架的电脑上工作，可以免费下载。你只需要访问 [www.microsoft.com](http://www.microsoft.com) 并搜索框架即可开始。\n\
+    \n需要注意的一点是，如果你计划使用 Linux、UNIX 或 Mac 电脑，你需要选择 `Mono Project` 而不是 `.NET` 框架。该工具包将帮助你在这些电脑上使用\
+    \ `C#` 创建程序。你可以访问 [www.monoproject.com](http://www.monoproject.com) 获取正确的框架。\n\
+    \n## 学习 C# 语言\n\n在使用 Windows 电脑时，`C#` 是你能找到的最佳编程语言之一。它与大多数现代 Windows 电脑上的 `.NET`\
+    \ 框架兼容，而且这种语言简单、灵活且依然强大。如果你是编程新手，并且喜欢 Windows 产品的简单性，那么 `C#` 语言就是适合你的选择。\n\n就像使用\
+    \ `Java` 语言一样，`C#` 不支持任何代码指针甚至多重继承。相反，它将提供类型检查和内存收集。它还包含了一些程序员从 `C++` 中喜欢的强大功能，如重载、枚举和预处理器指令，因此你可以从这个程序中获得你所追求的简单与强大。\n\
+    \n## 用 C# 尝试你的第一个程序\n\n学习 `C#` 编程最好的方法是尝试编写一些程序。所以，让我们深入吧，用这种语言编写一个简单的程序，帮助你入门并了解更多关于这个选项的信息：\n\
+    \n* 启动你选择的文本编辑器。如果你使用的是 Windows 电脑，`Notepad` 是一个很好的选择。如果你在 Linux 上，`vim` 或 `vi`\
+    \ 是可以尝试的好选择。\n\n* 输入以下代码：\n\n```csharp\nclass FirstProgram\n{\n    static void\
+    \ Main()\n    {\n        Console.WriteLine(\"Using C# is fun.\");\n    }\n}\n\
+    ```\n\n* 现在你可以访问命令行提示符并输入：\n\n`csc FirstProgram.cs`\n\n执行此命令后，`C#` 编译器将处理该文件，并在代码相同的位置创建一个\
+    \ `.exe` 文件。例如，如果你将原始文件保存在桌面上，你应该在同一个地方看到一个名为 `FirstProgram.exe` 的新程序。如果你编写的代码有错误，你将看到错误信息。\n\
+    \n现在你可以在命令行提示符中输入 `FirstProgram.exe` 来运行此应用程序。如果一切操作得正确，你应该看到命令行提示符显示消息：“Using\
+    \ C# is fun.” \n\n## 分析此程序\n\n如你所见，用这种语言创建程序并不复杂。你需要经过几个步骤，但你可以根据需要让消息和结果变得简单或复杂。现在你已经有了机会创建你的\
+    \ `C#` 程序，是时候回顾一下你刚刚做了什么（如果你注意到仅仅写这句简单的语句就有好几行），这样你以后就能理解这个程序。\n\n* 第一行——这一行由关键字和标识符组成。关键字是一个在语言内部具有特殊功能的单词。通过上面的关键字，你正在为程序创建一个\
+    \ `class`（类）。标识符将帮助你识别程序中需要的方法、变量和类。`FirstProgram` 是你在这种情况下创建的类名。\n\n* 在第三行，你正在定义方法。`Main()`\
+    \ 将作为计算机上任何应用程序的起点。无论程序被放置在代码的哪个位置，都会从 `Main()` 方法开始执行。通常在方法之前有两个单词，主要是 `void`\
+    \ 和 `static`。在这种情况下，`static` 告诉编译器该方法不会在类中创建对象。使用 `void` 时，你是在告诉编译器 `Main()` 不返回值。\n\
+    \n* 在第五行，你将看到代码的最后部分。这是你编写消息的行。名为 `WriteLine()` 方法捕获字符组合（或句子），并在你请求时将其打印到屏幕上。\n\
+    \n此外，你可能还注意到那里有大括号，用于告诉计算机代码中存在代码块以帮助区分内容。记住，`C#` 像 `Java` 和 `C` 一样使用分号（`;`）（如上面的代码所示）。\n\
+    \n## C# 注释\n\n这种编程语言允许你在代码中留下注释。这将提供关于你添加的代码的更多信息。编译器将忽略这些行，因此你的注释对计算机的输出没有影响。但这可以成为记住你在代码中尝试做什么，或向其他程序员展示你正在工作内容的好方法。\n\
+    \n`C#` 允许两种类型的注释。第一种是单行注释。这种注释以两个斜杠开头。你说的话应该尽量少一些，以便将它们保持在一行。如果你超过了一行，你会发现程序会向你发送错误信息。编写这种注释的方法是：\n\
+    \n```csharp\nstatic void Main()\n{\n    //I have a pet.\n}\n```\n\n你也可以使用多行注释。有时你无法将注释保持在一行，需要添加不同的内容允许代码跨越两行或更多。幸运的是，`C#`\
+    \ 允许你编写这类注释，只要以 `/*` 开始并以 `*/` 结束即可。这是一个示例：\n\n```csharp\nstatic void Main()\n\
+    {\n    /*The C# compiler should ignore this line.*/\n}\n```\n\n这使得编写较长的注释变得更容易，以便更详细地解释事情，而不会其出现在你的代码屏幕上。在处理代码时，注释可以是你最好的朋友。它将帮助他人知道应该对代码做什么，例如让他们知道在特定部分的括号内应该放什么，解释你正在用该代码做什么，等等。你应该仔细对待注释，不一定非要在每行代码后都放置注释，但在需要时使用它们可以让事情变得简单。\n\
+    \n## C# 需要记住的事项\n\n创建 `C#` 程序时你需要记住的一些事项包括：\n\n* 所有的 `C#` 程序都存在于 `class`（类）内部。\n\
+    \n* 你应该使用 `Main()` 开始程序内所有想要执行的操作。\n\n"
+- fmt: '
+
+    # General Introduction
+
+
+    - This programming language will be case sensitive. This means that `class` and
+    `CLASS` will have different meanings to the program.
+
+    - The compiler is going to ignore the white spaces that you create. This includes
+    spaces, tabs, and new lines. You can use this whitespace as much as you like to
+    help make the program look a little easier to read.
+
+    - `C#` will allow you to choose any name that you want for the programs. You don’t
+    need to have the program’s name and the class identifier be the same.
+
+    - You can use `Main()` more than once within the program.
+
+    - When defining the boundaries of a method or a class, make sure to use the curly
+    brackets.
+
+    - You can use two types of comments within `C#` to help explain things better.
+    Multi-line and single line are fine, as long as you use the right features of
+    each.
+
+    - You can always add in an argument or a string to your `Main()` method.
+
+
+    Using `C#` is one of the best programming languages that you can choose. It is
+    great to use with most Windows computer, and it works great with other computers
+    as well. It has all the great features that you have come to know and love with
+    `Java` and `C++`, but it is much easier to use and can work for beginners without
+    all the experience!
+
+
+    # Variables and Data Types
+
+
+    With a first glance at using `C#`, you can see that this language is not too scary.
+    While some of the other options are meant for more advanced users and can be a
+    bit complicated, you will find that this is not always the case when using `C#`.
+    So now that you have gotten your feet a bit wet with `C#`, it is time to delve
+    in deeper and learn a few more things to make it more fun.
+
+
+    ## Data Types
+
+
+    Those who have used `C#` often will choose to divide the programming language
+    into two parts; reference types and value types. When you are working with a value
+    type, you are going to pass the data over to whichever method you are using. On
+    the other hand, when working with a reference type, you should just add the reference
+    in with the method as the value will be placed somewhere else. Some of the data
+    types that you will find when using the `C#` program include:
+
+
+    - `Ulong`
+
+    - `Double`
+
+    - `Long`
+
+    - `Float`
+
+    - `Uint`
+
+    - `Int`
+
+    - `Ushort`
+
+    - `Sbyte`
+
+    - `Short`
+
+    - `Byte`
+
+    - `Bool`—when you use this type, the values that you are allowed to store can
+    only be two. The values are going to be `false` and `true` so it is good for conditional
+    statements and logical expressions.
+
+    - `Decimal`
+
+    - `Char`—this is a data type that is only allowed to have one single character.
+    When you are writing the `char` value, you must include it with single quotes
+    such as writing out ‘t’ ‘b’ and so on.
+
+
+    ## Variables
+
+
+    When you are doing an execution, the computer program is going to store all the
+    data for a short amount of time. Programmers will often use the word “variables”
+    when they are referring to the locations of memory that will hold this stored
+    data. Thus, the variable will have a data type and corresponding value. When you
+    are working in the `C#` language, you are able to create a variable using this
+    syntax:
+
+
+    ```
+
+    <data_type> <name_of_variable>
+
+    ```
+
+
+    The line above will save a part of your computers’ memory in order to hold onto
+    the `char` value. The programmer will then be able to access this variable using
+    the identifier it was given. For example, if you had listed the above formula
+    as `char x`, you could find the variable by going to `x`.
+
+
+    `C#` also allows you to initialize the variables during declaration. This term
+    refers to the process of giving a value to your variable when you are creating
+    it. You just need to use your assignment operator, which is `=`, and then indicate
+    the value that you are trying to assign here. Some examples of this could be:
+
+
+    ```
+
+    int year=2015
+
+    bool isItDelicious = false
+
+    char sample = ‘4’
+
+    ```
+
+
+    You can also declare a few variables for one statement as long as they are of
+    the same data type, you just need to separate each of the entries using a comma.
+    An example of this is:
+
+
+    ```
+
+    char ant = ‘a’, bull=’b’, cat=’c’
+
+    ```
+
+
+    Just like with other programming languages, `C#` will require you to declare your
+    variables before you are able to assess them again. `C#` is also going to implement
+    a new rule called definite assignment. This means that you will need to initialize
+    the local variable before you are able to use it. You basically need to assign
+    the initial value of a local variable during the declaration process.
+
+
+    Something to keep in mind: variables are named this way because the values that
+    they are going to store will change every time that the program runs. The values
+    are going to change based on what you place into them.
+
+
+    ## Constants
+
+
+    Next on the list to understand are constants. These are variable types that will
+    prevent the program from changing the initial value. This means that the value
+    is going to stay constant, no matter what the user is inputting in the process.
+    You will need to use `const` when you want to declare this constant. An example
+    of this is:
+
+
+    ```
+
+    const char LETTER=x;
+
+    ```
+
+
+    Before you state one of these constants, you need to make sure that you really
+    want it that way. The program will not be able to change the value of a constant
+    if you’ve already put it in place. This means that you must assign the initial
+    value to it right at the variable declaration. For example, you will get an error
+    message if you put in the following command:
+
+
+    ```
+
+    const bool ANSWER;
+
+    ```
+
+
+    One thing to keep in mind about constants is that most are going to use uppercase
+    letters when you are declaring this. Knowing this information can help you to
+    read through `C#` code a bit easier and will make it easier to create your own
+    in a manner that others will be able to read and understand.
+
+
+    ## Creating Your Identifier
+
+
+    If you look through the suggestions from Microsoft, you will find that they recommend
+    that you use a Camel notation when you are working with variables and a Pascal
+    notation when working with methods. When you are doing a Camel notation, you will
+    see that the first letter of the word is lower case. If you are dealing with a
+    compound word, the first letter in your second word will start with an uppercase
+    letter. Some examples of this include:
+
+
+    ```
+
+    payment         completePayment
+
+    mathematics      firstClass
+
+    ```
+
+
+    The Pascal notation will take things a bit differently. This notation style is
+    going to ask you to start the first word using an uppercase letter. The first
+    letter in all of the other words in the sequence should also be done in uppercase
+    as well. Some examples of using the Pascal notation include:
+
+
+    ```
+
+    WriteLine()      ReadLine()
+
+    Start()          Main()
+
+    ```
+
+
+    It is also possible to use underscore characters and numbers as well when you
+    are creating an identifier. But, you are not allowed to start the identifier using
+    a number. You can write `fiveBooks` as an identifier, but you are not allowed
+    to write `5Books`.
+
+    '
+  raw: "*   This programming language will be case sensitive. This means that class\
+    \ and CLASS will have different meanings to the program.\n\n*   The compiler is\
+    \ going to ignore the white spaces that you create. This includes spaces, tabs,\
+    \ and new lines. You can use this whitespace as much as you like to help make\
+    \ the program look a little easier to read.\n\n*   C# will allow you to choose\
+    \ any name that you want for the programs. You don’t need to have the program’s\
+    \ name and the class identifier be the same.\n\n*   You can use Main() more than\
+    \ once within the program.\n\n*   When defining the boundaries of a method or\
+    \ a class, make sure to use the curly brackets.\n\n*   You can use two types of\
+    \ comments within C# to help explain things better. Multi-line and single line\
+    \ are fine, as long as you use the right features of each.\n\n*   You can always\
+    \ add in an argument or a string to your Main() method.\n\nUsing C# is one of\
+    \ the best programming languages that you can choose. It is great to use with\
+    \ most Windows computer, and it works great with other computers as well. It has\
+    \ all the great features that you have come to know and love with Java and C++,\
+    \ but it is much easier to use and can work for beginners without all the experience!\n\
+    \n# \n\nVariables and Data Types\n\nWith a first glance at using C#, you can see\
+    \ that this language is not too scary. While some of the other options are meant\
+    \ for more advanced users and can be a bit complicated, you will find that this\
+    \ is not always the case when using C#. So now that you have gotten your feet\
+    \ a bit wet with C#, it is time to delve in deeper and learn a few more things\
+    \ to make it more fun.\n\n## Data Types\n\nThose who have used C# often will choose\
+    \ to divide the programming language into two parts; reference types and value\
+    \ types. When you are working with a value type, you are going to pass the data\
+    \ over to whichever method you are using. On the other hand, when working with\
+    \ a reference type, you should just add the reference in with the method as the\
+    \ value will be placed somewhere else. Some of the data types that you will find\
+    \ when using the C# program include:\n\n*   Ulong\n\n*   Double\n\n*   Long\n\n\
+    *   Float\n\n*   Uint\n\n*   Int\n\n*   Ushort\n\n*   Sbyte\n\n*   Short\n\n*\
+    \   Byte\n\n*   Bool—when you use this type, the values that you are allowed to\
+    \ store can only be two. The values are going to be false and true so it is good\
+    \ for conditional statements and logical expressions.\n\n*   Decimal\n\n*   Char—this\
+    \ is a data type that is only allowed to have one single character. When you are\
+    \ writing the char value, you must include it with single quotes such as writing\
+    \ out ‘t’ ‘b’ and so on.\n\n## Variables\n\nWhen you are doing an execution, the\
+    \ computer program is going to store all the data for a short amount of time.\
+    \ Programmers will often use the word “variables” when they are referring to the\
+    \ locations of memory that will hold this stored data. Thus, the variable will\
+    \ have a data type and corresponding value. When you are working in the C# language,\
+    \ you are able to create a variable using this syntax:\n\n<data_type> <name_of_variable>\n\
+    \nThe line above will save a part of your computers’ memory in order to hold onto\
+    \ the char value. The programmer will then be able to access this variable using\
+    \ the identifier it was given. For example, if you had listed the above formula\
+    \ as char x, you could find the variable by going to x.\n\nC# also allows you\
+    \ to initialize the variables during declaration. This term refers to the process\
+    \ of giving a value to your variable when you are creating it.  You just need\
+    \ to use your assignment operator, which is =, and then indicate the value that\
+    \ you are trying to assign here. Some examples of this could be:\n\nint    year=2015\n\
+    \nbool isItDelicious = false\n\nchar sample = ‘4’’\n\nYou can also declare a few\
+    \ variables for one statement as long as they are of the same data type, you just\
+    \ need to separate each of the entries using a comma. An example of this is:\n\
+    \nchar ant = ‘a’, bull=’b’, cat=’c’\n\nJust like with other programming languages,\
+    \ C# will require you to declare your variables before you are able to assess\
+    \ them again. C# is also going to implement a new rule called definite assignment.\
+    \ This means that you will need to initialize the local variable before you are\
+    \ able to use it. You basically need to assign the initial value of a local variable\
+    \ during the declaration process.\n\nSomething to keep in mind: variables are\
+    \ named this way because the values that they are going to store will change every\
+    \ time that the program runs. The values are going to change based on what you\
+    \ place into them.\n\n## Constants\n\nNext on the list to understand are constants.\
+    \ These are variable types that will prevent the program from changing the initial\
+    \ value. This means that the value is going to stay constant, no matter what the\
+    \ user is inputting in the process. You will need to use “const” when you want\
+    \ to declare this constant. An example of this is:\n\nconst char LETTER=x;\n\n\
+    Before you state one of these constants, you need to make sure that you really\
+    \ want it that way. The program will not be able to change the value of a constant\
+    \ if you’ve already put it in place. This means that you must assign the initial\
+    \ value to it right at the variable declaration. For example, you will get an\
+    \ error message if you put in the following command:\n\nconst bool ANSWER;\n\n\
+    One thing to keep in mind about constants is that most are going to use uppercase\
+    \ letters when they are declaring this. Knowing this information can help you\
+    \ to read through C# code a bit easier and will make it easier to create your\
+    \ own in a manner that others will be able to read and understand.\n\n## Creating\
+    \ Your Identifier\n\nIf you look through the suggestions from Microsoft, you will\
+    \ find that they recommend that you use a Camel notation when you are working\
+    \ with variables and a Pascal notation when working with methods. When you are\
+    \ doing a Camel notation, you will see that the first letter of the word is lower\
+    \ case. If you are dealing with a compound word, the first letter in your second\
+    \ word will start with an uppercase letter. Some examples of this include:\n\n\
+    payment          completePayment\n\nmathematics          firstClass\n\nThe Pascal\
+    \ notation will take things a bit differently. This notation style is going to\
+    \ ask you to start the first word using an uppercase letter. The first letter\
+    \ in all of the other words in the sequence should also be done in uppercase as\
+    \ well. Some examples of using the Pascal notation include:\n\nWriteLine()         \
+    \ ReadLine()\n\nStart()          Main()\n\nIt is also possible to use underscore\
+    \ characters and numbers as well when you are creating an identifier. But, you\
+    \ are not allowed to start the identifier using a number. You can write fiveBooks\
+    \ as an identifier, but you are not allowed to write 5Books.\n\nWhile these notations\
+    \ aren’t mandatory, you are often advised to use them when you are writing statements\
+    \ with C#. This can help you to keep the code pretty clean and makes it easier\
+    \ for others to be able to go through and read your source codes later on if they\
+    \ need to.\n\nC# has made creating a code pretty easy. You don’t need to worry\
+    \ about a lot of complicated rules that come with some of the other codes and\
+    \ yet you are still going to get a lot of the power that you are looking for.\
+    \ The good news is, we have already looked at some of the most important parts\
+    \ that come with using C#, and so far you have even written a code. So now let’s\
+    \ take this knowledge and move into some more of the things that you are able\
+    \ to do with this great programming language.\n\n# \n\nWorking on the Operators\n\
+    \nThe next thing that we will learn about are the operators. The operators are\
+    \ going to help your created programs learn how to perform tasks and handle values.\
+    \ Without this part of the formula, your computer programs can’t do much and will\
+    \ become useless so knowing how to write operators and how they work will make\
+    \ a big difference in how your program works for you."
+  toc: []
+  trans: '
+
+
+    # 简介
+
+
+    - 这种编程语言是区分大小写的。这意味着 `class` 和 `CLASS` 对程序来说具有不同的含义。
+
+    - 编译器将忽略你创建的空白。这包括空格、制表符和换行符。你可以随心所欲地使用这些空白来帮助程序看起来更易读。
+
+    - `C#` 允许你为程序选择任何你喜欢的名称。你不需要程序的名称和类标识符保持一致。
+
+    - 你可以在程序中多次使用 `Main()`。
+
+    - 在定义方法或类的边界时，请务必使用大括号。
+
+    - 你可以在 `C#` 中使用两种类型的注释来帮助更好地解释内容。多行注释和单行注释都可以的，只要你使用了每种注释正确的功能。
+
+    - 你可以随时向你的 `Main()` 方法中添加参数或字符串。
+
+
+    使用 `C#` 是你可以选择的最优秀的编程语言之一。它在大多数 Windows 电脑上非常好用，在其他电脑上运行得也很好。它拥有你在 `Java` 和 `C++`
+    中熟悉并喜爱的所有优秀特性，但它要用得多，而且即使没有经验的初学者也能胜任！
+
+
+    # 变量与数据类型
+
+
+    初看 `C#`，你会发现这种语言并没有那么可怕。虽然其他一些选项是为更高级的用户设计的，可能有点复杂，但你会发现在使用 `C#` 时情况并不总是如此。现在既然你已经初步接触了
+    `C#`，是时候深入钻究并学习更多东西来，让它变得更有趣了。
+
+
+    ## 数据类型
+
+
+    经常使用 `C#` 的人通常会选择将这种编程语言分为两个部分：引用类型和值类型。当你处理值类型时，你会将数据传递到你正在使用的任何方法。另一方面，当处理引用类型时，你只需要将引用传递给方法，因为值将被放置在其他地方。在使用
+    `C#` 程序时你会发现的一些数据类型包括：
+
+
+    - `Ulong`
+
+    - `Double`
+
+    - `Long`
+
+    - `Float`
+
+    - `Uint`
+
+    - `Int`
+
+    - `Ushort`
+
+    - `Sbyte`
+
+    - `Short`
+
+    - `Byte`
+
+    - `Bool`——当你使用这种类型时，允许存储的值只有两个。这两个值是 `false` 和 `true`，因此非常适合条件语句和逻辑表达式。
+
+    - `Decimal`
+
+    - `Char`——这是一种允许只有一个单个字符的数据类型。当你编写 `char` 值时，必须用单引号将其包含起来，例如写出 ‘t’、‘b’ 等。
+
+
+    ## 变量
+
+
+    当你执行操作时，计算机程序会在短时间内存储所有数据。程序员经常使用“变量”一词来指代存储这些存储数据的内存位置。因此，变量将具有一个数据类型和对应的值。在
+    `C#` 语言中工作时，你可以使用以下语法创建变量：
+
+
+    ```
+
+    <data_type> <name_of_variable>
+
+    ```
+
+
+    上述行将保存你计算机的一部分内存以保留 `char` 值。然后，程序员可以使用它被赋予的标识符来访问该变量。例如，如果你将上述公式列为 `char x`，你就可以通过
+    `x` 找到该变量。
+
+
+    `C#` 还允许你在声明期间初始化变量。这个术语是指在创建变量时给你的变量赋值的过程。你只需要使用你的赋值运算符，即 `=`，然后指示你尝试在这里赋值的值。这里是一些可能的例子：
+
+
+    ```
+
+    int year=2015
+
+    bool isItDelicious = false
+
+    char sample = ‘4’
+
+    ```
+
+
+    你也可以为一个语句声明几个变量，只要它们具有相同的数据类型，你只需要用逗号分隔每个条目即可。这样的例子是：
+
+
+    ```
+
+    char ant = ‘a’, bull=’b’, cat=’c’
+
+    ```
+
+
+    就像与其他编程语言一样，`C#` 要求你在再次评估变量之前先声明它们。`C#` 还会实施一种称为“确定性赋值”（definite assignment）的新规则。这意味着你在使用局部变量之前需要初始化它。你基本上需要在声明过程中为局部变量分配初始值。
+
+
+    需要记住的一点：变量之所以这样命名，是因为它们将存储的值在每次程序运行时都会改变。值将根据你放入的内容而改变。
+
+
+    ## 常量
+
+
+    接下来要理解的是常量。这些是防止程序更改初始值的变量类型。这意味着无论用户在过程中输入什么，值都将保持不变。当你想要声明此常量时，需要使用 `const`。这里的例子是：
+
+
+    ```
+
+    const char LETTER=x;
+
+    ```
+
+
+    在声明这些常量之一之前，你需要确保你确实希望它是那样的。如果你已经设定了它，程序将无法更改常量的值。这意味着你必须在变量声明时立即为其分配初始值。例如，如果你输入以下命令，将得到错误消息：
+
+
+    ```
+
+    const bool ANSWER;
+
+    ```
+
+
+    关于常量需要记住的一点是，当你声明它们时，大多数使用大写字母。了解这些信息可以帮助你更轻松地阅读 `C#` 代码，并让你更容易以他人能够阅读和理解的方式创建你自己的代码。
+
+
+    ## 创建你的标识符
+
+
+    如果你查看微软的建议，你会发现他们建议在处理变量时使用驼峰命名法（Camel notation），在处理方法时使用帕斯卡命名法（Pascal notation）。当你使用驼峰命名法时，你会发现单词的首字母是小写的。如果你处理的是复合词，第二个单词的第一个字母将以大写字母开头。这里是一些相关的例子：
+
+
+    ```
+
+    payment         completePayment
+
+    mathematics      firstClass
+
+    ```
+
+
+    帕斯卡命名法的方式略有不同。这种命名风格要求你使用大写字母开始第一个单词。序列中所有其他单词的首字母也应该大大写。使用帕斯卡命名法的例子包括：
+
+
+    ```
+
+    WriteLine()      ReadLine()
+
+    Start()          Main()
+
+    ```
+
+
+    在创建标识符时，也可以使用下划线字符和数字。但是，你不允许使用数字开头标识符。你可以将 `fiveBooks` 作为标识符，但你不能写 `5Books`。
+
+
+    '
+- fmt: "\nJust like with other programming languages that you may work with, C# has\
+    \ operators that will belong in different categories. Let’s take a look at each\
+    \ of the categories and how you will handle the operators in each one.\n\n## Arithmetic\
+    \ Operators\n\nThese are the operators that will tell your computer program to\
+    \ do an arithmetic procedure. This can help the computer know when you need to\
+    \ add things together, subtract them, and so much more. The computer can do some\
+    \ of the basics for you while making the right signs to show the program what\
+    \ you would like it to do. Some of the arithmetic operators that you can use in\
+    \ C# are:\n\nFor these examples let’s assume that `x=15` and `y=10`\n\n- `+` this\
+    \ is the addition operator. It is going to add two operands together. So you would\
+    \ get `x+y=25`\n- `-` this is the subtraction operator. It is going to allow you\
+    \ to subtract the value of the right-hand operand from the left-hand operand.\
+    \ So you would get `y-x=-5`.\n- `*` this is the one that will tell the computer\
+    \ to multiply the two operands. So you could do `x*y=150`.\n- `/` this one is\
+    \ the operator that will tell the computer to divide the left-hand operand with\
+    \ the right-hand operand. For example `y/x`. own- `%` this is often called the\
+    \ remainder or the modulo operator. It is going to divide the left-hand operand\
+    \ by the right operand and then returns the remainder.\n- `++` this is the increment\
+    \ operator. It is going to increase the value of the operand by one. So you would\
+    \ have `++x=16`\n- `--` programmers will often call this the decrement operator.\
+    \ It is going to decrease the value of the operand by one. This means that you\
+    \ will have `--x=14`.\n\nOne thing to note is that the decrement and the increment\
+    \ operators are considered unary, which means that it can only be used on one\
+    \ operand. Also, you can also add the operators together before or after using\
+    \ the increment and decrement values.\n\nHere is an example o a code that has\
+    \ arithmetic operators inside:\n\n```c\nclass Example\n{\n    // This basic program\
+    \ will show you how arithmetic operators work\n    static void Main()\n    {\n\
+    \        Int f =3, g = 4;         // This line declares two variables, f and g.\n\
+    \        sampleSum = f+g;        // This will give you 7.\n        sampleDifference\
+    \ = g-f  // This will give you 1.\n        sampleProduct = f*g;    // This will\
+    \ give you 1.3\n        sampleModulo = g%f;     // This will give you 1\n    \
+    \    f++                     //This will give you 3.\n    }\n}\n```\n\nUsing arithmetic\
+    \ operators is pretty simple as it is just going to tell the computer to put two\
+    \ numbers together. You have to set up the parameters for what all the numbers\
+    \ will equal and the computer can do the rest.\n\nAdding in the comments can help\
+    \ someone else who is looking at the program figure out what you are doing, but\
+    \ you don’t have to add these in if they are pretty basic numbers. Sometimes the\
+    \ numbers get a bit more complex so it is good to get in the habit of using these\
+    \ comments even on the easy ones so that other programmers, and even yourself,\
+    \ will be able to read through them.\n\n## Assignment Operators\n\nNext on the\
+    \ list is assignment operators. This is an operator that will allow you to assign\
+    \ a value to your variable. Some of the assignment operators that you can choose\
+    \ from when using C# include:\n\n- `=` this operator will allow you to perform\
+    \ simple assignment operations. It is going to assign the value to a variable\
+    \ that you are working on at that time. For example, writing `int sample = 100`\
+    \ will tell the program that you want to assign 100 to the variable that is called\
+    \ `sample`. It won’t perform any extra processes on this variable or on the value\
+    \ involved.\n- `+=` this is the additive assignment operator. It is going to add\
+    \ up the values of your two operands and then will assign the sum to your left-hand\
+    \ operand.\n- `-=` programmers will often refer to this as the subtractive assignment\
+    \ operator. It is going to subtract the value of the operand on the right side\
+    \ from the one on the left side and then assign the difference to the left-hand\
+    \ operand.\n- `*=` this operator will multiply the values of each operand and\
+    \ then will assign the product to the left-hand operand.\n- `/=` this is when\
+    \ you will divide up the two variables and then take the result and assign it\
+    \ to the variable on the left.\n\nOne thing to note is that when you use an assignment\
+    \ operator, you will need to make sure that both operands do belong to the same\
+    \ type of data. If you find that the operands are incompatible, the program may\
+    \ not work properly during runtime and you will have to go back through and make\
+    \ the changes.\n\n## Relational Operators\n\nThese are the operators that will\
+    \ let you compare the values of two operands. Because of this, they are good for\
+    \ conditional statements. Some of the relational operators that you may encounter\
+    \ when using C#. For these, let’s assume that `d=100` and `e=150`\n\n- `==` this\
+    \ is the operator that you can use to check the equality of two values. If the\
+    \ values end up equal, the operator will tell you true. Otherwise, it will tell\
+    \ you false. For example, `d == e` would show up as false.\n- `!=` this operator\
+    \ allows you to test the inequality of two values. If the values end up not equal,\
+    \ it will result in a true. \n- `>` this operator is used to check whether the\
+    \ operand on the left is greater than the operand on the right. If it is, then\
+    \ the operator will tell you true. For example, `e > d` would be true.\n- `<`\
+    \ this is the less than operator, it will allow you to check whether the operand\
+    \ on the left is less than the operand on the right. If it is, you will get it\
+    \ to show up true, such as the formula `d < e`.\n- `>=` this is the operator that\
+    \ will say it true if the value on the left side is greater than, or equal to,\
+    \ the operand on the right. Otherwise it will tell you false. For example, `e\
+    \ >= d` evaluates as true.\n- `<=` with this operator, you will get a true if\
+    \ the operand on the left side is less than or equal to the operand that is on\
+    \ the right.\n\nWhen you are using the relational operator, the result is to get\
+    \ a Boolean value each time. This means that you want to get an answer that is\
+    \ either true or false. You should also check to see if you are using two equal\
+    \ signs any time that you are using the equality operator. If you get this mixed\
+    \ up with the assignment operator, you are likely to get an error in the program.\n\
+    \n## Logical Operators\n\nAnother option that you are able to use with operators\
+    \ is logical operators. This is sometimes called a Boolean operator because it\
+    \ is going to accept two Boolean values in order to produce a brand new Boolean\
+    \ value. Keep in mind that C# will allow and support four types of logical operators.\n\
+    \nFor this we are going to assume `c=true`, `d=true`, and `e=false`\n\n- `&&`\
+    \ this operator is called logical AND. It will only result in a true if both operands\
+    \ are true. For example `d && c` will evaluate to true.\n- `||` this is the logical\
+    \ OR. This operator is going to give you a true if at least one of your operands\
+    \ is true. For example, `c || e` will result in true.\n- `^` this operator is\
+    \ the Logical Exclusive OR and it will result in a true if one of the operands\
+    \ is true. If both operands can be false or true, the operator will give you a\
+    \ false. own- `!` with this one, you will be able to reverse the value of your\
+    \ Boolean variable. For example, if you type in `!d`, you will get a false.\n"
+  raw: 'Just like with other programming languages that you may work with, C# has
+    operators that will belong in different categories. Let’s take a look at each
+    of the categories and how you will handle the operators in each one.
+
+
+    ## Arithmetic Operators
+
+
+    These are the operators that will tell your computer program to do an arithmetic
+    procedure. This can help the computer know when you need to add things together,
+    subtract them, and so much more. The computer can do some of the basics for you
+    while making the right signs to show the program what you would like it to do.
+    Some of the arithmetic operators that you can use in C# are:
+
+
+    For these examples let’s assume that x=15 and y=10
+
+
+    *   “+” this is the addition operator. It is going to add two operands together.
+    So you would get x+y=25
+
+
+    *   “-“ this is the subtraction operator. It is going to allow you to subtract
+    the value of the right-hand operand from the left-hand operand. So you would get
+    y-x=-5.
+
+
+    *   “*” this is the one that will tell the computer to multiply the two operands.
+    So you could do x*y=150.
+
+
+    *   “/” this one is the operator that will tell the computer to divide the left-hand
+    operand with the right-hand operand. For example y/x.
+
+
+    *   “%” this is often called the remainder or the modulo operator. It is going
+    to divide the left-hand operand by the right operand and then returns the remainder.
+
+
+    *   “++” this is the increment operator. It is going to increase the value of
+    the operand by one. So you would have ++x=16
+
+
+    *   “—“ programmers will often call this the decrement operator. It is going to
+    decrease the value of the operand by one. This means that you will have –x=14.
+
+
+    One thing to note is that the decrement and the increment operators are considered
+    unary, which means that it can only be used on one operand. Also, you can also
+    add the operators together before or after using the increment and decrement values.
+
+
+    Here is an example o a code that has arithmetic operators inside:
+
+
+    class Example
+
+
+    {
+
+
+         // This basic program will show you how arithmetic operators work
+
+
+         static void Main()
+
+
+         {
+
+
+         Int f =3, g = 4;          // This line declares two variables, f and g.
+
+
+         sampleSum = f+g;          // This will give you 7.
+
+
+         sampleDifference = g-f          // This will give you 1.
+
+
+         sampleProduct = f*g;          // This will give you 1.3
+
+
+         sampleModulo = g%f;          // This will give you 1
+
+
+         f++          //This will give you 3.
+
+
+         }
+
+
+    }
+
+
+    Using arithmetic operators is pretty simple as it is just going to tell the computer
+    to put two numbers together. You have to set up the parameters for what all the
+    numbers will equal and the computer can do the rest.
+
+
+    Adding in the comments can help someone else who is looking at the program figure
+    out what you are doing, but you don’t have to add these in if they are pretty
+    basic numbers. Sometimes the numbers get a bit more complex so it is good to get
+    in the habit of using these comments even on the easy ones so that other programmers,
+    and even yourself, will be able to read through them.
+
+
+    ## Assignment Operators
+
+
+    Next on the list is assignment operators. This is an operator that will allow
+    you to assign a value to your variable. Some of the assignment operators that
+    you can choose from when using C# include:
+
+
+    *   “=” this operator will allow you to perform simple assignment operations.
+    It is going to assign the value to a variable that you are working on at that
+    time. For example, writing int sample = 100 will tell the program that you want
+    to assign 100 to the variable that is called “sample”. It won’t perform any extra
+    processes on this variable or on the value involved.
+
+
+    *   “+=” this is the additive assignment operator. It is going to add up the values
+    of your two operands and then will assign the sum to your left-hand operand.
+
+
+    *   “-=” programmers will often refer to this as the subtractive assignment operator.
+    It is going to subtract the value of the operand on the right side from the one
+    on the left side and then assign the difference to the left-hand operand.
+
+
+    *   “*=” this operator will multiply the values of each operand and then will
+    assign the product to the left-hand operand.
+
+
+    *   “/=” this is when you will divide up the two variables and then take the result
+    and assign it to the variable on the left.
+
+
+    One thing to note is that when you use an assignment operator, you will need to
+    make sure that both operands do belong to the same type of data. If you find that
+    the operands are incompatible, the program may not work properly during runtime
+    and you will have to go back through and make the changes.
+
+
+    ## Relational Operators
+
+
+    These are the operators that will let you compare the values of your two operands.
+    Because of this, they are good when used for conditional statements. Some of the
+    relational operators that you may encounter when using the C# language.
+
+
+    For these, let’s assume that d = 100 and e = 150
+
+
+    *   “==” this is the operator that you can use to check the equality of two values.
+    If the two values end up being equal, the operand will tell you it is true. Otherwise,
+    the operand will tell you it is false. For example, saying the d == e would show
+    up as false.
+
+
+    *   “!=” this operator allows you to test the inequality of two values. If the
+    values end up not being equal, it will tell you this is true. For example e !=
+    d would result in a true.
+
+
+    *   “>” this operator is used to check whether the operand on the left is greater
+    than the operand on the right. If it is, then the operator will tell you it is
+    true. For example, saying that e > d would be true.
+
+
+    *   “<” this is the less than operator, it will allow you to check whether the
+    operand on the left side is less than the operand on the right side. If it is,
+    you will get it to show up true, such as the formula d < e.
+
+
+    *   “>=” this is the operand that will say it is true if the value of the operand
+    on the left side is greater than, or equal to, the operand on the right side.
+    Otherwise it will tell you the statement is false. For example, saying that e
+    >=d evaluates as true.
+
+
+    *   “<=” with this operator, you will get a true if the operand on the left side
+    is less than or equal to the operand that is on the right side. For example d
+    <= e is true.
+
+
+    When you are using the relational operator, the result is to get a Boolean value
+    each time. This means that you want to get an answer that is either true or false
+    each time. You should also check to see if you are using two equal signs any time
+    that you are using the equality operator. If you get this mixed up with the assignment
+    operator, you are likely to get an error in the program or it just won’t work
+    right for you.
+
+
+    ## Logical Operators
+
+
+    Another option that you are able to use with operators is logical operators. This
+    is sometimes called a Boolean operator because it is going to accept two Boolean
+    values in order to produce a brand new Boolean value. Keep in mind that C# will
+    allow and support four types of logical operators.
+
+
+    For this we are going to assume that c = true, d = true, and e = false
+
+
+    *   “&&” this operator is called logical AND. It will only result in a true if
+    both operands are true. For example d && c will evaluate to true.
+
+
+    *   “||” this is the logical OR. This operator is going to give you a true if
+    at least one of your operands is true. For example, c || e will result in true.
+
+
+    *   “^” this operator is the Logical Exclusive OR and it will result in a true
+    if one of the operands is true. If both operands can be false or true, the operator
+    will give you a false.
+
+
+    *   “!” with this one, you will be able to reverse the value of your Boolean variable.
+    For example, if you type in !d, you will get a false.'
+  toc: []
+  trans: "\n正如你可能接触过的其他编程语言一样，C# 也拥有属于不同类别的运算符。让我们来看看每个类别，以及你将如何处理每个类别中的运算符。\n\n##\
+    \ 算术运算符\n\n这些是告诉你的计算机程序执行算术过程的运算符。这可以帮助计算机了解你何时需要将内容相加、减去它们等等。计算机可以为你完成一些基础工作，同时通过正确的符号告诉程序你想让它执行的操作。你可以在\
+    \ C# 中使用的一些算术运算符包括：\n\n对于这些示例，让我们假设 `x=15` 且 `y=10`\n\n- `+` 这是加法运算符。它将把两个操作数相加。所以你会得到\
+    \ `x+y=25`。\n- `-` 这是减法运算符。它允许你从左侧操作数的值中减去右侧操作数的值。所以你会得到 `y-x=-5`。\n- `*` 这个运算符将告诉计算机相乘两个操作数。所以你可以执行\
+    \ `x*y=150`。\n- `/` 这个运算符将告诉计算机用左侧操作数除以右侧操作数。例如 `y/x`。- `%` 这通常被称为取余运算符或模运算符。它将左侧操作数除以右侧操作数，然后返回余数。\n\
+    - `++` 这是递增运算符。它将操作数的值加一。所以你会得到 `++x=16`。\n- `--` 程序员通常称之为递减运算符。它将操作数的值减一。这意味着你将会得到\
+    \ `--x=14`。\n\n需要注意的是，递减和递增运算符被视为一元运算符的，这意味着它们只能用于一个操作数。此外，你也可以在使用递增和递减值之前或之后将运算符相加。\n\
+    \n这里是一个包含算术运算符的代码示例：\n\n```c\nclass Example\n{\n    // 这个基础程序将向你展示算术运算符是如何工作的\n\
+    \    static void Main()\n    {\n        Int f =3, g = 4;         // 这一行声明了两个变量，f\
+    \ 和 g。\n        sampleSum = f+g;        // 这将给你 7。\n        sampleDifference =\
+    \ g-f  // 这将给你 1。\n        sampleProduct = f*g;    // 这将给你 1.3\n        sampleModulo\
+    \ = g%f;     // 这将给你 1\n        f++                     //这将给你 3。\n    }\n}\n\
+    ```\n\n使用算术运算符非常简单，因为它只是告诉计算机将两个数字放在一起。你只需要设置所有数字将等于什么的参数，计算机就可以完成其余的工作。\n\n列表中的下一个是赋值运算符。这种运算符允许你为变量赋值一个值。在使用\
+    \ C# 时你可以选择的一些赋值运算符包括：\n\n- `=` 此运算符允许你执行简单的赋值操作。它将一个值赋值给你当前正在操作的变量。例如，编写 `int\
+    \ sample = 100` 将告诉程序你想将 100 赋值给名为 `sample` 的变量。它不会对该变量或涉及的值执行任何额外的处理。\n- `+=`\
+    \ 这是加法赋值运算符。它将你的两个操作数的值相加，然后将和赋值给你的左侧操作数。\n- `-=` 程序员通常称之为减法赋值运算符。它将左侧操作数的值减去右侧操作数的值，然后将差赋值给左侧操作数。\n\
+    - `*=` 此运算符将每个操作数的值相乘，然后将乘积赋值给左侧操作数。\n- `/=` 当你除法这两个变量，然后将结果赋值给左侧的变量。\n\n需要注意的是，当你使用赋值运算符时，你需要确保两个操作数都属于相同的数据类型。如果你发现操作数不兼容，程序在运行时可能无法正常工作，你将不得不回头进行更改。\n\
+    \n## 关系运算符\n\n这些是允许你比较两个操作数值的运算符。因为如此，它们非常适合条件语句。这些在使用 C# 时可能会遇到的一些关系运算符。对于这些，让我们假设\
+    \ `d=100` 且 `e=150`\n\n- `==` 这是你可以用来检查两个值是否相等的运算符。如果两个值最终相等，运算符将告诉你 true。否则，它将告诉你\
+    \ false。例如，`d == e` 将显示为 false。\n- `!=` 此运算符允许你测试两个值是否不等。如果两个值最终不相等，结果将为 true。\
+    \ \n- `>` 此运算符用于检查左侧操作数是否大于右侧操作数。如果是，则运算符将告诉你 true。例如，`e > d` 为 true。\n- `<` 这是小于运算符，它允许你检查左侧操作数是否小于右侧操作数。如果是，你将得到\
+    \ true 显示，例如公式 `d < e`。\n- `>=` 这是运算符，当左侧的值大于或等于右侧的操作数时，它将说是 true。否则，它将说是 false。例如，`e\
+    \ >= d` 的求值结果为 true。\n- `<=` 使用此运算符，如果左侧的操作数小于或等于右侧的操作数，你将得到 true。\n\n当你使用关系运算符时，结果是每次都会得到一个布尔值（Boolean\
+    \ value）。这意味着你想要得到一个 true 或 false 的答案。在在使用等等运算符时，还应该检查你是否使用了两个等号。如果你将它与赋值运算符混淆，程序中可能会出现错误。\n\
+    \n## 逻辑运算符\n\n你能够使用的运算符的另一种选择是逻辑运算符。这有时被称为布尔运算符，因为它将接受两个布尔值以产生一个新的布尔值。请记住，C# 将允许并支持四种类型的逻辑运算符。\n\
+    \n在这里我们假设 `c=true`、`d=true` 且 `e=false`\n\n- `&&` 此运算符称为逻辑与。只有当两个操作数都为 true 时，结果才为\
+    \ true。例如，`d && c` 的求值结果为 true。\n- `||` 这是逻辑或。只要你的两个操作数中有一个为 true，此运算符就会给你 true。例如，`c\
+    \ || e` 结果为 true。\n- `^` 此运算符是逻辑异或，当其中一个操作数为 true 时，结果将为 true。如果两个操作数都为 false\
+    \ 或 true，运算符将给你 false。\n- `!` 使用此运算符，你将能够反转布尔变量的值。例如，如果你输入 `!d`，你将得到 false。\n\n"
+- fmt: "\nSome programmers will refer to `||` and `&&` as short circuit operators.\
+    \ This is because these signs are able to give accurate results without checking\
+    \ the whole expression. An example of this is `&&`, since it will require two\
+    \ trues, it will result in a false if the first operand says false, no matter\
+    \ what the rest say and it won’t even look at them. This can help to speed up\
+    \ the program a bit and get the work done.\n\n## Bitwise Operators\nThis kind\
+    \ of operator is going to work pretty similarly to the logical operator. The difference\
+    \ is that the bitwise operator will take binary values in order to produce the\
+    \ Boolean result. Since this operator is going to work on binary options, basically\
+    \ values that are composed of zeros and ones, they are going to show their results\
+    \ with either a `0` or a `1` as the output. The `C#` language is able to support\
+    \ the following bitwise operators.\n\nFor this, let’s assume that `I = 0`, `h\
+    \ = 1`, `j = 0` and `g = 1`\n\n* `&` this is the operator that is known as the\
+    \ Bitwise AND. It is going to assign `1` to the positions where both of the operands\
+    \ have `1`. For example `g & h` will give you `1`.\n* `|` this is the bitwise\
+    \ OR. It is going to assign `1` to the positions when there is at least one of\
+    \ the operands with a `1`. For instance, doing `h | 1` will give you a result\
+    \ of `1`.\n* `^` this is the exclusive OR that will work well for binary data.\
+    \ Just like working with the logical values, this kind of operator is only going\
+    \ to give you `1` in the areas that the operand has a `1`. For example, if you\
+    \ do `g^j` you will get a result of `1`.\n\nThese operands may seem a little tricky\
+    \ to deal with in the beginning, but they are going to make it so much easier\
+    \ to do some of the different operations that you need when working in `C#`. They\
+    \ are simple to use and after a little bit of practice, you will find that they\
+    \ are easier than ever to use and not quite so complicated. Perhaps consider opening\
+    \ up your text reader and seeing how well these work for you, experimenting a\
+    \ bit to get the results!\n\n# Conditional Statements Used\nConditional statements\
+    \ are another part of the `C#` language that can help you and other programmers\
+    \ to create flexible and powerful applications. In fact, this kind of testing\
+    \ has been considered a very important part of writing any kind of computer program\
+    \ so that you can get the code right for others, as well as yourself, to use correctly.\
+    \ If you want to be really effective and good at using `C#` language, you need\
+    \ to have some mastery with conditional statements.\n\n## If\nThe first conditional\
+    \ statement that you can use is the `if` statement. This is one of the most basic\
+    \ conditional statements that you can use in `C#` and it is going to allow the\
+    \ computer to behave according to certain inputs that you place in. the syntax\
+    \ of using the `if` statement includes:\n\n```\nIf (The Boolean expression)\n\
+    {\n    The statement/s you want to run\n}\n```\n\nAs you can see, this is one\
+    \ of the simpler formulas that you can use and it will be changed based on the\
+    \ length of the statement that you are trying to run as well as the other conditions\
+    \ that you want to have in this expression. Some of the main parts of the `if`\
+    \ statement includes:\n\n* The `if` keyword—this is the part that will tell your\
+    \ language compiler that you are putting together an `if` statement.\n* The Boolean\
+    \ expression—this is the part of the syntax that will determine if the program\
+    \ will run the body or not. You are not able to use the `char` and `int` values\
+    \ for this kind of expression when using `C#`.\n* The statement you want to run—this\
+    \ is the body of the syntax and you are allowed to have one or more statements\
+    \ put inside. The program will be able to execute these statements if the Boolean\
+    \ expression results in a `true`. If the result ends up being `false`, the program\
+    \ is going to ignore the statements and will pass this control over to the other\
+    \ statements that you have written out.\n\nDon’t let this seem too confusing for\
+    \ you. Here is a good example of all of this means means:\n\n```\nIf (x > 0)\n\
+    {\n    Console.Write(\"The value is positive.\");\n}\n```\n\nWith this example,\
+    \ the program is only going to print “The value is positive” only if your value\
+    \ is higher than zero. If you find that the expression is false, then the program\
+    \ will ignore the `Console.Write` part of the statement and will move on to the\
+    \ next part of the program.\n\n## If Else\nBuilding upon this is the `if else`\
+    \ clause and can allow you to do a lot of great stuff with this program. A syntax\
+    \ that you should remember for the `if else` statement includes:\n\n```\nIf (the\
+    \ Boolean expression)\n{\n    The statement/s you want to run if the result is\
+    \ true;\n}\nElse\n{\n    The statement/s you want to run if the result is false;\n\
+    }\n```\n\nThere are five parts that come with this kind of expression and it can\
+    \ really enhance what you are able to do with the program, including the ability\
+    \ to have two different classes of statements show up depending on what the answer\
+    \ is. Some of the parts include:\n\n* The `if` keyword—with this keyword, you\
+    \ are telling the compiler that you are going to make a conditional statement.\n\
+    * The Boolean expression—the expression that you are making should result in a\
+    \ Boolean value. If the expression ends up being true, the program is going to\
+    \ run the first statement that you listed.\n* The first body—this is the statement\
+    \ that you want to have run if the Boolean expression ends up being true. You\
+    \ can add in a few statements here, just make sure they all fit within the same\
+    \ bracket.\n* The `else` keyword—this is the keyword that will tell the compiler\
+    \ that there is an `else` clause. This is the statement that is going to run if\
+    \ the Boolean expression ends up being false.\n* The second body—this one is pretty\
+    \ similar to the first body. But if the Boolean is false, this is the one that\
+    \ will run.\n\nAs you can already see, the `if else` statement is going to come\
+    \ out more powerful than the if statement. With the if statement, if the answer\
+    \ is false, you aren’t going to have anything show up and the next command in\
+    \ the language is going to be displayed. But with the `if else` you can pick which\
+    \ statement comes up regardless of whether you get a true or false answer, making\
+    \ the code much more powerful.\n\nLet’s take a look at how the `if else` statement\
+    \ could work in real life.\n\n```\nIf ( x > 0)\n{\n    Console.Write(\"This value\
+    \ is positive.\");\n}\nElse\n{\n    Console.Write(\"The value is less than or\
+    \ equal to zero.\");\n}\n```\n\nIn this syntax, the `else` clause is going to\
+    \ remain hidden unless the Boolean expression ends up being false. It is there\
+    \ if the process needs it or the value comes out false, but if the value is true,\
+    \ the first statement is going to be used and the second one will be ignored completely.\n\
+    \nThe `if else` clause is one that a lot of beginners won’t use. They think that\
+    \ it is too complicated and won’t help them to get things done. They want to stick\
+    \ with just the `if` clause and assume that it is the best option for getting\
+    \ things done. But for those who want to have a lot of options with their statements,\
+    \ or who want different options to show up depending on the answers that are given,\
+    \ using the `if else` clause is going to be one of the best options that you can\
+    \ use.\n\nIt isn’t that hard of one to understand. It just provides you some more\
+    \ options than you will find with the other choices. After you get some time to\
+    \ experiment with the `if` clauses, make sure that you work on getting used to\
+    \ the `if else` clauses so that you can bring your new codes to a whole new level.\n\
+    \n## Nested Conditional Statements\n"
+  raw: "Some programmers will refer to || and && as short circuit operators. This\
+    \ is because these signs are able to give accurate results without checking the\
+    \ whole expression. An example of this is &&, since it will require two trues,\
+    \ it will result in a false if the first operand says false, no matter what the\
+    \ rest say and it won’t even look at them. This can help to speed up the program\
+    \ a bit and get the work done.\n\n## Bitwise Operators\n\nThis kind of operator\
+    \ is going to work pretty similarly to the logical operator. The difference is\
+    \ that the bitwise operator will take binary values in order to produce the Boolean\
+    \ result. Since this operator is going to work on binary options, basically values\
+    \ that are composed of zeros and ones, they are going to show their results with\
+    \ either a 0 or a 1 as the output. The C# language is able to support the following\
+    \ bitwise operators.\n\nFor this, let’s assume that I = 0, h = 1, j =0 and g =\
+    \ 1\n\n*   “&” this is the operator that is known as the Bitwise AND. It is going\
+    \ to assign 1 to the positions where both of the operands have 1\\. For example\
+    \ g & h will give you 1\\.\n\n*   “|” this is the bitwise OR. It is going to assign\
+    \ 1 to the positions when there is at least one of the operands with a 1\\. For\
+    \ instance, doing h | 1 will give you a result of 1.\n\n*   “^” this is the exclusive\
+    \ OR that will work well for binary data. Just like working with the logical values,\
+    \ this kind of operator is only going to give you 1 in the areas that the operand\
+    \ has a 1\\. For example, if you do g^j you will get a result of 1.\n\nThese operands\
+    \ may seem a little tricky to deal with in the beginning, but they are going to\
+    \ make it so much easier to do some of the different operations that you need\
+    \ when working in C#. They are simple to use and after a little bit of practice,\
+    \ you will find that they are easier than ever to use and not quite so complicated.\
+    \ Perhaps consider opening up your text reader and seeing how well these work\
+    \ for you, experimenting a bit to get the results!\n\n# \n\nConditional Statements\
+    \ Used\n\nConditional statements are another part of the C# language that can\
+    \ help you and other programmers to create flexible and powerful applications.\
+    \ In fact, this kind of testing has been considered a very important part of writing\
+    \ any kind of computer program so that you can get the code right for others,\
+    \ as well as yourself, to use correctly. If you want to be really effective and\
+    \ good at using C# language, you need to have some mastery with conditional statements.\n\
+    \n## If\n\nThe first conditional statement that you can use is the if statement.\
+    \ This is one of the most basic conditional statements that you can use in C#\
+    \ and it is going to allow the computer to behave according to certain inputs\
+    \ that you place in. the syntax of using the if statement includes:\n\nIf (The\
+    \ Boolean expression)\n\n {\n\n The statement/s you want to run\n\n }\n\nAs you\
+    \ can see, this is one of the simpler formulas that you can use and it will be\
+    \ changed based on the length of the statement that you are trying to run as well\
+    \ as the other conditions that you want to have in this expression. Some of the\
+    \ main parts of the if statement includes:\n\n*   The “if” keyword—this is the\
+    \ part that will tell your language compiler that you are putting together an\
+    \ “if” statement.\n\n*   The Boolean expression—this is the part of the syntax\
+    \ that will determine if the program will run the body or not. You are not able\
+    \ to use the char and int values for this kind of expression when using C#.\n\n\
+    *   The statement you want to run—this is the body of the syntax and you are allowed\
+    \ to have one or more statements put inside. The program will be able to execute\
+    \ these statements if the Boolean expression results in a true. If the result\
+    \ ends up being false, the program is going to ignore the statements and will\
+    \ pass this control over to the other statements that you have written out.\n\n\
+    Don’t let this seem too confusing for you. Here is a good example of what all\
+    \ of this means:\n\nIf (x > 0)\n\n {\n\n Console.Write(“The value is positive.”);\n\
+    \n }\n\nWith this example, the program is only going to print “The value is positive’\
+    \ only if your value is higher than zero. If you find that the expression is false,\
+    \ then the program will ignore the Console.Write part of the statement and will\
+    \ move on to the next part of the program.\n\n## If Else\n\nBuilding upon this\
+    \ is the if else clause and can allow you to do a lot of great stuff with this\
+    \ program. A syntax that you should remember for the “if else” statement includes:\n\
+    \nIf (the Boolean expression)\n\n {The statement/s you want to run if the result\
+    \ is true;\n\n }\n\n Else\n\n {The statement/s you want to run if the result is\
+    \ false;\n\n }\n\nThere are five parts that come with this kind of expression\
+    \ and it can really enhance what you are able to do with the program, including\
+    \ the ability to have two different classes of statements show up depending on\
+    \ what the answer is. Some of the parts include:\n\n*   The “if” keyword—with\
+    \ this keyword, you are telling the compiler that you are going to make a conditional\
+    \ statement.\n\n*   The Boolean expression—the expression that you are making\
+    \ should result in a Boolean value. If the expression ends up being true, the\
+    \ program is going to run the first statement that you listed.\n\n*   The first\
+    \ body—this is the statement that you want to have run if the Boolean expression\
+    \ ends up being true. You can add in a few statements here, just make sure they\
+    \ all fit within the same bracket.\n\n*   The “else” keyword—this is the keyword\
+    \ that will tell the compiler that there is an “else” clause. This is the statement\
+    \ that is going to run if the previous Boolean expression ends up being false.\n\
+    \n*   The second body—this one is pretty similar to the first body. But if the\
+    \ Boolean is false, this is the one that will run rather than the first one. You\
+    \ can choose to have just one statement or several statements depending on your\
+    \ needs.\n\nAs you can already see, the “if else” statement is going to come out\
+    \ more powerful than the if statement. With the if statement, if the answer is\
+    \ false, you aren’t going to have anything show up and the next command in the\
+    \ language is going to be displayed. But with the “if else” you can pick which\
+    \ statement comes up regardless of whether you get a true or false answer, making\
+    \ the code much more powerful.\n\nLet’s take a look at how the “if else” statement\
+    \ could work in real life.\n\nIf ( x > 0)\n\n {\n\n Console.Write(“This value\
+    \ will be positive.”);\n\n }\n\n Else\n\n {\n\n Console.Write(“The value is less\
+    \ than or equal to zero.”)\n\n }\n\nIn this syntax, the “else” clause is going\
+    \ to remain hidden unless the Boolean expression ends up being false. It is there\
+    \ if the process needs it or the value comes out false, but if the value is true,\
+    \ the first statement is going to be used and the second one will be ignored completely.\n\
+    \nThe “if else” clause is one that a lot of beginners won’t use. They think that\
+    \ it is too complicated and won’t help them to get things done. They want to stick\
+    \ with just the “if” clause and assume that it is the best option for getting\
+    \ things done. But for those who want to have a lot of options with their statements,\
+    \ or who want different options to show up depending on the answers that are given,\
+    \ using the “if else” clause is going to be one of the best options that you can\
+    \ use.\n\nIt isn’t that hard of one to understand. It just provides you some more\
+    \ options than you will find with the other choices. After you get some time to\
+    \ experiment with the “if” clauses, make sure that you work on getting used to\
+    \ the “if else” clauses so that you can bring your new codes to a whole new level.\n\
+    \n## Nested Conditional Statements"
+  toc: []
+  trans: "\n\n一些程序员会将 `||` 和 `&&` 称为短路运算符。这是因为这些符号能够在不检查整个表达式的情况下给出准确的结果。`&&` 就是其中一个例子，因为它需要两个\
+    \ `true`，如果第一个操作数是 `false`，它将导致结果为 `false`，无论其余部分是什么，而且它甚至不会去查看剩余部分。这可以稍微加快程序的运行并完成工作。\n\
+    \n## 位运算符\n这种类型的运算符的工作方式与逻辑运算符非常相似。区别在于，位运算符将取二进制值来产生布尔结果。由于这种运算符作用于二进制选项（基本上就是由\
+    \ 0 和 1 组成的值），它们显示的结果将以 `0` 或 `1` 作为输出。`C#` 语言支持以下位运算符。\n\n为此此，我们假设 `I = 0`，`h\
+    \ = 1`，`j = 0` 且 `g = 1`\n\n* `&` 这是一个被称为位与与的运算符。它会在两个操作数都为 `1` 的位置赋值 `1`。例如 `g\
+    \ & h` 将给你结果 `1`。\n* `|` 这是位或运算符。当至少有一个操作数为 `1` 时，它会在该位置赋值 `1`。例如，执行 `h | 1` 将给你结果\
+    \ `1`。\n* `^` 这是异或运算符，在二进制数据上运行良好。正如同与处理逻辑值一样，这种运算符只会在操作数为 `1` 的区域给你给出 `1`。例如，如果你执行\
+    \ `g^j`，你将得到结果 `1`。\n\n这些操作数在开始处理时可能看起来有点棘手，但它们将让你在 `C#` 中工作时需要的某些不同操作变得简单得多。它们使用简单，经过一些练习，你会发现它们比以往任何时候都更容易使用，而且并没有那么复杂。也许可以打开你的文本编辑器，看看这些运算符对你效果如何，通过实验来获得结果！\n\
+    \n# 使用的条件语句\n条件语句是 `C#` 语言的另一部分，可以帮助你和其他程序员创建灵活且强大的应用程序。事实上，这种类型的测试被认为是编写任何类型计算机程序非常重要的一部分，这样你就可以写出他人以及你自己都能正确使用的代码。如果你想真正高效并擅长使用\
+    \ `C#` 语言，你需要掌握一些条件语句。\n\n## If\n你可以使用的第一个条件语句是 `if` 语句。这是 `C#` 中可以使用的最基本的条件语句之一，它允许计算机根据你放置的某些输入来运行。使用\
+    \ `if` 语句的语法包括：\n\n```\nIf (布尔表达式)\n{\n    你想运行的语句/语句\n}\n```\n\n如你所见，这是你可以使用的较简单公式之一，它将根据你尝试运行的语句的长度以及你想在该表达式中拥有的其他条件而改变。`if`\
+    \ 语句的一些主要部分包括：\n\n* `if` 关键字——这部分将告诉你的语言编译器你正在组合一个 `if` 语句。\n* 布尔表达式——这是语法中决定程序是否运行体（body）的部分。在使用\
+    \ `C#` 时，你不能对这种表达式使用 `char` 和 `int` 值。\n* 你想运行的语句——这是语法的主体，你被允许在内部放置一个或多个语句。如果布尔表达式的结果为\
+    \ `true`，程序将执行这些语句。如果结果最终为 `false`，程序将忽略这些语句，并将控制权交给你写的其他语句。\n\n不要让这看起来对你太困惑。这是一个关于所有这些含义的良好示例：\n\
+    \n```\nIf (x > 0)\n{\n    Console.Write(\"The value is positive.\");\n}\n```\n\
+    \n通过这个示例，只有当你的值大于零时，程序才会打印“The value is positive.”。如果你发现表达式为 `false`，那么程序将忽略语句中的\
+    \ `Console.Write` 部分，并移动到程序的下一个部分。\n\n## If Else\n在此基础上是 `if else` 子句，它可以允许你在程序中做很多很棒的事情。`if\
+    \ else` 语句应该记住的语法包括：\n\n```\nIf (布尔表达式)\n{\n    如果结果为真，你想运行的语句/语句；\n}\nElse\n\
+    {\n    如果结果为假，你想运行的语句/语句；\n}\n```\n\n这种表达式包含五个部分，它确实可以增强你在程序中能够执行的操作，包括根据答案显示两种不同类语句的能力。其中一些部分包括：\n\
+    \n* `if` 关键字——通过这个关键字，你是在告诉编译器你将创建一个条件语句。\n* 布尔表达式——你创建的表达式应该产生一个布尔值。如果表达式最终为真，程序将运行你列出的第一个语句。\n\
+    * 第一个体——这是你想在布尔表达式最终为真时运行的语句。你可以在这里添加几条语句，只需确保它们都在同一个括号内即可。\n* `else` 关键字——这是一个告诉编译器存在\
+    \ `else` 子句的关键字。这是当布尔表达式最终为假时将运行的语句。\n* 第二个体——这与第一个体非常相似。但如果布尔值为假，将运行这一个。\n\n\
+    如你所看到的，`if else` 语句将比 `if` 语句更强大。使用 `if` 语句时，如果答案为 `false`，你什么都不会显示，语言中的下一条命令将显示。但通过\
+    \ `if else`，无论你得到真答案还是假答案，你都可以选择显示哪个语句，这使得代码变得强大得多。\n\n让我们看看 `if else` 语句在现实是如何工作的。\n\
+    \n```\nIf ( x > 0)\n{\n    Console.Write(\"This value is positive.\");\n}\nElse\n\
+    {\n    Console.Write(\"The value is less than or equal to zero.\");\n}\n```\n\n\
+    在这种语法中，除非布尔表达式最终为假，否则 `else` 子句将保持隐藏。如果过程需要它或值为假，它就在那里；但如果值为真，则将使用第一个语句，而第二个语句将完全被忽略。\n\
+    \n`if else` 子句是很多初学者不会使用的。他们认为它太复杂了，不能帮助他们完成工作。他们想坚持只使用 `if` 子句，并假设这是完成工作的最佳选择。但对于那些希望在他们的语句中有更多选项的人，或者希望根据给出的答案显示不同选项的人来说，使用\
+    \ `if else` 子句将是你可以使用的最佳选项之一。\n\n它并不难理解。它只是为你提供了比你在其他选择中找到更多的选项。当你花时间尝试 `if` 子句后，确保你习惯\
+    \ `if else` 子句，这样你就可以将你的新代码推向全新的水平。\n\n## 嵌套条件语句\n\n"
+- fmt: "\nWhen you are using the `C#` language, you will be able to write an `if`\
+    \ statement inside of another `if` statement when it is necessary. This is a process\
+    \ called nesting and it is used to help you to create complex programs that rely\
+    \ on chained conditions. One of the things that you should keep in mind when using\
+    \ this option is that you will run into syntax errors and compile time if you\
+    \ make a mistake and do the writing part of the nested conditional statements\
+    \ the wrong way.\n\nMany experts in `C#` recommend that you should limit your\
+    \ nested statements to just three levels. If you go above this amount, you could\
+    \ end up with a code that is confusing and complex, making it hard for others\
+    \ to read and resulting in more errors in the process.\n\nA good example of a\
+    \ code that allows nesting for a conditional statement includes:\n\n```csharp\n\
+    Double r = 60;\nDouble s = 70;\nIf (r == s)\n{\n    System.Console.WriteLine(\"\
+    These numbers are equal.\");\n}\nElse\n{\n    If (r > s)\n        System.Console.WriteLine(\"\
+    The value of the first variable is greater than that of the second one.\");\n\
+    }\nElse\n{\n    System.Console.WriteLine(\"The value of the second variable is\
+    \ greater than that of the first one.\");\n}\n```\n\nWith this option, you have\
+    \ a few different scenarios that come up using the `if else` clause. This allows\
+    \ you to have a few different options just up for the command so that the program\
+    \ knows what to read out. This can help you to do so much more with the program\
+    \ than before, but be careful not to make it too complex or you could end up with\
+    \ a mess.\n\n## Switch-Case\n\nThese switch-case statements will execute a code\
+    \ according to the expressions’ results. Most programmers with `C#` will use integer\
+    \ values when working on this kind of statement. To create one of these statements,\
+    \ it is recommended to use the following syntax:\n\n```csharp\nSwitch (value_selector)\n\
+    {\n    Case integer1;\n        The statements you want to execute;\n        Break;\n\
+    \    Case integer2;\n        The statements you want to execute;\n        Break;\n\
+    \    //…\n    Default:\n        The statements you want to execute;\n        Break;\n\
+    }\n```\n\nThere are a few parts that you will need to understand in order to really\
+    \ get the most out of this syntax. These include:\n\n- The `switch` keyword—this\
+    \ is the keyword that will inform the compiler that you want the program to perform\
+    \ a switch-case statement.\n- The `value selector`—this is the expression that\
+    \ will generate a value. With the `C#`, the value should be compatible with your\
+    \ operators. Your program is going to compare this value against the other cases\
+    \ that are listed inside your statements.\n- The `case`—the case is going to be\
+    \ the label that used by your program when it does comparisons. If the case ends\
+    \ up matching the value from the selector, the statement will run. The program\
+    \ will check each case until it is fund.\n- The executable statements—these are\
+    \ the different statements that you will want to run based on the case that is\
+    \ appropriate. It can be a group of statements or a single statement based on\
+    \ your needs.\n- `Break` keyword—this is the keyword that will terminate the body\
+    \ of a switch structure. You will need to place this keyword after each statement\
+    \ that you are trying to create.\n- The `default` clause—this is the mechanism\
+    \ that you need in order to end the statement. It is going to run if the selector\
+    \ doesn’t match any of the other labels that you put up there. This pretty much\
+    \ ensures that the process shows up something if nothing else works out. You can\
+    \ make sure that the program will put out an answer no matter what the inputs\
+    \ are.\n\nWorking with conditional statements can sometimes be difficult for a\
+    \ beginner. You will find that there are so many things that you are able to do\
+    \ with these kinds of statements that it can seem a bit intimidating for a lot\
+    \ of people. But when you see some of the syntax options and experiment with using\
+    \ these options on occasion, you will find that it is easier than you can think\
+    \ to do some great options with language programming.\n\nThe important thing to\
+    \ remember during this is to use the different sections that are listed above.\
+    \ This will help you to ensure that you get all the right parts in order to work\
+    \ on the conditional statement. Without the right options, you will find that\
+    \ the program will bring out errors signals when you try to run it. When you get\
+    \ through with all of these new aspects, you can write a great conditional statement\
+    \ that will help you get your program up and running.\n\n# Creating and Using\
+    \ Objects\n\nWith this chapter, we are going to focus on two important programming\
+    \ concepts, mainly classes and objects. You are going to learn how to access all\
+    \ the classes that are present in the `.NET` programming framework as well and\
+    \ it has some really valuable information that can make it easier than ever to\
+    \ help you become a master of `C#` without all the hassle.\n\n## Classes and Objects\n\
+    \nFirst, we are going to talk a bit about objects in this programming language.\
+    \ Programming has had a lot of growth over the past few years and all this growth\
+    \ has had a huge effect on how programmers are going to create their new computer\
+    \ applications. Object Oriented Programming, or `OOP`, is one of the newest and\
+    \ biggest ideas that has been developed in the IT world and we are going to spend\
+    \ some time learning how `OOP` works so that you can use it to your advantage\
+    \ to create some amazing programs with `C#`.\n\n### Object Oriented Programming\n\
+    \nThis kind of programming is a style that will rely on objects. `OOP` will provide\
+    \ you with a model that is based on how things will work in the real world. When\
+    \ you are able to work with objects rather than with abstract ideas, it is easier\
+    \ to understand the language and get it to work for you. This approach is going\
+    \ to help you to solve the problems that come up in programming using your intuition\
+    \ and logic.\n\n### Objects\n\nProgrammers are going to use digital “objects”\
+    \ in order to represent physical objects or abstract ideas. While using the `OOP`,\
+    \ you should remember that these objects will have two characteristics including:\n\
+    \n- State—this is the characteristics that will define the object. These can be\
+    \ general or specific.\n- Behavior—this is the characteristics that will declare\
+    \ all the actions that an object is able to do.\n\nLet’s take a look at the difference\
+    \ between these two characteristics by looking at an actual object—a ball. The\
+    \ state of the ball is going to be the size, color, and make of the ball. The\
+    \ behavior of the ball could be something like rolling or bouncing.\n\nWith the\
+    \ `OOP`, you will be able to combine the information and the techniques to process\
+    \ them into one thing. The programming object is going to correspond to the actual\
+    \ one and will hold onto the information and the actions.\n\n### Classes\n\nWhen\
+    \ using `C#` the classes will define the characteristics of your object. They\
+    \ will give you a structure or a model for defining the nature of the object.\
+    \ According to some programming experts, the classes are basically the foundation\
+    \ of `OOP` and they will be linked closely with the objects. In addition, each\
+    \ of the objects that you use will represent one particular class.\n\nLet’s start\
+    \ with a class that is called “Toys” and the object that is “Ball.” In this instance,\
+    \ the “Ball” is just one instance of the `Toy` class. But the `Toy` class will\
+    \ define the behavior and the state of all the toys as well as of the ball.\n\n\
+    Classes can add some simplicity to your computer programming. The information\
+    \ they will hold onto should be meaningful for anyone who looks at the program,\
+    \ not just professional programmers. For example, the class of “Toys” can’t have\
+    \ `HTTP` as one of the characteristics since these can’t be linked together.\n\
+    \n## Attributes and Behavior\n"
+  raw: "When you are using the C# language, you will be able to write an “if” statement\
+    \ inside of another “if” statement when it is necessary. This is a process called\
+    \ nesting and it is used to help you to create complex programs that rely on chained\
+    \ conditions. One of the things that you should keep in mind when using this option\
+    \ is that you will run into syntax errors and compile time if you make a mistake\
+    \ and do the writing part of the nested conditional statements the wrong way.\n\
+    \nMany experts in C# recommend that you should limit your nested statements to\
+    \ just three levels. If you go above this amount, you could end up with a code\
+    \ that is confusing and complex, making it hard for others to read and resulting\
+    \ in more errors in the process.\n\nA good example of a code that allows nesting\
+    \ for a conditional statement includes:\n\nDouble r = 60;\n\nDouble s = 70;\n\n\
+    If (r ==s)\n\n{\n\n System.Console.WriteLine(“These numbers are equal.);\n\n }\n\
+    \n Else\n\n {\n\n If (r > s)\n\n System.Console.WriteLine(“The value of the first\
+    \ variable is greater than that of the second one.”)’\n\n }\n\n Else\n\n {\n\n\
+    \ System.Console.WriteLine(The value of the second variable is greater than that\
+    \ of the first one.”)’\n\n }\n\n }\n\nWith this option, you have a few different\
+    \ scenarios that come up using the “if else” clause. This allows you to have a\
+    \ few different options just up for the command so that the program knows what\
+    \ to read out. This can help you to do so much more with the program than before,\
+    \ but be careful not to make it too complex or you could end up with a mess.\n\
+    \n## Switch-Case\n\nThese switch-case statements will execute a code according\
+    \ to the expressions’ results. Most programmers with C# will use integer values\
+    \ when working on this kind of statement. To create one of these statements, it\
+    \ is recommended to use the following syntax:\n\nSwitch (value_selector)\n\n{\n\
+    \n Case integer1;\n\n The statements you want to execute;\n\n Break;\n\n Case\
+    \ integer2;\n\n The statements you want to execute;\n\n Break;\n\n //…\n\n Default:\n\
+    \n The statements you want to execute;\n\n Break’\n\n}\n\nThere are a few parts\
+    \ that you will need to understand in order to really get the most out of this\
+    \ syntax. These include:\n\n*   The “switch” keyword—this is the keyword that\
+    \ will inform the compiler that you want the program to perform a switch-case\
+    \ statement.\n\n*   The value selector—this is the expression that will generate\
+    \ a value. With the C#, the value should be compatible with your operators. Your\
+    \ program is going to compare this value against the other cases that are listed\
+    \ inside your statements.\n\n*   The “case”—the case is going to be the label\
+    \ that used by your program when it does comparisons. If the case ends up matching\
+    \ the value from the selector, the statement will run. The program will check\
+    \ each case until it is fund.\n\n*   The executable statements—these are the different\
+    \ statements that you will want to run based on the case that is appropriate.\
+    \ It can be a group of statements or a single statement based on your needs.\n\
+    \n*   Break keyword—this is the keyword that will terminate the body of a switch\
+    \ structure. You will need to place this keyword after each statement that you\
+    \ are trying to create.\n\n*   The default clause—this is the mechanism that you\
+    \ need in order to end the statement. It is going to run if the selector doesn’t\
+    \ match any of the other labels that you put up there. This pretty much ensures\
+    \ that the process shows up something if nothing else works out. You can make\
+    \ sure that the program will put out an answer no matter what the inputs are.\n\
+    \nWorking with conditional statements can sometimes be difficult for a beginner.\
+    \ You will find that there are so many things that you are able to do with these\
+    \ kinds of statements that it can seem a bit intimidating for a lot of people.\
+    \ But when you see some of the syntax options and experiment with using these\
+    \ options on occasion, you will find that it is easier than you can think to do\
+    \ some great options with language programming.\n\nThe important thing to remember\
+    \ during this is to use the different sections that are listed above. This will\
+    \ help you to ensure that you get all the right parts in order to work on the\
+    \ conditional statement. Without the right options, you will find that the program\
+    \ will bring out errors signals when you try to run it. When you get through with\
+    \ all of these new aspects, you can write a great conditional statement that will\
+    \ help you get your program up and running.\n\n# \n\nCreating and Using Objects\n\
+    \nWith this chapter, we are going to focus on two important programming concepts,\
+    \ mainly classes and objects. You are going to learn how to access all the classes\
+    \ that are present in the .NET programming framework as well and it has some really\
+    \ valuable information that can make it easier than ever to help you become a\
+    \ master of C# without all the hassle.\n\n## Classes and Objects\n\nFirst, we\
+    \ are going to talk a bit about objects in this programming language. Programming\
+    \ has had a lot of growth over the past few years and all this growth has had\
+    \ a huge effect on how programmers are going to create their new computer applications.\
+    \ Object Oriented Programming, or OOP, is one of the newest and biggest ideas\
+    \ that has been developed in the IT world and we are going to spend some time\
+    \ learning how OOP works so that you can use it to your advantage to create some\
+    \ amazing programs with C#.\n\n### Object Oriented Programming\n\nThis kind of\
+    \ programming is a style that will rely on objects. OOP will provide you with\
+    \ a model that is based on how things will work in the real world. When you are\
+    \ able to work with objects rather than with abstract ideas, it is easier to understand\
+    \ the language and get it to work for you. This approach is going to help you\
+    \ to solve the problems that come up in programming using your intuition and logic.\n\
+    \n### Objects\n\nProgrammers are going to use digital “objects” in order to represent\
+    \ physical objects or abstract ideas. While using the OOP, you should remember\
+    \ that these objects will have two characteristics including:\n\n*   State—this\
+    \ is the characteristics that will define the object. These can be general or\
+    \ specific.\n\n*   Behavior—this is the characteristics that will declare all\
+    \ the actions that an object is able to do.\n\nLet’s take a look at the difference\
+    \ between these two characteristics by looking at an actual object—a ball. The\
+    \ state of the ball is going to be the size, color, and make of the ball. The\
+    \ behavior of the ball could be something like rolling or bouncing.\n\nWith the\
+    \ OOP, you will be able to combine the information and the techniques to process\
+    \ them into one thing. The programming object is going to correspond to the actual\
+    \ one and will hold onto the information and the actions.\n\n### Classes\n\nWhen\
+    \ using C# the classes will define the characteristics of your object. They will\
+    \ give you a structure or a model for defining the nature of the object. According\
+    \ to some programming experts, the classes are basically the foundation of OOP\
+    \ and they will be linked closely with the objects. In addition, each of the objects\
+    \ that you use will represent one particular class.\n\nLet’s start with a class\
+    \ that is called “Toys” and the object that is “Ball.” In this instance, the “Ball”\
+    \ is just one instance of the “Toy” class. But the “Toy” class will define the\
+    \ behavior and the state of all the toys as well as of the ball.\n\nClasses can\
+    \ add some simplicity to your computer programming. The information they will\
+    \ hold onto should be meaningful for anyone who looks at the program, not just\
+    \ professional programmers. For example, the class of “Toys” can’t have HTTP as\
+    \ one of the characteristics since these can’t be linked together.\n\n## Attributes\
+    \ and Behavior"
+  toc: []
+  trans: "\n当你使用 `C#` 语言时，可以在必要时另一个 `if` 语句内部编写一个 `if` 语句。这个过程被称为嵌套，它用于帮助你创建依赖于链式条件的复杂程序。在使用此选项时，你应该记住的一点是，如果你在编写嵌套条件语句时犯了错误，你将会遇到语法错误和编译时错误。\n\
+    \n许多 `C#` 专家建议你将嵌套语句限制在三层以内。如果超过了这个数量，你得到的代码可能会是混乱且复杂的，导致他人难以阅读，并在此过程中产生更多错误。\n\
+    \n一个允许条件语句嵌套的代码示例如下：\n\n```csharp\nDouble r = 60;\nDouble s = 70;\nIf (r == s)\n\
+    {\n    System.Console.WriteLine(\"These numbers are equal.\");\n}\nElse\n{\n \
+    \   If (r > s)\n        System.Console.WriteLine(\"The value of the first variable\
+    \ is greater than that of the second one.\");\n}\nElse\n{\n    System.Console.WriteLine(\"\
+    The value of the second variable is greater than that of the first one.\");\n\
+    }\n```\n\n通过这个选项，在使用 `if else` 子句时会产生几种不同的场景。这允许你为命令提供几个不同的选项，以便程序知道应该输出什么。这可以帮助你比以前完成更多工作，但要注意不要让它变得太复杂，否则可能会变得一团糟。\n\
+    \n## Switch-Case\n\n这些 switch-case 语句将根据表达式的结果执行代码。大多数使用 `C#` 的程序员在处理此类语句时会使用整数值。要创建其中一个语句，建议使用以下语法：\n\
+    \n```csharp\nSwitch (value_selector)\n{\n    Case integer1;\n        The statements\
+    \ you want to execute;\n        Break;\n    Case integer2;\n        The statements\
+    \ you want to execute;\n        Break;\n    //…\n    Default:\n        The statements\
+    \ you want to execute;\n        Break;\n}\n```\n\n为了充分利用这种句法，你需要理解其中的几个部分。这些包括：\n\
+    \n- `switch` 关键字——这是通知编译器你想程序执行 switch-case 语句的关键字。\n- `value selector`（值选择器）——这是一个生成值的表达式。在\
+    \ `C#` 中，该值应与你的运算符兼容。你的程序将此值与语句内部列出的其他 case 进行比较。\n- `case`（分支）——case 是程序在进行比较时使用的标签。如果\
+    \ case 最终与选择器的值匹配，将执行该语句。程序将检查每个 case 直到找到匹配项为止。\n- 可执行语句——这些是你根据合适的 case 想要运行的不同语句。根据你的需求，它可以是一组语句，也可以是单条语句。\n\
+    - `Break` 关键字——这是终止 switch 结构体的关键字。你需要在你尝试创建的每个语句之后放置此关键字。\n- `default` 子句——这是你结束语句所需的机制。如果选择器没有匹配到你设置的任何其他标签，它将会运行。这在很大程度上确保了当其他方法都不起作用时过程会显示某些内容。你可以确保无论输入是什么，程序都会给出一个答案。\n\
+    \n对于初学者来说，处理条件语句有时是很困难的。你会发现，使用这类语句可以做的事情太多了，以至于对许多人来说可能有些望而生畏。但当你看到一些语法选项并偶尔尝试使用这些选项时，你会发现使用语言编程来实现一些很棒的选择比你想象的要容易得多。\n\
+    \n在此过程中，重要的是使用上面列出的不同部分。这将帮助你确保获取了所有正确的部分来处理条件语句。如果没有正确的选项，你会发现当尝试运行程序时，程序会发出错误信号。当你掌握了所有这些新方面后，你就可以编写出出色的条件语句，帮助你的程序运行起来。\n\
+    \n# 创建和使用对象\n\n在本章中，我们将关注两个重要的编程概念，主要是类和对象。你还将将学习如何访问 `.NET` 编程框架中存在的所有类，它还包含了一些非常有价值的信息，可以让你比以往任何时候都更容易在没有任何烦恼的情况下成为\
+    \ `C#` 大师。\n\n## 类和对象\n\n首先，我们将谈谈这种编程语言中的对象。编程在过去几年里取得了巨大增长，所有这些增长对程序员创建新计算机应用程序产生了巨大影响。面向对象编程（或\
+    \ `OOP`）是 IT 领域开发的最新、最大的思想之一，我们将花费一些时间学习 `OOP` 是如何工作的，这样你就可以利用它来用 `C#` 创建一些惊人的程序。\n\
+    \n### 面向对象编程\n\n这种编程是一种依赖于对象的风格。`OOP` 将为你提供一个基于现实世界运作方式的模型。当你能够处理对象而不是抽象概念时，更容易理解这种语言并让它为你工作。这种方法将帮助你利用直觉和逻辑来解决编程中出现的问题。\n\
+    \n### 对象\n\n程序员将使用数字“对象”来表示物理对象或抽象概念。在使用 `OOP` 时，你应该记住这些对象具有两个特征，包括：\n\n- 状态——这是定义对象的特征。这些可以是通用的，也可以是特定的。\n\
+    - 行为——这是声明对象能够执行的所有动作的特征。\n\n让我们通过观察一个实际对象——球来看这两个特征之间的区别。球的状态将是球的大小、颜色和产地。球的行为可能是滚动或弹跃。\n\
+    \n通过 `OOP`，你能够将信息和处理信息的技术合为一体。编程对象将与实际对象对应并持有信息和动作。\n\n### 类\n\n在使用 `C#` 时，类将定义你的对象的特征。它们将为你提供一个定义对象本质结构或模型。根据一些编程专家的说法，类基本上是\
+    \ `OOP` 的基础，它们与对象紧密相关。此外，你使用的每个对象都代表一个特定的类。\n\n让我们从名为“Toys”（玩具）的类和名为“Ball”（球）的对象开始。在这种情况下，“Ball”只是\
+    \ `Toy` 类的一个实例。但 `Toy` 类将定义所有玩具以及球的行为和状态。\n\n类可以为你的计算机编程增加一些简单性。它们所持有的信息对于任何查看程序的人来说都应该是有意义，而不仅仅是专业程序员。例如，“Toys”类不能将\
+    \ `HTTP` 作为其特征之一，因为这些无法联系在一起。\n\n## 属性和行为\n\n"
+- fmt: "\nYour classes are going to define the behavior of an object, such as the\
+    \ actions that the object is able to perform, and the attributes, or the characteristics.\
+    \ The attributes are going to appear as different variables in the body of the\
+    \ class while the behavior is going to be defined by the different methods inside\
+    \ the class.\n\nLet’s apply these to the `Toy` class. When they are applied, you\
+    \ will get the color and the size as attributes. For this you are going to use\
+    \ the methods `stop()` and `move()`.\n\n## Using Classes in a Program\n\nAt this\
+    \ point we have discussed a bit about classes and how they work, but we need to\
+    \ get a bit more into how they are going to work within the program and how they\
+    \ can make a difference in what you are trying to write out in the code. With\
+    \ C#, you should define all of the classes using the keyword `class` to keep things\
+    \ simple.\n\nAfter you type in `class`. You will need to indicate the particular\
+    \ identifier that you would like to use along with the variables and the methods\
+    \ that you would like to place inside this new class. To keep things simple, the\
+    \ different parts that you can add into the class in C# language include:\n\n\
+    *   Fields—these are any of the variables that will belong to a particular data\
+    \ type.\n*   Methods—you can use these methods in order to manipulate the data.\n\
+    *   Properties—in this language, the properties are going to enhance how well\
+    \ the fields work. The property will provide some extra management abilities for\
+    \ the information and give it to the fields.\n\nBelow is an example of the different\
+    \ parts that we just discussed so that you can get a good idea of how this would\
+    \ work in a programming language. We are going to use `book` in the name of this\
+    \ class and give it two properties: size and type.\n\n```cs\nPublic class Book\n\
+    {\n    Private string bookType:\n    Private string size;\n\n    Public string\
+    \ BookType\n    {\n        Get\n        {\n            Return this. bookType;\n\
+    \        }\n        Set\n        {\n            This.bookType = value;\n     \
+    \   }\n    }\n\n    Public string Size\n    {\n        Get\n        {\n      \
+    \      Return this. size;\n        }\n        Set\n        {\n            this.size\
+    \ = value;\n        }\n    }\n\n    public Book()\n    {\n        this.bookType\
+    \ = “Dictionary”;\n        this.size = “large”;\n    }\n\n    public book(string\
+    \ bookType, string size)\n    {\n        this.bookType = bookType;\n        this.size\
+    \ = size;\n    }\n\n    public void Sample()\n    {\n        Console.WriteLine(“\
+    \ Is this a {0}, bookType)\n    }\n}\n```\n\nWith this example, the `Book` class\
+    \ is able to define two different properties, the book type and the size. These\
+    \ properties are able to hide the values inside the fields of the same names and\
+    \ the code snippet is going to declare two constructors for generating on the\
+    \ `Book` class. This code also created a method called `Sample()`.\n\nYou will\
+    \ be able to use this for a number of different things, adding in more characteristics\
+    \ if you would like, and it doesn’t have to be limited to books, toys, vehicles,\
+    \ or anything else. You can mess around with your text editor a bit to try out\
+    \ this formula and change it around with some other classes to make it easier\
+    \ to get the program to work for you.\n\n## System Classes\n\nThe C# language\
+    \ already has a library that is built into the system. These are going to include\
+    \ some default classes like `Console`, `Math`, and `String`. As you use this language,\
+    \ you must keep in mind that this library is going to be compatible with any of\
+    \ the `.NET` applications that you use.\n\nThe `.NET` framework is nice because\
+    \ it already has this preinstalled library that will include various classes inside.\
+    \ The classes can be helpful for those who are trying to do some basics in programming\
+    \ tasks, like text procession, execution, and networking. They can be helpful\
+    \ for the beginner who is just getting started or even someone who has been working\
+    \ in the programming language for some time because they are simple and already\
+    \ written out.\n\nKeep in mind that these classes are going to hide the logical\
+    \ implementation inside. You should focus more on what the classes are able to\
+    \ do, not exactly on how they are able to do it. For this reason, the built-in\
+    \ classes with C# won’t be viewable to the programmer. Since you should worry\
+    \ more about the principle of working on your code rather than all the abstract\
+    \ parts, it is important to just use these codes for their general purposes rather\
+    \ than worrying about how they work.\n\n## Creating and Using Objects\n\nWe have\
+    \ spent some time looking at classes so now it is time to work on creating and\
+    \ then using objects in the language. Here are some of the basics that can help\
+    \ you to get started:\n\n### Creating an object\n\nTo get started with creating\
+    \ an object inside an existing class, you will need to create a `new` keyword.\
+    \ Usually, the programmer will assign the new object a variable that will be of\
+    \ the same data type as the class of the object. Keep in mind that doing this\
+    \ won’t copy the object to the variable, but it will just give the variable a\
+    \ reference to the object that got assigned to it. Use the following code to view\
+    \ how this would all work:\n\n```cs\nBook someBook = new Book();\n```\n\nThis\
+    \ example is going to assign the instance of a `Book` class to the variable called\
+    \ `someBook`. This will get the object to go to the right class that is needed.\n\
+    \n### Setting the parameters for your new object\n\nC# will allow you to assign\
+    \ some parameters for your newly created objects. Let’s take the syntax that you\
+    \ did above and make the adjustments for this:\n\n```cs\nBook someBook = new Book(“Biography”,\
+    \ “large”);\n```\n\nThis code is going to be good for creating a new object named\
+    \ `someBook` and will assign the two different parameters to it as well. With\
+    \ this adjustment, the object’s type is not Biography while the size is now large.\n\
+    \nWhenever you are using the `new` keyword, the framework of `.NET` is going to\
+    \ complete two things:\n\n*   It will reserve some of the memory for this new\
+    \ object\n*   It will initialize the object’s data members\n\nThis process is\
+    \ going to occur thanks to a method called `constructor`. For the code above,\
+    \ the initial parameters are the parameters of the class constructor. This will\
+    \ help the object to stay in the right place and give it the characteristics that\
+    \ it needs.\n\n### Releasing the object\n\nWhile some of the other programming\
+    \ languages that you use will require you to manually destroy objects, this is\
+    \ not a requirement with C#. This means that you will be able to release any of\
+    \ the memory that is consumed by your objects without having to do manual deletions.\
+    \ The `CLR` system that comes with your `.NET` framework will make all this possible.\n\
+    \nWith the `CLR` system, the computer will automatically detect and then release\
+    \ any objects that don’t have a reference. The memory that was assigned to these\
+    \ objects is not available and you can use it for other objects. Overall, this\
+    \ makes the system easier to use and can prevent issues and bugs. If you would\
+    \ like to release an object, you should take the time to destroy the corresponding\
+    \ reference. A good example of this is:\n\n```cs\nsomeBook = null;\n```\n\nThis\
+    \ process won’t delete the object, it is just going to remove the reference from\
+    \ the object so that the `CLR` can then perform an automated deletion.\n\n###\
+    \ Accessing the object’s field\n\nWhen you want to access the field of an object\
+    \ with C#, you will need to use the dot operator or `.`. You will simply need\
+    \ to indicate the name of the object, place the dot, and then enter the field\
+    \ you are looking to access. However, you won’t even need to add in the dot if\
+    \ the object you want to work with is just in one class. You have to get into\
+    \ the object’s field if you want to assign a new value or extract the value.\n\
+    \nFor those who are working with a property, you will need to use the keywords\
+    \ `get` and `set`. The `set` keyword is going to allow you to assign the value\
+    \ of an object while the `get` keyword is going to help you to extract the value\
+    \ out of the object.\n\nHere is an example of a code that uses this information\
+    \ to get an object’s property. We are going to create an object called `myBook`\
+    \ and then assign the `bookType` as “bible” to make it easier.\n"
+  raw: "Your classes are going to define the behavior of an object, such as the actions\
+    \ that the object is able to perform, and the attributes, or the characteristics.\
+    \ The attributes are going to appear as different variables in the body of the\
+    \ class while the behavior is going to be defined by the different methods inside\
+    \ the class.\n\nLet’s apply these to the Toy class. When they are applied, you\
+    \ will get the color and the size as attributes. For this you are going to use\
+    \ the methods stop() and move().\n\n## Using Classes in a Program\n\nAt this point\
+    \ we have discussed a bit about classes and how they work, but we need to get\
+    \ a bit more into how they are going to work within the program and how they can\
+    \ make a difference in what you are trying to write out in the code. With C#,\
+    \ you should define all of the classes using the keyword “class” to keep things\
+    \ simple.\n\nAfter you type in “class”. You will need to indicate the particular\
+    \ identifier that you would like to use along with the variables and the methods\
+    \ that you would like to place inside this new class. To keep things simple, the\
+    \ different parts that you can add into the class in C# language include:\n\n\
+    *   Fields—these are any of the variables that will belong to a particular data\
+    \ type.\n\n*   Methods—you can use these methods in order to manipulate the data\n\
+    \n*   Properties—in this language, the properties are going to enhance how well\
+    \ the fields work. The property will provide some extra management abilities for\
+    \ the information and give it to the fields.\n\nBelow is an example of the different\
+    \ parts that we just discussed so that you can get a good idea of how this would\
+    \ work in a programming language. We are going to use “book” in the name of this\
+    \ class and give it two properties: size and type.\n\nPublic class Book\n\n{\n\
+    \n Private string bookType:\n\n Private string size;\n\n Public string BookType\n\
+    \n {\n\n Get\n\n {\n\n Return this. bookType;\n\n }\n\n Set\n\n {\n\n This.bookType\
+    \ = value’\n\n }\n\n }\n\n Public string Size\n\n {\n\n Get\n\n {\n\n Return this\
+    \ size;\n\n }\n\n Set\n\n {\n\n this.size = value;\n\n }\n\n }\n\n public Book()\n\
+    \n {\n\n this.bookType = “Dictionary”;\n\n this.size = “large”;\n\n }\n\n public\
+    \ book(string bookType, string size)\n\n {\n\n this.bookType = bookType;\n\n this.size\
+    \ = size;\n\n }\n\n public void Sample()\n\n {\n\n Console.WriteLine(“ Is this\
+    \ a {0}, bookType)\n\n               }\n\n}\n\nWith this example, the Book class\
+    \ is able to define two different properties, the book type and the size. These\
+    \ properties are able to hide the values inside the fields of the same names and\
+    \ the code snippet is going to declare two constructors for generating on the\
+    \ Book class. This code also created a method called Sample().\n\nYou will be\
+    \ able to use this for a number of different things, adding in more characteristics\
+    \ if you would like, and it doesn’t have to be limited to books, toys, vehicles,\
+    \ or anything else. You can mess around with your text editor a bit to try out\
+    \ this formula and change it around with some other classes to make it easier\
+    \ to get the program to work for you.\n\n## System Classes\n\nThe C# language\
+    \ already has a library that is built into the system. These are going to include\
+    \ some default classes like Console, Math, and String. As you use this language,\
+    \ you must keep in mind that this library is going to be compatible with any of\
+    \ the .NET applications that you use.\n\nThe .NET framework is nice because it\
+    \ already has this preinstalled library that will include various classes inside.\
+    \ The classes can be helpful for those who are trying to do some basics in programming\
+    \ tasks, like text procession, execution, and networking. They can be helpful\
+    \ for the beginner who is just getting started or even someone who has been working\
+    \ in the programming language for some time because they are simple and already\
+    \ written out.\n\nKeep in mind that these classes are going to hide the logical\
+    \ implementation inside. You should focus more on what the classes are able to\
+    \ do, not exactly on how they are able to do it. For this reason, the built-in\
+    \ classes with C# won’t be viewable to the programmer. Since you should worry\
+    \ more about the principle of working on your code rather than all the abstract\
+    \ parts, it is important to just use these codes for their general purposes rather\
+    \ than worrying about how they work.\n\n## Creating and Using Objects\n\nWe have\
+    \ spent some time looking at classes so now it is time to work on creating and\
+    \ then using objects in the language. Here are some of the basics that can help\
+    \ you to get started:\n\n### Creating an object\n\nTo get started with creating\
+    \ an object inside an existing class, you will need to create a new keyword. Usually,\
+    \ the programmer will assign the new object a variable that will be of the same\
+    \ data type as the class of the object. Keep in mind that doing this won’t copy\
+    \ the object to the variable, but it will just give the variable a reference to\
+    \ the object that got assigned to it. Use the following code to view how this\
+    \ would all work:\n\nBook someBook = new Book();\n\nThis example is going to assign\
+    \ the instance of a Book class to the variable called “someBook.” This will get\
+    \ the object to go to the right class that is needed.\n\n### Setting the parameters\
+    \ for your new object\n\nC# will allow you to assign some parameters for your\
+    \ newly created objects. Let’s take the syntax that you did above and make the\
+    \ adjustments for this:\n\nBook someBook = new Book(“Biography”, “large”)’;\n\n\
+    This code is going to be good for creating a new object named someBook and will\
+    \ assign the two different parameters to it as well. With this adjustment, the\
+    \ object’s type is not Biography while the size is now large.\n\nWhenever you\
+    \ are using the new keyword, the framework of .NET is going to complete two things:\n\
+    \n*   It will reserve some of the memory for this new object\n\n*   It will initialize\
+    \ the object’s data members\n\nThis process is going to occur thanks to a method\
+    \ called constructor. For the code above, the initial parameters are the parameters\
+    \ of the class constructor. This will help the object to stay in the right place\
+    \ and give it the characteristics that it needs.\n\n### Releasing the object\n\
+    \nWhile some of the other programming languages that you can use will require\
+    \ you to manually destroy objects, this is not a requirement with C#. This means\
+    \ that you will be able to release any of the memory that is consumed by your\
+    \ various objects without having to do manual deletions. The CLR system that comes\
+    \ with your .NET framework will make all of this possible.\n\nWith the CLR system,\
+    \ the computer will automatically detect and then release any objects that don’t\
+    \ already have a reference. The memory that was assigned to these objects is not\
+    \ available and you can use it for other objects. Overall, this makes the system\
+    \ easier to use and can prevent issues and bugs. If you would like to release\
+    \ an object, you should take the time to destroy the corresponding reference.\
+    \ A good example of this is:\n\nsomeBook = null;\n\nThis process won’t delete\
+    \ the object, it is just going to remove the reference from the object so that\
+    \ the CLR can then go through and perform an automated deletion.\n\n### Accessing\
+    \ the object’s field\n\nWhen you want to access the field of an object with C#,\
+    \ you will need to use the dot operator or “.” You will simply need to indicate\
+    \ the name of the object, place the dot, and then enter the field you are looking\
+    \ to access. However, you won’t even need to add in the dot if the object you\
+    \ want to work with is just in one class. You have to get into the object’s field\
+    \ if you want to assign a new value or extract the value.\n\nFor those who are\
+    \ working with a property, you will need to use the keywords get and set. The\
+    \ set keyword is going to allow you to assign the value of an object while the\
+    \ get keyword is going to help you to extract the value out of the object.\n\n\
+    Here is an example of a code that uses this information to get an object’s property.\
+    \ We are going to create an object called myBook and then assign the bookType\
+    \ as “bible” to make it easier."
+  toc: []
+  trans: "\n\n你的类将定义对象的行为，例如对象能够执行的操作，以及属性（或特征）。属性将以不同变量的形式出现在类体中，而行为将通过类内部的不同方法来定义。\n\
+    \n让我们将这些概念应用到 `Toy` 类中。当应用它们时，你将获得颜色和大小作为属性。为了这一点，你将使用 `stop()` 和 `move()` 方法。\n\
+    \n## 在程序中使用类\n\n到目前，我们已经讨论了一些关于类以及它们如何工作的，但我们需要更深入地了解它们在程序内部是如何运作的，以及它们在你尝试编写代码时能产生什么影响。在\
+    \ C# 中，你应该使用 `class` 关键字来定义所有的类，以保持简单。\n\n在输入 `class` 之后，你需要指定想要使用的特定标识符，以及你想要放置在这个新类中的变量和方法。为了保持简单，在\
+    \ C# 语言中，你可以添加到类中的不同部分包括：\n\n*   字段（Fields）——这些是任何属于特定数据类型的变量。\n*   方法（Methods）——你可以使用这些方法来操纵数据。\n\
+    *   属性（Properties）——在这种语言中，属性将增强字段的工作效果。属性将为信息提供一些额外的管理能力并将其交给字段。\n\n下面是我们刚刚讨论的不同部分的示例，以便你很好地了解这在编程语言中是如何运作的。我们将使用\
+    \ `book` 作为此类的名称，并给它两个属性：尺寸和类型。\n\n```cs\nPublic class Book\n{\n    Private string\
+    \ bookType:\n    Private string size;\n\n    Public string BookType\n    {\n \
+    \       Get\n        {\n            Return this. bookType;\n        }\n      \
+    \  Set\n        {\n            This.bookType = value;\n        }\n    }\n\n  \
+    \  Public string Size\n    {\n        Get\n        {\n            Return this.\
+    \ size;\n        }\n        Set\n        {\n            this.size = value;\n \
+    \       }\n    }\n\n    public Book()\n    {\n        this.bookType = “Dictionary”;\n\
+    \        this.size = “large”;\n    }\n\n    public book(string bookType, string\
+    \ size)\n    {\n        this.bookType = bookType;\n        this.size = size;\n\
+    \    }\n\n    public void Sample()\n    {\n        Console.WriteLine(“ Is this\
+    \ a {0}, bookType)\n    }\n}\n```\n\n通过这个示例，`Book` 类能够定义两个不同的属性：书的类型和尺寸。这些属性能够隐藏同名字段内部的值，并且代码段将为生成\
+    \ `Book` 类的实例而声明两个构造函数。这段代码还创建了一个名为 `Sample()` 的方法。\n\n你将能够将此用于许多不同的事情，根据你的需要添加更多特征，而且它不必局限于书籍、玩具、车辆或任何其他。你可以稍微摆弄你的文本编辑器来尝试这个公式，并用其他类对其进行更改，以便让程序更方便地为你工作。\n\
+    \n## 系统类\n\nC# 语言已经有了一个内置在系统中的库。这些将包含一些默认类，如 `Console`、`Math` 和 `String`。当你使用这种语言时，必须记住这个库与你使用的任何\
+    \ `.NET` 应用程序兼容。\n\n`.NET` 框架之所以很好，因为它已经预装了此库，其中包含了各种类。对于那些正尝试完成一些基础编程任务（如文本处理、执行和网络连接）的人来说，这些类会很有帮助。对于刚起步的初学者甚至对于已经在编程语言领域工作了一段时间的人来说，它们也很有帮助，因为它们简单且已经写好了。\n\
+    \n请记住，这些类在内部隐藏了逻辑实现。你应该更多地关注类能够做什么，而不是精确关注它们是如何做到的。由于由于原因，C# 的内置类对程序员是不可见的。由于你应该更多地关注代码运行的原理而不是所有的抽象部分，因此将这些代码仅用于它们的通用目的而不是担心它们是如何工作的是非常重要的。\n\
+    \n## 创建和使用对象\n\n我们已经花了一些时间研究类，现在是时候学习在语言中创建并使用对象了。这里是一些可以帮助你入门的基础知识：\n\n### 创建对象\n\
+    \n要在现有类内部开始创建对象，你需要创建一个 `new` 关键字。通常，程序员会为新对象分配一个变量，该变量的数据类型与对象的类类型相同。请记住，这样做不会将对象复制到变量中，而是给变量提供指向分配给它的对象的引用。使用以下代码查看这一切是如何运作的：\n\
+    \n```cs\nBook someBook = new Book();\n```\n\n这个示例将 `Book` 类的实例分配给名为 `someBook`\
+    \ 的变量。这将使对象进入所需的正确类。\n\n### 为你的新对象设置参数\n\nC# 允许为你新创建的对象分配一些参数。让我们采用你上面的语法并针对此进行调整：\n\
+    \n```cs\nBook someBook = new Book(“Biography”, “large”);\n```\n\n这段代码将为名为 `someBook`\
+    \ 的对象分配参数。通过这种调整，类型是 Biography 而尺寸现在是 large。每当你使用 `new` 关键字时，`.NET` 框架将完成两件事：\n\
+    \n*   为这个新对象保留内存\n*   初始化对象的成员\n\n这个过程归功于一个名为 `constructor` 方法。对于上面的代码，初始参数是类的构造函数。这有助于对象处于正确的位置并赋予它所需的特征。\n\
+    \n### 释放对象\n\n虽然你使用的某些编程语言要求你手动删除对象，但在 C# 中并非如此。这意味着你能够释放对象消耗的任何内存，而无需手动操作。随框架提供的\
+    \ `CLR` 系统将使这一切成为可能。\n\n通过 `CLR` 系统，计算机会自动检测并释放任何没有引用的对象。分配给这些对象的内存将不再可用，你可以将其用于其他对象。总来说来说，这使得系统更容易使用并可以防止问题和错误。如果你想释放对象，应该花时间销毁相应的引用。一个很好的例子是：\n\
+    \n```cs\nsomeBook = null;\n```\n\n这个过程不会删除对象，它只是从对象中移除引用，以便 `CLR` 能够执行自动删除。\n\n\
+    ### 访问对象的字段\n\n当你想用 C# 访问对象的字段时，你需要使用点运算符 `.`。你只需要指定对象的名称，放置点，然后输入你想要访问的字段。然而，如果你要处理的对象仅在一个类中，你甚至不需要添加点。如果你想分配新值或提取值，你必须进入对象的字段。\n\
+    \n对于处理属性的人来说，你需要使用 `get` 和 `set` 关键字。`set` 关键字允许你分配对象的值，而 `get` 关键字将帮助你从对象中提取值。\n\
+    \n这里有一个使用这些信息获取对象属性的代码示例。我们将创建一个名为 `myBook` 的对象，然后将 `bookType` 赋值为“bible”以便于操作。\n\
+    \n"
+- fmt: "\n```csharp\nClass BookManipulation\n{\n    Static void Main()\n    {\n  \
+    \      Book myBook = new Book();\n        myBook.bookType = “Bible”;\n       \
+    \ System.Console.WriteLine(“This is a {0}.” myBook.bookType);\n    }\n}\n```\n\
+    \n### Calling an object’s method\n\nYou will need to use two operators including\
+    \ the invocation and the dot operators. You will not need to use the dot operator\
+    \ if the object and the method you choose to work with are in the same class,\
+    \ but the parentheses are always going to be mandatory. To call out the method,\
+    \ you just need to indicate the identifier and then follow it with the invocation\
+    \ operator. You can place the parameters inside the parentheses or you can add\
+    \ in the arguments for the method.\n\nWhile you are writing your program in C#,\
+    \ you will be able to add in an access modifier to the methods. There are four\
+    \ access modifiers that are supported in C#, including `private`, `internal`,\
+    \ `protected`, and `public`. These are going to help you to restrict the calling\
+    \ abilities when you are working with your method. While all of them are important,\
+    \ we are just going to focus on `public` modifiers and how they will make the\
+    \ information, namely the objects, publicly available.\n\n## The Constructors\n\
+    \nConstructors are methods that will run any time that the programmer creates\
+    \ a new object. The idea behind the constructor is to initialize the data of your\
+    \ new object. You aren’t going to get anything value when using this method. Plus,\
+    \ the constructor is going to use the same name as the class it belongs to, meaning\
+    \ that it won’t have a random name for you to remember. You will also be able\
+    \ to assign parameters to your constructors when using the C# language.\n\n###\
+    \ Parameters with your constructors\n\nThe constructors in C# will accept parameters\
+    \ just like the methods that you would use in the language. You can set up several\
+    \ different constructors in the classes, but you should check to make sure that\
+    \ the constructors have different types and numbers of parameters; this basically\
+    \ makes sure that the constructor is unique.\n\nRemember that your constructor\
+    \ is going to run any time that you create your objects inside the class. If you\
+    \ have a class that has several constructors inside of it, you may be curious\
+    \ to figure out which constructor is running when you create a new object. C#\
+    \ will be able to determine the right constructor for you so you won’t need to\
+    \ worry about this and you won’t need to do anything manually.\n\nThe language\
+    \ compiler is going to select the right constructor based on the parameters that\
+    \ you set up in the beginning in a principle that is called “best match.” This\
+    \ helps to keep things organized and can speed the program writing process.\n\n\
+    A good example of using constructors include:\n\n```csharp\npublic class Device\n\
+    {\n    private string type;\n    private string size;\n    // A constructor without\
+    \ any parameter\n    public Device()\n    {\n        this.type =”laptop”;\n  \
+    \      this.type = “large”;\n    }\n    //A constructor with two parameters.\n\
+    \    {\n        this.type = type;\n        this.size = size;\n    }\n}\n```\n\n\
+    These `parameters` can help to tell the program what you you want to do. It also\
+    \ makes it easier for C# to figure out which constructor you want to show up based\
+    \ on the work that you are doing at that moment.\n\n## Static Data Members\n\n\
+    So far we have been working on indicating the state of objects that are being\
+    \ used. These fields are going to be directly linked to objects that are inside\
+    \ a specific class. In OOP, you will come across different special types of fields\
+    \ and methods linked by class, but not with the object itself. This is called\
+    \ a “static data member” because it won’t be affected by the objects. It can even\
+    \ function inside your class without having any objects there.\n\nWhen you are\
+    \ writing your program, you need to take the time to define the static methods\
+    \ using the `static` keyword. You can place this in the method’s value type or\
+    \ the field type. You can even use these to create static constructors if you\
+    \ need to in C#. For this kind, you would place the `static` keyword right before\
+    \ the name of your constructor.\n\nObjects and classes are a big part of how C#\
+    \ works and they are going to help you to really make the code that you are looking\
+    \ for. The topics above are just some of the great things you can do with your\
+    \ classes and objects in this programming language and with a bit of experimenting,\
+    \ you will find that almost anything is possible with this easy to use language!\n\
+    \n# Defining Classes in C#\n\nWe spent some time working on classes and objects\
+    \ in the past chapter, but here we are going to work a bit more with classes and\
+    \ learn how you can define these classes within the C# language. Let’s take a\
+    \ look and get started with this part!\n\n## The Basics of Classes\n\nIn a programming\
+    \ language, the class is going to define the data and object types that you are\
+    \ able to use in the program. The object is going to contain this actual information\
+    \ that will define the state of its container. Classes are also able to describe\
+    \ the behavior of the object. This is all the behaviors that the object is able\
+    \ to perform. When doing OOP, you should use methods in order to describe the\
+    \ behavior of the objects.\n\n## Components of Classes\n\nThere are a few different\
+    \ parts that come with each class including:\n\n*   Declaration—this is the line\
+    \ that will declare the identifier of the class.\n*   Body—just like with methods,\
+    \ the classes are going to have a single body. You will need to define the body\
+    \ right after you make the declaration. The body is the statement, or several\
+    \ statements, that are found between the curly brackets. An example of this is:\n\
+    \n```csharp\nclass Example\n{\n//This is the body of the “Example” class.\n}\n\
+    ```\n\n*   Constructor—this is the part that will allow you to create a new object.\
+    \ An example of this is:\n\n```csharp\nPublic Sample()\n{\n//Insert what you want\
+    \ to say here.\n}\n```\n\n*   Fields—these are the variables that you will declare\
+    \ within your class. The fields are going to contain the values that will represent\
+    \ the exact state of the object they are trying to get to.\n*   Properties—this\
+    \ part will describe the different attributes of the class. Many programmers will\
+    \ write the class properties right inside the field of their chosen object.\n\
+    *   Methods—a method is basically a named block of code that is executable. In\
+    \ is able to complete some tasks and then will allow objects to attain the right\
+    \ behavior. It can also execute the right algorithms that are present inside the\
+    \ codes.\n\nThe following example is going to show you the best way to create\
+    \ a class using the C# language and it is going to include all of the pieces that\
+    \ we discussed above as important to classes.\n\n```csharp\nclass ZooAnimals //\
+    \ This is the class declaration\n{\n    // This bracket signals the start of the\
+    \ class’s body\n    string animalType //This line declares a new field\n    public\
+    \ ZooAnimals() // This line declares an empty constructor.\n    {\n    }\n   \
+    \ public ZooAnimals(monkey animalType) // This line create another constructor\
+    \ for the class.\n    {\n        this.animalType = animalType;\n    }\n    string\
+    \ ZooAnimals //Here, you are declaring a property.\n    {\n        get {return\
+    \ animalType;}\n        set { animalType = value;}\n    }\n    Static void Animal()\
+    \ // This line declares a new method for the class.\n    {\n        System.Console.WriteLine(“This\
+    \ is a {0}.” animalType)\n    }\n}\n```\n\n## Objects and Classes\n\nNow that\
+    \ we know a bit more about how to create and use class objects, it is time to\
+    \ learn a bit more about this technique and how it is going to work when you are\
+    \ programming.\n\n### Custom classes\n\nBefore you start using a specific class,\
+    \ you will need to have an object inside it. You can do this by starting with\
+    \ a new keyword and the constructors that are present inside the class.\n"
+  raw: "Class BookManipulation\n\n{\n\n Static void Main()\n\n {\n\n Book myBook =\
+    \ new Book();\n\n myBook.bookType = “Bible”;\n\n System.Console.WriteLine(“This\
+    \ is a {0}.” myBook.bookType);\n\n }\n\n }\n\n### Calling an object’s method\n\
+    \nYou will need to use two operators including the invocation and the dot operators.\
+    \ You will not need to use the dot operator if the object and the method you choose\
+    \ to work with are in the same class, but the parentheses are always going to\
+    \ be mandatory. To call out the method, you just need to indicate the identifier\
+    \ and then follow it with the invocation operator. You can place the parameters\
+    \ inside the parentheses or you can add in the arguments for the method.\n\nWhile\
+    \ you are writing your program in C#, you will be able to add in an access modifier\
+    \ to the methods. There are four access modifiers that are supported in C# including\
+    \ private, internal, protected, and public. These are going to help you to restrict\
+    \ the calling abilities when you are working with your method. While all of them\
+    \ are important, we are just going to focus on public modifiers and how they will\
+    \ make the information, namely the objects, publicly available.\n\n## The Constructors\n\
+    \nConstructors are methods that will run any time that the programmer creates\
+    \ a new object. The idea behind the constructor is to initialize the data of your\
+    \ new object. You aren’t going to get anything value when using this method. Plus,\
+    \ the constructor is going to use the same name as the class it belongs to, meaning\
+    \ that it won’t have a random name for you to remember. You will also be able\
+    \ to assign parameters to your constructors when using the C# language.\n\n###\
+    \ Parameters with your constructors\n\nThe constructors in C# will accept parameters\
+    \ just like the methods that you would use in the language. You can set up several\
+    \ different constructors in the classes, but you should check to make sure that\
+    \ the constructors have different types and numbers of parameters; this basically\
+    \ makes sure that the constructor is unique.\n\nRemember that your constructor\
+    \ is going to run any time that you create your objects inside the class. If you\
+    \ have a class that has several constructors inside of it, you may be curious\
+    \ to figure out which constructor is running when you create a new object. C#\
+    \ will be able to determine the right constructor for you so you won’t need to\
+    \ worry about this and you won’t need to do anything manually.\n\nThe language\
+    \ compiler is going to select the right constructor based on the parameters that\
+    \ you set up in the beginning in a principle that is called “best match.” This\
+    \ helps to keep things organized and can speed up the program writing process.\n\
+    \nA good example of using constructors include:\n\npublic class Device\n\n{\n\n\
+    \ private string type;\n\n private string size;\n\n // A constructor without any\
+    \ parameter\n\n public Device()\n\n {\n\n this.type =”laptop”;\n\n this.type =\
+    \ “large”;\n\n }\n\n //A constructor with two parameters.\n\n {\n\n this.type\
+    \ = type;\n\n this.size = size;\n\n }\n\n}\n\nThese parameters can help to tell\
+    \ the program what you want to do. It also makes it easier for C# to figure out\
+    \ which constructor you want to show up based on the work that you are doing at\
+    \ that moment.\n\n## Static Data Members\n\nSo far we have been working on indicating\
+    \ the state of objects that are being used. These fields are going to be directly\
+    \ linked to objects that are inside a specific class. In OOP, you will come across\
+    \ different special types of fields and methods linked by class, but not with\
+    \ the object itself. This is called a “static data member” because it won’t be\
+    \ affected by the objects. It can even function inside your class without having\
+    \ any objects there.\n\nWhen you are writing your program, you need to take the\
+    \ time to define the static methods using the “static” keyword. You can place\
+    \ this in the method’s value type or the field type. You can even use these to\
+    \ create static constructors if you need to in C#. For this kind, you would place\
+    \ the “static” keyword right before the name of your constructor.\n\nObjects and\
+    \ classes are a big part of how C# works and they are going to help you to really\
+    \ make the code that you are looking for. The topics above are just some of the\
+    \ great things that you can do with your classes and objects in this programming\
+    \ language and with a bit of experimenting, you will find that almost anything\
+    \ is possible with this easy to use language!\n\n# \n\nDefining Classes in C#\n\
+    \nWe spent some time working on classes and objects in the past chapter, but here\
+    \ we are going to work a bit more with classes and learn how you can define these\
+    \ classes within the C# language. Let’s take a look and get started with this\
+    \ part!\n\n## The Basics of Classes\n\nIn a programming language, the class is\
+    \ going to define the data and object types that you are able to use in the program.\
+    \ The object is going to contain this actual information that will define the\
+    \ state of its container. Classes are also able to describe the behavior of the\
+    \ object. This is all the behaviors that the object is able to perform. When doing\
+    \ OOP, you should use methods in order to describe the behavior of the objects.\n\
+    \n## Components of Classes\n\nThere are a few different parts that come with each\
+    \ class including:\n\n*   Declaration—this is the line that will declare the identifier\
+    \ of the class.\n\n*   Body—just like with methods, the classes are going to have\
+    \ a single body. You will need to define the body right after you make the declaration.\
+    \ The body is the statement, or several statements, that are found between the\
+    \ curly brackets. An example of this is:\n\nclass Example\n\n{\n\n//This is the\
+    \ body of the “Example” class.\n\n}\n\n*   Constructor—this is the part that will\
+    \ allow you to create a new object. An example of this is:\n\nPublic Sample()\n\
+    \n{\n\n//Insert what you want to say here.\n\n}\n\n*   Fields—these are the variables\
+    \ that you will declare within your class. The fields are going to contain the\
+    \ values that will represent the exact state of the object they are trying to\
+    \ get to.\n\n*   Properties—this part will describe the different attributes of\
+    \ the class. Many programmers will write the class properties right inside the\
+    \ field of their chosen object.\n\n*   Methods—a method is basically a named block\
+    \ of code that is executable. In is able to complete some tasks and then will\
+    \ allow objects to attain the right behavior. It can also execute the right algorithms\
+    \ that are present inside the codes.\n\nThe following example is going to show\
+    \ you the best way to create a class using the C# language and it is going to\
+    \ include all of the pieces that we discussed above as important to classes.\n\
+    \nclass ZooAnimals // This is the class declaration\n\n{           // This bracket\
+    \ signals the start of the class’s body\n\n string animalType //This line declares\
+    \ a new field\n\n public ZooAnimals() // This line declares an empty constructor.\n\
+    \n {\n\n }\n\n public ZooAnimals(monkey animalType) // This line create another\
+    \ constructor for the class.\n\n {\n\n this.animalType = animalType;\n\n }\n\n\
+    \ string ZooAnimals //Here, you are declaring a property.\n\n {\n\n get {return\
+    \ animalType;}\n\n set { animalType = value;}\n\n }\n\n Static void Animal() //\
+    \ This line declares a new method for the class.\n\n {\n\n System.Console.WriteLine(“This\
+    \ is a {0}.” animalType ??)’\n\n}\n\n## Objects and Classes\n\nNow that we know\
+    \ a bit more about how to create and use class objects, it is time to learn a\
+    \ bit more about this technique and how it is going to work when you are programming.\n\
+    \n### Custom classes\n\nBefore you start using a specific class, you will need\
+    \ to have an object inside it. You can do this by starting with a new keyword\
+    \ and the constructors that are present inside the class."
+  toc: []
+  trans: "\n\n```csharp\nClass BookManipulation\n{\n    Static void Main()\n    {\n\
+    \        Book myBook = new Book();\n        myBook.bookType = “Bible”;\n     \
+    \   System.Console.WriteLine(“This is a {0}.” myBook.bookType);\n    }\n}\n```\n\
+    \n### 调用对象的方法\n\n你需要使用两个运算符，包括调用运算符（invocation operator）和点运算符（dot operator）。如果你选择操作的对象和方法在同一个类中，则不需要使用点运算符，但括号总是强制性的。要调用该方法，你只需要指定标识符，然后紧跟调用运算符即可。你可以在括号内放置参数，也可以为方法添加参数。\n\
+    \n当你用 C# 编写程序时，可以为方法添加访问修饰符。C# 支持四种访问修饰符，包括 `private`、`internal`、`protected` 和\
+    \ `public`。这些修饰符将帮助你在处理方法时限制调用权限。虽然它们所有修饰符都很重要，但我们将重点关注 `public` 修饰符以及它们将如何让信息（即对象）公开可用。\n\
+    \n## 构造函数\n\n构造函数是程序员每次创建新对象时都会运行的方法。构造函数背后的理念是初始化新对象的数据。在使用此方法时，你不会获得任何返回值。此外，构造函数使用的名称与它所属的类相同，这意味着它不会有一个随机的名称供你记忆。在使用\
+    \ C# 语言时，你还可以为构造函数分配参数。\n\n### 构造函数的参数\n\nC# 中的构造函数像你在语言中使用的方法一样接受参数。你可以在类中设置几个不同的构造函数，但你应该检查并确保构造函数具有不同类型和数量的参数；这基本上确保了构造函数的唯一性。\n\
+    \n记住，每你在类内部创建对象时，构造函数就会运行。如果你有一个类内部包含多个构造函数，你可能会好奇在创建新对象时是哪一个构造函数在运行。C# 能够为你确定正确的构造函数，因此你不需要担心，也不需要手动执行任何操作。\n\
+    \n语言编译器将根据你最初设置的参数来选择正确的构造函数，这种原则被称为“最佳匹配”（best match）。这有助于保持条理清晰，并加快程序的编写过程。\n\
+    \n使用构造函数的良好示例包括：\n\n```csharp\npublic class Device\n{\n    private string type;\n\
+    \    private string size;\n    // 一个没有任何参数的构造函数\n    public Device()\n    {\n\
+    \        this.type =”laptop”;\n        this.type = “large”;\n    }\n    // 一个带有两个参数的构造函数\n\
+    \    {\n        this.type = type;\n        this.size = size;\n    }\n}\n```\n\n\
+    这些 `parameters`（参数）可以帮助程序程序你想做什么。它也让 C# 更容易根据你当前正在的工作判断出你想显示哪个构造函数。\n\n## 静态数据成员\n\
+    \n到目前为止，我们一直在研究指示正在使用的对象的状态。这些字段将直接与特定类内部的对象关联。在 OOP 中，你会遇到与类关联的不同特殊类型的字段和方法，而不是与对象本身关联。这被称为“静态数据成员”，因为它不会受对象的影响。它甚至可以在没有任何对象的情况下在类内部运行。\n\
+    \n当你编写程序时，你需要花时间使用 `static` 关键字定义静态方法。你可以将其放置在方法的值类型或字段类型中。如果在 C# 中需要，你甚至可以使用这些来创建静态构造函数。对于这种情况，你把\
+    \ `static` 关键字直接放在构造函数名称之前。\n\n对象和类是 C# 工作机制的重要部分，它们将帮助你真正实现你想要的代码。上述主题只是你在这个编程语言中使用类和对象可以做的一些很棒的事情，通过一点实验，你会发现，使用这种易于使用的语言，几乎一切都是可能的！\n\
+    \n# 在 C# 中定义类\n\n我们在上一个章节中花了一些时间研究类和对象，但在这里我们将更多地研究类并学习如何在 C# 语言中定义这些类。让我们来看看并开始这部分！\n\
+    \n## 类的基础\n\n在编程语言中，类定义了程序可以使用的数据和对象类型。对象包含这些实际信息，用以定义其容器的状态。类还可以描述对象的行为。这是对象能够执行的所有行为。在进行\
+    \ OOP 时，你应该使用方法来描述对象的行为。\n\n## 类的组件\n\n每个类都包含几个不同的部分，包括：\n\n*   声明（Declaration）——这一行将用于声明类的标识符。\n\
+    *   体（Body）——就像方法一样，类将有一个体。你需要在做出声明后立即定义体。体是位于大括号之间的语句或多条语句。示例如下：\n\n```csharp\n\
+    class Example\n{\n// 这是“Example”类的体。\n}\n```\n\n*   构造函数（Constructor）——这是允许你创建新对象的部分。示例如下：\n\
+    \n```csharp\nPublic Sample()\n{\n//在此处插入你想说的内容。\n}\n```\n\n*   字段（Fields）——这些是在类中声明的变量。字段将包含代表其尝试获取的对象精确状态的值。\n\
+    *   属性（Properties）——这部分将描述类的不同属性。许多程序员会直接在所选对象的字段内部编写类属性。\n*   方法（Methods）——方法基本上是一个可执行的具名代码块。它能够完成某些任务，并允许对象获得正确的行为。它还可以执行代码内部存在的正确算法。\n\
+    \n接下来的示例将向你展示使用 C# 语言创建类的最佳方法，并包含我们上面讨论过的对类来说重要的所有部分。\n\n```csharp\nclass ZooAnimals\
+    \ // 这是类的声明\n{\n    // 这个括号标志着类的开始\n    string animalType // 这一行声明了一个新字段\n   \
+    \ public ZooAnimals() // 这一行声明了一个空的构造函数。\n    {\n    }\n    public ZooAnimals(monkey\
+    \ animalType) // 这一行为该类创建了另一个构造函数。\n    {\n        this.animalType = animalType;\n\
+    \    }\n    string ZooAnimals // 这里，你正在声明一个属性。\n    {\n        get {return animalType;}\n\
+    \        set { animalType = value;}\n    }\n    Static void Animal() // 这一行为类声明了一个新方法。\n\
+    \    {\n        System.Console.WriteLine(“This is a {0}.” animalType)\n    }\n\
+    }\n```\n\n## 对象和类\n\n现在我们了解了一些如何创建和使用类对象，是时候进一步学习这种技术以及它在你编程时将如何工作。\n\n### 自定义类\n\
+    \n在你开始使用特定类之前，需要在类内部有一个对象。你可以通过从 `new` 关键字和类内部存在的构造函数开始来实现。\n\n"
+- fmt: "In the C# programming language, you are not going to be able to manipulate\
+    \ the objects directly. This means that you will have to assign your object to\
+    \ a variable before you are able to manipulate it. You can then access and use\
+    \ the object through whichever variable you choose to assign the object too. Keep\
+    \ in mind that in order to access the methods and the properties of the object,\
+    \ you will need to indicate the identifier of the object and use the dot operator.\n\
+    \n### More about objects\n\nEach of the objects in your `.NET` framework will\
+    \ have two parts, the reference part and the actual part. The actual part is going\
+    \ to contain the information about your object and it is stored inside a heap\
+    \ that is known as the dynamic memory on the operating system of the computer.\
+    \ On the other hand, the reference part of the `.NET` framework is going to exist\
+    \ in the execution stack of the program, which is the part that will hold the\
+    \ method parameters and the local variables.\n\nIf you want to create a new variable\
+    \ that isn’t associated with an object, you need to make sure to give it a value\
+    \ of `null`. This keyword is going to tell the language compiler that the variable\
+    \ doesn’t have a value at this time.\n\n### Organizing Your Classes\n\nWhen you\
+    \ are saving in C#, there is just one rule that you will need to follow and that\
+    \ is all the classes need to be saved as `.cs` files to make it easier to find\
+    \ and to make the class work. Technically, you are able to save all of the classes\
+    \ that you are creating into one file and the compiler will still work without\
+    \ any errors, but in most cases it is best to save them in different files to\
+    \ help you keep things organized. Sometimes it is hard to find the class that\
+    \ you want if you save them all in just one file.\n\n### Using namespace\n\nYou\
+    \ are going to want to get familiar with using `namespace` with C#. This is a\
+    \ set of classes that will be related in some logical manner. It can include classes,\
+    \ interfaces, structures, and other kinds of information. You can combine together\
+    \ a few classes into a `namespace` regardless of where they are located in the\
+    \ memory.\n\nIf you would like to use a `namespace` on the codes that you are\
+    \ creating, make sure that you add a `using` directive to make this easier. Most\
+    \ programmers find that it is easiest to write these directives inside the first\
+    \ couple of lines in the `.cs` files to make sure they don’t forget about it.\
+    \ After you insert the directive, you can declare which namespace you wish to\
+    \ use.\n\n### Access Modifiers\n\nC# is able to support four types of modifiers,\
+    \ `protected`, `private`, `internal`, and `public`. These modifiers are going\
+    \ to allow you to have some control over the visibility of the elements in your\
+    \ class. Let’s take some time to discuss each of the modifiers in detail so you\
+    \ know which one is right for you.\n\n- `private`—this modifier is going to place\
+    \ a restriction on the class. If it tagged as a private element, it is not accessible\
+    \ by any of the other classes. The C# will use this as the default for modifiers\
+    \ so if you don’t decide what accessibility the element has, the system will make\
+    \ it private.\n- `public`—this is the modifier that you should choose if you want\
+    \ your element to be accessible with the other classes. This means that you are\
+    \ taking away all the limitations in regards to the visibility of the object.\n\
+    - `internal`—if your element has this as the modifier, it is going to be accessible\
+    \ just to the files that are in the same project.\n- `protected`—this modifier\
+    \ is going to prevent a user from accessing the element. However, it will all\
+    \ the descendant classes to access and use the elements that are involved.\n\n\
+    Each of these modifiers is going to work in a slightly different way based on\
+    \ what you want it to do. If you want to keep it protected and ensure that it\
+    \ isn’t accessed by the other classes, you will want to make sure that you use\
+    \ a `private` setting. But if you would like other elements and classes access\
+    \ to it, you will need to make it `public`. And of course, there are options that\
+    \ always go in between to help you determine how much access other classes will\
+    \ have to this main modifier.\n\nYou will need to determine which one is going\
+    \ to be right for your code. Most of the time you will find that `private` is\
+    \ going to be the default option, but you can always make the change to ensure\
+    \ that your modifiers are doing what they should within the program.\n\n### Declaring\
+    \ a Class\n\nC# does have some strict rules when it comes to class declarations.\
+    \ You are going to get runtime errors and compile time issues if you don’t do\
+    \ a good job with declaring your classes. To ensure that you aren’t getting any\
+    \ errors, you should use the following syntax:\n\n`<modifier> <class> <name_of_the_class?>`\n\
+    \nYou need to write in the body of the class right after the identifier to keep\
+    \ things easier. The body is going to be the part that will contain the executable\
+    \ codes so just like with other languages for programming, you should write this\
+    \ inside of your curly braces.\n\n### “This” Keyword\n\nAnother keyword that you\
+    \ should learn about is the `this` keyword. This is a tool that will help you\
+    \ to access the contents of a class. Some examples of using this keyword include:\n\
+    \n```csharp\nthis.sampleMethod(); // Use this syntax to run a method.\nthis.sampleField;\
+    \   // Use this syntax to access a particular field.\nthis(8,9);           //\
+    \ Use this syntax to trigger a constructor that contains two parameters.\n```\n\
+    \n### The Fields\n\nThe object is going to represent things that are in the physical\
+    \ world. To define this object, you are going to spend your energy concentrating\
+    \ on the attributes, which will then be linked to purposes of your program. You\
+    \ will need to store the attributes into the class with the help of special variables.\
+    \ These will be called fields and they will define the statuses of the object.\n\
+    \n#### Declaring a field\n\nC# is going to require you to declare all your fields\
+    \ right in the body of the class. The following code will show a few examples\
+    \ of how you can declare fields:\n\n```csharp\nclass Example\n{\n    double salary;\n\
+    \    char letter;\n    string yourName;\n}\n```\n\n#### The scope of a field\n\
+    \nThe scope of your field will begin from the part where you start writing and\
+    \ will continue until the body of the class is done. This allows for a lot of\
+    \ chances to write out what you would like.\n\n#### Initializing your field\n\n\
+    C# makes it easy to set the value of any fields that you create. The syntax that\
+    \ you will use to set the value of the fields will be pretty similar to the syntax\
+    \ that you use for ordinary variables. The syntax that you should use for these\
+    \ looks like this:\n\n`<modifier> <type_of_field> <name_of_field> = <value>;`\n\
+    \nSomething to take of is that you should check that the initial value is going\
+    \ to be compatible with the field that you are using. C# is kind of strict on\
+    \ the rules regarding how compatible the data types need to be in order to avoid\
+    \ issues with errors and runtime issues coming up. Take a look at the following\
+    \ example:\n\n```csharp\nclass Sample\n{\n    int payment = 5000;\n    char letter\
+    \ = 'x';\n    string [] instruments = new string[] {\"guitar\", \"drums\"};\n\
+    \    Vehicles myVehicle = new Vehicles();\n}\n```\n\nThis is going to help you\
+    \ to put together the field that you would like in the program. You can make changes\
+    \ that you would like to make this function work the best with your chosen code.\n\
+    \n#### Default Choices with the Field\n\nAny time that you create your object\
+    \ inside a class, the system is going to set aside some memory in order to hold\
+    \ the fields of the new object. The system will be able to do this by setting\
+    \ an initial field or the value of every field. If you don’t go through and set\
+    \ this default the way that you want it, the `.NET` framework will work to set\
+    \ the values for you.\n"
+  raw: 'In the C# programming language, you are not going to be able to manipulate
+    the objects directly. This means that you will have to assign your object to a
+    variable before you are able to manipulate it. You can then access and use the
+    object through whichever variable you choose to assign the object too. Keep in
+    mind that in order to access the methods and the properties of the object, you
+    will need to indicate the identifier of the object and use the dot operator.
+
+
+    ### More about objects
+
+
+    Each of the objects in your .NET framework will have two parts, the reference
+    part and the actual part. The actual part is going to contain the information
+    about your object and it is stored inside a heap that is known as the dynamic
+    memory on the operating system of the computer. On the other hand, the reference
+    part of the .NET framework is going to exist in the execution stack of the program,
+    which is the part that will hold the method parameters and the local variables.
+
+
+    If you want to create a new variable that isn’t associated with an object, you
+    need to make sure to give it a value of “null”. This keyword is going to tell
+    the language compiler that the variable doesn’t have a value at this time.
+
+
+    ## Organizing Your Classes
+
+
+    When you are saving in C#, there is just one rule that you will need to follow
+    and that is all the classes need to be saved as .cs files to make it easier to
+    find and to make the class work. Technically, you are able to save all of the
+    classes that you are creating into one file and the compiler will still work without
+    any errors, but in most cases it is best to save them in different files to help
+    you keep things organized. Sometimes it is hard to find the class that you want
+    if you save them all in just one file.
+
+
+    ### Using namespace
+
+
+    You are going to want to get familiar with using namespace with C#. This is a
+    set of classes that will be related in some logical manner. It can include classes,
+    interfaces, structures, and other kinds of information. You can combine together
+    a few classes into a namespace regardless of where they are located in the memory.
+
+
+    If you would like to use a namespace on the codes that you are creating, make
+    sure that you add a “using” directive to make this easier. Most programmers find
+    that it is easiest to write these directives inside the first couple of lines
+    in the .cs files to make sure they don’t forget about it. After you insert the
+    directive, you can declare which namespace you wish to use.
+
+
+    ## Access Modifiers
+
+
+    C# is able to support four types of modifiers, protected, private, internal, and
+    public. These modifiers are going to allow you to have some control over the visibility
+    of the elements in your class. Let’s take some time to discuss each of the modifiers
+    in detail so you know which one is right for you.
+
+
+    *   Private—this modifier is going to place a restriction on the class. If it
+    tagged as a private element, it is not accessible by any of the other classes.
+    The C# will use this as the default for modifiers so if you don’t decide what
+    accessibility the element has, the system will make it private.
+
+
+    *   Public—this is the modifier that you should choose if you want your element
+    to be accessible with the other classes. This means that you are taking away all
+    the limitations in regards to the visibility of the object.
+
+
+    *   Internal—if your element has this as the modifier, it is going to be accessible
+    just to the files that are in the same project.
+
+
+    *   Protected—this modifier is going to prevent a user from accessing the element.
+    However, it will all the descendant classes to access and use the elements that
+    are involved.
+
+
+    Each of these modifiers is going to work in a slightly different way based on
+    what you want it to do. If you want to keep it protected and ensure that it isn’t
+    accessed by the other classes, you will want to make sure that you use a private
+    setting. But if you would like other elements and classes access to it, you will
+    need to make it public. And of course, there are options that always go in between
+    to help you determine how much access other classes will have to this main modifier.
+
+
+    You will need to determine which one is going to be right for your code. Most
+    of the time you will find that private is going to be the default option, but
+    you can always make the change to ensure that your modifiers are doing what they
+    should be within the program.
+
+
+    ## Declaring a Class
+
+
+    C# does have some strict rules when it comes to class declarations. You are going
+    to get runtime errors and compile time issues if you don’t do a good job with
+    declaring your classes. To ensure that you aren’t getting any errors, you should
+    use the following syntax:
+
+
+    <modifier> <class> <name_of_the_class?>
+
+
+    You need to write in the body of the class right after the identifier to keep
+    things easier. The body is going to be the part that will contain the executable
+    codes so just like with other languages for programming, you should write this
+    inside of your curly braces.
+
+
+    ## “This” Keyword
+
+
+    Another keyword that you should learn about is the “this” keyword. This is a tool
+    that will help you to access the contents of a class. Some examples of using this
+    keyword include:
+
+
+    this.sampleMethod();          //Use this syntax to run a method.
+
+
+    this.sampleField:          //Use this syntax to access a particular field.
+
+
+    this(8,9);          // Use this syntax to trigger a constructor that contains
+    two parameters.
+
+
+    ## The Fields
+
+
+    The object is going to represent things that are in the physical world. To define
+    this object, you are going to spend your energy concentrating on the attributes,
+    which will then be linked to purposes of your program on the computer. You will
+    need to store the attributes into the class declaration with the help of special
+    variables. These will be called fields and they will define the various statuses
+    of the object you are working with.
+
+
+    ### Declaring a field
+
+
+    C# is going to require you to declare all of your fields right in the body of
+    the class. The following code will show a few examples of how you can declare
+    fields in your class:
+
+
+    class Example
+
+
+    {
+
+
+         double salary;
+
+
+         char favoriteLetter;
+
+
+         string yourName:
+
+
+    }
+
+
+    ### The scope of a field
+
+
+    The scope of your field will begin from the part where you start writing it and
+    will continue until the body of the class is done. This allows for a lot of chances
+    to write out what you would like to say in the field.
+
+
+    ### Initializing your field
+
+
+    C# makes it easy to set the value of any fields that you create. The syntax that
+    you will use to set the value of the fields will be pretty similar to the syntax
+    that you use for ordinary variables. The syntax that you should use for these
+    fields looks like this:
+
+
+    <modifier> <type_of_field>  <name_of_field>  = <value>;
+
+
+    Something to take note of is that you should check that the initial value is going
+    to be compatible with the field that you are using. C# is kind of strict on the
+    rules regarding how compatible the data types need to be in order to avoid issues
+    with errors and runtime issues coming up on the screen. Take a look at the following
+    example:
+
+
+    class Sample
+
+
+    {
+
+
+         int payment = 5000;
+
+
+         char letter = ‘x’;
+
+
+         string [] instruments = new string[] {“guitar”, “drums”};
+
+
+         Vehicles myVehicle = new Vehicles()
+
+
+         }
+
+
+    This is going to help you to put together the field that you would like in the
+    program. You can make changes that you would like to make this function work the
+    best with your chosen code.
+
+
+    ## Default Choices with the Field
+
+
+    Any time that you create your object inside a class, the system is going to set
+    aside some memory in order to hold the fields of the new object. The system will
+    be able to do this by setting an initial field or the value of every field. If
+    you don’t go through and set this default the way that you want it, the .NET framework
+    will work to set the values for you.'
+  toc: []
+  trans: "\n在 C# 编程语言中，你无法直接操作对象。这意味着你必须先将对象赋值给一个变量，才能对其进行操作。之后，你可以通过你选择的任何变量来访问和使用该对象。请记住，为了访问对象的方法和属性，你需要指定对象的标识符并使用点运算符（`.`）。\n\
+    \n### 关于对象的更多信息\n\n你的 `.NET` 框架中的每个对象都包含两个部分：引用部分和实际部分。实际部分包含有关对象的信息，并存储在计算机操作系统中被称为动态内存的堆（heap）中。另一方面，`.NET`\
+    \ 框架的引用部分存在于程序的执行栈（stack）中，该部分用于存放方法参数和局部变量。\n\n如果你想创建一个与对象关联的新变量，你需要确保给它赋值为 `null`。这个关键字会告诉语言编译器该变量目前没有值。\n\
+    \n### 组织你的类\n\n在 C# 中保存代码时，你只需要遵循一个规则，即所有类都必须保存为 `.cs` 文件，以便于查找并使类能够正常工作。从技术上讲，你可以将创建的所有类都保存到一个文件中，编译器仍然可以工作而不会报错，但在大多数情况下，最好将它们保存在不同的文件中，以帮助你保持条洁。如果你将所有类都保在一个文件中，有时很难找到你想要的类。\n\
+    \n### 使用命名空间 (namespace)\n\n你将熟悉在 C# 中使用 `namespace`。这是一组在逻辑上相互相关的类。它可以包含类、接口、结构体和其他类型的信息。无论它们在内存中的位置如何，你都可以将几个类组合进\
+    \ `namespace` 中。\n\n如果你想在创建的代码中使用 `namespace`，请确保添加了 `using` 指令以简化操作。大多数程序员发现，在\
+    \ `.cs` 文件的前几行编写这些指令是最容易的，这样可以确保他们不会忘记。在插入指令后，你可以声明你想要使用的命名空间。\n\n### 访问修饰符\n\n\
+    C# 支持四种修饰符：`protected`、`private`、`internal` 和 `public`。这些修饰符允许你控制类中元素的可见性。让我们花时间详细讨论每种修饰符，以便你了解哪种适合你。\n\
+    \n- `private`——此修饰符会对类进行限制。如果被标记为私有元素，则任何其他类都无法访问它。C# 将此作为修饰符的默认值，因此如果你不决定元素的访问权限，系统将将其设为私有。\n\
+    - `public`——如果你希望元素能被其他类访问，你应该选择这种修饰符。这意味着你移除了所有关于对象可见性的限制。\n- `internal`——如果你的元素使用此修饰符，则它将仅对同一项目中的文件可访问。\n\
+    - `protected`——此修饰符将阻止用户访问元素。但是，它允许所有后代类访问并使用相关的元素。\n\n根据你想要的功能，每种修饰符的工作方式略有不同。如果你想保持受保护并确保它不被其他类访问，你需要确保使用\
+    \ `private` 设置。但如果你希望其他元素和类访问它，你需要将其设置为 `public`。当然，还有一些中间选项选项，可以帮助你确定其他类对此主修饰符有多大的访问权限。\n\
+    \n你需要确定哪种适合你的代码。大多数情况下，你会发现 `private` 是默认选项，但你始终可以更改它，以确保修饰符在程序中按预期发挥作用。\n\n###\
+    \ 声明类\n\nC# 在类声明方面有一些严格的规则。如果你没有很好地声明类，将会遇到运行时错误和编译时问题。为了确保不出现任何错误，你应该使用以下语法：\n\
+    \n`<modifier> <class> <name_of_the_class?>`\n\n你需要在标识符之后直接编写类体，以便操作更简单。类体是包含可执行代码的部分，与其他与其他编程语言一样，你应该将此写在大括号\
+    \ `{}` 内部。\n\n### “this” 关键字\n\n你应该学习的另一个关键字是 `this`。这是一个可以帮助你访问类内容的工具。使用该关键字的示例包括：\n\
+    \n```csharp\nthis.sampleMethod(); // 使用此语法运行方法。\nthis.sampleField;   // 使用此语法访问特定字段。\n\
+    this(8,9);           // 使用此语法触发包含两个参数的构造函数。\n```\n\n### 字段 (Fields)\n\n对象代表物理世界中的事物。为了定义这个对象，你将把精力集中在属性上，这些属性将与程序的目的相关联。你需要借助特殊变量将属性存储在类中。这些被称为字段（fields），它们定义了对象的状态。\n\
+    \n#### 声明字段\n\nC# 要求你直接在类体中声明所有字段。以下代码展示了如何声明字段的几个示例：\n\n```csharp\nclass Example\n\
+    {\n    double salary;\n    char letter;\n    string yourName;\n}\n```\n\n####\
+    \ 字段的作用域\n\n字段的作用域从你开始编写的地方开始，一直持续到类体结束。这为你提供了很多编写你想要的内容的机会。\n\n#### 初始化你的字段\n\
+    \nC# 可以轻松设置你创建的任何字段的值。用于设置字段值的语法与用于普通变量的语法非常相似。你应该使用的语法看起来如下：\n\n`<modifier> <type_of_field>\
+    \ <name_of_field> = <value>;`\n\n需要注意的是，你应该检查初始值是否与你正在使用的字段兼容。C# 在数据类型所需兼容性的规则方面相当严格，以避免出现错误和运行时问题。请看以下示例：\n\
+    \n```csharp\nclass Sample\n{\n    int payment = 5000;\n    char letter = 'x';\n\
+    \    string [] instruments = new string[] {\"guitar\", \"drums\"};\n    Vehicles\
+    \ myVehicle = new Vehicles();\n}\n```\n\n这将帮助你在程序中组合你需要的字段。你可以进行更改，使该功能与你选择的代码配合得最好。\n\
+    \n#### 字段的默认选择\n\n当你从类内部创建对象时，系统都会预留一些内存来存放新对象的字段。系统可以通过设置初始字段或每个字段的值来实现这一点。如果你没有按照你自己的意愿设置这些默认值，`.NET`\
+    \ 框架将为你设置这些值。\n"
+- fmt: "\nThis is the main difference that occurs between the local variables and\
+    \ the fields. The language compiler is going to send you an error message when\
+    \ the local valuables don’t have the right value or any value at all. So you need\
+    \ to make sure to go through this and get it set up with a value early on or you\
+    \ may run into trouble with your project and you will have to go through and make\
+    \ the right changes.\n\n### Customizing your default value\n\nWhen you are working\
+    \ with the C# language, you will be allowed to set the default values for any\
+    \ of your fields. This is a great feature that is going to allow you to make the\
+    \ code easier to read and much cleaner compared to some of the other programming\
+    \ languages that you will choose. Let’s take a look at some of the fields that\
+    \ you saw earlier and see how we can make them customized so they look better\
+    \ within the program:\n\n```class\nclass Sample\n{\n    int payment = 0;\n   \
+    \ char letter = null;\n    string [] instruments = null;\n    Vehicles myVehicle\
+    \ = null;\n}\n```\n\nReadability and cleanliness are two of the most important\
+    \ parts that come with using the C# code so you need to find ways to work with\
+    \ the code, value, classes, and other parts to compact them and make it look as\
+    \ nice as possible without having too much work going on all the time. Working\
+    \ with setting your default value can really help you to get this done right.\n\
+    \nWorking in programming can be intimidating to some of those who haven’t had\
+    \ a chance to work in it, but perhaps they have visions of really complicated\
+    \ codes that look like a mess and are too difficult to mess with. The C# code\
+    \ is a great language to learn with because it is simple to use and has a lot\
+    \ of great features that even a beginner is going to be able to learn about with\
+    \ ease.\n\n# Conclusion\n\nThank for making it through to the end of C#: Programming\
+    \ Basics for Absolute Beginners, let’s hope it was informative and able to provide\
+    \ you with all of the tools you need to achieve your goals whatever it may be.\n\
+    \nThe next step is to get started on using C# programming language in your own\
+    \ life. This is a great product to use, a programming language that works on most\
+    \ computers and is made to be simple to use and read for beginners. We have walked\
+    \ you through some of the steps that you need to take to create a program with\
+    \ C# and even discussed some of the most important parts of the C# programming\
+    \ language so you can really get started on the right track.\n\nWhile many other\
+    \ programming languages are great to use and can allow you to do some powerful\
+    \ things, some of them are a bit confusing and can scare away someone who is brand\
+    \ new to the whole process. But with C#, you will not have this issue. You will\
+    \ be able to get started on your first program right away (and we discuss some\
+    \ of the options of doing this inside the book) and you will find that programming\
+    \ can be a lot of fun and really easy.\n\nWhen you are ready to get started with\
+    \ programming and making it work for your needs, make sure to check out this guidebook\
+    \ and learn just how easy it is to work with C#.\n\nFinally, if you found this\
+    \ book useful in any way, a review on Amazon is always appreciated!\n\n# About\
+    \ the Author\n\nNathan Clark is an expert programmer with nearly 20 years of experience\
+    \ in the software industry.\n\nWith a master’s degree from MIT, he has worked\
+    \ for some of the leading software companies in the United States and built up\
+    \ extensive knowledge of software design and development.\n\nNathan and his wife,\
+    \ Sarah, started their own development firm in 2009 to be able to take on more\
+    \ challenging and creative projects. Today they assist high-caliber clients from\
+    \ all over the world.\n\nNathan enjoys sharing his programming knowledge through\
+    \ his book series, developing innovative software solutions for their clients\
+    \ and watching classic sci-fi movies in his free time.\n\nTo learn programming\
+    \ from an expert, look out for more of Nathan’s books in store and online.\n"
+  raw: "This is the main difference that occurs between the local variables and the\
+    \ fields. The language compiler is going to send you an error message when the\
+    \ local valuables don’t have the right value or any value at all. So you need\
+    \ to make sure to go through this and get it set up with a value early on or you\
+    \ may run into trouble with your project and you will have to go through and make\
+    \ the right changes.\n\n### Customizing your default value\n\nWhen you are working\
+    \ with the C# language, you will be allowed to set the default values for any\
+    \ of your fields. This is a great feature that is going to allow you to make the\
+    \ code easier to read and much cleaner compared to some of the other programming\
+    \ languages that you will choose. Let’s take a look at some of the fields that\
+    \ you saw earlier and see how we can make them customized so they look better\
+    \ within the program:\n\nclass Sample\n\n{\n\n     int payment = 0;\n\n     char\
+    \ letter = null;\n\n     string [] instruments = null;\n\n     Vehicles myVehicle\
+    \ = null;\n\n}\n\nReadability and cleanliness are two of the most important parts\
+    \ that come with using the C# code so you need to find ways to work with the code,\
+    \ value, classes, and other parts to compact them and make it look as nice as\
+    \ possible without having too much work going on all the time. Working with setting\
+    \ your default value can really help you to get this done right.\n\nWorking in\
+    \ programming can be intimidating to some of those who haven’t had a chance to\
+    \ work in it, but perhaps they have visions of really complicated codes that look\
+    \ like a mess and are too difficult to mess with. The C# code is a great language\
+    \ to learn with because it is simple to use and has a lot of great features that\
+    \ even a beginner is going to be able to learn about with ease.\n\n# \n\nConclusion\n\
+    \nThank for making it through to the end of C#: Programming Basics for Absolute\
+    \ Beginners, let’s hope it was informative and able to provide you with all of\
+    \ the tools you need to achieve your goals whatever it may be.\n\nThe next step\
+    \ is to get started on using C# programming language in your own life. This is\
+    \ a great product to use, a programming language that works on most computers\
+    \ and is made to be simple to use and read for beginners. We have walked you through\
+    \ some of the steps that you need to take to create a program with C# and even\
+    \ discussed some of the most important parts of the C# programming language so\
+    \ you can really get started on the right track.\n\nWhile many other programming\
+    \ languages are great to use and can allow you to do some powerful things, some\
+    \ of them are a bit confusing and can scare away someone who is brand new to the\
+    \ whole process. But with C#, you will not have this issue. You will be able to\
+    \ get started on your first program right away (and we discuss some of the options\
+    \ of doing this inside the book) and you will find that programming can be a lot\
+    \ of fun and really easy.\n\nWhen you are ready to get started with programming\
+    \ and making it work for your needs, make sure to check out this guidebook and\
+    \ learn just how easy it is to work with C#.\n\nFinally, if you found this book\
+    \ useful in any way, a review on Amazon is always appreciated!\n\n# \n\nAbout\
+    \ the Author\n\nNathan Clark is an expert programmer with nearly 20 years of experience\
+    \ in the software industry.\n\nWith a master’s degree from MIT, he has worked\
+    \ for some of the leading software companies in the United States and built up\
+    \ extensive knowledge of software design and development.\n\nNathan and his wife,\
+    \ Sarah, started their own development firm in 2009 to be able to take on more\
+    \ challenging and creative projects. Today they assist high-caliber clients from\
+    \ all over the world.\n\nNathan enjoys sharing his programming knowledge through\
+    \ his book series, developing innovative software solutions for their clients\
+    \ and watching classic sci-fi movies in his free time.\n\nTo learn programming\
+    \ from an expert, look out for more of Nathan’s books in store and online."
+  toc: []
+  trans: "\n这是局部变量与字段之间主要的区别。当局部变量没有正确的值或根本没有值时，语言编译器将向你发送错误消息。因此，你需要确保检查这一点并尽早为其设置一个值，否则你可能会在项目中遇到麻烦，并且不得不回过头进行正确的修改。\n\
+    \n### 自定义你的默认值\n\n在使用 C# 语言工作时，你被允许为任何字段设置默认值。这是一个非常棒的功能，与你可能选择的其他某些编程语言相比，它能让代码更易读、更洁。让我们来看看之前看到的一些字段，看看我们如何对它们进行自定义，以便它们在程序中看起来更好：\n\
+    \n```class\nclass Sample\n{\n    int payment = 0;\n    char letter = null;\n \
+    \   string [] instruments = null;\n    Vehicles myVehicle = null;\n}\n```\n\n\
+    可读性和整洁是使用 C# 代码最重要的两个部分之一，因此你需要找到方法处理代码、值、类和其他部分，使它们紧凑并尽可能看起来美观，而又不需要一直进行过多的工作。通过设置默认值，真的可以帮助你正确完成这一点。\n\
+    \n对于一些还没有机会接触编程的人来说，编写程序可能是令人生畏的，但也许他们脑海中是那种看起来乱如团且难以上手的复杂代码。C# 是一门非常适合学习的语言，因为它简单易用，并且有很多许多特性，即使是初学者也能轻松学会。\n\
+    \n# 结论\n\n感谢你读完《C#：零基础初学者的编程基础》，希望这本书能为你提供有益的信息，并能够为你提供实现你目标所需的所有工具，无论你的目标是什么。\n\
+    \n下一步是开始在你的生活中使用 C# 编程语言。这是一个非常棒的工具，一种运行在大多数计算机上的编程语言，设计初衷是为了让初学者易于使用和阅读。我们已经带你走了创建\
+    \ C# 程序所需要采取的一些步骤，甚至讨论了 C# 编程语言的一些重要部分，这样你就能真正走上正确的轨道。\n\n虽然许多其他编程语言也非常好用，并允许你实现一些强大的功能，但其中某些语言有点让人困惑，可能会吓跑对整个过程完全陌生的人。但有了\
+    \ C#，你将不会遇到这个问题。你可以立即开始编写你的第一个程序（我们在书中讨论了实现这一点的某些选项），你会发现编程可以非常有趣而且真的简单。\n\n当你准备好开始编程并让它满足你的需求时，请务必查阅本指南，了解使用\
+    \ C# 是多么简单。\n\n最后，如果你觉得这本书在任何方面对你有帮助，我们将非常感谢你在 Amazon 上留下的评价！\n\n# 关于作者\n\nNathan\
+    \ Clark 是一位资深程序员，在软件行业拥有近 20 年的经验。\n\n他拥有麻省理工学院（MIT）的硕士学位，曾在美国一些领先的软件公司工作过，并在软件设计和开发方面积累了丰富的知识。\n\
+    \nNathan 和他的妻子 Sarah 在 2009 年创立了自己的开发公司，以便能够承担更具挑战性和创造性的项目。今天，他们为来自世界各地的优质客户提供服务。\n\
+    \nNathan 喜欢通过他的书籍分享编程知识，为客户开发创新的软件解决方案，并在空闲时间看经典的科幻电影。\n\n如需向专家那里学习编程，请关注书店和网上\
+    \ Nathan 的更多书籍。\n"

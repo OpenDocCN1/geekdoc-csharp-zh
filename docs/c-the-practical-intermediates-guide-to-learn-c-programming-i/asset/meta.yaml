@@ -1,0 +1,175 @@
+name: C#： THE PRACTICAL INTERMEDIATE’S GUIDE TO LEARN C# PROGRAMMING IN ONE DAY STEP-BY-STEP.
+  (#2020 UPDATED VERSION ｜ EFFECTIVE COMPUTER PROGRAMMING LANGUAGES)
+name_cn: C#：一天内分步学习 C# 编程的实用中级指南（#2020 更新版 ｜高效计算机编程语言）
+slug: c-the-practical-intermediates-guide-to-learn-c-programming-i
+toc:
+- - '#'
+  - C#：一天内分步学习 C# 编程的实用中级指南（#2020 更新版 ｜高效计算机编程语言）
+- - '#'
+  - 法律声明与免责声明
+- - '#'
+  - 引言
+- - '#'
+  - C 语言特性
+- - '#'
+  - 第 1 章：数据类型
+- - '##'
+  - 整数类型
+- - '##'
+  - 浮点数据类型
+- - '##'
+  - void 类型
+- - '#'
+  - 第 2 章：数据结构、处理与函数
+- - '##'
+  - 数据结构的简介与意义
+- - '##'
+  - 枚举、数组和结构体
+- - '###'
+  - 枚举
+- - '###'
+  - 理解我们的代码
+- - '###'
+  - 数组
+- - '###'
+  - 结构体
+- - '#'
+  - 使用算法复杂度分析数据结构之间的关系
+- - '#'
+  - 何时选择数据结构
+- - '##'
+  - 数组 (Array)
+- - '##'
+  - 动态数组 (Dynamic Arrays)
+- - '##'
+  - 链表 (Linked lists)
+- - '##'
+  - 栈 (Stack)
+- - '##'
+  - 队列 (Queue)
+- - '##'
+  - 哈希表（字典实现）Hash table (Dictionary Implementation)
+- - '##'
+  - 哈希表（集合实现）Hash table (Set implementation)
+- - '##'
+  - 平衡树（字典实现）Balance Tree (Dictionary Implementation)
+- - '##'
+  - 平衡树（集合实现）Balance tree (Set implementation)
+- - '#'
+  - 选择数据结构的实际示例 Practical Example of choice of a Data Structure
+- - '##'
+  - 示例 1
+- - '##'
+  - 理解我们的代码
+- - '##'
+  - 我们如何克服重复？
+- - '##'
+  - 示例 2- 电话簿中的数字排序
+- - '##'
+  - 总结（如何选择合适的数据结构）
+- - '#'
+  - 第 3 章：如何在 C# 中定义类
+- - '##'
+  - 如何使用这些类
+- - '##'
+  - 组织类
+- - '##'
+  - 如何访问我们的类
+- - '#'
+  - 第 4 章：在 C# 中创建循环
+- - '###'
+  - 1. 循环变量的初始化
+- - '###'
+  - 2. 测试条件
+- - '###'
+  - 3. 递增与递减
+- - '#'
+  - 第 5 章 值类型与引用类型
+- - '##'
+  - 值类型
+- - '##'
+  - 引用类型
+- - '##'
+  - 值类型与引用类型的拷贝
+- - '##'
+  - 空值（Null）
+- - '##'
+  - 可空类型（Nullable types）
+- - '##'
+  - Object 类
+- - '##'
+  - 装箱（Boxing）
+- - '##'
+  - 解箱（Unboxing）
+- - '#'
+  - 第 6 章 枚举（Enumerations）
+- - '#'
+  - 第 7 章 决策（Decision-making）
+- - '##'
+  - if 语句
+- - '##'
+  - else 语句
+- - '##'
+  - else if 语句
+- - '##'
+  - switch 语句
+- - '##'
+  - 嵌套语句（Nested Statements）
+- - '#'
+  - 第 8 章 数组（Arrays）
+- - '##'
+  - 声明数组（Declaring Arrays）
+- - '##'
+  - 初始化数组（Initializing Arrays）
+- - '##'
+  - 赋值（Assigning Values）
+- - '#'
+  - 状态 (State)
+- - '#'
+  - 行为 (Behavior)
+- - '##'
+  - 类 (Classes)
+- - '#'
+  - 如何在代码中使用这些类
+- - '##'
+  - 字段 (Fields)
+- - '##'
+  - 方法 (Methods)
+- - '##'
+  - 属性 (Properties)
+- - '##'
+  - 如何创建你自己的对象
+- - '##'
+  - 创建对象
+- - '##'
+  - 系统类
+- - '##'
+  - 如何为对象分配参数
+- - '##'
+  - 释放你的对象
+- - '##'
+  - 构造函数
+- - '##'
+  - 如何借助 C# 定义类
+- - '###'
+  - 类工作的基础
+- - '###'
+  - 类的组件
+- - '##'
+  - 自定义类
+- - '##'
+  - 如何组织你的类
+- - '##'
+  - 访问类
+- - '##'
+  - Private（私有）
+- - '##'
+  - Public（公共）
+- - '##'
+  - Internal（内部）
+- - '##'
+  - Protected（保护）
+- - '##'
+  - 关于类的结语
+- - '##'
+  - 结论

@@ -1,0 +1,2363 @@
+- fmt: "\n![](images/00043.jpeg)\n![](images/00001.jpeg)\n\n# A Beginner’s Guide To\
+    \ C# Programming\n\n### PROGRAMMING MADE EASY TO LEARN\n\nBy\n\n### FAISAL NAZEER\n\
+    \nCopyright © 2016\n\n## ABOUT AUTHOR:\nFaisal has more than 4 years of experience\
+    \ in `Programming`...He started To learn to code at the age of 14.he is currently\
+    \ making games for mobile platform.\n\n## TABLE OF CONTENTS\n- Introduction\n\
+    - Legal Notes\n- Chapter 1. (Intro To C#)\n- Chapter 2. ( Primitive Types and\
+    \ Expressions )\n- Chapter 3. Non-Primitive Types\n- Chapter 4. Control Flow\n\
+    - About The Author\n\n## LEGAL NOTES\nAny Part of this book can not be reused\
+    \ or distributed anywhere and never download this from any unknown source if you\
+    \ find such activity plz let us know at the\n\nFaisalnaziarali@gmail.com\n\n##\
+    \ CHAPTER 1. (INTRO TO C#)\n\n`C#` ( PRONOUNCED \"CSHARP\") IS AN OBJECT- ORIENTED\
+    \ PROGRAMMING LANGUAGE FROM MICROSOFT THAT AIMS TO COMBINE THE COMPUTING POWER\
+    \ OF `C++` WITH THE PROGRAMMINGEASE OF VISUAL BASIC. `C#` IS BASED ON `C++` AND\
+    \ CONTAINS FEATURES SIMILAR TO THOSE OF `JAVA`. `C#` IS DESIGNED TO WORK WITH\
+    \ MICROSOFT'S `.NET` PLATFORM.\n\n## WHY C#.\n`C#` IS AN ELEGANT, SIMPLE, TYPE-SAFE,\
+    \ OBJECT-ORIENTED LANGUAGE THAT ALLOWS ENTERPRISE PROGRAMMERS TO BUILD A BREADTH\
+    \ OF APPLICATIONS.\n\n`C#` is used in famous game engines `C#` is used Worldwide:\n\
+    - Simple command line utilities. Input stuff. Convert stuff. Output stuff.\n-\
+    \ Desktop applications.\n- Windows service\n- Web services And many more.\n\n\
+    ## C# VS .NET\n`C#` is a programming language. `.NET` `.Net` is framework for\
+    \ Building applications on windows.\n\n## History OF C Language\nBefore `c#` we\
+    \ had two languages in c family `c` and `c++` and when we compile our code compiler\
+    \ converts our code into the native code of the machine on which we were running\
+    \ on.\n\nIt means if I wrote a application on windows machine it will no longer\
+    \ run on other os (linux ,mac etc).\n\nWhen Microsoft was designing `c#` they\
+    \ came with the idea to borrow from java community. In `java` code is First translated\
+    \ into byte code and then into machine code.\n\nIn `c#` code is first translated\
+    \ into `il`(`intermediate language`) and then translated into the machine code\
+    \ independent of computer we are running on . It’s the job of `clr`(`Common language\
+    \ runtime`) to translate `il` code to machine code.\n\n## Architecture of .NET\
+    \ applications\nApplication is consist of classes and these classes are the main\
+    \ building blocks of applications . These classes interact with each other to\
+    \ give us desired functionality.\n\n### What is a class.\nA class is a container\
+    \ which has data which is also called attributes and functions which is also called\
+    \ methods.\n\n### Functions Or Methods\nFunctions and methods have behaviors and\
+    \ they do things for us.\n\n### Data.\nData represents state of our application.\n\
+    \n### Example:\n Car\nA car can have attributes alike model Color Brand Speed\
+    \ And a car can have functionality alike `Start()` `Break()` Take this car as\
+    \ a class In real world applications we have many classes each for some specific\
+    \ task and these classes Interact with each other to provide desired functionality.\n\
+    \n### Namespaces.\nAs number of classes grow in our project we need a way to organize\
+    \ related classes so we use `namespace`. `namespace` is a container of same classes.\n\
+    \n### Assembly.\nAs number of namespaces grow we need a way to partition our application\
+    \ so here `assemblies` come handy. `Assembly` is a container of same namespaces\
+    \ Physically it is a file on disk it could be (`exe` or `dll`).\n\n## Our First\
+    \ C Program.\nIn this book we will use visual studio so open visual studio.\n\n\
+    On top go to file:\n`file>new>project>installed>templates>visual c#>windows>console\
+    \ application`\n\nAnd here we have 3 fields we can give name to our project just\
+    \ name the project `HelloWorld`.\n\nWe can also set the location of the project\
+    \ by clicking browse button.\n\nThird we can name solution in visual studio we\
+    \ have solutions one solution can have more than one project.\n\nFinally click\
+    \ ok to create console application.\n\nSee the screen shoot below\n![](images/00002.jpeg)\
+    \ **Lets look at some windows and tabs of visual studio**\n\n### Few common windows\
+    \ and tabs\n- Solution Explorer\n- Coding Editior\n\nstart with solution explorer\
+    \ to show solution explorer or any window go to view on the top and select that\
+    \ window you want to show in solution explorer window first we have Solution name\
+    \ and number of projects in this solution.\n- `properties>AssemblyInfo.cs`\n-\
+    \ `assemblyinfo` is produced when application will compile it is the identification\
+    \ of application.\n\n### References\nUnder references we see `assemblies` linked\
+    \ with this project to do some job . these `assemblies` comes with console application\
+    \ template in visual studio.\n\n### App.config\nHere the configurations of the\
+    \ application is stored. it has fields like title, description, ![](images/00003.jpeg)\n\
+    \n### Program.cs\nHere in `program.cs` we can start coding.\n\nTHIS FILE `PROGRAM.CS`\
+    \ WE HAVE BUNCH OF USING STATEMENTS ON TOP. Our Project Name is `HELLOWORLD` so\
+    \ visual studio by default creates a namespace `HELLOWORLD`. When we write code\
+    \ in this `namespace` we have access to all classes defined in this `namespace`.\
+    \ If we want to use a class from different namespace we have to import that in\
+    \ our code file that is why we use `using` statement by default visual studio\
+    \ adds 5 `using` statements:\n\n```csharp\nusing System;\nusing System.Collections.Generic;\n\
+    using System.Linq;\nusing System.Text;\nusing System.Threading.Tasks;\n```\n`System`\
+    \ is namespace in `.NET` framework where we have all handy classes.\n"
+  raw: '
+
+
+    ![](images/00043.jpeg)
+
+
+    ![](images/00001.jpeg)
+
+
+    ## A Beginner’s Guide To C# Programming
+
+
+    ### *PROGRAMMING MADE EASY TO LEARN*
+
+
+    By
+
+
+    ### *FAISAL NAZEER*
+
+
+    Copyright © 2016
+
+
+    ## ABOUT AUTHOR:
+
+
+    Faisal has more than 4 years of
+
+
+    experience in *Programming*...He started To learn to code at the age of 14.he
+    is currently making games for mobile platform.
+
+
+    ## TABLE OF CONTENTS
+
+
+    Introduction
+
+
+    Legal Notes
+
+
+    Chapter 1\. (Intro To C#)
+
+
+    Chapter 2\. ( Primitive Types and Expressions )
+
+
+    **Chapter 3\. Non-Primitive Types Chapter 4.** Control Flow
+
+
+    **About The Author**
+
+
+    ## LEGAL NOTES
+
+
+    Any Part of this book can not be reused or distributed anywhere and never download
+    this from any unknown source if you find such activity plz let us know at
+
+
+    Faisalnaziarali@gmail.com
+
+
+    ## **CHAPTER 1**.
+
+
+    (INTRO TO C#)
+
+
+    C# ( PRONOUNCED "CSHARP") IS AN OBJECT- ORIENTED PROGRAMMING LANGUAGE FROM MICROSOFT
+    THAT AIMS TO COMBINE THE COMPUTING POWER OF C++ WITH THE PROGRAMMINGEASE OF VISUAL
+    BASIC. C# IS BASED ON C++ AND CONTAINS FEATURES SIMILAR TO THOSE OF JAVA. C# IS
+    DESIGNED TO WORK WITH MICROSOFT''S .NET PLATFORM.
+
+
+    ## WHY C#.
+
+
+    ### C# IS AN ELEGANT, SIMPLE, TYPE-SAFE, OBJECT-*•*
+
+
+    ORIENTED LANGUAGE THAT ALLOWS ENTERPRISE
+
+
+    ### PROGRAMMERS TO BUILD A BREADTH OF APPLICATIONS.
+
+
+    C# is used in famous game engines[**•
+
+
+    •**] C# is used Worldwide
+
+
+    **• Simple command line utilities. Input stuff. Convert stuff. Output stuff.
+
+
+    •Desktop applications.
+
+
+    •Windows service
+
+
+    •Web services And many more.**
+
+
+    ## C# VS .NET
+
+
+    **C#
+
+
+    C# is a programming language
+
+
+    .NET** .**Net is framework for Building applications on windows**
+
+
+    ## History OF C Language
+
+
+    Before c# we had two languages in c family c and c++ and when we compile our code
+    compiler converts our code into the native code of the machine on which we were
+    running on.
+
+
+    It means if I wrote a application on windows machine it will no longer run on
+    other os (linux ,mac etc).
+
+
+    When Microsoft was designing c# they came with the idea to borrow from java community.
+    In java code is First translated into byte code and then into machine code
+
+
+    In c# code is first translated into il(intermediate language) and then translated
+    into the machine code independent of computer we are running on . It’s the job
+    of clr(Common
+
+
+    language runtime) to translate il code to machine code.
+
+
+    ## Architecture of .NET applications
+
+
+    Application is consist of classes and these classes are the main building blocks
+    of applications . These classes interact with each other to give us desired functionality
+
+
+    # What is a class.
+
+
+    A class is a container which has data which is also called attributes and functions
+    which is also called methods
+
+
+    # Functions Or Methods
+
+
+    Functions and methods have behaviors and they do things for us
+
+
+    # Data.
+
+
+    Data represents state of our application
+
+
+    # Example:
+
+
+    ## Car A car can have attributes alike model Color Brand Speed And a car can have
+    functionality alike Start() Break() Take this car as a class In real world applications
+    we have many classes each for some specific task and these classes Interact with
+    each other to provide desired functionality.
+
+
+    # Namespaces.
+
+
+    As number of classes grow in our project we need a way to organize related classes
+    so we use namespace. namespace is a container of same classes
+
+
+    # Assembly.
+
+
+    As number of namespaces grow we need a way to partition our application so here
+    assemblies come handy. Assembly is a container of same namespaces
+
+
+    Physically it is a file on disk it could be (exe or dll).
+
+
+    # Our First C Program.
+
+
+    In this book we will use visual studio so open visual studio
+
+
+    On top go to file
+
+
+    >new>project>installed>templates>visual c#>windows>console application
+
+
+    And here we have 3 fields we can give name to our project just name the project
+    HelloWorld
+
+
+    We can also set the location of the project by clicking browse button
+
+
+    Third we can name solution in visual studio we have solutions one solution can
+    have more than one project
+
+
+    Finally click ok to create console application
+
+
+    See the screen shoot below
+
+
+    ![](images/00002.jpeg)**Lets look at some windows and tabs of visual studio**
+
+
+    ## Few common windows and tabs
+
+
+    Solution Explorer
+
+
+    Coding Editior
+
+
+    start with solution explorer to show solution explorer or any window go to view
+    on the top and select that window you want to show in solution explorer window
+    first we have Solution name and number of projects in this solution
+
+
+    properties>Assemblyinfo.cs
+
+
+    assemblyinfo is produced when application will compile it is the identification
+    of application
+
+
+    ## References
+
+
+    Under references we see assemblies linked with this project to do some job . these
+    assemblies comes with console application template in visual studio.
+
+
+    ## App.config
+
+
+    Here the configurations of the application is stored
+
+
+    it has fields like title, description, ![](images/00003.jpeg)
+
+
+    ## Program.cs
+
+
+    Here in program.cs we can start coding
+
+
+    THIS FILE PROGRAM.CS WE HAVE BUNCH OF USING STATEMENTS ON TOP. Our Project Name
+    is HELLOWORLD so visual studio by default creates a namespace HELLOWORLD. When
+    we write code in this namespace we have access to all classes defined in this
+    namespace. If we want to use a class from different namespace we have to import
+    that in our code file that is why we use using statement by default visual studio
+    adds 5 using statements
+
+
+    using System;
+
+
+    using System.Collections.Generic; using System.Linq;
+
+
+    using System.Text;
+
+
+    using System.Threading.Tasks;
+
+
+    **System is namespace in .NET framework where we have all handy utility classes**
+
+
+    ![](images/00004.jpeg)**Every console application we create in visual studios
+    has one class called program.cs
+
+
+    In this class we have one method/function and this is the entery point of our
+    application**
+
+
+    static void Main(string[] args)
+
+
+    {
+
+
+    }
+
+
+    This method starts with static which we will later cover in this course
+
+
+    Then return type which is void and void means this function returns nothing.
+
+
+    And then the Name of the function Main .note that c# is a case sensitive language
+    So Main has to Start With upper Case M.
+
+
+    Functions can have input and output which we are called arguments this function
+    takes a string[] array input which we will cover later
+
+
+    And finally we close a code block with curly braces{}.
+
+
+    Now lets write helloworld to the console
+
+
+    ## Console Application
+
+
+    A console application is a simple application with no graphics . To Display Heloworld
+    to the console we can use Console Class which is used to write on console and
+    take input from console.
+
+
+    So inside Main Method Type the code below Console.WriteLine("HelloWorld");
+
+
+    Console is a class and WriteLine is the function of Console Class. we can access
+    a method of class with . (dot) and the name of the function . WriteLine is used
+    to write a line on console .in () we give the input to that function . we can
+    write anything inside to print on console in this case we will print helloworld
+    to the console.
+
+
+    To run and see the result press shortcut key to run application in visual studio
+    is
+
+
+    Ctrl + F5
+
+
+    Finished Code :
+
+
+    static void Main(string[] args) {
+
+
+    Console.WriteLine("HelloWorld"); }
+
+
+    **Congrats you have just finished the first chapter.**
+
+
+    ## CHAPTER 2\. PRIMITIVE TYPES AND EXPRESSIONS
+
+
+    Now we will dive into some basic c# stuff
+
+
+    ## **VARIABLES AND CONSTANTS** :
+
+
+    **VARIABLE**.
+
+
+    A name given to a storage location in memory
+
+
+    Declaring a variable
+
+
+    Datatype Name of the variable =value we want to assign ;
+
+
+    Every statement in c sharp ends with ;
+
+
+    Example
+
+
+    Int a =10;
+
+
+    Int is datatype , a is name and we assign value 10 with equal sign =
+
+
+    ## **Constant**.
+
+
+    An immutable value. This value will not change throughout the lifetime of the
+    application Example
+
+
+    pi =3.14 which we use to calculate area of circle it should be constant.
+
+
+    Declaring a constant
+
+
+    Const keyword Datatype Name of the constant =value we want to assign ;
+
+
+    Example of pi.
+
+
+    Const float pi=3.14f;'
+  toc: []
+  trans: "\n\n![](img/00043.jpeg)\n![](img/00001.jpeg)\n\n# C# 编程入门指南\n\n### 让编程变得简单\n\
+    \n作者：\n\n### FAISAL NAZEER\n\n版权 © 2016\n\n## 关于作者：\nFaisal 拥有超过 4 年的`Programming`\
+    \ 经验……他在 14 岁开始学习编程。目前他正在为移动平台开发游戏。\n\n## 目录\n- 引言\n- 法律声明\n- 第 1 章（C# 简介）\n-\
+    \ 第 2 章（基本类型与表达式）\n- 第 3 章 非基本类型\n- 第 4 章 控制流\n- 关于作者\n\n## 法律声明\n本书的任何部分均不能在任何地方重用或分发，请勿从任何未知来源下载。如果您发现此类活动，请通过以下邮箱告知我们：\n\
+    \nFaisalnaziarali@gmail.com \n\n## 第 1 章（C# 简介）\n\n`C#`（读作 \"C SHARP\"）是微软的一种面向对象的编程语言，旨在结合\
+    \ `C++` 的计算能力与 Visual Basic 的编程易性。`C#` 基于 `C++` 并包含了与 `JAVA` 相似的特性。`C#` 设计用于与微软的\
+    \ `.NET` 平台配合。\n\n## 为什么选择 C#\n`C#` 是一种优雅、简单、类型安全的面向对象的语言，允许企业级人员构建各种应用程序。\n\n\
+    `C#` 用于著名的游戏引擎，在全球范围内用于：\n- 简单的命令行工具。输入处理、转换处理、输出处理。\n- 桌面应用程序。\n- Windows 服务\n\
+    - Web 服务等。\n\n## C# VS .NET\n`C#` 是一种编程语言。`.NET` 是在 Windows 上构建应用程序的框架。\n\n##\
+    \ C 语言的历史\n在 `c#` 之前，我们在 C 家族中有两种语言：`c` 和 `c++`。当我们编译代码时，编译器会将代码转换为我们运行的机器的本地代码。\n\
+    \n这意味着如果我在 Windows 机器上编写了一个程序，它将无法在其他操作系统（如 Linux、mac 等）上运行。\n\n当微软在设计 `c#` 时，他们借鉴了\
+    \ Java 社区的想法。在 `java` 中，代码首先被翻译成字节码，然后翻译成机器码。\n\n在 `c#` 中，代码首先被翻译成 `il`（中间语言），然后翻译成独立于我们运行的计算机的机器码。`clr`（公共语言运行时）负责将\
+    \ `il` 代码翻译成机器码。\n\n## .NET 应用程序架构\n应用程序由类组成，这些类是应用程序的主要构建模块。这些类相互作用以为我们提供所需的功能。\n\
+    \n### 什么是类。\n类是一个容器，其中包含数据（也称为属性）和函数（也称为方法）。\n\n### 函数或方法\n函数和方法具有行为，它们为我们执行任务。\n\
+    \n### 数据。\n数据代表我们应用程序的状态。\n\n### 示例：\n汽车\n汽车可以拥有型号、颜色、品牌、速度等属性，并且可以像 `Start()`、`Break()`\
+    \ 等的功能。将这辆车视为一个类，在现实应用中，我们有很多类，每个类负责某些特定任务，这些类相互作用以提供所需的功能。\n\n### 命名空间。\n随着项目中类的数量增加，我们需要一种方法来组织相关的类，因此我们使用\
+    \ `namespace`。`namespace` 是相同类的容器。\n\n### 程序集。\n随着命名空间数量的增加，我们需要方法来划分应用程序，这里 `assemblies`\
+    \ 就派上用场了。`Assembly` 是相同命名空间的容器。物理上它是磁盘上的文件，可以是（`exe` 或 `dll`）。\n\n## 我们的第一个 C\
+    \ 程序。\n在本书中我们将使用 Visual Studio，所以请打开 Visual Studio。\n\n在顶部点击文件：\n`file>new>project>installed>templates>visual\
+    \ c#>windows>console application`\n\n在这里有 3 个字段，我们可以为项目命名，只需将项目命名为 `HelloWorld`。\n\
+    \n我们还可以通过点击浏览按钮设置项目的位置。\n\n第三，我们可以在 Visual Studio 中命名解决方案，我们有解决方案，一个解决方案可以包含多个项目。\n\
+    \n最后点击确定创建控制台应用程序。\n\n查看下面的截图\n![](img/00002.jpeg) **让我们看看 Visual Studio 的一些窗口和标签**\n\
+    \n### 几个常用窗口和标签\n- 解决方案管理器 (Solution Explorer)\n- 代码编辑器 (Coding Editor)\n\n从解决方案管理器开始，要显示解决方案管理器或任何窗口，请点击顶部的“视图”并选择您想在解决方案管理器窗口中显示的窗口。首先是解决方案名称和此解决方案中的项目数量。\n\
+    - `properties>AssemblyInfo.cs`\n- `assemblyinfo` 在应用程序编译时产生，它是应用程序的标识。\n\n###\
+    \ 引用 (References)\n在引用下，我们看到与此项目链接以执行某些任务的 `assemblies`。这些 `assemblies` 是随 Visual\
+    \ Studio 控制台应用程序模板自带的。\n\n### App.config\n在这里存储应用程序的配置。它有标题、描述等字段，![](img/00003.jpeg)\n\
+    \n### Program.cs\n在 `program.cs` 中，我们可以开始编写代码。\n\n在 `PROGRAM.CS` 文件中，顶部有一堆 `using`\
+    \ 语句。我们的项目名称是 `HELLOWORLD`，所以 Visual Studio 默认创建一个名为 `HELLOWORLD` 的命名空间。当我们在这个\
+    \ `namespace` 中编写代码时，我们可以访问此命名空间定义的所有类。如果我们想使用来自不同命名空间的类，必须在我们的代码文件中导入它，这就是我们使用\
+    \ `using` 语句的原因，Visual Studio 默认添加了 5 个 `using` 语句：\n\n```csharp\nusing System;\n\
+    using System.Collections.Generic;\nusing System.Linq;\nusing System.Text;\nusing\
+    \ System.Threading.Tasks;\n```\n`System` 是 `.NET` 框架中的一个命名空间，其中包含了所有方便的类。\n\n"
+- fmt: '
+
+    Name of variables and constants also called identifiers and a identifier cannot
+    start with a number, A identifiers cannot have white spaces, identifier cannot
+    be reserved keyword which already defined in c language ie(`int` ,`bool` ,`float`).
+    Always use meaningful names .
+
+
+    ## NamingConventions
+
+
+    ### Camel Case: `[firstName]`
+
+    First Word of camel case starts with lowercase and after all words start with
+    uppercase
+
+
+    ### Pascal Case: `[FirstName]`
+
+    All letters of all words are uppercase
+
+
+    ### Hungarian Notation: `[strFirstName]`
+
+    First we prefix datatype and then all letters of all words are uppercase
+
+
+    ## Primitive Types in C
+
+
+    ![](images/00005.jpeg)
+
+
+    ### Working with real numbers
+
+    When we want to use `float` or `double` datatype we need to explicitly tell that
+    treat this number as `float` or `double` to do that follow the syntax:
+
+
+    ```c-csharp
+
+    float number=1.4f;
+
+    double number=12.4m;
+
+    ```
+
+
+    `F` and `m` keywords explicitly tells the compiler to treat number as `flaot`
+    or `double`
+
+
+    In `c` we can have variables with same name but of different datatype .
+
+
+    ## Non primitive Types
+
+    - `String`
+
+    - `Array`
+
+    - `Enum`
+
+    - `Class`
+
+
+    ## Scope
+
+    Scope means where a variable/constant has meaning
+
+
+    ![](images/00006.jpeg) Here we have 3 blocks of code with 3 variables
+
+
+    So a variable `a` is accessible in any of its child block and in anywhere in this
+    block
+
+
+    So a variable `b` is accessible in any of its child block and in anywhere in this
+    block
+
+
+    Abd `c` variable can only be accesed in this same block
+
+
+    ## Practice variables in visual studio
+
+    Open visual studio and create new console project
+
+
+    in `main` function of the program declare some values and show them on console
+    see the code below
+
+
+    ![](images/00007.jpeg)
+
+
+    To declare character data type we will enter a character inside ‘A’ and for string
+    we enter string in “`string`”.
+
+
+    We also use keyword `var` instead of declaring the data type `c` compileir automatically
+    detects the data type. Now change all the data types to `var`
+
+
+    It should look like this
+
+
+    ![](images/00008.jpeg)
+
+
+    ## Format String
+
+    ![](images/00009.jpeg)
+
+
+    In this way we visualize the output . `{0}` will be replaced by `byte.minValue`
+    which is the minimum value of `byte` and `{1}` will be replaced by `byte.maxvalue`
+    which is the maximum value of `byte` can store.
+
+
+    ## C# Operators
+
+    ![](images/00010.jpeg)
+
+
+    ### Arithmetic operators
+
+    ![](images/00011.jpeg) These operators are used for mathematical calculations
+
+
+    ![](images/00012.jpeg) Increment operator increases value by one (1) and decrement
+    operator decreases by one
+
+
+    ## Comparison Operators
+
+    ![](images/00013.jpeg) One thing to note here is that equal (`=`) sign is used
+    to assign value and `==` is used to test equality
+
+
+    ## Logical Operators
+
+    These are used in conditional statements which we will discuss later
+
+
+    ![](images/00014.jpeg)
+
+
+    ## Bitwise Operators
+
+    These are used in low level programming
+
+
+    ![](images/00015.jpeg)
+
+
+    ## Practice operators
+
+    In `main` method declare two variables and to display their value of sum just
+    use
+
+
+    ![](images/00016.jpeg) Run application and see the result on console
+
+
+    We also use `/`, `-` or any Arithmetic operators
+
+
+    Example 2
+
+    ![](images/00017.jpeg)
+
+
+    In this we case declared our variables as `int` to show division result in floating
+    point number we have to explicitly tell compliler to treat these variables as
+    `flaot` by casting (`flaot`) to both variables
+
+
+    Example 3
+
+    ![](images/00018.jpeg)
+
+
+    Here we have three variables `a`,`b`,`c` if we want to add `a` and `b` first and
+    then multiply with `c` we can do it by writing `a+b` inside `(a+b)` so now `a`
+    and `b` first added then multiplied with `c`.
+
+
+    Example 4
+
+    ![](images/00019.jpeg) We can check for equality and in equality with compareon
+    and logical operators
+
+
+    Here `a` is not equal to `b` so result will be true
+
+
+    Example 5
+
+    ![](images/00020.jpeg)
+
+
+    With `and` operator we can now check that both conditions are true .here `>b`
+    which is true and `c==a` which is false so one of the condition is not true then
+    result will be false
+
+
+    Example 6
+
+    ![](images/00021.jpeg)
+
+
+    We can use `or` operator if any of these condition is true result will be true
+
+
+    ## Comments
+
+    Comments are used to describe what , why , how , constrains etc….
+
+
+    Comments are not executed
+
+
+    Types of comments
+
+
+    ### Multiline comments
+
+    These are used to write comments on multiple lines ![](images/00022.jpeg)
+
+
+    ### Single line comment
+
+    These are used to write comments on single line ![](images/00023.jpeg)
+
+
+    # Congrats chapter is finished……………… ………………………… ………………………… …….
+
+
+    ## CHAPTER 3. NON-PRIMITIVE TYPES
+
+    Chapter Text
+
+
+    ## CLASSES
+
+    Combines related variables(fields) and functions(methods)
+
+
+    Let lear classes with a example
+
+
+    ![](images/00024.jpeg) Here we a a class named `person` with four fields and four
+    methods
+
+
+    Classes are blueprint from which we create objects
+
+
+    ### Object
+
+    Object is a instance of a class
+
+
+    With this example we can create three instance of persons
+
+    - Marry
+
+    - John
+
+    - Ali
+
+
+    ### Create A Class
+
+    Access modifier `class` keyword name of class `{
+
+    }`
+
+
+    Example of `person` class
+
+    ![](images/00025.jpeg) Access modifier means who can access it public modifier
+    means anyone can access it
+
+
+    A class can contain fields and methods. In this example method has no parameter
+    or takes input
+
+    `Calculator` example
+
+    ![](images/00026.jpeg)
+
+
+    ### Creating Objects
+
+    We declare objects like variables but we have to allocate memory for
+
+    Example of `person`
+
+    ![](images/00027.jpeg)[](images/00028.jpeg) We can use `var` keyword to make our
+    code cleaner We can access fields and function of object by using Dot and function
+    `Person.name="faisal";` `Person.introduce();`
+
+
+    ### Static
+
+    We can add `static` keyword to `Add()` function of `calculator` class
+
+    ![](images/00029.jpeg) Now we can access Add function directly from Calculator
+    itself
+
+    ![](images/00030.jpeg) When we create objects there are multiple instances of
+    `Add` method but `static` `Add` function only exists at one place in memory.
+
+
+    # Practice Classes
+
+    First create a class in visual studio by pressing `Shift+alt+c`
+
+
+    Name that class `Person`
+
+
+    And now add first name and last name string fields
+
+
+    And a `introduce()` method which outputs the first and last name on console
+
+    See the code below
+
+    ![](images/00031.jpeg) And now create a person object in `main` method and assign
+    first and last name and call `introduce()` method
+
+    See the code below ![](images/00032.jpeg)
+
+
+    Create a another class named `Calculator` and fill it with `Add()`MethodThis method
+    takes input of two `int` variables and return them after adding them
+
+
+    Now come back to `main` method and create object of `calculator` class and finally
+    call `Add()` function and store that value in a variable to print the result on
+    console. ![](images/00033.jpeg)
+
+
+    ## Arrays
+
+    A data structure to store a collection of variables of the same type
+
+
+    Why use array?
+
+
+    Example:
+
+    In this example instead of declaring 3 `int` variables we can declare one `int[]`
+    array
+
+
+    Notice the square brackets `[]` .first brackets tells that it’s a array and `2^(nd)`
+    brackets tells the number of elements in the array. At the time of declaring we
+    need to initialize it with number of elements.
+
+
+    Accessing the element of a array
+
+    ![](images/00034.jpeg)
+
+    To access the first element we start with zero(0) index and second element is
+    index 1 and so on and so forth .we pass the index in square brackets `[]`.and
+    can assign the value.
+
+
+    We can initialize array with object initialization syntax ![](images/00035.jpeg)
+
+
+    # Practice Arrays
+
+    Open up visual studio and in `main` method create a `numbers` array with three
+    element assign index 0 to 1 then display all of them into console
+
+
+    And also create a `Boolean` array and set index 0 to true and finally display
+    all of them onto console
+
+
+    If we don’t initialize index of array element default value of data type will
+    be assigned , in this case `Boolean` default value is false and `int` has default
+    value of 0'
+  raw: 'Name of variables and constants also called identifiers and a identifier cannot
+    start with a number, A identifiers cannot have white spaces, identifier cannot
+    be reserved keyword which already defined in c language ie(int ,bool ,float).
+    Always use meaningful names .
+
+
+    ## NamingConventions .Camel Case: [firstName]
+
+
+    First Word of camel case starts with lowercase and after all words start with
+    uppercase
+
+
+    ## .Pascal Case: [FirstName]
+
+
+    All letters of all words are uppercase
+
+
+    ## .Hungarian Notation: [strFirstName]
+
+
+    First we prefix datatype and then**All letters of all words are uppercase**
+
+
+    ## Primitive Types in C
+
+
+    ![](images/00005.jpeg)
+
+
+    Working with real numbers
+
+
+    When we want to use float or double datatype we need to explicitly tell that treat
+    this number as float or double to do that follow the syntax:
+
+
+    float number=1.4f;
+
+
+    double number=12.4m;
+
+
+    F and m keywords explicitly tells the compiler to treat number as flaot or double
+
+
+    In c we can have variables with same name but of different datatype .
+
+
+    ## Non primitive Types
+
+
+    .String
+
+
+    .Array
+
+
+    . Enum . Class
+
+
+    # Scope:
+
+
+    Scope means where a variable/constant has meaning
+
+
+    ![](images/00006.jpeg)**Here we have 3 blocks of code with 3 variables
+
+
+    So a variable a is accessible in any of its child block and in anywhere in this
+    block
+
+
+    So a variable b is accessible in any of its child block and in anywhere in this
+    block
+
+
+    Abd c variable can only be accesed in this same block**
+
+
+    ## Practice variables in visual studio:
+
+
+    Open visual studio and create new console project
+
+
+    in main function of the program declare some values and show them on console see
+    the code below
+
+
+    ![](images/00007.jpeg)
+
+
+    To declare character data type we will enter a character inside ‘A’ and for string
+    we enter string in “string”.
+
+
+    We also use keyword var instead of declaring the data type c compileir automatically
+    detects the data type. Now change all the data types to var
+
+
+    It should look like this
+
+
+    ![](images/00008.jpeg)
+
+
+    ## **Format String**
+
+
+    ![](images/00009.jpeg)
+
+
+    In this way we visualize the output . {0} will be replaced by byte.minValue which
+    is the minimum value of byte and {1} will replaced by
+
+
+    byte.maxvalue which is the maximum value of byte can store.
+
+
+    ## C# Operators
+
+
+    ![](images/00010.jpeg)
+
+
+    ## **.Arithmetic opertaors**
+
+
+    ![](images/00011.jpeg)**These operators are used for mathematical calculations**
+
+
+    ![](images/00012.jpeg)**Increment operator increases value by one (1) and decrement
+    operator decreases by one**
+
+
+    # Comparison Operators
+
+
+    ![](images/00013.jpeg)**One thing to note here is that equal (=) sign is used
+    to assign value and == is used to test equality**
+
+
+    ## Logical Operators
+
+
+    These are used in conditional statements which we will discuss later
+
+
+    ![](images/00014.jpeg)
+
+
+    # Bitwise Operators:
+
+
+    These are used in low level programming
+
+
+    ![](images/00015.jpeg)
+
+
+    ## Practice operators :
+
+
+    In main method declare two variables and to display their value of sum just use
+
+
+    ![](images/00016.jpeg)**Run application and see the result on console
+
+
+    We also use / ,- or any Arithmetic operators
+
+
+    Example 2**
+
+
+    ![](images/00017.jpeg)
+
+
+    In this we case declared our variables as int to show division result in floating
+    point number we have to explicitly tell compliler to treat these variables as
+    flaot by casting (flaot) to both variables
+
+
+    Example 3
+
+
+    ![](images/00018.jpeg)
+
+
+    Here we have three variables a,b,c if we want to add a and b first and then multiply
+    with c we can do it by writing a+b inside (a+b) so now a and b first added then
+    multiplied with c.
+
+
+    Examppe 4
+
+
+    ![](images/00019.jpeg)**We can check for equality and in equality with compareon
+    and logical operators
+
+
+    Here a is not equal to b so result will be true
+
+
+    Example 5:**
+
+
+    ![](images/00020.jpeg)
+
+
+    With and operator we can now check that both conditions are true .here c>b which
+    is true and c==a which is false so one of the condition is not true then result
+    will be false
+
+
+    Example 6:
+
+
+    ![](images/00021.jpeg)
+
+
+    We can use or operator if any of these condition is true result will be true
+
+
+    # Comments
+
+
+    Comments are used to describe what , why , how , constrains etc….
+
+
+    Comments are not executed
+
+
+    Types of comments
+
+
+    ## Multiline comments:
+
+
+    These are used to write comments on multiple lines ![](images/00022.jpeg)
+
+
+    ## Single line comment:
+
+
+    These are used to write comments on single line ![](images/00023.jpeg)
+
+
+    # Congrats chapter is finished……………… ………………………… ………………………… …….
+
+
+    ## CHAPTER 3\. NON-PRIMITIVE TYPES
+
+
+    Chapter Text
+
+
+    ## **CLASSES.**
+
+
+    Combines related variables(fields) and
+
+
+    functions(methods)
+
+
+    Let lear classes with a example
+
+
+    ![](images/00024.jpeg)Here we a class named person with four fields and four methods
+
+
+    Classes are blueprint from which we create objects
+
+
+    ## Object
+
+
+    Object is a instance of a class
+
+
+    With this example we can create three instance of persons
+
+
+    Marry
+
+
+    John
+
+
+    Ali
+
+
+    ## Create A Class.
+
+
+    Access modifier class keyword name of class {
+
+
+    }
+
+
+    Example of person class
+
+
+    ![](images/00025.jpeg)**Access modifier means who can access it public modifier
+    means anyone can access it
+
+
+    A class can contain fields and methods. In this example method has no parameter
+    or takes no input or output**
+
+
+    Calculator class example
+
+
+    ![](images/00026.jpeg)
+
+
+    In this example add() function takes input and return a+b output.
+
+
+    ## Creating Objects
+
+
+    We declare objects like variables but we explicitly have to allocate memory for
+    it
+
+
+    Example of person class which from we now create a object
+
+
+    ![](images/00027.jpeg)![](images/00028.jpeg)
+
+
+    We can use var keyword to make our code cleaner We can access fields and function
+    of that object by using the object name and with. Dot and the function and field
+    name
+
+
+    Person.name=”faisal”; Person.introduce();
+
+
+    # Static
+
+
+    We can add static keyword to Add() function of calculator class
+
+
+    ![](images/00029.jpeg)**Now we can access Add() function directly from Calculator
+    class itself**
+
+
+    ![](images/00030.jpeg)
+
+
+    When we create objects there are multiple instances of Add method in memory but
+    static Add function only exists at one place in memory.
+
+
+    # Practice Classes:
+
+
+    First create a class in visual studio by pressing
+
+
+    Shit+alt+c
+
+
+    Name that class Person
+
+
+    And now add first name and last name string fields
+
+
+    And a introduce() method which outputs the first and last name on console
+
+
+    See the cod below
+
+
+    ![](images/00031.jpeg)**And now create a person object in main method and assign
+    first and last name and call introduce() method
+
+
+    See the code below**
+
+
+    ![](images/00032.jpeg)
+
+
+    Create a another class named Calculator and fill it with Add ()Method
+
+
+    This method takes input of two int variables and return them after adding them
+
+
+    Now come back to main method and create object of calculator class and finally
+    call Add() function and store that value in a variable to print the result on
+    console.
+
+
+    This function takes two arguments/inputs and add them. ![](images/00033.jpeg)**Result
+    should be 3.**
+
+
+    # Arrays
+
+
+    A data structure to store a collection of variables of the same type
+
+
+    Why use array?
+
+
+    Example:
+
+
+    In this example instead of declaring 3 int variables we can declare one int[]
+    array
+
+
+    Notice the square brackets[] .first brackets tells that it’s a array and 2^(nd)
+    brackets tells the number of elements in the array. At the time of declaring we
+    need to initialize it with number of elements.
+
+
+    Accessing the element of a array
+
+
+    ![](images/00034.jpeg)
+
+
+    To access the first element we start with zero(0) index and second element is
+    index 1 and so on and so forth .we pass the index in square brackets[].and can
+    assign the value.
+
+
+    We can initialize array with object initialization syntax ![](images/00035.jpeg)
+
+
+    # Practice Arrays
+
+
+    Open up visual studio and in main method create a numbers array with three element
+    assign index 0 to 1 then display all of them into console
+
+
+    And also create a Boolean array and set index 0 to true and finally display all
+    of them onto console
+
+
+    If we don’t initialize index of array element default value of data type will
+    be assigned , in this case Boolean default value is false and int has default
+    value of 0'
+  toc: []
+  trans: '
+
+
+    变量和常量的名称也称为标识符，标识符不能与数字开头，标识符不能包含空格，标识符不能是 C 语言中已定义的关键字（如 `int`、`bool`、`float`）。始终使用有意义的名字。
+
+
+    ## 命名规范
+
+
+    ### 驼峰命名法：`[firstName]`
+
+    驼峰命名法的第一个字母小写，之后每个单词的首字母大写
+
+
+    ### 帕斯命名法：`[FirstName]`
+
+    所有单词的字母均大写
+
+
+    ### 匈牙体系：`[strFirstName]`
+
+    首先前缀数据类型，然后所有单词的字母大写
+
+
+    ## C 中的基本类型
+
+
+    ![](img/00005.jpeg)
+
+
+    ### 使用实数
+
+    当我们想要使用 `float` 或 `double` 类型时，我们需要显式地告诉将此数字视为 `float` 或 `double`，请遵循以下语法：
+
+
+    ```c-csharp
+
+    float number=1.4f;
+
+    double number=12.4m;
+
+    ```
+
+
+    `F` 和 `m` 关键字显式告诉编译器将数字视为 `float` 或 `double`
+
+
+    在 `c` 中，我们可以拥有名称相同但类型不同的变量
+
+
+    ## 非基本类型
+
+    - `String`
+
+    - `Array`
+
+    - `Enum`
+
+    - `Class`
+
+
+    ## 作用范围
+
+    作用范围意味着变量/常量在何处有效
+
+
+    ![](img/00006.jpeg) 这里有 3 个代码块，包含 3 个变量
+
+
+    所以变量 `a` 可以在它的任何子块中访问，也可以在该块的任何地方访问
+
+
+    所以变量 `b` 可以在它的任何子块中访问，也可以在该块的任何地方访问
+
+
+    而变量 `c` 只能在同一个块中访问
+
+
+    ## 在 visual studio 中练习变量
+
+    打开 visual studio 并创建一个控制台项目
+
+
+    在程序的 `main` 函数中声明一些值并在控制台上显示它们，见下方的代码
+
+
+    ![](img/00007.jpeg)
+
+
+    要声明字符类型，我们将在‘A’ 内部输入一个字符；对于字符串，我们在“`string`”内输入字符串。
+
+
+    我们还使用关键字 `var` 来代替声明数据类型 `c`，编译器会自动检测数据类型。现在将所有数据类型更改为 `var`
+
+
+    它看起来应该是这样的
+
+
+    ![](img/00008.jpeg)
+
+
+    ## 格式化字符串
+
+    ![](img/00009.jpeg)
+
+
+    通过这种方式我们将输出可视化。`{0}` 被 `byte.minValue` 替换，它是 `byte` 的最小值；`{1}` 被 `byte.maxvalue`
+    替换，它是 `byte` 可以存储的最大值
+
+
+    ## C# 运算符
+
+    ![](img/00010.jpeg)
+
+
+    ### 算术运算符
+
+    ![](img/00011.jpeg) 这些运算符用于数学计算
+
+
+    ![](img/00012.jpeg) 增增运算符值增加一 (1)，递减运算符减少一
+
+
+    ## 比较运算符
+
+    ![](img/00013.jpeg) 这里需要注意的是，等号 (`=`) 用于赋值，而 `==` 用于测试等等性
+
+
+    ## 逻辑运算符
+
+    这些运算符被用于条件语句，我们稍后会讨论
+
+
+    ![](img/00014.jpeg)
+
+
+    ## 位运算符
+
+    这些运算符用于低级编程
+
+
+    ![](img/00015.jpeg)
+
+
+    ## 练习运算符
+
+    在 `main` 方法中声明两个变量，为了显示它们的和值，只需使用
+
+
+    ![](img/0016.jpeg) 运行应用程序并在控制台上查看结果
+
+
+    我们还使用 `/`、`-` 或任何算术运算符
+
+
+    示例 2
+
+    ![](img/00017.jpeg)
+
+
+    在这种情况情况下，我们将变量声明为 `int`，为了以浮点数显示除法结果，我们必须显式告诉编译器通过对两个变量进行强制转换 (`float`) 将其 `float`
+
+
+    示例 3
+
+    ![](img/00018.jpeg)
+
+
+    这里有三个变量 `a``,`b``,`c`，如果我们想先加 `a` 和 `b` 然后乘以 `c`，可以通过在 `(a+b)` 内部编写 `a+b` 来实现，现在
+    `a` 和 `b` 先加，然后与 `c` 相乘
+
+
+    示例 4
+
+    ![](img/00019.jpeg) 我们可以使用比较运算符和逻辑运算符检查相等和不相等
+
+
+    这里 `a` 不等于 `b`，所以结果将为 true
+
+
+    示例 5
+
+    ![](img/00020.jpeg)
+
+
+    通过 `and` 运算符我们现在可以检查两个条件是否都真。这里 `>b` 是真的，而 `c==a` 是假的，如果其中一个条件不真，结果将为 false
+
+
+    示例 6
+
+    ![](img/00021.jpeg)
+
+
+    我们可以使用 `or` 运算符，如果这些条件任一为真结果将为 true
+
+
+    ## 注释
+
+    注释用于描述什么、为什么、如何、限制等……
+
+
+    注释不会被执行
+
+
+    注释的类型
+
+
+    ### 多行注释
+
+    这些用于在多行上编写注释 ![](img/00022.jpeg)
+
+
+    ### 单行注释
+
+    这些用于在单行上编写注释 ![](img/00023.jpeg)
+
+
+    # 恭喜章节已完成……………… ………………………… ………………………… …….
+
+
+    ## 第 3 章：非基本类型
+
+    章节文本
+
+
+    ## 类
+
+    结合相关的变量（字段）和函数（方法）
+
+
+    让我们通过示例来学习类
+
+
+    ![](img/00024.jpeg) 这里我们有一个名为 `person` 的类，带有四个字段和四个方法
+
+
+    类是创建对象的蓝图
+
+
+    ### 对象
+
+    对象是类的实例
+
+
+    通过这个示例我们可以创建类的实例
+
+    - Marry
+
+    - John
+
+
+    ### 创建类
+
+    访问修饰符意味着可以访问它
+
+    `person` 类的示例
+
+    ![](img/00025.jpeg) 类包含字段和方法。在这个例子中方法没有参数
+
+    `Calculator`
+
+
+    ### 创建对象
+
+    我们像这样声明对象，但必须为变量分配内存
+
+    `person` 示例
+
+    ![](img/00027.jpeg)images/00028.jpeg) 我们可以使用 `var` 关键字让代码更整洁，通过使用点来访问字段和函数
+
+    `Person.name="faisal";`Person.introduce();`
+
+
+    ### 静态
+
+    我们可以添加 `static` 关键字 `Add()` 函数的 `calculator`
+
+    ![](img/00029.jpeg) 现在我们可以直接从 Calculator 访问
+
+    ![](img/00030.jpeg) 当我们创建对象时 `static` 函数在内存中只一个处
+
+
+    # 练习类
+
+    首先在 visual studio 中按 `Shift+alt+c` 创建一个类
+
+
+    将类命名为 `Person`
+
+
+    现在添加名和姓字符串字段
+
+
+    以及一个 `introduce()` 方法，在控制台上输出名和姓
+
+    见下方的代码
+
+    ![](img/00031.jpeg) 现在在 `main` 方法中创建一个 person 对象并分配名和姓，调用 `introduce()` 方法
+
+    见下方的代码
+
+    ![](img/00032.jpeg) 创建另一个名为 `Calculator` 的类并填充 `Add()` 方法该方法接收两个 `int` 变量并在相加后返回它们
+
+
+    现在回到 `main` 方法创建 `calculator` 类的对象，最后调用 `Add()` 函数并将结果存储在变量中并在控制台上打印。(images/00033.jpeg)
+
+
+    ## 数组
+
+    一种存储相同类型变量集合的数据结构
+
+
+    为什么要使用数组？
+
+
+    示例：
+
+    在这个示例中与其声明 3 个 `int` 变量，我们可以声明一个 `int[]` 数组
+
+
+    注意方括号 `[]` 。第一个括号表示它是数组，第 2 个 括号表示数组中元素的数量。在声明时我们需要初始化它的元素数量。
+
+
+    访问数组的元素
+
+    ![](img/00034.jpeg) 要访问第一个元素，我们从索引 (0) 开始，第二个元素是索引 1，依此类推。我们在方括号 `[]` 中传递索引。并可以赋值。
+
+
+    我们可以使用对象初始化语法初始化数组 ![](img/00035.jpeg)
+
+
+    # 练习数组
+
+    打开 visual studio 并在 `main` 方法中创建一个带有三个元素的 `numbers` 数组，将索引 0 赋值为 1，将它们全部显示在控制台上
+
+
+    同时也创建一个 `Boolean` 数组并将索引 0 设置为 true，最后将它们全部显示在控制台上
+
+
+    如果我们不初始化数组元素的索引，将分配数据类型的默认值，在这种情况下 `Boolean` 的默认值为 false，而 `int` 有默认值 0
+
+    '
+- fmt: "\nSee the code below ![](images/00036.jpeg) Now run the application and see\
+    \ the result.\n\n# Strings\n\nA string is sequence of characters and we surround\
+    \ them with `\"double quotes helloworld\"`.\n\n## string concatenation\n\nwe can\
+    \ concatenating strings together with syntax below:\n\n![](images/00037.jpeg)\n\
+    \nIn this example:\nWe are concatenating `firstname` and `anme` strings together\
+    \ with string string literal which is empty string and with `+` sign.\n\n# Practice\
+    \ Strings\n\nOpen visual studio\n\nTo create a string:\n`String keyword name of\
+    \ string =string” Example`\n`String firstname=faisal”`\n`String secondname=nazeer”`\n\
+    \n//now we can concatenate two strings\n\n`Var fullname=firstname + +secondname”`\
+    \ Now display it on console Console.WriteLine(fullname);`\n\n# CHAPTER 4. CONTROL\
+    \ FLOW\n\n### CONDITIONAL STATEMENTS\n\n![](images/00038.jpeg)\n\n### IF/ELSE\
+    \ STATEMNST\n\n![](images/00039.jpeg)\n\n### ON FIRST LINE WE HAVE A CONDITION\
+    \ IF CONDITION IS TRUE THEN IF CODE BLOCK WILL RUN. IF CONDITION IS FALSE THEN\
+    \ ELSE IF BLOCK WILL BE CHECKED IF ELSE IF CONDITION IS TRUE THEN ELSE IF BLOCK\
+    \ WILL RUN OTHERWISE ELSE STATEMENT WILL BE EXECUTED.\n\n## SWITCH CASE STATEMENTS\n\
+    \n![](images/00040.jpeg)\n\nIn switch case statement we compare the value of a\
+    \ variable in cases and if condition is true that code block will run , if not\
+    \ then skip to next and if none of them is true then default block will be executed.\n\
+    \n## Syntax of switch/case statements\n\nFirst we create a variable and then we\
+    \ create cases and compare value of the variable and we can have as many cases\
+    \ we want and finally we can execute default block.\n\n## Practice Switch Case:\n\
+    \n```sharp\nchar grade = 'A';\n\nswitch (grade)\n{\ncase 'A':\nConsole.WriteLine(\"\
+    Excellent!\"); break;\ncase 'B':\nConsole.WriteLine(\"nice\");\nbreak;\ncase 'C':\n\
+    Console.WriteLine(\"Well done\"); break;\ncase 'D':\nConsole.WriteLine(\"You passed\"\
+    ); break;\ncase 'F':\nConsole.WriteLine(\"Better try again\"); break;\ndefault:\n\
+    Console .WriteLine(\"Invalid grade\");\nbreak;\n}\nConsole.WriteLine(\"Your grade\
+    \ is {0}\", grade);\n```\n\nHere we are checking the grade in every case which\
+    \ is `A` if any case is equal to `a` that will run and in this case first case\
+    \ is `A` so first block of the code will run.\n\n## Iteration Statements\n\nThese\
+    \ statements are used to repeat sequence of statements un till given condition\
+    \ is true.\n\nTypes of itteration statements\n\n![](images/00041.jpeg)\n\n# For\
+    \ loop\n\n## SYNTAX\n\nThe syntax of a `for` loop in C# is:\n\n```csharp\nfor\
+    \ ( init; condition; increment )\n{\n    statement(s);\n}\n```\n\nHere is the\
+    \ flow of control in a for loop:\n\n- The `init` step is executed first, and only\
+    \ once. This step allows you to declare and initialize any loop control variables.\
+    \ You are not required to put a statement here, as long as a semicolon appears.\n\
+    - Next, the `condition` is evaluated. If it is true, the body of the loop is executed.\
+    \ If it is false, the body of the loop does not execute and flow of control jumps\
+    \ to the next statement just after the for loop.\n- After the body of the for\
+    \ loop executes, the flow of control jumps back up to the `increment` statement.\
+    \ This statement allows you to update any loop control variables. This statement\
+    \ can be left blank, as long as a semicolon appears after the condition.\n- The\
+    \ condition is now evaluated again. If it is true, the loop executes and the process\
+    \ repeats itself (body of loop, then increment step, and then again testing for\
+    \ a condition). After the condition becomes false, the for loop terminates.\n\n\
+    ## EXAMPLE\n\n```csharp\nusing System;\n\nnamespace Loops {\nclass Program {\n\
+    \    static void Main(string[] args) {\n        /* for loop execution */ for (int\
+    \ a = 10; a < 20; a = a + 1) {\n            Console.WriteLine(\"value of a: {0}\"\
+    , a); \n        }\n        Console.ReadLine();\n    }\n}\n}\n```\n\nWhen the above\
+    \ code is compiled and executed, it produces the following result:\n\nvalue of\
+    \ a: 10\nvalue of a: 11\nvalue of a: 12\nvalue of a: 13\nvalue of a: 14\nvalue\
+    \ of a: 15\nvalue of a: 16\nvalue of a: 17\nvalue of a: 19\n\n## While loop\n\n\
+    A `while` loop statement in C# repeatedly executes a target statement as long\
+    \ as a given condition is true.\n\n## SYNTAX\n\nThe syntax of a `while` loop in\
+    \ C# is:\n\n```csharp\nwhile(condition)\n{\n    statement(s);\n}\n```\n\nHere,\
+    \ `statement(s)` may be a single statement or a block of statements. The `condition`\
+    \ may be any expression, and true is any non-zero value. The loop iterates while\
+    \ the condition is true.\n\nWhen the condition becomes false, program control\
+    \ passes to the line immediately following the loop.\n\n## EXAMPLE\n\n```csharp\n\
+    using System;\n\nnamespace Loops {\nclass Program\n{\n    static void Main(string[]\
+    \ args) {\n        /* local variable definition */ int a = 10;\n        /* while\
+    \ loop execution */ while (a < 20)\n        {\n            Console .WriteLine(\"\
+    value of a: {0}\", a); a++;\n        }\n        Console.ReadLine();\n    }\n}\n\
+    }\n```\n\nWhen the above code is compiled and executed, it produces the following\
+    \ result:\n\nvalue of a: 10\nvalue of a: 11\nvalue of a: 12\nvalue of a: 13\n\
+    value of a: 14\nvalue of a: 15\nvalue of a: 16\nvalue of a: 17\nvalue of a: 18\n\
+    \n## Do While Loop\n\nUnlike `for` and `while` loops, which test the loop condition\
+    \ at the start of the loop, the `do...while` loop checks its condition at the\
+    \ end of the loop.\n\nA `do...while` loop is similar to a while loop, except that\
+    \ a `do...while` loop is guaranteed to execute at least one time.\n\n## SYNTAX\n\
+    \nThe syntax of a `do...while` loop in C# is:\n\n```csharp\ndo\n{\n    statement(s);\n\
+    }while( condition );\n```\n\nNotice that the conditional expression appears at\
+    \ the end of the loop, so the `statement(s)` in the loop execute once before the\
+    \ condition is tested.\n\nIf the condition is true, the flow of control jumps\
+    \ back up to `do`, and the `statement(s)` in the loop execute again. This process\
+    \ repeats until the given condition becomes false.\n\n## EXAMPLE\n\n```csharp\n\
+    using System;\n\nnamespace Loops {\nclass Program {\n    static void Main(string[]\
+    \ args) {\n        /* local variable definition */ int a = 10;\n        /* do\
+    \ loop execution */ do\n        {\n            Console .WriteLine(\"value of a:\
+    \ {0}\", a); a = a + 1;\n        }\nwhile (a < 20);\n        Console.ReadLine();\n\
+    \    }\n}\n}\n```\n\nWhen the above code is compiled and executed, it produces\
+    \ the following result:\n\nvalue of a: 10\nvalue of a: 11\nvalue of a: 12\nvalue\
+    \ of a: 13\nvalue of a: 14\nvalue of a: 16\nvalue of a: 17\nvalue of a: 18\nvalue\
+    \ of a: 19\n\n## Foreach loop\n\nForeach loop is used to iterate from the elemenst\
+    \ of object which have list nature ie arrays.\n\n![](images/00042.jpeg)First we\
+    \ create a local variable and then iterate the object whose elements we want to\
+    \ access.\n\nIn this example we are iterating all the element of the array and\
+    \ displaying it onto console.\n\n# **Congrats book is finished**\n"
+  raw: 'See the code below ![](images/00036.jpeg)**Now run the application and see
+    the result.**
+
+
+    # Strings
+
+
+    A string is sequence of characters and we
+
+
+    surround them with **double quotes helloworld**
+
+
+    ## string concatenation
+
+
+    we can concatenating strings together with syntax below
+
+
+    ![](images/00037.jpeg)
+
+
+    In this example
+
+
+    We are concatenating first name and last anme strings together with string string
+    literal which is empty string and with + sign.
+
+
+    # Practice Strings
+
+
+    Open visual studio
+
+
+    To create a string
+
+
+    String keyword name of string =string” Example
+
+
+    String firstname=faisal”
+
+
+    String secondname=nazeer”
+
+
+    //now we can concatenate two strings
+
+
+    Var fullname=firstname + +secondname” Now display it on console Console.WriteLine(fullname);
+
+
+    ## CHAPTER 4\. CONTROL FLOW
+
+
+    ### CONDITIONAL STATEMENTS
+
+
+    ![](images/00038.jpeg)
+
+
+    ### **IF/ELSE STATEMENST**
+
+
+    ![](images/00039.jpeg)
+
+
+    ### ON FIRST LINE WE HAVE A CONDITION IF CONDITION IS TRUE THEN IF CODE BLOCK
+    WILL RUN. IF CONDITION IS FALSE THEN ELSE IF BLOCK WILL BE CHECKED IF ELSE IF
+    CONDITION IS TRUE THEN ELSE IF BLOCK WILL RUN OTHERWISE ELSE STATEMENT WILL BE
+    EXECUTED.
+
+
+    ## SWITCH CASE STATEMENTS
+
+
+    ![](images/00040.jpeg)
+
+
+    In switch case statement we compare the value of a variable in cases and if condition
+    is true that code block will run , if not then skip to next and if none of them
+    is true then default block will be executed
+
+
+    ## Syntax of switch/case statements
+
+
+    First we create a variable and then we create cases and compare value of the variable
+    and we can have as many cases we want and finally we can execute default block.
+
+
+    ## Practice Switch Case:
+
+
+    char grade = ''A'';
+
+
+    switch (grade)
+
+
+    {
+
+
+    case ''A'':
+
+
+    Console.WriteLine("Excellent!"); break;
+
+
+    case ''B'':
+
+
+    Console.WriteLine("nice");
+
+
+    break;
+
+
+    case ''C'':
+
+
+    Console.WriteLine("Well done"); break;
+
+
+    case ''D'':
+
+
+    Console.WriteLine("You passed"); break;
+
+
+    case ''F'':
+
+
+    Console.WriteLine("Better try again"); break;
+
+
+    default:
+
+
+    Console .WriteLine("Invalid grade");
+
+
+    break;
+
+
+    }
+
+
+    Console.WriteLine("Your grade is {0}", grade);
+
+
+    Here we are checking the grade in every case which is A if any case is equal to
+    a that will run and in this case first case is A so first block of the code will
+    run.
+
+
+    ## Iteration Statements
+
+
+    These statements are used to repeat sequence of statements un till given condition
+    is true.
+
+
+    Types of itteration statements
+
+
+    ![](images/00041.jpeg)
+
+
+    # For loop
+
+
+    ## SYNTAX
+
+
+    The syntax of a **for** loop in C# is:
+
+
+    for ( init; condition; increment )
+
+
+    {
+
+
+    statement(s);
+
+
+    }
+
+
+    Here is the flow of control in a for loop:
+
+
+     The **init** step is executed first, and only once. This step allows you to
+    declare and initialize any loop control variables. You are not required to put
+    a statement here, as long as a semicolon appears.
+
+
+     Next, the **condition** is evaluated. If it is true, the body of the loop is
+    executed. If it is false, the body of the loop does not execute and flow of control
+    jumps to the next statement just after the for loop.
+
+
+     After the body of the for loop executes, the flow of control jumps back up to
+    the **increment** statement. This statement allows you to update any loop control
+    variables. This statement can be left blank, as long as a semicolon appears after
+    the condition.
+
+
+     The condition is now evaluated again. If it is true, the loop executes and the
+    process repeats itself (body of loop, then increment step, and then again testing
+    for a condition). After the condition becomes false, the for loop terminates.
+
+
+    ## **EXAMPLE**
+
+
+    using System;
+
+
+    namespace Loops {
+
+
+    class Program {
+
+
+    static void Main(string[] args) {
+
+
+    /* for loop execution */ for (int a = 10; a < 20; a = a + 1) {
+
+
+    Console.WriteLine("value of a: {0}", a); }
+
+
+    Console.ReadLine();
+
+
+    }
+
+
+    }
+
+
+    }
+
+
+    When the above code is compiled and executed, it produces the following result:
+
+
+    value of a: 10
+
+
+    value of a: 11
+
+
+    value of a: 12
+
+
+    value of a: 13
+
+
+    value of a: 14
+
+
+    value of a: 15
+
+
+    value of a: 16
+
+
+    value of a: 17
+
+
+    value of a: 19
+
+
+    ## While loop
+
+
+    A **while** loop statement in C# repeatedly executes a target statement as long
+    as a given condition is true.
+
+
+    ## **SYNTAX**
+
+
+    The syntax of a **while** loop in C# is:
+
+
+    while(condition)
+
+
+    {
+
+
+    statement(s);
+
+
+    }
+
+
+    Here, **statement(s)** may be a single statement or a block of statements. The
+    **condition** may be any expression, and true is any non-zero value. The loop
+    iterates while the condition is true.
+
+
+    When the condition becomes false, program control passes to the line immediately
+    following the loop.
+
+
+    ## **EXAMPLE**
+
+
+    using System;
+
+
+    namespace Loops {
+
+
+    class Program
+
+
+    { static void Main(string[] args) {
+
+
+    /* local variable definition */ int a = 10;
+
+
+    /* while loop execution */ while (a < 20)
+
+
+    {
+
+
+    Console .WriteLine("value of a: {0}", a); a++;
+
+
+    }
+
+
+    Console.ReadLine();
+
+
+    }
+
+
+    }
+
+
+    }
+
+
+    When the above code is compiled and executed, it produces the following result:
+
+
+    value of a: 10
+
+
+    value of a: 11
+
+
+    value of a: 12
+
+
+    value of a: 13
+
+
+    value of a: 14
+
+
+    value of a: 15
+
+
+    value of a: 16
+
+
+    value of a: 17
+
+
+    value of a: 18
+
+
+    ## **Do While Loop**
+
+
+    Unlike **for** and **while** loops, which test the loop condition at the start
+    of the loop, the **do...while** loop checks its condition at the end of the loop.
+
+
+    A **do...while** loop is similar to a while loop, except that a do...while loop
+    is guaranteed to execute at least one time.
+
+
+    ## **SYNTAX**
+
+
+    The syntax of a **do...while** loop in C# is:
+
+
+    do
+
+
+    {
+
+
+    statement(s);
+
+
+    }while( condition );
+
+
+    Notice that the conditional expression appears at the end of the loop, so the
+    statement(s) in the loop execute once before the condition is tested.
+
+
+    If the condition is true, the flow of control jumps back up to do, and the statement(s)
+    in the loop execute again. This process repeats until the given condition becomes
+    false.
+
+
+    ## **EXAMPLE**
+
+
+    using System; namespace Loops {
+
+
+    class Program { static void Main(string[] args) {
+
+
+    /* local variable definition */ int a = 10;
+
+
+    /* do loop execution */ do
+
+
+    {
+
+
+    Console .WriteLine("value of a: {0}", a); a = a + 1;
+
+
+    }
+
+
+    while (a < 20);
+
+
+    Console.ReadLine();
+
+
+    }
+
+
+    }
+
+
+    }
+
+
+    When the above code is compiled and executed, it produces the following result:
+
+
+    value of a: 10
+
+
+    value of a: 11
+
+
+    value of a: 12
+
+
+    value of a: 13
+
+
+    value of a: 14
+
+
+    value of a: 16
+
+
+    value of a: 17
+
+
+    value of a: 18
+
+
+    value of a: 19
+
+
+    ## Foreach loop
+
+
+    Foreach loop is used to iterate from the elemenst of object which have list nature
+    ie arrays.
+
+
+    ![](images/00042.jpeg)First we create a local variable and then iterate the object
+    whose elements we want to access
+
+
+    In this example we are iterating all the element of the array and displaying it
+    onto console
+
+
+    # **Congrats book is finished**'
+  toc: []
+  trans: "\n查看下方代码 ![](img/00036.jpeg) 现在运行应用程序并查看结果。\n\n# 字符串\n\n字符串是字符序列，我们用 `\"\
+    double quotes helloworld\"` 将其括起来。\n\n## 字符串拼接\n\n我们可以使用下面的语法将字符串拼接在一起：\n\n![](img/00037.jpeg)\n\
+    \n在此示例中：\n我们正使用字符串字面量（这是一个空字符串）和 `+` 号将 `firstname` 和 `anme` 字符串拼接在一起。\n\n# 字符串练习\n\
+    \n打开 visual studio\n\n创建一个字符串：\n`String keyword name of string =string” Example`\n\
+    `String firstname=faisal”`\n`String secondname=nazeer”`\n\n// 现在我们可以拼接两个字符串\n\n\
+    `Var fullname=firstname + +secondname”` 现在在控制台上显示它 Console.WriteLine(fullname);`\n\
+    \n# 第 4 章. 控制流\n\n### 条件条件语句\n\n![](img/00038.jpeg)\n\n### IF/ELSE 语句\n\n![](img/00039.jpeg)\n\
+    \n在第一行我们有一个条件 IF，如果条件为真，则执行 IF 代码块。如果条件为假，则将检查 ELSE IF 块，如果 ELSE IF 条件为真，则执行 ELSE\
+    \ IF 块，否则执行 ELSE 语句。\n\n## SWITCH CASE 语句\n\n![](img/00040.jpeg)\n\n在 switch case\
+    \ 语句中，我们在 cases 中比较变量的值，如果条件为真，则将运行该代码块；否则跳到下一个；如果所有条件都不为真，则将执行 default 块。\n\n\
+    ## switch/case 语句的语法\n\n首先我们创建一个变量，然后创建 cases 并比较变量的值，我们可以拥有任意数量的 cases，最后执行 default\
+    \ 块。\n\n## Switch Case 练习：\n\n```sharp\nchar grade = 'A';\n\nswitch (grade)\n\
+    {\ncase 'A':\nConsole.WriteLine(\"Excellent!\"); break;\ncase 'B':\nConsole.WriteLine(\"\
+    nice\");\nbreak;\ncase 'C':\nConsole.WriteLine(\"Well done\"); break;\ncase 'D':\n\
+    Console.WriteLine(\"You passed\"); break;\ncase 'F':\nConsole.WriteLine(\"Better\
+    \ try again\"); break;\ndefault:\nConsole .WriteLine(\"Invalid grade\");\nbreak;\n\
+    }\nConsole.WriteLine(\"Your grade is {0}\", grade);\n```\n\n这里我们在每个 case 中检查等级，即\
+    \ `A`，如果任何 case 等于 `a`，它将运行；在这种情况下，第一个 case 是 `A`，所以将运行第一个代码块。\n\n## 迭代语句\n\n\
+    这些语句用于重复一系列语句，直到给条件为真。\n\n迭代语句的类型\n\n![](img/00041.jpeg)\n\n# For 循环\n\n## 语法\n\
+    \nC# 中 `for` 循环的语法如下：\n\n```csharp\nfor ( init; condition; increment )\n{\n  \
+    \  statement(s);\n}\n```\n\n这里是 for 循环中的控制流：\n\n- 首先执行 `init` 步骤，且只执行一次。此步骤允许你声明并初始化任何循环控制变量。你不需要在此处放置语句，只要出现分号即可。\n\
+    - 接下来，评估 `condition`。如果它为真，则执行循环体。如果为假，则不执行循环体，控制流跳转到 for 循环之后的的第一条语句。\n- 在执行完\
+    \ for 循环体后，控制流跳转回 `increment` 语句。此语句允许你更新任何循环控制变量。只要在条件后出现分号，此语句可以留空。\n- 现在再次评估条件。如果它为真，则循环执行并重复该过程（循环体、然后增量步骤、然后再次测试条件）。在条件变为假后，for\
+    \ 循环终止。\n\n## 示例\n\n```csharp\nusing System;\n\nnamespace Loops {\nclass Program\
+    \ {\n    static void Main(string[] args) {\n        /* for 循环执行 */ for (int a\
+    \ = 10; a < 20; a = a + 1) {\n            Console.WriteLine(\"value of a: {0}\"\
+    , a); \n        }\n        Console.ReadLine();\n    }\n}\n}\n```\n\n当上述代码被编译并执行时，它产生以下结果：\n\
+    \nvalue of a: 10\nvalue of a: 11\nvalue of a: 12\nvalue of a: 13\nvalue of a:\
+    \ 14\nvalue of a: 15\nvalue of a: 16\nvalue of a: 17\nvalue of a: 19\n\n## While\
+    \ 循环\n\nC# 中的 `while` 循环语句只要给定条件为真，就会重复执行目标语句。\n\n## 语法\n\nC# 中 `while` 循环的语法如下：\n\
+    \n```csharp\nwhile(condition)\n{\n    statement(s);\n}\n```\n\n在这里，`statement(s)`\
+    \ 可能是单个语句或一个语句块。`condition` 可以是任何表达式，true 是任何非零值。循环在条件为真时进行迭代。\n\n当条件变为假时，程序控制传递到紧随循环的行。\n\
+    \n## 示例\n\n```csharp\nusing System;\n\nnamespace Loops {\nclass Program\n{\n \
+    \   static void Main(string[] args) {\n        /* 局部变量定义 */ int a = 10;\n    \
+    \    /* while 循环执行 */ while (a < 20)\n        {\n            Console .WriteLine(\"\
+    value of a: {0}\", a); a++;\n        }\n        Console.ReadLine();\n    }\n}\n\
+    }\n```\n\n当上述代码被编译并执行时，它产生以下结果：\n\nvalue of a: 10\nvalue of a: 11\nvalue of a:\
+    \ 12\nvalue of a: 13\nvalue of a: 14\nvalue of a: 15\nvalue of a: 16\nvalue of\
+    \ a: 17\nvalue of a: 18\n\n## Do While Loop\n\n与 `for` 和 `while` 循环在循环开始时测试条件不同，`do...while`\
+    \ 循环在循环结束时检查条件。\n\n`do...while` 循环类似于 while 循环，但 `do...while` 循环保证至少执行一次。\n\n\
+    ## 语法\n\nC# 中 `do...while` 循环的语法如下：\n\n```csharp\ndo\n{\n    statement(s);\n}while(\
+    \ condition );\n```\n\n注意条件表达式出现在循环末尾，因此在测试条件之前会执行循环中的 `statement(s)`。\n\n如果条件为真，控制流跳转回\
+    \ `do`，再次执行 `statement(s)`。此过程重复直到给定条件变为假。\n\n## 示例\n\n```csharp\nusing System;\n\
+    \nnamespace Loops {\nclass Program {\n    static void Main(string[] args) {\n\
+    \        /* 局部变量定义 */ int a = 10;\n        /* do 循环执行 */ do\n        {\n     \
+    \       Console .WriteLine(\"value of a: {0}\", a); a = a + 1;\n        }\nwhile\
+    \ (a < 20);\n        Console.ReadLine();\n    }\n}\n}\n```\n\n当上述代码被编译并执行时，它产生以下结果：\n\
+    \nvalue of a: 10\nvalue of a: 11\nvalue of a: 12\nvalue of a: 13\nvalue of a:\
+    \ 14\nvalue of a: 16\nvalue of a: 17\nvalue of a: 18\nvalue of a: 19\n\n## Foreach\
+    \ 循环\n\nForeach 循环用于遍历具有列表性质对象的元素，例如数组。\n\n![](img/00042.jpeg)首先创建一个局部变量，然后遍历我们想要访问元素的对象。\n\
+    \n在此示例中，我们正在遍历数组的所有元素并将其显示在控制台上。\n\n# **恭喜，书写完成了**\n\n"

@@ -1,0 +1,719 @@
+- fmt: "\n![](rsrc135.jpg)\n![](rsrc135.jpg)\n\n# C# CODING EXAMPLES PROGRAMMING FOR\
+    \ BEGINNERS J KING\n\n## 目录\n- [C# | Print messages/text (program to print Hello\
+    \ world](#part0003.xhtml)\n- [C# program to print a new line](#part0004.xhtml)\n\
+    - [C# program to print size of various data types](#part0005.xhtml)\n- [Type conversion\
+    \ from double to int in C# Program](#part0006.xhtml)\n- [Define various types\
+    \ of constants](#part0007.xhtml)\n- [C# program to demonstrate example of arithmetic\
+    \ operators](#part0008.xhtml)\n- [Program to demonstrate example of bitwise operators](#part0009.xhtml)\n\
+    - [program to demonstrate example of relational operators](#part0010.xhtml)\n\
+    - [Find the addition of two integer numbers](#part0011.xhtml)\n- [Program to swap\
+    \ two numbers](#part0012.xhtml)\n- [Program to demonstrate example of simple if\
+    \ else statement](#part0013.xhtml)\n- [Example of multiple if else statement](#part0014.xhtml)\n\
+    - [C# program of conditional operator](#part0015.xhtml)\n- [C# program example\
+    \ of switch statement](#part0016.xhtml)\n- [C# program to find largest of two\
+    \ numbers](#part0017.xhtml)\n- [Print numbers from 1 to 15 using while loop](#part0018.xhtml)\n\
+    - [Print numbers from 1 to 15 using do while loop](#part0019.xhtml)\n- [Program\
+    \ to find out the prime numbers among 2 to 30](#part0020.xhtml)\n\n## C# | Print\
+    \ messages/text (program to print Hello world)\n\nWe use two functions to print\
+    \ the message / text, or any value:\n\n- `Console.Write()`: This feature shows\
+    \ text, values on the output device, and after the message, does not insert a\
+    \ new line.\n- `Console.WriteLine()`: This feature shows text, values on the device\
+    \ that is output and adds a new line after the message.\n\n### PROGRAM\n```csharp\n\
+    /*c# basic program to print messages*/\nusing System;\nclass HelloWorld {\n  \
+    \  static void Main() {\n        //print text without inserting new line after\
+    \ the message\n        Console.Write(\"Hello World,\");\n        Console.Write(\"\
+    How are you?\");\n        //print new line\n        Console.WriteLine();\n   \
+    \     //print text with new line after the message\n        Console.WriteLine(\"\
+    Hello World\");\n        Console.WriteLine(\"How are you?\");\n        //print\
+    \ new line using escape sequence just like C language\n        Console.WriteLine(\"\
+    Hello World\\nHow are you?\");\n    }\n}\n```\n\n### Output\n```\nHello World,How\
+    \ are you?\nHello World\nHow are you?\nHello World\nHow are you?\n```\n\n## C#\
+    \ program to print a new line\n\nWe may use the following methods to print a new\
+    \ line within the message when printing it on the screen:\n\n- Using `\\n` - print\
+    \ new line\n- Using `\\x0A` or `\\x A` (ASCII literal of `\\n`) – prints new line\n\
+    - Using `Console.WriteLine()` – prints a new line, if we write some message in\
+    \ the process\n"
+  raw: '
+
+
+    ![](rsrc135.jpg)
+
+
+    ![](rsrc135.jpg)C# CODINGEXAMPLESPROGRAMMING FOR BEGINNERSJ KING[C# | Print messages/text
+    (program to print Hello world)](#part0003.xhtml)[C# program to print a new line](#part0004.xhtml)[C#
+    program to print size of various data types](#part0005.xhtml)[Type conversion
+    from double to int in C# Program](#part0006.xhtml)[Define various types of constants](#part0007.xhtml)[C#
+    program to demonstrate example of arithmetic operators](#part0008.xhtml)[Program
+    to demonstrate example of bitwise operators](#part0009.xhtml)[program to demonstrate
+    example of relational operators](#part0010.xhtml)[Find the addition of two integer
+    numbers](#part0011.xhtml)[Program to swap two numbers](#part0012.xhtml)[Program
+    to demonstrate example of simple if else statement](#part0013.xhtml)[Example of
+    multiple if else statement](#part0014.xhtml)[C# program of conditional operator](#part0015.xhtml)[C#
+    program example of switch statement](#part0016.xhtml)[C# program to find largest
+    of two numbers](#part0017.xhtml)[Print numbers from 1 to 15 using while loop](#part0018.xhtml)[Print
+    numbers from 1 to 15 using do while loop](#part0019.xhtml)[Program to find out
+    the prime numbers among 2 to 30](#part0020.xhtml)C# | Print messages/text (program
+    to print Hello world)We use two functions to print the message / text, or any
+    value:Console.Write ();This feature shows text, values on the output device, and
+    after the message, does not insert a new line.Console.WriteLine();This feature
+    shows text, values on the device that is output and adds a new line after the
+    message.PROGRAM/*c# basic program to print messages*/using System;class HelloWorld
+    {​ static void Main() {​ //print text without inserting new line after the message​
+    Console.Write("Hello World,");​ Console.Write("How are you?");​ //print new line​
+    Console.WriteLine();​ //print text with new line after the message​ Console.WriteLine("Hello
+    World");​ Console.WriteLine("How are you?");​ //print new line using escape sequence
+    just like C language​ Console.WriteLine("Hello World\nHow are you?");​ }}OutputHello
+    World,How are you?Hello WorldHow are you?Hello WorldHow are you?C# program to
+    print a new lineWe may use the following methods to print a new line within the
+    message when printing it on the screen,
+
+
+    *   Using \n-print new line
+
+
+    *   Using \x0 A or \x A (ASCII literal of \n) – prints new line
+
+
+    *   Console. WriteLine() – prints a new line, if we write some message in the
+    process'
+  toc: []
+  trans: "\n\n![](img/rsrc135.jpg)\n![](img/rsrc135.jpg)\n\n# 初学者 C# 代码编程示例 J KING\n\
+    \n## 目录\n- C# | 打印消息/文本（打印 Hello world 的程序）\n- 打印新行行的 C# 程序\n- 打印各种数据类型大小的 C#\
+    \ 程序\n- C# 程序中从 double 到 int 的类型转换\n- 定义不同类型的常量\n- 演示算术运算符示例的 C# 程序\n- 演示位运算符示例的程序\n\
+    - 演示关系运算符示例的程序\n- 计算两个整数之和的程序\n- 交换两个数字的程序\n- 演示简单 if else 语句的程序\n- 多重 if else\
+    \ 语句示例\n- 条件运算符的 C# 程序\n- switch 语句示例的 C# 程序\n- 求两个数字较大值的 C# 程序\n- 使用 while 循环打印\
+    \ 1 到 15\n- 使用 do while 循环打印 1 到 15\n- 找出 2 到 30 之间质数的程序\n\n## C# | 打印消息/文本（打印\
+    \ Hello world 的程序）\n\n我们使用以下两个函数来打印消息/文本或任何值：\n\n- `Console.Write()`：此功能在输出设备上显示文本、值，并在消息后不插入换行。\n\
+    - `Console.WriteLine()`：此功能在设备上显示文本、值，并在消息后添加一个换行。\n\n### 程序\n```csharp\n/*c#\
+    \ 打印消息的基础程序*/\nusing System;\nclass HelloWorld {\n    static void Main() {\n \
+    \       // 在消息后不插入换行的文本\n        Console.Write(\"Hello World,\");\n        Console.Write(\"\
+    How are you?\");\n        // 换行\n        Console.WriteLine();\n        // 在消息后带有换行行的文本\n\
+    \        Console.WriteLine(\"Hello World\");\n        Console.WriteLine(\"How\
+    \ are you?\");\n        // 像 C 语言一样使用转义序列换行\n        Console.WriteLine(\"Hello\
+    \ World\\nHow are you?\");\n    }\n}\n```\n\n### 输出\n```\nHello World,How are\
+    \ you?\nHello World\nHow are you?\nHello World\nHow are you?\n```\n\n## 打印新行的\
+    \ C# 程序\n\n在屏幕上打印消息时，可以使用以下方法在消息内部打印换行：\n\n- 使用 `\\n` - 打印换行\n 使用 使用 `\\x0A` 或\
+    \ `\\x A`（`\\n` 的 ASCII 字面量）—— 打印换行\n- 使用 `Console.WriteLine()` – 如果我们在过程中写入了消息，则会打印换行\n\
+    \n"
+- fmt: "\n# C# program to print a new line\n\n```csharp\nusing System;\nusing System.IO;\n\
+    using System.Text;\nnamespace IncludeHelp\n{\n    class Test\n    {\n        //\
+    \ Main Method\n        static void Main(string[] args)\n        {\n          \
+    \  //using \\n\n            Console.WriteLine(\"Hello\\nWorld\");\n          \
+    \  //using \\x0A\n            Console.WriteLine(\"Hello\\x0AWorld\");\n      \
+    \      Console.WriteLine();\n            Console.WriteLine(\"end of the program\"\
+    );\n            //hit ENTER to exit the program\n            Console.ReadLine();\n\
+    \        }\n    }\n}\n```\nOutput\n```\nHelloWorld\nHelloWorld\nend of the program\n\
+    ```\n\n# C# program to print size of various data types\nWe will print the size\
+    \ of the different types of data, we will print the type size, we will use `sizeof()`\
+    \ operator.\n\n```csharp\nusing System;\nusing System.IO;\nusing System.Text;\n\
+    namespace IncludeHelp\n{\n    class Test\n    {\n        // Main Method\n    \
+    \    static void Main(string[] args)\n        {\n            Console.WriteLine(\"\
+    sizeof(int): {0}\", sizeof(int));\n            Console.WriteLine(\"sizeof(float):\
+    \ {0}\", sizeof(float));\n            Console.WriteLine(\"sizeof(char): {0}\"\
+    , sizeof(char));\n            Console.WriteLine(\"sizeof(double): {0}\", sizeof(double));\n\
+    \            Console.WriteLine(\"sizeof(bool): {0}\", sizeof(bool));\n       \
+    \     //hit ENTER to exit the program\n            Console.ReadLine();\n     \
+    \   }\n    }\n}\n```\nOutput\n```\nsizeof(int): 4\nsizeof(float): 4\nsizeof(char):\
+    \ 2\nsizeof(double): 8\nsizeof(bool): 1\n```\n\n# Type conversion from double\
+    \ to int in C# Program\nSyntax: `int_variable = (int)double_variable;`\n\nExample:\n\
+    Input:\n```csharp\ndouble a = 123456.789;\nint b = 0;\n//type conversion\nb =\
+    \ (int)a;\n```\nOutput:\n```\na: 123456.789\nb: 123456\n```\n\n```csharp\n// C#\
+    \ program for type conversion from double to int\nusing System;\nusing System.IO;\n\
+    using System.Text;\nnamespace IncludeHelp\n{\n    class Test\n    {\n        //\
+    \ Main Method\n        static void Main(string[] args)\n        {\n          \
+    \  double a = 123456.789;\n            int b = 0;\n            //type conversion\n\
+    \            b = (int)a;\n            Console.WriteLine(\"value of a: {0}\", a);\n\
+    \            Console.WriteLine(\"value of b: {0}\", b);\n            //hit ENTER\
+    \ to exit the program\n            Console.ReadLine();\n        }\n    }\n}\n\
+    ```\nOutput\n```\nvalue of a: 123456.789\nvalue of b: 123456\n```\n\n# Define\
+    \ various types of constants\nA constant can be described using `const` keyword,\
+    \ its value can never be modified once the constant is defined.\n\nSyntax: `const\
+    \ data_type constant_name = value;`\n`const float PI = 3.14f;`\n\nExample:\nInput:\n\
+    ```csharp\nconst int a = 10;   //integer constant\nConsole.WriteLine(\"a: {0}\"\
+    , a);\n```\nOutput:\n```\na: 10\n```\n\n```csharp\n// C# program to define various\
+    \ types of constants\nusing System;\nusing System.IO;\nusing System.Text;\nnamespace\
+    \ IncludeHelp\n{\n    class Test\n    {\n        // Main Method\n        static\
+    \ void Main(string[] args)\n        {\n            const int a = 10;   //integer\
+    \ constant\n            const float b = 20.23f; //float constant\n           \
+    \ const double c = 10.23;  //double constant\n            const char d = 'Y';\
+    \      //character constant\n            const string e = \"Hello\";   //string\
+    \ constant\n            //printing values\n            Console.WriteLine(\"a:\
+    \ {0}\", a);\n            Console.WriteLine(\"b: {0}\", b);\n            Console.WriteLine(\"\
+    c: {0}\", c);\n            Console.WriteLine(\"d: {0}\", d);\n            Console.WriteLine(\"\
+    e: {0}\", e);\n            //hit ENTER to exit the program\n            Console.ReadLine();\n\
+    \        }\n    }\n}\n```\nOutput\n```\na: 10\nb: 20.23\nc: 10.23\nd: Y\ne: Hello\n\
+    ```\n\n# C# program to demonstrate example of arithmetic operators\nExample:\n\
+    Input:\n```csharp\nint a = 10;\nint b = 3;\n//operations\nint sum = a + b;\nint\
+    \ sub = a - b;\nint mul = a * b;\nfloat div = (float)a / (float)b;\nint rem =\
+    \ a % b;\n```\nOutput:\n```\nsum = 13\nsub = 7\nmul = 30\ndiv = 3.333333\nrem\
+    \ = 1\n```\n\n```csharp\n// C# program to demonstrate example of\n// arithmetic\
+    \ operators\nusing System;\nusing System.IO;\nusing System.Text;\nnamespace codingex\n\
+    {\n    class Test\n    {\n        // Main Method\n        static void Main(string[]\
+    \ args)\n        {\n            int a = 10;\n            int b = 3;\n        \
+    \    int sum = a + b;\n            int sub = a - b;\n            int mul = a *\
+    \ b;\n            float div = (float)a / (float)b;\n            int rem = a %\
+    \ b;\n            Console.WriteLine(\"Addition of {0} and {1} is = {2}\", a, b,\
+    \ sum);\n            Console.WriteLine(\"Subtraction of {0} and {1} is = {2}\"\
+    , a, b, sub);\n            Console.WriteLine(\"Multiplication of {0} and {1} is\
+    \ = {2}\", a, b, mul);\n            Console.WriteLine(\"Division of {0} and {1}\
+    \ is = {2}\", a, b, div);\n            Console.WriteLine(\"Remainder of {0} and\
+    \ {1} is = {2}\", a, b, rem);\n            //hit ENTER to exit the program\n \
+    \           Console.ReadLine();\n        }\n    }\n}\n```\nOutput\n```\nAddition\
+    \ of 10 and 3 is = 13\nSubtraction of 10 and 3 is = 7\nMultiplication of 10 and\
+    \ 3 is = 30\nDivision of 10 and 3 is = 3.333333\nRemainder of 10 and 3 is = 1\n\
+    ```\n\n# Program to demonstrate example of bitwise operators\nBitwise operators\
+    \ will be used to perform the bits calculations.\n- `&` (Bitwise AND): returns\
+    \ 1 if both bits are set\n- `|` (Bitwise OR): returns 1 if any or all bits are\
+    \ set\n- `^` (Bitwise XOR): returns 1 if only one bit is set\n- `~` (Bitwise NOT):\
+    \ returns an operand's compliment\n- `<` (Bitwise Left Shift): move bits to the\
+    \ left\n- `>` (Bitwise Right Shift): switch bits to the right\n\nSyntax:\n`Operand1\
+    \ & Operand2`\n`Operand1 | Operand2`\n`Operand1 ^ Operand2`\n`~Operand1`\n`Operand1\
+    \ << Operand2`\n`Operand1 >> Operand2`\n\nExample:\n```csharp\nint a = 10;\nint\
+    \ b = 3;\n//operations\na & b = 2\na | b = 11\na ^ b = 9\n~a = -11\na << 2 = 40\n\
+    a >> 2 = 2\n```\n\n```csharp\n// C# program to demonstrate example of\n// bitwise\
+    \ operators\nusing System;\nusing System.IO;\nusing System.Text;\nnamespace IncludeHelp\n\
+    {\n    class Test\n    {\n        // Main Method\n        static void Main(string[]\
+    \ args)\n        {\n            int a = 10;\n            int b = 3;\n        \
+    \    int result = 0;\n            result = a & b;\n            Console.WriteLine(\"\
+    a & b: {0}\", result);\n            result = a | b;\n            Console.WriteLine(\"\
+    a | b: {0}\", result);\n            result = a ^ b;\n            Console.WriteLine(\"\
+    a ^ b: {0}\", result);\n            result = ~a;\n            Console.WriteLine(\"\
+    ~a: {0}\", result);\n            result = a << 2;\n            Console.WriteLine(\"\
+    a << b: {0}\", result); // Note: original text had a << b logic inconsistency\n\
+    \            result = a >> 2;\n            Console.WriteLine(\"a >> b: {0}\",\
+    \ result);\n            //hit ENTER to exit the program\n            Console.ReadLine();\n\
+    \        }\n    }\n}\n```\n*(Note: The provided text for bitwise operators had\
+    \ some logical inconsistencies in variable usage; the formatting above follows\
+    \ the structure provided).*\n\n# Program to demonstrate example of relational\
+    \ operators\n- `==` (Equal To): returns true if both operands are identical\n\
+    - `!=` (Not Equal To): returns true if both operands are not equal\n- `<` (Less\
+    \ Than): if first operand is less than second operand, it returns true\n- `<=`\
+    \ (less than or equal to): if the first operand is less than or equal to the second\
+    \ operand, it is true\n- `>` (Greater Than): if the first operand is greater than\
+    \ the second operand, it is true\n- `>=` (Greater Than or Equal): if the first\
+    \ operand is greater than or equal to the second operand, it is true\n\nSyntax:\n\
+    `Operand1 == Operand2`\n`Operand1 != Operand2`\n`Operand1 < Operand2`\n`Operand1\
+    \ <= Operand2`\n`Operand1 > Operand2`\n`Operand1 >= Operand2`\n\nExample:\n```csharp\n\
+    int a = 10;\nint b = 3;\nConsole.WriteLine(\"a==b: {0}\", (a == b));\nConsole.WriteLine(\"\
+    a!=b: {0}\", (a != b));\nConsole.WriteLine(\"a>b: {0}\", (a > b));\nConsole.WriteLine(\"\
+    a>=b: {0}\", (a >= b));\nConsole.WriteLine(\"a<b: {0}\", (a < b));\nConsole.WriteLine(\"\
+    a<=b: {0}\", (a <= b));\n```\nOutput\n```\na==b: False\na!=b: True\na>b: True\n\
+    a>=b: True\na<b: False\na<=b: False\n```\n\n```csharp\n// C# program to demonstrate\
+    \ example of\n// relational operators\nusing System;\nusing System.IO;\nusing\
+    \ System.Text;\nnamespace IncludeHelp\n{\n    class Test\n    {\n        // Main\
+    \ Method\n        static void Main(string[] args)\n        {\n            int\
+    \ a = 10;\n            int b = 3;\n            //printing return type\n      \
+    \      Console.WriteLine(\"Return type of == operator: {0}\", (a == b).GetType());\n\
+    \            Console.WriteLine(\"Return type of != operator: {0}\", (a != b).GetType());\n\
+    \            Console.WriteLine(\"Return type of > operator : {0}\", (a > b).GetType());\n\
+    \            Console.WriteLine(\"Return type of >= operator: {0}\", (a >= b).GetType());\n\
+    \            Console.WriteLine(\"Return type of < operator : {0}\", (a < b).GetType());\n\
+    \            Console.WriteLine(\"Return type of <= operator: {0}\", (a <= b).GetType());\n\
+    \            //printing return values\n            Console.WriteLine(\"a==b: {0}\"\
+    , (a == b));\n            Console.WriteLine(\"a!=b: {0}\", (a != b));\n      \
+    \      Console.WriteLine(\"a>b: {0}\", (a > b));\n            Console.WriteLine(\"\
+    a>=b: {0}\", (a >= b));\n            Console.WriteLine(\"a<b: {0}\", (a < b));\n\
+    \            Console.WriteLine(\"a<=b: {0}\", (a <= b));\n            //checking\
+    \ conditions\n            if (a == b)\n                Console.WriteLine(\"a is\
+    \ equal to b\");\n            else\n                Console.WriteLine(\"a is not\
+    \ equal to b\");\n            if (a != b)\n                Console.WriteLine(\"\
+    a is not equal to b\");\n            else\n                Console.WriteLine(\"\
+    a is equal to b\");\n            if (a > b)\n                Console.WriteLine(\"\
+    a is greater than b\");\n            else\n                Console.WriteLine(\"\
+    a is not greater than b\");\n            if (a >= b)\n                Console.WriteLine(\"\
+    a is greater than or equal to b\");\n            else\n                Console.WriteLine(\"\
+    a is not greater than equal to b\");\n            if (a < b)\n               \
+    \ Console.WriteLine(\"a is less than b\");\n            else\n               \
+    \ Console.WriteLine(\"a is not less than b\");\n            if (a <= b)\n    \
+    \            Console.WriteLine(\"a is less than or equal to b\");\n          \
+    \  else\n                Console.WriteLine(\"a is not less than equal to b\");\n\
+    \            //checking conditions in another way\n            if ((a == b) ==\
+    \ true)\n                Console.WriteLine(\"a is equal to b\");\n           \
+    \ else\n                Console.WriteLine(\"a is not equal to b\");\n        \
+    \    if ((a != b) == true)\n                Console.WriteLine(\"a is not equal\
+    \ to b\");\n            else\n                Console.WriteLine(\"a is equal to\
+    \ b\");\n            if ((a > b) == true)\n                Console.WriteLine(\"\
+    a is greater than b\");\n            else\n                Console.WriteLine(\"\
+    a is not greater than b\");\n            if ((a >= b) == true)\n             \
+    \   Console.WriteLine(\"a is greater than or equal to b\");\n            else\n\
+    \                Console.WriteLine(\"a is not greater than equal to b\");\n  \
+    \          if ((a < b) == true)\n                Console.WriteLine(\"a is less\
+    \ than b\");\n            else\n                Console.WriteLine(\"a is not less\
+    \ than b\");\n            if ((a <= b) == true)\n                Console.WriteLine(\"\
+    a is less than or equal to b\");\n            else\n                Console.WriteLine(\"\
+    a is not less than equal to b\");\n            //hit ENTER to exit the program\n\
+    \            Console.ReadLine();\n        }\n    }\n}\n```\nOutput\n```\nReturn\
+    \ type of == operator: System.Boolean\nReturn type of != operator: System.Boolean\n\
+    Return type of > operator: System.Boolean\nReturn type of >= operator: System.Boolean\n\
+    Return type of < operator: System.Boolean\nReturn type of <= operator: System.Boolean\n\
+    a==b: False\na!=b: True\na>b: True\na>=b: True\na<b: False\na<=b: False\na is\
+    \ not equal to b\na is not equal to b\na is greater than b\na is not greater than\
+    \ b\na is greater than or equal to b\na is not greater than equal to b\na is less\
+    \ than b\na is not less than b\na is less than or equal to b\na is not less than\
+    \ equal to b\n```\n\n# Find the addition of two integer numbers\nInput:\n```\n\
+    First number: 10\nSecond number: 20\n```\nOutput:\n```\nAddition of 10 and 20\
+    \ is = 30\n```\n\n```csharp\nusing System;\nclass AddTwoNumbers\n{\n    static\
+    \ void Main()\n    {\n        try\n        {\n            //declare two variables\n\
+    \            int a = 0;\n            int b = 0;\n            //input numbers\n\
+    \            Console.Write(\"Enter first number: \");\n            a = Convert.ToInt32(Console.ReadLine());\n\
+    \            Console.Write(\"Enter second number: \");\n            b = Convert.ToInt32(Console.ReadLine());\n\
+    \            //calculating sum\n            int sum = a + b;\n            Console.WriteLine(\"\
+    Addition of \" + a + \" and \" + b + \" is = \" + sum);\n        }\n        catch\
+    \ (Exception ex)\n        {\n            Console.WriteLine(\"Error: \" + ex.ToString());\n\
+    \        }\n    }\n}\n```\nOutput\n```\nEnter first number: 10\nEnter second number:\
+    \ 20\nAddition of 10 and 20 is = 30\n```\n\n# Program to swap two numbers\n\n\
+    ## 1) Swapping ‘using variable variable\nIn order to swap numbers, we use a temporary\
+    \ variable to hold the value. First, we assign the temporary variable first, then\
+    \ assign the second variable to the first variable, and finally assign the second\
+    \ variable to the temporary variable (which holds the first number).\n\n```csharp\n\
+    using System;\nnamespace swap\n{\n    class ab\n    {\n        static void Main(String[]\
+    \ args)\n        {\n            int a = 5, b = 3, temp;\n            //swapping\n\
+    \            temp = a;\n            a = b;\n            b = temp;\n          \
+    \  Console.WriteLine(\"Values after swapping are:\");\n            Console.WriteLine(\"\
+    a=\" + a);\n            Console.WriteLine(\"b=\" + b);\n        }\n    }\n}\n\
+    ```\nOutput\n```\nValues after swapping are:\na=3\nb=5\n```\n\n## 2) Swapping\
+    \ ‘without using third variable\nWe 're not using any additional variable here\
+    \ to swap the numbers. There are certain sets of statements (with mathematical\
+    \ operations performing on the numbers) that swap the variable values used in\
+    \ these operations.\n\nExample:\n```csharp\na = a + b;\nb = a - b;\na = a - b;\n\
+    ```\n\n```csharp\nusing System;\nnamespace swap\n{\n    class ab\n    {\n    \
+    \    static void Main(String[] args)\n        {\n            int a = 10, b = 20;\n\
+    \            //swapping\n            a = a + b;\n            b = a - b;\n    \
+    \        a = a - b;\n            Console.WriteLine(\"Values after swapping are:\"\
+    );\n            Console.WriteLine(\"a=\" + a);\n            Console.WriteLine(\"\
+    b=\" + b);\n        }\n    }\n}\n```\nOutput\n```\nValues after swapping are:\n\
+    a=20\nb=10\n```\n\n# Program to demonstrate example of simple if else statement\n\
+    Syntax:\n```csharp\nif(test_condition)\n{\n    //code section 1\n}\nelse\n{\n\
+    \    //code section 2\n}\n```\n\n```csharp\nusing System;\nusing System.IO;\n\
+    using System.Text;\nnamespace IncludeHelp\n{\n    class Test\n    {\n        //\
+    \ Main Method\n        static void Main(string[] args)\n        {\n          \
+    \  //example 1: Input age and check it's teenage or not\n            int age =\
+    \ 0;\n            Console.Write(\"Enter age: \");\n            age = Convert.ToInt32(Console.ReadLine());\n\
+    \            //checking condition\n            if (age >= 13 && age <= 19)\n \
+    \               Console.WriteLine(\"{0} is teenage\", age);\n            else\n\
+    \                Console.WriteLine(\"{0} is teenage\", age);\n            //example\
+    \ 2: Input two integer numbers and check\n            // whether first number\
+    \ is divisible by second or not?\n            int a, b;\n            Console.Write(\"\
+    Enter first number: \");\n            a = Convert.ToInt32(Console.ReadLine());\n\
+    \            Console.Write(\"Enter second number: \");\n            b = Convert.ToInt32(Console.ReadLine());\n\
+    \            //checking condition\n            if (a % b == 0)\n             \
+    \   Console.WriteLine(\"{0} is divisible by {1}\", a, b);\n            else\n\
+    \                Console.WriteLine(\"{0} is not divisible by {1}\", a, b);\n \
+    \           //hit ENTER to exit the program\n            Console.ReadLine();\n\
+    \        }\n    }\n}\n```\nOutput\n```\nEnter age: 17\n17 is teenage\nEnter first\
+    \ number: 10\nEnter second number: 20\n10 is not divisible by 20\n```\n\n# Example\
+    \ of multiple if else statement\nSyntax:\n```csharp\nif(test_condition1)\n{\n\
+    \    //code section 1\n}\nelse if(test_condition2)\n{\n    //code section 2\n\
+    }\nelse if(test_condition3)\n{\n    //code section 3\n}\nelse\n{\n    //else code\
+    \ section\n}\n```\n\n# C# example for multiple if else statement\n\n```csharp\n\
+    using System;\nusing System.IO;\nusing System.Text;\nnamespace IncludeHelp\n{\n\
+    \    class Test\n    {\n        // Main Method\n        static void Main(string[]\
+    \ args)\n        {\n            //input an integer number and check\n        \
+    \    //it is positive, negative or zero\n            int number;\n           \
+    \ Console.Write(\"Enter an integer number: \");\n            number = Convert.ToInt32(Console.ReadLine());\n\
+    \            //checking conditions\n            if (number > 0)\n            \
+    \    Console.WriteLine(\"{0} is a positive number\", number);\n            else\
+    \ if (number < 0)\n                Console.WriteLine(\"{0} is a negative number\"\
+    , number);\n            else\n                Console.WriteLine(\"{0} is Zero\"\
+    , number);\n            //hit ENTER to exit the program\n            Console.ReadLine();\n\
+    \        }\n    }\n}\n```\nOutput\n```\nEnter an integer number: -123\n-123 is\
+    \ a negative number\n```\n\n# C# program of conditional operator\nConditional\
+    \ Operator is also referred as Ternary Operator, which requires 3 operands. It\
+    \ is performed with `?` and `:`.\n\nSyntax: `logical ? true_block : false_block`\n\
+    \n```csharp\nusing System;\nusing System.IO;\nusing System.Text;\nnamespace IncludeHelp\n\
+    {\n    class Test\n    {\n        // Main Method\n        static void Main(string[]\
+    \ args)\n        {\n            //finding largest of two numbers\n           \
+    \ int a;\n            int b;\n            //input the numbers\n            Console.Write(\"\
+    Enter first number : \");\n            a = Convert.ToInt32(Console.ReadLine());\n\
+    \            Console.Write(\"Enter second number: \");\n            b = Convert.ToInt32(Console.ReadLine());\n\
+    \            //finding largest number\n            int large = (a > b) ? a : b;\n\
+    \            Console.WriteLine(\"Largest number is {0}\", large);\n          \
+    \  //hit ENTER to exit the program\n            Console.ReadLine();\n        }\n\
+    \    }\n}\n```\nOutput\n```\nEnter first number : 100\nEnter second number: 200\n\
+    Largest number is 200\n```\n\n# C# program example of switch statement\nA switch\
+    \ statement allows a variable / value to be checked with a list of values (cases)\
+    \ and the corresponding block to be executed.\n\nSyntax:\n```csharp\nswitch(variable/expression)\n\
+    {\n    case case_value1:\n        statement(s);\n        break;\n    case case_value2:\n\
+    \        break;\n    default:\n        break;\n}\n```\n\n```csharp\nusing System;\n\
+    using System.IO;\nusing System.Text;\nnamespace IncludeHelp\n{\n    class Test\n\
+    \    {\n        // Main Method\n        static void Main(string[] args)\n    \
+    \    {\n            int day;\n            //input the day number\n           \
+    \ Console.Write(\"Enter day number (0-6): \");\n            day = Convert.ToInt32(Console.ReadLine());\n\
+    \            //checking\n            switch (day)\n            {\n           \
+    \     case 0:\n                    Console.WriteLine(\"Sunday\");\n          \
+    \          break;\n                case 1:\n                    Console.WriteLine(\"\
+    Monday\");\n                    break;\n                case 2:\n            \
+    \        Console.WriteLine(\"Tuesday\");\n                    break;\n       \
+    \         case 3:\n                    Console.WriteLine(\"Wednesday\");\n   \
+    \                 break;\n                case 4:\n                    Console.WriteLine(\"\
+    Thursday\");\n                    break;\n                case 5:\n          \
+    \          Console.WriteLine(\"Friday\");\n                    break;\n      \
+    \          case 6:\n                    Console.WriteLine(\"Saturday\");\n   \
+    \                 break;\n                default:\n                    Console.WriteLine(\"\
+    Invalid Input\");\n                    break;\n            }\n            //hit\
+    \ ENTER to exit the program\n            Console.ReadLine();\n        }\n    }\n\
+    }\n```\nOutput\n```\nFirst run:\nEnter day number (0-6): 3\nWednesday\nSecond\
+    \ run:\nEnter day number (0-6): 9\nInvalid Input\n```\n\n# C# program to find\
+    \ largest of two numbers\nWe'll compare their values using either a simple if-else\
+    \ or a ternary operator. When the first number is greater than the second number,\
+    \ assign the first number to the variable where we store the largest number, if\
+    \ the first number is not greater than the second number then assign the second\
+    \ number to the variable.\n\nSyntax using if-elseif `(a > b)`:\n`large = a; else\
+    \ large = b;`\n\nSyntax using ternary operator: `large = (a > b) ? a : b;`\n\n\
+    ```csharp\nusing System;\nusing System.IO;\nusing System.Text;\nnamespace IncludeHelp\n\
+    {\n    class Test\n    {\n        // Main Method\n        static void Main(string[]\
+    \ args)\n        {\n            int a;\n            int b;\n            int large;\n\
+    \            //input the numbers\n            Console.Write(\"Enter first number\
+    \ : \");\n            a = Convert.ToInt32(Console.ReadLine());\n            Console.Write(\"\
+    Enter second number: \");\n            b = Convert.ToInt32(Console.ReadLine());\n\
+    \            //finding largest number using if-elseif (a > b)\n            large\
+    \ = a; else large = b;\n            //printing\n            Console.WriteLine(\"\
+    Using if-else...\");\n            Console.WriteLine(\"Largest number is {0}\"\
+    , large);\n            //finding largest number using ternary operator\n     \
+    \       large = (a > b) ? a : b;\n            //printing\n            Console.WriteLine(\"\
+    Using if-else...\");\n            Console.WriteLine(\"Largest number is {0}\"\
+    , large);\n            //hit ENTER to exit the program\n            Console.ReadLine();\n\
+    \        }\n    }\n}\n```\nOutput\n```\nFirst run:\nEnter first number : 100\n\
+    Enter second number: 200\nUsing if-else...\nLargest number is 200\nSecond run:\n\
+    Enter first number : 100\nEnter second number: 200\nUsing if-else...\nLargest\
+    \ number is 200\n```\n"
+  raw: 'PROGRAM// C# program to print a new lineusing System;using System.IO;using
+    System.Text;namespace IncludeHelp{class Test{// Main Methodstatic void Main(string[]
+    args){//using \nConsole.WriteLine("Hello\nWorld");//using \x0AConsole.WriteLine("Hello\x0AWorld");Console.WriteLine();Console.WriteLine("end
+    of the program");//hit ENTER to exit the programConsole.ReadLine();}}}OutputHelloWorldHelloWorldend
+    of the programC# program to print size of various data typesWe will print the
+    size of the different types of data, we will print the type size, we will use
+    sizeof() operator.PROGRAM// C# program to C# program to print// size of various
+    data typesusing System;using System.IO;using System.Text;namespace IncludeHelp{class
+    Test{// Main Methodstatic void Main(string[] args){Console.WriteLine("sizeof(int):
+    {0}", sizeof(int));Console.WriteLine("sizeof(float): {0}", sizeof(float));Console.WriteLine("sizeof(char):
+    {0}", sizeof(char));Console.WriteLine("sizeof(double): {0}", sizeof(double));Console.WriteLine("sizeof(bool):
+    {0}", sizeof(bool));//hit ENTER to exit the programConsole.ReadLine();}}}Outputsizeof(int):
+    4sizeof(float): 4sizeof(char): 2sizeof(double): 8sizeof(bool): 1Type conversion
+    from double to int in C# ProgramSyntax:int_variable = (int)double_variable;Example:Input:double
+    a = 123456.789;int b = 0;//type conversionb = (int)a;Output:a: 123456.789b: 123456PROGRAM//
+    C# program for type conversion from double to intusing System;using System.IO;using
+    System.Text;namespace IncludeHelp{class Test{// Main Methodstatic void Main(string[]
+    args){double a = 123456.789;int b = 0;//type conversionb = (int)a;Console.WriteLine("value
+    of a: {0}", a);Console.WriteLine("value of b: {0}", b);//hit ENTER to exit the
+    programConsole.ReadLine();}}}Outputvalue of a: 123456.789value of b: 123456Define
+    various types of constantsA constant can be described using const keyword, its
+    value can never be modified once the constant is defined.Syntax:const data_type
+    constant_name = value;const float PI = 3.14f;Example:Input:const int a = 10;   //integer
+    constantConsole.WriteLine("a: {0}", a);Output:a: 10PROGRAM// C# program to define
+    various types of constantsusing System;using System.IO;using System.Text;namespace
+    IncludeHelp{class Test{// Main Methodstatic void Main(string[] args){const int
+    a = 10;   //integer constantconst float b = 20.23f; //float constantconst double
+    c = 10.23;  //double constantconst char d = ''Y'';     //character constantconst
+    string e = "Hello";   //string constant//printing valuesConsole.WriteLine("a:
+    {0}", a);Console.WriteLine("b: {0}", b);Console.WriteLine("c: {0}", c);Console.WriteLine("d:
+    {0}", d);Console.WriteLine("e: {0}", e);//hit ENTER to exit the programConsole.ReadLine();}}}Outputa:
+    10b: 20.23c: 10.23d: Ye: HelloC# program to demonstrate example of arithmetic
+    operatorsExample:Input:int a = 10;int b = 3;//operationsint sum = a + b;int sub
+    = a - b;int mul = a * b;float div = (float)a / (float)b;int rem = a % b;Output:sum
+    = 13sub = 7mul = 30div = 3.333333rem = 1PROGRAM// C# program to demonstrate example
+    of// arithmetic operatorsusing System;using System.IO;using System.Text;namespace
+    codingex{class Test{// Main Methodstatic void Main(string[] args){int a = 10;int
+    b = 3;int sum = a + b;int sub = a - b;int mul = a * b;float div = (float)a / (float)b;int
+    rem = a % b;Console.WriteLine("Addition of {0} and {1} is = {2}", a, b, sum);Console.WriteLine("Subtraction
+    of {0} and {1} is = {2}", a, b, sub);Console.WriteLine("Multiplication of {0}
+    and {1} is = {2}", a, b, mul);Console.WriteLine("Division of {0} and {1} is =
+    {2}", a, b, div);Console.WriteLine("Remainder of {0} and {1} is = {2}", a, b,
+    rem);//hit ENTER to exit the programConsole.ReadLine();}}}OutputAddition of 10
+    and 3 is = 13Subtraction of 10 and 3 is = 7Multiplication of 10 and 3 is = 30Division
+    of 10 and 3 is = 3.333333Remainder of 10 and 3 is = 1Program to demonstrate example
+    of bitwise operatorsBitwise operators will be used to perform the bits calculations."&"
+    (Bitwise AND)-returns 1 (bit) if both bits are set"|" (Bitwise OR) – returns 1
+    (biting), if any or all bits are set"^" (Bitwise XOR)-returns 1 (sets bit) if
+    only one bit is set (not both)"~" (Bitwise NOT)-returns an operand''s compliment,
+    it''s a one-time operator"< <" (Bitwise Left Shift)-move bits to the left"> >"
+    (Bitwise Right Shift)-switch bits to the rightSyntax:Operand1 & Operand2Operand1
+    | Operand2Operand1 ^ Operand2~OperandOperand1 << Operand2Operand1 >> Operand2Example:Input:int
+    a = 10;int b = 3;//operationsa & b   = 2a | b   = 11a ^ b   = 9~a      = -11a
+    << 2  = 40a >> 2  = 2PROGRAM// C# program to demonstrate example of// bitwise
+    operatorsusing System;using System.IO;using System.Text;namespace IncludeHelp{class
+    Test{// Main Methodstatic void Main(string[] args){int a = 10;int b = 3;int result
+    = 0;result = a & b;     //1010 & 0011 = 0010 = 3Console.WriteLine("a & b  : {0}",
+    result);result = a | b;     //1010 | 0011 = 1011 = 11Console.WriteLine("a | b  :
+    {0}", result);result = a ^ b;     //1010 ^ 0011 = 1001Console.WriteLine("a ^ b  :
+    {0}", result);result = ~a;        //ones compliment of 10Console.WriteLine("~a     :
+    {0}", result);result = a << 2;    //1010<<2 = 101000 = 40Console.WriteLine("a
+    << b : {0}", result);result = a >> 2;    //1010>>2 = 0010 = 2Console.WriteLine("a
+    >> b : {0}", result);//hit ENTER to exit the programConsole.ReadLine();}}}Outputa
+    & b  : 2a | b  : 11a ^ b  : 9~a     : -11a << b : 40a >> b : 2program to demonstrate
+    example of relational operators"= =" (Equal To)-returns true if the values of
+    both operands are identical"!=" (Not Equal To) - returns true if the values of
+    both operands are not equal"<" (Less Than) – if first, operand is less than second
+    operand, it returns true"< =" (less than or equal to) – if the first operand is
+    less than or equal to the second operand, it is true.">" (Great Than) – if the
+    first operand is greater than the second operand, it is true"> =" (Great Than
+    or Equal To) – if the first operand is greater than or equal to the second operand,
+    it is true.Syntax:Operand1 == Operand2Operand1 != Operand2Operand1 < Operand2Operand1
+    <= Operand2Operand1 > Operand2Operand1 >= Operand2Example:Input:int a = 10;int
+    b = 3;Console.WriteLine("a==b: {0}", (a == b));Console.WriteLine("a!=b: {0}",
+    (a != b));Console.WriteLine("a>b : {0}", (a > b));Console.WriteLine("a>=b: {0}",
+    (a >= b));Console.WriteLine("a<b : {0}", (a < b));Console.WriteLine("a<=b: {0}",
+    (a <= b));Output:a==b: Falsea!=b: Truea>b : Truea>=b: Truea<b : Falsea<=b: FalsePROGRAM//
+    C# program to demonstrate example of// relational operatorsusing System;using
+    System.IO;using System.Text;namespace IncludeHelp{class Test{// Main Methodstatic
+    void Main(string[] args){int a = 10;int b = 3;//printing return typeConsole.WriteLine("Return
+    type of == operator: {0}", (a == b).GetType());Console.WriteLine("Return type
+    of != operator: {0}", (a != b).GetType());Console.WriteLine("Return type of >
+    operator : {0}", (a > b).GetType());Console.WriteLine("Return type of >= operator:
+    {0}", (a >= b).GetType());Console.WriteLine("Return type of < operator : {0}",
+    (a < b).GetType());Console.WriteLine("Return type of <= operator: {0}", (a <=
+    b).GetType());//printing return valuesConsole.WriteLine("a==b: {0}", (a == b));Console.WriteLine("a!=b:
+    {0}", (a != b));Console.WriteLine("a>b : {0}", (a > b));Console.WriteLine("a>=b:
+    {0}", (a >= b));Console.WriteLine("a<b : {0}", (a < b));Console.WriteLine("a<=b:
+    {0}", (a <= b));//checking conditionsif (a == b)Console.WriteLine("a is equal
+    to b");elseConsole.WriteLine("a is not equal to b");if (a != b)Console.WriteLine("a
+    is not equal to b");elseConsole.WriteLine("a is equal to b");if (a > b)Console.WriteLine("a
+    is greater than b");elseConsole.WriteLine("a is not greater than b");if (a >=
+    b)Console.WriteLine("a is greater than or equal to b");elseConsole.WriteLine("a
+    is not greater than or equal to b");if (a < b)Console.WriteLine("a is less than
+    b");elseConsole.WriteLine("a is not less than b");if (a <= b)Console.WriteLine("a
+    is less than or equal to b");elseConsole.WriteLine("a is not less than or equal
+    to b");//checking conditions in another wayif ((a == b) == true)Console.WriteLine("a
+    is equal to b");elseConsole.WriteLine("a is not equal to b");if ((a != b) == true)Console.WriteLine("a
+    is not equal to b");elseConsole.WriteLine("a is equal to b");if ((a > b) == true)Console.WriteLine("a
+    is greater than b");elseConsole.WriteLine("a is not greater than b");if ((a >=
+    b) == true)Console.WriteLine("a is greater than or equal to b");elseConsole.WriteLine("a
+    is not greater than or equal to b");if ((a < b) == true)Console.WriteLine("a is
+    less than b");elseConsole.WriteLine("a is not less than b");if ((a <= b) == true)Console.WriteLine("a
+    is less than or equal to b");elseConsole.WriteLine("a is not less than or equal
+    to b");//hit ENTER to exit the programConsole.ReadLine();}}}OutputReturn type
+    of == operator: System.BooleanReturn type of != operator: System.BooleanReturn
+    type of > operator : System.BooleanReturn type of >= operator: System.BooleanReturn
+    type of < operator : System.BooleanReturn type of <= operator: System.Booleana==b:
+    Falsea!=b: Truea>b : Truea>=b: Truea<b : Falsea<=b: Falsea is not equal to ba
+    is not equal to ba is greater than ba is greater than or equal to ba is not less
+    than ba is not less than or equal to ba is not equal to ba is not equal to ba
+    is greater than ba is greater than or equal to ba is not less than ba is not less
+    than or equal to bFind the addition of two integer numbersExample:Input:First
+    number: 10Second number: 20Output:Addition of 10 and 20 is = 30PROGRAMusing System;class
+    AddTwoNumbers {static void Main() {try{//declare two variablesint a = 0;int b
+    = 0;//input numbersConsole.Write("Enter first number: ");a = Convert.ToInt32(Console.ReadLine());Console.Write("Enter
+    second number: ");b = Convert.ToInt32(Console.ReadLine());           //calculating
+    sumint sum = a+b;Console.WriteLine("Addition of " + a + " and " + b + " is = "
+    + sum);}catch(Exception ex){Console.WriteLine("Error: " + ex.ToString());}}}OutputEnter
+    first number: 10Enter second number: 20Addition of 10 and 20 is = 30Program to
+    swap two numbers1) Swapping ‘using third variable’In order to swap numbers, we
+    use a temporary variable to hold the value. First, we assign the temporary variable
+    first, then assign the second variable to the first variable, and finally assign
+    the second variable to the temporary variable (which holds the first number).PROGRAMusing
+    System;namespace swap{​ class ab​ {​ static void Main(String[] args)​ {​ int a=5,b=3,temp;​
+    //swapping​ temp=a;​ a=b;​ b=temp;​ Console.WriteLine("Values after swapping are:");​
+    Console.WriteLine("a="+a);​ Console.WriteLine("b="+b);​ }​ }}OutputValues after
+    swapping are:a=3b=52) Swapping ‘without using third variable’We ''re not using
+    any additional variable here to swap the numbers. There are certain sets of statements
+    (with mathematical operations performing on the numbers) that swap the variable
+    values used in these operations.EXAMPLEa=a+b;b=a-b;a=a-b;PROGRAMusing System;namespace
+    swap{​ class ab​ {​ static void Main(String[] args)​ {​ int a=10,b=20;​ //swapping​
+    a=a+b;​ b=a-b;​ a=a-b;​ Console.WriteLine("Values after swapping are:");​ Console.WriteLine("a="+a);​
+    Console.WriteLine("b="+b);​ }​ }}OutputValues after swapping are:a=20b=10Program
+    to demonstrate example of simple if else statementSyntax:if(test_condition){​
+        //code section 1}else{​     //code section 2}PROGRAM// C# program to demonstrate
+    example of// simple if else statementusing System;using System.IO;using System.Text;namespace
+    IncludeHelp{class Test{// Main Methodstatic void Main(string[] args){//example
+    1: Input age and check it''s teenage or notint age = 0;Console.Write("Enter age:
+    ");age = Convert.ToInt32(Console.ReadLine());//checking conditionif (age >= 13
+    && age <= 19)Console.WriteLine("{0} is teenage", age);elseConsole.WriteLine("{0}
+    is teenage", age);//example 2: Input two integer numbers and check//whether first
+    number is divisible by second or not?int a, b;Console.Write("Enter first number
+    : ");a = Convert.ToInt32(Console.ReadLine());Console.Write("Enter second number:
+    ");b = Convert.ToInt32(Console.ReadLine());//checking conditionif (a % b == 0)Console.WriteLine("{0}
+    is divisible by {1}", a, b);elseConsole.WriteLine("{0} is not divisible by {1}",
+    a, b);//hit ENTER to exit the programConsole.ReadLine();}}}OutputEnter age: 1717
+    is teenageEnter first number : 120Enter second number: 20120 is divisible by 20Example
+    of multiple if else statementSyntax:if(test_condition1){​     //code section 1}else
+    if(test_condition2){{​     //code section 2}else if(test_condition3){​     //code
+    section 3}...else{​     //else code section}C# example for multiple if else statement//
+    C# program to demonstrate example of// multiple if else statementusing System;using
+    System.IO;using System.Text;namespace IncludeHelp{class Test{// Main Methodstatic
+    void Main(string[] args){//input an integer number and check whether//it is postive,
+    negative or zeroint number;Console.Write("Enter an integer number: ");number =
+    Convert.ToInt32(Console.ReadLine());//checking conditionsif (number > 0)Console.WriteLine("{0}
+    is a positive number", number);else if (number < 0)Console.WriteLine("{0} is a
+    negative number", number);elseConsole.WriteLine("{0} is a Zero", number);//hit
+    ENTER to exit the programConsole.ReadLine();}}}OutputEnter an integer number:
+    -123-123 is a negative numberC# program of conditional operatorConditional Operator
+    is also referred to as Ternary Operator, which requires 3 operands.It is performed
+    with ? and : combination.Syntax:(logical_test) ? true_block : false_block;PROGRAM//
+    C# program to demonstrate example of// conditional operatorusing System;using
+    System.IO;using System.Text;namespace IncludeHelp{class Test{// Main Methodstatic
+    void Main(string[] args){//finding largest of two numbersint a;int b;//input numbersConsole.Write("Enter
+    first number : ");a = Convert.ToInt32(Console.ReadLine());Console.Write("Enter
+    second number: ");b = Convert.ToInt32(Console.ReadLine());//finding largest numberint
+    large = (a > b) ? a : b;Console.WriteLine("Largest number is {0}", large);//hit
+    ENTER to exit the programConsole.ReadLine();}}}OutputEnter first number : 100Enter
+    second number: 200Largest number is 200C# program example of switch statementA
+    switch statement allows a variable / value to be checked with a list of values
+    (cases) and the corresponding block to be executed.Syntax:switch(variable/expression){​
+        case <case_value1>:​     statement(s);​     break;​     case <case_value2>:​
+        break;​     default:​     break;}PROGRAM// C# program to demonstrate example
+    of switch statementusing System;using System.IO;using System.Text;namespace IncludeHelp{class
+    Test{// Main Methodstatic void Main(string[] args){int day;//input the day numberConsole.Write("Enter
+    day number (0-6): ");day = Convert.ToInt32(Console.ReadLine());//checkingswitch
+    (day){case 0:Console.WriteLine("Sunday");break;case 1:Console.WriteLine("Monday");break;case
+    2:Console.WriteLine("Tuesday");break;case 3:Console.WriteLine("Wednesday");break;case
+    4:Console.WriteLine("Thursday");break;case 5:Console.WriteLine("Friday");break;case
+    6:Console.WriteLine("Saturday");break;default:Console.WriteLine("Invalid Input");break;}//hit
+    ENTER to exit the programConsole.ReadLine();}}}OutputFirst run:Enter day number
+    (0-6): 3WednesdaySecond run:Enter day number (0-6): 9Invalid InputC# program to
+    find largest of two numbersWe''ll compare their values using either a simple if-else
+    or a ternary operator. When the first number is greater than the second number,
+    assign the first number to the variable where we store the largest number, if
+    the first number is not greater than the second number then assign the second
+    number to the variable.Syntax using if-elseif (a > b)large = a;elselarge = b;Syntax
+    using ternary operatorlarge = (a > b) ? a : b;PROGRAMspan style=''color:#696969;
+    ''>// C# program to find largest of two numbersusing System;using System.IO;using
+    System.Text;namespace IncludeHelp{class Test{// Main Methodstatic void Main(string[]
+    args){int a;int b;int large;//input the numbersConsole.Write("Enter first number
+    : ");a = Convert.ToInt32(Console.ReadLine());Console.Write("Enter second number:
+    ");b = Convert.ToInt32(Console.ReadLine());//finding largest number using if-elseif
+    (a > b)large = a;elselarge = b;//printingConsole.WriteLine("Using if-else...");Console.WriteLine("Largest
+    number is {0}", large);//finding largest number using ternary operatorlarge =
+    (a > b) ? a : b;//printingConsole.WriteLine("Using if-else...");Console.WriteLine("Largest
+    number is {0}", large);//hit ENTER to exit the programConsole.ReadLine();}}}OutputFirst
+    run:Enter first number : 10Enter second number: 20Using if-else...Largest number
+    is 20Using if-else...Largest number is 20Second run:Enter first number : 20Enter
+    second number: 10Using if-else...Largest number is 20Using if-else...Largest number
+    is 20Third run:Enter first number : 20Enter second number: 20Using if-else...Largest
+    number is 20Using if-else...Largest number is 20Print numbers from 1 to 15 using
+    while loopPROGRAMusing System;using System.Collections.Generic;using System.Linq;using
+    System.Text;using System.Threading.Tasks;namespace Loop1{​ class Program​ {​ static
+    void Main(string[] args)​ {​ int a;​ a = 1;​ while(a<=15)​ {​ Console.WriteLine(a);​
+    a++;​ }​ //wait to hit any key to exit the program​ Console.ReadKey();​ }​ }}Output123456789101112131415Print
+    numbers from 1 to 15 using do while loopHere, the numbers print from 1 to 15 using
+    the do while loop in C #.PROGRAMusing System;using System.Collections.Generic;using
+    System.Linq;using System.Text;using System.Threading.Tasks;namespace Loop2{​ class
+    Program​ {​ static void Main(string[] args)​ {​ int a;​ a = 1;​ do​ {​ Console.WriteLine(a);​
+    a++;​ } while (a <= 15);​ //wait to hit any key to exit the program​ Console.ReadKey();​
+    }​ }}Output123456789101112131415Program to find out the prime numbers among 2
+    to 30We are writing a program in this series, which will print only prime numbers
+    from 2 to 30.PROGRAMusing System;using System.Collections.Generic;using System.Linq;using
+    System.Text;namespace ConsoleApplication1{class Program{static void Main(string[]
+    args){int i     = 0;int j     = 0;int flag  = 0;for (i = 2; i <= 30; i++){j    =
+    2;flag = 0;while(j<=(i/2)){if (i % j == 0){flag = 1;break;}j++;}if(flag==0)Console.Write(i
+    + " ");}Console.WriteLine();}}}Output2 3 5 7 11 13 17 19 23 29'
+  toc: []
+  trans: "\n\n# C# 打印新行的 C# 程序\n\n```csharp\nusing System;\nusing System.IO;\nusing\
+    \ System.Text;\nnamespace IncludeHelp\n{\n    class Test\n    {\n        // 主方法\n\
+    \        static void Main(string[] args)\n        {\n            // 使用 \\n\n \
+    \           Console.WriteLine(\"Hello\\nWorld\");\n            // 使用 \\x0A\n \
+    \           Console.WriteLine(\"Hello\\x0AWorld\");\n            Console.WriteLine();\n\
+    \            Console.WriteLine(\"end of the program\");\n            //按回车退出程序\n\
+    \            Console.ReadLine();\n        }\n    }\n}\n```\n输出\n```\nHelloWorld\n\
+    HelloWorld\nend of the program\n```\n\n# 打印各种数据类型大小的 C# 程序\n我们将使用 `sizeof()` 运算符来打印不同数据类型的大小。\n\
+    \n```csharp\nusing System;\nusing System.IO;\nusing System.Text;\nnamespace IncludeHelp\n\
+    {\n    class Test\n    {\n        // 主方法\n        static void Main(string[] args)\n\
+    \        {\n            Console.WriteLine(\"sizeof(int): {0}\", sizeof(int));\n\
+    \            Console.WriteLine(\"sizeof(float): {0}\", sizeof(float));\n     \
+    \       Console.WriteLine(\"sizeof(char): {0}\", sizeof(char));\n            Console.WriteLine(\"\
+    sizeof(double): {0}\", sizeof(double));\n            Console.WriteLine(\"sizeof(bool):\
+    \ {0}\", sizeof(bool));\n            //按回车退出程序\n            Console.ReadLine();\n\
+    \        }\n    }\n}\n```\n输出\n```\nsizeof(int): 4\nsizeof(float): 4\nsizeof(char):\
+    \ 2\nsizeof(double): 8\nsizeof(bool): 1\n```\n\n# C# 程序中 double 到 int 的类型转换\n\
+    语法：`int_variable = (int)double_variable;`\n\n示例：\n输入：\n```csharp\ndouble a = 123456.789;\n\
+    int b = 0;\n//类型转换\nb = (int)a;\n```\n输出：\n```\na: 123456.789\nb: 123456\n```\n\
+    \n```csharp\n// 从 double 到 int 类型转换的 C# 程序\nusing System;\nusing System.IO;\n\
+    using System.Text;\nnamespace IncludeHelp\n{\n    class Test\n    {\n        //\
+    \ 主方法\n        static void Main(string[] args)\n        {\n            double\
+    \ a = 123456.789;\n            int b = 0;\n            //类型转换\n            b =\
+    \ (int)a;\n            Console.WriteLine(\"value of a: {0}\", a);\n          \
+    \  Console.WriteLine(\"value of b: {0}\", b);\n            //按回车退出程序\n       \
+    \     Console.ReadLine();\n        }\n    }\n}\n```\n输出\n```\nvalue of a: 123456.789\n\
+    value of b: 123456\n```\n\n# 定义不同类型的常量\n常量可以使用 `const` 关键字描述，一旦定义常量，其值永远无法修改。\n\
+    \n语法：`const data_type constant_name = value;`\n`const float PI = 3.14f;`\n\n示例：\n\
+    输入：\n```csharp\nconst int a = 10;   //整数常量\nConsole.WriteLine(\"a: {0}\", a);\n\
+    ```\n输出：\n```\na: 10\n```\n\n```csharp\n// 定义不同类型常量的 C# 程序\nusing System;\nusing\
+    \ System.IO;\nusing System.Text;\nnamespace IncludeHelp\n{\n    class Test\n \
+    \   {\n        // 主方法\n        static void Main(string[] args)\n        {\n  \
+    \          const int a = 10;   //整数常量\n            const float b = 20.23f; //\
+    \ float 常量\n            const double c = 10.23;  //double 常量\n            const\
+    \ char d = 'Y';      //字符常量\n            const string e = \"Hello\";   //字符串常量\n\
+    \            //打印值\n            Console.WriteLine(\"a: {0}\", a);\n          \
+    \  Console.WriteLine(\"b: {0}\", b);\n            Console.WriteLine(\"c: {0}\"\
+    , c);\n            Console.WriteLine(\"d: {0}\", d);\n            Console.WriteLine(\"\
+    e: {0}\", e);\n            //按回车退出程序\n            Console.ReadLine();\n      \
+    \  }\n    }\n}\n```\n输出\n```\na: 10\nb: 20.23\nc: 10.23\nd: Y\ne: Hello\n```\n\
+    \n# 演示算术运算符示例的 C# 程序\n示例：\n输入：\n```csharp\nint a = 10;\nint b = 3;\n//运算\nint\
+    \ sum = a + b;\nint sub = a - b;\nint mul = a * b;\nfloat div = (float)a / (float)b;\n\
+    int rem = a % b;\n```\n输出：\n```\nsum = 13\nsub = 7\nmul = 30\ndiv = 3.333333\n\
+    rem = 1\n```\n\n```csharp\n// 演示算术运算符示例的 C# 程序\nusing System;\nusing System.IO;\n\
+    using System.Text;\nnamespace codingex\n{\n    class Test\n    {\n        // 主方法\n\
+    \        static void Main(string[] args)\n        {\n            int a = 10;\n\
+    \            int b = 3;\n            int sum = a + b;\n            int sub = a\
+    \ - b;\n            int mul = a * b;\n            float div = (float)a / (float)b;\n\
+    \            int rem = a % b;\n            Console.WriteLine(\"Addition of {0}\
+    \ and {1} is = {2}\", a, b, sum);\n            Console.WriteLine(\"Subtraction\
+    \ of {0} and {1} is = {2}\", a, b, sub);\n            Console.WriteLine(\"Multiplication\
+    \ of {0} and {1} is = {2}\", a, b, mul);\n            Console.WriteLine(\"Division\
+    \ of {0} and {1} is = {2}\", a, b, div);\n            Console.WriteLine(\"Remainder\
+    \ of {0} and {1} is = {2}\", a, b, rem);\n            Console.ReadLine();\n  \
+    \      }\n    }\n}\n```\n\n# 位运算符示例的 C# 程序\n位运算符用于执行位运算：\n- `&` (位与)：当两个位都为 1\
+    \ 时返回 1\n- `|` (位或)：当任意一个位为 1 时返回 1\n- `^` (位异异)：当仅有一个位为 1 时返回 1\n- `~` (位非)：返回操作数的取反\n\
+    - `<<` (左移)：将位向左移动\n- `>>` (右移)：将位向右移动\n\n语法：\n`Operand1 & Operand2`\n`Operand1\
+    \ | Operand2`\n`Operand1 ^ Operand2`\n`~Operand1`\n`Operand1 << Operand2`\n`Operand1\
+    \ >> Operand2`\n\n# 关系运算符示例的 C# 程序\n- `==` (等于)：如果两个操作数相同则返回 true\n- `!=` (不等于)：如果两个操作数不相等则返回\
+    \ true\n- `<` (小于)：如果第一个操作数小于第二个操作数则返回 true\n- `<=` (小于等于)：如果第一个操作数小于或等于第二个操作数则返回\
+    \ true\n- `>` (大于)：如果第一个操作数大于第二个操作数则返回 true\n- `>=` (大于或等于)：如果第一个操作数大于或等于第二个操作数则返回\
+    \ true\n\n# 两个整数求和的 C# 程序\n输入：\n```\nFirst number: 10\nSecond number: 20\n```\n\
+    输出：\n```\nAddition of 10 and 20 is = 30\n```\n\n```csharp\nusing System;\nclass\
+    \ AddTwoNumbers\n{\n    static void Main()\n    {\n        try\n        {\n  \
+    \          //声明两个变量\n            int a = 0;\n            int b = 0;\n        \
+    \    //输入数字\n            Console.Write(\"Enter first number: \");\n          \
+    \  a = Convert.ToInt32(Console.ReadLine());\n            Console.Write(\"Enter\
+    \ second number: \");\n            b = Convert.ToInt32(Console.ReadLine());\n\
+    \            //计算和\n            int sum = a + b;\n            Console.WriteLine(\"\
+    Addition of \" + a + \" and \" + b + \" is = \" + sum);\n        }\n        catch\
+    \ (Exception ex)\n        {\n            Console.WriteLine(\"Error: \" + ex.ToString());\n\
+    \        }\n    }\n}\n```\n\n# 交换两个数字的程序\n\n## 1) 使用临时变量交换\n为了交换数字，我们使用一个临时变量来保存值。首先将第一个变量赋值给临时变量，然后将第二个变量赋值给第一个变量，最后将临时变量赋值给第二个变量。\n\
+    \n```csharp\nusing System;\nnamespace swap\n{\n    class ab\n    {\n        static\
+    \ void Main(string[] args)\n        {\n            int a = 5;\n            int\
+    \ b = 3;\n            int temp;\n            temp = a;\n            a = b;\n \
+    \           b = temp;\n            Console.WriteLine(\"Values after swapping:\"\
+    );\n            Console.WriteLine(\"a=\" + a);\n            Console.WriteLine(\"\
+    b=\" + b);\n        }\n    }\n}\n```\n\n## 2) 不使用临时变量交换\n不使用任何额外的变量来交换数字。通过特定的数学运算来实现。\n\
+    \n```csharp\nusing System;\nnamespace swap\n{\n    class ab\n    {\n        static\
+    \ void Main(string[] args)\n        {\n            int a = 10;\n            int\
+    \ b = 20;\n            a = a + b;\n            b = a - b;\n            a = a -\
+    \ b;\n            Console.WriteLine(\"Values after swapping:\");\n           \
+    \ Console.WriteLine(\"a=\" + a);\n            Console.WriteLine(\"b=\" + b);\n\
+    \        }\n    }\n}\n```\n\n# 简单 if-else 语句演示\n语法：\n```csharp\nif(test_condition)\n\
+    {\n    // 代码块 1\n}\nelse\n{\n    // 代码块 2\n}\n```\n\n# 多重 if-else 语句的 C# 示例\n\
+    ```csharp\nusing System;\nusing System.IO;\nusing System.Text;\nnamespace IncludeHelp\n\
+    {\n    class Test\n    {\n        // 主方法\n        static void Main(string[] args)\n\
+    \        {\n            //输入一个整数并检查它是正、负还是零\n            int number;\n       \
+    \     Console.Write(\"Enter an integer number: \");\n            number = Convert.ToInt32(Console.ReadLine());\n\
+    \            //检查条件\n            if (number > 0)\n                Console.WriteLine(\"\
+    {0} is a positive number\", number);\n            else if (number < 0)\n     \
+    \           Console.WriteLine(\"{0} is a negative number\", number);\n       \
+    \     else\n                Console.WriteLine(\"{0} is Zero\", number);\n    \
+    \        //按回车退出程序\n            Console.ReadLine();\n        }\n    }\n}\n```\n\
+    \n# 条件运算符（三元运算符）\n条件运算符也称为三元运算符，它需要 3 个操作数。它通过 `?` 和 `:` 执行。\n\n语法：`logical ?\
+    \ true_block : false_block`\n\n```csharp\nusing System;\nusing System.IO;\nusing\
+    \ System.Text;\nnamespace IncludeHelp\n{\n    class Test\n    {\n        // 主方法\n\
+    \        static void Main(string[] args)\n        {\n            //寻找两个数中的最大值\n\
+    \            int a;\n            int b;\n            //输入数字\n            Console.Write(\"\
+    Enter first number : \");\n            a = Convert.ToInt32(Console.ReadLine());\n\
+    \            Console.Write(\"Enter second number: \");\n            b = Convert.ToInt32(Console.ReadLine());\n\
+    \            //寻找最大数\n            int large = (a > b) ? a : b;\n            Console.WriteLine(\"\
+    Largest number is {0}\", large);\n        }\n    }\n}\n```\n\n# switch 语句演示\n\
+    switch 语句允许根据变量执行不同的代码块。\n\n```csharp\nusing System;\nusing System.IO;\nusing\
+    \ System.Text;\nnamespace IncludeHelp\n{\n    class Test\n    {\n        // 主方法\n\
+    \        static void Main(string[] args)\n        {\n            int day;\n  \
+    \          Console.Write(\"Enter day (0-6): \");\n            day = Convert.ToInt32(Console.ReadLine());\n\
+    \            switch (day)\n            {\n                case 0:\n          \
+    \          Console.WriteLine(\"Sunday\");\n                    break;\n      \
+    \          case 1:\n                    Console.WriteLine(\"Monday\");\n     \
+    \               break;\n                case 2:\n                    Console.WriteLine(\"\
+    Tuesday\");\n                    break;\n                case 3:\n           \
+    \         Console.WriteLine(\"Wednesday\");\n                    break;\n    \
+    \            case 4:\n                    Console.WriteLine(\"Thursday\");\n \
+    \                   break;\n                case 5:\n                    Console.WriteLine(\"\
+    Friday\");\n                    break;\n                case 6:\n            \
+    \        Console.WriteLine(\"Saturday\");\n                    break;\n      \
+    \          default:\n                    Console.WriteLine(\"Invalid Input\");\n\
+    \                    break;\n            }\n            Console.ReadLine();\n\
+    \        }\n    }\n}\n```\n"

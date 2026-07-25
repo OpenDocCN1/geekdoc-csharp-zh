@@ -1,0 +1,1816 @@
+<p><img src="Images/1405.jpg" /></p>
+<p><span id="cover.xhtml"></span></p>
+<div style="text-align: center; padding: 0pt; margin: 0pt;">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%" preserveaspectratio="xMidYMid meet" version="1.1" viewbox="0 0 1500 2142" width="100%">
+<image height="2142" width="1500" xlink:href="../Images/1405.jpg"></image>
+</svg>
+</div>
+<p><span id="index_split_000.html"></span></p>
+<p><span class="text_">THE BASIC CONCEPTS OF OOP IN C#</span></p>
+<p><span class="text_1">LEARN CONCEPTUALLY IN SIMPLE LANGUAGE</span></p>
+<p> </p>
+<p><img
+src="Images/kisspng-microsoft-visual-studio-net-framework-visual-stud-5adab7033e9305.4830596915242831392563.jpeg"
+class="calibre1" alt="Image" /></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><span class="text_2">University of applied science and
+technology</span></p>
+<p> </p>
+<p> </p>
+<p><span class="text_2">Hani Marzban</span></p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p>Copyright © 2018 by Hani Marzban</p>
+<p> </p>
+<p>All rights reserved. No part of these publications may be reproduced,
+distributed, or transmitted in any form or by any means, including
+photocopying, recording, or other electronic or mechanical methods,
+without the prior written permission of the publisher, except in the
+case of brief quotations embodied in critical reviews and certain other
+noncommercial uses permitted by copyright law. For permission requests,
+write to the publisher, addressed “Attention: Permissions Coordinator,”
+at hani.mrzbn@gmail.com.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><span class="text_3"> </span><span class="text_4">Table of
+Contents</span></p>
+<ul>
+<li><span class="text_5"></span><span id="index_split_000.html_id_toc"
+class="text_5"></span><a href="#index_split_000.html_id_Toc3384495"
+class="calibre2"><span class="text_6">Preface</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384496" class="calibre2"><span
+class="text_6">Introduction</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384497" class="calibre2"><span
+class="text_6">The concept of an object</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384498" class="calibre2"><span
+class="text_6">The Properties of an object</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384499" class="calibre2"><span
+class="text_6">The Behaviors</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384500" class="calibre2"><span
+class="text_6">The Methods</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384501" class="calibre2"><span
+class="text_6">The fields</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384502" class="calibre2"><span
+class="text_6">The Accessor</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384503" class="calibre2"><span
+class="text_6">The Namespaces</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384504" class="calibre2"><span
+class="text_6">The concept of a Class</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384505" class="calibre2"><span
+class="text_6">The Concept of a struct</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384506" class="calibre2"><span
+class="text_6">Differences between class and struct</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384507" class="calibre2"><span
+class="text_6">The constructors</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384508" class="calibre2"><span
+class="text_6">The destructors</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384509" class="calibre2"><span
+class="text_6">The re-usability</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384510" class="calibre2"><span
+class="text_6">The abstraction</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384511" class="calibre2"><span
+class="text_6">The encapsulation</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384512" class="calibre2"><span
+class="text_6">The Property</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384513" class="calibre2"><span
+class="text_6">The Inheritance</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384514" class="calibre2"><span
+class="text_6">The interface</span></a></li>
+<li><a href="#index_split_001.html_id_Toc3384515" class="calibre2"><span
+class="text_6">The Polymorphism</span></a></li>
+<li><a href="#index_split_002.html_id_Toc3384516" class="calibre2"><span
+class="text_6">Practical exercises</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384517" class="calibre2"><span
+class="text_6">How to create a class</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384518" class="calibre2"><span
+class="text_6">Declaration of a class in C#</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384519" class="calibre2"><span
+class="text_6">Declaration of a method in C#</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384520" class="calibre2"><span
+class="text_6">Calling Methods in C#</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384521" class="calibre2"><span
+class="text_6">How to use constructors</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384522" class="calibre2"><span
+class="text_6">How to use DEstructors</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384523" class="calibre2"><span
+class="text_6">The Property and encapsulation</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384524" class="calibre2"><span
+class="text_6">Struct</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384525" class="calibre2"><span
+class="text_6">“Reference Type” and “Value type”</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384526" class="calibre2"><span
+class="text_6">The inheritance</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384527" class="calibre2"><span
+class="text_6">The constructors in inheritance</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384528" class="calibre2"><span
+class="text_6">The abstraction</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384529" class="calibre2"><span
+class="text_6">Static and non-static class</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384530" class="calibre2"><span
+class="text_6">The interface</span></a></li>
+<li><a href="#index_split_003.html_id_Toc3384531" class="calibre2"><span
+class="text_6">The polymorphism</span></a></li>
+</ul>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 class="block_14" id="index_split_000.html_id_Toc3384495"><span
+class="text_7">Preface</span></h1>
+<div class="frame_">
+<p><span class="text_8">Researching in various areas of computer science
+has been the author’s most favorite work to do from a long time ago.
+This time he has decided to write a book about the preliminary topics in
+the object-oriented programming paradigm in C# programming language,
+which is considered to be one of the most popular ones thanks to the
+powerful </span>“<strong>Dot NET framework</strong>.”<span
+class="text_8"> </span></p>
+<p><span class="text_8">This book helps interested audiences to get
+familiar with the basics of the object-oriented programming paradigm in
+C# faster, for he has written this book in the simplest possible
+language, used very simple examples; however, being a mid-level C#.Net
+developer is a prerequisite. Moreover, the author has
+</span><strong>emboldened</strong><span class="text_8"> and </span><span
+class="text_9">underlined</span><span class="text_8"> important points
+too.</span></p>
+<p><span class="text_8">Hence, expected that readers find this book
+useful, although, study without practical practice is worth nothing in
+programming; therefore, remember that “</span><span
+class="text_10">practice is the key</span><span
+class="text_8">.”</span></p>
+<p>Hopefully, to enjoy reading this book as much as the
+author enjoyed writing it, and please do not hesitate to send possible
+suggestions, corrections, and errors at
+<strong>hani.mrzbn@gmail.com</strong> because the author warmly
+considers it.</p>
+<p><span class="text_8">Ultimately, the author would like to present
+this book to the great soul of the </span><span class="text_10">late
+Professor Maryam Mirzakhani</span><span class="text_8">, the legendary
+Iranian mathematician, and the winner of the </span><span
+class="text_10">Field medal in 2014. </span><span
+class="text_8">She</span><span class="text_10"> </span><span
+class="text_8">is a light in the way of doing scientific investigations,
+</span>perseverance, and dignity<span class="text_8"> for us.</span></p>
+<p><span class="text_10">Hani Marzban, January 19, 2019</span></p>
+</div>
+<p><span id="index_split_001.html"></span></p>
+<h1 class="block_19" id="index_split_001.html_id_Toc3384496"><span
+class="text_11">Introduction</span></h1>
+<p><span class="text_8">Maybe readers have heard about “</span><span
+class="text_10">Object-Oriented,</span><span class="text_8">” or have
+heard that this could be the hardest-to-understand concept
+in</span><span class="text_10"> </span><span
+class="text_8">programming</span><span class="text_10"> </span><span
+class="text_8">especially if you are a newbie in this or having a plan
+to get into the community of coders? So, we assure that this is hard no
+more.</span></p>
+<p><span class="text_8">However, this could be true at the beginning of
+programming age, but fortunately it has become pretty much easier and
+understandable more than ever with the advent of </span><span
+class="text_10">HLL</span><sup><a href="#index_split_004.html_note_1"
+class="calibre2" title="1"><sup>1</sup></a></sup><span class="text_8">
+of programming such as C, C++, C#</span><sup><a
+href="#index_split_005.html_note_2" class="calibre2"
+title="2"><sup>2</sup></a></sup><span class="text_8">, Visual Basic, and
+etcetera., which helped programmers to comprehend the main concept of
+</span><span class="text_10">OOP</span><sup><a
+href="#index_split_006.html_note_3" class="calibre2"
+title="3"><sup>3</sup></a></sup><span class="text_10"> </span><span
+class="text_8">paradigm</span><span class="text_10"> </span><span
+class="text_8">more,</span><span class="text_10"> </span><span
+class="text_8">like never before.</span></p>
+<p><span class="text_8">Well, there are benefits for the programmers
+using </span><span class="text_10">OOP </span><span
+class="text_8">paradigm, such as having a high-performance piece of
+codes, re-usability, which is considered to be a principle in
+</span><span class="text_10">OOP</span><span class="text_8"> and
+literally as the foundation of </span><span
+class="text_10">OOP</span><span class="text_8">. Debugging codes are
+easy to do, so this way, the audience will not get involved with tons of
+complex lines of codes and also developing and modification of codes are
+easy to deal with, too.</span></p>
+<p><span class="text_8">Ultimately, in this book, we will have a closer
+look at the OOP paradigm in practice using C# language, and surely by
+relying on different examples, achieving a high level of ability in
+</span><span class="text_10">OOP </span><span class="text_8">paradigm
+will become true. Do not forget that “</span><span
+class="text_10">practice is the key</span><span class="text_8">.” We
+wish dear readers all the success in this.</span></p>
+<h1 class="block_22" id="index_split_001.html_id_Toc3384497"><span
+class="text_11">The concept of an object</span></h1>
+<p>Whatever we see, whatever we feel or even imagine in the real world
+is counted as an object. Usually, we work with different types of
+objects in the daily life, such as Computers, Mobile phones,
+Televisions, and etcetera. So, it is the same in the world of the
+computer. As an instance, OS<sup><a href="#index_split_007.html_note_4"
+class="calibre2" title="4"><sup>4</sup></a></sup> applications are
+called objects like, media players, toolbars, buttons, windows and what
+we could observe, these are the visible objects; on the other hand,
+there are hidden objects too, we cannot see, but they are working behind
+the scene, technically, a bunch of codes letting visible objects to run
+and be controlled. Each object as an entity contains two main factors,
+“<strong>properties</strong>” and “<strong>behaviors</strong>,” which I
+will describe them later. So, for now, let us clear the definition of an
+object using an example.</p>
+<p>Firstly, before creating an object, we need to analyze the essential
+<strong>properties</strong> and <strong>behaviors</strong> of an object.
+Imagine we have a plan to build software for managing a library, so
+surely after analyzing the needs, for example, we find primary
+<strong>objects</strong> in which <strong></strong> to implement as
+below.</p>
+<p>1-Members of the library</p>
+<p>2-Operators of the library</p>
+<p>3-Category of book</p>
+<p>4-Book</p>
+<p>Great, so, the next step is recognizing related
+<strong>properties</strong> and <strong>behaviors</strong>; for
+instance, consider “<strong>members of the library”</strong> object, it
+contains <strong>properties</strong> as below.</p>
+<p>1-Member ID</p>
+<p>2-Name</p>
+<p>3-Lastname</p>
+<p>4-ID Number</p>
+<p>5-Father’s name</p>
+<p>6-Gender</p>
+<p>Also, each “<strong>member of the library”</strong> has
+<strong>behaviors,</strong> which could be contemplated to be,</p>
+<p>1-Get book</p>
+<p>2-Return book</p>
+<p>3-Log into the library</p>
+<p>4-Exit the library</p>
+<p>So, we are expecting audiences to extract the necessary properties
+and behaviors of the rest objects if they found how it works.</p>
+<p>1-Operator of the library</p>
+<p>2-Category of book</p>
+<p>3-Book</p>
+<p>Please try to examine other operational environments like a small
+shopping or a chain store. Do not rush to get on codes quickly, keep
+calm, based on my experience, first, you need to learn this perfectly;
+therefore, to achieve this important you must practice on paper as much
+as you could, and jot down essential properties and behaviors of objects
+related to different systems until becoming a master. Do not afraid to
+try on large systems as it is possible simply <strong>by breaking down
+the components of enormous structures into small ones</strong>; through
+this, helps to gain a good level of skill in designing an object.</p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384498">The
+Properties of an object</h1>
+<p>The “<strong>properties of an object</strong>” are bunches of
+characteristics concerned an object, which precisely, describe it. For
+example, consider a human as an object, there are tons of different
+characteristics for him/her such as eye color, height, weight and many
+other parameters describing a human, these are all called
+<strong>properties of a human.</strong></p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384499">The
+Behaviors</h1>
+<p>Despite <strong>properties</strong>, there are a series of actions
+inside an object called “<strong>Behaviors</strong>”, let us clarify
+this quickly, if we consider a human as an object; hence, we can say
+“humans can walk, or humans can see”, these are called
+“<strong>Behaviors</strong>” an object (human) could do.</p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384500">The
+Methods</h1>
+<p>In fact, methods are the ways to employ function(s) of an object. Let
+us break down this using an example. Imagine, there is a mobile phone as
+an object, and there is a method inside this object (mobile phone)
+called “displaying numbers,” which shows pressed numbers on the display
+of your mobile phone. So, technically when we press “1” on your mobile
+phone's keypad, this button invokes “displaying numbers” method and
+sends “1” to that, and ultimately, the method will show “1” on display.
+If it is not crystal clear enough, do not worry, later, we will work
+practically to get it conceptually.</p>
+<h1 class="block_28" id="index_split_001.html_id_Toc3384501">The
+fields</h1>
+<p>A field<em> </em>is a normal variable, which can carry different
+types of data, and are contemplated to be members of a class. It has
+declared in a class, and to set or get any values to use
+“<strong>set</strong>” or “<strong>get</strong>”
+<strong>accessor</strong>.</p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384502">The
+Accessor</h1>
+<p>In simple language, “<strong>set</strong>” and “<strong>get</strong>”
+are properties, which let the programmer set or get value(s) to or from
+a field in a class. We will review it in <strong>practical
+exercises</strong> <strong>section.</strong></p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384503">The
+Namespaces</h1>
+<p>A class can carry tons of members, and a namespace can carry a lot of
+classes inside. <strong>Namespaces</strong> are containing different
+pre-defined classes, which let programmers use for variant purposes. For
+example, in .NET framework<sup><a href="#index_split_008.html_note_5"
+class="calibre2" title="5"><sup>5</sup></a></sup>, there is a namespace
+that contains necessary classes to connect to a database such as SQL,
+Oracle DB, and etcetera.</p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384504">The concept
+of a Class</h1>
+<p>Well, in fact, objects are nothing if we do not consider a class as a
+principle. Let us explain more clearly, a class plays a parent role here
+and encompasses everything from variables to properties, behaviors,
+methods, and etcetera. In other words, a class has made of a set of
+rules to achieve a unique goal, but to make it applicable; we have to
+create a copy of that, which is called “<strong>Instantiation</strong>”;
+by this, literally, you have <strong>created an object from a
+class</strong> that is usable in action.</p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384505">The Concept
+of a struct</h1>
+<p>The structure, and technically, the functionality of a struct is
+pretty much similar to a class, although s struct is more limited and
+could be contemplated to be a light version of a class. Well, in
+<strong></strong> “<strong>Practical exercises</strong>” section, we
+will try a simple sample of the struct to find out the way it works, for
+practical example(s) it can help you get a better understanding too.</p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384506">Differences
+between class and struct</h1>
+<p>Within a struct declaration, fields cannot get initialized unless
+they get declared as const or static.</p>
+<p>A struct cannot declare a default constructor (a constructor without
+parameters).</p>
+<p>Structs get copied on assignment. When a struct has assigned to a new
+variable, all the data get copied, and any modification to the new copy
+does not change the data for the original copy. It is important to
+remember when working with collections of value types such as
+Dictionary.</p>
+<p>A struct is “value type,” and a class is “reference type.”</p>
+<p><span class="bullet_">Unlike classes, a struct gets </span><span
+class="text_13">instantiated</span><span class="bullet_"> without using
+“</span><span class="text_14">new”</span><span class="bullet_">
+operator.</span></p>
+<p>Structs can declare constructors, which have parameters.</p>
+<p>A struct cannot inherit from another struct or class, and it cannot
+be the base of a class.</p>
+<p>A struct can implement interfaces.</p>
+<p>A struct can be used as a nullable type and can be assigned a null
+value.</p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384507">The
+constructors</h1>
+<p>Initializing data members of a new object is often the task of a
+constructor. When a class gets created, in fact, its constructor is
+called concurrently, too. Constructors have the same name as the class.
+There are different usages for constructors of which we prevent.</p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384508">The
+destructors</h1>
+<p>A destructor is the same in name with class and constructor, but
+there is a bold sign which distinguishes it from a constructor’s or a
+class’s name, and it is a “<strong>~</strong>” symbol that needs to get
+implemented as a prefix in the name of a destructor. So, what is the
+advantage of destructor? Well, it runs when the class runs and ends
+before the class ends; by this, <strong>it cleans the finished class
+from memory, which results in managing memory</strong>, although, this
+task is useful no more in programming languages equipped by
+garbage-collector<sup><a href="#index_split_009.html_note_6"
+class="calibre2" title="6"><sup>6</sup></a></sup>, and also are not
+suitable to use in big projects too.</p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384509">The
+re-usability</h1>
+<p>One of the strong points in the OOP paradigm is,
+“<strong>Re-usability.”</strong> <strong>It lets us use a single object
+“N” times to do “N” different tasks; instead of, using “N” different
+objects to do “N” different tasks,</strong><span class="text_15">
+</span>which results in <strong>reducing the high volume of codes and
+increasing the execution speed of the codes dramatically</strong>.</p>
+<p>In the direction of a deeper comprehension regarding the subject, see
+the example below.</p>
+<p><strong>Problem:</strong> We need to print the names of 50 people
+from a database, which solution is preferred? Why?</p>
+<div class="calibre7">
+<div class="block_33">
+<span class="bullet_1">A) </span><span class="calibre8">Creating
+<strong>fifty</strong> different objects to receive the names from the
+database and print them out.</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">B) </span><span class="calibre8">Creating
+<strong>one</strong> object to receive the names from the database and
+print them out.</span>
+</div>
+</div>
+<p>Definitely, the option “B” is the key answer, as <strong>it helps
+reducing tons of repetitive codes, which leads to increasing the speed
+of execution; by which, the efficiency boosts like never
+before.</strong></p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384510">The
+abstraction</h1>
+<p>When you plan to write a program using OOP paradigm, firstly, you
+have to analyze a system thoroughly, it means you need to recognize all
+possible entities such as properties, behaviors, variables, and
+etcetera., take them into account, but sometimes to run a system working
+properly, all the suggested entities are not mandatory and we should
+prevent them.</p>
+<p>For example, we are going to buy a car, and we need to arrange a
+contract between the seller and us, so, it is natural<span dir="rtl">
+</span>to write our personal information in it, but surely writing our
+blood type or the size of our shoes is not a must. These are the
+properties of us too, in which are not compulsory to mention.</p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384511">The
+encapsulation</h1>
+<p>Let us begin with an example, we have a mobile phone in hand, and we
+do make a call using it. Do we know the process by which the mobile
+phone does to make a call? Absolutely, not. We, as a user of the mobile
+phone press a few simple buttons to make a call instantly, but surely we
+are ignorant of the functions that the mobile phone runs behind the
+scene to make a connection. It is what we named as
+“<strong>Encapsulation,” to hide function’s complexities of an object
+from the view of users</strong> in simple language. There is no reason
+that a user sees how it works but the final consequence.</p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384512">The
+Property</h1>
+<p><span class="text_13">A </span><span
+class="bullet_2">property</span><span class="text_13"> is a member that
+provides a flexible mechanism to read, write, or compute the value of a
+private field. </span><span class="bullet_2">Properties</span><span
+class="text_13"> could get used as if they are public data members.
+Property encapsulates a private field. It provides getters </span><span
+class="bullet_">(get{}) to retrieve the value of the underlying field
+and setters (set{}) to set the value of the underlying field.</span></p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384513">The
+Inheritance</h1>
+<p><span class="bullet_">The inheritance, playing a major role in OOP
+paradigm. We should practice this technique</span><span class="text_16">
+</span><span class="bullet_">as much as possible, as if we do, could
+safely say that becoming a master in OOP is guaranteed. To perceive this
+concept better, let us say, from birth, children inherit attributes from
+their parents, such as eye color, hair color, skin color, special
+behaviors, and etcetera. It is precisely the same in OOP paradigm too,
+but how? When we design an entity, we could consider a class as the
+parent, which the entity could inherit everything from the parent class.
+Thereupon, </span><span class="text_14">re-usability</span><span
+class="bullet_"> will happen, and entities could inherit necessary
+attributes; instead of, writing tons of codes, which results in
+</span><span class="text_14">reducing the high volume of codes and
+actually, rising efficiency.</span></p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384514">The
+interface</h1>
+<p>It is similar to a class, but as you might be aware, unlike a class,
+which cannot inherit from two or more classes at the same time, it could
+be inherited multiple of times without limitation, so we will try a
+simple example in the “Practical Exercises” section, to find out how it
+works.</p>
+<h1 class="block_27" id="index_split_001.html_id_Toc3384515">The
+Polymorphism</h1>
+<p>Many of us complaining about the <strong>polymorphism</strong>, and
+we always advise them, “<strong>Despite learning ‘Inheritance’
+perfectly, relying on very basic samples to find the concept easily is
+highly recommended</strong>.”</p>
+<p>We are going to talk about the polymorphism, and we will try basic
+practices in the practical section. Imagine an office, in that office;
+there is a manager, a clerk, and a secretary and their office imports
+computer stuff. Well, There is a defined class for clerk, which there
+are different methods defined inside, such as “Log out”, “Log in”,
+“Payment”, and “Duty.” <strong>So, please pay attention to the behavior
+of each method defined in the class of “clerk” in below.</strong></p>
+<p>The behaviors of the clerk method,</p>
+<p><strong>Log in: This method logs the time</strong> <strong></strong>
+<strong>of entry to the office.</strong></p>
+<p><strong>Log out: This method logs the time</strong> <strong></strong>
+<strong>of departure from the office.</strong></p>
+<p>Payment: This method logs a default monthly payment of $900</p>
+<p>Duty: This method logs, if the clerk talked to exporters or not?</p>
+<p>Okay, this method works like a charm for the clerk, but now, we need
+to define a class for the manager too. What we need to do is, inheriting
+a class from the “clerk” and do little changes, for behaviors of clerk
+and manager are not the same, exactly. <strong>So, please pay attention
+to the behavior of each method defined in the class of “manager”, after
+inheritance, in the following.</strong></p>
+<p>The behaviors of the “manager” method,</p>
+<p><strong>Log in: This method logs the time</strong> <strong></strong>
+<strong>of entry to the office.</strong></p>
+<p><strong>Log out: This method logs the time</strong> <strong></strong>
+<strong>of departure from the office.</strong></p>
+<p><strong>Payment:</strong> <span class="text_15">This method logs a
+default monthly payment of $3K.</span></p>
+<p><strong>Duty:</strong> <span class="text_15">This method logs, if the
+manager has signed letters or not?</span></p>
+<p>Great, we hope it makes sense to readers. What did we do? It is easy,
+we have just created a new class by inheriting from the
+“<strong>clerk</strong>” class, called “<strong>manager</strong>”, and
+<strong>since the required behaviors of both classes were not the same,
+exactly, we did commit modification in the “Payment” and “Duty” methods
+of the “manager” class.</strong></p>
+<p> </p>
+<p><span id="index_split_002.html"></span></p>
+<h1 class="block_40" id="index_split_002.html_id_Toc3384516">Practical
+exercises</h1>
+<p> </p>
+<p><span id="index_split_003.html"></span></p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384517">How to
+create a class</h1>
+<p><span lang="de"></span>Open the Visual studio software then click on
+<strong>File</strong><span class="calibre9">
+</span><strong>New</strong><span class="calibre9">
+</span><strong>Project</strong><span class="calibre9">
+</span><strong>Visual C#</strong> <strong><span class="calibre9">
+</span>Console Application</strong>, and after changing the name of the
+project and also the location (optional), click on “OK” button. (Fig
+1)</p>
+<p> </p>
+<p><span class="calibre10" dir="rtl" lang="de"><img
+src="Images/Untitled-2.png" class="calibre11" alt="Image" /></span><span
+class="calibre10" lang="de"></span></p>
+<p>Fig 1</p>
+<p>Fig 1</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><span class="bullet_" lang="de"></span><span class="text_13"
+lang="de"></span><span class="bullet_" dir="rtl" lang="de"><img
+src="Images/Untitled-2-1.png" class="calibre12"
+alt="Image" /></span><span class="bullet_">Great, we need to add a class
+to the project, find the project name in the solution explorer window
+and do a right click on it and follow, </span><span
+class="text_14">Add<span class="calibre9"> Class</span></span><span
+class="text_14">. </span><span class="bullet_">(Fig 2)</span></p>
+<p>Fig 2</p>
+<p>Fig 2</p>
+<p>Good, so a new window will be opened as seen in below, containing
+different items, but what we need, is “class” item, so firstly click on
+“<strong>Visual C# Items</strong>” then choose
+“<strong>Class</strong>.”</p>
+<p>Finally, it is possible to change the name of the class too, and then
+click on “<strong>Ok</strong>” button to create it. (Fig 3)</p>
+<p><span class="text_13" lang="de"></span><span class="bullet_"
+lang="de"><img src="Images/Untitled-2-2.png" class="calibre13"
+alt="Image" /></span><span class="bullet_">Yes, we did it. We could add
+a class file to our project successfully. Since now, we can double-click
+on it to open the file and begin to create different classes.</span></p>
+<p>Fig 3</p>
+<p>Fig 3</p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384518">Declaration
+of a class in C#</h1>
+<p><em>[Access modifier][“</em><span class="text_15">class</span><em>”
+keyword][ClassName]</em></p>
+<p>On second thought, “<strong>Access modifier</strong>” you need to
+replace items, which mentioned below,</p>
+<p><strong>public:</strong> The type or member could become accessible
+by any other code in the same assembly or another assembly that
+references it.</p>
+<p><strong>internal:</strong> The type or member could become accessible
+by any code in the same assembly, but not from another assembly.</p>
+<p>After <em>[Access modifier]</em>, you <strong>have to</strong> put
+the “<strong>class</strong>” keyword, and then a name for your class,
+please see the example below to see how it works. (Using <strong>access
+modifiers</strong> is an option).</p>
+<p><strong>Note:</strong> “<strong>Internal” is the default if no access
+modifier is specified.</strong></p>
+<p>public / internal class Customer</p>
+<p>{</p>
+<p>Codes go here…</p>
+<p>}</p>
+<p>So, try to create a class in C# to see the way it works; however, it
+makes a default class when we add a class file to our project, but rely
+on putting some classes to understand essential structure.</p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384519">Declaration
+of a method in C#</h1>
+<p>[Access modifier][Return type][Method Name]([Parameters])</p>
+<p>Well, methods are defining inside a class, by this, firstly, we need
+to have a class. Imagine we have a class named
+“<strong>math_operation</strong>”, and I am going to create a method
+inside this class as “<strong>sum</strong>”. Before of everything, let
+us explain the elements of declaration line in below.</p>
+<p>Instead of, “<strong>Access modifier</strong>” you can replace items,
+which mentioned below.</p>
+<p><strong>public:</strong> The type or member could become accessible
+by any other code in the same assembly or another assembly that
+references it.</p>
+<p><strong>private:</strong> The type or member could become accessible
+only by code in the same class or struct.</p>
+<p><strong>protected:</strong> The type or member could become
+accessible only by code in the same class, or in a class, which derived
+from that class.</p>
+<p><strong>internal:</strong> The type or member could become accessible
+by any code in the same assembly, but not from another assembly.</p>
+<p><strong>protected internal:</strong> The type or member could become
+accessible by any code in the assembly, which it is declared, or from a
+derived class in another assembly.</p>
+<p><strong>private protected:</strong> The type or member could become
+accessible only within its declaring assembly, by code in the same class
+or in a type that has derived from that class.</p>
+<p>Rather “<strong>return type,”</strong> if the method returns any
+value, <strong></strong> you have to write the data type, which method
+returns such as “<strong>int</strong>”, “<strong>string</strong>”, and
+etcetera. Else, the return type is <strong>void</strong>, and we need to
+apply “<strong>void</strong>” keyword.</p>
+<p>Note: If we put “void” keyword as a substitute for “return type,” you
+will not need to write “return” keyword inside the body of the method,
+but if you use any data type in “return type” then you will need to
+employ the “return” keyword.</p>
+<p>On behalf of, “<strong>Method name,”</strong> you need to set a
+<strong>unique identifier</strong> for your method rather than other
+identifiers’, remember, it is <span class="text_17">CaSe
+SeNsItIvE</span>.</p>
+<p>Instead of, “<strong>Parameter list,”</strong> which enclosed between
+two parentheses you can insert variables with different types as
+<strong>inputs</strong> and <strong>outputs</strong> of the method.</p>
+<p>Okay, let us get back to the example, imagine we have a class called
+“<strong>math_opration</strong>”, which contains a method called
+“<strong>sum</strong>”, and the method uses two parameters to receive
+two numbers. Please consider the elements and the way it works. (Fig
+4)</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><img src="Images/5.png" class="calibre14" alt="Image" /></p>
+<p>Fig 4</p>
+<p>Fig 4</p>
+<p> </p>
+<p>We could create a class and a method successfully to calculate the
+sum of the two numbers, but we need to employ it in an operational
+environment to find the way it works; hence, at first, we need to create
+an instance of the class, and then call the method.</p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384520">Calling
+Methods in C#</h1>
+<p><span class="bullet_">To employ methods, we need to call them. To
+achieve this important, at first, we should create an instance of the
+class, which carries the desired method(s). In this example, we create
+an instance from the “</span><span
+class="text_14">math_operation</span><span class="bullet_">” class
+</span><span class="text_13" lang="de"></span><span class="bullet_"
+lang="de"><img src="Images/6.png" class="calibre14"
+alt="Image" /></span><span class="bullet_">then we will invoke the
+intended method. Find out how to do that in the following. (Open the
+“</span><span class="text_14">Program.cs</span><span class="bullet_">”
+then write the codes shown in below)</span></p>
+<p>Fig 5</p>
+<p>Fig 5</p>
+<p>Good, after starting the project we will see an outcome like that
+illustrated in the following. (Fig 6)</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p><span class="text_13" lang="de"><img src="Images/7.png"
+class="calibre15" alt="Image" /></span><span
+class="bullet_">Congratulations, as we can see, it shows the number
+“</span><span class="text_14">30</span><span class="bullet_">” as the
+final result, it means that the method works like a charm, but remember,
+this is not the whole story, and you need to practice </span><span
+class="text_14">basic</span><span class="bullet_"> </span><span
+class="text_14">examples</span><span class="bullet_"> more and more to
+find out the way it works. Do not rush to go on big projects because we
+are a junior.</span></p>
+<p>Fig 6</p>
+<p>Fig 6</p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384521">How to use
+constructors</h1>
+<p>Well, as we mentioned, the constructors are methods, <strong>which do
+not return any value</strong>. For example, if we have a class named
+“<strong>car</strong>”, definitely there is a constructor for it too,
+called “<strong>car</strong>”. We noted that one of the main tasks of
+the constructors is initializing data members of a new object.</p>
+<p> </p>
+<p> </p>
+<p>The general structure of a constructor at a glance.</p>
+<p>{Access-modifier} {Class-name}([Parameters])</p>
+<p>{</p>
+<p>}</p>
+<p>See a simple example to get the structure better.</p>
+<p>Step 1: Put the below codes in a class file.</p>
+<div class="calibre16">
+<div class="block_33">
+<span class="bullet_1">1- </span><span class="calibre8">public class
+car</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">2- </span><span class="calibre8">{</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">3- </span><span class="calibre8">public string
+color;</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">4- </span><span class="calibre8">public int
+max_speed;</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">5- </span><span class="calibre8">public car
+()</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">6- </span><span class="calibre8">{</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">7- </span><span class="calibre8">color =
+"Orange";</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">8- </span><span class="calibre8">max_speed =
+200;</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">9- </span><span class="calibre8">} </span>
+</div>
+<div class="block_33">
+<span class="bullet_1">10- </span><span class="calibre8">}</span>
+</div>
+</div>
+<p>Step 2: Open the “Program.cs” file and put the below codes.</p>
+<div class="calibre16">
+<div class="block_33">
+<span class="bullet_1">11- </span><span class="calibre8">public class
+Program</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">12- </span><span class="calibre8">{</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">13- </span><span class="calibre8"><span
+class="text_18">static void Main(string[] args)</span></span>
+</div>
+<div class="block_33">
+<span class="bullet_1">14- </span><span class="calibre8">{</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">15- </span><span class="calibre8"><strong>car cr
+= new car();<span class="tab">      </span></strong></span>
+</div>
+<div class="block_33">
+<span class="bullet_1">16- </span><span
+class="calibre8"><strong>Console.WriteLine(cr.max_speed);</strong></span>
+</div>
+<div class="block_33">
+<span class="bullet_1">17- </span><span
+class="calibre8"><strong>Console.WriteLine(cr.colour);</strong></span>
+</div>
+<div class="block_33">
+<span class="bullet_1">18- </span><span
+class="calibre8"><strong>Console.ReadKey();</strong></span>
+</div>
+<div class="block_33">
+<span class="bullet_1">19- </span><span class="calibre8">}</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">20- </span><span class="calibre8">}</span>
+</div>
+</div>
+<p><strong>Step 3: Run the program, and let the CLR</strong><sup><a
+href="#index_split_010.html_note_7" class="calibre2"
+title="7"><sup>7</sup></a></sup> <strong>gives out the
+result.</strong></p>
+<p>The first output is equal to “200”.</p>
+<p>The second output is equal to “Orange”.</p>
+<p>Okay, Let us trace the lines of codes to see what happened.</p>
+<p><strong>#1:</strong> Define a public class called “car”.</p>
+<p><strong>#3:</strong> Define a public field, inside the class to hold
+the color name of the car.</p>
+<p><strong>#4:</strong> Define a public field, inside the class to hold
+the maximum speed of the car.</p>
+<p><strong>#5:</strong> Define a constructor due to set the default
+values for the fields.</p>
+<p><strong>#7:</strong> Set the default value.</p>
+<p><strong>#8:</strong> Set the default value.</p>
+<p><strong>#15:</strong> Create an instance of the car class called
+“<strong>cr</strong>”.</p>
+<p><strong>#16:</strong> Show the value of the “color” field using the
+“<strong>Console.WriteLine”</strong> command line, in an MS-DOS console
+window.</p>
+<p><strong>#17:</strong> Show the value of the “max_speed” field using
+the <strong>Console.WriteLine</strong> command in an MS-DOS console
+window.</p>
+<p><strong>#18:</strong> Obtains the next character or function key
+pressed by the user. The pressed key is displayed in the MS-DOS console
+window. It could help us observe the outcome while keeping the window
+opened.</p>
+<p>We may ask ourselves, why use constructors when we can set the
+default value(s) of fields while defining them? Well, it is a good
+question, let us see why? Even if we do not create a constructor to
+initialize the data members of a class or struct, the compiler will do
+this, initialize the data members, and invoke it by default after
+creating a class or struct. <strong>Remember, we can define multiple
+constructors at the same time in a class or struct with input
+parameters,</strong> <strong>which enables us to set different values
+for each instance of a class</strong>, for example, we can have five
+instances of a class with five different values. We could find more
+information about this in advanced topics of OOP in C#.</p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384522">How to use
+DEstructors</h1>
+<p>The destructors are methods, which help to clean up finished objects
+from memory. <strong>However, garbage-collected languages do this
+easily, and destructors are useful no more</strong>, but at least,
+knowing the functionality of destructors is useful.</p>
+<p>See the example below to find out the way it works.</p>
+<p>Step 1: Put the below codes in a class file.</p>
+<div class="calibre18">
+<div class="block_33">
+<span class="bullet_1">1- </span><span class="calibre8">class
+print_command</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">2- </span><span class="calibre8">{</span>
+</div>
+</div>
+<p> </p>
+<div class="calibre18">
+<div class="block_33">
+<span class="bullet_1">3- </span><span class="calibre8">public
+print()</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">4- </span><span class="calibre8">{</span>
+</div>
+</div>
+<p><span class="calibre9"> 5- </span><span
+class="tab">      </span>Console.WriteLine ("This is a
+constructor");</p>
+<div class="calibre18">
+<div class="block_33">
+<span class="bullet_1">6- </span><span class="calibre8">}</span>
+</div>
+</div>
+<p> </p>
+<div class="calibre18">
+<div class="block_33">
+<span class="bullet_1">7- </span><span class="calibre8">~print()</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">8- </span><span class="calibre8">{</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">9- </span><span
+class="calibre8">Console.WriteLine ("This is a destructor");</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">10- </span><span class="calibre8">}</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">11- </span><span class="calibre8">} // End of
+class</span>
+</div>
+</div>
+<p>Step 2: Open the “Program.cs” file and put the below codes.</p>
+<div class="calibre18">
+<div class="block_33">
+<span class="bullet_1">12- </span><span class="calibre8">class
+Program</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">13- </span><span class="calibre8">{</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">14- </span><span class="calibre8"><span
+class="text_18">static void Main(string[] args)</span></span>
+</div>
+<div class="block_33">
+<span class="bullet_1">15- </span><span class="calibre8">{</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">16- </span><span
+class="calibre8"><strong>print_command prt = new
+print_command();</strong></span>
+</div>
+<div class="block_33">
+<span class="bullet_1">17- </span><span class="calibre8">}</span>
+</div>
+<div class="block_33">
+<span class="bullet_1">18- </span><span class="calibre8">}</span>
+</div>
+</div>
+<p>Step 3: Run the program, and let the CLR gives out the result.</p>
+<p>The output in the first line is equal to "This is a constructor".</p>
+<p>The output in the second line is equal to "This is a destructor".</p>
+<p>Well, let us trace the codes, line by line to find out what
+happened.</p>
+<p><span class="text_14">#1: </span><span class="bullet_">Define a class
+called “</span><span class="text_13">print_command</span><span
+class="bullet_">”.</span></p>
+<p><strong>#3:</strong> Define a constructor called “print”.</p>
+<p><strong>#5:</strong> Write a command line, which prints out “This is
+a constructor” in an MS-DOS console window to find out invoking of the
+constructor method.</p>
+<p><strong>#7:</strong> Define a destructor. <strong>Remember, the name
+of destructor needs to be the same as the name of the class, and also a
+“~” character is needed to get placed before the name of the
+destructor.</strong></p>
+<p><strong>#9:</strong> Write a command line, which prints out “This is
+a destructor” in an MS-DOS console window. When we see the message, it
+means that the constructor is executed and finished.</p>
+<p><span class="text_14">#16: </span><span class="bullet_">Open the
+“Program.cs” file</span><span class="text_14">, </span><span
+class="bullet_">and</span><span class="text_14"> </span><span
+class="bullet_">create an instance of the “</span><span
+class="text_13">print_command</span><span class="bullet_">”
+class.</span></p>
+<p>Ultimately, by running the program, we will invoke the constructor
+and destructor methods.</p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384523">The
+Property and encapsulation</h1>
+<p>Here we have a very simplified sample of <strong>property</strong>.
+At first, try to check the following example, trace the lines of codes,
+and strive to see if we could get it or not.</p>
+<p>Step 1: Create a class called “Calculation”, and put the below codes,
+in order to create a property.</p>
+<div class="calibre19">
+<div class="block_33">
+<span class="bullet_1">1- </span><span class="calibre8">public class
+Calculation</span>
+</div>
+</div>
+<p>2-<span class="tab">      </span>{</p>
+<p>3-<span class="tab">      </span>private int result;</p>
+<p>4-<span class="tab">      </span>public int Age</p>
+<p>5-<span class="tab">      </span>{</p>
+<p>6-<span class="tab">      </span>get { return result;}</p>
+<p>7-<span class="tab">      </span>set { result = value; }</p>
+<p>8-<span class="tab">      </span>}</p>
+<p>9-<span class="tab">      </span>}</p>
+<p>Step 2: Open the “Program.cs” file and put the below codes.</p>
+<p>10-<span class="tab">      </span>public class Program</p>
+<p>11-<span class="tab">      </span>{</p>
+<p>12-<span class="tab">      </span><span class="text_18">static void
+Main(string[] args)</span></p>
+<p>13-<span class="tab">      </span>{</p>
+<p><strong>14-<span class="tab">      </span>Calculation clc=new
+Calculation ();</strong></p>
+<p><strong>15-<span class="tab">      </span>clc.Age=50;</strong></p>
+<p><strong>16-<span class="tab">      </span>Console.WriteLine
+(clc.Age-7);</strong></p>
+<p><strong>17-<span
+class="tab">      </span>Console.ReadKey();</strong></p>
+<p>18-<span class="tab">      </span>}</p>
+<p>19-<span class="tab">      </span>}</p>
+<p>Step 3: Run the program, and let the CLR gives out the result.</p>
+<p>The final output is equal to 43.</p>
+<p>Okay, great. So, let us see what happened from the first step to the
+final step by analyzing lines of codes,</p>
+<p><strong>#1</strong>: We have defined a class called
+“<strong>Calculation”</strong> to put necessary blocks of codes inside,
+such as methods and fields.</p>
+<p><strong>#3</strong>: <strong>Due to pursuing the encapsulation rule,
+we</strong> <span class="text_17">have to</span><span class="text_15">
+</span><strong>define the method as private.</strong> This way, the
+field will remain inaccessible from the attempts of the other users
+using the same class. So, thereupon, we could fulfill the concept of
+encapsulation which is important in real meaning.</p>
+<p><strong>#4</strong>: Time to define a property inside the class,
+called “Age”. Do not insert parenthesis “()” after the name of a
+property as it leads you to a syntax error. We need to place the
+<strong>get</strong> and the <strong>set</strong> methods in the
+property, for <strong>these methods can set or get value(s) from the
+defined private field in line #3, and technically this is the only way
+to set or get values(s) from a field which is inaccessible, and is
+following encapsulation paradigm.</strong></p>
+<p><strong>#6:</strong> In simple language, <strong></strong> this
+method <strong>get value(s) from the private field</strong> <strong>and
+pass it to you, when you call it.</strong></p>
+<p><strong>#7:</strong> <strong>This method sets a value to the private
+field, remember, the “value” next to the “=” sign is a must keyword to
+put a value(s) into a field correctly.</strong></p>
+<p>Almost done, the other parts of the codes (<strong>from #10</strong>)
+are in the“<strong>Program.cs</strong>”.</p>
+<p><strong>#14:</strong> Here we need to create an instance of the
+defined class called “Calculation”. Well, I do this, and name the
+instanced class as “clc” (You could put your favored name), then we
+would have a usable copy of “Calculation” class called “clc”, as you
+might be aware, <strong>a class can not be used on its own, and needs to
+get instanced in favor of becoming applicable.</strong></p>
+<p><strong>#15: Sets the value “50” to the private field named “result”
+available in “Calculation” class. Well, in fact, it passes the value
+“50” to the property, and the “set” method in the property grab that
+value</strong> <span class="text_17">using “value” keyword</span><span
+class="text_15"> </span><strong>and simply put it inside the private
+field called “result”.</strong></p>
+<p><strong>#16:</strong> This line, reads the available value inside the
+private field in “Calculation” class. In simple language, this time the
+“get” method fetches the available value from the private field in
+“Calculation” class called “result”, and pass it to you, and then the
+received value will get subtracted by number 7. Ultimately, this line of
+command <strong>“Console.WriteLine”</strong>, shows the outcome (fetched
+value minus by number 7) an MS-DOS console window.</p>
+<p><strong>#17:</strong> Obtains the next character or function key
+pressed by the user. The pressed key is displayed in the MS-DOS console
+window. In fact, it could help us observe the final consequence(s) while
+keeping the window opened.</p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384524">Struct</h1>
+<p>Let us see a basic instance of the struct in the following to find
+out the structure.</p>
+<p>Step 1: Define a struct by putting the below codes in a class
+file.</p>
+<p>1-struct information</p>
+<p>2-{</p>
+<p>3-public string name;</p>
+<p>4-}</p>
+<p>Step 2: Create an instance of the defined struct</p>
+<p>Open the “Program.cs” file and using the below code, create an
+instance of the defined struct.</p>
+<p>5- public class Program</p>
+<p>6- {</p>
+<p>7- <span class="text_18">static void Main(string[] args)</span></p>
+<p>8-<span class="calibre9"> </span>{</p>
+<p><strong>9-<span class="calibre9"> </span>information
+TheStruct</strong></p>
+<p><strong><span class="calibre9">10-
+TheStruct</span>.name=”Hani”;</strong></p>
+<p>11-<span class="calibre9"> </span>}</p>
+<p>12- }</p>
+<p>Let us dig into codes line by line,</p>
+<p><strong>#1:</strong> Define a struct, using “struct” keyword you can
+do it.</p>
+<p><strong>#3:</strong> Define a string field in the struct (Remember,
+you cannot obtain a value for that field inside the struct, you can
+define it, this is a rule, which I noted in advance).</p>
+<p><strong>#9:</strong> Time to create an instance of the “information”
+struct. So, what we need to do is <strong>writing the name of the struct
+at first</strong>, then writing the name of the object.</p>
+<p><strong>#10:</strong> Well, now we can obtain a value to the field,
+which defined in the struct, from here.</p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384525">“Reference
+Type” and “Value type”</h1>
+<p>There is a <strong>fundamental and markable discrepancy</strong>
+<strong>between class and struct</strong>, which we noted in advance. We
+should be aware that the <strong>class is “Reference Type”</strong> and
+struct is “<strong>Value Type</strong>.” So what does it mean? Let us
+clear by an example in the following to get it more.</p>
+<p>Please pay attention to this piece of the code; this is a sample of a
+class, which we need to guess the output.</p>
+<p>1-ProgrammingClass student1=new ProgrammingClass ();</p>
+<p>2-student1.score = 20;</p>
+<p>3-ProgrammingClass student2 = student1;</p>
+<p>4-student2.score = 19;</p>
+<p>5-Console.WriteLine (student1.score.ToString ());</p>
+<p>Yes, <strong>the output is equal to “19”; instead of, “20”</strong>,
+<strong></strong> but why not <strong>“20”</strong>? The reason is to be
+the <strong>reference type</strong>, let us explore line by line to find
+out more.</p>
+<p><strong>#1:</strong> Creating an instance object named
+<strong>“student1”</strong> of a class called
+<strong>“ProgrammingClass”</strong>, which containing a field named
+<strong>“score”.</strong></p>
+<p><strong>#2:</strong> Set the value of “<strong>20</strong>” in the
+score field.</p>
+<p><strong>#3:</strong> Creating another instance object named
+<strong>“student2”</strong> of the <strong>“ProgrammingClass” and put it
+equals to “student1” the object. Please pay heed, by this</strong><span
+class="text_15">, </span><strong>these two objects (student1 and
+student2) will</strong> <span class="text_15">get linked</span>
+<strong>together, and their values</strong> <span class="text_15">will
+not get copied</span> <strong>in one another; on the other hand, as an
+instance, if you change the value of the “score” field available in the
+“student2”, the value of the “score” field existing in the “student1”
+will get replaced by same as “student2”. It is the meaning of “Reference
+Type” in simple language.</strong></p>
+<p><strong>#4:</strong> Set the value of “<strong>19</strong>” in the
+score field existing in the <strong>“student2”.</strong></p>
+<p><strong>#5:</strong> Show the value of the “score” field available in
+the “<strong>student1</strong>” using the
+<strong>Console.WriteLine</strong> command in an MS-DOS console
+window.</p>
+<p>It was the concept of the “<strong>Reference Type</strong>.”
+<strong></strong> Now let us have an example of the struct to understand
+the sense of the “<strong>Value Type”</strong> too.</p>
+<p>1-ProgrammingStruct student1 ();</p>
+<p>2-student1.score = 20;</p>
+<p>3- ProgrammingStruct student2 = student1;</p>
+<p>4-student2.score = 19;</p>
+<p>5-Console.WriteLine (student1.score.ToString ());</p>
+<p><strong>Unlike the class, this time, the output is equal to
+“20”</strong>; <strong>instead of,</strong> <strong>“19”</strong>. Well,
+the reason is being a <strong>value type</strong>, let us see how it
+works line by line.</p>
+<p><strong>#1:</strong> Creating an instance object named
+<strong>“student1”</strong> of a struct called
+<strong>“ProgrammingStruct”</strong>, which containing a field named
+<strong>“score”.</strong> (<strong>Remember, you do not need using “new”
+keyword while creating an instance object of a struct</strong>).</p>
+<p><strong>#2:</strong> Set the value of “<strong>20</strong>” in the
+score field.</p>
+<p><strong>#3:</strong> Creating another instance object named
+<strong>“student2”</strong> of the <strong>“ProgrammingStruct” and put
+it equals to “student1” the object. Please pay heed, by
+this</strong><span class="text_15">, </span><strong>these two objects
+(student1 and student2) will</strong> <span class="text_15">get
+linked</span> <strong>together, and their values</strong> <span
+class="text_15">will not get copied</span> <strong>in one another; on
+the other hand, as an instance, if you change the value of the “score”
+field available in the “student2”, the value of the “score” field
+existing in the “student1” will get replaced by same as “student2”. It
+is the meaning of “Reference Type” in simple language.</strong></p>
+<p><strong>#4:</strong> Set the value of “<strong>19</strong>” in the
+score field existing in the <strong>“student2”.</strong></p>
+<p><strong>#5:</strong> Show the value of the “score” field available in
+the “<strong>student1</strong>” using the
+<strong>Console.WriteLine</strong> command in an MS-DOS console
+window.</p>
+<p>Moreover, this was the concept of the “<strong>Value Type</strong>”
+too.</p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384526">The
+inheritance</h1>
+<p>The word “Inheritance” in the OOP paradigm is the same meaning as in
+the real world. It is one of the most important, interesting, and
+applicable concepts in OOP paradigm. Firstly, let us have a closer look
+by relying on an example to figure it out. Imagine we got two different
+classes such as below,</p>
+<p><strong><img src="Images/Untitled.png" class="calibre20"
+alt="Image" />Step 1: Here we create the class “First”, and put two
+methods inside (One private and another one public), also we implement
+two fields (One private and another one public) too</strong><span
+class="text_15">.</span></p>
+<p>Fig 7</p>
+<p>Fig 7</p>
+<p><span class="text_13" lang="de"><img src="Images/Untitled2.jpeg"
+class="calibre21" alt="Image" /></span><span class="text_14">Step 2:
+Creating a class called “second”, which inheritance members of the
+“First” class. Remember, now the “Second” the class is considered to be
+a </span><span class="text_19">derived</span><span class="text_14">
+class, and the “First” class is considered to be a </span><span
+class="text_19">base</span><span class="text_14"> class. To do
+inheritance, we need to put a “:” character between the names of the
+classes, while creating the derived class, take a look at the end of Fig
+7 to get it</span><span class="text_20">.</span></p>
+<p>Fig 8</p>
+<p>Fig 8</p>
+<p>Good, now the “Second” the class has inherited everything from the
+“First” the class. To see the result of the made inheritance by the
+“Second” the class try to create an instance object of the “Second” the
+class in the “Program.cs”, and see what we got.</p>
+<p><span class="bullet_">It seems we just got a method called “method1”
+and a field called “Name” (Fig 8), but what about the rest? Because we
+have a private field named “phoneNumber” and method, which is named
+“method2” too. Well, we must be aware that </span><span
+class="text_14">the</span><span class="bullet_"> </span><span
+class="text_14">private members do not get inherit unless we
+</span><span class="text_19">change the “private” access modifier to the
+“protected” one, then you will be </span><span class="text_13"
+lang="de"><img src="Images/3.jpeg" class="calibre22"
+alt="Image" /></span><span class="text_19">able to access them in the
+derived class. (Fig 9)</span></p>
+<p>Fig 9</p>
+<p>Fig 9</p>
+<p>Okay, after changing the access modifier of the “phoneNumber” field
+from “private” to “protected” (Fig 9), now we can access it in the
+derived class (“Second”); hence, as you see in (Fig 9), we have created
+a method called “access_test” having an input parameter, which passes
+the value to the “phoneNumber” field.</p>
+<p>To employ it, we need to invoke it. Like always do this in the
+“Program.cs”.</p>
+<p>See the (Fig 10) and try to trace what happened from the first.</p>
+<p><span class="text_13" lang="de"></span><span class="text_19"
+lang="de"><img src="Images/4.jpeg" class="calibre23"
+alt="Image" /></span><span class="text_19">That </span><span
+class="text_14">we</span><span class="text_19"> cannot inherit of two or
+more classes at the same time, is a considerable point of which in
+inheritance topic, and we must be aware.</span></p>
+<p>Fig 10</p>
+<p>Fig 10</p>
+<p>See the example below,</p>
+<p><span class="text_21">☓</span><span class="text_22"> </span><span
+class="text_23">class1:class2:class3:class4:class5:class6</span></p>
+<p><span class="text_21">☓</span><span class="text_22"> </span><span
+class="text_23">class1:class2, class3, class4, class5, class6</span></p>
+<p><span class="text_21" lang="de"></span><span
+class="text_21">✓</span><span class="text_24"> </span><span
+class="text_25">class1:class2<span
+class="tab1">      </span></span><span class="text_25"><span
+class="tab1">      </span><span class="calibre24"> </span></span><span
+class="text_25">1:1</span></p>
+<p>In the following, we are going to write about constructors in
+inheritance topic and how to deal with it.</p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384527">The
+constructors in inheritance</h1>
+<p>There is a vague point here; it is constructors, so what about them?
+Could we inherit them too? Well, the answer is, “Yes,” but not normally.
+To make it crystal clear, let us refer to the following example.</p>
+<p>Step 1: Create a class called “car1”, and put a private field named
+“modelName1” in, and a constructor with an input parameter, inside.</p>
+<p> </p>
+<p>1-class car1</p>
+<p>2-{</p>
+<p>3-private string modelName1;</p>
+<p>4-public car1 (string modelName1_param)</p>
+<p>5-{</p>
+<p>6-modelName1=modelName1_param;</p>
+<p>7-}</p>
+<p>8-}</p>
+<p>Step 2: Create a class called “car2”, and put a private field named
+“modelName2” in, and a constructor with an input parameter, inside.</p>
+<p>9- class car2:car1</p>
+<p>10-{</p>
+<p>11-private string modelName2;</p>
+<p>12-public car2 (string modelName2_param):base(modelName2_param)<span
+class="calibre9"> </span></p>
+<p>13-{</p>
+<p>14-modelName2 ="BMW "+ modelName2_param;</p>
+<p>15-Console.WriteLine(modelName2);</p>
+<p>16-}</p>
+<p>17-}</p>
+<p> </p>
+<p>Step 3: Now open the “Program.cs and put the lines 22 and 23 in”.</p>
+<p>18- class Program</p>
+<p>19-{</p>
+<p>20-static void Main(string[] args)</p>
+<p>21-{</p>
+<p>22-car2 cr = new car2("Z4");</p>
+<p><span
+class="text_26">23-</span><strong>Console.ReadKey();</strong><span
+class="text_26"><span class="calibre9"> </span></span></p>
+<p>24-<span class="calibre9">} </span></p>
+<p>25-}</p>
+<p>The output is equal to "BMW Z4".</p>
+<p>Okay, time to explore the codes line by line to get <strong>how to
+deal with constructors in inheritance topic</strong>.</p>
+<p><strong>#1:</strong> Create a class called “car1”.</p>
+<p><strong>#3:</strong> Define a private string field.</p>
+<p><strong>#4:</strong> Create a constructor with the input
+parameter.</p>
+<p><strong>#6:</strong> Set the value of the defined private string
+field to the input parameter of the constructor.</p>
+<p><strong>#9:</strong> Now, create the second class called “car2” and
+do inheritance from “car1” the class by putting the key character “:” in
+front of the “car2”, and writing the “car1” word.</p>
+<p>#11: Please pay attention carefully, to employ constructors in
+inheritance, we have to create a constructor in the derived class
+exactly as the one exists in the base class (car1). So, at first, define
+a private string field.</p>
+<p><strong>#12:</strong> And now create a constructor with an input
+parameter in the derived class, then we <strong>have to</strong> put the
+”<strong>: base()”</strong> key command in front of the constructor.
+Remember to fill in the parenthesis of <strong>base</strong> key command
+with the constructor’s input parameter name (“<span
+class="text_26">modelName2_param</span>”).</p>
+<p><span class="text_27" lang="de"></span><span class="text_27"><span
+class="calibre9"> </span></span><span class="text_27"> </span><span
+class="text_27">Have to be the same</span></p>
+<p><strong>public car2 (string</strong> <span
+class="text_17">modelName2_param</span><strong>)</strong><span
+class="text_28">:base</span><span class="text_15">(</span><span
+class="text_28">modelName2_param</span><span class="text_15"><span
+class="calibre9">) </span></span></p>
+<p><strong>#14:</strong> Set the value of the defined private string
+field to a string as <strong>“BMW”,</strong> and the input parameter of
+the constructor.</p>
+<p><strong>#15:</strong> Show the value of the “<span
+class="text_26">modelName2</span>” field using the
+“<strong>Console.WriteLine”</strong> command line, in an MS-DOS console
+window.</p>
+<p>#22: Create an instance object of the “car2” the class (derived
+class), and pass the “Z4” to its constructor.</p>
+<p><strong>#23:</strong> Obtains the next character or function key
+pressed by the user. The pressed key is displayed in the MS-DOS console
+window. It could help us observe the outcome while keeping the window
+opened.</p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384528">The
+abstraction</h1>
+<p>Before, we have explained about the nature of abstraction class, but
+if we have to describe the <strong>abstraction class in
+practice</strong>, we would say it is a kind of class, which normally,
+<span class="text_17">cannot get instanced as an object</span>, but
+<strong>just could be used in inheritance</strong>. Let us have a deeper
+focus on it by pursuing an example in the following to find how it
+works.</p>
+<p><strong>Step 1: Here is the way to create an</strong> <span
+class="text_17">abstract class</span><strong>, we need to put the
+“abstract” keyword before the “class” keyword.</strong></p>
+<p><span class="text_15">abstract</span> class A<br />
+{</p>
+<p><span class="calibre9"> </span>public string book_name;</p>
+<p><span class="calibre9"> </span><span class="calibre9"> public
+abstract void </span>Go_to();</p>
+<p><span class="calibre24"> </span><span class="calibre24"> </span>
+public void author()</p>
+<p><span class="calibre24"> {</span></p>
+<p><span class="calibre24"> Console.WriteLine("</span>I am a GEEK");</p>
+<p><span class="calibre24"> }</span></p>
+<p>}</p>
+<p><strong>Step 2</strong>: <strong>As we could see in the
+above,</strong> <strong>an abstract class</strong> <span
+class="text_17">could accept fields, normal methods, and abstract
+methods too</span><strong>. Remember, the available abstract method(s)
+in the class base (A), like the “Go_to()”; in order to, use in derived
+class (B), need to be</strong> <span class="text_17">re-created</span>
+<strong>in the derived class (B)</strong> <span class="text_17">using
+the “override” keyword</span> <strong>because unlike the normal methods,
+you are not allowed to use “{“ and “}” characters to create an abstract
+method in the base class (A) (</strong><span class="text_17">Compare the
+author() and the Go_to() methods available in class A to detect the
+differences</span><strong>). See the example in the following to
+understand this concept better. Do not forget to practice practically to
+become familiar with it thoroughly.</strong></p>
+<p><span class="text_29"><span class="calibre24"> </span></span><span
+class="text_30">class B:A</span></p>
+<p><span class="calibre24"> {</span></p>
+<p><span class="text_31"><span class="calibre24"> public override void
+</span></span><span class="text_31">Go_to()</span></p>
+<p><span class="calibre24"> {</span></p>
+<p>Console.WriteLine("This is a test by Hani"); }}</p>
+<p>Step 3: Now, open the “Program.cs” and put the codes in below to see
+the result.</p>
+<p>class Program</p>
+<p><span class="calibre9"> {</span></p>
+<p><span class="calibre9"> static void Main(string[] args)</span></p>
+<p><span class="text_18"><span class="calibre9"> {</span></span><span
+class="text_18"> </span></p>
+<p><span class="calibre9"> B derived = new B();</span></p>
+<p><span class="text_26"><span class="calibre9">
+derived.</span></span><span class="text_26">Go_to();</span></p>
+<p><span class="calibre9"> derived.author();</span></p>
+<p><span class="text_26"><span class="calibre9">
+</span></span><strong><span class="calibre9">Console.ReadKey();
+</span></strong></p>
+<p><span class="calibre9"> }</span></p>
+<p><span class="calibre9"> }</span></p>
+<p>The first output is equal to “This is a test by Hani”.</p>
+<p>The second output is equal to “I am a GEEK”.</p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384529">Static and
+non-static class</h1>
+<p>Shortly, the <strong>non-static</strong> classes are the ones that to
+employ them of which we must create an instance, and unlike it, to use
+static ones of which we do not need to create an instance. Till now, we
+have used non-static classes, so now, we intend to have static classes
+too; hence, let us have an example in the following to get cleared.</p>
+<p>A sample of a non-static class,</p>
+<p>Step 1: Create a class, place three fields and a method inside.</p>
+<p><span class="text_32"> </span><span class="bullet_4"><span
+class="calibre24"> class nonStatic_sample</span></span></p>
+<p><span class="calibre24"> {</span></p>
+<p>public int num1;</p>
+<p>public int num2;</p>
+<p>public int result;</p>
+<p><span class="calibre9"> public int sum()</span></p>
+<p><span class="calibre9"> {</span></p>
+<p>num1 = 10;</p>
+<p>num2 = 20;</p>
+<p>result = num1 + num2;</p>
+<p>return result; }}</p>
+<p>Step 2: Open the “Program.cs” file, create an instance object of the
+“nonStatic_sample” class, then employ “sum” method.</p>
+<p>nonStatic_sample ns = new nonStatic_sample();</p>
+<p>Console.WriteLine(ns.sum());</p>
+<p>Console.ReadLine();</p>
+<p>As we had non-static classes, we know how to deal with them, but it
+is necessary to know the functionality of static ones too.</p>
+<p>A sample of a static class,</p>
+<p><strong>Step 1: Create a</strong> <span class="text_17">static</span>
+<strong>class, place three</strong> <span class="text_17">static
+fields</span> <strong>and a</strong> <span class="text_17">static
+method</span> <strong>inside.</strong></p>
+<p><span class="calibre24"> class Static_sample</span></p>
+<p><span class="calibre24"> {</span></p>
+<p><span class="text_18"><span class="calibre9"> </span></span><span
+class="text_18">public static int num1;</span></p>
+<p><span class="text_18"><span class="calibre9"> </span></span><span
+class="text_18">public static int num2;</span></p>
+<p><span class="text_18"><span class="calibre9"> public static
+int</span></span><span class="text_18"> result;</span></p>
+<p>public static int sum()</p>
+<p>{</p>
+<p>num1 = 10;</p>
+<p>num2 = 20;</p>
+<p>result = num1 + num2;</p>
+<p>return result; }}</p>
+<p><strong>Step 2: Open the “Program.cs” file, then write the name of
+the class (</strong><span class="text_33">Static_sample</span><strong>)
+directly, as it is a static class, of which we do not need to create an
+instance object. See the below codes to get it.</strong></p>
+<p>int result;</p>
+<p><span class="text_18">result = </span><span
+class="text_26">Static_sample.sum();</span></p>
+<p><span class="text_18">Console.WriteLine(result</span><span
+class="text_26">.</span><span class="text_18">ToString());</span></p>
+<p>Console.ReadLine();</p>
+<p>As we could see; instead of, creating an instance object, we wrote
+its name and then called the “sum()” method from its inside.
+<strong>Remember, we could prevent putting the “static” keyword before
+of the “class” keyword and still could have static and non-static
+members inside, although, employing non-static members in static methods
+are not allowed. See the example in below.</strong></p>
+<p><span class="text_13" lang="de"></span><span class="text_34"> class
+Static_sample<span class="calibre9"> </span></span><span
+class="text_35">Prevented to use the “static” keyword</span></p>
+<p><span class="calibre9"> {</span></p>
+<p><span class="text_13" lang="de"></span><span class="text_34"><span
+class="calibre9"> </span></span><span class="text_34"> public static int
+num1;<span class="calibre9"> </span></span><span class="text_34"><span
+class="calibre9"> </span></span><span class="text_35">Allowed to be used
+in the sum method</span></p>
+<p><span class="text_13" lang="de"></span><span class="text_34"> <span
+class="calibre9"> </span></span><span class="text_34">public int
+num2;<span class="calibre9"> </span></span><span class="text_34">
+</span><span class="text_35">Not allowed to be used in the sum
+method</span></p>
+<p><span class="calibre9"> public static int sum()</span></p>
+<p><span class="text_18"><span class="calibre9"> </span></span><span
+class="text_18"> {<span class="calibre9"> </span></span></p>
+<p><span class="text_33"><span class="calibre9"> </span></span><span
+class="text_33">//Only static members are allowed here.</span></p>
+<p><span class="text_18"><span class="calibre9"> </span></span><span
+class="text_18"><span class="calibre9"> </span></span><span
+class="text_18"> }</span> }</p>
+<p><strong>Note: Do not forget, if we use the “static” keyword before
+the “class” keyword, the members of the class</strong> <span
+class="text_17">have to</span> <strong>be static too.</strong></p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384530">The
+interface</h1>
+<p>As we said, its structure is like the class, which let a class to
+inheritance multiple times from, while a class cannot inherit from two
+or more classes <span class="text_36">simultaneously; thereupon, we
+could consider this as an advantage of the Interface class. So, let us
+see an example in the following to understand the difference
+better.</span></p>
+<p>We go ahead with a throwback to an example of the inheritance topic
+to see how it works. Well, imagine we got three different classes as
+below,</p>
+<p>class A</p>
+<p>{</p>
+<p>}</p>
+<p>class B</p>
+<p>{</p>
+<p>}</p>
+<p>class C</p>
+<p>{</p>
+<p>}</p>
+<p>Now the <span class="text_17">class C</span> would inherit from the
+<span class="text_17">class B</span>, but how? It is easy, act like the
+below,</p>
+<p>class C:B</p>
+<p>{</p>
+<p>}</p>
+<p>Good, but we need to inheritance from the <span class="text_17">class
+A</span> concurrently too, how could we do that? Is it possible?
+<strong>Definitely, true. But not normally</strong>, for we need to use
+the <strong>interface class</strong> to gain this important. In the
+following, we will have normal and interface classes.</p>
+<p>Please attention to the following example; it contains normal classes
+and interface classes,</p>
+<p>Note: To create an interface class we need to apply the “interface”
+keyword; instead of, the “class” one.</p>
+<p>class A</p>
+<p>{</p>
+<p>}</p>
+<p>interface A1</p>
+<p>{</p>
+<p>}</p>
+<p>interface B1</p>
+<p>{</p>
+<p>}</p>
+<p>class B</p>
+<p>{</p>
+<p>}</p>
+<p>class C:B,A1,B1</p>
+<p>{</p>
+<p>}</p>
+<p>As we could see above, <strong>unlike always, this time, the</strong>
+<strong>class C</strong> <strong>could inherit</strong> <strong>from two
+interface classes, also, a normal class at the same time. There is an
+important point here, which in inheritance, the normal class has to get
+defined at first, then interface class(es), else you may get an error.
+See the below example to get it.</strong></p>
+<p><span class="text_37">☓</span><span class="text_38"> </span><span
+class="text_39">class C:A1,B,B1 <span class="calibre9">
+</span></span><span class="text_37">☓</span><span class="text_38">
+</span><span class="text_39">class C:A1,B1,B <span class="calibre9">
+</span></span><span class="text_39"> <span class="calibre9">
+</span></span><span class="text_37">✓</span><span class="text_40">
+</span><span class="text_39">class C:B,A1,B1</span></p>
+<p>How to invoke it? Well, it is a little bit different rather than
+invoking normal classes, using an example, we could understand this
+better.</p>
+<p>Step 1: Create a class file then put the following classes.</p>
+<p>1-interface A1</p>
+<p>2-{</p>
+<p>3-string show_name();</p>
+<p>4-}</p>
+<p>5-class B:A1</p>
+<p>6-{</p>
+<p>7-public string show_name()</p>
+<p>8-{</p>
+<p>9-return "Hani";</p>
+<p>10-}</p>
+<p>11-}</p>
+<p>Step 2: Open the “Program.cs” file and put the following codes.</p>
+<p>12<span class="text_18">-class Program</span></p>
+<p>13-{</p>
+<p>14- static void Main(string[] args)</p>
+<p>15-{</p>
+<p>16-A1 name = new B();</p>
+<p>17-Console.WriteLine(name.show_name());</p>
+<p>18-Console.ReadKey();</p>
+<p>19-}</p>
+<p>20-}</p>
+<p>Time to dig the lines one by one to find out the codes,</p>
+<p><strong>#1:</strong> The way to define an interface. Using the
+<strong>“interface”</strong> <strong></strong> keyword; instead of, the
+“<strong>class</strong>” one. <strong></strong> <span class="text_17">Be
+aware that the “interface class” is contemplated to be “public” all the
+time.</span></p>
+<p><span class="text_14">#3</span><span class="bullet_2">: </span><span
+class="bullet_">Create a string method called “</span><span
+class="text_14">show_name</span><span class="bullet_">”, but
+</span><span class="text_14">without body braces</span><span
+class="bullet_">, for it is not allowed to put on body braces in an
+interface unless doing that in the derived class.</span></p>
+<p><strong>#5:</strong> Create a normal class called
+“<strong>B</strong>” and getting derived from the <strong>interface
+A1</strong> the class.</p>
+<p><strong>#7:</strong> Exactly, we have to create the method, which we
+<strong></strong> have created in the interface class (<strong>line
+#3</strong>), but this time you are <strong>allowed to use body
+braces</strong> to have a class in real meaning.</p>
+<p><strong>#9:</strong> The “<strong>return</strong>” command returns a
+string (“<strong>Hani</strong>”) as the output of the method. It is
+<strong>mandatory</strong>, for the type of the method <strong>is not
+void</strong>.</p>
+<p><strong>#16: Well, as a matter of fact, this is a little bit
+different. This is the way of creating an instance in this situation.
+Firstly, write the name of the base class (A1 interface class), then put
+the name of the derived class at the end.</strong></p>
+<p><strong>#17:</strong> Show the returned value of the
+“<strong>show_name</strong>” method using the
+“<strong>Console.WriteLine”</strong> command line, in an MS-DOS console
+window.</p>
+<p><strong>#18:</strong> Obtains the next character or function key
+pressed by the user. The pressed key is displayed in the MS-DOS console
+window.</p>
+<h1 class="block_27" id="index_split_003.html_id_Toc3384531">The
+polymorphism</h1>
+<p>This topic is considered to be the most complex part in OOP, but not
+really as we believe no problem or concept is hard-to-understand with
+step by step practices. Well, let us get back to polymorphism topic,
+have a short definition of; also, very basic examples, and so on. There
+are two types of polymorphism, which are called <span
+class="text_17">static binding</span> and <span class="text_17">dynamic
+binding</span>, but what do these terms mean? Let us see.</p>
+<p><strong>Static binding:</strong> In fact, it is called
+“<strong>overloading</strong>” too. This situation allows us having
+<strong>multiple the same-name methods</strong> in a class with
+<strong>different input parameters in type</strong>. Let us look at an
+example to find out the concept better.</p>
+<p>Step 1: Put the below codes in a class file.</p>
+<div class="calibre26">
+<div class="block_33">
+<span class="bullet_5">1- </span><span class="calibre8">class
+calculation</span>
+</div>
+<div class="block_75">
+<span class="bullet_5">2- </span><span class="calibre8">{</span>
+</div>
+<div class="block_75">
+<span class="bullet_5">3- </span><span class="calibre8">public int
+sum(int N1, int N2)</span>
+</div>
+<div class="block_76">
+<span class="bullet_6">4- </span><span class="calibre27">{</span>
+</div>
+</div>
+<p>5-return N1 + N1;</p>
+<p>6-}</p>
+<p>7-public float sum(int N1, float N2)</p>
+<p>8-{</p>
+<p>9-return N1 + N2;</p>
+<p>10-}</p>
+<p>11-public double sum(int N1, double N2)</p>
+<p>12-{</p>
+<p>13-return N1 + N2;</p>
+<p>14-}</p>
+<p>15-}</p>
+<p>Step 2: Open the “Program.cs” file and put the following codes
+in.</p>
+<p>16- calculation calc = new calculation();</p>
+<p>17- Console.WriteLine(calc.sum(4, 0.5));</p>
+<div class="calibre26">
+<div class="block_79">
+<span class="bullet_7">18- </span><span
+class="calibre8">Console.ReadKey();</span>
+</div>
+</div>
+<p>The output is equal to 4.5.</p>
+<p>Well, let us explore the lines to find out the way it works.</p>
+<p><strong>#1:</strong> Create a class called calculation.</p>
+<p><strong>#3:</strong> Create a method called “<strong>sum</strong>” as
+“<strong>int”</strong>, <strong>which comes with</strong> <span
+class="text_17">two input parameters as
+“int</span><strong>”.</strong></p>
+<p><strong>#5:</strong> Returns the sum of the two “int” input
+parameters.</p>
+<p><span class="text_14">#7:</span><span class="text_13"> </span><span
+class="bullet_">Create the second method called “</span><span
+class="text_14">sum</span><span class="bullet_">” as “</span><span
+class="text_14">float”</span><span class="bullet_">, </span><span
+class="text_14">which comes with </span><span class="text_19">two input
+parameters as “int” and as “float”.</span></p>
+<p><strong>#9:</strong> Returns the sum of the two
+“<strong>int</strong>” and “<strong>float</strong>” input
+parameters.</p>
+<p><strong>#11:</strong> Create the third method called
+“<strong>sum</strong>” as “<strong>double”</strong>, <strong>which comes
+with</strong> <span class="text_17">two input parameters as “int” and as
+“double”.</span></p>
+<p><strong>#13:</strong> Returns the sum of the two
+“<strong>int</strong>” and “<strong>double</strong>” input
+parameters.</p>
+<p><strong>#16:</strong> Create an instance from the “calculation”
+class. Well, now we have access to each three of the same-name methods,
+but for example, how to use the third method, which uses “int” and
+“double” input parameters? It is easy, call the method, and put the
+appropriate input type and amount to work. See the line
+#17<strong>.</strong></p>
+<p><strong>#17:</strong> Show the returned value from the <strong>third
+“sum” method</strong> using the “<strong>Console.WriteLine”</strong>
+command line, in an MS-DOS console window.</p>
+<p>Why the third one? Moreover, why not the first one? Because we passed
+these amounts “5”, which is an integer, and “0.5”, which is
+<strong>double</strong>, so technically, spontaneously it will use the
+third one that benefits from “<strong>integer</strong>” and
+“<strong>double</strong>” input types.</p>
+<p><strong>#18:</strong> Obtains the next character or function key
+pressed by the user. The pressed key is displayed in the MS-DOS console
+window. In fact, it could help us observe the final consequence(s) while
+keeping the window opened.</p>
+<p><strong>Dynamic binding (Runtime Polymorphism):</strong> Let us begin
+with an example.</p>
+<p>Step 1: Put the below codes in a class file.</p>
+<p>1-class A</p>
+<p>2-{</p>
+<p>3-<span class="calibre24"> public virtual void Method_A()</span></p>
+<p>4- <span class="calibre24"> { </span></p>
+<p>5-<span class="calibre24"> Console.WriteLine("I AM IN CLASS
+A");</span></p>
+<p>6-<span class="calibre24"> }</span></p>
+<p>7-}</p>
+<p>8- class B: A</p>
+<p>9-{</p>
+<p><span class="text_31">10-<span class="calibre24"> </span></span><span
+class="text_31">public override void Method_A()</span></p>
+<p><span class="text_31">11-<span class="calibre24"> </span></span><span
+class="text_31">{</span></p>
+<p><span class="text_31">12-<span class="calibre24"> </span></span><span
+class="text_31">Console.WriteLine("I AM DERIVED FROM B");</span></p>
+<p><span class="text_31">13-<span class="calibre24"> </span></span><span
+class="text_31">} </span></p>
+<p>14- }</p>
+<p> </p>
+<p>Step 2: Open the “Program.cs” file and put the following codes
+in.</p>
+<p>15- A inst = new A();</p>
+<p>16- inst = new B();</p>
+<p>17- inst.Method_A();</p>
+<p>18- Console.ReadKey();</p>
+<p>The output is equal to “I AM DERIVED FROM B”.</p>
+<p>Time to see what happened really?</p>
+<p><strong>#1:</strong> Create a class called <strong>“A”</strong></p>
+<p><strong>#3:</strong> Create a method called
+“<strong>Method_A</strong>”, but something is new here. It is the
+“<strong>virtual</strong>” keyword. If we create a method in a normal
+class and going to override it, we need to use
+“<strong>virtual</strong>” keyword.</p>
+<p><strong>#5:</strong> Show the “<span class="text_26">I AM IN CLASS
+A</span>” string in an MS-DOS console window using the
+“<strong>Console.WriteLine”</strong> command line.</p>
+<p><strong>#8:</strong> Create a normal class called
+“<strong>B</strong>” and getting derived from the class A.</p>
+<p><strong>#10:</strong> Now we <strong>override</strong> the created
+method in “<strong>class A”</strong> (<strong>line #3</strong>).</p>
+<p><strong>#12:</strong> Show the “<span class="text_26">I AM DERIVED
+FROM B</span>” string in an MS-DOS console window using the
+“<strong>Console.WriteLine”</strong> command line.</p>
+<p><strong>#15:</strong> Now time to invoke the overridden method, here
+we create an instance called “<strong>inst</strong>” from the base class
+(<strong>A</strong>).</p>
+<p><strong>#16:</strong> Put the created instance equal to the derived
+class (<strong>B</strong>).</p>
+<p><strong>#17:</strong> Now, we can invoke the overridden method.</p>
+<p><strong>#18:</strong> Obtains the next character or function key
+pressed by the user. The pressed key is displayed in the MS-DOS console
+window. In fact, it could help us observe the final consequence(s) while
+keeping the window opened.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<h1 class="block_83">References</h1>
+<p> </p>
+<p>Visual C# full training- Sayyed Mohammad Hashemiyan 2005</p>
+<p>dazhyarco.net - C# training courses</p>
+<p>docs.microsoft.com - OOP in C#</p>
+<p>tahlildadeh.com - C# training courses</p>
+<p>barnamenevisan.org - C# training courses</p>
+<p> </p>
+<p><span id="index_split_004.html"></span></p>
+<h1 class="block_85"
+id="index_split_004.html_calibre_pb_3">Anmerkungen</h1>
+<dl>
+<dt>[<a href="#index_split_001.html_back_note_1" class="calibre29"
+title="1">←1</a>]</dt>
+<dd>
+<p><sup></sup><span class="text_32"> </span><span
+class="text_32">High-level language</span></p>
+</dd>
+</dl>
+<p><span id="index_split_005.html"></span></p>
+<dl>
+<dt>[<a href="#index_split_001.html_back_note_2" class="calibre29"
+title="2">←2</a>]</dt>
+<dd>
+<p><sup></sup><span class="text_32"> </span><span class="text_32">C
+Sharp</span></p>
+</dd>
+</dl>
+<p><span id="index_split_006.html"></span></p>
+<dl>
+<dt>[<a href="#index_split_001.html_back_note_3" class="calibre29"
+title="3">←3</a>]</dt>
+<dd>
+<p><sup></sup><span class="text_32"> </span><span
+class="text_32">Object-oriented programming</span></p>
+</dd>
+</dl>
+<p><span id="index_split_007.html"></span></p>
+<dl>
+<dt>[<a href="#index_split_001.html_back_note_4" class="calibre29"
+title="4">←4</a>]</dt>
+<dd>
+<p><sup></sup><span class="text_32"> </span><span
+class="text_32">Operating system</span></p>
+</dd>
+</dl>
+<p><span id="index_split_008.html"></span></p>
+<dl>
+<dt>[<a href="#index_split_001.html_back_note_5" class="calibre29"
+title="5">←5</a>]</dt>
+<dd>
+<p><sup></sup><span class="text_43"> </span><span
+class="text_43">.</span><span class="text_44"> </span><span
+class="text_45">NET Framework is a software framework developed by
+Microsoft that runs primarily on Microsoft Windows. It includes a large
+class library named Framework Class Library and provides language
+interoperability across several programming languages.</span></p>
+</dd>
+</dl>
+<p><span id="index_split_009.html"></span></p>
+<dl>
+<dt>[<a href="#index_split_001.html_back_note_6" class="calibre29"
+title="6">←6</a>]</dt>
+<dd>
+<p><sup></sup><span class="text_32"> </span><span class="text_32">A
+program that automatically removes unwanted data held temporarily in
+memory during processing</span></p>
+</dd>
+</dl>
+<p><span id="index_split_010.html"></span></p>
+<dl>
+<dt>[<a href="#index_split_003.html_back_note_7" class="calibre29"
+title="7">←7</a>]</dt>
+<dd>
+<p><sup></sup><span class="text_32"> </span><span class="text_32">Common
+Language Runtime</span></p>
+</dd>
+</dl>

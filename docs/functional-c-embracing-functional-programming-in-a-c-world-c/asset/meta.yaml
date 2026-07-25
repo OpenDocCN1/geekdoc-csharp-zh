@@ -1,0 +1,147 @@
+name: Functional C#： Embracing Functional Programming in a C# World (C# Functional
+  Book 1)
+name_cn: Functional C#：在 C# 世界中拥抱函数式编程 (C# Functional Book 1)
+slug: functional-c-embracing-functional-programming-in-a-c-world-c
+toc:
+- - '##'
+  - 6.2.3 使用自定义查询操作符扩展 LINQ
+- - '###'
+  - 6.2.3.1 自定义 Map 操作符
+- - '###'
+  - 6.4.2 Bind 操作符
+- - '##'
+  - 6.3 常用 LINQ 操作符
+- - '###'
+  - 过滤操作符（Filtering Operators）
+- - '###'
+  - 投影操作符（Projection Operators）
+- - '###'
+  - 聚合操作符（Aggregation Operators）
+- - '###'
+  - 排序操作符（Ordering Operators）
+- - '###'
+  - 集合操作符（Set Operators）
+- - '###'
+  - 分组操作符（Grouping Operators）
+- - '#'
+  - 第 7 章：错误处理与函数编程
+- - '##'
+  - 7.1 C# 中的传统错误处理：异常
+- - '##'
+  - 7.2 Result 和 Either 类型
+- - '##'
+  - 7.3 轨道式编程
+- - '#'
+  - 第 8 章：函数式风格的异步编程
+- - '##'
+  - 8.1 Async/Await 与基于的异步模式
+- - '##'
+  - 8.2 异步函数式流水线
+- - '##'
+  - 8.3 异步处理错误
+- - '###'
+  - 8.3.1 使用 Result 进行异步错误处理
+- - '###'
+  - 8.3.2 组合异步函数
+- - '###'
+  - 8.3.3 并行计算中的错误处理
+- - '###'
+  - 8.3.4 重试异步操作
+- - '#'
+  - 第 9 章：函数式设计模式
+- - '##'
+  - 9.1 Functor（算子）、Applicative（应用器）和 Monad（单数）
+- - '###'
+  - Functor（算子）
+- - '###'
+  - Applicative（应用器）
+- - '###'
+  - Monad（单数）
+- - '#'
+  - 第 10 章：任务示例
+- - '##'
+  - 10.3 Task 单元的扩展方法
+- - '##'
+  - 用例 1：股票数据 API
+- - '##'
+  - 用例 2：地理编码与天气 API
+- - '#'
+  - 第 11 章：单群 (Monoids) 与半群 (Semigroups)
+- - '##'
+  - 11.4 半群 (Semigroups)
+- - '##'
+  - 11.5 单群 (Monoids)
+- - '##'
+  - 11.6 实际应用
+- - '##'
+  - 11.7 字符串拼接单群 (String Concatenation Monoid)
+- - '##'
+  - 11.8 列表合并单群 (List Merging Monoid)
+- - '##'
+  - 11.9 Free Monads（自由 Monad）
+- - '###'
+  - 11.9.1 在 C# 中实现 Free Monad
+- - '###'
+  - 11.9.1.1 控制台操作
+- - '###'
+  - 11.9.1.2 Free Monad 数据结构
+- - '###'
+  - 11.9.2 使用 Free Monads 构建程序
+- - '###'
+  - 11.9.2.1 创建程序
+- - '###'
+  - 解释 Free Monads
+- - '###'
+  - 运行解释器
+- - '#'
+  - 第 12 章：结合 Language-Ext 使用 Monad
+- - '##'
+  - Option Monad
+- - '##'
+  - Either Monad
+- - '##'
+  - Try Monad
+- - '##'
+  - Task Monad
+- - '##'
+  - State Monad
+- - '##'
+  - C 的其他函数式库
+- - '###'
+  - FSharpx.Extras
+- - '###'
+  - CSharpFunctionalExtensions
+- - '###'
+  - FsCheck
+- - '###'
+  - MoreLINQ
+- - '##'
+  - '12.4 MoreLINQ: 实用示例'
+- - '###'
+  - 12.4.1 DistinctBy
+- - '###'
+  - 12.4.2 Partition
+- - '###'
+  - 12.4.3 TakeEvery
+- - '###'
+  - 12.4.4 Scan
+- - '#'
+  - 第 13 章：现实世界应用与案例研究
+- - '##'
+  - 12.1 Web 开发中的函数式编程：一场受科幻启发的冒险
+- - '###'
+  - Language-Ext：函数式编程的跃速引擎
+- - '###'
+  - 事件溯源：时间基本指令
+- - '###'
+  - MongoDB：星际数据库
+- - '###'
+  - 带有事件溯源的钱包代理
+- - '###'
+  - 函数式钱包 API：结合事件溯源和 MongoDB 开启曲速模式
+- - '###'
+  - 勇直前行
+- - '##'
+  - 12.2 使用函数式编程进行数据处理和分析
+- - '##'
+  - 12.3 参考文献

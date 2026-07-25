@@ -1,0 +1,2047 @@
+<p><img src="image_rsrc26P.jpg" /></p>
+<p><span id="part0000.xhtml"></span></p>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" preserveaspectratio="xMidYMid meet" viewbox="0 0 1207 1920" height="100%" width="100%">
+<image xlink:href="image_rsrc26P.jpg" height="1920" width="1207"></image>
+</svg>
+<p><span id="part0001.xhtml"></span></p>
+<p>C#</p>
+<p>100 PROGRAM</p>
+<p>By – Devbrat Rudra</p>
+<p><a href="http://www.rudyhelp.com"
+class="class_s1YF">www.rudyhelp.com</a></p>
+<p>(NOTE: PAGE NUMBER 100 – HOW TO RUN C# PROGRAM)</p>
+<p>SET - 1</p>
+<p>1. Hello World:</p>
+<p>using System;</p>
+<p>class HelloWorld {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Hello, World!");</p>
+<p>}</p>
+<p>}</p>
+<p>2. Simple Calculator:</p>
+<p>using System;</p>
+<p>class Calculator {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the first number: ");</p>
+<p>double num1 = Convert.ToDouble(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the second number: ");</p>
+<p>double num2 = Convert.ToDouble(Console.ReadLine());</p>
+<p>Console.WriteLine("Sum: " + (num1 + num2));</p>
+<p>}</p>
+<p>}</p>
+<p>3. Factorial of a Number:</p>
+<p>using System;</p>
+<p>class Factorial {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int factorial = 1;</p>
+<p>for (int i = 1; i &lt;= num; i++) {</p>
+<p>factorial *= i;</p>
+<p>}</p>
+<p>Console.WriteLine("Factorial: " + factorial);</p>
+<p>}</p>
+<p>}</p>
+<p>4. Fibonacci Series:</p>
+<p>using System;</p>
+<p>class Fibonacci {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the number of terms: ");</p>
+<p>int n = Convert.ToInt32(Console.ReadLine());</p>
+<p>int a = 0, b = 1, c;</p>
+<p>Console.Write("Fibonacci Series: ");</p>
+<p>for (int i = 0; i &lt; n; i++) {</p>
+<p>Console.Write(a + " ");</p>
+<p>c = a + b;</p>
+<p>a = b;</p>
+<p>b = c;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>5. Check Whether a Number is Prime:</p>
+<p>using System;</p>
+<p>class PrimeNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>bool isPrime = true;</p>
+<p>for (int i = 2; i &lt;= num / 2; i++) {</p>
+<p>if (num % i == 0) {</p>
+<p>isPrime = false;</p>
+<p>break;</p>
+<p>}</p>
+<p>}</p>
+<p>if (isPrime)</p>
+<p>Console.WriteLine("Prime");</p>
+<p>else</p>
+<p>Console.WriteLine("Not Prime");</p>
+<p>}</p>
+<p>}</p>
+<p>6. Simple Interest Calculator:</p>
+<p>using System;</p>
+<p>class SimpleInterest {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter principal amount: ");</p>
+<p>double principal = Convert.ToDouble(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter rate of interest: ");</p>
+<p>double rate = Convert.ToDouble(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter time in years: ");</p>
+<p>double time = Convert.ToDouble(Console.ReadLine());</p>
+<p>double interest = (principal * rate * time) / 100;</p>
+<p>Console.WriteLine("Simple Interest: " + interest);</p>
+<p>}</p>
+<p>}</p>
+<p>7. Check Whether a Number is Even or Odd:</p>
+<p>using System;</p>
+<p>class EvenOdd {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>if (num % 2 == 0)</p>
+<p>Console.WriteLine("Even");</p>
+<p>else</p>
+<p>Console.WriteLine("Odd");</p>
+<p>}</p>
+<p>}</p>
+<p>8. Print the Sum of Natural Numbers:</p>
+<p>using System;</p>
+<p>class SumOfNaturalNumbers {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int sum = 0;</p>
+<p>for (int i = 1; i &lt;= num; i++) {</p>
+<p>sum += i;</p>
+<p>}</p>
+<p>Console.WriteLine("Sum of natural numbers: " + sum);</p>
+<p>}</p>
+<p>}</p>
+<p>9. Reverse a String:</p>
+<p>using System;</p>
+<p>class StringReverse {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a string: ");</p>
+<p>string input = Console.ReadLine();</p>
+<p>char[] charArray = input.ToCharArray();</p>
+<p>Array.Reverse(charArray);</p>
+<p>string reversedString = new string(charArray);</p>
+<p>Console.WriteLine("Reversed string: " + reversedString);</p>
+<p>}</p>
+<p>}</p>
+<p>10. Find the Maximum and Minimum Numbers in an Array:</p>
+<p>using System;</p>
+<p>class MaxMinInArray {</p>
+<p>static void Main() {</p>
+<p>int[] numbers = { 5, 2, 8, 1, 9, 4, 6 };</p>
+<p>int max = numbers[0];</p>
+<p>int min = numbers[0];</p>
+<p>foreach (int number in numbers) {</p>
+<p>if (number &gt; max)</p>
+<p>max = number;</p>
+<p>if (number &lt; min)</p>
+<p>min = number;</p>
+<p>}</p>
+<p>Console.WriteLine("Maximum: " + max);</p>
+<p>Console.WriteLine("Minimum: " + min);</p>
+<p>}</p>
+<p>}</p>
+<p>SET – 2</p>
+<p>1. Check Leap Year:</p>
+<p>using System;</p>
+<p>class LeapYear {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a year: ");</p>
+<p>int year = Convert.ToInt32(Console.ReadLine());</p>
+<p>if ((year % 4 == 0 &amp;&amp; year % 100 != 0) || year % 400 ==
+0)</p>
+<p>Console.WriteLine("Leap Year");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Leap Year");</p>
+<p>}</p>
+<p>}</p>
+<p>2. Reverse an Array:</p>
+<p>using System;</p>
+<p>class ArrayReverse {</p>
+<p>static void Main() {</p>
+<p>int[] arr = { 1, 2, 3, 4, 5 };</p>
+<p>Array.Reverse(arr);</p>
+<p>Console.Write("Reversed Array: ");</p>
+<p>foreach (int element in arr) {</p>
+<p>Console.Write(element + " ");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>3. Palindrome Check:</p>
+<p>using System;</p>
+<p>class Palindrome {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a string: ");</p>
+<p>string input = Console.ReadLine();</p>
+<p>char[] charArray = input.ToCharArray();</p>
+<p>Array.Reverse(charArray);</p>
+<p>string reversedString = new string(charArray);</p>
+<p>if (input.Equals(reversedString,
+StringComparison.OrdinalIgnoreCase))</p>
+<p>Console.WriteLine("Palindrome");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Palindrome");</p>
+<p>}</p>
+<p>}</p>
+<p>4. Print ASCII Value of a Character:</p>
+<p>using System;</p>
+<p>class ASCIIValue {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a character: ");</p>
+<p>char ch = Convert.ToChar(Console.ReadLine());</p>
+<p>int asciiValue = (int)ch;</p>
+<p>Console.WriteLine("ASCII Value: " + asciiValue);</p>
+<p>}</p>
+<p>}</p>
+<p>5. Generate Random Numbers:</p>
+<p>using System;</p>
+<p>class RandomNumbers {</p>
+<p>static void Main() {</p>
+<p>Random random = new Random();</p>
+<p>Console.WriteLine("Random Numbers: ");</p>
+<p>for (int i = 0; i &lt; 5; i++) {</p>
+<p>Console.WriteLine(random.Next(1, 100));</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>6. Check Armstrong Number:</p>
+<p>using System;</p>
+<p>class ArmstrongNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int originalNumber, remainder, result = 0;</p>
+<p>originalNumber = num;</p>
+<p>while (originalNumber != 0) {</p>
+<p>remainder = originalNumber % 10;</p>
+<p>result += remainder * remainder * remainder;</p>
+<p>originalNumber /= 10;</p>
+<p>}</p>
+<p>if (result == num)</p>
+<p>Console.WriteLine("Armstrong Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not an Armstrong Number");</p>
+<p>}</p>
+<p>}</p>
+<p>7. Bubble Sort:</p>
+<p>using System;</p>
+<p>class BubbleSort {</p>
+<p>static void Main() {</p>
+<p>int[] arr = { 64, 34, 25, 12, 22, 11, 90 };</p>
+<p>for (int i = 0; i &lt; arr.Length - 1; i++) {</p>
+<p>for (int j = 0; j &lt; arr.Length - i - 1; j++) {</p>
+<p>if (arr[j] &gt; arr[j + 1]) {</p>
+<p>int temp = arr[j];</p>
+<p>arr[j] = arr[j + 1];</p>
+<p>arr[j + 1] = temp;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>Console.Write("Sorted Array: ");</p>
+<p>foreach (int element in arr) {</p>
+<p>Console.Write(element + " ");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>8. Binary Search:</p>
+<p>using System;</p>
+<p>class BinarySearch {</p>
+<p>static int Search(int[] arr, int x) {</p>
+<p>int left = 0, right = arr.Length - 1;</p>
+<p>while (left &lt;= right) {</p>
+<p>int mid = left + (right - left) / 2;</p>
+<p>if (arr[mid] == x)</p>
+<p>return mid;</p>
+<p>if (arr[mid] &lt; x)</p>
+<p>left = mid + 1;</p>
+<p>else</p>
+<p>right = mid - 1;</p>
+<p>}</p>
+<p>return -1;</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>int[] arr = { 2, 3, 4, 10, 40 };</p>
+<p>int x = 10;</p>
+<p>int result = Search(arr, x);</p>
+<p>if (result == -1)</p>
+<p>Console.WriteLine("Element not present");</p>
+<p>else</p>
+<p>Console.WriteLine("Element found at index " + result);</p>
+<p>}</p>
+<p>}</p>
+<p>9. Check Whether a String is Anagram:</p>
+<p>using System;</p>
+<p>class AnagramCheck {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the first string: ");</p>
+<p>string str1 = Console.ReadLine();</p>
+<p>Console.WriteLine("Enter the second string: ");</p>
+<p>string str2 = Console.ReadLine();</p>
+<p>char[] charArray1 = str1.ToLower().ToCharArray();</p>
+<p>char[] charArray2 = str2.ToLower().ToCharArray();</p>
+<p>Array.Sort(charArray1);</p>
+<p>Array.Sort(charArray2);</p>
+<p>string sortedStr1 = new string(charArray1);</p>
+<p>string sortedStr2 = new string(charArray2);</p>
+<p>if (sortedStr1.Equals(sortedStr2))</p>
+<p>Console.WriteLine("Anagrams");</p>
+<p>else</p>
+<p>Console.WriteLine("Not Anagrams");</p>
+<p>}</p>
+<p>}</p>
+<p>10. Print the ASCII Table:</p>
+<p>using System;</p>
+<p>class ASCIITable {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("ASCII Table: ");</p>
+<p>for (int i = 0; i &lt; 256; i++) {</p>
+<p>Console.WriteLine("ASCII Value: " + i + ", Character: " +
+(char)i);</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>SET – 3</p>
+<p>1. Check for Armstrong Numbers in a Range:</p>
+<p>using System;</p>
+<p>class ArmstrongNumbersInRange {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the starting number: ");</p>
+<p>int start = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the ending number: ");</p>
+<p>int end = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = start; i &lt;= end; i++) {</p>
+<p>int num = i;</p>
+<p>int originalNumber, remainder, result = 0;</p>
+<p>originalNumber = num;</p>
+<p>while (originalNumber != 0) {</p>
+<p>remainder = originalNumber % 10;</p>
+<p>result += remainder * remainder * remainder;</p>
+<p>originalNumber /= 10;</p>
+<p>}</p>
+<p>if (result == num)</p>
+<p>Console.WriteLine(num + " is an Armstrong Number");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>2. Check for Perfect Numbers in a Range:</p>
+<p>using System;</p>
+<p>class PerfectNumbersInRange {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the starting number: ");</p>
+<p>int start = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the ending number: ");</p>
+<p>int end = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = start; i &lt;= end; i++) {</p>
+<p>int num = i;</p>
+<p>int sum = 0;</p>
+<p>for (int j = 1; j &lt; num; j++) {</p>
+<p>if (num % j == 0)</p>
+<p>sum += j;</p>
+<p>}</p>
+<p>if (sum == num)</p>
+<p>Console.WriteLine(num + " is a Perfect Number");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>3. Print the Multiplication Table:</p>
+<p>using System;</p>
+<p>class MultiplicationTable {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Multiplication Table: ");</p>
+<p>for (int i = 1; i &lt;= 10; i++) {</p>
+<p>Console.WriteLine(num + " * " + i + " = " + (num * i));</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>4. Implement Linear Search:</p>
+<p>using System;</p>
+<p>class LinearSearch {</p>
+<p>static int Search(int[] arr, int x) {</p>
+<p>for (int i = 0; i &lt; arr.Length; i++) {</p>
+<p>if (arr[i] == x)</p>
+<p>return i;</p>
+<p>}</p>
+<p>return -1;</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>int[] arr = { 2, 3, 4, 10, 40 };</p>
+<p>int x = 10;</p>
+<p>int result = Search(arr, x);</p>
+<p>if (result == -1)</p>
+<p>Console.WriteLine("Element not present");</p>
+<p>else</p>
+<p>Console.WriteLine("Element found at index " + result);</p>
+<p>}</p>
+<p>}</p>
+<p>5. Find the GCD and LCM of Two Numbers:</p>
+<p>using System;</p>
+<p>class GCDandLCM {</p>
+<p>static int FindGCD(int a, int b) {</p>
+<p>while (b != 0) {</p>
+<p>int temp = b;</p>
+<p>b = a % b;</p>
+<p>a = temp;</p>
+<p>}</p>
+<p>return a;</p>
+<p>}</p>
+<p>static int FindLCM(int a, int b) {</p>
+<p>return (a * b) / FindGCD(a, b);</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter two numbers: ");</p>
+<p>int num1 = Convert.ToInt32(Console.ReadLine());</p>
+<p>int num2 = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("GCD: " + FindGCD(num1, num2));</p>
+<p>Console.WriteLine("LCM: " + FindLCM(num1, num2));</p>
+<p>}</p>
+<p>}</p>
+<p>6. Print the Nth Fibonacci Number:</p>
+<p>using System;</p>
+<p>class NthFibonacci {</p>
+<p>static int Fibonacci(int n) {</p>
+<p>if (n &lt;= 1)</p>
+<p>return n;</p>
+<p>return Fibonacci(n - 1) + Fibonacci(n - 2);</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the value of n: ");</p>
+<p>int n = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Nth Fibonacci number: " + Fibonacci(n));</p>
+<p>}</p>
+<p>}</p>
+<p>7. Generate a Simple Pattern:</p>
+<p>using System;</p>
+<p>class Pattern {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the number of rows: ");</p>
+<p>int rows = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = 1; i &lt;= rows; i++) {</p>
+<p>for (int j = 1; j &lt;= i; j++) {</p>
+<p>Console.Write("* ");</p>
+<p>}</p>
+<p>Console.WriteLine();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>8. Print the Power of 2:</p>
+<p>using System;</p>
+<p>class PowerOf2 {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the value of n: ");</p>
+<p>int n = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = 0; i &lt;= n; i++) {</p>
+<p>Console.WriteLine("2 ^ " + i + " = " + Math.Pow(2, i));</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>9. Calculate the Area of Different Geometric Shapes:</p>
+<p>using System;</p>
+<p>class AreaCalculator {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Choose a shape - 1. Rectangle, 2. Circle: ");</p>
+<p>int choice = Convert.ToInt32(Console.ReadLine());</p>
+<p>switch (choice) {</p>
+<p>case 1:</p>
+<p>Console.WriteLine("Enter length: ");</p>
+<p>double length = Convert.ToDouble(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter breadth: ");</p>
+<p>double breadth = Convert.ToDouble(Console.ReadLine());</p>
+<p>Console.WriteLine("Area of Rectangle: " + (length * breadth));</p>
+<p>break;</p>
+<p>case 2:</p>
+<p>Console.WriteLine("Enter radius: ");</p>
+<p>double radius = Convert.ToDouble(Console.ReadLine());</p>
+<p>Console.WriteLine("Area of Circle: " + (Math.PI * radius *
+radius));</p>
+<p>break;</p>
+<p>default:</p>
+<p>Console.WriteLine("Invalid Choice");</p>
+<p>break;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>10. Convert Binary to Decimal and Decimal to Binary:</p>
+<p>using System;</p>
+<p>class Conversion {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Choose an option - 1. Binary to Decimal, 2.
+Decimal to Binary: ");</p>
+<p>int choice = Convert.ToInt32(Console.ReadLine());</p>
+<p>switch (choice) {</p>
+<p>case 1:</p>
+<p>Console.WriteLine("Enter a binary number: ");</p>
+<p>string binary = Console.ReadLine();</p>
+<p>int decimalValue = Convert.ToInt32(binary, 2);</p>
+<p>Console.WriteLine("Decimal Value: " + decimalValue);</p>
+<p>break;</p>
+<p>case 2:</p>
+<p>Console.WriteLine("Enter a decimal number: ");</p>
+<p>int decimalNum = Convert.ToInt32(Console.ReadLine());</p>
+<p>string binaryValue = Convert.ToString(decimalNum, 2);</p>
+<p>Console.WriteLine("Binary Value: " + binaryValue);</p>
+<p>break;</p>
+<p>default:</p>
+<p>Console.WriteLine("Invalid Choice");</p>
+<p>break;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>SET – 4</p>
+<p>1. Count the Number of Digits in an Integer:</p>
+<p>using System;</p>
+<p>class CountDigits {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int count = 0;</p>
+<p>while (num != 0) {</p>
+<p>num /= 10;</p>
+<p>count++;</p>
+<p>}</p>
+<p>Console.WriteLine("Number of digits: " + count);</p>
+<p>}</p>
+<p>}</p>
+<p>2. Check for Perfect Square:</p>
+<p>using System;</p>
+<p>class PerfectSquareCheck {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int sqrt = (int)Math.Sqrt(num);</p>
+<p>if (sqrt * sqrt == num)</p>
+<p>Console.WriteLine("Perfect Square");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Perfect Square");</p>
+<p>}</p>
+<p>}</p>
+<p>3. Check for Palindrome Number:</p>
+<p>using System;</p>
+<p>class PalindromeNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int originalNumber = num;</p>
+<p>int reversedNumber = 0;</p>
+<p>while (num &gt; 0) {</p>
+<p>int remainder = num % 10;</p>
+<p>reversedNumber = reversedNumber * 10 + remainder;</p>
+<p>num /= 10;</p>
+<p>}</p>
+<p>if (originalNumber == reversedNumber)</p>
+<p>Console.WriteLine("Palindrome Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Palindrome Number");</p>
+<p>}</p>
+<p>}</p>
+<p>4. Implement Selection Sort:</p>
+<p>using System;</p>
+<p>class SelectionSort {</p>
+<p>static void Main() {</p>
+<p>int[] arr = { 64, 25, 12, 22, 11 };</p>
+<p>for (int i = 0; i &lt; arr.Length - 1; i++) {</p>
+<p>int minIndex = i;</p>
+<p>for (int j = i + 1; j &lt; arr.Length; j++) {</p>
+<p>if (arr[j] &lt; arr[minIndex]) {</p>
+<p>minIndex = j;</p>
+<p>}</p>
+<p>}</p>
+<p>int temp = arr[minIndex];</p>
+<p>arr[minIndex] = arr[i];</p>
+<p>arr[i] = temp;</p>
+<p>}</p>
+<p>Console.Write("Sorted Array: ");</p>
+<p>foreach (int element in arr) {</p>
+<p>Console.Write(element + " ");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>5. Generate a Simple Pyramid Pattern:</p>
+<p>using System;</p>
+<p>class PyramidPattern {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the number of rows: ");</p>
+<p>int rows = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = 1; i &lt;= rows; i++) {</p>
+<p>for (int j = 1; j &lt;= rows - i; j++) {</p>
+<p>Console.Write(" ");</p>
+<p>}</p>
+<p>for (int k = 1; k &lt;= 2 * i - 1; k++) {</p>
+<p>Console.Write("*");</p>
+<p>}</p>
+<p>Console.WriteLine();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>6. Calculate the Area and Perimeter of a Rectangle:</p>
+<p>using System;</p>
+<p>class Rectangle {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter length: ");</p>
+<p>double length = Convert.ToDouble(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter breadth: ");</p>
+<p>double breadth = Convert.ToDouble(Console.ReadLine());</p>
+<p>double area = length * breadth;</p>
+<p>double perimeter = 2 * (length + breadth);</p>
+<p>Console.WriteLine("Area: " + area);</p>
+<p>Console.WriteLine("Perimeter: " + perimeter);</p>
+<p>}</p>
+<p>}</p>
+<p>7. Reverse a Number:</p>
+<p>using System;</p>
+<p>class NumberReverse {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int reversedNumber = 0;</p>
+<p>while (num &gt; 0) {</p>
+<p>int remainder = num % 10;</p>
+<p>reversedNumber = reversedNumber * 10 + remainder;</p>
+<p>num /= 10;</p>
+<p>}</p>
+<p>Console.WriteLine("Reversed Number: " + reversedNumber);</p>
+<p>}</p>
+<p>}</p>
+<p>8. Print Pascal's Triangle:</p>
+<p>using System;</p>
+<p>class PascalTriangle {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the number of rows: ");</p>
+<p>int rows = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = 0; i &lt; rows; i++) {</p>
+<p>int number = 1;</p>
+<p>Console.Write(new string(' ', rows - i));</p>
+<p>for (int j = 0; j &lt;= i; j++) {</p>
+<p>Console.Write(number + " ");</p>
+<p>number = number * (i - j) / (j + 1);</p>
+<p>}</p>
+<p>Console.WriteLine();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>9. Calculate the Power of a Number:</p>
+<p>using System;</p>
+<p>class Power {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the base: ");</p>
+<p>double baseNum = Convert.ToDouble(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the exponent: ");</p>
+<p>int exponent = Convert.ToInt32(Console.ReadLine());</p>
+<p>double result = Math.Pow(baseNum, exponent);</p>
+<p>Console.WriteLine("Result: " + result);</p>
+<p>}</p>
+<p>}</p>
+<p>10. Check for Disarium Number:</p>
+<p>using System;</p>
+<p>class DisariumNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>string numString = num.ToString();</p>
+<p>int sum = 0;</p>
+<p>for (int i = 0; i &lt; numString.Length; i++) {</p>
+<p>sum += (int)Math.Pow(int.Parse(numString[i].ToString()), i + 1);</p>
+<p>}</p>
+<p>if (sum == num)</p>
+<p>Console.WriteLine("Disarium Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Disarium Number");</p>
+<p>}</p>
+<p>}</p>
+<p>SET – 5</p>
+<p>1. Check for Strong Number:</p>
+<p>using System;</p>
+<p>class StrongNumber {</p>
+<p>static int Factorial(int num) {</p>
+<p>if (num == 0 || num == 1)</p>
+<p>return 1;</p>
+<p>return num * Factorial(num - 1);</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int originalNum = num;</p>
+<p>int sum = 0;</p>
+<p>while (num &gt; 0) {</p>
+<p>int digit = num % 10;</p>
+<p>sum += Factorial(digit);</p>
+<p>num /= 10;</p>
+<p>}</p>
+<p>if (sum == originalNum)</p>
+<p>Console.WriteLine("Strong Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Strong Number");</p>
+<p>}</p>
+<p>}</p>
+<p>2. Calculate the Circumference and Area of a Circle:</p>
+<p>using System;</p>
+<p>class Circle {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the radius: ");</p>
+<p>double radius = Convert.ToDouble(Console.ReadLine());</p>
+<p>double circumference = 2 * Math.PI * radius;</p>
+<p>double area = Math.PI * radius * radius;</p>
+<p>Console.WriteLine("Circumference: " + circumference);</p>
+<p>Console.WriteLine("Area: " + area);</p>
+<p>}</p>
+<p>}</p>
+<p>3. Convert Temperature from Celsius to Fahrenheit and Vice Versa:</p>
+<p>using System;</p>
+<p>class TemperatureConverter {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Choose an option - 1. Celsius to Fahrenheit, 2.
+Fahrenheit to Celsius: ");</p>
+<p>int choice = Convert.ToInt32(Console.ReadLine());</p>
+<p>switch (choice) {</p>
+<p>case 1:</p>
+<p>Console.WriteLine("Enter temperature in Celsius: ");</p>
+<p>double celsius = Convert.ToDouble(Console.ReadLine());</p>
+<p>double fahrenheit = (celsius * 9 / 5) + 32;</p>
+<p>Console.WriteLine("Temperature in Fahrenheit: " + fahrenheit);</p>
+<p>break;</p>
+<p>case 2:</p>
+<p>Console.WriteLine("Enter temperature in Fahrenheit: ");</p>
+<p>double fahrenheit2 = Convert.ToDouble(Console.ReadLine());</p>
+<p>double celsius2 = (fahrenheit2 - 32) * 5 / 9;</p>
+<p>Console.WriteLine("Temperature in Celsius: " + celsius2);</p>
+<p>break;</p>
+<p>default:</p>
+<p>Console.WriteLine("Invalid Choice");</p>
+<p>break;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>4. Find the HCF and LCM of Two Numbers:</p>
+<p>using System;</p>
+<p>class HCFandLCM {</p>
+<p>static int FindHCF(int a, int b) {</p>
+<p>while (b != 0) {</p>
+<p>int temp = b;</p>
+<p>b = a % b;</p>
+<p>a = temp;</p>
+<p>}</p>
+<p>return a;</p>
+<p>}</p>
+<p>static int FindLCM(int a, int b) {</p>
+<p>return (a * b) / FindHCF(a, b);</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter two numbers: ");</p>
+<p>int num1 = Convert.ToInt32(Console.ReadLine());</p>
+<p>int num2 = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("HCF: " + FindHCF(num1, num2));</p>
+<p>Console.WriteLine("LCM: " + FindLCM(num1, num2));</p>
+<p>}</p>
+<p>}</p>
+<p>5. Implement Insertion Sort:</p>
+<p>using System;</p>
+<p>class InsertionSort {</p>
+<p>static void Main() {</p>
+<p>int[] arr = { 12, 11, 13, 5, 6 };</p>
+<p>for (int i = 1; i &lt; arr.Length; i++) {</p>
+<p>int key = arr[i];</p>
+<p>int j = i - 1;</p>
+<p>while (j &gt;= 0 &amp;&amp; arr[j] &gt; key) {</p>
+<p>arr[j + 1] = arr[j];</p>
+<p>j = j - 1;</p>
+<p>}</p>
+<p>arr[j + 1] = key;</p>
+<p>}</p>
+<p>Console.Write("Sorted Array: ");</p>
+<p>foreach (int element in arr) {</p>
+<p>Console.Write(element + " ");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>6. Check for Harshad Number:</p>
+<p>using System;</p>
+<p>class HarshadNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int originalNum = num;</p>
+<p>int sum = 0;</p>
+<p>while (num &gt; 0) {</p>
+<p>sum += num % 10;</p>
+<p>num /= 10;</p>
+<p>}</p>
+<p>if (originalNum % sum == 0)</p>
+<p>Console.WriteLine("Harshad Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Harshad Number");</p>
+<p>}</p>
+<p>}</p>
+<p>7. Generate the First N Prime Numbers:</p>
+<p>using System;</p>
+<p>class PrimeNumbers {</p>
+<p>static bool IsPrime(int num) {</p>
+<p>if (num &lt;= 1)</p>
+<p>return false;</p>
+<p>for (int i = 2; i &lt;= Math.Sqrt(num); i++) {</p>
+<p>if (num % i == 0)</p>
+<p>return false;</p>
+<p>}</p>
+<p>return true;</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the value of n: ");</p>
+<p>int n = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("First " + n + " prime numbers are: ");</p>
+<p>int count = 0;</p>
+<p>int number = 2;</p>
+<p>while (count &lt; n) {</p>
+<p>if (IsPrime(number)) {</p>
+<p>Console.Write(number + " ");</p>
+<p>count++;</p>
+<p>}</p>
+<p>number++;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>8. Check for Abundant Number:</p>
+<p>using System;</p>
+<p>class AbundantNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int sum = 0;</p>
+<p>for (int i = 1; i &lt;= num / 2; i++) {</p>
+<p>if (num % i == 0)</p>
+<p>sum += i;</p>
+<p>}</p>
+<p>if (sum &gt; num)</p>
+<p>Console.WriteLine("Abundant Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not an Abundant Number");</p>
+<p>}</p>
+<p>}</p>
+<p>9. Calculate the Sum of the Digits of a Number:</p>
+<p>using System;</p>
+<p>class SumOfDigits {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int sum = 0;</p>
+<p>while (num &gt; 0) {</p>
+<p>sum += num % 10;</p>
+<p>num /= 10;</p>
+<p>}</p>
+<p>Console.WriteLine("Sum of digits: " + sum);</p>
+<p>}</p>
+<p>}</p>
+<p>10. Check for Pronic Number:</p>
+<p>using System;</p>
+<p>class PronicNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>bool isPronic = false;</p>
+<p>for (int i = 0; i &lt;= Math.Sqrt(num); i++) {</p>
+<p>if (i * (i + 1) == num) {</p>
+<p>isPronic = true;</p>
+<p>break;</p>
+<p>}</p>
+<p>}</p>
+<p>if (isPronic)</p>
+<p>Console.WriteLine("Pronic Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Pronic Number");</p>
+<p>}</p>
+<p>}</p>
+<p>SET – 6</p>
+<p>1. Check for Automorphic Number:</p>
+<p>using System;</p>
+<p>class AutomorphicNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int square = num * num;</p>
+<p>string strNum = num.ToString();</p>
+<p>string strSquare = square.ToString();</p>
+<p>if (strSquare.EndsWith(strNum))</p>
+<p>Console.WriteLine("Automorphic Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not an Automorphic Number");</p>
+<p>}</p>
+<p>}</p>
+<p>2. Implement Quick Sort:</p>
+<p>using System;</p>
+<p>class QuickSort {</p>
+<p>static void Sort(int[] arr, int low, int high) {</p>
+<p>if (low &lt; high) {</p>
+<p>int pivot = Partition(arr, low, high);</p>
+<p>Sort(arr, low, pivot - 1);</p>
+<p>Sort(arr, pivot + 1, high);</p>
+<p>}</p>
+<p>}</p>
+<p>static int Partition(int[] arr, int low, int high) {</p>
+<p>int pivot = arr[high];</p>
+<p>int i = low - 1;</p>
+<p>for (int j = low; j &lt; high; j++) {</p>
+<p>if (arr[j] &lt; pivot) {</p>
+<p>i++;</p>
+<p>int temp = arr[i];</p>
+<p>arr[i] = arr[j];</p>
+<p>arr[j] = temp;</p>
+<p>}</p>
+<p>}</p>
+<p>int temp1 = arr[i + 1];</p>
+<p>arr[i + 1] = arr[high];</p>
+<p>arr[high] = temp1;</p>
+<p>return i + 1;</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>int[] arr = { 10, 7, 8, 9, 1, 5 };</p>
+<p>int n = arr.Length;</p>
+<p>Sort(arr, 0, n - 1);</p>
+<p>Console.Write("Sorted array: ");</p>
+<p>foreach (int element in arr) {</p>
+<p>Console.Write(element + " ");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>3. Check for Krishnamurthy Number:</p>
+<p>using System;</p>
+<p>class KrishnamurthyNumber {</p>
+<p>static int Factorial(int num) {</p>
+<p>if (num == 0 || num == 1)</p>
+<p>return 1;</p>
+<p>return num * Factorial(num - 1);</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int originalNum = num;</p>
+<p>int sum = 0;</p>
+<p>while (num &gt; 0) {</p>
+<p>int digit = num % 10;</p>
+<p>sum += Factorial(digit);</p>
+<p>num /= 10;</p>
+<p>}</p>
+<p>if (sum == originalNum)</p>
+<p>Console.WriteLine("Krishnamurthy Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Krishnamurthy Number");</p>
+<p>}</p>
+<p>}</p>
+<p>4. Check for Disarium Number in a Range:</p>
+<p>using System;</p>
+<p>class DisariumNumbersInRange {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the starting number: ");</p>
+<p>int start = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the ending number: ");</p>
+<p>int end = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = start; i &lt;= end; i++) {</p>
+<p>int num = i;</p>
+<p>string numString = num.ToString();</p>
+<p>int sum = 0;</p>
+<p>for (int j = 0; j &lt; numString.Length; j++) {</p>
+<p>sum += (int)Math.Pow(int.Parse(numString[j].ToString()), j + 1);</p>
+<p>}</p>
+<p>if (sum == num)</p>
+<p>Console.WriteLine(num + " is a Disarium Number");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>5. Print the Pattern of a Diamond:</p>
+<p>using System;</p>
+<p>class DiamondPattern {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the number of rows: ");</p>
+<p>int rows = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = 1; i &lt;= rows; i++) {</p>
+<p>for (int j = 1; j &lt;= rows - i; j++) {</p>
+<p>Console.Write(" ");</p>
+<p>}</p>
+<p>for (int k = 1; k &lt;= 2 * i - 1; k++) {</p>
+<p>Console.Write("*");</p>
+<p>}</p>
+<p>Console.WriteLine();</p>
+<p>}</p>
+<p>for (int i = rows - 1; i &gt;= 1; i--) {</p>
+<p>for (int j = 1; j &lt;= rows - i; j++) {</p>
+<p>Console.Write(" ");</p>
+<p>}</p>
+<p>for (int k = 1; k &lt;= 2 * i - 1; k++) {</p>
+<p>Console.Write("*");</p>
+<p>}</p>
+<p>Console.WriteLine();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>6. Check for Niven Number:</p>
+<p>using System;</p>
+<p>class NivenNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int originalNum = num;</p>
+<p>int sum = 0;</p>
+<p>while (num &gt; 0) {</p>
+<p>sum += num % 10;</p>
+<p>num /= 10;</p>
+<p>}</p>
+<p>if (originalNum % sum == 0)</p>
+<p>Console.WriteLine("Niven Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Niven Number");</p>
+<p>}</p>
+<p>}</p>
+<p>7. Calculate the Average of N Numbers:</p>
+<p>using System;</p>
+<p>class Average {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the value of n: ");</p>
+<p>int n = Convert.ToInt32(Console.ReadLine());</p>
+<p>int sum = 0;</p>
+<p>for (int i = 0; i &lt; n; i++) {</p>
+<p>Console.WriteLine("Enter number " + (i + 1) + ": ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>sum += num;</p>
+<p>}</p>
+<p>double average = (double)sum / n;</p>
+<p>Console.WriteLine("Average: " + average);</p>
+<p>}</p>
+<p>}</p>
+<p>8. Print the Pattern of a Hollow Rectangle:</p>
+<p>using System;</p>
+<p>class HollowRectanglePattern {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the number of rows: ");</p>
+<p>int rows = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the number of columns: ");</p>
+<p>int columns = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = 1; i &lt;= rows; i++) {</p>
+<p>for (int j = 1; j &lt;= columns; j++) {</p>
+<p>if (i == 1 || i == rows || j == 1 || j == columns)</p>
+<p>Console.Write("*");</p>
+<p>else</p>
+<p>Console.Write(" ");</p>
+<p>}</p>
+<p>Console.WriteLine();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>9. Check for Happy Number:</p>
+<p>using System;</p>
+<p>class HappyNumber {</p>
+<p>static int SquareSumOfDigits(int num) {</p>
+<p>int sum = 0;</p>
+<p>while (num &gt; 0) {</p>
+<p>int digit = num % 10;</p>
+<p>sum += digit * digit;</p>
+<p>num /= 10;</p>
+<p>}</p>
+<p>return sum;</p>
+<p>}</p>
+<p>static bool IsHappyNumber(int num) {</p>
+<p>while (num != 1 &amp;&amp; num != 4) {</p>
+<p>num = SquareSumOfDigits(num);</p>
+<p>}</p>
+<p>return num == 1;</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>if (IsHappyNumber(num))</p>
+<p>Console.WriteLine("Happy Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Happy Number");</p>
+<p>}</p>
+<p>}</p>
+<p>10. Check for Evil Number:</p>
+<p>using System;</p>
+<p>class EvilNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>string binary = Convert.ToString(num, 2);</p>
+<p>int count = 0;</p>
+<p>foreach (char ch in binary) {</p>
+<p>if (ch == '1')</p>
+<p>count++;</p>
+<p>}</p>
+<p>if (count % 2 == 0)</p>
+<p>Console.WriteLine("Evil Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not an Evil Number");</p>
+<p>}</p>
+<p>}</p>
+<p>SET – 7</p>
+<p>1. Check for Spy Number:</p>
+<p>using System;</p>
+<p>class SpyNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int originalNum = num;</p>
+<p>int sum = 0;</p>
+<p>int product = 1;</p>
+<p>while (num &gt; 0) {</p>
+<p>int digit = num % 10;</p>
+<p>sum += digit;</p>
+<p>product *= digit;</p>
+<p>num /= 10;</p>
+<p>}</p>
+<p>if (sum == product)</p>
+<p>Console.WriteLine("Spy Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Spy Number");</p>
+<p>}</p>
+<p>}</p>
+<p>2. Implement Merge Sort:</p>
+<p>using System;</p>
+<p>class MergeSort {</p>
+<p>static void Merge(int[] arr, int l, int m, int r) {</p>
+<p>int n1 = m - l + 1;</p>
+<p>int n2 = r - m;</p>
+<p>int[] L = new int[n1];</p>
+<p>int[] R = new int[n2];</p>
+<p>for (int i = 0; i &lt; n1; ++i)</p>
+<p>L[i] = arr[l + i];</p>
+<p>for (int j = 0; j &lt; n2; ++j)</p>
+<p>R[j] = arr[m + 1 + j];</p>
+<p>int k = l;</p>
+<p>int x = 0, y = 0;</p>
+<p>while (x &lt; n1 &amp;&amp; y &lt; n2) {</p>
+<p>if (L[x] &lt;= R[y]) {</p>
+<p>arr[k] = L[x];</p>
+<p>x++;</p>
+<p>}</p>
+<p>else {</p>
+<p>arr[k] = R[y];</p>
+<p>y++;</p>
+<p>}</p>
+<p>k++;</p>
+<p>}</p>
+<p>while (x &lt; n1) {</p>
+<p>arr[k] = L[x];</p>
+<p>x++;</p>
+<p>k++;</p>
+<p>}</p>
+<p>while (y &lt; n2) {</p>
+<p>arr[k] = R[y];</p>
+<p>y++;</p>
+<p>k++;</p>
+<p>}</p>
+<p>}</p>
+<p>static void Sort(int[] arr, int l, int r) {</p>
+<p>if (l &lt; r) {</p>
+<p>int m = l + (r - l) / 2;</p>
+<p>Sort(arr, l, m);</p>
+<p>Sort(arr, m + 1, r);</p>
+<p>Merge(arr, l, m, r);</p>
+<p>}</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>int[] arr = { 12, 11, 13, 5, 6, 7 };</p>
+<p>int n = arr.Length;</p>
+<p>Sort(arr, 0, n - 1);</p>
+<p>Console.Write("Sorted array: ");</p>
+<p>foreach (int element in arr) {</p>
+<p>Console.Write(element + " ");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>3. Check for Fibonacci Number:</p>
+<p>using System;</p>
+<p>class FibonacciNumber {</p>
+<p>static bool IsPerfectSquare(int x) {</p>
+<p>int s = (int)Math.Sqrt(x);</p>
+<p>return s * s == x;</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int val1 = 5 * num * num + 4;</p>
+<p>int val2 = 5 * num * num - 4;</p>
+<p>if (IsPerfectSquare(val1) || IsPerfectSquare(val2))</p>
+<p>Console.WriteLine("Fibonacci Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Fibonacci Number");</p>
+<p>}</p>
+<p>}</p>
+<p>4. Check for Harshad Number in a Range:</p>
+<p>using System;</p>
+<p>class HarshadNumbersInRange {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the starting number: ");</p>
+<p>int start = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the ending number: ");</p>
+<p>int end = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = start; i &lt;= end; i++) {</p>
+<p>int num = i;</p>
+<p>int originalNum = num;</p>
+<p>int sum = 0;</p>
+<p>while (num &gt; 0) {</p>
+<p>sum += num % 10;</p>
+<p>num /= 10;</p>
+<p>}</p>
+<p>if (originalNum % sum == 0)</p>
+<p>Console.WriteLine(originalNum + " is a Harshad Number");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>5. Print the Pattern of a Hollow Diamond:</p>
+<p>using System;</p>
+<p>class HollowDiamondPattern {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the number of rows: ");</p>
+<p>int rows = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = 1; i &lt;= rows; i++) {</p>
+<p>for (int j = 1; j &lt;= rows - i; j++) {</p>
+<p>Console.Write(" ");</p>
+<p>}</p>
+<p>for (int k = 1; k &lt;= 2 * i - 1; k++) {</p>
+<p>if (k == 1 || k == 2 * i - 1)</p>
+<p>Console.Write("*");</p>
+<p>else</p>
+<p>Console.Write(" ");</p>
+<p>}</p>
+<p>Console.WriteLine();</p>
+<p>}</p>
+<p>for (int i = rows - 1; i &gt;= 1; i--) {</p>
+<p>for (int j = 1; j &lt;= rows - i; j++) {</p>
+<p>Console.Write(" ");</p>
+<p>}</p>
+<p>for (int k = 1; k &lt;= 2 * i - 1; k++) {</p>
+<p>if (k == 1 || k == 2 * i - 1)</p>
+<p>Console.Write("*");</p>
+<p>else</p>
+<p>Console.Write(" ");</p>
+<p>}</p>
+<p>Console.WriteLine();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>6. Check for Keith Number:</p>
+<p>using System;</p>
+<p>class KeithNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>string input = Console.ReadLine();</p>
+<p>int num = int.Parse(input);</p>
+<p>int[] arr = new int[input.Length];</p>
+<p>for (int i = 0; i &lt; input.Length; i++) {</p>
+<p>arr[i] = input[i] - '0';</p>
+<p>}</p>
+<p>int sum = 0;</p>
+<p>while (sum &lt; num) {</p>
+<p>sum = 0;</p>
+<p>for (int i = 0; i &lt; input.Length; i++) {</p>
+<p>sum += arr[i];</p>
+<p>if (i &lt; input.Length - 1) {</p>
+<p>arr[i] = arr[i + 1];</p>
+<p>}</p>
+<p>else {</p>
+<p>arr[i] = sum;</p>
+<p>}</p>
+<p>}</p>
+<p>if (sum == num) {</p>
+<p>Console.WriteLine("Keith Number");</p>
+<p>return;</p>
+<p>}</p>
+<p>}</p>
+<p>Console.WriteLine("Not a Keith Number");</p>
+<p>}</p>
+<p>}</p>
+<p>7. Calculate the Power of a Number Using Recursion:</p>
+<p>using System;</p>
+<p>class PowerUsingRecursion {</p>
+<p>static int Power(int x, int y) {</p>
+<p>if (y == 0)</p>
+<p>return 1;</p>
+<p>else</p>
+<p>return x * Power(x, y - 1);</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the base: ");</p>
+<p>int baseNum = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the exponent: ");</p>
+<p>int exponent = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Result: " + Power(baseNum, exponent));</p>
+<p>}</p>
+<p>}</p>
+<p>8. Check for Amicable Numbers:</p>
+<p>using System;</p>
+<p>class AmicableNumbers {</p>
+<p>static int GetSumOfDivisors(int num) {</p>
+<p>int sum = 0;</p>
+<p>for (int i = 1; i &lt;= num / 2; i++) {</p>
+<p>if (num % i == 0) {</p>
+<p>sum += i;</p>
+<p>}</p>
+<p>}</p>
+<p>return sum;</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the first number: ");</p>
+<p>int num1 = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the second number: ");</p>
+<p>int num2 = Convert.ToInt32(Console.ReadLine());</p>
+<p>int sum1 = GetSumOfDivisors(num1);</p>
+<p>int sum2 = GetSumOfDivisors(num2);</p>
+<p>if (sum1 == num2 &amp;&amp; sum2 == num1)</p>
+<p>Console.WriteLine("Amicable Numbers");</p>
+<p>else</p>
+<p>Console.WriteLine("Not Amicable Numbers");</p>
+<p>}</p>
+<p>}</p>
+<p>9. Find the GCD and LCM of Two Numbers:</p>
+<p>using System;</p>
+<p>class GCDandLCM {</p>
+<p>static int FindGCD(int a, int b) {</p>
+<p>while (b != 0) {</p>
+<p>int temp = b;</p>
+<p>b = a % b;</p>
+<p>a = temp;</p>
+<p>}</p>
+<p>return a;</p>
+<p>}</p>
+<p>static int FindLCM(int a, int b) {</p>
+<p>return (a * b) / FindGCD(a, b);</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the first number: ");</p>
+<p>int num1 = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the second number: ");</p>
+<p>int num2 = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("GCD: " + FindGCD(num1, num2));</p>
+<p>Console.WriteLine("LCM: " + FindLCM(num1, num2));</p>
+<p>}</p>
+<p>}</p>
+<p>10. Check for Keith Number in a Range:</p>
+<p>using System;</p>
+<p>class KeithNumbersInRange {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the starting number: ");</p>
+<p>int start = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the ending number: ");</p>
+<p>int end = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = start; i &lt;= end; i++) {</p>
+<p>string input = i.ToString();</p>
+<p>int num = int.Parse(input);</p>
+<p>int[] arr = new int[input.Length];</p>
+<p>for (int j = 0; j &lt; input.Length; j++) {</p>
+<p>arr[j] = input[j] - '0';</p>
+<p>}</p>
+<p>int sum = 0;</p>
+<p>while (sum &lt; num) {</p>
+<p>sum = 0;</p>
+<p>for (int j = 0; j &lt; input.Length; j++) {</p>
+<p>sum += arr[j];</p>
+<p>if (j &lt; input.Length - 1) {</p>
+<p>arr[j] = arr[j + 1];</p>
+<p>}</p>
+<p>else {</p>
+<p>arr[j] = sum;</p>
+<p>}</p>
+<p>}</p>
+<p>if (sum == num) {</p>
+<p>Console.WriteLine(num + " is a Keith Number");</p>
+<p>break;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>SET – 8</p>
+<p>1. Check for Kaprekar Number:</p>
+<p>using System;</p>
+<p>class KaprekarNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int square = num * num;</p>
+<p>string strSquare = square.ToString();</p>
+<p>for (int i = 1; i &lt; strSquare.Length; i++) {</p>
+<p>int part1 = int.Parse(strSquare.Substring(0, i));</p>
+<p>int part2 = int.Parse(strSquare.Substring(i));</p>
+<p>if (part1 + part2 == num) {</p>
+<p>Console.WriteLine("Kaprekar Number");</p>
+<p>return;</p>
+<p>}</p>
+<p>}</p>
+<p>Console.WriteLine("Not a Kaprekar Number");</p>
+<p>}</p>
+<p>}</p>
+<p>2. Implement Bubble Sort:</p>
+<p>using System;</p>
+<p>class BubbleSort {</p>
+<p>static void Main() {</p>
+<p>int[] arr = { 64, 34, 25, 12, 22, 11, 90 };</p>
+<p>int n = arr.Length;</p>
+<p>for (int i = 0; i &lt; n - 1; i++) {</p>
+<p>for (int j = 0; j &lt; n - i - 1; j++) {</p>
+<p>if (arr[j] &gt; arr[j + 1]) {</p>
+<p>int temp = arr[j];</p>
+<p>arr[j] = arr[j + 1];</p>
+<p>arr[j + 1] = temp;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>Console.Write("Sorted array: ");</p>
+<p>foreach (int element in arr) {</p>
+<p>Console.Write(element + " ");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>3. Check for Perfect Number:</p>
+<p>using System;</p>
+<p>class PerfectNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int sum = 0;</p>
+<p>for (int i = 1; i &lt; num; i++) {</p>
+<p>if (num % i == 0) {</p>
+<p>sum += i;</p>
+<p>}</p>
+<p>}</p>
+<p>if (sum == num)</p>
+<p>Console.WriteLine("Perfect Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Perfect Number");</p>
+<p>}</p>
+<p>}</p>
+<p>4. Find the Factors of a Number:</p>
+<p>using System;</p>
+<p>class Factors {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.Write("Factors of " + num + " are: ");</p>
+<p>for (int i = 1; i &lt;= num; i++) {</p>
+<p>if (num % i == 0) {</p>
+<p>Console.Write(i + " ");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>5. Print the Pattern of a Right Triangle:</p>
+<p>using System;</p>
+<p>class RightTrianglePattern {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the number of rows: ");</p>
+<p>int rows = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = 1; i &lt;= rows; i++) {</p>
+<p>for (int j = 1; j &lt;= i; j++) {</p>
+<p>Console.Write("*");</p>
+<p>}</p>
+<p>Console.WriteLine();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>6. Check for Prime Number:</p>
+<p>using System;</p>
+<p>class PrimeNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>bool isPrime = true;</p>
+<p>if (num == 1 || num == 0) {</p>
+<p>isPrime = false;</p>
+<p>}</p>
+<p>else {</p>
+<p>for (int i = 2; i &lt;= Math.Sqrt(num); i++) {</p>
+<p>if (num % i == 0) {</p>
+<p>isPrime = false;</p>
+<p>break;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>if (isPrime)</p>
+<p>Console.WriteLine("Prime Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Prime Number");</p>
+<p>}</p>
+<p>}</p>
+<p>7. Calculate the Sum of Natural Numbers:</p>
+<p>using System;</p>
+<p>class SumOfNaturalNumbers {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the value of n: ");</p>
+<p>int n = Convert.ToInt32(Console.ReadLine());</p>
+<p>int sum = 0;</p>
+<p>for (int i = 1; i &lt;= n; i++) {</p>
+<p>sum += i;</p>
+<p>}</p>
+<p>Console.WriteLine("Sum of first " + n + " natural numbers: " +
+sum);</p>
+<p>}</p>
+<p>}</p>
+<p>8. Print the Pattern of a Right Triangle using Numbers:</p>
+<p>using System;</p>
+<p>class NumberRightTrianglePattern {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the number of rows: ");</p>
+<p>int rows = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = 1; i &lt;= rows; i++) {</p>
+<p>for (int j = 1; j &lt;= i; j++) {</p>
+<p>Console.Write(j);</p>
+<p>}</p>
+<p>Console.WriteLine();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>9. Check for Composite Number:</p>
+<p>using System;</p>
+<p>class CompositeNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>bool isComposite = false;</p>
+<p>if (num == 0 || num == 1) {</p>
+<p>isComposite = false;</p>
+<p>}</p>
+<p>else {</p>
+<p>for (int i = 2; i &lt;= num / 2; i++) {</p>
+<p>if (num % i == 0) {</p>
+<p>isComposite = true;</p>
+<p>break;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>if (isComposite)</p>
+<p>Console.WriteLine("Composite Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Composite Number");</p>
+<p>}</p>
+<p>}</p>
+<p>10. Check for Palindrome String:</p>
+<p>using System;</p>
+<p>class PalindromeString {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a string: ");</p>
+<p>string str = Console.ReadLine();</p>
+<p>string reversedStr = "";</p>
+<p>for (int i = str.Length - 1; i &gt;= 0; i--) {</p>
+<p>reversedStr += str[i];</p>
+<p>}</p>
+<p>if (str.Equals(reversedStr, StringComparison.OrdinalIgnoreCase))</p>
+<p>Console.WriteLine("Palindrome String");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Palindrome String");</p>
+<p>}</p>
+<p>}</p>
+<p>SET – 9</p>
+<p>1. Check for Armstrong Number:</p>
+<p>using System;</p>
+<p>class ArmstrongNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int originalNum = num;</p>
+<p>int sum = 0;</p>
+<p>int digits = num.ToString().Length;</p>
+<p>while (num &gt; 0) {</p>
+<p>int digit = num % 10;</p>
+<p>sum += (int)Math.Pow(digit, digits);</p>
+<p>num /= 10;</p>
+<p>}</p>
+<p>if (sum == originalNum)</p>
+<p>Console.WriteLine("Armstrong Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not an Armstrong Number");</p>
+<p>}</p>
+<p>}</p>
+<p>2. Implement Selection Sort:</p>
+<p>using System;</p>
+<p>class SelectionSort {</p>
+<p>static void Main() {</p>
+<p>int[] arr = { 64, 25, 12, 22, 11 };</p>
+<p>int n = arr.Length;</p>
+<p>for (int i = 0; i &lt; n - 1; i++) {</p>
+<p>int minIndex = i;</p>
+<p>for (int j = i + 1; j &lt; n; j++) {</p>
+<p>if (arr[j] &lt; arr[minIndex]) {</p>
+<p>minIndex = j;</p>
+<p>}</p>
+<p>}</p>
+<p>int temp = arr[minIndex];</p>
+<p>arr[minIndex] = arr[i];</p>
+<p>arr[i] = temp;</p>
+<p>}</p>
+<p>Console.Write("Sorted array: ");</p>
+<p>foreach (int element in arr) {</p>
+<p>Console.Write(element + " ");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>3. Check for Disarium Number:</p>
+<p>using System;</p>
+<p>class DisariumNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int originalNum = num;</p>
+<p>string numString = num.ToString();</p>
+<p>int sum = 0;</p>
+<p>for (int i = 0; i &lt; numString.Length; i++) {</p>
+<p>sum += (int)Math.Pow(int.Parse(numString[i].ToString()), i + 1);</p>
+<p>}</p>
+<p>if (sum == originalNum)</p>
+<p>Console.WriteLine("Disarium Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Disarium Number");</p>
+<p>}</p>
+<p>}</p>
+<p>4. Find the Sum of Natural Numbers Using Recursion:</p>
+<p>using System;</p>
+<p>class SumOfNaturalNumbersUsingRecursion {</p>
+<p>static int Sum(int n) {</p>
+<p>if (n == 0)</p>
+<p>return 0;</p>
+<p>else</p>
+<p>return n + Sum(n - 1);</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the value of n: ");</p>
+<p>int n = Convert.ToInt32(Console.ReadLine());</p>
+<p>int sum = Sum(n);</p>
+<p>Console.WriteLine("Sum of first " + n + " natural numbers: " +
+sum);</p>
+<p>}</p>
+<p>}</p>
+<p>5. Print the Pattern of a Mirrored Right Triangle:</p>
+<p>using System;</p>
+<p>class MirroredRightTrianglePattern {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the number of rows: ");</p>
+<p>int rows = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = 1; i &lt;= rows; i++) {</p>
+<p>for (int j = 1; j &lt;= rows - i; j++) {</p>
+<p>Console.Write(" ");</p>
+<p>}</p>
+<p>for (int k = 1; k &lt;= i; k++) {</p>
+<p>Console.Write("*");</p>
+<p>}</p>
+<p>Console.WriteLine();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>6. Check for Perfect Number in a Range:</p>
+<p>using System;</p>
+<p>class PerfectNumbersInRange {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the starting number: ");</p>
+<p>int start = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the ending number: ");</p>
+<p>int end = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = start; i &lt;= end; i++) {</p>
+<p>int num = i;</p>
+<p>int sum = 0;</p>
+<p>for (int j = 1; j &lt; num; j++) {</p>
+<p>if (num % j == 0) {</p>
+<p>sum += j;</p>
+<p>}</p>
+<p>}</p>
+<p>if (sum == num)</p>
+<p>Console.WriteLine(num + " is a Perfect Number");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>7. Calculate the Factorial of a Number Using Recursion:</p>
+<p>using System;</p>
+<p>class FactorialUsingRecursion {</p>
+<p>static int Factorial(int n) {</p>
+<p>if (n == 0)</p>
+<p>return 1;</p>
+<p>else</p>
+<p>return n * Factorial(n - 1);</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int factorial = Factorial(num);</p>
+<p>Console.WriteLine("Factorial: " + factorial);</p>
+<p>}</p>
+<p>}</p>
+<p>8. Check for Deficient Number:</p>
+<p>using System;</p>
+<p>class DeficientNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int sum = 0;</p>
+<p>for (int i = 1; i &lt;= num / 2; i++) {</p>
+<p>if (num % i == 0)</p>
+<p>sum += i;</p>
+<p>}</p>
+<p>if (sum &lt; num)</p>
+<p>Console.WriteLine("Deficient Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Deficient Number");</p>
+<p>}</p>
+<p>}</p>
+<p>9. Find the Fibonacci Series Up to a Given Number:</p>
+<p>using System;</p>
+<p>class FibonacciSeries {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int a = 0, b = 1, c = 0;</p>
+<p>Console.Write("Fibonacci Series: " + a + " " + b + " ");</p>
+<p>for (int i = 2; c &lt; num; i++) {</p>
+<p>c = a + b;</p>
+<p>if (c &lt;= num)</p>
+<p>Console.Write(c + " ");</p>
+<p>a = b;</p>
+<p>b = c;</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>10. Check for Neon Number:</p>
+<p>using System;</p>
+<p>class NeonNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int square = num * num;</p>
+<p>int sum = 0;</p>
+<p>while (square != 0) {</p>
+<p>sum += square % 10;</p>
+<p>square /= 10;</p>
+<p>}</p>
+<p>if (sum == num)</p>
+<p>Console.WriteLine("Neon Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Neon Number");</p>
+<p>}</p>
+<p>}</p>
+<p>SET – 10</p>
+<p>1. Check for Happy Number in a Range:</p>
+<p>using System;</p>
+<p>class HappyNumbersInRange {</p>
+<p>static int SquareSumOfDigits(int num) {</p>
+<p>int sum = 0;</p>
+<p>while (num &gt; 0) {</p>
+<p>int digit = num % 10;</p>
+<p>sum += digit * digit;</p>
+<p>num /= 10;</p>
+<p>}</p>
+<p>return sum;</p>
+<p>}</p>
+<p>static bool IsHappyNumber(int num) {</p>
+<p>while (num != 1 &amp;&amp; num != 4) {</p>
+<p>num = SquareSumOfDigits(num);</p>
+<p>}</p>
+<p>return num == 1;</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the starting number: ");</p>
+<p>int start = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the ending number: ");</p>
+<p>int end = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = start; i &lt;= end; i++) {</p>
+<p>if (IsHappyNumber(i)) {</p>
+<p>Console.WriteLine(i + " is a Happy Number");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>2. Implement Insertion Sort:</p>
+<p>using System;</p>
+<p>class InsertionSort {</p>
+<p>static void Main() {</p>
+<p>int[] arr = { 12, 11, 13, 5, 6 };</p>
+<p>int n = arr.Length;</p>
+<p>for (int i = 1; i &lt; n; i++) {</p>
+<p>int key = arr[i];</p>
+<p>int j = i - 1;</p>
+<p>while (j &gt;= 0 &amp;&amp; arr[j] &gt; key) {</p>
+<p>arr[j + 1] = arr[j];</p>
+<p>j = j - 1;</p>
+<p>}</p>
+<p>arr[j + 1] = key;</p>
+<p>}</p>
+<p>Console.Write("Sorted array: ");</p>
+<p>foreach (int element in arr) {</p>
+<p>Console.Write(element + " ");</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>3. Check for Pronic Number:</p>
+<p>using System;</p>
+<p>class PronicNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int flag = 0;</p>
+<p>for (int i = 0; i &lt; num; i++) {</p>
+<p>if (i * (i + 1) == num) {</p>
+<p>flag = 1;</p>
+<p>break;</p>
+<p>}</p>
+<p>}</p>
+<p>if (flag == 1)</p>
+<p>Console.WriteLine("Pronic Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Pronic Number");</p>
+<p>}</p>
+<p>}</p>
+<p>4. Find the LCM of N Numbers:</p>
+<p>using System;</p>
+<p>class LCMofNNumbers {</p>
+<p>static int FindGCD(int a, int b) {</p>
+<p>while (b != 0) {</p>
+<p>int temp = b;</p>
+<p>b = a % b;</p>
+<p>a = temp;</p>
+<p>}</p>
+<p>return a;</p>
+<p>}</p>
+<p>static int FindLCM(int[] arr, int n) {</p>
+<p>int lcm = arr[0];</p>
+<p>for (int i = 1; i &lt; n; i++) {</p>
+<p>lcm = (lcm * arr[i]) / FindGCD(lcm, arr[i]);</p>
+<p>}</p>
+<p>return lcm;</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the value of n: ");</p>
+<p>int n = Convert.ToInt32(Console.ReadLine());</p>
+<p>int[] arr = new int[n];</p>
+<p>for (int i = 0; i &lt; n; i++) {</p>
+<p>Console.WriteLine("Enter number " + (i + 1) + ": ");</p>
+<p>arr[i] = Convert.ToInt32(Console.ReadLine());</p>
+<p>}</p>
+<p>Console.WriteLine("LCM: " + FindLCM(arr, n));</p>
+<p>}</p>
+<p>}</p>
+<p>5. Print the Pattern of a Inverted Pyramid:</p>
+<p>using System;</p>
+<p>class InvertedPyramidPattern {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the number of rows: ");</p>
+<p>int rows = Convert.ToInt32(Console.ReadLine());</p>
+<p>for (int i = rows; i &gt;= 1; i--) {</p>
+<p>for (int j = 1; j &lt;= rows - i; j++) {</p>
+<p>Console.Write(" ");</p>
+<p>}</p>
+<p>for (int k = 1; k &lt;= 2 * i - 1; k++) {</p>
+<p>Console.Write("*");</p>
+<p>}</p>
+<p>Console.WriteLine();</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>6. Check for Strong Number:</p>
+<p>using System;</p>
+<p>class StrongNumber {</p>
+<p>static int Factorial(int num) {</p>
+<p>if (num == 0 || num == 1)</p>
+<p>return 1;</p>
+<p>return num * Factorial(num - 1);</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int originalNum = num;</p>
+<p>int sum = 0;</p>
+<p>while (num &gt; 0) {</p>
+<p>int digit = num % 10;</p>
+<p>sum += Factorial(digit);</p>
+<p>num /= 10;</p>
+<p>}</p>
+<p>if (sum == originalNum)</p>
+<p>Console.WriteLine("Strong Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Strong Number");</p>
+<p>}</p>
+<p>}</p>
+<p>7. Calculate the Power of a Number Using Iteration:</p>
+<p>using System;</p>
+<p>class PowerUsingIteration {</p>
+<p>static int Power(int x, int y) {</p>
+<p>int result = 1;</p>
+<p>for (int i = 1; i &lt;= y; i++) {</p>
+<p>result *= x;</p>
+<p>}</p>
+<p>return result;</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter the base: ");</p>
+<p>int baseNum = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Enter the exponent: ");</p>
+<p>int exponent = Convert.ToInt32(Console.ReadLine());</p>
+<p>Console.WriteLine("Result: " + Power(baseNum, exponent));</p>
+<p>}</p>
+<p>}</p>
+<p>8. Check for Duck Number:</p>
+<p>using System;</p>
+<p>class DuckNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>string num = Console.ReadLine();</p>
+<p>if (num.Contains("0") &amp;&amp; num[0] != '0')</p>
+<p>Console.WriteLine("Duck Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not a Duck Number");</p>
+<p>}</p>
+<p>}</p>
+<p>9. Check for Emirp Number:</p>
+<p>using System;</p>
+<p>class EmirpNumber {</p>
+<p>static bool IsPrime(int num) {</p>
+<p>if (num == 1 || num == 0) {</p>
+<p>return false;</p>
+<p>}</p>
+<p>for (int i = 2; i &lt;= Math.Sqrt(num); i++) {</p>
+<p>if (num % i == 0) {</p>
+<p>return false;</p>
+<p>}</p>
+<p>}</p>
+<p>return true;</p>
+<p>}</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>int num = Convert.ToInt32(Console.ReadLine());</p>
+<p>int reverse = 0;</p>
+<p>int temp = num;</p>
+<p>while (temp != 0) {</p>
+<p>int digit = temp % 10;</p>
+<p>reverse = reverse * 10 + digit;</p>
+<p>temp /= 10;</p>
+<p>}</p>
+<p>if (IsPrime(num) &amp;&amp; IsPrime(reverse) &amp;&amp; num !=
+reverse)</p>
+<p>Console.WriteLine("Emirp Number");</p>
+<p>else</p>
+<p>Console.WriteLine("Not an Emirp Number");</p>
+<p>}</p>
+<p>}</p>
+<p>10. Check for Strobogrammatic Number:</p>
+<p>using System;</p>
+<p>class StrobogrammaticNumber {</p>
+<p>static void Main() {</p>
+<p>Console.WriteLine("Enter a number: ");</p>
+<p>string num = Console.ReadLine();</p>
+<p>string validChars = "01689";</p>
+<p>for (int i = 0; i &lt; (num.Length + 1) / 2; i++) {</p>
+<p>if (!validChars.Contains(num[i]) || num[i] != num[num.Length - 1 -
+i]) {</p>
+<p>Console.WriteLine("Not a Strobogrammatic Number");</p>
+<p>return;</p>
+<p>}</p>
+<p>}</p>
+<p>Console.WriteLine("Strobogrammatic Number");</p>
+<p>}</p>
+<p>}</p>
+<p><span id="part0002.xhtml"></span></p>
+<p>C#:</p>
+<p>C# is a powerful programming language that can be used to create a
+wide variety of applications, ranging from desktop applications to web
+services and games. Some common types of applications that can be
+developed using C# include:</p>
+<p>1. <span class="class_s1YC">Desktop Applications</span>: C# can be
+used to create robust and feature-rich desktop applications for Windows,
+including business applications, utilities, tools, and more. Windows
+Forms and Windows Presentation Foundation (WPF) are popular frameworks
+for building desktop applications using C#.</p>
+<p>2. <span class="class_s1YC">Web Applications</span>: C# is
+extensively used for building web applications, including dynamic
+websites, web services, and web APIs. ASP.NET, ASP.NET Core, and Blazor
+are popular frameworks that allow developers to create web applications
+using C#.</p>
+<p>3. <span class="class_s1YC">Mobile Applications</span>: With the help
+of cross-platform development frameworks like Xamarin, C# can be used to
+create cross-platform mobile applications for iOS and Android. Xamarin
+allows developers to share code across multiple platforms, streamlining
+the development process.</p>
+<p>4. <span class="class_s1YC">Games</span>: C# is widely used in the
+game development industry. Game engines such as Unity and Unreal Engine
+offer extensive <span id="part0002.xhtml_page_98"></span>support for C#,
+making it a popular choice for developing 2D and 3D games across various
+platforms, including PC, consoles, and mobile devices.</p>
+<p>5. <span class="class_s1YC">Cloud Applicatio</span>ns: C# can be used
+to build cloud applications and services on popular cloud platforms such
+as Microsoft Azure. It enables the development of scalable, reliable,
+and high-performance cloud-based applications and services.</p>
+<p>6. <span class="class_s1YC">IoT (Internet of Things)
+Applications</span>: C# can be used in IoT applications to develop
+software for embedded devices, IoT gateways, and IoT solutions. .NET
+Core supports cross-platform development, making it suitable for
+creating IoT applications that run on various devices and platforms.</p>
+<p>7. <span class="class_s1YC">Machine Learning and AI
+Applications</span>: C# can be used in developing applications related
+to machine learning and artificial intelligence, leveraging frameworks
+such as ML.NET. It allows developers to create and deploy machine
+learning models and integrate them into various applications.</p>
+<p>8. <span class="class_s1YC">Database</span> <span
+class="class_s1YC">Applications</span>: C# can be used to build database
+applications, including data-driven applications, data analysis tools,
+and database management systems. It integrates seamlessly with various
+database technologies, such as Microsoft SQL Server, MySQL, and
+PostgreSQL.</p>
+<p>9. <span class="class_s1YC">Enterprise Applications</span>: C# is
+often used for developing enterprise-level applications, including ERP
+(Enterprise Resource Planning), CRM (Customer Relationship Management),
+and other business management systems. It <span
+id="part0002.xhtml_page_99"></span>enables the creation of scalable,
+secure, and robust applications to meet the complex needs of
+businesses.</p>
+<p>10. <span class="class_s1YC">Web Services and APIs</span>: C# can be
+used to create web services and APIs that facilitate communication and
+data exchange between different software applications. RESTful APIs and
+SOAP-based services can be developed using C# to enable interoperability
+and integration between various systems.</p>
+<p>These are just a few examples of the wide range of applications that
+can be developed using C#. With its versatility, extensive framework
+support, and a rich set of libraries, C# is a preferred choice for many
+developers across different domains.</p>
+<p><span id="part0003.xhtml"></span></p>
+<p>How to Run C# Program</p>
+<p>To run a C# program, you'll need an integrated development
+environment (IDE) like Visual Studio or Visual Studio Code. Here's a
+basic guide to running a C# program using Visual Studio:</p>
+<p>1. Install Visual Studio:</p>
+<p>If you haven't already, download and install Visual Studio from the
+official Microsoft website.</p>
+<p>2. Create a new C# project:</p>
+<p>Open Visual Studio and select "Create a new project." Choose the
+appropriate project template depending on your requirements. For a
+simple console application, choose the "Console App (.NET)"
+template.</p>
+<p>3. Write your C# code:</p>
+<p>In the newly created project, you'll find a file named `Program.cs`.
+Open it and write your C# code in the `Main` method or any other
+appropriate methods.</p>
+<p>4. Build the project:</p>
+<p>After writing the code, build the project by selecting the "Build"
+option from the menu.</p>
+<p>5. Run the program:</p>
+<p>Once the project is built successfully, you can run the program by
+clicking the "Start" button or by pressing the "F5" key. This will run
+your C# program, and if it's a console application, you'll see the
+output in the console window.</p>
+<p>If you prefer a simpler approach without using an IDE, you can also
+use the .NET Core command-line interface (CLI). Here's a basic guide to
+running a C# program using the .NET CLI:</p>
+<p>1. Install .NET SDK:</p>
+<p>If you haven't already, download and install the .NET SDK from the
+official .NET website.</p>
+<p>2. Create a new folder for your C# program:</p>
+<p>Open your preferred terminal or command prompt and create a new
+folder for your C# program.</p>
+<p>3. Write your C# code:</p>
+<p>Inside the new folder, create a file with a `.cs` extension (e.g.,
+`program.cs`) and write your C# code.</p>
+<p>4. Compile and run the program:</p>
+<p>In the terminal or command prompt, navigate to the folder containing
+your C# file. Use the following commands to compile and run your
+program:</p>
+<p>dotnet new console    # Create a new console application</p>
+<p>dotnet run            # Compile and run the program</p>
+<p>This will compile and run your C# program, and you'll see the output
+in the terminal or command prompt.</p>
+<p>These are the basic steps for running a C# program using Visual
+Studio or the .NET CLI.</p>
+<p>------------------------------</p>
+<p>Thank You</p>

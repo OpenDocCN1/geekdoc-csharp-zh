@@ -1,0 +1,22 @@
+name: Mastering C#： A Beginner's Guide to C# Programming in 24hrs
+name_cn: 精通 C#：24 小时 C# 编程入门指南
+slug: mastering-c-a-beginners-guide-to-c-programming-in-24hrs
+toc:
+- - '#'
+  - 循环 (LOOPS)
+- - '##'
+  - WHILE 循环
+- - '##'
+  - DO-WHILE 循环
+- - '##'
+  - FOR 循环
+- - '#'
+  - 跳出与继续循环 (BREAKING AND CONTINING LOOPS)
+- - '##'
+  - 练习：
+- - '#'
+  - 第 7 章
+- - '##'
+  - 面向对象编程
+- - '#'
+  - C# 关键字

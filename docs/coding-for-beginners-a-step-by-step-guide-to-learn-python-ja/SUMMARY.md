@@ -1,0 +1,2 @@
++   [初学者编程指南：从零开始 Python、Java、SQL、C、C++、C#、HTML 和 CSS 的逐步学习指南](README.md)
++   [初学者编程指南：从零开始 Python、Java、SQL、C、C++、C#、HTML 和 CSS 的逐步学习指南](coding-for-beginners-a-step-by-step-guide-to-learn-python-ja_0.md)

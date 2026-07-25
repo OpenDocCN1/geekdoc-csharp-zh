@@ -1,0 +1,44 @@
+- "# C# 和 .NET Core 并行编程：从零开始使用 C# 和 .NET Core 3.1 开发多线程应用\n\n\n\n\n\n\n\n\n## 献给\n\
+  全球所有正在与这种致命病毒斗争、冒着生命危险拯救人类的热心读者们！向他们致敬！\n\n## 关于作者\n**Rishabh Verma** 是微软认证专业人士，在微软担任高级顾问，帮助客户设计、开发和部署企业级应用程序。他在\
+  \ .NET 技术栈上拥有 12 年以上的硬核开发经验。他的兴趣是创建工具、Visual Studio 扩展、代码生成和 .NET Foundation。他的\
+  \ LinkedIn 页面为：`https://www.linkedin.com/in/rishabhverma/`。\n\n**Neha Shrivastava**\
+  \ 是微软认证专业人士，在微软印度开发中心的 Cloud & AI 组担任软件工程师。她拥有约十年的开发经验，在金融、医疗保健和电子商务领域拥有专长。她的兴趣是\
+  \ ASP.NET 栈、Azure 和跨平台开发。她热衷于学习新技术并与最新进展同步。她的 LinkedIn 简介为：`https://www.linkedin.com/in/neha-shrivastava-99a80135/`。\n\
+  \n**Ravindra Akella** 在微软担任高级顾问，拥有 13 年以上的软件开发经验。他精通 .NET 和 Web 相关技术，目前的工作涉及从架构到使用\
+  \ Azure 及相关技术交付复杂解决方案的端到端产品所有。他是一个精通技术的开发者，热于拥抱新技术。他曾在国际会议上进行过 Azure 及其他技术的演讲和会议。他的\
+  \ LinkedIn 简介为：`https://www.linkedin.com/in/ravindra-akella/`。\n\n## 致谢\n当一本书出版时，只有作者和编辑的名字会被提及，但许多无名英雄发挥了同样重要的作用，没有他们，项目无法完成或取得成功。我有很长的一名单英雄需要感谢。衷心感谢架构师们（`Ranjiv\
+  \ Sharma`、`Shrenik Jhaveri`、`Prasad Ganganunta`），因为他们的每一次讨论都给我提供了问题的全新视角和新知识。衷心感谢我的经理们（`Ashwani\
+  \ Sharma`、`Manish Sanga`），他们在专业工作之外一直鼓励并支持我写这本书。感谢所有的同事、朋友和团队成员，他们让我对写作感到愉快并给予了支持。\n\
+  \n如果没有家人的可靠支持，事情似乎相当难以完成，尤其是当它们占据了你的时间时。感谢我的父母（`Smt. Pratibha Verma` & `Shri R C\
+  \ Verma`）和我的兄弟（`Rishi Verma`）持续的支持，他们是我不断的能量来源。我要感谢我的妻子和合著者 `Neha`，她牺牲了无数周末并支持我完成截止日期。最后，但同样，我要感谢我的团队（`Neha`、`Ravindra`）以及\
+  \ BPB 出版的优秀团队，为我们提供了这个分享学习经验并为社区贡献的机会。 — **Rishabh Verma**\n\n我要以最诚挚的感谢父母（`Smt.\
+  \ Archana Shrivastava` 和 `Shri O.P. Shrivastava`）的支持和爱；我的兄弟（`Dr. Utkarsh Shrivastava`）、嫂子（`Dr.\
+  \ Samvartika Shrivastava`），以及最后同样重要的，我的丈夫，他也是这本书的合著者 `Rishabh`。他们通过持续的支持和鼓励一直让我坚持下去。\
+  \ — **Neha Shrivastava**\n\n我想感谢几位在写书期间给予我持续和进行性支持的人。我非常感谢父母的爱、祈祷、关怀和牺牲；非常感谢我的妻子\
+  \ `Srividya` 和儿子 `Vaarush` 的爱、理解、祈祷和完成这本书的持续支持。最后，感谢我的合著者 `Rishabh` 和 BPB Publications\
+  \ 的机会。\n\n## 前言\n应用程序开发在过去十年中发生了演变，随着 `Angular`、服务器端 `ASP.NET Core` 等最新技术的出现，消费者的期望也随之提高。软件开发的新格言是“慢即是快”，这意味着性能是应用程序开发中最关键的因素之一。本书的主要目标是帮助读者理解异步编程的重要性以及使用\
+  \ `.NET Core` 构建并发应用程序的各种方法。通过这十章，你将学习线程的基础、异步编程、各种同步结构、单元测试方法、调试应用程序以及技巧。\n\n\n\
+  *   下载 Windows 必备工具\n*   安装带有 .NET Core 的 Visual Studio 2019\n*   使用 Visual Studio\
+  \ 2019 配合 `.NET Core 3.1`\n*   使用 `Perfmon、Procmon、PerfView、JustDecompile、DebugDiag、WinDbg`\n\
+  \n*   C# 8 平台依赖\n*   新功能和增强\n*   可空类型 / 非可空类型\n*   异步流\n*   范围和索引 (`System.Index`、`System.Range`)\n\
+  *   接口的默认实现\n*   结构体上的只读成员\n*   模式匹配增强（Switch 表达式、递归模式、位置模式）\n*   `Using` 声明\n*\
+  \   静态本地函数\n*   `ref` 结构体\n*   空合并赋值\n*   插值字符串\n### 3. .NET Core 3.1\n*   .NET\
+  \ Core 版本 API\n*   Windows Desktop 应用程序支持\n*   Windows Desktop MSIX\n*   COM 调用组件\
+  \ – Windows Desktop\n*   WinForms 高 DPI\n*   .NET Standard 2.1\n*   C# 8 及其新功能支持\n\
+  *   编译和部署（默认执行文件、单执行文件）\n*   程序集\n*   分层编译\n*   ReadyToRun \n*   跨平台/架构限制\n*   运行时/SDK（构建副本、本地工具）\n\
+  *   垃圾回收堆\n*   垃圾回收大页（可选）\n*   IEEE 浮点改进\n*   内置 JSON 支持 (`JsonReader`、`JsonWriter`、`Json`)\n\
+  *   HTTP/2 支持\n*   加密导入和导出\n### 4. 揭秘线程\n*   为什么需要线程？什么是线程？\n*   `ThreadException`\
+  \ 处理\n*   `ThreadPool` 的限制\n*   `ThreadPool` 中的异常\n*   线程池的限制\n*   `ThreadPool`\
+  \ 实战\n*   `Task`、`TaskCreationOptions`\n*   使用任务的异常处理\n*   取消、续接\n*   `WhenAll`、`WhenAny`\n\
+  *   `Task Scheduler`,`Task Factory`\n\n*   理解术语\n*   并行扩展\n*   任务并行库 (`TPL`)\n*\
+  \   数据并行、任务并行\n*   `PLINQ`\n*   并行数据结构\n*   `IEnumerator` 和 `yield return`\n*  \
+  \ `async await`（控制流、底层原理）\n*   语言特性（使用 `async await` 的原则、`async await` 的限制）\n* \
+  \  CPU（计算）密集对比 I/O 密集工作\n*   死锁、异步流、值\n\n### 6. 线程模式\n*   基于任务的异步模式 (`TAP`)\n* \
+  \  CPU 密集对比 I/O 密集\n*   异常处理\n*   取消、进度报告\n*   异步编程模型 (`APM`)\n*   基于事件的异步模式 (`EAP`)\n\
+  \n### 7. 同步结构\n*   线程安全\n*   锁结构（互斥、非互斥）\n*   信号结构 (`AutoResetEvent`、`ManualResetEvent`、`Semaphore`、`SemaphoreSlim`、读/写锁、`AutoResetEvent`、`ManualResetEventSlim`、`CountdownEvent`、`Barrier`、`Interlocked`、`Volatile`)\n\
+  \n### 8. 并行和异步程序的单元测试\n*   使用 `XUnit`单元测试的基础\n*   实时单元测试\n*   测试异步方法\n*   测试异步方法中的异常\n\
+  *   使用模拟 (`Moq`) 测试异步方法\n\n### 9. 调试与故障排除\n*   使用 `Visual Studio 2019` 进行入门调试\n\
+  *   多线程应用程序分析\n*   内存转储（收集与分析）\n*   识别高 CPU 问题\n\n### 10. 技巧与窍\n*   线程与 `TPL`\n\
+  *   `async await`\n*   `async void` 与 `async Task`\n*   `ConfigureAwait`\n\n---\n\
+  \n# 第 1 章：入门\n\n## 下载 Windows 必备工具\n为了开发并行应用程序，我们需要正确的工具。在本节中，我们将讨论先决条件。\n\n## 安装带有\
+  \ .NET Core 的 Visual Studio 2019\n为了开发并行应用程序，我们需要正确的工具。在本节中，我们将讨论先决条件。\n\n"

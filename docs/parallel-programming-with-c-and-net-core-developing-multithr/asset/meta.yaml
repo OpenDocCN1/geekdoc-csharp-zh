@@ -1,0 +1,35 @@
+name: Parallel Programming with C# and .NET Core： Developing Multithreaded Applications
+  Using C# and .NET Core 3.1 from Scratch (English Edition)
+name_cn: C# 和 .NET Core 并行编程：从零开始使用 C# 和 .NET Core 3.1 开发多线程应用
+slug: parallel-programming-with-c-and-net-core-developing-multithr
+toc:
+- - '#'
+  - C# 和 .NET Core 并行编程：从零开始使用 C# 和 .NET Core 3.1 开发多线程应用
+- - '##'
+  - 献给
+- - '##'
+  - 关于作者
+- - '##'
+  - 致谢
+- - '##'
+  - 前言
+- - '###'
+  - 3. .NET Core 3.1
+- - '###'
+  - 4. 揭秘线程
+- - '###'
+  - 6. 线程模式
+- - '###'
+  - 7. 同步结构
+- - '###'
+  - 8. 并行和异步程序的单元测试
+- - '###'
+  - 9. 调试与故障排除
+- - '###'
+  - 10. 技巧与窍
+- - '#'
+  - 第 1 章：入门
+- - '##'
+  - 下载 Windows 必备工具
+- - '##'
+  - 安装带有 .NET Core 的 Visual Studio 2019

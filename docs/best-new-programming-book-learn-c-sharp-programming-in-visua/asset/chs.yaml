@@ -1,0 +1,123 @@
+- "# 最佳新编程书：在 Visual Studio 2016 中学习 C# 编程 - 学习应用与游戏编程基础，C# 语言基础：C# 编程训练营\n\n\n\n\
+  ![](img/00043.jpeg)\n![](img/00001.jpeg)\n\n\n\n\n\n版权 © 2016\n\n## 关于作者：\nFaisal\
+  \ 拥有超过 4 年的`Programming` 经验……他在 14 岁开始学习编程。目前他正在为移动平台开发游戏。\n\n\n\n# 第 1 章（C# 简介）\n\
+  \n`C#`（读作 \"C SHARP\"）是微软的一种面向对象的编程语言，旨在结合 `C++` 的计算能力与 Visual Basic 的编程易性。`C#`\
+  \ 基于 `C++` 并包含了与 `JAVA` 相似的特性。`C#` 设计用于与微软的 `.NET` 平台配合。\n\n## 为什么选择 C#\n`C#` 是一种优雅、简单、类型安全的面向对象的语言，允许企业级人员构建各种应用程序。\n\
+  \n`C#` 用于著名的游戏引擎，在全球范围内用于：\n- 简单的命令行工具。输入处理、转换处理、输出处理。\n- 桌面应用程序。\n- Windows 服务\n\
+  - Web 服务等。\n\n## C# VS .NET\n`C#` 是一种编程语言。`.NET` 是在 Windows 上构建应用程序的框架。\n\n## C\
+  \ 语言的历史\n在 `c#` 之前，我们在 C 家族中有两种语言：`c` 和 `c++`。当我们编译代码时，编译器会将代码转换为我们运行的机器的本地代码。\n\
+  \n这意味着如果我在 Windows 机器上编写了一个程序，它将无法在其他操作系统（如 Linux、mac 等）上运行。\n\n当微软在设计 `c#` 时，他们借鉴了\
+  \ Java 社区的想法。在 `java` 中，代码首先被翻译成字节码，然后翻译成机器码。\n\n在 `c#` 中，代码首先被翻译成 `il`（中间语言），然后翻译成独立于我们运行的计算机的机器码。`clr`（公共语言运行时）负责将\
+  \ `il` 代码翻译成机器码。\n\n## .NET 应用程序架构\n应用程序由类组成，这些类是应用程序的主要构建模块。这些类相互作用以为我们提供所需的功能。\n\
+  \n### 什么是类。\n类是一个容器，其中包含数据（也称为属性）和函数（也称为方法）。\n\n### 函数或方法\n函数和方法具有行为，它们为我们执行任务。\n\
+  \n### 数据。\n数据代表我们应用程序的状态。\n\n### 示例：\n汽车\n汽车可以拥有型号、颜色、品牌、速度等属性，并且可以像 `Start()`、`Break()`\
+  \ 等的功能。将这辆车视为一个类，在现实应用中，我们有很多类，每个类负责某些特定任务，这些类相互作用以提供所需的功能。\n\n### 命名空间。\n随着项目中类的数量增加，我们需要一种方法来组织相关的类，因此我们使用\
+  \ `namespace`。`namespace` 是相同类的容器。\n\n### 程序集。\n随着命名空间数量的增加，我们需要方法来划分应用程序，这里 `assemblies`\
+  \ 就派上用场了。`Assembly` 是相同命名空间的容器。物理上它是磁盘上的文件，可以是（`exe` 或 `dll`）。\n\n## 我们的第一个 C 程序。\n\
+  在本书中我们将使用 Visual Studio，所以请打开 Visual Studio。\n\n在顶部点击文件：\n`file>new>project>installed>templates>visual\
+  \ c#>windows>console application`\n\n在这里有 3 个字段，我们可以为项目命名，只需将项目命名为 `HelloWorld`。\n\
+  \n我们还可以通过点击浏览按钮设置项目的位置。\n\n第三，我们可以在 Visual Studio 中命名解决方案，我们有解决方案，一个解决方案可以包含多个项目。\n\
+  \n最后点击确定创建控制台应用程序。\n\n查看下面的截图\n![](img/00002.jpeg) **让我们看看 Visual Studio 的一些窗口和标签**\n\
+  \n### 几个常用窗口和标签\n- 解决方案管理器 (Solution Explorer)\n- 代码编辑器 (Coding Editor)\n\n从解决方案管理器开始，要显示解决方案管理器或任何窗口，请点击顶部的“视图”并选择您想在解决方案管理器窗口中显示的窗口。首先是解决方案名称和此解决方案中的项目数量。\n\
+  - `properties>AssemblyInfo.cs`\n- `assemblyinfo` 在应用程序编译时产生，它是应用程序的标识。\n\n### 引用\
+  \ (References)\n在引用下，我们看到与此项目链接以执行某些任务的 `assemblies`。这些 `assemblies` 是随 Visual Studio\
+  \ 控制台应用程序模板自带的。\n\n### App.config\n在这里存储应用程序的配置。它有标题、描述等字段，![](img/00003.jpeg)\n\
+  \n### Program.cs\n在 `program.cs` 中，我们可以开始编写代码。\n\n在 `PROGRAM.CS` 文件中，顶部有一堆 `using`\
+  \ 语句。我们的项目名称是 `HELLOWORLD`，所以 Visual Studio 默认创建一个名为 `HELLOWORLD` 的命名空间。当我们在这个 `namespace`\
+  \ 中编写代码时，我们可以访问此命名空间定义的所有类。如果我们想使用来自不同命名空间的类，必须在我们的代码文件中导入它，这就是我们使用 `using` 语句的原因，Visual\
+  \ Studio 默认添加了 5 个 `using` 语句：\n\n```csharp\nusing System;\nusing System.Collections.Generic;\n\
+  using System.Linq;\nusing System.Text;\nusing System.Threading.Tasks;\n```\n`System`\
+  \ 是 `.NET` 框架中的一个命名空间，其中包含了所有方便的类。\n\n\n\n\n\n变量和常量的名称也称为标识符，标识符不能与数字开头，标识符不能包含空格，标识符不能是\
+  \ C 语言中已定义的关键字（如 `int`、`bool`、`float`）。始终使用有意义的名字。\n\n## 命名规范\n\n### 驼峰命名法：`[firstName]`\n\
+  驼峰命名法的第一个字母小写，之后每个单词的首字母大写\n\n### 帕斯命名法：`[FirstName]`\n所有单词的字母均大写\n\n### 匈牙体系：`[strFirstName]`\n\
+  首先前缀数据类型，然后所有单词的字母大写\n\n## C 中的基本类型\n\n![](img/00005.jpeg)\n\n### 使用实数\n当我们想要使用\
+  \ `float` 或 `double` 类型时，我们需要显式地告诉将此数字视为 `float` 或 `double`，请遵循以下语法：\n\n```c-csharp\n\
+  float number=1.4f;\ndouble number=12.4m;\n```\n\n`F` 和 `m` 关键字显式告诉编译器将数字视为 `float`\
+  \ 或 `double`\n\n在 `c` 中，我们可以拥有名称相同但类型不同的变量\n\n## 非基本类型\n- `String`\n- `Array`\n\
+  - `Enum`\n- `Class`\n\n## 作用范围\n作用范围意味着变量/常量在何处有效\n\n![](img/00006.jpeg) 这里有 3 个代码块，包含\
+  \ 3 个变量\n\n所以变量 `a` 可以在它的任何子块中访问，也可以在该块的任何地方访问\n\n所以变量 `b` 可以在它的任何子块中访问，也可以在该块的任何地方访问\n\
+  \n而变量 `c` 只能在同一个块中访问\n\n## 在 visual studio 中练习变量\n打开 visual studio 并创建一个控制台项目\n\n\
+  在程序的 `main` 函数中声明一些值并在控制台上显示它们，见下方的代码\n\n![](img/00007.jpeg)\n\n要声明字符类型，我们将在‘A’\
+  \ 内部输入一个字符；对于字符串，我们在“`string`”内输入字符串。\n\n我们还使用关键字 `var` 来代替声明数据类型 `c`，编译器会自动检测数据类型。现在将所有数据类型更改为\
+  \ `var`\n\n它看起来应该是这样的\n\n![](img/00008.jpeg)\n\n## 格式化字符串\n![](img/00009.jpeg)\n\
+  \n通过这种方式我们将输出可视化。`{0}` 被 `byte.minValue` 替换，它是 `byte` 的最小值；`{1}` 被 `byte.maxvalue`\
+  \ 替换，它是 `byte` 可以存储的最大值\n\n## C# 运算符\n![](img/00010.jpeg)\n\n### 算术运算符\n![](img/00011.jpeg)\
+  \ 这些运算符用于数学计算\n\n![](img/00012.jpeg) 增增运算符值增加一 (1)，递减运算符减少一\n\n## 比较运算符\n![](img/00013.jpeg)\
+  \ 这里需要注意的是，等号 (`=`) 用于赋值，而 `==` 用于测试等等性\n\n## 逻辑运算符\n这些运算符被用于条件语句，我们稍后会讨论\n\n![](img/00014.jpeg)\n\
+  \n## 位运算符\n这些运算符用于低级编程\n\n![](img/00015.jpeg)\n\n## 练习运算符\n在 `main` 方法中声明两个变量，为了显示它们的和值，只需使用\n\
+  \n![](img/0016.jpeg) 运行应用程序并在控制台上查看结果\n\n我们还使用 `/`、`-` 或任何算术运算符\n\n示例 2\n![](img/00017.jpeg)\n\
+  \n在这种情况情况下，我们将变量声明为 `int`，为了以浮点数显示除法结果，我们必须显式告诉编译器通过对两个变量进行强制转换 (`float`) 将其 `float`\n\
+  \n示例 3\n![](img/00018.jpeg)\n\n这里有三个变量 `a``,`b``,`c`，如果我们想先加 `a` 和 `b` 然后乘以 `c`，可以通过在\
+  \ `(a+b)` 内部编写 `a+b` 来实现，现在 `a` 和 `b` 先加，然后与 `c` 相乘\n\n示例 4\n![](img/00019.jpeg)\
+  \ 我们可以使用比较运算符和逻辑运算符检查相等和不相等\n\n这里 `a` 不等于 `b`，所以结果将为 true\n\n示例 5\n![](img/00020.jpeg)\n\
+  \n通过 `and` 运算符我们现在可以检查两个条件是否都真。这里 `>b` 是真的，而 `c==a` 是假的，如果其中一个条件不真，结果将为 false\n\n\
+  示例 6\n![](img/00021.jpeg)\n\n我们可以使用 `or` 运算符，如果这些条件任一为真结果将为 true\n\n## 注释\n注释用于描述什么、为什么、如何、限制等……\n\
+  \n注释不会被执行\n\n注释的类型\n\n### 多行注释\n这些用于在多行上编写注释 ![](img/00022.jpeg)\n\n### 单行注释\n这些用于在单行上编写注释\
+  \ ![](img/00023.jpeg)\n\n# 恭喜章节已完成……………… ………………………… ………………………… …….\n\n# 第 3 章：非基本类型\n\
+  章节文本\n\n## 类\n结合相关的变量（字段）和函数（方法）\n\n让我们通过示例来学习类\n\n![](img/00024.jpeg) 这里我们有一个名为\
+  \ `person` 的类，带有四个字段和四个方法\n\n类是创建对象的蓝图\n\n### 对象\n对象是类的实例\n\n通过这个示例我们可以创建类的实例\n\
+  - Marry\n- John\n\n### 创建类\n访问修饰符意味着可以访问它\n`person` 类的示例\n![](img/00025.jpeg) 类包含字段和方法。在这个例子中方法没有参数\n\
+  `Calculator`\n\n### 创建对象\n我们像这样声明对象，但必须为变量分配内存\n`person` 示例\n![](img/00027.jpeg)images/00028.jpeg)\
+  \ 我们可以使用 `var` 关键字让代码更整洁，通过使用点来访问字段和函数\n`Person.name=\"faisal\";`Person.introduce();`\n\
+  \n### 静态\n我们可以添加 `static` 关键字 `Add()` 函数的 `calculator`\n![](img/00029.jpeg) 现在我们可以直接从\
+  \ Calculator 访问\n![](img/00030.jpeg) 当我们创建对象时 `static` 函数在内存中只一个处\n\n# 练习类\n首先在\
+  \ visual studio 中按 `Shift+alt+c` 创建一个类\n\n将类命名为 `Person`\n\n现在添加名和姓字符串字段\n\n以及一个\
+  \ `introduce()` 方法，在控制台上输出名和姓\n见下方的代码\n![](img/00031.jpeg) 现在在 `main` 方法中创建一个 person\
+  \ 对象并分配名和姓，调用 `introduce()` 方法\n见下方的代码\n![](img/00032.jpeg) 创建另一个名为 `Calculator`\
+  \ 的类并填充 `Add()` 方法该方法接收两个 `int` 变量并在相加后返回它们\n\n现在回到 `main` 方法创建 `calculator` 类的对象，最后调用\
+  \ `Add()` 函数并将结果存储在变量中并在控制台上打印。(images/00033.jpeg)\n\n## 数组\n一种存储相同类型变量集合的数据结构\n\
+  \n为什么要使用数组？\n\n示例：\n在这个示例中与其声明 3 个 `int` 变量，我们可以声明一个 `int[]` 数组\n\n注意方括号 `[]` 。第一个括号表示它是数组，第\
+  \ 2 个 括号表示数组中元素的数量。在声明时我们需要初始化它的元素数量。\n\n访问数组的元素\n![](img/00034.jpeg) 要访问第一个元素，我们从索引\
+  \ (0) 开始，第二个元素是索引 1，依此类推。我们在方括号 `[]` 中传递索引。并可以赋值。\n\n我们可以使用对象初始化语法初始化数组 ![](img/00035.jpeg)\n\
+  \n# 练习数组\n打开 visual studio 并在 `main` 方法中创建一个带有三个元素的 `numbers` 数组，将索引 0 赋值为 1，将它们全部显示在控制台上\n\
+  \n同时也创建一个 `Boolean` 数组并将索引 0 设置为 true，最后将它们全部显示在控制台上\n\n如果我们不初始化数组元素的索引，将分配数据类型的默认值，在这种情况下\
+  \ `Boolean` 的默认值为 false，而 `int` 有默认值 0\n\n\n\n查看下方代码 ![](img/00036.jpeg) 现在运行应用程序并查看结果。\n\
+  \n# 字符串\n\n字符串是字符序列，我们用 `\"double quotes helloworld\"` 将其括起来。\n\n## 字符串拼接\n\n我们可以使用下面的语法将字符串拼接在一起：\n\
+  \n![](img/00037.jpeg)\n\n在此示例中：\n我们正使用字符串字面量（这是一个空字符串）和 `+` 号将 `firstname` 和 `anme`\
+  \ 字符串拼接在一起。\n\n# 字符串练习\n\n打开 visual studio\n\n创建一个字符串：\n`String keyword name of\
+  \ string =string” Example`\n`String firstname=faisal”`\n`String secondname=nazeer”`\n\
+  \n// 现在我们可以拼接两个字符串\n\n`Var fullname=firstname + +secondname”` 现在在控制台上显示它 Console.WriteLine(fullname);`\n\
+  \n# 第 4 章. 控制流\n\n## 条件条件语句\n\n![](img/00038.jpeg)\n\n### IF/ELSE 语句\n\n![](img/00039.jpeg)\n\
+  \n在第一行我们有一个条件 IF，如果条件为真，则执行 IF 代码块。如果条件为假，则将检查 ELSE IF 块，如果 ELSE IF 条件为真，则执行 ELSE\
+  \ IF 块，否则执行 ELSE 语句。\n\n## SWITCH CASE 语句\n\n![](img/00040.jpeg)\n\n在 switch case\
+  \ 语句中，我们在 cases 中比较变量的值，如果条件为真，则将运行该代码块；否则跳到下一个；如果所有条件都不为真，则将执行 default 块。\n\n##\
+  \ switch/case 语句的语法\n\n首先我们创建一个变量，然后创建 cases 并比较变量的值，我们可以拥有任意数量的 cases，最后执行 default\
+  \ 块。\n\n## Switch Case 练习：\n\n```sharp\nchar grade = 'A';\n\nswitch (grade)\n{\n\
+  case 'A':\nConsole.WriteLine(\"Excellent!\"); break;\ncase 'B':\nConsole.WriteLine(\"\
+  nice\");\nbreak;\ncase 'C':\nConsole.WriteLine(\"Well done\"); break;\ncase 'D':\n\
+  Console.WriteLine(\"You passed\"); break;\ncase 'F':\nConsole.WriteLine(\"Better\
+  \ try again\"); break;\ndefault:\nConsole .WriteLine(\"Invalid grade\");\nbreak;\n\
+  }\nConsole.WriteLine(\"Your grade is {0}\", grade);\n```\n\n这里我们在每个 case 中检查等级，即\
+  \ `A`，如果任何 case 等于 `a`，它将运行；在这种情况下，第一个 case 是 `A`，所以将运行第一个代码块。\n\n## 迭代语句\n\n这些语句用于重复一系列语句，直到给条件为真。\n\
+  \n迭代语句的类型\n\n![](img/00041.jpeg)\n\n## For 循环\n\n### 语法\n\nC# 中 `for` 循环的语法如下：\n\
+  \n```csharp\nfor ( init; condition; increment )\n{\n    statement(s);\n}\n```\n\n\
+  这里是 for 循环中的控制流：\n\n- 首先执行 `init` 步骤，且只执行一次。此步骤允许你声明并初始化任何循环控制变量。你不需要在此处放置语句，只要出现分号即可。\n\
+  - 接下来，评估 `condition`。如果它为真，则执行循环体。如果为假，则不执行循环体，控制流跳转到 for 循环之后的的第一条语句。\n- 在执行完 for\
+  \ 循环体后，控制流跳转回 `increment` 语句。此语句允许你更新任何循环控制变量。只要在条件后出现分号，此语句可以留空。\n- 现在再次评估条件。如果它为真，则循环执行并重复该过程（循环体、然后增量步骤、然后再次测试条件）。在条件变为假后，for\
+  \ 循环终止。\n\n### 示例\n\n```csharp\nusing System;\n\nnamespace Loops {\nclass Program\
+  \ {\n    static void Main(string[] args) {\n        /* for 循环执行 */ for (int a =\
+  \ 10; a < 20; a = a + 1) {\n            Console.WriteLine(\"value of a: {0}\", a);\
+  \ \n        }\n        Console.ReadLine();\n    }\n}\n}\n```\n\n当上述代码被编译并执行时，它产生以下结果：\n\
+  \nvalue of a: 10\nvalue of a: 11\nvalue of a: 12\nvalue of a: 13\nvalue of a: 14\n\
+  value of a: 15\nvalue of a: 16\nvalue of a: 17\nvalue of a: 19\n\n## While 循环\n\n\
+  C# 中的 `while` 循环语句只要给定条件为真，就会重复执行目标语句。\n\n### 语法\n\nC# 中 `while` 循环的语法如下：\n\n```csharp\n\
+  while(condition)\n{\n    statement(s);\n}\n```\n\n在这里，`statement(s)` 可能是单个语句或一个语句块。`condition`\
+  \ 可以是任何表达式，true 是任何非零值。循环在条件为真时进行迭代。\n\n当条件变为假时，程序控制传递到紧随循环的行。\n\n### 示例\n\n```csharp\n\
+  using System;\n\nnamespace Loops {\nclass Program\n{\n    static void Main(string[]\
+  \ args) {\n        /* 局部变量定义 */ int a = 10;\n        /* while 循环执行 */ while (a <\
+  \ 20)\n        {\n            Console .WriteLine(\"value of a: {0}\", a); a++;\n\
+  \        }\n        Console.ReadLine();\n    }\n}\n}\n```\n\n当上述代码被编译并执行时，它产生以下结果：\n\
+  \nvalue of a: 10\nvalue of a: 11\nvalue of a: 12\nvalue of a: 13\nvalue of a: 14\n\
+  value of a: 15\nvalue of a: 16\nvalue of a: 17\nvalue of a: 18\n\n## Do While Loop\n\
+  \n与 `for` 和 `while` 循环在循环开始时测试条件不同，`do...while` 循环在循环结束时检查条件。\n\n`do...while` 循环类似于\
+  \ while 循环，但 `do...while` 循环保证至少执行一次。\n\n### 语法\n\nC# 中 `do...while` 循环的语法如下：\n\n\
+  ```csharp\ndo\n{\n    statement(s);\n}while( condition );\n```\n\n注意条件表达式出现在循环末尾，因此在测试条件之前会执行循环中的\
+  \ `statement(s)`。\n\n如果条件为真，控制流跳转回 `do`，再次执行 `statement(s)`。此过程重复直到给定条件变为假。\n\n\
+  ### 示例\n\n```csharp\nusing System;\n\nnamespace Loops {\nclass Program {\n    static\
+  \ void Main(string[] args) {\n        /* 局部变量定义 */ int a = 10;\n        /* do 循环执行\
+  \ */ do\n        {\n            Console .WriteLine(\"value of a: {0}\", a); a =\
+  \ a + 1;\n        }\nwhile (a < 20);\n        Console.ReadLine();\n    }\n}\n}\n\
+  ```\n\n当上述代码被编译并执行时，它产生以下结果：\n\nvalue of a: 10\nvalue of a: 11\nvalue of a: 12\n\
+  value of a: 13\nvalue of a: 14\nvalue of a: 16\nvalue of a: 17\nvalue of a: 18\n\
+  value of a: 19\n\n## Foreach 循环\n\nForeach 循环用于遍历具有列表性质对象的元素，例如数组。\n\n![](img/00042.jpeg)首先创建一个局部变量，然后遍历我们想要访问元素的对象。\n\
+  \n在此示例中，我们正在遍历数组的所有元素并将其显示在控制台上。\n\n# **恭喜，书写完成了**\n\n"

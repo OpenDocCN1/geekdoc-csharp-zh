@@ -1,0 +1,2574 @@
+- fmt: '
+
+    ![](Image00000.jpg)
+
+
+    # Contents
+
+    - [Dedication]
+
+    - [Foreword]
+
+    - [Chapter One - About This Book and Course]
+
+    - [Chapter Two - Setting Up Your Devices for VR Development]
+
+    - [Chapter Three - Setting up your VRTK Rig]
+
+    - [Chapter Four - Setting up Interactors, Velocity Trackers and your Virtual Hands]
+
+    - [Chapter Five - Setting up Interactable Objects]
+
+    - [Chapter Six - Movement in VR]
+
+    - [Chapter Seven - Distance Grabbing Objects using a Straight Pointer]
+
+    - [Chapter Eight - VRTK''s 3D Spatial UI and Unity''s 2D UI controls]
+
+    - [Chapter Nine - Snap Zones]
+
+    - [Chapter Ten - Angular and Linear Drives]
+
+    - [Chapter Eleven - Tips, Tricks and Recipes]
+
+    - [Chapter Twelve - Mini Game]
+
+    - [Chapter Thirteen - Completed Course - Zip file Download]
+
+    - [Chapter Fourteen - Conclusion]
+
+
+    ## Dedication
+
+    TO ALL VR Enthusiasts…Wherever you are.
+
+
+    ## Foreword
+
+    UNITY 3D IS the most popular game engine in the world, catering to amateur hobbyists
+    as well as professional AAA studios, when it comes to developing VR apps and games.
+    VRTK on the other hand is a battle-tested VR solution for Unity. Several block
+    buster games have been made using Unity and VRTK 3.x.
+
+
+    However, VRTK 4 in conjunction with Unity, has changed the dynamics of VR development.
+    No other game engine comes even close, to providing you with such advanced functionality
+    for VR development, as does VRTK 4 with Unity. Developers love its drag-and-drop
+    interface and built-in features, but it’s the plethora of frameworks and toolkits
+    available that give Unity the extra mileage compared to other Game Engines available.
+
+
+    Learning to create your first Virtual Reality game can seem daunting; but I can
+    guarantee you that after completing this course, you will have a solid understanding
+    of VR development and the VRTK 4 framework. You will also be able to start creating
+    your very own VR games and apps with all the core features as well as most of
+    the advanced VR mechanics found within the best VR games today.
+
+
+    I have been developing for VR for 5 years, using the Unity Game Engine and there
+    is no better time to start VR development than now. If you missed your opportunity
+    to ride the wave of the smart-phone era, then VR is your chance. New platforms
+    like this come about once every 20 years and being part of it is a great career
+    and business opportunity, you simply do not want to miss.
+
+
+    Since the VR market is still very young, there is a lot of room for breakthroughs
+    and creating something the world has never seen before, is the unique opportunity
+    that Virtual Reality provides you with.
+
+
+    It took 27 years for PCs to grow from 2% to 70% of total U.S. adoption, 13 years
+    for the Internet and just 8 years for smart-phones (source: Samsung NEXT). Many
+    analysts have predicted that VR will do this within the next 4–5 years. Thus,
+    you have 1–2 years from now to get trained in Virtual Reality Development and
+    2–3 years to create something huge that will have a great impact within the VR
+    ecosystem. New platforms emerge once every 15–20 years. You are lucky to be able
+    to be involved in the birth of one of them.
+
+
+    Just a couple of years ago, VR Enthusiasts were struggling to justify the expense
+    of a VR headset to themselves. This is no longer the case with the release of
+    the Oculus Quest 2.
+
+
+    Creating something for a new medium is difficult and it’s all about testing, failing
+    and testing again. Given that the whole VR industry is currently in the test-and-fail
+    mode, how do you gain maximum leverage out of it? It’s via Rapid Prototyping.
+
+
+    Using the best available RAD tools and frameworks out there, is the way forward.
+    Up until now, VR development, be it using the Unity or Unreal game engines, required
+    quite a bit of coding skills. However, with the release of VRTK 4, you can now
+    build an entire VR Framework, app or game, without the need to write a single
+    line of code. This is because between VRTK 4 and Unity all the heavy lifting involved
+    with coding core and advanced mechanics, has already been done for you.
+
+
+    A major chunk of this credit goes to the VRTK 4 toolkit, which has made developing
+    VR games and apps a breeze. Unfortunately, the resources in terms of easing the
+    learning curve, to master the VRTK 4 framework are extremely scarce, which is
+    the reason I have produced this course, to enable you learn all the ins and outs
+    of VRTK 4 in just 11 hours and be well on your way to creating mind blowing VR
+    games and apps.
+
+
+    Become a VR pioneer now, and create the future!
+
+    Chris Coutinho
+
+
+    ![RatingBar](Image00002.jpg)
+
+
+    ## CHAPTER ONE: About This Book and Course
+
+    ### UNITY® VR DEV : No Coding Required
+
+    Learn VR development by building Immersive VR Experiences using `Unity` and `VRTK
+    4`. Explore the latest features of `VRTK 4` and build your very own VR Experiences,
+    without the need to write a single line of code. Explore latest features of `VRTK
+    4` and build your very own VR Experiences, without the need to write a single
+    line of code.
+
+
+    ### Key Features
+
+    * Develop immersive VR Experiences.
+
+    * Build an entire VR Framework from scratch with Zero coding.
+
+    * Build Once and deploy to both Steam VR, as well as Oculus based, 6 DOF devices.
+
+    * Build a VR Simulator, to test your project without the need for VR hardware,
+    using a XBox Controller, or keyboard and mouse input.
+
+    * Create core VR Mechanics, such as Interactions as well as Teleporting, and Sliding
+    forms of locomotion.
+
+    * Create advanced forms of VR Locomotion, which include Climbing, Arm swinging
+    movement, Teleport Zones, Teleport Regions, and Locomotion using `Unity`''s Nav
+    mesh.
+
+    * Create Distance Grab Mechanics.
+
+    * Create advanced realistic VR Hands, aka Half-Life: Alyx hands, that allow you
+    use Physics, to push objects about in the VR World.
+
+    * Build advanced VR Mechanics that involve creating Player holsters, and Inventory
+    Snap Zones.
+
+    * Setup both linear and angular joint drives, to create sliding drawers, doors,
+    levers, push buttons and even a steering wheel.
+
+    * Create advanced Spatial UI, that you can interact with physically, using your
+    hands, as well as using a pointer.
+
+    * Create 2D UI that you can interact with using a pointer.
+
+    * Learn to generate Haptic feedback, upon grabbing objects.
+
+    * Learn to Outline Objects, using a Shader material, when an object is touched.
+
+    * Create Spatial Tool-tips that can follow any object about.
+
+    * Create a Mini VR game, without writing a single line of code.
+
+    '
+  raw: '
+
+
+    ![](Image00000.jpg)
+
+
+    Contents[Dedication](#text00002.html_aKG)[Foreword](#text00003.html_aKH)[Chapter
+    One - About This Book and Course](#text00004.html_aKJ)[Chapter Two - Setting Up
+    Your Devices for VR Development](#text00005.html_aKK)[Chapter Three - Setting
+    up your VRTK Rig](#text00006.html_aKM)[Chapter Four - Setting up Interactors,
+    Velocity Trackers and your Virtual Hands](#text00007.html_aKN)[Chapter Five -
+    Setting up Interactable Objects](#text00008.html_aKP)[Chapter Six - Movement in
+    VR](#text00009.html_aKR)[Chapter Seven - Distance Grabbing Objects using a Straight
+    Pointer](#text00010.html_aKS)[Chapter Eight - VRTK''s 3D Spatial UI and Unity''s
+    2D UI controls](#text00011.html_aKT)[Chapter Nine - Snap Zones](#text00012.html_aKU)[Chapter
+    Ten - Angular and Linear Drives](#text00013.html_aKV)[Chapter Eleven - Tips, Tricks
+    and Recipes](#text00014.html_aKW)[Chapter Twelve - Mini Game](#text00015.html_aKX)[Chapter
+    Thirteen - Completed Course - Zip file Download](#text00016.html_aKY)[Chapter
+    Fourteen - Conclusion](#text00017.html_aKZ)DedicationTO ALL VR Enthusiasts…Wherever
+    you are.ForewordUNITY 3D IS the most popular game engine in the world, catering
+    to amateur hobbyists as well as professional AAA studios, when it comes to developing
+    VR apps and games. VRTK on the other hand is a battle-tested VR solution for Unity.
+    Several block buster games have been made using Unity and VRTK 3.x.However, VRTK
+    4 in conjunction with Unity, has changed the dynamics of VR development. No other
+    game engine comes even close, to providing you with such advanced functionality
+    for VR development, as does VRTK 4 with Unity.Developers love its drag-and-drop
+    interface and built-in features, but it’s the plethora of frameworks and toolkits
+    available that give Unity the extra mileage compared to other Game Engines available.Learning
+    to create your first Virtual Reality game can seem daunting; but I can guarantee
+    you that after completing this course, you will have a solid understanding of
+    VR development and the VRTK 4 framework. You will also be able to start creating
+    your very own VR games and apps with all the core features as well as most of
+    the advanced VR mechanics found within the best VR games today.I have been developing
+    for VR for 5 years, using the Unity Game Engine and there is no better time to
+    start VR development than now. If you missed your opportunity to ride the wave
+    of the smart-phone era, then VR is your chance. New platforms like this come about
+    once every 20 years and being part of it is a great career and business opportunity,
+    you simply do not want to miss.Since the VR market is still very young, there
+    is a lot of room for breakthroughs and creating something the world has never
+    seen before, is the unique opportunity that Virtual Reality provides you with.It
+    took 27 years for PCs to grow from 2% to 70% of total U.S. adoption, 13 years
+    for the Internet and just 8 years for smart-phones (source: Samsung NEXT). Many
+    analysts have predicted that VR will do this within the next 4–5 years. Thus,
+    you have 1–2 years from now to get trained in Virtual Reality Development and
+    2–3 years to create something huge that will have a great impact within the VR
+    ecosystem. New platforms emerge once every 15–20 years. You are lucky to be able
+    to be involved in the birth of one of them.Just a couple of years ago, VR Enthusiasts
+    were struggling to justify the expense of a VR headset to themselves. This is
+    no longer the case with the release of the Oculus Quest 2.Creating something for
+    a new medium is difficult and it’s all about testing, failing and testing again.
+    Given that the whole VR industry is currently in the test-and-fail mode, how do
+    you gain maximum leverage out of it? It’s via Rapid Prototyping.Using the best
+    available RAD tools and frameworks out there, is the way forward. Up until now,
+    VR development, be it using the Unity or Unreal game engines, required quite a
+    bit of coding skills. However, with the release of VRTK 4, you can now build an
+    entire VR Framework, app or game, without the need to write a single line of code.
+    This is because between VRTK 4 and Unity all the heavy lifting involved with coding
+    core and advanced mechanics, has already been done for you.A major chunk of this
+    credit goes to the VRTK 4 toolkit, which has made developing VR games and apps
+    a breeze. Unfortunately, the resources in terms of easing the learning curve,
+    to master the VRTK 4 framework are extremely scarce, which is the reason I have
+    produced this course, to enable you learn all the ins and outs of VRTK 4 in just
+    11 hours and be well on your way to creating mind blowing VR games and apps.Become
+    a VR pioneer now, and create the future!Chris Coutinho![RatingBar](Image00002.jpg)This
+    book requires that you follow along with its associated Udemy video course displayed
+    above, so please use Amazon’s Look Inside feature to preview its contents first,
+    prior to purchasing it.CHAPTER ONEAbout This Book and CourseUNITY® VR DEV : No
+    Coding Required: Learn VR development by building Immersive VR Experiences using
+    Unity® and VRTK 4.Explore the latest features of VRTK 4 and build your very own
+    VR Experiences, without the need to write a single line of code.Key Features:
+
+
+    *   Develop immersive VR Experiences.
+
+
+    *   Build an entire VR Framework from scratch with Zero coding.
+
+
+    *   Build Once and deploy to both Steam VR, as well as Oculus based, 6 DOF devices.
+
+
+    *   Build a VR Simulator, to test your project without the need for VR hardware,
+    using a XBox Controller, or keyboard and mouse input.
+
+
+    *   Create core VR Mechanics, such as Interactions as well as, Teleporting, and
+    Sliding forms of locomotion.
+
+
+    *   Create advanced forms of VR Locomotion, which include Climbing, Arm swinging
+    movement, Teleport Zones, Teleport Regions, and Locomotion using Unity''s Nav
+    mesh.
+
+
+    *   Create Distance Grab Mechanics.
+
+
+    *   Create advanced realistic VR Hands, aka Half-Life: Alyx hands, that allow
+    you use Physics, to push objects about in the VR World.
+
+
+    *   Build advanced VR Mechanics that involve creating Player holsters, and Inventory
+    Snap Zones.
+
+
+    *   Setup both linear, and angular joint drives, to create sliding drawers, doors,
+    levers, push buttons and even a steering wheel.
+
+
+    *   Create advanced Spatial UI, that you can interact with physically, using your
+    hands, as well as using a pointer.
+
+
+    *   Create 2D UI, that you can interact with using a pointer.
+
+
+    *   Learn to generate Haptic feedback, upon grabbing objects.
+
+
+    *   Learn to Outline Objects, using a Shader material, when an object is touched.
+
+
+    *   Create Spatial Tool-tips that can follow any object about.
+
+
+    *   Create a Mini VR game, without writing a single line of code.'
+  toc: []
+  trans: '
+
+
+    ![](img/Image00000.jpg)
+
+
+    # 目录
+
+    - [献言]
+
+    - [前言]
+
+    - [第一章 - 关于本书书和课程]
+
+    - [第二章 - 为 VR 开发设置设备]
+
+    - [第三章 - 设置你的 VRTK 装置]
+
+    - [第四章 - 设置交互器、速度追踪器和你的虚拟手]
+
+    - [第五章 - 设置可交互对象]
+
+    - [第六章 - VR 中的移动]
+
+    - [第七章 - 使用直线指针进行距离抓取]
+
+    - [第八章 - VRTK 的 3D 空间 UI 和 Unity 的 2D UI 控制]
+
+    - [第九章 - 吸附区域]
+
+    - [十章 - 角度和线性驱动]
+
+    - [第十一章 - 技巧、窍门与配方]
+
+    - [第十二章 - 迷你游戏]
+
+    - [第十三章 - 完成的课程 - Zip 文件下载]
+
+    - [第十四章 - 结]
+
+
+    ## 献言
+
+    致所有 VR 爱好者……无论你们在何处。
+
+
+    ## 前言
+
+    在开发 VR 应用和游戏方面，UNITY 3D 是世界上最流行的游戏引擎，它兼顾了业余爱好者和专业的 AAA 工作室。而 VRTK 则是一套经过实战检验的针对
+    Unity 的 VR 解决方案。许多大作游戏都是使用 Unity 和 VRTK 3.x 制作的。
+
+
+    然而，VRTK 4 与 Unity 的结合改变了 VR 开发的格局。没有其他游戏引擎能够像 VRTK 4 配合 Unity 那样，为你的 VR 开发提供如此先进的功能。开发者们喜欢它的拖放式界面和内置功能，但可用的大量框架和工具包让
+    Unity 相比于其他可用游戏引擎更胜一筹。
+
+
+    学习创建你的第一个虚拟现实游戏可能看起来望而生畏；但我向保证，在完成本课程后，你将对 VR 开发和 VRTK 4 框架有深入的理解。你还将能够开始创建自己的
+    VR 游戏和应用，具备所有核心功能以及今天顶级 VR 游戏中发现的先进 VR 机制。
+
+
+    我使用 Unity 游戏引擎开发 VR 已经 5 年了，现在没有比现在开始 VR 开发更好的时候了。如果你错过了抓住智能手机时代浪潮的机会，那么 VR 就是你的机会。像这样的新平台每
+    20 年出现一次，参与其中是一个极佳的职业和商业机会，你绝对不想错过它。
+
+
+    由于 VR 市场仍然非常年轻，它有很大的突破空间，而创造世界上从未见过的事物正是虚拟现实为你提供的独特机会。
+
+
+    PC 从美国普及率的 2% 增长到 70% 花了 27 年，互联网用了 13 年，而智能手机仅用了 8 年（来源：Samsung NEXT）。许多分析师预测
+    VR 将未来 4–5 年内实现这一点。因此，你现在有 1–2 年的时间接受 VR 开发培训，并有 2–3 年的时间来创造对 VR 生态系统产生巨大影响的大作。新平台每
+    15–20 年出现一次。你很幸运能够参与其中之一的诞生。
+
+
+    就在几年前，VR 爱好者还在为如何说服自己购买 VR 头显而挣扎。随着 Oculus Quest 2 的发布，情况已不再如此。
+
+
+    为一种新媒介创作内容是困难的，这完全取决于测试、失败并反复测试。鉴于整个 VR 行业目前处于“测试与失败”模式，你如何从中获得最大的杠杆作用呢？通过**快速原型制作**。
+
+
+    使用现最好的 RAD（快速应用开发）工具和框架是未来的方向。直到现在，无论使用 Unity 还是 Unreal 游戏引擎，VR 开发都需要相当的编码技能。然而，随着
+    VRTK 4 的发布，你现在可以构建整个 VR 框架、应用或游戏，而无需编写一行代码。这是因为在 VRTK 4 和 Unity 之间，涉及核心和高级机制编码的所有重型工作已经为你完成了。
+
+
+    这很大程度上归功于 VRTK 4 工具包，它让开发 VR 游戏和应用变得简单。遗憾的是，关于降低学习曲线以掌握 VRTK 4 框架的资源极其稀缺，这就是我制作这门课程的原因，让你只需花
+    11 小时就能学习 VRTK 4 的所有细节，并走上创建惊叹的 VR 游戏和应用的道路。
+
+
+    现在就成为 VR 的先驱，创造未来吧！
+
+    Chris Coutinho
+
+
+    ![RatingBar](img/Image00002.jpg)
+
+
+    ## 第一章：关于本书和课程
+
+    ### UNITY® VR 开发：无需编程
+
+    通过 `Unity` 和 `VRTK 4` 构建沉浸式 VR 体验来学习 VR 开发。探索 `VRTK 4` 的最新功能，并构建你自己的 VR 体验，无需编写一行代码。探索
+    `VRTK 4` 的最新功能，并构建你自己的 VR 体验，无需编写一行代码。
+
+
+    ### 核心特性
+
+    * 开发沉浸式 VR 体验。
+
+    * 从零开始、零代码构建整个 VR 框架。
+
+    * 构建一次，即可部署到 Steam VR 以及基于 Oculus 的 6 DOF 设备。
+
+    * 构建 VR 模拟器，使用 XBox 控制器或键盘和鼠标输入，在不需要 VR 硬件的情况下测试你的项目。
+
+    * 创建核心 VR 机制，如交互以及传送门和滑动移动方式。
+
+    * 创建先进的 VR 移动方式，包括攀爬、手臂摆动移动、传送区域、传送区域以及使用 `Unity` 导航网格的移动方式。
+
+    * 创建距离抓取机制。
+
+    * 创建先进的真实 VR 手部（即《Half-Life: Alyx》手），允许你利用物理推推 VR 世界中的物体。
+
+    * 构建高级 VR 机制，涉及创建玩家枪带和背包吸附区域。
+
+    * 设置线性和角度关节驱动，以创建抽屉、门、杠杆、按钮甚至甚至是方向盘。
+
+    * 创建先进的空间 UI，你可以使用手部进行物理交互，也可以使用指针进行交互。
+
+    * 创建可以使用指针进行交互的 2D UI。
+
+    * 学习在抓取物体时生成触觉反馈。
+
+    * 学习使用 Shader 材质在物体被触摸时为物体添加轮廓。
+
+    * 创建可以跟随任何物体的空间提示。
+
+    * 在无需编写一行代码的情况下创建一个迷你 VR 游戏。
+
+
+    '
+- fmt: '
+
+    # Course Description
+
+
+    Welcome to the very first, No Coding Required, VR development course, using `VRTK
+    4`. With its practical and project based approach, this course covers the specifics
+    of virtual reality development using `Unity` and `VRTK 4`. You’ll learn how to
+    build an entire VR framework, that can be experienced with modern devices like
+    the `Oculus Rift`, `Quest` and the `HTC Vive`.
+
+
+    By the end of this course, you’ll be fully equipped to use `VRTK 4` in conjunction
+    with `Unity` to develop rich, interactive virtual reality experiences. `Unity`
+    is the top rated game engine, when it comes to developing VR apps and games. `VRTK`
+    on the other hand is a battle-tested VR solution for `Unity`. Several blockbuster
+    games have been made using `Unity` and `VRTK 3.x`.
+
+
+    `VRTK 4` in conjunction with `Unity`, has changed the dynamics of VR development.
+    No other game engine comes even close, to providing you with such advanced functionality
+    for VR development, as does `VRTK 4` with `Unity`.
+
+
+    From a toolkit standpoint, there are several free, as well as paid toolkits out
+    there, for VR development, including `Unity`''s very own `XR interaction toolkit`.
+    However, none of these toolkits, provide you with the advanced functionality that
+    `VRTK 4` provides, out of the box. There is currently no toolkit out there, that
+    would allow you to create such advanced VR mechanics , without the need to write
+    a single line of code.
+
+
+    In this course, you will not be called upon to launch `Visual Studio`, even once.
+    No coding skills are required! Using `Unity` and `VRTK 4`, you will build a complete
+    framework from scratch, that can be used as the foundation, for building any VR
+    game or experience. Towards the end of this course, you will utilize the framework
+    you have built, to create your very own mini game.
+
+
+    This course makes understanding `VRTK 4`, super easy, and the framework you develop,
+    will be one massive cohesive, lean, mean machine. At the end of this course, you
+    will have an advanced VR framework, that you could even publish! You can even,
+    enhance the mini game further, using the ideas provided within this course, and
+    publish your game to both `Oculus`, and `Steam`.
+
+
+    ## Who this course is for
+
+
+    This course is aimed at beginner to intermediate `Unity` users who need to know
+    their way about the `Unity` editor, for basic scene editing, general programming
+    logic, a basic understanding of `Unity` prefabs and some basic knowledge of how
+    `Events` work. You don''t need to know, how to write any event code. This course
+    will take you through everything step by step and give you plenty of practice.
+
+
+    ## Course prerequisites
+
+
+    You will need to have access to a `6 DOF` (degrees of freedom) headset for `Steam
+    VR`, or `Oculus` only. This course cannot be taken using a `3 DOF` headset, as
+    you need to be able to move around within your VR world. You could use a `Steam
+    VR` headset like the `HTC Vive`, or an `Oculus Rift`, or an `Oculus Quest` (both
+    1 and 2 will work fine), which are some of the more popular, `6 DOF` headsets
+    available, and the ones this course has tested against.
+
+
+    You will need to have a computer that supports your VR headset, in terms of hardware
+    required. If using the `Oculus Quest`, it would be advisable to have a `link cable`,
+    as deploying a build to the headset, each time you test is not very practical,
+    and would be time consuming.
+
+
+    ## Course delivery Mode
+
+
+    This course comprises over 11 hours of video content, across 74 lectures, which
+    approximates to 400 pages of written content. The mode of delivery is video based
+    as its a lot easier to include new content as `VRTK 4` evolves.
+
+
+    Also Click the link below for a preview of the course.
+
+    [Unity® VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)
+
+
+    Also, I urge you to view each of the introductory lectures, made available for
+    preview, which will provide you with the sense of depth this course covers.
+
+
+    # CHAPTER TWO: Setting Up Your Devices for VR Development
+
+
+    IN THIS SECTION , you''ll set up everything for Virtual Reality and learn about
+    `VRTK`, the Virtual Reality Toolkit, version 4, by `Extend Reality Ltd`. `VRTK`
+    is available for free and has been licensed under the `MIT license`.
+
+
+    ### VIDEO LECTURE: ADVANTAGES of using VRTK 4 over alternate SDK''s for VR Development
+
+
+    `VRTK` is not the only solution available, for getting started in virtual reality
+    development. `Unity`, `Oculus` and `Steam VR` provide their own `SDKs` for VR
+    development. It’s also possible to purchase assets from the asset store, to avail
+    the VR specific functionality you need.
+
+
+    `Unity`’s `XR Interaction Toolkit`, is a high-level component based, interaction
+    system, for creating VR experiences, and will eventually, integrate the various
+    platforms. `Oculus` and `Steam VR` on the other hand, provide `SDKs` for their
+    own respective platforms.
+
+
+    The biggest advantage of `VRTK`, is that it provides a simple, yet extensible
+    framework, that works across multiple platforms. It is also, both free, and open
+    source. `VRTK` is a Virtual Reality Development Toolkit as a whole, providing
+    a wide range of support, already built in, for the core components in virtual
+    reality, such as locomotion, interacting with 3D objects, as well as 2D and 3D
+    controls.
+
+
+    This reduces the amount of code, you need to write, just to get started, in virtual
+    reality Development, as `VRTK` does all the heavy lifting for you. Now you can
+    concentrate, on developing the parts of your game or application, without having
+    to worry about, input management, character controllers, locomotion methods, climbing
+    and grabbing mechanics, UI interactions, and a lot of other fundamentals, you
+    would come to expect, from a VR framework.
+
+
+    ### VIDEO LECTURE: SETTING up Oculus and Unity XR SDK''s
+
+
+    The only requirement for `VRTK` version 4, for this course, is that you use the
+    version of `Unity 2019.4.20` and `Windows 10` or newer. However, I strongly suggest
+    you stick with `Unity 2019.4.20`, the version that this course has been created
+    with. Should you want to work with a newer version than `Unity 2019.4.20`, you
+    will still need to stay with `Unity`’s `2019.4.xx LTS` release. This course will
+    not work with `Unity 2020` or `2021`.
+
+
+    You will also need to follow the basic system requirements for `Oculus Integration`.
+    If you’re in any doubt, Oculus provides a system tool to check whether your computer
+    is VR ready, meeting the minimum requirements. `Steam VR` provides a similar tool
+    for the `HTC Vive`.
+
+
+    In this lecture, you will go on to create a new project as well as download and
+    import the `VRTK Playground` unity package attached as part of this lecture. This
+    is a starter package you are provided with, which you will build upon, creating
+    state of the art VR mechanics for your VR framework. You will also go on to install
+    the necessary VR `SDKs`.
+
+
+    ### VIDEO LECTURE: IMPORTING the VRTK 4 packages
+
+
+    So far, you have set up your project for VR development. In this lecture, you
+    will bring in `VRTK 4` into your project. `VRTK 4` comprises of a repository of
+    several `TILIA` packages, which provide useful features, for the development of
+    spatial solutions. The beauty about `VRTK 4`, is that you may install only the
+    packages you believe you require, for your project. You are not compelled to install
+    each and every package, even though you can.
+
+    '
+  raw: 'Course Description:Welcome to the very first, No Coding Required, VR development
+    course, using VRTK 4.With its practical and project based approach, this course
+    covers the specifics of virtual reality development using Unity and VRTK 4\. You’ll
+    learn how to build an entire VR framework, that can be experienced with modern
+    devices like the Oculus Rift, Quest and the HTC Vive.By the end of this course,
+    you’ll be fully equipped to use VRTK 4 in conjunction with Unity to develop rich,
+    interactive virtual reality experiences.Unity is the top rated game engine, when
+    it comes to developing VR apps and games. VRTK on the other hand is a battle-tested
+    VR solution for Unity. Several block buster games have been made using Unity and
+    VRTK 3.x.VRTK 4 in conjunction with Unity, has changed the dynamics of VR development.
+    No other game engine comes even close, to providing you with such advanced functionality
+    for VR development, as does VRTK 4 with Unity .From a toolkit standpoint, there
+    are several free, as well as paid toolkits out there, for VR development, including
+    Unity''s very own XR interaction toolkit. However, none of these toolkits, provide
+    you with the advanced functionality that VRTK 4 provides, out of the box .There
+    is currently no toolkit out there, that would allow you to create such advanced
+    VR mechanics , without the need to write a single line of code .In this course,
+    you will not be called upon to launch Visual Studio, even once. No coding skills
+    are required!Using Unity and VRTK 4, you will build a complete framework from
+    scratch, that can be used as the foundation, for building any VR game or experience.
+    Towards the end of this course, you will utilize the framework you have built,
+    to create your very own mini game.This course makes understanding VRTK 4, super
+    easy, and the framework you develop, will be one massive cohesive, lean, mean
+    machine.At the end of this course, you will have an advanced VR framework, that
+    you could even publish!You can even, enhance the mini game further, using the
+    ideas provided within this course, and publish your game to both Oculus, and Steam.Who
+    this course is for:This course is aimed at beginner to intermediate Unity users
+    who need to know their way about the Unity editor, for basic scene editing, general
+    programming logic, a basic understanding of Unity prefabs and some basic knowledge
+    of how Events work. You don''t need to know, how to write any event code.This
+    course will take you through everything step by step and give you plenty of practice.Course
+    prerequisites :You will need to have access to a 6 DOF (degrees of freedom) headset
+    for Steam VR, or Oculus only. This course cannot be taken using a 3 DOF headset,
+    as you need to be able to move around within your VR world.You could use a Steam
+    VR headset like the HTC Vive, or an Oculus Rift, or an Oculus Quest (both 1 and
+    2 will work fine), which are some of the more popular, 6 DOF headsets available,
+    and the ones this course has been tested against.You will need to have a computer
+    that supports your VR headset, in terms of hardware required.If using the Oculus
+    Quest, it would be advisable to have a link cable, as deploying a build to the
+    headset, each time you test is not very practical, and would be time consuming.Course
+    delivery Mode:This course comprises over 11 hours of video content, across 74
+    lectures, which approximates to 400 pages of written content.The mode of delivery
+    is video based as its a lot easier to include new content as VRTK 4 evolves.
+
+
+    Also Click the link below for a preview of the course.[Unity® VR Dev: No Coding
+    Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)Also,
+    I urge you to view each of the introductory lectures, made available for preview,
+    which will provide you with the sense of depth this course covers.CHAPTER TWOSetting
+    Up Your Devices for VR DevelopmentIN THIS SECTION , you''ll set up everything
+    for Virtual Reality and learn about VRTK, the Virtual Reality Toolkit, version
+    4, by Extend Reality Ltd. VRTK is available for free and has been licensed under
+    the MIT license.VIDEO LECTURE: ADVANTAGES of using VRTK 4 over alternate SDK''s
+    for VR DevelopmentVRTK is not the only solution available, for getting started
+    in virtual reality development. Unity, Oculus and Steam VR provide their own SDK’s
+    for VR development.It’s also possible to purchase assets from the asset store,
+    to avail the VR specific functionality you need.Unity’s XR Interaction Toolkit,
+    is a high-level component based, interaction system, for creating VR experiences,
+    and will eventually, integrate the various platforms. Oculus and Steam VR on the
+    other hand, provide SDK’s for their own respective platforms.The biggest advantage
+    of VRTK, is that it provides a simple, yet extensible framework, that works across
+    multiple platforms. It is also, both free, and open source.VRTK is a Virtual Reality
+    Development Toolkit as a whole, providing a wide range of support, already built
+    in, for the core components in virtual reality, such as locomotion, interacting
+    with 3D objects, as well as 2D and 3D controls.This reduces the amount of code,
+    you need to write, just to get started, in virtual reality Development, as VRTK
+    does all the heavy lifting for you.Now you can concentrate, on developing the
+    parts of your game or application, without having to worry about, input management,
+    character controllers, locomotion methods, climbing and grabbing mechanics, UI
+    interactions, and a lot of other fundamentals, you would come to expect, from
+    a VR framework.VIDEO LECTURE: SETTING up Oculus and Unity XR SDK''sThe only requirement
+    for VRTK version 4, for this course, is that you use the version of Unity 2019.4.20
+    and Windows 10 or newer.However, I strongly suggest you stick with Unity 2019.4.20,
+    the version that this course has been created with. Should you want to work with
+    a newer version than Unity 2019.4.20, you will still need to stay with Unity’s
+    2019.4.xx LTS release.This course will not work with Unity 2020 or 2021.You will
+    also need to follow the basic system requirements for Oculus Integration. If you’re
+    in any doubt, Oculus provides a system tool to check whether your computer is
+    VR ready, meeting the minimum requirements. Steam VR provides a similar tool for
+    the HTC Vive.In this lecture, you will go on to create a new project as well as
+    download and import the VRTK Playground unity package attached as part of this
+    lecture. This is a starter package you are provided with, which you will build
+    upon, creating state of the art VR mechanics for your VR framework.
+
+
+    You will also go on to install the necessary VR SDK’s.VIDEO LECTURE: IMPORTING
+    the VRTK 4 packagesSo far, you have set up your project for VR development.In
+    this lecture, you will bring in VRTK 4 into your project.VRTK 4 comprises of a
+    repository of several TILIA packages, which provide useful features, for the development
+    of spatial solutions.The beauty about VRTK 4, is that you may install only the
+    packages you believe you require, for your project. You are not compelled to install
+    each and every package, even though you can.'
+  toc: []
+  trans: '
+
+
+    # 课程描述
+
+
+    欢迎来到首个“无需编程”的 VR 开发课程，本课程将将使用 `VRTK 4`。本课程采用实战和项目导向的教学方法，涵盖了使用 `Unity` 和 `VRTK
+    4` 进行虚拟现实开发的细节。你将学习如何构建一个完整的 VR 框架，该框架可以在 `Oculus Rift`、`Quest` 和 `HTC Vive` 等现代设备上体验。
+
+
+    在课程结束时，你将完全有能力结合 `Unity` 使用 `VRTK 4` 来开发丰富的交互式虚拟现实体验。在开发 VR 应用程序和游戏方面，`Unity`
+    是顶级的游戏引擎。而 `VRTK` 则是专为 `Unity` 设计的经过实践检验的 VR 解决方案。许多大片级游戏都是使用 `Unity` 和 `VRTK
+    3.x` 制作的。
+
+
+    `VRTK 4` 结合 `Unity` 改变了 VR 开发的动态。没有其他游戏引擎在为 VR 开发提供如此先进的功能方面，能及 `VRTK 4` 配合 `Unity`。
+
+
+    从工具箱的角度来看，市面上有很多免费和付费的 VR 开发工具箱，包括 `Unity` 自带的 `XR interaction toolkit`。然而，这些工具箱中没有一个能提供像
+    `VRTK 4` 那样开箱即用的高级功能。目前还没有任何工具箱可以让你在无需编写单行代码的情况下，创建出如此先进的 VR 机制。
+
+
+    在课程中，你甚至不需要启动一次 `Visual Studio`。不需要任何编程技能！通过使用 `Unity` 和 `VRTK 4`，你将从零开始构建一个完整的框架，该框架可以作为构建任何
+    VR 游戏或体验的基础。在课程结束时，你将利用你构建的框架来创建你自己的自己的迷你游戏。
+
+
+    这门课程让理解 `VRTK 4` 变得超级简单，你开发的框架将是一个巨大的、凝聚的、精简高效的机器。课程结束时，你将拥有一个先进的 VR 框架，你甚至可以发布它！你甚至可以使用课程中提供的想法进一步增强迷你游戏，并将你的游戏发布到
+    `Oculus` 和 `Steam`。
+
+
+    ## 本课程适合的人群
+
+
+    本课程面向初级到中级的 `Unity` 用户，他们需要熟悉 `Unity` 编辑器，用于基础场景编辑、通用编程逻辑、对 `Unity` 预制（prefabs）的基本理解以及关于事件（Events）如何工作的一些基础知识。你不需要知道如何编写任何事件代码。本课程将带你逐步完成每一个步骤，并为你提供大量的练习。
+
+
+    ## 课程先决条件
+
+
+    你需要一个支持 `Steam VR` 仅 `Oculus` 的 `6 DOF`（六自由度）头显设备。本课程无法使用 `3 DOF` 头显设备学习，因为你需要在你的
+    VR 世界中移动。你可以使用 `Steam VR` 头显设备，如 `HTC Vive`、`Oculus Rift` 或 `Oculus Quest`（1 代和
+    2 代均可正常工作），这些是目前流行的 `6 DOF` 头显设备，也是本课程经过测试的设备。
+
+
+    你需要一台在硬件要求上支持你 VR 头显设备的电脑。如果使用 `Oculus Quest`，建议配备一根 `link cable`，因为每次测试都将构建版本部署到头显上并不实用，非常耗时。
+
+
+    ## 课程交付模式
+
+
+    本课程包含超过 11 小时的视频内容，跨越 74 节课程，大约相当于 400 页书面内容。交付模式基于视频，因为随着 `VRTK 4` 的演进，包含新内容会容易得多。
+
+
+    点击下方链接预览课程。
+
+    [Unity® VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)
+
+
+    此外，我敦促你查看每个用于预览的介绍性课程，这些课程将让你感受到本课程涵盖的深度。
+
+
+    # 第二章：为 VR 开发设置你的设备
+
+
+    在本节中，你将为虚拟现实准备好一切工作，并学习由 `Extend Reality Ltd` 开发的第 4 版本虚拟现实工具包 `VRTK`。`VRTK` 是免费提供的，并根据
+    `MIT license` 授权。
+
+
+    ### 视频课程：在 VR 开发中使用 VRTK 4 相比其他 SDK 的优势
+
+
+    `VRTK` 并不是开始虚拟现实开发的唯一解决方案。`Unity`、`Oculus` 和 `Steam VR` 为 VR 开发提供了各自的 `SDKs`。你也可以从资产商店购买资产，以获得所需的
+    VR 特定功能。
+
+
+    `Unity` 的 `XR Interaction Toolkit` 是一种基于高级组件的交互系统，用于创建 VR 体验，并最终将整合各种平台。而 `Oculus`
+    和 `Steam VR` 则为其各自的平台提供 `SDKs`。
+
+
+    `VRTK` 最大优势在于它提供了一个简单且可扩展的框架，可以在多个平台上运行。它同时是免费且开源的。`VRTK` 整体是一个虚拟现实开发工具包，为虚拟现实中的核心组件（如移动、与
+    3D 对象交互等）提供了内置的广泛支持。
+
+
+    这减少了你为了开始 VR 开发而编写的代码量，因为 `VRTK` 为你完成了所有繁重工作。现在你可以专注于开发游戏或应用程序，而无需担心输入管理、控制器、移动方法、攀爬和抓取机制、UI
+    交互等基础功能。
+
+
+    ### 视频课程：设置 Oculus 和 Unity SDK
+
+
+    本课程 `VRTK` 第 4 唯一要求是使用 `Unity 2019.20` 和 `Windows 10` 或更高版本。然而，我强烈建议你坚持使用 `Unity
+    2019.4.`，这是本课程创建的版本。如果你想使用比 `Unity 2019.4.` 更新的版本，你仍然需要留在 `Unity` 的 `2019.4.xx`
+    LTS 版本。本课程不支持 `Unity 2020` 或 `2021`。
+
+
+    你还需要遵循 `Oculus Integration` 的基本系统要求。如果你有任何疑问，Oculus 提供了一个系统工具来检查你的电脑是否准备好支持 VR。`Steam
+    VR` 也提供了类似的工具。
+
+
+    在本节课程中，你将创建一个新项目，并下载导入作为本课程附件的 `VRTK Playground` Unity 包。这是提供给你的一个启动包，你将在此基础上构建，为你的
+    VR 框架创建先进的 VR 机制。你还将安装必要的 VR `SDKs`。
+
+
+    ### 视频课程：导入 VRTK 4 包
+
+
+    到目前为止，你已经为 VR 开发准备好了项目。在本节中，你将把 `VRTK 4` 引入你的项目。`VRTK 4` 由多个 `TILIA` 包组成，这些包为空间解决方案的开发提供了有用的功能。`VRTK
+    4` 的美之处在于，你可以只安装你认为你的项目需要的包。你并不被强制安装每一个包，尽管你可以这样做。
+
+
+    '
+- fmt: '
+
+    In your case, you are going to install all packages you will be needing within
+    this course. This will involve changing out your `manifest.json` file as explained
+    in the lecture.
+
+
+    [Unity® VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)
+
+
+    # CHAPTER THREE: Setting up your VRTK Rig
+
+
+    HAV INSTALLED THE required SDK’s and imported the necessary VRTK 4 TILIA packages,
+    you will now setup the VRTK Rig within your scene. VRTK provides you with a specialized
+    camera rig prefab, for utilizing Unity’s XR Camera. It also provides you with
+    Camera Rig prefabs for working with both Oculus and Steam SDK’s.
+
+
+    ## VIDEO LECTURE: SETTING up individual Camera Rigs
+
+
+    In this lecture, you will setup the universal Unity XR camera Rig prefab, provided
+    by VRTK which can be used with all your devices, namely the HTC Vive, Oculus Rift,
+    Oculus Quest and well as the Spatial Simulator.
+
+
+    The 3 camera Rigs you will set up here are the following:
+
+
+    - Camera Rigs, Unity XR
+
+    - Camera Rigs, Oculus Integration
+
+    - Camera Rigs, Spatial Simulator
+
+    '
+  raw: 'In your case, you are going to install all packages, you will be needing within
+    this course.This will involve changing out your ‘manifest.json’ file as explained
+    in the lecture.[Unity® VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)CHAPTER
+    THREESetting up your VRTK RigHAVING INSTALLED THE required SDK’s and imported
+    the necessary VRTK 4 TILIA packages, you will now setup the VRTK Rig within your
+    scene.VRTK provides you with a specialized camera rig prefab, for utilizing Unity’s
+    XR Camera. It also provides you with Camera Rig prefabs for working with both
+    Oculus and Steam SDK’s.VIDEO LECTURE: SETTING up individual Camera RigsIn this
+    lecture, you will setup the universal Unity XR camera Rig prefab, provided by
+    VRTK which can be used with all your devices, namely the HTC Vive, Oculus Rift,
+    Oculus Quest and well as the Spatial Simulator.The 3 camera Rigs you will set
+    up here are the following:
+
+
+    *   Camera Rigs, Unity XR
+
+
+    *   Camera Rigs, Oculus Integration
+
+
+    *   Camera Rigs, Spatial Simulator'
+  toc: []
+  trans: '
+
+
+    在你的情况下，你将安装本课程中需要的所有包。这将涉及像讲座中解释的那样更改你的 `manifest.json` 文件。
+
+
+    [Unity® VR 开发: 无需编程](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)
+
+
+    # 第三章：设置你的 VRTK Rig
+
+
+    在安装了所需的 SDK 并导入了必要的 VRTK 4 TILIA 程序包后，你现在将在你的场景中设置 VRTK Rig。VRTK 为你提供了一个专门的摄像机
+    Rig 制体（prefab），用于利用 Unity 的 XR 摄像机。它还提供了用于适配 Oculus 和 Steam SDK 的摄像机 Rig 制体。
+
+
+    ## 视频课程：设置单个摄像机 Rig
+
+
+    在节节座中，你将设置由 VRTK 提供的通用 Unity XR 摄像机 Rig 制体，它可以用于你所有的设备，即 HTC Vive、Oculus Rift、Oculus
+    Quest 以及空间模拟器（Spatial Simulator）。
+
+
+    你在这里设置的 3 个摄像机 Rig 如下：
+
+
+    - Camera Rigs, Unity XR
+
+    - Camera Rigs, Oculus Integration
+
+    - Camera Rigs, Spatial Simulator
+
+
+    '
+- fmt: "\n# VIDEO LECTURE: SETTING Up VRTK's Tracked Alias\n\nVRTK provides you with\
+    \ a `Tracked Alias` prefab, which is a sort of generic camera rig, that can represent\
+    \ any XR hardware. So, if you have an Oculus camera rig, or Steam VR camera Rig,\
+    \ or a Simulator in your scene, they can all be hooked up to this tracked alias\
+    \ and from then on, whatever you want done, you do against the `tracked alias`.\
+    \ \n\nThis way, you don’t have to worry about what camera Rigs you have in your\
+    \ scene, you simply activate the one you intend to use. This tracked alias, allows\
+    \ you to track any active valid SDK camera rig, that has been listed within its\
+    \ `Camera Rigs` list, without being explicitly tied to it. In this lecture, you\
+    \ will learn how to setup your `tracked alias`.\n\n# VIDEO LECTURE: CONFIGURE\
+    \ your Oculus OVR Camera Rig\n\nIn this lecture, you will configure a certain\
+    \ important property on your `Oculus OVR Camera Rig`. You will then go on to test\
+    \ your HMD of choice, by using an appropriate camera Rig from amongst the ones\
+    \ you have setup.\n\nThe `Unity XR Camera Rig` is considered the universal camera\
+    \ Rig that will work with any of your HMD’s. In addition, you could test movement\
+    \ within your VR world, using the `Spatial Simulator` camera Rig, in conjunction\
+    \ with your keyboard and mouse.\n\n# VIDEO LECTURE: THE Object State Switcher\
+    \ - Manually switch between Camera Rigs in you Scene\n\nIn this lecture, you will\
+    \ learn how to setup and use the `Object State Switcher` prefab, provided by VRTK\
+    \ to easily switch between different camera Rigs within your scene. \n\nNote that,\
+    \ the switching needs to be done on your computer and the object Switcher UI will\
+    \ not show up in you HMD. You will note that the object state switcher is more\
+    \ of a convenience utility, provided by VRTK and you do not actually need it,\
+    \ as you can always achieve this switching amongst camera Rigs, by directly activating\
+    \ and deactivating the required camera Rigs, within Unity’s hierarchy.\n\n[Unity®\
+    \ VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)\n\
+    \n# CHAPTER FOUR Setting up Interactors, Velocity Trackers and your Virtual Hands\n\
+    \nIN THIS SECTION , you will start off by setting up the default controller models\
+    \ provided by VRTK, which are basically 2 cuboid objects, that represent your\
+    \ hands. However, to increase immersion in virtual reality, you will go on to\
+    \ replace these cuboid hands, with virtual animated hands.\n\nIn this section,\
+    \ you will be introduced to VRTK’s `Input Controllers`. I will be discussing how\
+    \ to set these up, for Oculus devices, HTC Vive, the X Box controller and the\
+    \ keyboard. You will also note that the Oculus controllers and the HTC Vive controllers\
+    \ are different in terms of the buttons, they physically comprise, but VRTK makes\
+    \ setting them up easy.\n\n# VIDEO LECTURE: INTERACTOR verses Interactable\n\n\
+    To get hands working in VR, you need to understand the concept of an `Interactor`\
+    \ and an `Interactable`. \n\nAn `interactor` is something that can know, when\
+    \ its touching another object, that can be interacted with. An `interable` on\
+    \ the other hand, is a game object within the virtual world, with which the user\
+    \ can interact. This lecture explains this fundamental concept, along with discussing\
+    \ the 2 standard ways in which VRTK allows you to interact with an `interable`.\n\
+    \n# VIDEO LECTURE: SETTING up your Interactors\n\nIn this lecture, you will learn\
+    \ how to setup your `Interactors`, using VRTK’s provided prefab.\n\n# VIDEO LECTURE:\
+    \ SETTING up Oculus Hands for Oculus Integration\n\nIn this lecture, you will\
+    \ learn how to set up the Oculus provided hands, to work with the VRTK provided\
+    \ Camera Rigs, `Oculus Integration` prefab. If you are building for the HTC Vive\
+    \ only, a subsequent lecture will show you how to setup animated hands for this\
+    \ Steam VR device, which uses the `Unity XR camera rig`.\n\n# VIDEO LECTURE: SETTING\
+    \ up Custom Hands for Unity XR and the Spatial Simulator\n\nYour Oculus Hands,\
+    \ finger animations will not work with the `Unity XR Camera Rig` or the `Spatial\
+    \ Simulator`. As such your HTC Vive cannot use the Oculus provided hands. However,\
+    \ this does not mean that we cannot have realistic hands and animations for our\
+    \ HTC Vive and Spatial Simulator.\n\nAttached to the lecture, you will find a\
+    \ Unity Package, named `Unity VR Hands`, that you need to download and import\
+    \ into your project. This package will provide you with a custom hand, with animations\
+    \ attached, that will be used with the `Spatial Simulator` and the `Unity XR Camera\
+    \ Rig`, that drives your HTC Vive and its controllers. In this lecture you learn\
+    \ to set up these new custom hands, which will even work with your Oculus devices,\
+    \ if you are using the `Unity XR Camera Rig`.\n\n# VIDEO LECTURE: ANIMATING Custom\
+    \ Hands based on keyboard and Controller input - Grabbing and Ungrabbing\n\nIn\
+    \ this lecture, you learn to animate your custom hands, based on input that could\
+    \ come from either your controllers, keyboard, mouse or even the X Box controller.\
+    \ VRTK allows you to capture input, not only from your VR controllers, but also\
+    \ input that may be received via an XBox controller, or key presses on the keyboard\
+    \ and even the mouse.\n\nThe X Box controller, keyboard and mouse would ideally\
+    \ be used when testing with the `Spatial Simulator`. As input can come from various\
+    \ controller devices, you need a way to consolidate such input into a single object,\
+    \ which can then be polled, by other objects. You will setup the `Grabbing` and\
+    \ `Ungrabbing` mechanic here on all the above discussed, input devices. This lecture\
+    \ that takes a deep dive into setting this up.\n\n# VIDEO LECTURE: ANIMATING Custom\
+    \ Hands based on Controller input - Using the Thumbstick\n\nIn this lecture, you\
+    \ will setup an animation for when your thumb stick is pressed. The procedure\
+    \ is similar to what you saw when setting up an animation for a grab button press.\n\
+    \n# VIDEO LECTURE: SETTING up your Interactors to Grab and Velocity Trackers\n\
+    \nIn this lecture, you will learn how to setup your `Interactors` to `Grab` and\
+    \ `Velocity Track``.\n\n you you you to to to to to to to to to to to to to to\
+    \ to to to to.. the the the the the the to the the the to to the to the the the\
+    \ to. the to to to to to to to to to to to to to the to the the to the the the\
+    \ to the to to to to to to... to.... to the the............ the is to to to to\
+    \ to to to.... In this,, you will learn to set up,, to to to your hands.\n\n#\
+    \ CHAPTER FIVE Setting up Interactable Objects\n\nSO FAR YOU’VE learnt the basics\
+    \ of Interactors and its time to experience some interactions, by setting up some\
+    \ interactable.An interactable, is a game object within the virtual world, with\
+    \ which the user can interact. In the last lecture you were able to grab the white\
+    \ cube, swap it between your hands and even throw it.\n\n# CHAPTER FIVE Setting\
+    \ up Interactable Objects (Wait, this is duplicate in source)\n\nThis white cube\
+    \ was an interactable. In this section you will learn how to pickup objects, setup\
+    \ custom orientation handles and add secondary actions to Interactable.\n\n# VIDEO\
+    \ LECTURE: PICKING Up Interactable Objects\n\nIn this lecture, you will set up\
+    \ an interactable object, that you can pick up using either of your controllers.\
+    \ An Interactable Game Object can be notified of actions, that the Interactor\
+    \ is performing such as being touched by an Interactor and can also react to actions\
+    \ such as a grab press.\n\n# VIDEO LECTURE: SETUP Customized, Pickup handles on\
+    \ Interactable Objects\n\nIn this lecture you will learn so that they don't pass\
+    \ thru objects.You will also learn how to setup an interactable object, so that\
+    \ it can be grabbed at either any point or at a specific location and with a specific\
+    \ orientation. VRTK provides you with a concept, referred to as orientation handles\
+    \ and you will learn how to use this to your advantage.\n\n# VIDEO LECTURE: ADDING\
+    \ Secondary Actions to Interactable Objects\n\nJust like the Primary Grab Action,\
+    \ wherein the first grab attempt from an Interactor, is called the `Primary Grab\
+    \ Action`, and whilst this is occurring, any secondary grab attempt, from a different\
+    \ Interactor is called the `Secondary Grab Action`. This is extremely useful in\
+    \ situations where a 2 handed grab is required. For example, if you were holding\
+    \ a long weapon, ideally you would need 2 hands to support it, where your primary\
+    \ grabbing hand would be located near the weapons trigger and your secondary grabbing\
+    \ hand would be located upfront to support it. In this lecture I will discuss\
+    \ and demonstrate the commonly used, secondary grab actions.\n\n# CHAPTER SIX\
+    \ Movement in VRIS AN essential part of any VR experience and the most common\
+    \ way to move a player is via teleportation. The main reason why teleportation\
+    \ is so popular in VR, is because it helps to avoid motion sickness. Motion sickness\
+    \ occurs when there’s a mismatch, between what you see and what you feel. Teleportation\
+    \ is not the only way to move around in your Virtual world and VRTK provides you\
+    \ with quite a few alternatives, which you will look at in this section. In this\
+    \ section you will look at the following modes of movement provided by VRTK, namely:\n"
+  raw: 'VIDEO LECTURE: SETTING Up VRTK''s Tracked AliasVRTK provides you with a Tracked
+    Alias prefab, which is a sort of generic camera rig, that can represent any XR
+    hardware.So, if you have an Oculus camera rig, or Steam VR camera Rig, or a Simulator
+    in your scene, they can all be hooked up to this tracked alias and from then on,
+    whatever you want done, you do against the tracked alias.This way, you don’t have
+    to worry about what camera Rigs you have in your scene, you simply activate the
+    one you intend to use.This tracked alias, allows you to track any active valid
+    SDK camera rig, that has been listed within its Camera Rigs list, without being
+    explicitly tied to it.In this lecture, you will learn how to setup your tracked
+    alias.VIDEO LECTURE: CONFIGURE your Oculus OVR Camera RigIn this lecture, you
+    will configure a certain important property on your Oculus OVR Camera Rig.You
+    will then go on to test your HMD of choice, by using an appropriate camera Rig
+    from amongst the ones you have setup.The Unity XR Camera Rig is considered the
+    universal camera Rig that will work with any of your HMD’s.In addition, you could
+    test movement within your VR world, using the Spatial Simulator camera Rig, in
+    conjunction with your keyboard and mouse.VIDEO LECTURE: THE Object State Switcher
+    - Manually switch between Camera Rigs in you SceneIn this lecture, you will learn
+    how to setup and use the Object State Switcher prefab, provided by VRTK to easily
+    switch between different camera Rigs within your scene.Note that, the switching
+    needs to be done on your computer and the object Switcher UI will not show up
+    in you HMD.You will note that the object state switcher is more of a convenience
+    utility, provided by VRTK and you do not actually need it, as you can always achieve
+    this switching amongst camera Rigs, by directly activating and deactivating the
+    required camera Rigs, within Unity’s hierarchy.[Unity® VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)CHAPTER
+    FOURSetting up Interactors, Velocity Trackers and your Virtual HandsIN THIS SECTION
+    , you will start off by setting up the default controller models provided by VRTK,
+    which are basically 2 cuboid objects, that represent your hands.However, to increase
+    immersion in virtual reality, you will go on to replace these cuboid hands, with
+    virtual animated hands.In this section, you will be introduced to VRTK’s Input
+    Controllers.I will be discussing how to set these up, for Oculus devices, HTC
+    Vive, the X Box controller and the keyboard.You will also note that the Oculus
+    controllers and the HTC Vive controllers are different in terms of the buttons,
+    they physically comprise, but VRTK makes setting them up easy.VIDEO LECTURE: INTERACTOR
+    verses InteractableTo get hands working in VR, you need to understand the concept
+    of an Interactor and an Interactable.An interactor is something that can know,
+    when its touching another object, that can be interacted with.An interactable
+    on the other hand, is a game object within the virtual world, with which the user
+    can interact.This lecture explains this fundamental concept, along with discussing
+    the 2 standard ways in which VRTK allows you to interact with an interactable.VIDEO
+    LECTURE: SETTING up your InteractorsIn this lecture, you will learn how to setup
+    your Interactors, using VRTK’s provided prefab.VIDEO LECTURE: SETTING up Oculus
+    Hands for Oculus IntegrationIn this lecture, you will learn how to set up the
+    Oculus provided hands, to work with the VRTK provided Camera Rigs, Oculus Integration
+    prefab.If you are building for the HTC Vive only, a subsequent lecture will show
+    you how to setup animated hands for this Steam VR device, which uses the Unity
+    XR camera rig.VIDEO LECTURE: SETTING up Custom Hands for Unity XR and the Spatial
+    SimulatorYour Oculus Hands, finger animations will not work with the Unity XR
+    Camera Rig or the Spatial Simulator.As such your HTC Vive cannot use the Oculus
+    provided hands. However, this does not mean that we cannot have realistic hands
+    and animations for our HTC Vive and Spatial Simulator.Attached to the lecture,
+    you will find a Unity Package, named Unity VR Hands, that you need to download
+    and import into your project.This package will provide you with a custom hand,
+    with animations attached, that will be used with the Spatial Simulator and the
+    Unity XR Camera Rig, that drives your HTC Vive and its controllers.In this lecture
+    you learn to set up these new custom hands, which will even work with your Oculus
+    devices, if you are using the Unity XR Camera Rig.VIDEO LECTURE: ANIMATING Custom
+    Hands based on keyboard and Controller input - Grabbing and UngrabbingIn this
+    lecture, you learn to animate your custom hands, based on input that could come
+    from either your controllers, keyboard, mouse or even your X Box controller.VRTK
+    allows you to capture input, not only from your VR controllers, but also input
+    that may be received via an XBox controller, or key presses on the keyboard and
+    even the mouse.The X Box controller, keyboard and mouse would ideally be used
+    when testing with the Spatial Simulator.As input can come from various controller
+    devices, you need a way to consolidate such input into a single object, which
+    can then be polled, by other objects.You will setup the Grabbing and Ungrabbing
+    mechanic here on all the above discussed, input devices.This lecture that takes
+    a deep dive into setting this up.VIDEO LECTURE: ANIMATING Custom Hands based on
+    Controller input - Using the ThumbstickIn this lecture, you will setup an animation
+    for when your thumb stick is pressed.The procedure is similar to what you saw
+    when setting up an animation for a grab button press.VIDEO LECTURE: SETTING up
+    your Interactors to Grab objects and setting up Velocity TrackersYou are still
+    not done connecting all the dots, as you still need to configure the basic functionality
+    of your Interactors on both hands.This basic functionality is the ability to actually
+    grab an object.You do have hands setup, and a grab animation setup too, but so
+    far, you have not told the Interactor components on both hands, when they should
+    engage their grab mechanism.When an Interactor grabs an interactable object, you
+    may require that the velocity, the Interactor is moving at, be applied to the
+    interactable object.For example, if you pick up a ball, and throw it, then you
+    may want the velocity that you’re moving your virtual controller at, to be applied
+    to the ball so that you can control the power of your throw.In VR, its mostly
+    your Headset, Left Controller and Right Controller, that can move freely in the
+    virtual world, so ideally it would be one of these objects, whose velocity you
+    would want to keep track of.You will learn to set this up in this lecture and
+    you will also setup velocity trackers for both hands.[Unity® VR Dev: No Coding
+    Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)CHAPTER
+    FIVESetting up Interactable ObjectsSO FAR YOU’VE learnt the basics of Interactors
+    and its time to experience some real interactions, by setting up some interactable
+    objects.An interactable, is a game object within the virtual world, with which
+    the user can interact.In the last lecture you were able to grab the white cube,
+    swap it between your hands and even throw it.This white cube was an interactable.In
+    this section you will learn how to pickup objects, setup custom pickup orientation
+    handles on objects and add secondary actions to Interactable objects.VIDEO LECTURE:
+    PICKING Up Interactable ObjectsIn this lecture, you will set up an interactable
+    object, that you can pick up using either of your controllers.An Interactable
+    Game Object can be notified of actions, that the Interactor is performing such
+    as being touched by an Interactor and can also react to actions such as a grab
+    press.VIDEO LECTURE: SETUP Customized, Pickup Orientation handles on Interactable
+    ObjectsIn this lecture you will learn how to setup your interactable objects so
+    that they don''t pass thru other objects.You will also learn how to setup an interactable
+    object, so that it can be grabbed at either at any point or at a specific location
+    and with a specific orientation.VRTK provides you with a concept, referred to
+    as orientation handles and you will learn how to use this to your advantage here.VIDEO
+    LECTURE: ADDING Secondary Actions to Interactable ObjectsJust like the Primary
+    Grab Action, wherein the first grab attempt from an Interactor, is called the Primary
+    Grab Action,  and whilst this is occurring, any secondary grab attempt, from a
+    different Interactor is called the Secondary Grab Action .This is extremely useful
+    in situations where a 2 handed grab is required. For example, if you were holding
+    a long weapon, ideally you would need 2 hands to support it, where your primary
+    grabbing hand would be located near the weapons trigger and your secondary grabbing
+    hand would be located upfront to support it.In this lecture I will discuss and
+    demonstrate the commonly used, secondary grab actions.[Unity® VR Dev: No Coding
+    Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)CHAPTER
+    SIXMovement in VRMOVEMENT IS AN essential part of any VR experience and the most
+    common way to move a player is via teleportation. The main reason why teleportation
+    is so popular in VR, is because it helps to avoid motion sickness. Motion sickness
+    occurs when there’s a mismatch, between what you see and what you feel.Teleportation
+    is not the only way to move around in your Virtual world and VRTK provides you
+    with quite a few alternatives, which you will look at in this section.In this
+    section you will look at the following modes of movement provided by VRTK, namely:'
+  toc: []
+  trans: '
+
+
+    # 视频课程：设置 VRTK 的追踪别名 (Tracked Alias)
+
+
+    VRTK 为你提供了一个 `Tracked Alias` 制体，这是一种通用摄像机架，可以代表任何 XR 硬件。因此，如果你在场景中有 Oculus 摄像设备、Steam
+    VR 摄像机架或模拟器，它们都可以连接到这个追踪别名，从那时起，无论你想执行什么操作，都针对这个 `tracked alias` 进行。
+
+
+    这样，你就不需要担心场景中有哪些摄像机架，只需激活你打算使用的那一个即可。这个追踪别名允许你追踪任何列在其 `Camera Rigs` 列表中的活动有效 SDK
+    摄像设备，而无需与其显式绑定。在本节课程中，你将学习如何设置你的 `tracked alias`。
+
+
+    # 视频课程：配置你的 Oculus OVR Camera Rig
+
+
+    在本节课程中，你将配置你的 `Oculus OVR Camera Rig` 上的某个重要属性。随后，你将使用已设置的合适摄像设备，测试你选择的 HMD（头戴显示器）。
+
+
+    `Unity XR Camera Rig` 被认为是通用摄像设备，它可以适用于你的任何 HMD。此外，你还可以结合 `Spatial Simulator`
+    摄像设备以及你的键盘和鼠标，测试在 VR 世界中的移动。
+
+
+    # 视频课程：对象状态切换器 - 在场景中手动切换摄像机架
+
+
+    在本节课程中，你将学习如何设置和使用由 VRTK 提供的 `Object State Switcher` 制体，以便在场景内切换切换摄像机架。
+
+
+    请注意，切换需要在电脑上完成，对象切换器的 UI 不会出现在你的 HMD 中。你会发现对象状态切换器更多是一个由 VRTK 提供的便利实用工具，你实际上并不需要它，因为你始终可以在
+    Unity 的层级结构（hierarchy）中通过直接激活和禁用所需的摄像机架来实现摄像机架之间的切换。
+
+
+    [Unity® VR 开发：无须编程](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)
+
+
+    # 第四章 设置交互器 (Interactors)、速度追踪器和你的虚拟手
+
+
+    在本节中，你将从设置 VRTK 提供的默认控制器模型开始，这些模型本质上是两个代表你手的长方体对象。然而，为了增加虚拟现实的沉浸感，你将继续用虚拟动画手替换这些长方体手。
+
+
+    在本节中，你将接触到 VRTK 的 `Input Controllers`。我将讨论如何为 Oculus 设备、HTC Vive、Xbox 控制器和键盘设置这些。你还会注意到，Oculus
+    控制器和 HTC Vive 控制器在物理按钮上有所不同，但 VRTK 让它们的设置变得简单。
+
+
+    # 视频课程：交互器 (INTERACTOR) 与 可交互对象 (Interactable)
+
+
+    要在 VR 中让手工作，你需要理解 `Interactor`（交互器）和 `Interactable`（可交互对象）的概念。
+
+
+    `interactor` 是一个在触摸另一个可交互对象时能够感知的物体。另一方面，`interable` 是虚拟世界中的一个游戏对象，用户可以与之交互。本节课程解释了这一基础概念，并讨论了
+    VRTK 你与 `interable` 交互的两种标准方式。
+
+
+    # 视频课程：设置你的交互器 (Interactors)
+
+
+    在本节课程中，你将学习如何使用 VRTK 提供的制体来设置你的 `Interactors`。
+
+
+    # 视频课程：为 Oculus 集成设置 Oculus 手
+
+
+    在本节课程中，你将学习如何设置 Oculus 提供的手，以使其与 VRTK 提供的摄像机架 `Oculus Integration` 制体协同工作。如果你仅为
+    HTC Vive 开发，随后的课程将向你展示如何为此 Steam VR 设备设置动画手，该设备使用 `Unity XR camera rig`。
+
+
+    # 视频课程：为 Unity XR 和 Spatial Simulator 设置自定义手
+
+
+    你的 Oculus 手指动画将无法配合 `Unity XR Camera Rig` 或 `Spatial Simulator`。因此，你的 HTC Vive
+    无法使用 Oculus 提供的手。然而，这并不意味着我们不能为 HTC Vive 和 Spatial Simulator 真实的部和动画。
+
+
+    课程附带中你会找到一个名为 `Unity VR Hands` 的 Unity 包，你需要下载并将其导入到项目中。该包将为你提供一个带有动画的自定义手，它将用于驱动你的
+    HTC Vive 及其控制器的 `Spatial Simulator` 和 `Unity XR Camera Rig`。在本节课程中，你将学习如何设置这些新的自定义手，如果你使用
+    `Unity XR Camera Rig`，它们甚至可以在你的 Oculus 设备上运行。
+
+
+    # 视频课程：基于键盘和控制器输入的自定义手动画 - 抓取与释放抓取
+
+
+    在本节课程中，你将学习根据来自控制器、键盘、鼠标甚至 Xbox 控制器的输入来为你的自定义手制作动画。VRTK 允许你捕获不仅来自 VR 控制器的输入，还包括可能通过
+    Xbox 控制器接收的输入，以及键盘上的按键甚至鼠标的输入。
+
+
+    Xbox 控制器、键盘和鼠标理想情况下在配合 `Spatial Simulator` 测试时使用。由于输入可能来自各种控制器设备，你需要一种方法将此类输入合并到一个对象中，然后由其他对象进行轮询。你将在所有上述的输入设备上设置
+    `Grabbing`（抓取）和 `Ungrabbing`（释放抓取）机制。本节课程将深入探讨这一设置。
+
+
+    # 视频课程：基于控制器输入的自定义手动画 - 使用摇杆 (Thumbstick)
+
+
+    在本节课程中，你将为摇杆被按下设置一个动画。该程序与你设置抓取按钮按下动画时看到的相似。
+
+
+    # 视频课程：设置你的交互器以抓取 (Grab) 和速度追踪器
+
+
+    在本节课程中，你将学习如何设置你的 `Interactors` 以执行 `Grab`（抓取）和 `Velocity Track`（速度追踪）。
+
+
+    （注：原文存在大量重复字符，已忽略处理）你将学习如何设置你的手。
+
+
+    # 第五章 设置可交互对象 (Interactable Objects)
+
+
+    到目前你已经学习了交互器的基础，是时候通过设置一些可交互对象来体验一些交互了。`Interactable` 是虚拟世界中的一个游戏对象，用户可以与之交互。在上一节课程中，你可以抓取白色立方体，在双手之间交换它甚至将其扔出去。
+
+
+    # 第五章 设置可交互对象（等待，此在源码中重复）
+
+
+    这个白色立方体是一个可交互对象。在本节中，你将学习如何拿起物体、设置自定义方向句并为可交互对象添加辅助动作。
+
+
+    # 视频课程：拾取可交互对象
+
+
+    在本节课程中，你将设置一个可交互对象，你可以使用任何一个控制器来拾取它。可交互游戏对象可以接收交互器正在执行的操作通知（例如被交互器触摸），并可以对抓取按下等动作做出反应。
+
+
+    # 视频课程：在可交互对象上设置自定义拾取手柄 (Pickup handles)
+
+
+    在本节课程中，你将学习让它们不穿过物体。你还将学习如何设置可交互对象，使其可以在任何点或特定位置以特定的方向被抓取。VRTK 为你提供了一个称为“方向句柄”（orientation
+    handles）的概念，你将学习如何利用这一点。优势。
+
+
+    # 视频课程：为可交互对象添加辅助动作 (Secondary Actions)
+
+
+    就像主要抓取动作（Primary Grab Action）一样，交互器的第一次抓取尝试被称为 `Primary Grab Action`，而在此发生期间，来自不同交互器的任何后续抓取尝试被称为
+    `Secondary Grab Action`（次要抓取动作）。这在需要双手抓取的情况下非常有用。例如，如果你拿着一把长武器，理想情况下你需要两手来支撑它，你的主要抓取手位于武器机关附近，而你的次要抓取手位于前方提供支撑。在本节课程中，我将讨论并演示常用的次要抓取动作。
+
+
+    # 第六章 VR 中的移动
+
+
+    移动是任何 VR 体验中至关重要的部分，移动玩家的最常见方法是通过传送。传送在 VR 中之所以如此受欢迎的主要原因是它有助于避免运动症。运动症发生在你看到的与你感受到的不匹配时。传送不是在虚拟世界中移动的唯一方式，VRTK
+    为你提供了许多替代方案，你将在本节中查看。在本节中，你将查看 VRTK 提供的以下移动模式，即：
+
+
+    '
+- fmt: '
+
+    - Instant Teleport
+
+    - Dash Teleport
+
+    - Teleport Targets to traverse large distances
+
+    - Slide movement with smooth rotation
+
+    - Slide movement with snap rotation
+
+    - Dash or Warp movement with Snap rotation
+
+    - Arm swinging movement
+
+    - Climbing objects
+
+    - Using a Pseudo body
+
+    '
+  raw: '*   Instant Teleport
+
+
+    *   Dash Teleport
+
+
+    *   Teleport Targets to traverse large distances
+
+
+    *   Slide movement with smooth rotation
+
+
+    *   Slide movement with snap rotation
+
+
+    *   Dash or Warp movement with Snap rotation
+
+
+    *   Arm swinging movement
+
+
+    *   Climbing objects
+
+
+    *   Using a Pseudo body'
+  toc: []
+  trans: '
+
+
+    - 瞬间传送
+
+    - 冲刺传送
+
+    - 传送目标以跨越远距离
+
+    - 带有平滑旋转的滑动移动
+
+    - 带有捕捉旋转的滑动移动
+
+    - 带有捕捉旋转的冲刺或传送移动
+
+    - 挥臂移动
+
+    - 攀爬物体
+
+    - 使用伪身（Pseudo body）
+
+    '
+- fmt: '
+
+    # VIDEO LECTURE: INSTANT and Dash Teleportation
+
+
+    Teleportation is a popular way to move around in your virtual world. This is a
+    concept where the user points at a location in the virtual world, and is transported
+    to that location automatically on the press of a button.
+
+
+    There are 2 main types of teleportation namely, `instant teleportation` and `dash
+    teleportation` that you will explore in this lecture. `Instant teleportation`,
+    is where, when a valid teleportable area is found, the user will instantly be
+    repositioned at this point, usually with a camera fade, to reduce motion sickness.
+
+
+    `Dash teleportation`, is where, when a valid teleportable area is found, the user
+    is gradually moved over time in a linear motion, until the specific teleportable
+    point is reached.
+
+
+    You will also setup a curved pointer to facilitate teleportation.
+
+
+    # VIDEO LECTURE: SETTING up the Teleporter
+
+
+    In the last lecture, you setup your curved pointer to facilitate teleportation.
+    In this lecture, you will set up the `Teleporter` object, which will enable you
+    teleport around within your Virtual world.
+
+
+    While the curved pointer is responsible for recognizing a valid teleport and initiating
+    it, the `Teleporter` is responsible for moving the `Play area` to its new location,
+    which essentially moves your Virtual Player to this new location.
+
+
+    # VIDEO LECTURE: SETTING up Teleport Targets to traverse large Distances
+
+
+    Some VR experiences won’t allow you to teleport everywhere. Instead, they rely
+    on fixed hot spots, or `teleport targets`, to limit the players movement. This
+    is ideal for creating immersive experiences, and puzzle games like `Mist` and
+    `Riven`.
+
+
+    You can create such behavior using teleport targets. These Teleport targets are
+    `VRTK` prefabs, that earmark certain specific points or areas, that you can teleport
+    too.
+
+
+    Also, should your VR experience require you to traverse large terrains, teleport
+    targets positioned strategically, will help create a great VR experience. `VRTK`
+    allows you to achieve this `Targeted Teleportation`, by providing you with 2 prefabs,
+    namely, a `Teleport Targets Point`, and a `Teleport Targets area`.
+
+
+    In this lecture, you will setup both types of Teleport targets.
+
+
+    # VIDEO LECTURE: SLIDE Movement and Rotation
+
+
+    Another neat movement type provided by `VRTK`, is the ability to move around your
+    scene, by simply gliding along the floor surface, by either moving forward, backward,
+    or strafing left and right.
+
+
+    In this lecture you will setup free-flowing movement and rotation, where you can
+    slide yourself around by pushing your left thumb stick, forward and backward as
+    well as rotate around, by pushing your left thumb stick, left or right.
+
+
+    # VIDEO LECTURE: ARM Swinging Locomotion
+
+
+    Teleporting, and sliding around your world, are great, but in some cases, letting
+    the player swing their arms, to move, can increase the level of immersion.
+
+
+    This enables them to decide, how fast they want to move, and allows for small
+    accurate movements.
+
+
+    If you were creating an endless runner, game in VR, arm swinging would be a truly
+    immersive and natural way, to move yourself in the world. Arm swinging is also
+    referred to as `Move in Place` locomotion and in this lecture you will setup this
+    form of locomotion.
+
+
+    # VIDEO LECTURE: SETTING up a Pseudo Body
+
+
+    In the last 2 lectures on Sliding and arm swinging movement, you would have noticed
+    that you could easily pass thru the solid containers, barrels, `Ladder` and `Table`
+    that are available in the scene.
+
+
+    In most cases you would not want such a behavior. Ideally you would want yourself
+    to be stopped the moment you collided with a solid object.
+
+
+    To ensure that you do not pass thru solid objects, you need to set up a `Pseudo
+    body`. This pseudo body will allow you to provide a virtual presence, to your
+    real-world body position, within a spatial scene. In this lecture you will take
+    a deep dive into understanding and setting up your pseudo body, which has an important
+    role to play while climbing too.
+
+
+    # VIDEO LECTURE: CLIMBING Objects, Tomb Raider style
+
+
+    The ability to climb up objects, Tomb Raider style, towards your objective, is
+    one of the most enthralling things, you could do in VR. `VRTK` makes climbing
+    a breeze, wherein you can make almost any surface climbable.
+
+
+    Need to climb a fence, a ladder, or perhaps a wall, no worries, as this mechanic
+    can be easily created, using a customized interactable prefab, to handle the climbing
+    action, in conjunction with the `pseudo body` prefab, to handle the physics of
+    the player’s body.
+
+
+    In this lecture, you will make all containers, as well as the ladder, in your
+    scene climbable.
+
+
+    # CHAPTER SEVEN: Distance Grabbing Objects using a Straight Pointer
+
+
+    IN THIS SECTION , you will revisit the grabbing mechanic, but this time you will
+    set up a `Distance Grabber`. This `Distance Grabber` mechanic, allows you to grab
+    an object from a distance, without having you, physically approach the object,
+    to grab it. It’s a psychic ability you can have in VR, allowing you to influence
+    a physical object, without any physical interaction.
+
+
+    I personally have used distance grabbing in VR FPS projects, where the player
+    is provided with and an upper body avatar, that supports upper arm movements.
+    In such a situation, if you as the player drop your weapon, you don’t ideally
+    want to bend down physically, to pick it up. You simply can turn on your distance
+    grab mechanic and have the weapon move into your hand.
+
+
+    `VRTK` provides you a distance grab pointer, in the form of a pulsating reticle,
+    that shows up when you point towards a grabbable object. You will also learn how
+    to limit the grab distance, so that you cannot grab an object from say 100 meters
+    away, though if your game requires that, you could have that too. Along the way
+    you will also look at, how to use a `Toggle Action`.
+
+
+    # VIDEO LECTURE: SETTING up a Distance Grabber
+
+
+    In this lecture you will setup the `Distance Grabber` prefab, provided by `VRTK`.
+    This distance grabber in its basic form is a pulsating reticle, that shows up
+    on your interactable object, when you point at it.
+
+
+    # VIDEO LECTURE: SETTING up a Straight Pointer
+
+
+    While testing you would have noticed that if you are at some distance away, from
+    the object you want to grab and if the object is not large enough, it becomes
+    difficult to point precisely at that object and have the reticle show up. To overcome
+    this, you will set up a straight pointer, which you can use to precisely point
+    at the object and perform distance grab a lot more easily. You will also set up
+    telekinesis movement, having the grabbed object levitate to your hand over half
+    second.
+
+
+    # VIDEO LECTURE: ACTIVATING and Deactivating the Distance Grabber via a Button
+    Press
+
+
+    In the previous lecture, you would have noted that your distance grabber is always
+    in on state, with the Ray pointer always being displayed. In this lecture, you
+    will look at setting up the `A` button on Oculus controller, `X` button on X Controller,
+    as well as the space key on our keyboard, to toggle the Distance grabber. As HTC
+    Vive does not have the buttons `A`, `B`, `X`, or `Y`, you will use your Right
+    Trackpad action, to toggle this distance grab pointer, on and off.
+
+
+    # CHAPTER EIGHT: VRTK''s Spatial UI and Unity''s UI
+
+
+    THE USER INTERFACE , is an important part of any game. It informs the user about
+    their health, score, as well as helps to control the games flow via the use of
+    menus and pause screens. In a non-VR game, the UI used is referred to as Heads-Up
+    Display, or `HUD`, which is placed over the top of the main screen and shows information
+    to the player. This type of UI is known as non-diegetic UI, meaning it doesn’t
+    exist physically in the game world. However, it directly relates to what the player
+    sees or interacts with inside the game.
+
+
+    Unfortunately, this non-diegetic UI approach doesn’t work well in VR, as the player
+    is unable to focus on something so close to their eyes. It is very distracting
+    and uncomfortable, as it moves with players head, as if it been glued on. A better
+    and more intuitive way, is to have the UI positioned within the game environment.
+    This can be achieved by using Unity’s UI, based on a world space canvas. This
+    approach is referred to as Spatial UI. With `VRTK` version 4, you now have the
+    ability to create 3D user interfaces, by using spatial buttons, that can be interacted
+    with via interactors, or pointers. In this section, you will look at interacting
+    with 3D spatial buttons, that exist as objects within your game world, using a
+    spatial pointer as well as directly with your hands.
+
+
+    # VIDEO LECTURE: SETTING up a Straight Pointer
+
+
+    In this lecture, you will setup a straight pointer that will be exclusively used
+    for interacting with your Spatial buttons only. The straight pointer you set up
+    here is different from the one setup for the distance grab. Also, a different
+    button on your controller will be used to activate this straight pointer. As you
+    may noted, while setting up your distance grab, a straight pointer, casts a straight
+    line, from the palm of your hand, to either its maximum length, or until the pointer
+    beam, collided with a valid game object. When a straight pointer, collides with
+    a valid game object, a selection action can occur, emitting an event, containing
+    data about the game object the straight pointer, collided with. You will use this
+    to create a straight pointer that can interact with your spatial buttons.
+
+
+    # VIDEO LECTURE: SETTING up a Spatial, Clickable Button
+
+
+    In this lecture, you will set up a 3D spatial clickable button, that can be clicked
+    at, using the spatial pointer, you setup in the previous lecture.
+
+
+    # VIDEO LECTURE: SETTING up a Spatial Button Group
+
+
+    In this lecture, you will setup a spatial button group, that allows to group together
+    your 3D spatial buttons.
+
+
+    # VIDEO LECTURE: CHANGING the appearance of your Spatial Buttons
+
+
+    Your spatial buttons have certain Style properties, that can change their appearance.
+    In this lecture, you will use these style properties, to change the appearance
+    of your buttons.
+
+
+    # VIDEO LECTURE: SETTING up a Spatial Toggle Button
+
+
+    In this lecture, you will create a toggle button wherein, with your straight spatial
+    pointer, hovering over the toggle button, a trigger press, will activate the toggle
+    button and a subsequent trigger press would deactivate it. A toggle button when
+    clicked, would ideally go into the on state and would hold this state, until it
+    is clicked again, wherein it will then go into the off state and vice versa.
+
+
+    # VIDEO LECTURE: SETTING up Spatial Option Buttons
+
+
+    Option buttons allow you to provide multiple choice options to the player, where
+    only one of those options can be in an active state. Attempting to activate any
+    other option, will ensure that the currently activated option, within the group
+    is deactivated. Option buttons are also referred to as Radio buttons. In this
+    lecture, you will create a new Spatial button group, and populate it with some
+    option buttons.
+
+
+    # VIDEO LECTURE: SETTING up a Slider
+
+
+    A slider is a control that lets the player select from a range of values, by moving
+    a knob control along a track. This allows you to display and utilize a numeric
+    value within a predefined range. With `VRTK`, you can easily create a slider,
+    by using an interactable, along with a limited drive axis. In this lecture, you
+    will use a linear drive to create a slider control, that displays the sliders
+    value, using a tool-tip, as you move the sliders knob about. In this lecture,
+    you will learn how to use the linear joint drive, as well as the tool-tip.
+
+
+    # VIDEO LECTURE: HACKING your Straight Pointer, allowing it to interact with your
+    Slider
+
+
+    In the last lecture, you saw how you can interact with the slider, using your
+    hands. In this lecture, you will learn a undocumented, wherein you can have your
+    spatial pointer interact with slider too. Along the way you will also set up a
+    rule, so that your spatial pointer is in an active state, only when pointing at
+    your 3D buttons.
+
+
+    # VIDEO LECTURE: USING your Hands to Interact with VRTK''s Spatial Buttons
+
+
+    In this lecture, you will learn how to interact with 3D buttons directly, using
+    your hands. This provides you with a level of true immersion in VR, you will no
+    longer need a pointer to interact with it. This opens a world of possibilities
+    for interactions. You could even create your own VR keyboard and interact with
+    the buttons.
+
+
+    # CHAPTER N: Snap Zones
+
+
+    IN THIS SECTION , you will create Snap Zones. A snap zone is a spatial zone, where
+    an interactable object can be dropped into. You can create a lot of different
+    behaviors by snapping objects together. Snapping objects together means that you
+    can insert one object into another, that is you inserting an interactable into
+    a Snap Zone. Some examples would be, snapping a wheel onto a car, a magazine into
+    a weapon, a stick into a port, inventory slots and weapon holsters for weapons.
+    VRTK provides you with a Snap Zone prefab to achieve this snapping of objects
+    together. In this section, you will create a few tool holders, into which you
+    can place your work tools. You will also have these holders display the name of
+    the tool they contain, using the tool-tip you learnt about the last section.
+
+
+    # VIDEO LECTURE: IMPORTING the Tool Holder UI, Unity Package and setting up 2
+    Work Tools
+
+
+    In this lecture, you will first import a simple UI for your tool holder. This
+    has been created using Unity elements. To save you the trouble of this up yourself,
+    I have included it as a unity package attached to this lecture, that you need
+    to import into your project.
+
+
+    # VIDEO LECTURE: MAKING the Axe and Hammer Interactable
+
+
+    In this lecture you will learn a quicker method, to make any game object interactable.
+    You will use the `Interaction, Interactable Creator` menu option to quickly your
+    Axe and Hammer game objects interactable.
+
+
+    # VIDEO LECTURE: SETTING up the Snap Zones
+
+
+    In this lecture, you will setup your snap zones, which will enable you to drop
+    your tools into them. You will also learn to reduce the size of the snap zones
+    as well as their colliders. You will also learn how to easily control the size
+    an object should be, once it has been snapped into the Snap Zone.
+
+
+    # VIDEO LECTURE: SETTING up Tooltips for the Snap Zones
+
+
+    In this lecture you will create tool-tips for your snap zones, so that whenever
+    you drop an object into a snap zone, the tool-tip beneath it, will display the
+    dropped objects name.
+
+
+    # VIDEO LECTURE: SETTING up Rules that restrict entry into Snap Zones
+
+
+    Currently there are no restrictions in place, to ensure that only specific tools,
+    can enter your snap zone. As things stand now, any tool can be placed into any
+    snap zone. In this lecture, you will change this behavior by ensuring that the
+    only tools you will able to drop into your snap zones, are either the Hammer,
+    or the Axe, but not the drill machine. This can be easily setup by creating a
+    rule.
+
+
+    # VIDEO LECTURE: SETTING up Holsters that move about with the Player
+
+
+    So far you have setup snap zones, that can serve as inventory slots. In this lecture,
+    you will learn how to setup a Holster, which stays with you as you move about.
+    This holster setup that moves around with you, could be used in your next FPS
+    game. In this lecture, the holsters you setup will not holster your weapons, but
+    will instead be used to holster any of your work tools. Along the way, you will
+    learn to use a new VRTK prefab, the `Mutator Object follower`.
+
+
+    # CHAPTER TEN: Angular and Linear Drives
+
+
+    IN THIS SECTION , you will learn about the Angular and Linear drive prefabs, provided
+    by `VRTK`, as well as see several examples of their use. You will start off using
+    an Angular drive, wherein you will create a steering wheel, a door, and a lever.
+    You will then proceed to use a Linear drive, which you have already used when
+    you created your slider object. You will however use this linear drive prefab
+    again, to create a drawer as well as a push button. Both angular and linear drives,
+    are referred to as controllable mechanisms, that provide you with both physics
+    and non-physics based, angular and linear controls, that can be used with a wide
+    variety of objects. You will use the non-physics-based controls, wherever possible,
+    as you intend building your games, to their bare.
+
+
+    # VIDEO LECTURE: CREATING Steering Wheel
+
+
+    In this lecture, you will create a car steering wheel, that you can rotate around,
+    using your hands. A steering wheel can be created using angular drive, where this
+    will rotate around central point. Whenever the steering wheel, value changes,
+    an event can be raised, notifying the car axle of the change.
+
+
+    # VIDEO LECTURE: CREATING Door
+
+
+    In this lecture, you will create a door, that will rotate around a given hinge
+    point, on your door frame, which will allow you to simulate a door that can be
+    opened and closed. For this setup, you will use an angular drive prefab, that
+    uses Unity joints. You will also learn to setup a door that does not revolve,
+    beyond its closed position and will set it up so it can be opened and closed from
+    the same side.
+
+
+    # VIDEO LECTURE: CREATING Lever
+
+
+    In this lecture, you will create a Lever, that will rotate around a given hinge
+    point, about its axis. For this setup, you will use angular drive prefab, that
+    uses Unity joints. One common use of lever would be for gear box, within car.
+
+
+    # VIDEO LECTURE: EXPLORING Angular Joint Drive, Value Events and creating Logic
+    Objects
+
+
+    In this lecture, you will take a deep dive into Angular joint drive, and examine
+    some of its internal events, that you might find useful when building your game.
+    Here you will look at Minimum reached, Midpoint reached, and maximum reached,
+    event. To see these events in action, you will create some logic, wherein you
+    setup lever to work like it does within automatic transmission, where lever can
+    be moved between 3 states namely, forward or neutral or reverse or back.
+
+
+    # VIDEO LECTURE: CREATING a Drawer
+
+
+    In this lecture, you will shift focus, to VRTK''s Linear drive. You have already
+    used Linear Transform drive, when you setup your slider object. In this lecture,
+    you will use Linear joint drive, to create drawer, that can be opened and closed.
+    This Linear joint drive uses unity joints and will work with the Physics system.
+
+
+    # VIDEO LECTURE: CREATING a simulated Push Button
+
+
+    In the final lecture of this section, you will learn how to setup push button,
+    that can be pressed down, upon being touched and automatically spring up, on release.
+    This push button, will be created using the Linear Transform drive, and you will
+    learn to use a couple of events too.
+
+
+    # CHAPTER ELE: Tips, Tricks and Recipes
+
+
+    IN THIS SECTION , you will learn some useful tips and tricks to address common
+    game-play scenarios. The lectures in this section, can be thought of as brief
+    recipes, that teach you specific features, as well as provide you with some tips
+    and tricks.
+
+
+    # VIDEO LECTURE: ADDING realistic Physics Hand collisions, to your Avatar hands
+
+
+    In this lecture, you will learn to setup realistic hand collisions, for your hands.
+    Currently with the way your hands are setup, they pass thru objects, without colliding
+    with them, which is not realistic. Whenever your hand encounters an interactable
+    object, you should either grab it, or if your intention was not to grab it, your
+    hand should be allowed to collide with it, allowing you to push the object about.
+    This is exactly what you will setup in this lecture, aka Half-Life: Alyx hands.
+
+
+    # VIDEO LECTURE: SETTING up a Unity Nav Area, as a valid Teleport Target Zone
+
+
+    In this lecture, you will use Unity’s Nav Mesh, to map out a valid area within
+    your scene. You will then be allowed to teleport anywhere within this valid nav
+    mesh area. Setting up a Unity nav mesh is beneficial, as you can then create AI
+    bots, that can navigate this nav mesh too.
+
+
+    # VIDEO LECTURE: OBTAINING Haptic feedback upon Grabbing an Interactable Object
+
+
+    In this lecture, you will learn how to obtain Haptic feedback against your left
+    and right controllers whenever you grab an interactable object.
+
+
+    # VIDEO LECTURE: OUTLINING Interactable objects using VRTKs Shaders and exploring
+    Interactable Events
+
+
+    VRTK provides you with some basic shaders, that you could use to highlight your
+    interactable objects, upon touching them. This provides you with a visual cue,
+    that you have touched an interactable object. In this lecture you will achieve
+    this, by using one out of the 6 shaders provided by VRTK.
+
+
+    # CHAPTER TWELVE: Mini Game
+
+
+    In THIS FINAL section of the course, you will create a small mini game. The game
+    you will create is a simplistic, Katamari style clone game, where the objective
+    of the game is to roll a ball about the garden path, collecting the strewn objects,
+    until the time runs out. This is not a full blown Katamari puzzle game, but you
+    could easily achieve that by further coding in simple mechanics, that grow your
+    ball, as you pick objects, forcing you to pick objects.
+
+    '
+  raw: 'VIDEO LECTURE: INSTANT and Dash TeleportationTeleportation is a popular way
+    to move around in your virtual world. This is a concept where the user points
+    at a location in the virtual world, and is transported to that location automatically
+    on the press of a button.There are 2 main types of teleportation namely, instant
+    teleportation and dash teleportation that you will explore in this lecture.Instant
+    teleportation, is where, when a valid teleportable area is found, the user will
+    instantly be repositioned at this point, usually with a camera fade, to reduce
+    motion sickness.Dash teleportation, is where, when a valid teleportable area is
+    found, the user is gradually moved over time in a linear motion, until the specific
+    teleportable point is reached.You will also setup a curved pointer to facilitate
+    teleportation.VIDEO LECTURE: SETTING up the TeleporterIn the last lecture, you
+    setup your curved pointer to facilitate teleportation. In this lecture, you will
+    set up the Teleporter object, which will enable you teleport around within your
+    Virtual world.While the curved pointer is responsible for recognizing a valid
+    teleport and initiating it, the Teleporter is responsible for moving the Play
+    area to its new location, which essentially moves your Virtual Player to this
+    new location.VIDEO LECTURE: SETTING up Teleport Targets to traverse large DistancesSome
+    VR experiences won’t allow you to teleport everywhere. Instead, they rely on fixed
+    hot spots, or teleport targets, to limit the players movement. This is ideal for
+    creating immersive experiences, and puzzle games like Mist and Riven.You can create
+    such behavior using teleport targets. These Teleport targets are VRTK prefabs,
+    that earmark certain specific points or areas, that you can teleport too.Also,
+    should your VR experience require you to traverse large terrains, teleport targets
+    positioned strategically, will help create a great VR experience.VRTK allows you
+    to achieve this Targeted Teleportation, by providing you with 2 prefabs, namely,
+    a Teleport Targets Point, and a Teleport Targets area.In this lecture, you will
+    setup both types of Teleport targets.VIDEO LECTURE: SLIDE Movement and RotationAnother
+    neat movement type provided by VRTK, is the ability to move around your scene,
+    by simply gliding along the floor surface, by either moving forward, backward,
+    or strafing left and right.In this lecture you will setup free-flowing movement
+    and rotation, where you can slide yourself around by pushing your left thumb stick,
+    forward and backward as well as rotate around, by pushing your left thumb stick,
+    left or right.VIDEO LECTURE: ARM Swinging LocomotionTeleporting, and sliding around
+    your world, are great, but in some cases, letting the player swing their arms,
+    to move, can increase the level of immersion.This enables them to decide, how
+    fast they want to move, and allows for small accurate movements.If you were creating
+    an endless runner, game in VR, arm swinging would be a truly immersive and natural
+    way, to move yourself in the world.Arm swinging is also referred to as Move in
+    Place locomotion and in this lecture you will setup this form of locomotion.VIDEO
+    LECTURE: SETTING up a Pseudo BodyIn the last 2 lectures on Sliding and arm swinging
+    movement, you would have noticed that you could easily pass thru the solid containers,
+    barrels, Ladder and Table that are available in the scene.In most cases you would
+    not want such a behavior.Ideally you would want yourself to be stopped the moment
+    you collided with a solid object.To ensure that you do not pass thru solid objects,
+    you need to set up a Pseudo body.This pseudo body will allow you to provide a
+    virtual presence, to your real-world body position, within a spatial scene.In
+    this lecture you will take a deep dive into understanding and setting up your
+    pseudo body, which has an important role to play while climbing too.VIDEO LECTURE:
+    CLIMBING Objects, Tomb Raider styleThe ability to climb up objects, Tomb Raider
+    style, towards your objective, is one of the most enthralling things, you could
+    do in VR.VRTK makes climbing a breeze, wherein you can make almost any surface
+    climbable.Need to climb a fence, a ladder, or perhaps a wall, no worries, as this
+    mechanic can be easily created, using a customized interactable prefab, to handle
+    the climbing action, in conjunction with the pseudo body prefab, to handle the
+    physics of the player’s body.In this lecture, you will make all containers, as
+    well as the ladder, in your scene climbable.CHAPTER SEVENDistance Grabbing Objects
+    using a Straight PointerIN THIS SECTION , you will revisit the grabbing mechanic,
+    but this time you will set up a Distance Grabber.This Distance Grabber mechanic,
+    allows you to grab an object from a distance, without having you, physically approach
+    the object, to grab it.It’s a psychic ability you can have in VR, allowing you
+    to influence a physical object, without any physical interaction.I personally
+    have used distance grabbing in VR FPS projects, where the player is provided with
+    and upper body avatar, that supports upper arm movements. In such a situation,
+    if you as the player drop your weapon, you don’t ideally want to bend down physically,
+    to pick it up. You simply can turn on your distance grab mechanic and have the
+    weapon move into your hand.VRTK provides you a distance grab pointer, in the form
+    of a pulsating reticle, that shows up when you point towards a grabbable object.You
+    will also learn how to limit the grab distance, so that you cannot grab an object
+    from say 100 meters away, though if your game requires that, you could have that
+    too.Along the way you will also look at, how to use a Toggle Action.VIDEO LECTURE:
+    SETTING up a Distance GrabberIn this lecture you will setup the Distance Grabber
+    prefab, provided by VRTK.This distance grabber in its basic form is a pulsating
+    reticle, that shows up on your interactable object, when you point at it.VIDEO
+    LECTURE: SETTING up a Straight PointerWhile testing you would have noticed that
+    if you are at some distance away, from the object you want to grab and if the
+    object is not large enough, it becomes difficult to point precisely at that object
+    and have the pulsating reticle show up, to allow you to grab the object.To overcome
+    this, you will set up a straight pointer, which you can use to precisely point
+    at the object you want to grab and perform the distance grab a lot more easily.You
+    will also set up a telekinesis movement, having the grabbed object levitate to
+    your hand over half a second.VIDEO LECTURE: ACTIVATING and Deactivating the Distance
+    Grabber via a Button PressIn the previous lecture, you would have noted that your
+    distance grabber is always in the on state, with the Straight Ray pointer always
+    being displayed.In this lecture, you will look at setting up the ‘A’ button on
+    your Oculus controller, ‘X’ button on your X Box Controller, as well as the space
+    key on our keyboard, to enable toggle, the Distance grabber, on and off.As the
+    HTC Vive does not have the buttons ‘A’, ‘B’, ‘X’, or ‘Y’, as available on the
+    Oculus Controllers, you will use your Right Trackpad Touch 17 button action, to
+    toggle this distance grabber pointer, on and off.[Unity® VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)CHAPTER
+    EIGHTVRTK''s 3D Spatial UI and Unity''s 2D UI controlsTHE USER INTERFACE , is
+    an important part of any game.It informs the user about their health, score, as
+    well as helps to control the games work flow, via the use of menus and pause screens.In
+    a non-VR game, the UI used is referred to as a Heads-Up Display, or HUD, which
+    is placed over the top of the main screen and shows information to the player.This
+    type of UI is known as a non-diegetic UI, meaning it doesn’t exist physically
+    in the game world.However, it directly relates to what the player sees or interacts
+    with, inside the game.Unfortunately, this non-diegetic UI approach doesn’t work
+    well in VR, as the player is unable to focus on something so close to their eyes.It
+    is very distracting and uncomfortable, as it moves with the players head, as if
+    it has been glued on.A better and more intuitive way, is to have the UI positioned
+    within the game environment.This can be achieved by using Unity’s UI, based on
+    a world space UI canvas. This approach is referred to as Spatial UI.With VRTK
+    version 4 however, you now have the ability to create 3 D user interfaces, by
+    using spatial buttons, that can be interacted with via interactors, or pointers.In
+    this section, you will look at interacting with 3D spatial buttons, that exist
+    as objects within your game world, using a spatial pointer as well as directly
+    with your hands.VIDEO LECTURE: SETTING up a Straight PointerIn this lecture, you
+    will setup a straight pointer that will be exclusively used for interacting with
+    your Spatial buttons only.The straight pointer you set up here is different from
+    the one setup for the distance grab.Also, a different button on your controller
+    will be used to activate this straight spatial pointer.As you may have noted,
+    while setting up your distance grab, a straight pointer, casts a straight line,
+    from the palm of your hand, to either its maximum specified length, or until the
+    pointer beam, collided with a valid game object.When a straight pointer, collides
+    with a valid game object, a selection action can occur, emitting an event, containing
+    data about the game object the straight pointer, collided with.You will use this
+    to create a straight pointer that can interact with your spatial buttons.VIDEO
+    LECTURE: SETTING up a Spatial, Clickable ButtonIn this lecture, you will set up
+    a 3D spatial clickable button, that can be clicked at, using the spatial pointer,
+    you setup in the previous lecture.VIDEO LECTURE: SETTING up a Spatial Button GroupIn
+    this lecture, you will setup a spatial button group, that allows you to group
+    together your 3D spatial buttons.VIDEO LECTURE: CHANGING the appearance of your
+    Spatial ButtonsYour spatial buttons have certain Style properties, that can change
+    their appearance.In this lecture, you will use these style properties, to change
+    the appearance of your buttons.VIDEO LECTURE: SETTING up a Spatial Toggle ButtonIn
+    this lecture, you will create a toggle button wherein, with your straight spatial
+    pointer, hovering over the toggle button, a trigger press, will activate the toggle
+    button and a subsequent trigger press would deactivate it.A toggle button when
+    clicked, would ideally go into the on state and would hold this state, until it
+    is clicked again, wherein it will then go into the off state and vice versa.VIDEO
+    LECTURE: SETTING up Spatial Option ButtonsOption buttons allow you to provide
+    multiple choice options to the player, where only one of those options can be
+    in an active state.Attempting to activate any other option, will ensure that the
+    currently activated option, within the group is deactivated.Option buttons are
+    also referred to as Radio buttons.In this lecture, you will create a new Spatial
+    button group, and populate it with some option buttons.VIDEO LECTURE: SETTING
+    up a SliderA slider is a control that lets the player select from a range of values,
+    by moving a knob control along a track. This allows you to display and utilize
+    a numeric value within a predefined range.With VRTK, you can easily create a slider,
+    by using an interactable, along with a limited drive axis.In this lecture, you
+    will use a linear drive to create a slider control, that displays the sliders
+    value, using a tool-tip, as you move the sliders knob about.In this lecture, you
+    will learn how to use the linear joint drive, as well as the visual tool-tip label.VIDEO
+    LECTURE: HACKING your Straight Pointer, allowing it to interact with your SliderIn
+    the last lecture, you saw how you can interact with the slider, using your hands.In
+    this lecture, you will learn an undocumented hack, wherein you can have your straight
+    spatial pointer interact with your slider too.Along the way you will also set
+    up a rule, so that your spatial pointer is in an active state, only when its pointing
+    at your 3D UI buttons, or your sliders knob.VIDEO LECTURE: USING your Hands to
+    Interact with VRTK''s Spatial ButtonsIn this lecture, you will learn how to interact
+    with your 3D UI Spatial buttons directly, using your hands.This provides you with
+    a level of true immersion in VR, as you will no longer need a pointer to interact
+    with your UI.This opens a world of possibilities for UI interactions.You could
+    even create your own VR keyboard and interact with the buttons on it using your
+    fingers.You could have your UI, pop up near yourself and then simply reach out
+    your hand, and interact with its buttons.VIDEO LECTURE: USING Unity''s 2D UI controls
+    with VRTKIn this lecture, you will use VRTK, to work with UI controls, available
+    as part of Unity’s UI system.To be able to use Unity’s UI, in VR, it needs to
+    be based on a World space UI canvas.If you have used VRTK version 3.3 in the past,
+    you would note that one of its examples, provided you with a workable menu, with
+    the commonly used UI controls on it. This was based on a world space UI canvas.In
+    this lecture, you will setup the required pointer and connect various components,
+    so that you can have this menu work within your VR scene.[Unity® VR Dev: No Coding
+    Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)CHAPTER
+    NINESnap ZonesIN THIS SECTION , you will create Snap Zones.A snap zone is a spatial
+    zone, where an interactable object can be dropped into.You can create a lot of
+    different behaviors by snapping objects together.Snapping objects together means
+    that you can insert one object into another object, that is you are inserting
+    an interactable into a Snap Zone.Some examples would be, snapping a wheel onto
+    a car, a magazine into a weapon, a USB stick into a USB port, inventory slots
+    and weapon holsters for weapons.VRTK provides you with a Snap Zone prefab to achieve
+    this snapping of objects together.In this section, you will create a few tool
+    holders, into which you can place your work tools.You will also have these holders,
+    display the name of the tool they contain, using the tool-tip you learnt about
+    in the last section.VIDEO LECTURE: IMPORTING the Tool Holder UI, Unity Package
+    and setting up 2 new Work ToolsIn this lecture, you will first import a simple
+    UI for your tool holder. This has been created using Unity’s UI elements.To save
+    you the trouble of setting this up yourself, I have included it as a unity package
+    attached to this lecture, that you need to import into your project.VIDEO LECTURE:
+    MAKING the Axe and Hammer InteractableIn this lecture you will learn a quicker
+    method, to make any game object interactable.You will use the Tilia, Interaction,
+    Interactable Creator menu option to quickly make your Axe and Hammer game objects
+    interactable.VIDEO LECTURE: SETTING up the Snap ZonesIn this lecture you will
+    setup your snap zones, which will enable you to drop your tools, into them.You
+    will also learn to reduce the size of the snap zones as well as their colliders.You
+    will also learn how to easily control the size an object should be, once it has
+    been snapped into the Snap Zone.VIDEO LECTURE: SETTING up Tooltips for the Snap
+    ZonesIn this lecture you will create tool-tips for your snap zones, so that whenever
+    you drop an object into a snap zone, the tool-tip beneath it, will display the
+    dropped objects name.VIDEO LECTURE: SETTING up Rules that restrict entry into
+    Snap ZonesCurrently there are no restrictions in place, to ensure that only specific
+    tools, can enter your snap zone.As things stand now, any tool can be placed into
+    any snap zone.In this lecture, you will change this behavior by ensuring that
+    the only tools you will be able to drop into your snap zones, are either the Hammer,
+    or the Axe, but not the drill machine.This can be easily setup by creating a rule.VIDEO
+    LECTURE: SETTING up Holsters that move about with the PlayerSo far you have setup
+    snap zones, that can serve as inventory slots.In this lecture, you will learn
+    how to setup a Holster, which stays with you as you move about.This holster setup
+    that moves around with you, could be used in your next FPS game.In this lecture,
+    the holsters you setup will not holster your weapons, but will instead be used
+    to holster any of your work tools.Along the way, you will learn to use a new VRTK
+    prefab, the Mutator Object follower.[Unity® VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)CHAPTER
+    TENAngular and Linear DrivesIN THIS SECTION , you will learn about the Angular
+    and Linear drive prefabs, provided by VRTK, as well as see several examples of
+    their use.You will start off using an Angular drive, wherein you will create a
+    steering wheel, a door, and a lever.You will then proceed to use a Linear drive,
+    which you have already used when you created your slider object. You will however
+    use this linear drive prefab again, to create a drawer as well as a push button.Both
+    angular and linear drives, are referred to as controllable mechanisms, that provide
+    you with both, physics and non-physics based, angular and linear interactable
+    controls, that can be used with a wide variety of objects.You will use the non-physics-based
+    controls, wherever possible, as the physics-based controls rely heavily on joints
+    and if you intend building multi player games, its best to keep joints, to their
+    bare minimum.VIDEO LECTURE: CREATING a Steering WheelIn this lecture, you will
+    create a car steering wheel, that you can rotate around, using your hands.A steering
+    wheel can be created using an angular drive, where this steering wheel, will rotate
+    around a central hinge point.Whenever the steering wheel, value changes, an event
+    can be raised, notifying the car axle of the change in value, and the car wheels
+    could then be aligned accordingly.VIDEO LECTURE: CREATING a DoorIn this lecture,
+    you will create a door, that will rotate around a given hinge point, on your door
+    frame, which will allow you to simulate a door that can be opened and closed.For
+    this setup, you will use an Angular joint drive prefab, that uses Unity joints.You
+    will also learn to setup a door that does not revolve, beyond its closed position
+    and you will set it up so that it can be opened and closed from the same side
+    only.Along the way you will also learn about a new VRTK prefab, the Collision
+    Ignorer.VIDEO LECTURE: CREATING a LeverIn this lecture, you will create a Lever,
+    that will rotate around a given hinge point, about its X axis.For this setup,
+    you will use an Angular joint drive prefab, that uses Unity joints.One common
+    use of a lever, would be for a gear box, within a car.VIDEO LECTURE: EXPLORING
+    the Angular Joint Drive, Value Events and creating Logic ObjectsIn this lecture,
+    you will take a deep dive into the Interactions, Angular joint drive, and examine
+    some of its internal events, that you might find useful, when building your game.Here,
+    you will look at the Minimum reached, Midpoint reached, and maximum reached, event
+    objects.To see these events in action, you will create some Lever logic, wherein
+    you setup your lever to work like it does within an automatic car transmission,
+    where the lever can be moved between 3 states namely, drive or forward, neutral
+    or central and reverse or back.You will also learn to create Logic Objects, that
+    do away with the need to write code.VIDEO LECTURE: CREATING a DrawerIn this lecture,
+    you will shift focus, to using VRTK''s Linear drive.You have already used the
+    Linear Transform drive, when you setup your slider object.In this lecture, you
+    will use the Linear Joint drive, to create a drawer, that can be opened and closed.This
+    Linear joint drive, uses unity joints and will work with the Unity Physics system.VIDEO
+    LECTURE: CREATING a simulated Push ButtonIn the final lecture of this section,
+    you will learn how to setup a push button, that can be pressed down, upon being
+    touched and automatically spring back up, on release.This push button, will be
+    created using the Linear Transform drive, and you will learn to use a couple of
+    events too.[Unity® VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)CHAPTER
+    ELEVENTips, Tricks and RecipesIN THIS SECTION , you will learn some useful tips
+    and tricks, to address common game-play scenarios.The lectures in this section,
+    can be thought of as brief recipes, that teach you specific features, as well
+    as provide you with some tips and tricks.VIDEO LECTURE: ADDING realistic Physics
+    Hand collisions, to your Avatar handsIn this lecture, you will learn to setup
+    realistic hand collisions, for your avatar hands.Currently with the way your hands
+    are setup, they pass thru objects, without colliding with them, which is not very
+    realistic.Whenever your hand encounters an interactable object, you should either
+    be allowed to grab it, or if your intention was not to grab it, your hand should
+    be allowed to collide with it, allowing you to push the object about.This is exactly
+    what you will setup in this lecture, aka Half-Life: Alyx hands.VIDEO LECTURE:
+    SETTING up a Unity Nav Mesh Area, as a valid Teleport Target ZoneIn this lecture,
+    you will use Unity’s Nav Mesh, to map out a valid area within your scene.You will
+    then be allowed to teleport anywhere within this valid nav mesh, area.Setting
+    up a Unity nav mesh is beneficial, as you can then also create A I bots, that
+    can navigate this nav mesh too.VIDEO LECTURE: OBTAINING Haptic feedback upon Grabbing
+    an Interactable ObjectIn this lecture, you will learn how to obtain Haptic feedback
+    against your left and right controllers whenever you grab an interactable object.VIDEO
+    LECTURE: OUTLINING Interactable objects using VRTKs Shaders and exploring Interactable
+    EventsVRTK provides you with some basic shaders, that you could use to highlight
+    your interactable objects, upon touching them.This provides you with a visual
+    cue, that you have touched an interactable object.In this lecture you will achieve
+    this, by using one out of the 6 shaders provided by VRTK.[Unity® VR Dev: No Coding
+    Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)CHAPTER
+    TWELVEMini GameIN THIS FINAL section of the course, you will create a small mini
+    game.The game you will create is a simplistic, Katamari style clone game, where
+    the objective of the game is to roll a ball about the garden path, collecting
+    the strewn objects, until the time runs out.This is not a full blown Katamari
+    puzzle game, but you could easily achieve that by further coding in simple mechanics,
+    that grow your ball, as you pick objects, forcing you to pick up similar sized
+    objects only, until your ball has grown to a certain size, where you can then
+    graduate to picking larger objects, and complete the level.Here, you will develop
+    the core mechanic, of having the ball roll around, and pick-up objects.You will
+    also setup a timer, that counts down the seconds you have left, to complete your
+    level and upon your timer reaching zero, you will no longer be able to roll your
+    ball any further.You will use the Slide movement form of locomotion, you have
+    already learnt about, to move yourself thru the scene.This will be achieved by
+    pushing on your left controllers thumb stick, as was setup in the Locomotion section,
+    earlier in the course.Your right controllers thumb stick, will be used to control
+    the ball, allowing it to move forward, backward, as well as move left or right.Your
+    countdown timer will be setup as a spatial UI tool-tip, that will display the
+    seconds you have left, to collect all objects within the level.Along the way,
+    you will learn how to set up a Moment processor, as well as an event that can
+    be called once a certain time interval has elapsed.You will also use the VRTK
+    provided, Input Combined Actions, Axes to Vector3, action prefab, to have your
+    ball roll around, by adding a force to your balls rigid body.Attempting to achieve
+    this without using the VRTK provided, Input Combined Actions, Axes to Vector3,
+    action prefab, would require you to write some math intensive code, involving
+    vectors and trigonometry, to get this sort of realistic ball movement.Thanks to
+    this VRTK prefab, you don’t need to code this sort of moderately heavy stuff,
+    yourself.VIDEO LECTURE: IMPORTING the Garden Path, Unity Package for your GameIn
+    this lecture, you will download the Garden Path, Unity Package and explore its
+    contents.This mini game will be built as a separate scene within the same VRTK
+    Playground project, as it already comprises all the required Tilia Packages, as
+    well as the entire VRTK setup created as part of this course.You will however
+    select only the prefabs required for this game, and use them only.VIDEO LECTURE:
+    SETTING up the requisite VRTK Prefabs within the Garden SceneIn this lecture,
+    you will create prefabs of certain game objects, available within your Demo scene,
+    that will be required within your Garden scene, to setup the VR functionality
+    for your mini game.VIDEO LECTURE: SETTING up Obstacle ObjectsIn this lecture,
+    you will setup all 37 obstacle objects within your scene to allow them to be attached
+    to the ball, as and when the ball collides with these obstacles.VIDEO LECTURE:
+    SETTING up your Ball to roll about freely within the Garden pathIn this lecture,
+    you will setup your right controllers thumb stick, to control the movement of
+    the ball, wherein you will be allowed to roll the ball forward, backward, left
+    and right.To achieve this natural ball movement, you will use a physics force,
+    against the balls Rigidbody, via the Input Combined Actions, Axes to Vector3,
+    action prefab.Attempting to achieve this realistic ball movement, without using
+    the VRTK provided, Input Combined Actions, Axes to Vector3, action prefab, would
+    require you to write some math code, involving vectors and trigonometry, to achieve
+    this sort of realistic ball movement.Thanks to this VRTK prefab, you don’t need
+    to write this math code.VIDEO LECTURE: SETTING up a Spatial Tooltip UI Object
+    to display a Countdown TimerIn this lecture, you will set up a countdown timer
+    for your mini game.This timer counts down the seconds you have left, to complete
+    your level, and upon your timer reaching zero, you will no longer be able to roll
+    your ball any further.You will display this countdown timer in the world, using
+    a spatial UI tool-tip.VIDEO LECTURE: SETTING up the Countdown Timer Object and
+    learning about the Moment ProcessorIn this lecture, you will setup the countdown
+    time and learn about the moment processor, finalizing the mechanics of your mini
+    game.VRTK provides you with a countdown timer component, that can be used to create
+    a seconds countdown.Once this countdown timer has completed, that is reached zero,
+    you can perform an action.The action you will perform is to deactivate the ball,
+    so that the player can no longer roll it any further.VIDEO LECTURE: ENHANCING
+    the Mini GameThis final lecture, provides you with some ideas on how you can enhance
+    this simple mini game further, by writing small snippets of code to do the following:'
+  toc: []
+  trans: '
+
+
+    # 视频课程：瞬时传送与冲刺传送
+
+
+    传送是虚拟世界中移动的一种流行方式。这种概念是指：用户指向虚拟世界中的某处位置，在按下按钮时自动传输到该位置。
+
+
+    在本节课程中，你将探索两种两种主要的传送类型，即`瞬时传送`（instant teleportation）和`冲刺传送`（dash teleportation）。`瞬时传送`是指当发现一个有效的传送区域时，用户将瞬间重新定位到该点，通常会伴有相机淡入淡出效果，以减少晕动症的产生。
+
+
+    `冲刺传送`是指当发现一个有效的传送区域时，用户将随时间以线性运动逐渐移动，直到到达特定的传送点。
+
+
+    你还将设置一个弯形指针以方便传送。
+
+
+    # 视频课程：设置传送器（Teleporter）
+
+
+    在上一节课程中，你设置了用于方便传送的弯形指针。在本节课程中，你将设置 `Teleporter`（传送器）对象，这将使你能够在虚拟世界中到处传送。
+
+
+    虽然弯形指针负责识别有效的传送并启动它，但 `Teleporter` 负责将 `Play area`（玩家区域）移动到新位置，这本质上是将你的虚拟玩家移动到这个新位置。
+
+
+    # 视频课程：设置传送目标以跨越远距离
+
+
+    某些 VR 体验不允许你传送到任何地方。相反，它们依赖于固定的热点或 `teleport targets`（传送目标）来限制玩家的移动。这对于创建沉浸式体验以及像《Mist》和《Riven》这样的解谜游戏非常理想。
+
+
+    你可以使用传送目标创建这种行为。这些传送目标是 `VRTK` 的制体（prefab），它们标记了你可以传送的某些特定点或区域。
+
+
+    此外，如果你的 VR 体验需要你跨越大型地形，策略性地放置传送目标将有助于创建出色的 VR 体验。`VRTK` 通过提供两个制体允许你实现这种 `Targeted
+    Teleportation`（目标传送），即 `Teleport Targets Point`（传送目标点）和 `Teleport Targets area`（传送目标区域）。
+
+
+    在本节课程中，你将设置两种类型的传送目标。
+
+
+    # 视频课程：滑动移动与旋转
+
+
+    `VRTK` 提供的另一种巧妙的移动类型是：沿着地板表面滑动，通过向前、向后或向左/右侧移，在场景中移动。
+
+
+    在本节课程中，你将设置自由流移动和旋转，你可以通过推推左拇指杆向前或向后来滑动，通过推推左拇指杆向左或向右来旋转。
+
+
+    # 视频课程：挥臂移动方式（Arm Swinging Locomotion）
+
+
+    传送和在世界中滑动很棒，但在某些情况下，让玩家通过挥动手臂来移动可以增加沉浸感。
+
+
+    这使他们能够决定移动有多快，并允许进行小而精确的移动。
+
+
+    如果你在 VR 中制作一个无尽跑步类游戏，挥臂将是你在世界中移动的一种非常沉浸且自然的方式。挥臂也被称为 `Move in Place`（原地移动）移动方式，在本节课程中你将设置这种形式的移动方式。
+
+
+    # 视频课程：设置伪身体（Pseudo Body）
+
+
+    在关于滑动和挥臂的最后两节课程中，你会注意到你可以很容易穿过场景中的实体容器、木桶、`Ladder`（梯子）和 `Table`（桌子）。
+
+
+    在大多数情况下，你不希望有这种行为。理想情况下，你希望在碰撞到实体物体的瞬间被停止。
+
+
+    为了确保你不会穿过实体物体，你需要设置一个 `Pseudo body`（伪身体）。这个伪身体将允许你在空间场景中为你的真实身体位置提供一个虚拟呈现。在本节课程中，你将深入了解并设置你的伪身体，它在攀爬活动中也扮演着重要角色。
+
+
+    # 视频课程：古墓丽险者风格攀爬物体
+
+
+    像《古墓丽险者》一样爬上物体走向目标，是你 VR 中能做的最着迷的事情之一。`VRTK` 让爬爬变得轻而易举，你可以让几乎任何表面变得可爬。
+
+
+    需要爬围栏、梯子或墙壁？不用担心，这种机制可以使用自定义的交互制体轻松创建，用于处理爬山动作，并结合 `pseudo body` 制体来处理玩家身体的物理效果。
+
+
+    在本节课程中，你将使场景中的所有容器以及梯子都变得可爬。
+
+
+    # 第七章：使用直线指针距离抓取物体
+
+
+    在这一部分，你将重新回顾抓取机制，但这次你设置一个 `Distance Grabber`（距离抓取器）。这种 `Distance Grabber` 机制允许你从远处抓取物体，而无需物理上靠近物体来抓取。这是你在
+    VR 中可以拥有的超能力，允许你在不进行任何物理交互的情况下影响物理物体。
+
+
+    我个人在 VR FPS 项目中使用过距离抓取，在这些项目中玩家拥有了一个支持上臂动作的半身化身。在这种情况下，如果你作为玩家掉落武器，理想情况下你并不希望物理上弯腰去捡。你只需开启距离抓取机制并让武器移动到你手中即可。
+
+
+    `VRTK` 为你提供了一个距离抓取指针，其形式为一个脉冲的准星，它在你指向可抓取物体时会显示。你还将学习如何限制抓取距离，以便你无法从例如 100 米外抓取物体，尽管如果你的游戏需要，你也可以这样做。在此过程中，你还将学习如何使用
+    `Toggle Action`（切换动作）。
+
+
+    # 视频课程：设置距离抓取器
+
+
+    在本节课程中，你将设置 `VRTK` 提供的 `Distance Grabber`（距离抓取器）。这种距离抓取器的基本形式是一个脉冲的准星，当你指向一个交互物体时它会显示。
+
+
+    # 视频课程：设置直线指针
+
+
+    在测试时你会发现，如果你与想要抓取的物体有一定的距离，且物体不够大，很难精确地指向物体并让准星显示。为了解决这个问题，将设置一个直线指针，通过它更精确地指向物体并执行距离抓取。你还将设置念力移动，让被抓取的物体悬浮到手中。
+
+
+    # 视频课程：通过按键激活和禁用距离抓取器
+
+
+    在上一节课程中，你会注意到你的距离抓取器始终开启状态，准星一直显示。在本节课程中，你将通过 Oculus 控制器上的 `A` 按钮、Controller 上的
+    `X` 按钮以及键盘上的空格键来切换距离抓取器。HTC Vive 没有 `A`、`B`、`X` 或 `Y` 按钮，你将使用触摸板来切换此指针的开启状态。
+
+
+    # 第八章：VRTK 的空间 UI 与 Unity 的 UI
+
+
+    用户界面是任何游戏的重要部分。它告知用户健康值、分数，并通过菜单和暂停屏幕帮助控制游戏流程。在非 VR 游戏中使用的 UI 被称为抬头显示（HUD），它位于屏幕顶部并向玩家显示信息。这种
+    UI 被称为非叙事 UI（non-diegetic UI），意味着它在游戏世界不存在，但它直接关系玩家看到或交互的内容。
+
+
+    不幸的是，这种非叙事 UI 在 VR 中效果不好，因为玩家无法专注于离眼睛太近的东西，随头部移动非常分散且不舒服。一种更直观的方法是在游戏环境中放置 UI。这可以通过使用
+    Unity 的空间画布来实现。这种方法被称为空间 UI（Spatial UI）。在 `VRTK` 版本 4 中，你现在有能力通过交互器或指针创建 3D 用户界面。在这一部分，你将学习如何与游戏世界中的
+    3D 空间按钮交互，使用空间指针或直接使用手。
+
+
+    # 视频课程：设置直线指针
+
+
+    在本节课程中，你将设置一个专门用于与空间按钮交互的直线指针。在这里设置的直线指针与距离抓取的设置不同。此外，将使用控制器上的不同按钮来激活此直线指针。正如你在设置距离抓取时注意到的，直线指针会从手掌发射出一条直线，直到达到最大长度，或者与有效游戏物体碰撞。当直线指针与有效游戏物体碰撞时，会发生选择动作，发射一个包含被碰撞物体数据的事件。你将使用它来创建一个可以与空间按钮交互的直线指针。
+
+
+    # 视频课程：设置空间可点击按钮
+
+
+    在本节课程中，你将设置一个 3D 空间可点击按钮，使用上一节课程中设置的空间指针进行点击。
+
+
+    # 视频课程：设置空间按钮组
+
+
+    在本节课程中，你将设置一个空间按钮组，将你的 3D 空间按钮组合。
+
+
+    # 视频课程：更改空间按钮的外观
+
+
+    你的空间按钮具有某些可以改变外观的样式属性。在本节课程中，你将使用这些样式属性来改变按钮的外观。
+
+
+    # 视频课程：设置空间切换按钮
+
+
+    在本节课程中，你将创建一个切换按钮，当你的直线空间指针悬停在切换按钮上时，按下触发键将激活切换按钮，随后的按下将禁用它。切换按钮在点击时，理想情况下会进入开启状态并保持该状态，直到再次被点击，此时它将进入关闭状态，反之亦然。
+
+
+    # 视频课程：设置空间选项按钮
+
+
+    选项按钮允许为玩家提供多个选项，其中这些选项之一可以处于激活状态。尝试激活任何其他选项都将确保组内当前激活的选项被禁用。选项按钮也被称为单选按钮（Radio
+    buttons）。在本节课程中，你将创建一个新的空间按钮组，并填充一些选项按钮。
+
+
+    # 视频课程：设置滑动块
+
+
+    滑动块是一种控制控件，允许玩家通过沿着轨道移动旋钮从一系列值中进行选择。这允许你在预定义的范围内显示并利用一个数值。通过 `VRTK`，你可以通过使用交互物体以及限制的驱动轴轻松创建一个滑动块。在本节课程中，你将使用线性驱动创建一个滑动块控制，当你移动滑动块的旋钮时，使用工具提示显示滑动块的值。在本节课程中，你将学习如何使用线性关节驱动（linear
+    joint drive）以及工具提示。
+
+
+    # 视频课程：设置直线指针以使其与滑动块交互
+
+
+    在上一节课程中，你看到了如何使用手与滑动块交互。在本节课程中，你将学习如何设置直线指针与滑动块交互。在此过程中，你还将设置规则，使得空间指针只有在指向它时处于激活状态。
+
+
+    # 视频课程：使用手与 VRTK 的空间按钮交互
+
+
+    在本节课程中，你将学习如何直接使用手与 3D 按钮交互。这为你提供了 VR 中的一种真实沉浸感，你不再需要指针来与之交互。
+
+
+    # 第九章：旋转驱动与线性驱动
+
+
+    在这一部分，你将学习 `VRTK` 提供的旋转驱动和线性驱动制体，并看到它们使用的几个示例。你将开始使用旋转驱动，创建一个方向盘、一个门和一个杠杆。然后你将继续使用线性驱动，你在创建滑动块时已经使用过它。然而，你将再次使用此线性驱动制体创建一个抽屉和一个推按按钮。旋转驱动和线性驱动都被称为可控机制，它们为你提供了基于物理和非物理的旋转及线性控制，可以用于各种物体。在构建游戏时，你将尽可能使用非物理的控制。
+
+
+    # 视频课程：创建方向盘
+
+
+    在本节课程中，你将创建一个汽车方向盘，你可以用手绕着它旋转。方向盘可以使用旋转驱动创建，它将绕中心点旋转。每当方向盘的值改变时，就可以触发一个事件，通知汽车轴发生变化。
+
+
+    # 视频课程：创建门
+
+
+    在本节课程中，你将创建一个门，它绕着门框上的给定合页点旋转，允许你模拟一个可以打开和关闭的门。对于这种设置，你将使用带 Unity 关节的旋转驱动制体。你还将学习设置一个不会超过关闭位置旋转的门，并设置使其能够从同一侧打开和关闭。
+
+
+    # 视频课程：创建杠杆
+
+
+    在本节课程中，你将创建一个杠杆，它绕着其轴线的给定合页点旋转。对于这种设置，你将使用带 Unity 关节的旋转驱动制体。杠杆的一个常见用途是用于变速箱。
+
+
+    # 第十章：锁定区域（Snap Zones）
+
+
+    在这一部分，你将创建锁定区域。锁定区域是一个可以放入物体的空间区域。通过锁定物体，你可以创建许多不同的行为。锁定物体的示例包括将轮放入汽车、将弹匣放入武器、将柄放入端口。VRTK
+    为你提供了锁定区域制体来实现这种物体锁定。在本节课程中，你将创建几个工具架，你可以将其放入工具。你还将显示它们包含的工具名称，使用你在上一节中学到的工具提示。
+
+
+    # 视频课程：导入工具架 Unity 包并设置工作工具
+
+
+    在本节课程中，你将首先为工具架导入一个简单的 UI。它是使用 Unity 元素创建的。为了节省你的精力，我将其作为一个 Unity 包包含，你需要将其导入到项目中。
+
+
+    # 视频课程：使锤子和斧头可交互
+
+
+    在本节课程中，你将学习一种更快的方法让任何游戏物体可交互。你将使用 `Interactable Creator`（交互创建器）菜单使锤子和斧头可交互。
+
+
+    # 视频课程：设置锁定区域
+
+
+    在本节课程中，你将设置锁定区域，它们允许你将工具放入其中。你还将学习缩小锁定区域的大小以及它们的碰撞体。当物体被锁定到区域后，你还将学习如何控制物体的大小。
+
+
+    '
+- fmt: '
+
+    - Increase the ball scale factor, by 0.1 every time the player attaches an obstacle
+    to it.
+
+    - Setup a Game manager, to keep count of the number of obstacles collected, and
+    once either a certain number of obstacles are collected, or the ball has attained
+    a certain size, have the user progress to the next level.
+
+    - Use another tool-tip that displays an incremental count, of the number of obstacles,
+    being attached to the ball.
+
+    - Assign categories to your obstacles, such as Small, Medium and large, and then
+    ensure that, a certain number of small obstacles, have been attached first, prior
+    to allowing the player, to grab `medium` size and larger obstacles finally.
+
+    - Add some sound effects, preferably different sound effects, for the different
+    unique objects, that can be attached to the ball.
+
+    - Add an overall musical theme to the game.
+
+
+    # [Unity® VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)
+
+
+    ## CHAPTER THIRTEEN: Completed Course - Zip file Download
+
+    ### VIDEO LECTURE: DOWNLOAD Completed Course Project Files
+
+    In this lecture, you are guided on as to how to go about downloading and setting
+    up the completed course project files. This would be helpful, should you get stuck
+    somewhere and would like to refer to what the completed setup looks like.
+
+
+    # [Unity® VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)
+
+
+    ## CHAPTER FOURTEEN: Conclusion
+
+    CONGRATULATIONS ON COMPLETING the course. You have come a long way. Well done!
+
+
+    You now have your very own solid VR framework, that is a lot better, than most
+    paid VR frameworks, available out there. Most importantly you have set up this
+    VR framework, yourself, so you know a lot more, about the ins and outs of it.
+    You setup this entire framework, without writing a single line of code!
+
+
+    As you continue to explore and use this framework, you will realize that with
+    `VRTK 4`, Impossible is Nothing. Remember, your overall success with VR is not
+    going to be defined, by how much you know, off the top of your head, but rather
+    by knowing where to go, to find the answers you are looking for.
+
+
+    I would like to encourage you to keep exploring `VRTK` and `Unity`, for VR development,
+    and one good way to go about it, would be to join, `VRTK`’s discord channel. Continue
+    learning, continue practicing and keep getting better. Never stop! Don’t let anyone
+    ever tell you, that you can’t achieve something!
+
+    '
+  raw: '*   Increase the ball scale factor, by 0.1 every time the player attaches
+    an obstacle to it.
+
+
+    *   Setup a Game manager, to keep count of the number of obstacles collected,
+    and once either a certain number of obstacles are collected, or the ball has attained
+    a certain size, have the user progress to the next level.
+
+
+    *   Use another tool-tip that displays an incremental count, of the number of
+    obstacles, being attached to the ball.
+
+
+    *   Assign categories to your obstacles, such as Small, Medium and large, and
+    then ensure that, a certain number of small obstacles, have been attached first,
+    prior to allowing the player, to grab medium size and larger obstacles finally.
+
+
+    *   Add some sound effects, preferably different sound effects, for the different
+    unique objects, that can be attached to the ball.
+
+
+    *   Add an overall musical theme to the game.
+
+
+    [Unity® VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)CHAPTER
+    THIRTEENCompleted Course - Zip file DownloadVIDEO LECTURE: DOWNLOAD Completed
+    Course Project FilesIn this lecture, you are guided on as to how to go about downloading
+    and setting up the completed course project files.This would be helpful, should
+    you get stuck somewhere and would like to refer to what the completed setup looks
+    like.[Unity® VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)CHAPTER
+    FOURTEENConclusionCONGRATULATIONS ON COMPLETING the course. You have come a long
+    way. Well done !You now have your very own solid VR framework, that is a lot better,
+    than most paid VR frameworks, available out there.Most importantly you have set
+    up this VR framework, yourself, so you know a lot more, about the ins and outs
+    of it.You setup this entire framework, without writing a single line of code !As
+    you continue to explore and use this framework, you will realize that with VRTK
+    4, Impossible is Nothing.Remember, your overall success with VR is not going to
+    be defined, by how much you know, off the top of your head, but rather by knowing
+    where to go, to find the answers you are looking for.I would like to encourage
+    you to keep exploring VRTK and Unity, for VR development and one good way to go
+    about it, would be to join, VRTK’s discord channel.Continue learning, continue
+    practicing and keep getting better. Never stop !Don’t let anyone ever tell you,
+    that you can’t achieve something ![Unity® VR Dev: No Coding Required](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)'
+  toc: []
+  trans: '
+
+
+    - 每当玩家向球附加一个障碍物时，将其缩放因子增加 0.1。
+
+    - 设置一个游戏管理器（Game manager），用于计数收集的障碍物数量；当收集到足够数量的障碍物或球达到特定大小时，用户进入下一关。
+
+    - 使用另一个提示框（tool-tip）显示附加到球上的障碍物数量计数。
+
+    - 为你的障碍物分类（例如小型、中型和大型），并确保在允许玩家抓取 `medium` 及更大的障碍物之前，必须先收集了一定数量的小型障碍物。
+
+    - 添加一些音效，对于可以附加在球上的不同独特物体，最好使用不同的音效。
+
+    - 为游戏添加一个整体音乐主题。
+
+
+    # [Unity® VR 开发者：无需代码编程](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)
+
+
+    ## 第十三章：课程已完成 - Zip 文件下载
+
+    ### 视频课程：下载完成的课程项目文件
+
+    在本节课程中，你将被指导如何下载和设置完成的课程项目文件。如果你在某处卡住了，并想参考完成后的设置是什么样的，这将非常有帮助。
+
+
+    # [Unity® VR 开发者：无需代码编程](https://www.udemy.com/course/unity-vr-dev-no-coding-required/?referralCode=E729C6CA76CF04CF4E9F)
+
+
+    ## 第十四章：结语
+
+    恭喜你完成课程。你已经走了很远。干得好！
+
+
+    你现在拥有了自己的坚实 VR 框架，它比市面上大多数付费 VR 框架都要好得多。最重要的是，是你自己搭建了这个 VR 框架，所以你对它的细节有深入了解。你在没有编写任何一行代码的情况下搭建了整个整个框架！
+
+
+    当你继续探索和使用这个框架时，你会发现有了 `VRTK 4`，没有是不可能的。记住，你在 VR 领域的整体成功并不取决于你脑子里记了多少知识，而是取决于知道去哪里寻找你所需要的的答案。
+
+
+    我鼓励你继续探索 `VRTK` 和 `Unity` 来进行 VR 开发，一种很好的方法是加入 `VRTK` 的 discord 频道。继续学习，继续练习并不断变得更好。永远不要停止！不要让任何人告诉你你无法实现目标！
+
+    '

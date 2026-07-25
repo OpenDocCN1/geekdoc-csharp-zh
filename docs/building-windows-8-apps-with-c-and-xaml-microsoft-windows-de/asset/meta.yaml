@@ -1,0 +1,204 @@
+name: Building Windows 8 Apps with C# and XAML (Microsoft Windows Development Series)
+name_cn: C# 和 XAML Windows 8 应用构建指南 (Microsoft Windows Development Series)
+slug: building-windows-8-apps-with-c-and-xaml-microsoft-windows-de
+toc:
+- - '#'
+  - C# 和 XAML Windows 8 应用构建指南 (Microsoft Windows Development Series)
+- - '#'
+  - 连接与活力
+- - '#'
+  - 自定义启动画面
+- - '#'
+  - 摘要
+- - '##'
+  - 6 数据
+- - '###'
+  - 应用程序设置
+- - '###'
+  - 访问与保存数据
+- - '####'
+  - 对速度和多线程的需求
+- - '####'
+  - '理解 async 和 await  '
+- - '####'
+  - Lambda 表达式（Lambda Expressions）
+- - '####'
+  - 'IO 辅助方法（IO Helpers） '
+- - '####'
+  - 嵌入式资源（Embedded Resources）
+- - '###'
+  - 集合 (Collections)
+- - '######'
+  - '语言集成查询 (LINQ)  '
+- - '###'
+  - '[内容主旨】'
+- - '###'
+  - 我与微软技术栈的历程
+- - '#'
+  - 1. Windows 运行时新时代
+- - '##'
+  - 回头审视：“Win32 与我心上人”
+- - '###'
+  - 介绍 Windows Store 应用
+- - '##'
+  - 快速流畅
+- - '##'
+  - 吸附与自适应调整
+- - '##'
+  - 保持连接与活力
+- - '##'
+  - 拥抱 Windows 设计原则
+- - '###'
+  - 'Windows 开发生态必修课  '
+- - '###'
+  - 何时应该选择此选项？
+- - '###'
+  - VB/C#和 XAML
+- - '###'
+  - '小结 '
+- - '####'
+  - 参考文献
+- - '###'
+  - 双启动
+- - '####'
+  - 警告
+- - '###'
+  - 虚拟机安装
+- - '###'
+  - Visual Studio 2012
+- - '####'
+  - Blend
+- - '###'
+  - Hello Windows 8
+- - '##'
+  - 创建第一个 Windows 8 应用
+- - '#'
+  - 清单 2.1：从内置网络摄像头捕获图像的代码
+- - '###'
+  - 提示
+- - '##'
+  - 'Listing II secure your shot '
+- - '###'
+  - 清单 2.4：迭代处理存储项目
+- - '###'
+  - App 都是 Winrt 组 widget 。
+- - '###'
+  - 备注
+- - '####'
+  - 后备 Implementation 支撑编码方案
+- - '#'
+  - 'Chapter X: Dependency Properties'
+- - '##'
+  - Attached Properties
+- - '###'
+  - 'Value Converters  '
+- - '####'
+  - 表 3.2 Timeline 类的属性
+- - '###'
+  - Style definitions are a key to success in Windows 8 applications
+- - '###'
+  - Grid（网格）
+- - '###'
+  - VariableSizedWrapGrid（可变尺寸环绕网格）
+- - '####'
+  - 'GridView  '
+- - '###'
+  - ListView
+- - '#'
+  - 'VSM 管家大揭秘      '
+- - '###'
+  - 分组与状态
+- - '##'
+  - (接上面正文)
+- - '###'
+  - 介绍输入反馈体系重要角色
+- - '###'
+  - '表 4.3 ManipulationModes 取值说明  '
+- - '####'
+  - 鼠标的支持在此范例内是通过相应自变量取的方法来进行工作的（PointerWheelChange）
+- - '###'
+  - 'Listing 4.2: 支持键盘操作的事件处理程序'
+- - '####'
+  - 视觉反馈
+- - '###'
+  - “AppBar”（即 Application Bar）
+- - '###'
+  - Termination （终止）
+- - '##'
+  - Section Title（可选）
+- - '###'
+  - Connected And Alive（连接且活跃）
+- - '##'
+  - 'Summary  '
+- - '###'
+  - 'Application Settings  '
+- - '#'
+  - generics101
+- - '###'
+  - 嵌入资源
+- - '#'
+  - 集合
+- - '##'
+  - Collections
+- - '###'
+  - （示例中的笔误和格式瑕疵不影响整体功能让我们按标准方式处理以下正式翻译）
+- - '##'
+  - 联合内容
+- - '###'
+  - 'Stream 缓冲 vs Byte 数组对比 Ibuffer 适配器 '
+- - '##'
+  - 编码
+- - '###'
+  - Web Services
+- - '###'
+  - 徽标
+- - '###'
+  - Windows 推送服务
+- - '###'
+  - Summary
+- - '#'
+  - 第八章赋予你应用的魅力个人风格构想
+- - '#'
+  - 测试对代码质量产生的影响
+- - '##'
+  - 结论：请务必单元测试
+- - '###'
+  - 常常被误解的单位属于白盒变种之一
+- - '##'
+  - View ( The View )
+- - '###'
+  - Model
+- - '#'
+  - 从源头消灭 Bug
+- - '##'
+  - 摘要
+- - '##'
+  - '打包与部署 10  '
+- - '###'
+  - WindowsStore 提供了发布服务(UWP+传统桌面 )
+- - '####'
+  - 发现至关重要
+- - '###'
+  - 为您的应用程序提供的广告选项
+- - '####'
+  - 准备提交应用的关键要求
+- - '#####'
+  - 体现价值
+- - '#####'
+  - 超越纯广告与网址用途
+- - '#####'
+  - 掌控客户互动
+- - '##'
+  - 面向全球受众
+- - '##'
+  - 易于识别与理解
+- - '###'
+  - 流程
+- - '####'
+  - 应用认证工具包
+- - '###'
+  - C
+- - '###'
+  - E
+- - '##'
+  - Q-R

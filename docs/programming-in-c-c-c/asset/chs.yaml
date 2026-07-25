@@ -1,0 +1,1363 @@
+- "# C, C#, C++ 编程入门指南\n\n\n\n![](img/cover00631.jpeg)\n\n\n本书包含：\n\n- C 编码.....3\n\
+  - C# 编程..........92\n- 初学者 C++........189\n\n\n\n\n\n\n\n\n# 第 1 章\n\n## 介绍与安装\n\
+  \n## C 语言的历史\n\nC 是一种通用计算机编程语言，于 1972 年首次作为概念出现。C 的首席开发者是 Dennis Ritchie。C 的起源与\
+  \ Unix 操作系统的创建密切相关。\n\n在本教程中，我们将从 C 的最基础知识一直介绍到中间水平。本教程旨在吸引首次学习编程语言的读者。\n\n## 在\
+  \ Windows 上运行 C\n\n在 Windows 上运行 C 可以使用 Visual Studio 2015 完成。可以直接从微软下载 Visual Studio，在安装过程中需要选择\
+  \ `C++` 作为语言。菜单应该看起来如下：\n\n![](img/image00610.jpeg)\n\n选择 `Visual C++` 后完全安装程序。\n\
+  \n你应该启动 Visual Studio 并进入 `FILE -> New Project`，你会看到一个这样的窗口：\n\n![](img/image00611.jpeg)\n\
+  \n选择 `Win32 Console Application` 并点击“Ok”。\n\n现在会出现几个菜单，请按照高亮部分操作。（高亮的复选框需要取消勾）：\n\
+  \n![](img/image00612.jpeg) ![](img/image00613.jpeg)\n\n当程序模板加载时，你应该注意到你并没有被提供 C\
+  \ 环境，而是 C++ 环境，你需要将其转换为 C：\n\n进入 `Solution explorer`，它将打开 `Solution Explorer` 菜单\n\
+  \n![](img/image00614.jpeg) ![](img/image00615.jpeg)\n\n右键点击 `.cpp` 文件并点击“Properties”\n\
+  \n![](img/image00616.jpeg)\n\n会出现一个菜单，展开 `C/C++` 菜单，进入“Advanced”，在下拉菜单中选择 `Compile\
+  \ as C Code (/TC)`\n\n![](img/image00617.jpeg)\n\n代码现在准备好运行了！想要编译代码的读者点击顶部的绿色箭头来运行你的控制应用程序。\n\
+  \n## 在 Linux 上运行 C\n\n在 Linux 上开发基础代码相对简单，首先你需要 `gcc` 编译器，如果你还没有安装，运行：\n\n```\n\
+  apt-get install gcc-5\n```\n\n下一个阶段是创建你的程序，打开一个文本编辑器（在本例中为 Leafpad），使用这个基础程序进行测试：\n\
+  \n```c\n#import <stdio.h>\n\nint main()\n{\n    printf(\"Hello, World!\\n\");\n\
+  \    return 0;\n}\n```\n\n将此文件保存为 `.c` 扩展名。\n\n要编译并使用程序，你将如下使用 `gcc`：\n\n```bash\n\
+  gcc -o <OutputProgramName> <C_FileName>\n```\n\n其中：\n\n`<OutputProgramName>` 是你的可执行文件名\n\
+  `<C_FileName>` 是你的 C 文件名\n\n要运行程序，只需输入可执行文件名并在后跟 `./`：\n\n```bash\n./<OutputProgramName>\n\
+  ```\n\n## 在 Mac 上运行 C\n\n在 Mac 上运行 C 相对简单，打开终端并运行\n\n```bash\nclang --version\n\
+  ```\n\n\n\n\n\n`Clang` 是由 Apple 构建的编译器，处理将代码翻译成机器码（1 和 0）的所有方面。\n\n打开你的记事本，使用以下代码编写你的\
+  \ C 代码：\n\n```c\n#import <stdio.h>\n\nint main()\n{\n    printf(\"Hello, World!\\\
+  n\");\n    return 0;\n}\n```\n\n将此代码保存为 `.c` 扩展名。\n\n在保存 `.c` 文件的文件夹中打开终端，输入：\n\n\
+  `make <filename>.c`\n\n其中 `filename` 是你刚刚保存的文件名。运行代码只需像如下所示执行：\n\n`./<filename>.c`\n\
+  \n## 在线运行 C\n\n我最喜欢的在线 IDE 之一是 [`www.codechef.com/ide`](https://www.codechef.com/ide)，它提供了一个整洁的地方来编写代码。\n\
+  \n![](img/image00618.jpeg)\n\n## 前提条件\n\n在整个教程中，你会看到散落在各的代码片段。有几点需要解释，以便你从本教程中受益：\n\
+  \n### 注释\n\n代码中的注释由 `//` 符号和绿色表示，计算机会忽略这些，而注释是保持计算机代码可读且易于维护的重要部分。初学者往往倾向于丢弃注释并在以后后悔，不要成为那样的程序员。\n\
+  \n### 基础结构\n\nC 程序还有一个必备的基础结构，结构如下：\n\n```c\n#include <stdio.h>\n\nint main()\n\
+  {\n    // 代码写在这里\n}\n```\n\n这是让你的 C 程序运行起来的结构，不用担心，我们将学习它们所有的含义。\n\n# 第 2 章\n\n\
+  #构建模块\n\n## 变量与类型\n\n程序的基础是数据，以数字和字符的形式存在。这些数据的存储、处理和输出提供了功能。变量持有这些数据，可以将其想象成用于存储单个物品的盒子。\n\
+  \nC 是一种强类型语言，每个变量都必须有一个定义的类型。类型是一个标识符关键字，定义了变量可以包含的内容。我们将遇到的第一个类型是整数，它可以存储实数（不带小数的数字），整数定义如下：\n\
+  \n```c\nint integerName = 3;\n```\n\n- `int` 是定义的类型关键字，我们稍后会学习不同的可能性。\n- `integerName`\
+  \ 是变量的 ID，你可以称它为任何名字，这用于允许变量具有有意义的名字。变量可以定义为 `int pineapple = 3;`，但让它们相关是一个良好的习惯。然而，有几个例外，因为变量不能是单个数字（例如\
+  \ ‘4’）或不能包含特殊字符（`!\"£$%^&*` 等）。\n- `= 3;` 是赋值部分，将值 `3` 放入整数盒子中供以后使用。它也以分号结尾，分号用于表示一行的结束。\n\
+  \n现在这个变量可以在程序的有效区域使用，如下：\n\n```c\nint newInteger = integerName\n```\n\n之前定义的 `integerName`\
+  \ 的值 (3) 现在将被放入 `newInteger` 变量中，它们现在都具有值 3。`integerName` 的值不会改变，因为它只是被复制并放置在 `newInteger`\
+  \ 中。\n\n### 字符串 (String)\n\n字符串是另一个关重要的变量，这种变量类型用于存储一系列字符，例如“batman”这个单词，该单词由存储在\
+  \ `String` 变量中的字符组成。它是字符数组（数组稍后会详细介绍），但实际上，它是单词的单个字符在内存中相邻存储的。`\\n` 是代表换行的特殊字符。\n\
+  \n```c\nchar word[] = \"dog\\n\";\n```\n\n// 它可以像这样使用并打印：\n\n```c\nprintf(word);\n\
+  ```\n\n### 布尔值 (Boolean)\n\n布尔值用作表达式，它们的值只能为真 (1) 或假 (0)。\n\n### 浮点数/双精度 (Float/Double)\n\
+  \n浮点变量用于小数。\n\n### 空 (Void)\n\n`void` 表示一个不返回值的函数。\n\n## 算术运算\n\n| 符号 | 用法 |\n|\
+  \ :--- | :--- |\n| `+` | `int result = 1 + 2;` |\n| `-` | `int result = 1 - 2;`\
+  \ |\n| `/` | `int result = 1 / 2;` |\n| `*` | `int result = 1 * 2;` |\n| `%` | `int\
+  \ remain = 4 % 2;` |\n\n## 条件判断\n\n将值与其他值进行比较是条件语句的基础，下面是比较列表：\n\n| 名称 | 符号 | 详情\
+  \ |\n| :--- | :--- | :--- |\n| 大于 | `>` | 如果左侧大于右侧则返回真 |\n| 大于等于 | `>=` | 如果左侧大于或等于右侧则返回真\
+  \ |\n| 小于 | `<` | 如果左侧小于右侧则返回真 |\n| 小于等于 | `<=` | 如果左侧小于或等于右侧则返回真 |\n| 等于 | `==`\
+  \ | 使用双等号比较两者是否相等 |\n| 不等于 | `!=` | 如果两个值不相等则返回真 |\n\n### If 语句\n\n在某些情况下，你需要在某个条件成立时发生某些操作，这就是\
+  \ `If` 语句的作用。\n\n```c\nif (Condition)\n{\n    // 如果条件为真，则在这里运行代码\n}\n```\n\n一个真实世界的示例：\n\
+  \n```c\nint compare = 10;\n\nif (compare > 5)\n{\n    //printf() 将打印括号内的字符串\n  \
+  \  printf(\"Code here will run!\");\n}\n```\n\n输出：\n> Code here will run!\n\n###\
+  \ Else 语句\n\n`Else` 是可选的，但它们可以添加到 if 语句的末尾，并且仅在 if 语句条件为假时运行。\n\n```c\nif (Condition)\n\
+  {\n    // 如果条件为真，则在这里运行代码\n}\nelse\n{\n    // 如果条件为假，则在这里运行代码\n}\n```\n\nElse 语句也可以变成\
+  \ else/if 语句，即连接载一个新的 if 语句，看起来像这样：\n\n```c\nif (Condition1)\n{\n    // 如果 Condition1\
+  \ 为真，则在这里运行代码\n}\nelse if(Condition2)\n{\n```\n\n\n\n\n\n```c\n // 如果 Condition1\
+  \ 为假且 Condition2 为真，则在此运行代码\n\n}\n\n// 如果两者都不为真，则没有代码将运行\n```\n\n你还可以将另一个 `else`\
+  \ 语句链接到 `else` 语句之后，从而有效地创建一个无限链。如果链中的任何一个条件为真，下面的条件将不会被检查，我将在下文中演示这一点：\n\n```c\n\
+  int main()\n{\n_Bool false = 0;\n_Bool true = 1;\n\nif (false)\n{\nprintf(\"Condition\
+  \ 1\");\n}\nelse  if (true) // 这个条件为真！\n{\nprintf(\"Condition 2\");\n}\nelse  if\
+  \ (true) // 因为之前的 else 语句为真，被忽略\n{\nprintf(\"Condition 3\");\n}\nelse  if (true)\
+  \ // 同样因为条件 2 为真而被忽略\n{\nprintf(\"Condition 4\");\n}\n}\n```\n\n### 输出\n\n> Condition\
+  \ 2\n\n在执行条件 2 的体体并执行 `printf` 语句后，程序将不会继续检查其他的 `else` 语句。\n\n### 练习\n\n创建一个程序，打印一个值比另一个值大还是小，使用下面的骨架程序来开始。\n\
+  \n在这种情况下，它应该打印“Value 1 is larger”（注意：使用 `printf()` 进行打印）\n\n```c\n#include  <stdio.h>\n\
+  \nint main()\n{\n// 你修改的值\nint value1 = 10;\nint value2 = 5;\n// 在此处编写代码\n}\n```\n\
+  \n### 答案\n\n这个解决方案可能像这样：\n\n```c\n#include  <stdio.h>\n\nint main()\n{\n// 你修改的值\n\
+  int value1 = 10;\nint value2 = 10;\n\nif (value1 == value2)\n{\nprintf(\"Values\
+  \ are equal!\");\n}\nelse  if (value1 > value2)\n{\nprintf(\"Value 1 is bigger!\"\
+  );\n}\nelse\n{\nprintf(\"Value 2 is bigger!\");\n}\n}\n```\n\n在运行程序测试之前，只需更改 `value1`\
+  \ 和 `value2` 的值即可。\n\n### 使用多个条件\n\n你可以在单个语句中使用多个条件，有两种方法实现，分别由 `&&` 表示（与）和由 `||`\
+  \ 表示（或，双竖线）。\n\nAND 在触发语句体之前会检查两个条件是否都为真\n\n```c\nif (Condition1 && Condition2)\n\
+  {\n // 如果 Condition1 且 Condition2 都为真，则在此运行代码\n}\n```\n\nOR 在触发语句体之前会检查其中一个条件是否为真\n\
+  \n```c\nif (Condition1 || Condition2)\n{\n // 如果 Condition1 或 Condition2 为，则在此运行代码（如果两者都为真也有效）\n\
+  }\n```\n\n### 总结\n\n- `if` 语句处理条件语句，如果条件为真，则其体内的代码将运行。\n- `else` 语句用作 `if` 语句的扩展，只有当\
+  \ `if` 语句为假时才会进行检查。\n- `&&` 用于将两个条件连接在一起，只有当两者都为真时才会返回真。\n- `||`（双竖线）用于将两个条件连接在一起，只有当其中一个条件为真时才会返回真。\n\
+  \n### Switch-Case\n\nSwitch cases 用于测试变量是否与常量表达式相等，而无需多个 `if`-语句。这种结构的一个用途是检查用户输入的字符串。以下是\
+  \ switch case 的基本结构：\n\n```c\n// Switch-Case\nswitch (expression)\n{\n// Case 语句\n\
+  case constant-expression:\nbreak; // 不需要 Break\n// 任意数量的 case 语句\ndefault:\nbreak;\n\
+  }\n```\n\nswitch 从 `expression` 开始，这是与 `constant-expressions` 进行的变量，这些常量是变量的字面值，例如\
+  \ `1` 或 `Z`。Break 是可选的，但如果没有它们，代码将发生“向下流动”。有一个使用 switch-case 语句的示例，用户输入一个 `character`（字符），如果是\
+  \ `N` 或 `Y`，分别代表“No”和“Yes”，但 `default` 情况适用于所有情况。\n\n```c\nchar character;\n// 读取用户输入（稍后会详细解释）\n\
+  scanf(\"%s\", &character);\n// Switch-Case\nswitch (character)\n{\ncase 'N':\nprintf(\"\
+  NO\\n\");\nbreak;\ncase 'Y':\nprintf(\"YES\\n\");\nbreak;\ndefault:\nprintf(\"Do\
+  \ not understand!\\n\");\nbreak;\n}\n```\n\n如果没有 `break` 语句，将会发生“向下流动”，下面的示例正如所示：\n\
+  \n```c\nchar character;\n// 读取用户输入（稍后会详细解释）\nscanf(\"%s\", &character);\n// Switch-Case\n\
+  switch (character)\n{\ncase 'N':\nprintf(\"NO\\n\");\ncase 'Y':\nprintf(\"YES\\\
+  n\");\ndefault:\nprintf(\"Do not understand!\\n\");\n}\n```\n\n如果用户输入 ‘N’，输出将是：\n\
+  > NO\n> YES\n> Do not understand!\n\n这是因为触发了一个 case 语句，它将继续执行直到找到 `break` 语句停止运行。\n\
+  \n## 迭代\n\n迭代意味着循环，循环可以让程序能够快速地执行许多相似的操作，迭代有两种类型：`for 循环`和 `while 循环`。\n\n### For\
+  \ 循环\n\n`for` 循环被给一个结束值并循环到该值为止，同时跟踪当前处于第几次循环。这里有一个简单的示例：\n\n```c\nfor (int i =\
+  \ 0; i < 10; i++)\n{\n    // 循环代码\n}\n```\n\n- `for` 循环由三个部分组成：初始化、条件和增量。\n- **初始化**在循环开始前执行一次。\n\
+  - **条件**在每次循环开始前被检查，如果为真则继续循环。\n- **增量**在每次循环体执行后执行。\n\n### While 循环\n\n`while`\
+  \ 循环只要条件为真就一直执行循环体。它不需要计数器：\n\n```c\nint i = 0;\nwhile (i < 10)\n{\n    // 循环代码\n\
+  \    i++;\n}\n```\n\n- `while` 循环只有条件和循环体。\n- **条件**在每次循环开始前被检查。\n- 如果条件为假，循环将停止。\n\
+  \n### 无限循环\n\n如果条件永远为真，循环就会无限进行：\n\n```c\nwhile (true)\n{\n    printf(\"这是一个无限循环\"\
+  );\n}\n```\n\n你也可以通过使用一个“裸裸”的 `for` 循环来创建无限循环：\n\n```c\nfor (;;)\n{\n    printf(\"\
+  这一个无限循环\");\n}\n```\n\n在无限循环中，通常使用 `break` 语句来退出：\n\n```c\nfor (;;)\n{\n    if (some_condition)\n\
+  \    {\n        break; // 跳出循环\n    }\n}\n```\n\n\n\n\n\n因为即使 `Boolean` 为 false，`Do`\
+  \ 循环仍然执行了一次，因为检查是在循环体末尾进行的。\n\n## 使用 Do-循环\n\n`do` 循环的一个真实世界示例可以是检查用户输入：它会打印并请求输入，如果一切正常，则不需要循环；如果不正常，它将进行循环。下面是一个等待用户输入‘z’的示例。\n\
+  \n```c\n#include <stdio.h>\n\nint main()\n{\n// 如果此为 false 则将循环\n_Bool correct =\
+  \ 1;\n\ndo\n{\n    printf(\"Please enter the letter 'z': \");\n    // 接收用户输入\n \
+  \   char z;\n    scanf(\"%s\", &z);\n    // 检查答案是否正确\n    if (z != 'z')\n    {\n\
+  \        // 错误\n        correct = 0;\n        printf(\"Incorrect!\\n\");\n    }\n\
+  \    else\n    {\n        // 正确\n        correct = 1;\n    }\n} while (!correct);\n\
+  \n// 如果用户完成了任务\nprintf(\"Correct!\");\n}\n```\n\n## 循环控制关键字\n\n有时候，你可能想要提前停止整个循环或单次迭代（循环），这就是循环控制关键字派用用场。你可以使用\
+  \ `break` 或 `continue` 关键字：\n\n- `break` – 将停止整个循环，如果已经找到了答案且剩余计划的迭代将没有意义，这会非常有用。\n\
+  \n```c\nfor (int x = 0; x < 5; x++)\n{\n    if (x == 3)\n    {\n        break;\n\
+  \    }\n    // 此语句的细节将在稍后解释\n    printf(\"Loop value: %d\", x);\n}\n```\n\n输出：\n\
+  > Loop value: 0\n> Loop value: 1\n> Loop value: 2\n\n现在如果如果代码更改为不包含 `break`：\n\n\
+  ```c\nfor (int x = 0; x < 5; x++)\n{\n    // 此语句的细节将在稍后解释\n    printf(\"Loop value:\
+  \ %d\", x);\n}\n```\n\n输出：\n> Loop value: 0\n> Loop value: 1\n> Loop value: 2\n\
+  > Loop value: 3\n> Loop value: 4\n\n`Continue` – 如果我们使用上面的代码但将其替换为 `continue`，代码将如下所示：\n\
+  \n```c\nfor (int x = 0; x < 5; x++)\n{\n    if (x == 3)\n    {\n        continue;\n\
+  \    }\n    // 此语句的细节将在稍后解释\n    printf(\"Loop value: %d\", x);\n}\n```\n\n输出如下：\n\
+  输出：\n> Loop value: 0\n> Loop value: 1\n> Loop value: 2\n> Loop value: 4\n\n这表明当\
+  \ `x = 3` 时执行了 `continue`，循环被跳过，因此 `printf` 语句也被跳过，所以没有“Loop value: 3”。\n\n### 嵌套循环\n\
+  \n你也可以将循环放在循环内部以执行特定角色，在示例中我们使用了 `for` 循环，但也可以通过 `while`/`do` 循环实现。该示例用于打印二维网格，嵌套的\
+  \ `for` 循环提供了另一个维度：\n\n```c\n// 打印一个 5x5 网格\nfor (int y = 0; y < 5; y++)\n{\n  \
+  \  for (int x = 0; x < 5; x++)\n    {\n        // 打印行的一个元素\n        printf(\"X \"\
+  );\n    }\n    // 移动到下一行\n    printf(\"\\n\");\n}\n```\n\n输出\n> X X X X X\n> X X\
+  \ X X X\n> X X X X X\n> X X X X X\n> X X X X X\n\n## 函数\n\n函数是程序的构建块，它们允许代码复用，能够保持代码的可读性，并防止程序员重复代码。强烈建议不要重复代码，因为错误会多次出现，而且代码的更改也需要重复。函数提供了一个集中的控制区域，用于处理程序的不同角色。\n\
+  \n一个方法包含两个元素：参数（传入函数的项）和返回类型（被返回的变量），这些都是可选的，你可以定义一个既没有包含这两者的函数。\n\n函数必须在调用之前定义，如下所示：\n\
+  \n```c\n// 函数定义\nvoid Print_Smile()\n{\n    printf(\":)\\n\");\n}\n\nint main()\n\
+  {\n// 方法调用\n    Print_Smile();\n    return 0;\n}\n```\n\n而反过来这样做是错误的：\n\n```c\n\
+  int main()\n{\n// 方法调用 [此处错误]\n    Print_Smile();\n    return 0;\n}\n\n// 函数定义\n\
+  void Print_Smile()\n{\n    printf(\":)\\n\");\n}\n```\n\n### 函数参数\n\n有时，向程序传递数据可能是很有用的，有两种参数传递类型：按引用传递和按值传递。引用传递正如字面意思，它传递的是变量的直接引用而不是副本，因此对该传入变量的任何更改都会影响调用函数。按值传递是传递该变量的副本，因此对该变量的任何更改都不会影响传入的变量。\n\
+  \nC 不直接支持引用传递，但在处理指针时可以实现这种效果（我们将在高级部分讨论这一点）。\n\n- 引用传递意味着对参数的修改会影响传入的变量\n- 按值传递意味着对参数的修改不会影响传入的变量\n\
+  \n下面是按值传递的示例：\n\n```c\nvoid Add(int num1, int num2)\n{\n// 相加值\n    int newValue\
+  \ = num1 + num2;\n// 打印结果\n    printf(\"The result is: %d\", newValue);\n}\n\nint\
+  \ main()\n{\n// 方法调用\n    Add(10, 4);\n    return 0;\n}\n```\n\n输出：\n> The result\
+  \ is 14\n\n### 返回\n\n返回允许我们从方法返回数据，这让我们以后可以使用 `printf`。这里有一个返回结果的示例：\n\n```c\nint\
+  \ Add(int num1, int num2)\n{\n// 相加值\n    int newValue = num1 + num2;\n// 返回关键字\n\
+  \    return newValue;\n}\n\nint main()\n{\n// 方法调用\n    int storeResult = Add(10,\
+  \ 4);\n    return 0;\n}\n```\n\n更改的区域已高亮。当需要返回值时，`return` 下的代码将不会执行。返回的结果存储在 `storeResult`\
+  \ 中以便。\n\n返回可以是任何变量类型。下面我将展示一个检查数字是否为偶数的示例：\n\n```c\n_Bool EvenNumber(int value)\n\
+  {\n    if (value % 2 == 0)\n    {\n// 返回真\n        return 1;\n    }\n    return\
+  \ 0;\n}\n\nint main()\n{\n    if (EvenNumber(2))\n    {\n        printf(\"Even number!\"\
+  );\n    }\n    if (EvenNumber(5))\n    {\n        printf(\"Even number!\");\n  \
+  \  }\n    return 0;\n}\n```\n\n输出：\n>Even number!\n\n此程序使用 `EvenNumber()` 方法的返回变量作为\
+  \ if 语句的条件，如果为真，将打印“Even number!”。从输出中可以看到，第一个打印了，但第二个没有。\n\n## 递归\n\n递归是一个困难的概念，在这里仅作简单提及，其真实世界的应用和功能将在高级部分解释。\n\
+  \n递归是函数命令涉及自身引用的定义，是的，我知道很困惑，但我有一些示例来解释。\n\n```c\nconst int maxLoops = 5;\n\nvoid\
+  \ Sequence(int previous, int now, size_t loopCount)\n{\n// 计算下一个值\n    int next\
+  \ = previous + now;\n// 打印新值\n    printf(\"New value: %d\\n\", next);\n// 增加计数\n\
+  \    loopCount++;\n// 确保不会发生无限循环的停止条件\nif (loopCount < maxLoops)\n{\n// 递归调用\n \
+  \   Sequence(now, next, loopCount);\n}\n}\n\nint main()\n{\n    Sequence(1, 1, 0);\n\
+  }\n```\n\n输出：\n>New value: 2\n>New value: 3\n>New value: 5\n>New value: 8\n>New\
+  \ value: 13\n\n\n\n\n有几点需要注意，缺乏迭代循环，递归在本质上导致了循环。第二点是要注意标记为“停止条件”的 `if` 语句，如果递归设置没有停止其循环的条件，它们将无限循环，因此这是有效使用递归的关键元素。如果你还没有完全理解，不要担心，我们稍后将在教程的高级部分进行更详细的介绍。\
+  \ \n\n## 数组 (Arrays)\n\n之前提到过数组，它是一种在内存中紧挨着存储一组固定数量变量的数据结构。数组会被赋予一个类型，例如 `int`。数组被用于快速定义大量变量并将相关变量放在一起。数组的定义如下：\n\
+  \n一个静态大小，在方括号中指定大小：\n\n```c\nint lotsOfNumber[20];\n```\n\n或者你也可以在定义时赋值，注意：不需要定义大小，因为它是根据你指定的数值自动确定的：\n\
+  \n```c\nint lotsOfNumbers[] = {1,3,4};\n```\n\n*   数组从 0 开始，所以第一个索引的标识值为 0，第二个是\
+  \ 1，依此类推。这意味着在访问值时，你需要记住它总是比包含的数值少 1\n\n你可以像这样访问索引：\n\n```c\nint var = lotsOfNumbers[0];\n\
+  ```\n\n这将抓取数组的第一个索引并将其放入 `var` 中。\n\n数组非常有助于快速访问紧密相关的数据，你可以使用 `for` 循环遍历索引并根据需要使用它们。示例如下：\n\
+  \n```c\nint lotsOfNumbers[] = { 1, 3, 4, 10};\n\nfor (int x = 0; x < 4; x++)\n{\n\
+  \    printf(\"%d\\n\", lotsOfNumbers[x]);\n}\n```\n\n输出：\n> 1\n> 3\n> 4\n> 10\n\n\
+  在 C 语言中，你无法直接获取长度需要手动计算，这可以通过简单地使用 `sizeof()` 关键字来实现，它返回方括号内元素的大小，例如在 64 位机器上，`int`\
+  \ 应该用 4 字节表示，因此 `sizeof` 将返回 4。数组的长度可以这样计算：\n\n```c\nint arrayLength = sizeof(lotsOfNumbers)\
+  \ / sizeof(lotsOfNumbers[0]);\n```\n\n这获取了数组的整个大小，并除以第一个元素的大小，除法的结果就是数组拥有的索引数量。\n\
+  \n### 多维数组 (Multi-dimensional arrays)\n\n你也可以在数组中定义第二个维度，甚至是第三个维度，这在处理数组时提供了更大的灵活性。例如，二维数组可以用于存储网格的坐标或位置。二维数组的定义如下：\n\
+  \n```c\nint arrayOfNumbers[][2] = { {1,1}, {1,1}};\n```\n\n你通过在方括号中放入 x 和 y 坐标的值来访问元素：\n\
+  \n```c\nint element = arrayOfNumbers[X][Y]\n```\n\n显而易见的区别是第二个维度需要一个值，这在创建数组时无法自动解析，且初始化需要嵌套的大括号。下面是三\
+  \ D 数组的示例：\n\n```c\nint arrayOfNumbers[][][2] = {{{1,1},{1,1}},{{1,1},{1,1}}};\n\
+  ```\n\n但在这一阶段，它开始失去可读性，更好的做法是将其排列成如下：\n\n```c\nint arrayOfNumbers[][][2] =\n{\n\
+  \    {{1,1},{1,1}},\n    {{1,1},{1,1}}\n};\n```\n\n### 在函数中传递数组 (Passing Arrays\
+  \ in functions)\n\n正如我们在上面学习函数时所看到的，将变量作为参数传递是非常有用的，传递存储在数组中的大量变量也是如此。然而，我们在上面学学了如何确定数组的大小，但这对于作为参数传递的数组不起作用，因此我们必须传递一个代表该数组所含元素数量的变量。有一种特殊的变量类型用于存储计数变量，它被称为\
+  \ `size_t`，它是一个无符号整数值（意味着它不会变成负数），用于存储计数值。\n\n下面是作为参数传递数组的示例：\n\n```c\nvoid Print_SingleDimenArray(size_t\
+  \ length, int ageArray[])\n{\n    // Length 用于动态确定 for 循环的长度\n    for (int i = 0;\
+  \ i < length; i++)\n    {\n        printf(\"%d\\n\",ageArray[i]);\n    }\n}\n\n\
+  int main()\n{\n    // 一个年龄数组\n    int ages[] = { 32, 11, 12, 1, 8, 5, 10 };\n  \
+  \  // 大小如之前所示确定\n    size_t ageLen = sizeof(ages) / sizeof(ages[0]);\n    // 方法调用\n\
+  \    Print_SingleDimenArray(ageLen, ages);\n}\n```\n\n输出：\n> 32\n> 11\n> 12\n> 1\n\
+  > 8\n> 5\n> 10\n\n数组已被传递并用于打印值。数组的长度对程序至关重要，因为它允许 `for` 循环适用于不同长度的数组。\n\n*   在任何方法中对数组的任何更改都会改变调用方法中的数组变量。这就是之前提到的引用传递，整个数组并没有被复制，而是通过引用传递的。\n\
+  \n### 进阶 (Advanced)\n\n有些事情需要注意，递归在本质上导致了循环。如果递归设置没有停止其循环的条件，它们将无限循环，因此这是有效使用递归的关键元素。\n\
+  \n### 用户输入 (User input)\n\n有时需要从用户那里获取输入，在我们进入它们如何工作之前，我们首先需要学习 `scanf()` 和 `printf()`\
+  \ 的格式标识符：\n\n| 格式标识符 | 有效输入 | 所需类型 |\n|---|---|---|\n| %c | 单个字符 | char |\n| %f\
+  \ | 浮点值 | float |\n| %d | 十进制整数 | int |\n| %o | 八进制 | int |\n| %u | 无符号整数（仅正数） |\
+  \ int |\n| %x | 十进制 | int |\n| %s | 字符串（读取到空白） | char[] |\n\n`scanf()` 通过抓取输入并放入变量来工作：\n\
+  \n```c\nchar name[20];\nscanf(\"%s\", name);\n```\n\n以及获取整数的示例：\n\n```c\nint userInputInt;\n\
+  scanf(\"%d\", &userInputInt);\n```\n\n注意：对 `userInputInt` 使用 `&` 表示它是内存位置的引用，读入的值被放入该变量。\n\
+  \n`printf` 用于向控制台显示信息，用于调试和用户界面。`printf` 使用与 `scanf()` 相同的格式标识符：\n\n```c\nint number\
+  \ = 10;\nprintf(\"%d\", number);\n\nchar word[] = \"Lemon\";\nprintf(\"%s\", word);\n\
+  ```\n\n这些格式标识符作为占位符工作，`printf` 可以根据打印字符串中存在的格式标识符数量接受多个参数。例如：\n\n```c\nint number\
+  \ = 10;\nchar word[] = \"Lemon\";\nprintf(\"一个水果是: %s，这里有一个数字: %d\", word, number);\n\
+  ```\n\n每个格式标识符按顺序被参数替换；这里 `%s` 被 `word` 替换，`%d` 被 `number` 替换。这可以适用于任意数量的格式标识符。\n\
+  \n`fputs()`\n\n当你只想向控制台打印字符串时，`fputs()` 是一个简单简单的替代方案。`fputs()` 不使用 `printf()` 使用的格式标识符，因此它不需要检查格式，速度更快。它还会在打印行的末尾自动加上\
+  \ `\\n`。\n\n## 第二章测试 (Quiz chapter 2)\n\n本部分旨在让你对之前的内容保持警觉，会有 10 个问题你可以回答以测试你的知识，答案在下面的相邻章节中。\n\
+  \n1. 列举一种用于存储小数的数据类型？\n2. 布尔值可以持有哪两个值？\n3. 什么是条件语句？\n4. 组成 `for` 循环的三个部分。\n5. `continue`\
+  \ 关键字实现了什么？\n\n\n\n6. 有效函数可以不返回返回值吗？如果是，使用的是什么数据类型？\n\n7. 函数可以有多少个参数？\n\n8. `printf`\
+  \ 和 `puts` 之间有什么区别？\n\n9. 对于格式符“%d”，哪种类型是有效的输入？\n\n10. 你会使用什么代码来查找数组可以容多少个值？\n\n\
+  # 第 3 章\n\n## 进阶基础\n\n## 指针\n\n之前提到过指针，它们是变量的内存地址，这就像是一个人的家庭地址。这些地址可以作为参数传递，并允许实现前面提到的引用传递的效果。\n\
+  \n下面的程序将显示变量的地址：\n\n```c\n#include <stdio.h>\n\nint main()\n{\nint var;\nprintf(\"\
+  The address is: %x\\n\", &var);\nreturn 0;\n}\n```\n\n输出\n\n> The address is: 10ffa2c\n\
+  \n注意：几乎每次运行程序时这个值都会不同。\n\n注意高亮显示的语句，`&`（取地址运算符）用于返回变量的内存位置，并允许某些语句访问该位置的数据。使用 `%x`\
+  \ 是因为内存位置是十六进制的。\n\n要创建一个指针，我们使用解引用运算符（`*`），这会创建一个用于存储内存地址的指针变量。下面的程序创建了一个指针，并使用取地址运算符（`&`）将另一个普通变量的地址存储在新创建的指针中。解引用运算符（`*`）也用于访问或修改内存位置中的实际数据。\n\
+  \n*   解引用运算符（`*`）用于创建指针，在更改实际值时也会使用\n*   取地址运算符（`&`）用于获取指针的内存位置\n\n```c\n// 普通变量\n\
+  int var = 10;\n\n// 指针\nint* pointer;\n\n// 存储 var 的内存位置\npointer = &var;\n\n//\
+  \ 指针现在等同于 'var'，所以\n// 可以发生这样的操作\n*pointer = 20;\n\nprintf(\"Var's value is now:\
+  \ %d\", var);\n```\n\n输出\n\n>Var's value is now: 20\n\n### NULL 指针\n\n当你创建一个指针时，它最初并没有被赋予任何目标，这是危险的，因为指针在创建时会引用随机内存，更改该内存位置的数据可能会导致程序崩溃。为了防止这种情况，我们在创建指针时会将其赋值为\
+  \ `NULL`，如下：\n\n```c\nint* pointer = NULL;\n```\n\n这意味着指针的地址为‘0’，这是一个用于标识空指针的保留内存位置。可以通过\
+  \ `if` 语句检查空指针：\n\n```c\nif (pointer){}\n```\n\n如果指针不为空，则该语句执行成功。\n\n### 使用指针\n\n\
+  现在指针的一些真实世界用途是将它们作为参数传递，并有效地通过引用传递。下面的示例将展示这种效果：\n\n```c\nvoid Change_Value(int*\
+  \ reference)\n{\n// 修改内存位置中的值\n*reference = 20;\n}\n\nint main()\n{\n// 创建指向变量的指针\n\
+  int var = 10;\nint* pointer = &var;\nprintf(\"The value before call: %d\\n\", var);\n\
+  // 调用方法\nChange_Value(pointer);\n\n// 打印新值\nprintf(\"The value after call: %d\\\
+  n\", var);\nreturn 0;\n}\n```\n\n输出\n\n>The value before call: 10\n>The value after\
+  \ call: 20\n\n这传递的是变量的内存位置而非值，这意味着你拥有一个可以进行更改的位置。\n\n注意参数是 `int*`，这是指针类型，所以指向 `char`\
+  \ 的指针示例将是 `char*`。\n\n### 指针运算\n\n有时将指针移动到另一个内存位置可能是很有用的，这就是指针运算大用用场。如果我们执行例如 `ptr++`\
+  \ 且 `ptr` 是整数指针，那么它现在将移动 4 字节（`int` 的大小），再次运行则会再移动 4 字节，以此此类推。这意味着指针（如果指向有效的数组结构）可以像数组一样工作。下面是一个示例：\n\
+  \n```c\nint arrayInt[] = { 10, 20, 30 };\nsize_t arrayInt_Size = 3;\n// 将指向数组的第一个索引\n\
+  int* ptr = &arrayInt;\nfor (int i = 0; i < arrayInt_Size; i++)\n{\n// 记住，*ptr 获取内存位置中的值\n\
+  printf(\"Value of arrayInt[%d] = %d\\n\", i, *ptr);\nptr++;\n}\n```\n\n输出\n\n>Value\
+  \ of arrayInt[0] = 10\n>Value of arrayInt[1] = 20\n>Value of arrayInt[2] = 30\n\n\
+  这显示指向数组第一个地址的指针可以沿着数组的地址增加（记住数组的每个值都存储在相邻的内存位置中）。\n\n你可以相反操作，递减指针，即让指针的值减少。\n\n\
+  还可以使用关系运算符如 `==`、`<` 和 `>` 来比较指针。常用的用途是检查两个指针是否指向同一个位置：\n\n```c\nint value;\n//\
+  \ 为 ptr1 和 prt2 分配相同的值\nint* ptr1 = &value;\nint* ptr2 = &value;\n// 为 ptr3 分配另一个值\n\
+  int* ptr3 = NULL;\nif (ptr1 == ptr2)\n{\n    printf(\"pointers point to the same\
+  \ location\\n\");\n}\nif (ptr1 != ptr3)\n{\n    printf(\"pointers do not point to\
+  \ the same location\\n\");\n}\n```\n\n\n\n高亮区域部分是静态定义，只会运行一次。\n\n## 寄存器变量\n\n`register`\
+  \ 用于定义一个存储在寄存器内存而非普通内存中的变量，寄存器内存的优点是访问速度要快得多，但空间只能容纳几个变量。\n\n定义寄存器变量的方式如下：\n\n```c\n\
+  register int value;\n```\n\n## 外部变量\n\n我们之前提到过这一点，但全局变量是一个没有在任何作用域内定义的变量，因此可以在任何地方使用。外部变量是指定义在单独位置（如另一个文件）的变量，使用\
+  \ `extern` 关键字表示该变量在另一个文件中。你可以通过在文件顶部放置此内容来包含另一个引用文件：\n\n```c\n#include  \"FileName.c\"\
+  \n```\n\n这是为了告诉程序也引用该文件。注意，文件需要位于同一个位置。\n\n### 程序 1 [File_2.c]\n\n```c\n#include\
+  \ <stdio.h>\n#include \"C_TUT.c\"\n\nint main()\n{\n    extern int globalValue;\n\
+  \    printf(\"The global variable is: %d\", globalValue);\n}\n```\n\n### 程序 2 (很小)\
+  \ [C_TUT.c]\n\n```c\n#include <stdio.h>\n\nint globalValue = 1032;\n```\n\n运行 `File_2.c`\
+  \ 的输出：\n\n>The global variable is: 1032\n\n这显示 `globalValue` 是从 `C_TUT.c` 用的，并通过使用\
+  \ `extern` 关键字在另一个文件中使用。\n\n## 文件 I/O\n\n在某些情况下，你需要在程序运行结束后保留数据，这就是保存和加载到文件大有用场的地方。主要使用了两种类型的文件：\n\
+  \n- 文本文件\n- 二进制文件\n\n开始之前，你需要创建一个 `FILE` 类型的指针，这类型允许文件与程序之间的通信。操作方式如下：\n\n```c\n\
+  FILE* ptr;\n```\n\n### 打开文件\n\n如果该文件已存在，你可以打开它并读取其内容，将通过以下方式实现：\n\n```c\nptr = fopen(char*\
+  \ filename, char* mode)\n```\n\n其中：\n- `filename` = 要打开的文件名\n- `mode` = 打开文件的模式，完整列表如下所示\n\
+  \n| Mode | 描述 |\n| :--- | :--- |\n| r | 以读模式打开文件 |\n| w | 以写模式打开文件，如果文件不存在则创建一个新文件。程序将从文件开头开始写入内容。\
+  \ |\n| a | 追加模式，如果文件不存在则创建它。对现有文件的任何更改都将追加到末尾。 |\n| r+ | 以读写模式打开文件 |\n| w+ | 以读写模式打开文本文件。如果文件存在，它会首先将其长度截断为零；如果不存在则创建一个新文件。\
+  \ |\n| a+ | 再次以读写模式打开文件。如果文件不存在则创建一个新文件。读取从最开始开始，但写入只追加到文件的末尾。 |\n\n### 关闭文件\n\n\
+  这个非常简单，只需要运行：\n\n```c\nfclose(ptr);\n```\n\n### 写入文件\n\n向文件写入有两种不同方法：`fprintf()`\
+  \ 和 `fputs()`（类似于控制台打印命令 `printf()` 和 `puts()`）。真正的区别在于 `fprintf()` 允许你使用诸如 `%s`\
+  \ 这样的格式标识符，而 `fputs()` 不行。这意味着 `fputs()` 不需要检查格式，直接打印精确字符串，因此速度更快。`fputs()` 还会向给定的字符字符串自动添加换行符（`\\\
+  n`），就像 `puts()` 一样。下面的示例展示了打开、写入并关闭文件：\n\n```c\n#include <stdio.h>\n\nint main()\n\
+  {\n    //创建文件指针\n    FILE* ptr;\n    //打开文件\n    ptr = fopen(\"C:/C_IO/example.txt\"\
+  , \"w+\");\n    //写入文件\n    fprintf(ptr, \"fprint()\\n\");\n    fputs(\"fputs()\\\
+  n\", ptr);\n    //关闭文件\n    fclose(ptr);\n}\n```\n\n它会直接在 C 盘的 `C_IO` 目录下创建一个文件（在运行程序之前创建它）。它使用\
+  \ `w+` 模式，因此每次运行程序时文件中的数据都会被覆盖。\n\n你也可以使用 `fprintf` 保存值，如下：\n\n```c\nfprintf(ptr,\
+  \ \"%d\\n\", value);\n```\n\n* 打开文件 `fopen()`\n* 写入文件\n    * `fprintf()`\n    *\
+  \ `fputs()`\n* 关闭文件 `fclose()`\n\n### 练习\n\n- 编写一个程序，将 `add` 函数的输出保存到你之前创建的 C 盘（或你的主硬盘）的\
+  \ `C_IO` 中，并命名为“addSave.txt”，使用 10、25 和你的值。\n\n### 答案\n\n类似这样，不需要完全相同，处理方法总是有不同的。\n\
+  \n```c\n#include <stdio.h>\n\nint add(int num1, int num2)\n{\n    return num1 +\
+  \ num2;\n}\n\nint main()\n{\n    //获取要保存的值\n    int saveValue = add(10, 25);\n \
+  \   //创建文件指针\n    FILE* ptr;\n    //打开文件\n    ptr = fopen(\"C:/C_IO/addSave.txt\"\
+  , \"w+\");\n    //写入文件\n    fprintf(ptr, \"%d\\n\", saveValue);\n    //关闭文件\n  \
+  \  fclose(ptr);\n}\n```\n\n* 打开文件 `fopen()` \n* 写入文件\n    * `fprintf()`\n    * `fputs()`\n\
+  * 关闭文件 `fclose()`\n\n## 递归\n\n高亮部分是静态定义，只会运行一次。\n\n## 寄存器变量\n\n`register` 用于定义一个存储在寄存器内存而非普通内存中的变量，寄存器内存的优点是访问速度要快得多，但空间只能容纳几个变量。\n\
+  \n定义寄存器变量的方式如下：\n\n```c\nregister int value;\n```\n\n## 外部变量\n\n我们之前提到过这一点，但全局变量是一个没有在任何作用域内定义的变量，因此可以在任何地方使用。外部变量是指定义在单独位置（如另一个文件）的变量，使用\
+  \ `extern` 关键字表示该变量在另一个文件中。你可以通过在文件顶部放置此内容来包含另一个引用文件：\n\n```c\n#include  \"FileName.c\"\
+  \n```\n\n这是为了告诉程序也引用该文件。注意，文件需要位于同一个位置。\n\n### 程序 1 [File_2.c]\n\n```c\n#include\
+  \ <stdio.h>\n#include \"C_TUT.c\"\n\nint main()\n{\n    extern int globalValue;\n\
+  \    printf(\"The global variable is: %d\", globalValue);\n}\n```\n\n### 程序 2 (很小)\
+  \ [C_TUT.c]\n\n```c\n#include <stdio.h>\n\nint globalValue = 1032;\n```\n\n运行 `File_2.c`\
+  \ 的输出：\n\n>The global variable is: 1032\n\n这显示 `globalValue` 是从 `C_TUT.c` 用的，并通过使用\
+  \ `extern` 关键字在另一个文件中使用。\n\n## 文件 I/O\n\n在某些情况下，你需要在程序运行结束后保留数据，这就是保存和加载到文件大有用场的地方。主要使用了两种类型的文件：\n\
+  \n- 文本文件\n- 二进制文件\n\n开始之前，你需要创建一个 `FILE` 类型的指针，这类型允许文件与程序之间的通信。操作方式如下：\n\n```c\n\
+  FILE* ptr;\n```\n\n### 打开文件\n\n如果该文件已存在，你可以打开它并读取其内容，将通过以下方式实现：\n\n```c\nptr = fopen(char*\
+  \ filename, char* mode)\n```\n\n其中：\n- `filename` = 要打开的文件名\n- `mode` = 打开文件的模式，完整列表如下所示\n\
+  \n| Mode | 描述 |\n| :--- | :--- |\n| r | 以读模式打开文件 |\n| w | 以写模式打开文件，如果文件不存在则创建一个新文件。程序将从文件开头开始写入内容。\
+  \ |\n| a | 追加模式，如果文件不存在则创建它。对现有文件的任何更改都将追加到末尾。 |\n| r+ | 以读写模式打开文件 |\n| w+ | 以读写模式打开文本文件。如果文件存在，它会首先将其长度截断为零；如果不存在则创建一个新文件\
+  \ |\n| a+ | 再次以读写模式打开文件。如果文件不存在则创建一个新文件。读取从最开始开始，但写入只追加到文件的末尾。 |\n\n### 关闭文件\n\n\
+  这个非常简单，只需要运行：\n\n```c\nfclose(ptr);\n```\n\n### 写入文件\n\n向文件写入有两种不同方法：`fprintf()`\
+  \ 和 `fputs()`（类似于控制台打印命令 `printf()` 和 `puts()`）。真正的区别在于 `fprintf()` 允许你使用诸如 `%s`\
+  \ 这样的格式标识符，而 `fputs()` 不行。这意味着 `fputs()` 不需要检查格式，直接打印精确字符串，因此速度更快。`fputs()` 还会向给定的字符字符串自动添加换行符（`\\\
+  n`），就像 `puts()` 一样。下面的示例展示了打开、写入并关闭文件：\n\n```c\n#include <stdio.h>\n\nint main()\n\
+  {\n    //创建文件指针\n    FILE* ptr;\n    //打开文件\n    ptr = fopen(\"C:/C_IO/example.txt\"\
+  , \"w+\");\n    //写入文件\n    fprintf(ptr, \"fprint()\\n\");\n    fputs(\"fputs()\\\
+  n\", ptr);\n    //关闭文件\n    fclose(ptr);\n}\n```\n\n它会直接在 C 盘的 `C_IO` 目录下创建一个文件（在运行程序之前创建它）。它使用\
+  \ `w+` 模式，因此每次运行程序时文件中的数据都会被覆盖。\n\n你也可以使用 `fprintf` 保存值，如下：\n\n```c\nfprintf(ptr,\
+  \ \"%d\\n\", value);\n```\n\n* 打开文件 `fopen()`\n* 写入文件\n    * `fprintf()`\n    *\
+  \ `fputs()`\n* 关闭文件 `fclose()`\n\n### 练习\n\n- 编写一个程序，将 `add` 函数的输出保存到你之前创建的 C 盘（或你的主硬盘）的\
+  \ `C_IO` 中，并命名为“addSave.txt”，使用 10 和 25 和你的值。\n\n### 答案\n\n类似这样，不需要完全相同，处理方法总是有不同的。\n\
+  \n```c\n#include <stdio.h>\n\nint add(int num1, int num2)\n{\n    return num1 +\
+  \ num2;\n}\n\nint main()\n{\n    //获取要保存的值\n    int saveValue = add(10, 25);\n \
+  \   //创建文件指针\n    FILE* ptr;\n    //打开文件\n    ptr = fopen(\"C:/C_IO/addSave.txt\"\
+  , \"w+\");\n    //写入文件\n    fprintf(ptr, \"%d\\n\", saveValue);\n    //关闭文件\n  \
+  \  fclose(ptr);\n}\n```\n\n## 递归\n\n我们在基础章节中提到了递归，下面是示例：\n\n```c\nint factorial(int\
+  \ x)\n{\n    int r; //递归条件\n    if (x == 1)\n    {\n        //停止\n        return\
+  \ 1;\n    }\n    else\n    {\n        //递归\n        return factorial(x - 1);\n \
+  \   }\n}\n\nint main()\n{\n    int a;\n    printf(\"请输入一个数字：\");\n    scanf(\"%d\"\
+  , &a);\n    printf(\"递归的结果是：%d\\n\", factorial(a));\n}\n```\n\n这意味着栈可以展开。下面是图示：Images/001\n\
+  \n## 练习 3\n\n1. 指针持有了什么？\n2. 使用什么运算符表示寄存器？\n3. `++` 对整数做了什么？\n4. 静态变量在程序生命期间初始化了多少次？\n\
+  5. 当你定义为 `register` 时发生了什么？\n6. 哪些函数用于写入文件？\n7. `fopen()` 模式 `w+` 是什么？\n8. 在什么情况下代码会成功？\n\
+  9. `&` 什么？它做了什么？\n10. 当你传递数组作为参数时还需要什么？\n\n# 第 4 章 自定义结构体\n\n编程语言的可定制特性允许它们承担任何角色，程序员可以操作用于存储和处理数据的结构体。\n\
+  \n## 结构体\n\n我们遇到的第一个用户定义对象是`结构体`，它允许自定义存储数据，定义方式如下：\n\n```c\nstruct 结构名\n{\n   \
+  \ //语句\n};\n```\n\n其中 `语句` 是结构体持有的变量。结构体允许以意义的方式存储数据，它类似于数组，区别在于数组存储许多相同类型的变量，而结构体允许存储多种类型，甚至是其他结构体。\n\
+  \n真实的示例如下：\n\n```c\nstruct Person\n{\n    int age;\n    char firstName[15];\n  \
+  \  char lastName[15];\n    char favoriteColour[10];\n};\n```\n\n该结构体设计用于存储人的信息，可以这样创建一个新人：\n\
+  \n```c\nstruct Person p1;\n```\n\n这就像定义一个新变量，下面的示例显示两个新创建的人包含独立且相互的值：\n\n```c\n\
+  #include <stdio.h>\n\nstruct Person\n{\n    int age;\n    char firstName[15];\n\
+  \    char lastName[15];\n    char favoriteColour[10];\n};\n\nvoid PrintPerson(struct\
+  \ Person p)\n{\n    printf(\"名：%s\\n\", p.firstName);\n    printf(\"姓：%s\\n\", p.lastName);\n\
+  \    printf(\"喜好颜色：%s\\n\", p.favoriteColour);\n    printf(\"年龄：%d\\n\", p.age);\n\
+  \    puts(\"\");\n}\n\nint main()\n{\n    //人 1\n    struct Person p1;\n    p1.age\
+  \ = 10;\n    strcpy(p1.firstName,\"John\");\n    strcpy(p1.lastName, \"Doe\");\n\
+  }\n```\n\n\n\n```c\nstrcpy(p1.favoriteColour, \"Red\");\n\nPrintPerson(p1);\n\n\
+  //Person 2\n\nstruct Person p2;\n\np2.age = 25;\n\nstrcpy(p2.firstName, \"Lucy\"\
+  );\n\nstrcpy(p2.lastName, \"Brown\");\n\nstrcpy(p2.favoriteColour, \"Yellow\");\n\
+  \nPrintPerson(p2);\n\n}\n```\n\n输出:\n>First Name:         John\n>Last Name:    \
+  \      Doe\n>Favourite colour: Red\n>Age:               10\n>First Name:       \
+  \  Lucy\n>Last Name:          Brown\n>Favourite colour: Yellow\n>Age:          \
+  \     25\n\n将字符串值复制到结构体变量中需要使用 `strcpy()`。这段代码显示，每当创建一个新的 `Person` 时，都会创建一组与该 `Person`\
+  \ 对应的新变量。这提供了一种非常简单的“模具化”方式，可以快速创建许多有意义的变量。还要注意如何访问每个变量，它是通过句号（访问运算符）：\n\n`personName.Variable`\n\
+  \n`p1.age = 10;`\n\n### 嵌套结构\n\n结构体还可以包含其他结构体，它们可以是：内部定义的或外部定义的。\n\n#### 内部定义\n\n\
+  这是在另一个结构体变量定义内部定义结构体定义。假设我们使用 person 的例子，将姓和名转换为结构体。\n\n```c\nstruct Person\n{\n\
+  int age;\nchar favoriteColour[10];\nstruct Name\n{\nchar firstName[15];\nchar lastName[15];\n\
+  } name;\n};\n```\n\n其中姓的访问方式如下：\n\n`p1.name.firstName;`\n\n#### 外部定义\n\n这与上述相同，但定义并不在另一个结构体内部：\n\
+  \n```c\nstruct Name\n{\nchar firstName[15];\nchar lastName[15];\n};\n\nstruct Person\n\
+  {\nint age;\nchar favoriteColour[10];\nstruct Name name;\n};\n```\n\n其中姓名的访问方式与内部定义完全相同。\n\
+  \n- 内部定义意味着你不能在其他位置重新创建该结构，但可以在内部使用\n- 外部定义意味着你可以在内部以及其他位置使用它\n\n这使得代码更具模块化且可读性。\n\
+  \n### TypeDef\n\nTypedef 是提供的一个关键字，允许你自定义内置和用户定义变量及结构体的名称。我在下面展示了一个示例：\n\n`typedef\
+  \ int INTEGER;`\n\n这是获取数据类型 `int` 并赋予它另一个身份作为 `INTEGER`，现在 `INTEGER` 的定义方式与正常一样：\n\
+  \n`INTEGER value = 10;`\n\n#### 真实世界示例\n\n这种方法实用的真实世界例子是整数值不同情况下的向后兼容。你可以这样定义 `int`：\n\
+  \n`typedef int int32;`\n\n像使用 `int` 一样正常使用 `int32`，在需要更大的 `int` 值的机器上，你可以将定义更改为：\n\
+  \n`typedef long int32;`\n\n代码只需少量维护即可继续工作。\n\n## 枚举 (Enums)\n\nEnum 代表枚举类型。`enum`\
+  \ 是一种用户类型，允许创建包含自定义值的自定义数据类型。示例所示：\n\n```c\nenum Condition\n{\nWorking,\nNotWorking,\n\
+  Finished,\nUnknown\n};\n```\n\n这定义了一个名为 `Condition` 的枚举，其中每种可能的类型都被定义为可能的状态。你可以这样创建和使用枚举：\n\
+  \n```c\n#include <stdio.h>\n\nenum Condition\n{\nWorking,\nNotWorking,\nFinished,\n\
+  Unknown\n};\n\nint main()\n{\n//创建\nenum Condition programCondition;\n//赋值\nprogramCondition\
+  \ = Working;\n//比较\nif (programCondition == Working)\n{\nputs(\"All is good!\");\n\
+  }\n}\n```\n\n此程序展示了你如何创建一个枚举、如何给它赋值，以及如何比较它的值。\n\n枚举最常用的用法是类似于布尔值，但带有额外的上下文信息和功能。它提高了可读性，并相比于布尔值的二元性添加了额外的状态。枚举非常适合跟踪具有限制且定义良好的值的数据，例如当前月份或星期几。\n\
+  \n### 练习\n\n创建一个处理星期几的枚举，并打印出分配的任何一天（提示：switch-case 语句对于检查当前日期非常有用）。\n\n### 答案\n\
+  \n如下：\n\n```c\n#include <stdio.h>\n\nenum WeekDay\n{\nMonday,\nTuesday,\nWednesday,\n\
+  Thursday,\nFriday\n};\n\nenum Condition currentDay;\n\nint main()\n{\ncurrentDay\
+  \ = Friday;\nswitch (currentDay)\n{\ncase Monday:\nputs(\"It's Monday!\");\ncase\
+  \ Tuesday:\nputs(\"It's Tuesday!\");\nbreak;\ncase Wednesday:\nputs(\"It's Wednesday!\"\
+  );\nbreak;\ncase Thursday:\nputs(\"It's Thursday!\");\nbreak;\ncase Friday:\nputs(\"\
+  It's Friday!\");\nbreak;\n}\n}\n```\n\n### 并体 (Unions)\n\n并体是一种特殊的数据类型，允许在相同位置存放不同类型。它一次只存储一个值。你可以这样定义并体：\n\
+  \n```c\nunion Name\n{\nint i;\nint y;\nchar word[20];\n};\n```\n\n看到改变一个值会影响其他变量，如果使用不当，这就是并体的缺点。\n\
+  \n```c\nunion Name u;\nu.i = 10;\nprintf(\"%d\", u.y); // 这将出乎意料\nstrcpy(u.word,\
+  \ \"Hello\");u.y = 25;\n```\n\n### 可变参数列表\n\n你可能会遇到一个需要多个参数的问题，这就是变参数的用处，它允许传递动态数量的变量。\n\
+  \n注意：\n\n这需要包含一个新的头文件：\n\n`#include <stdarg.h>`\n\n使用变参数时添加此项。你设计的方法如下：\n\n`void\
+  \ function(int noOfVariables, ...)`\n\n其中总是有一个变量定义变量的数量，后面跟着变量。额外的变量被赋值给名为 `va_list`\
+  \ 的类型，这些列表通过以下函数进行操作：\n\n`va_start(va_list valist, int numberOfVariables);`\n\n\
+  `va_start` 实际上将额外的变量放入 `va_list` 中。\n\n`va_arg(valist, type);`\n\n`va_arg` 获取下一个变量并返回，它不知道当前的整数是最后一个，所以程序设置需要确保不会溢出。\n\
+  \n`va_end(valist);`\n\n`va_end` 仅清理 `va_list` 的内存。\n\n下面是一个寻找最大值的示例：\n\n```c\n```c>\n\
+  #include <stdarg.h>\n\nint max(int n, ...)\n{\nint largest = 0;\n// 创建并分配\nva_list\
+  \ valist;\nva_start(valist, n);\n// 遍历变量列表\nfor (int i = 0; i < n; i++)\n{\n// 获取下一个参数\n\
+  int nextVar = va_arg(valist, int);\n// 比较值的大小 || 第一个值被赋值为最大值\nif (nextVar > largest\
+  \ || i == 0)\n{\nlargest = nextVar;\n}\n}\n// 释放内存\nva_end(valist);\n\nreturn largest;\n\
+  }\n\nint main() {\nprintf(\"Largest: %d\\n\", max(6, -2,3,4,5,66,10));\nprintf(\"\
+  Largest: %d\\n\", max(3, 7, 2, 1));\n}\n```\n```\n\n\n\n}\n\n输出\n\n> 最大值: 66\n\n\
+  > 最大值: 7\n\n此程序展示了变量列表的动态特性是很有用的。\n\n### 练习\n\n创建一个使用变量列表的程序，返回提供的 `int` 变量的平均值（所有数字之和除以个数）。\n\
+  \n创建一个名为 `average` 的方法并返回一个 `float`，这将是变量函数。别忘记包含：\n\n```c\n#include <stdarg.h>\n\
+  ```\n\n## 解决方案\n\n类似下面的的代码：\n\n```c\n#include <stdio.h>\n#include <stdarg.h>\n\n\
+  double average(int n, ...)\n{\n    double total = 0.0;\n    // 创建变量列表\n    va_list\
+  \ vaList;\n    va_start(vaList, n);\n    // 获取每个变量\n    for (int i = 0; i < n; i++)\n\
+  \    {\n        // 等同于：\"total = total + va_arg(vaList, int);\"\n        total +=\
+  \ va_arg(vaList, int);\n    }\n    // 清理！\n    va_end(vaList);\n    double avg =\
+  \ total / n;\n    return avg;\n}\n\nint main()\n{\n    //%f 用于 float 类型\n    printf(\"\
+  Average: %f\\n\", average(4, 1,2,77,4534));\n}\n```\n\n这与上面的最大值示例非常相似，它包含了 `va_start`、`va_arg`\
+  \ 和 `va_end`。\n\n## 第 4 章练习\n\n1. 需要什么函数来将字符串复制到合适的变量中？\n2. 结构体可以哪两种嵌套方式？\n3. 关键字\
+  \ `typedef` 是做什么用的？\n4. `Enum` 的全称是什么？\n5. 联合体结构（union structure）的缺点是什么？\n6. 什么决定了联合体的大小？\n\
+  7. `va_list` 包含什么？\n8. 使用什么来表示一个函数使用参数列表？\n9. 使用什么运算符来访问结构体的成员？\n10. 结构体和数组有何区别？\n\
+  \n# 第 5 章\n\n## 高级特性\n\n## 头文件\n\n头文件是函数、变量和宏定义的列表，可以在不同的文件中包含并使用。头文件通过 `.h` 文件扩展名指定。它们通过使用\
+  \ `#include`（预处理器指令）和文件名（如 `header.h`）被包含在其他文件中。有程序员可以创建的自定义头文件，也有编译器自带的内置头文件，就像我们在上一节中看到的\
+  \ `stdio.h`。\n\n要创建一个头文件，你只需要创建一个扩展名为 `.h` 的文件，这可以在记事本等简单的工具中完成，该头文件现在可以包含另一个文件中，以链接并使用该头文件的功能。\n\
+  \n下面是一个示例：\n\n```c\nheader.h\nint x = 10;\n\nint Function()\n{\n    return x;\n\
+  }\n```\n\n可以这样包含并使用：\n\n```c\n#include <stdio.h>\n#include \"header.h\"\n\nint main()\n\
+  {\n    printf(\"%d\", Function());\n}\n```\n\n输出\n\n>10\n\n这允许程序员创建可以在项目之间复用的模块。\n\
+  \n头文件的一种可能用途如下：\n\n```c\nint add(int num1, int num2)\n{\n    return num1 + num2;\n\
+  }\n\nint sub(int num1, int num2)\n{\n    return num1 - num2;\n}\n\nint div(int num1,\
+  \ int num2)\n{\n    return num1 / num2;\n}\n\nint mul(int num1, int num2)\n{\n \
+  \   return num1 * num2;\n}\n```\n\n再次回到了计算器示例，头文件可以是像这样的函数列表，然后可以被包含以允许使用这些函数。\n\
+  \n## 预处理器指令\n\n预处理用于给编译器提供一种命令，你已经遇到过几次命令，比如 `#include` 指令，它告诉编译器包含特定的头文件。\n\n下面是处理器指令列表，我们将介绍它们是如何运作的：\n\
+  \n| 指令 |or |\n| :--- | :--- |\n| `#define` | 用于定义宏 |\n| `#include` | 从另一个文件中插入特定的头文件。\
+  \ |\n| `#undef` | 移除 `#define` 的作用 |\n| `#ifdef` | 如果此宏已定义则返回真。 |\n| `#ifndef` |\
+  \ 如果此宏未定义则返回真。 |\n| `#if` | 测试编译时条件是否为真。 |\n| `#else` | `#if` 的备选。 |\n| `#elif`\
+  \ | 一个语句中的 `#else` 和 `#if`。 |\n| `#endif` | 结束预处理器条件判断。 |\n\n### #define 和 #undef\n\
+  \n这些命令用于在全局全局值时增加可读性，例如：\n\n```c\n#define LOOP_NUMBER 2;\n```\n\n可以这样定义和使用：\n\n\
+  ```c\nfor (int i = 0; i < LOOP_NUMBER; i++)\n{\n    // 循环代码\n}\n```\n\nfor 循环将执行两次，但你不能像操作普通变量那样改变它的值，在程序的整个生命周期内它是常量，除非使用\
+  \ `#undef`，那会取消设置的值。\n\n`#undef` 通常用于覆盖内置指令，在那种情况下你会取消一个值然后设置一个你选择的值。\n\n### #ifdef\
+  \ 和 #if\n\n`#ifdef` 和 `#ifndef` 在宏已定义时分别返回真或假，它们最常见的用途是检查 `-DDEBUG` 标志是否已定义。\n\n\
+  ```c\n#include <stdio.h>\n\n#ifdef DEBUG\n    printf(\"Debug mode on\");\n#endif\n\
+  ```\n\n\n\n这可以通过隐式或显式的方式完成。隐式是指编译器自动转换变量，而显式是指你使用类型转换运算符。然而，在任何必要的地方指定类型转换是一个非常好的习惯。\n\
+  \n## 内存管理\n\nC 语言允许程序员动态管理内存。此功能通过以下内容提供：\n\n```c\n#include <stdlib.h>\n```\n\n\
+  内存管理需要使用几个函数：\n\n* `void *calloc(int num, int size);`\n    * 该函数分配一个数组（大小由 `num`\
+  \ 指定），且每个分配单元的大小由 `size` 指定。\n* `void free(void *address);`\n    * 该函数释放内存，其位置由\
+  \ `address` 指定。\n* `void *malloc(int num);`\n    * 该函数的工作原理与 `calloc` 相似，但留下的位置未经过初始化。\n\
+  * `void *realloc(void *address, int newsize)`\n    * 该函数将内存重新分配为 `newsize` 中指定的大小。\n\
+  \n下面是一个使用 `malloc` 或 `calloc` 为字符串分配内存的示例：\n\n```c\n#include <stdio.h>\n#include\
+  \ <stdlib.h>\n\n#define WORD_SIZE 20\n\nint main()\n{\n    char* word;\n    // 分配内存\n\
+  \    word = malloc(WORD_SIZE * sizeof(char));\n    //或\n    word = calloc(WORD_SIZE,\
+  \ sizeof(char));\n    // 拷贝值\n    strcpy(word, \"Hello nice to meet you!\");\n \
+  \   // 打印\n    printf(\"The string is: \\\"%s\\\"\", word);\n    // 删除内存\n    free(word);\n\
+  }\n```\n\n这可以用于执行相当复杂的操作，例如获取用户输入并将其存储在与字符串大小完全匹配的数组中：\n\n```c\n#include <stdio.h>\n\
+  #include <stdlib.h>\n\n#define WORD_SIZE 20\n\nchar* getInput()\n{\n    //将被删除\n\
+  \    char temp[50];\n    // 用户输入\n    printf(\"Please enter your first name: \"\
+  );\n    scanf(\"%s\", temp);\n    puts(\"\");\n\n    //strlen() 查找字符串的长度\n    int\
+  \ len = strlen(temp);\n    // 内存动态分配\n    char* perfectSizeWord;\n    // 分配内存！\n\
+  \    perfectSizeWord = calloc(len, sizeof(char));\n\n    // 这条命令不起作用，它获取了 temp 的内存位置并直接拷贝，所以当\n\
+  \    // 该函数超出范围时，perfectSizeWord 也会随之销\n    ///perfectSizeWord = temp\n    // 正确拷贝值\n\
+  \    for (int i = 0; i < len; i++)\n    {\n        perfectSizeWord[i] = temp[i];\n\
+  \    }\n    // 大小比较\n    printf(\"Size of temp var:%d\\n\", sizeof(temp));\n   \
+  \ printf(\"Size of new perfect var:%d\\n\", sizeof(perfectSizeWord));\n    return\
+  \ perfectSizeWord;\n}\n\nint main()\n{\n    // 获取返回变量\n    char* word = getInput();\n\
+  \    // 打印\n    printf(\"The word is:%s\\n\", word);\n    // 删除内存\n    free(word);\n\
+  }\n```\n\n上面的程序很大，请花些时间仔细阅读。尝试实现它并理解它的工作原理。\n\n### 练习\n\n使用上述错误处理技术来处理使用 `malloc`\
+  \ 或 `calloc` 分配内存时的错误。为了模拟错误，只需在动态内存分配后设置 `word = NULL;`。\n\n使用下面的程序框架来帮助：\n\n```c\n\
+  #include <stdio.h>\n#include <errno.h>\n\nint main()\n{\n    char* word;\n    //\
+  \ 分配内存\n    word = malloc(20 * sizeof(char));\n    // 模拟错误\n    word = NULL;\n \
+  \   //------------------在此处输入错误代码------------------------\n    // 删除内存\n    free(word);\n\
+  }\n```\n\n### 答案\n\n非常简单，只需要包含：\n\n```c\n#include <stdio.h>\n#include <errno.h>\n\
+  \nint main()\n{\n    char* word;\n    // 分配内存\n    word = malloc(20 * sizeof(char));\n\
+  \    // 模拟错误\n    word = NULL;\n    if (word == NULL)\n    {\n        fprintf(stderr,\
+  \ \"Error: Unable to allocate the memory!\");\n    }\n    // 删除内存\n    free(word);\n\
+  }\n```\n\n## 第 5 章练习\n\n1. 如何告诉编译器使用其他文件和库？\n2. 头文件使用什么文件扩展名？\n3. `#define` 是用来用的？\n\
+  4. 错误处理需要包含什么 `#include`？\n5. 全局变量 `errno` 中包含什么？\n6. `strerror()` 返回什么？\n7. 打印错误需要哪种文件流？\n\
+  8. 类型转换；它是用来做什么的？\n9. `calloc` 和 `malloc` 有什么区别？\n10. 遇到错误的函数通常会返回什么？\n\n## 第 2\
+  \ 章答案\n\n1. 浮点型 (Float) 或双精度型 (Double)\n2. 真 (1) 和 假 (0)\n3. 用于检查条件为真为假的语句\n4. 声明、条件和迭代。\n\
+  5. 跳过完整迭代\n6. 是的，并且通过使用 `void`\n7. 理论上无限的\n8. `Printf` 使用格式化 ID，`puts` 不使用 ID 并自动在字符串末尾添加\
+  \ `\\n`\n9. `calloc` 分配内存时会初始化，`malloc` 不会\n10. 整数值\n\n## 第 3 章答案\n\n1. 特定类型的内存位置\n\
+  2. 解引用运算符 `*`\n3. 写入到下一个位置\n4. 仅一次\n5. 访问更快\n6. `fprintf()` 和 `puts()`\n9. 大小与其最大的变量相同\n\
+  7. 传递给函数的变量\n8. 参数列表末尾的省略号\n9. 用点符号 `.` 定义的成员运算符\n10. `size_t` 大小\n\n## 第 4 章答案\n\
+  \n1. 需要 `strcpy()`。\n2. 内部定义和外部定义。\n3. 用于赋予变量和自定义名称。\n4. 枚举类型。\n5. `unions` 一次只能持有一个值。\n\
+  6. `union` 的大小与其最大的变量相同。\n7. 传递给函数的列表。\n8. 如果指针不是 `NULL`。\n9. 用于访问原始内存。\n10. 相同类型的数组\n\
+  \n## 第 5 章答案\n\n1. 使用 `#include` 指令\n2. 头文件使用 “.h”\n3. `#define` 用于创建常量值的全局定义\n\
+  4. `#include <errno.h>`\n5. 存储在那里的最后一个错误代码\n6. `errno` 中错误代码的内容表示\n7. 文件流是 “stderr”\n\
+  8. 用于将一个变量转换为另一种\n9. `calloc` 分配内存时会初始化，`malloc` 不会\n10. `NULL` 或 -1\n\n# C 语言编程初学者一步步指南\n\
+  \n©2017 Robert Anderson - 保留所有权利。如果您想与他人分享此书，请为每位接收者额外购买副本。感谢尊重作者的辛劳。否则，传输、复制或复制以下作品的任何部分（包括特定信息）将被视为非法行为，无论是以电子形式还是打印形式。这延伸到创建作品的二级或三级副本或录制副本，且必须获得出版者的明确许可。\n\
+  \n## 目录\n\n* 第 1 章\n* 安装与简介\n* C# 历史\n* 为什么选择 C#？\n* 在 Windows 上运行 C#\n* 第 2 章\n\
+  \    * 类与面向对象编程\n    * 基础类\n    * 属性\n    * 构造函数与析构函数\n    * 练习\n    * 继承\n    *\
+  \ 封装\n    * 本章测验\n\n\n\n\n## 答案 (117)\n\n# 第 3 章 (119)\n## 高级类结构 (119)\n### 多态 (119)\n\
+  ### 接口 (125)\n### 练习 (127)\n### 命名空间 (127)\n### 章末测验 (131)\n### 答案 (131)\n\n# 第\
+  \ 4 章 (132)\n## 中级功能 (132)\n### 运算符重载 (132)\n### 练习 (133)\n### 正则表达式 (135)\n###\
+  \ 预处理器指令 (140)\n### 异常处理 (143)\n### 章末测验 (146)\n### 答案 (146)\n\n# 第 5 章 (147)\n\
+  ## 程序格式化 (147)\n### 属性 (147)\n### 反射 (152)\n### 元数据 (152)\n### 索引器 (154)\n### 练习\
+  \ (158)\n### 集合 (159)\n### 泛型 (161)\n### 章末测验 (166)\n### 答案 (166)\n\n# 第 6 章 (167)\n\
+  ## 进程与功能 (167)\n### 委托 (167)\n### 匿名方法 (171)\n### 事件 (173)\n### 多线程 (175)\n### LINQ\
+  \ (182)\n### 练习 (184)\n### 章末测验 (186)\n### 答案 (186)\n\n# 第 1 章\n## 安装与简介\n## C#\
+  \ 历史\nC# 首次于 2000 年由微软发布，C# 是微软拥有的一种语言，源自 C 语言族。它由 Anders Hejlsberg 领导的团队设计。最初他们提议将语言命名为“Cool”，代表“类\
+  \ C 对象对象语言”（C-Like Object Orientated Language），但微软最终决定命名为 C#。使用了井号符号，但读作“sharp”，这是特意选择的，因为当时缺少“sharp”这个字母。以下是\
+  \ C# 的时间线以及新增的功能：\n\n- 2002 年 1 月：C# 1.0（面向对象编程）\n- 2005 年 11 月：C# 2.0（泛型、可空类型、迭代器、部分类）\n\
+  - 2007 年 11 月：C# 3.0（匿名类型、表达式树、扩展方法）\n- 2010 年 4 月：C# 4.0（动态、可选参数）\n- 2012 年 8 月：C#\
+  \ 5.0（异步编程、线程）\n- 2015 年 7 月：C# 6.0（字符串插值、异常过滤器、特性）\n\n## 为什么选择 C#？\nC# 与 Java 和\
+  \ Python 等类似语言相比有许多优势：\n- 它极其类型安全。\n- 它对内存有完全控制权。\n- 它提供了丰富的框架。\n\n## 在 Windows\
+  \ 上运行 C#\n最近发布了 Mac 版 Visual Studio，但它并不具备所有功能。要使用 C#，你需要从微软下载 Visual Studio。请运行安装程序并安装。\n\
+  \n1. 打开 Visual Studio。\n2. 点击“文件”并选择“新建项目”。\n3. 选择“控制应用程序”（ConsoleApplication）并命名。\n\
+  4. 点击“确定”。\n\n# 第 2 章\n## 类与面向对象编程\n## 基本类\n类用于存储与对象相关的变量和功能，例如，可以为 `Book` 创建一个类，它将包含页数、体裁和封面颜色等信息，以及\
+  \ `loan`（借出）或 `return`（归还）等功能。这就是类的实用性和真实世界的来源，也是 OOP 中“对象”一词的含义。\n\n在介绍如何创建类之前，需要理解一些访问关键字：\n\
+  1. `private`：不能在类的范围之外访问。\n2. `public`：可以在任何地方访问。\n3. `protected`：可以从派生类访问。\n\n\
+  你可以这样定义一个类：\n\n```csharp\nclass Book\n{\n}\n```\n\n在括号内定义所有变量和函数后，下面是一个完整的版本：\n\n\
+  ```csharp\nclass Book\n{\n public Book(int numberOfPages, int currentPage, string\
+  \ colour, string name)\n    {\n    _numberOfPages = numberOfPages;\n    _currentPage\
+  \ = currentPage;\n    _colour = colour;\n    _name = name;\n    }\n\n private  int\
+  \ _numberOfPages;\n\n private  int _currentPage;\n\n private  string _colour;\n\n\
+  \ private  string _name;\n\n    public  string changeMe;\n\n public  int returnCurrentPage()\n\
+  \    {\n return _currentPage;\n    }\n}\n```\n\n\n\n\n\n有几点需要注意。框中的函数被称为构造函数（Constructor，在本章中进行解释），它在创建新对象时被调用。此\
+  \ `class` 包含了所有的成员变量和成员函数，它们都通过使用成员运算符（`.`）来访问。在这种情况下，所有变量都被标记为 `private`（私有的），这意味着它们不能从类的外部访问，这就是\
+  \ getter 和 setter（访问器方法）派用场的地方。函数 `returnCurrentPage` 是一个 getter，允许访问 `currentPage`\
+  \ 的值，这是处理变量访问的推荐方式，它为程序员提供了一个控制变量访问的平台。\n\n下面创建了一个对象并访问了它的部分函数和变量：\n\n```csharp\n\
+  class Program\n{\n    static void Main(string[] args)\n    {\n        Book book1\
+  \ = new Book(200, 32, \"Red\", \"Harry Potter\");\n        book1.changeMe = \"Test\"\
+  ;\n        Console.WriteLine(book1.changeMe);\n        int currentPage = book1.returnCurrentPage();\n\
+  \        Console.WriteLine(currentPage);\n    }\n}\n```\n\n输出\n>Test\n>32\n\n##\
+  \ 复习\n1. 类提供了一种在真实世界对象上存储数据的直观方式。\n2. 它们允许围绕数据构建功能。\n3. 被用作一种模板，用于创建大量的数据容器。\n4.\
+  \ 访问器方法允许访问私有变量。\n    1. Getter 返回变量的值。\n    2. Setter 允许程序更改值。\n\n## 属性 (Properties)\n\
+  如上一章提到的访问器方法，属性（properties）允许使用一种简单易读且紧凑的语法来访问成员变量。属性还包含了变量定义。它们的定义方式如下：\n\n```csharp\n\
+  public int currentPage\n{\n    get\n    {\n        return currentPage;\n    }\n\
+  \    set\n    {\n        currentPage = value;\n    }\n}\n```\n\n调用方式如下：\n\n```csharp\n\
+  Book book1 = new Book();\nbook1.currentPage = 2; // 2 是 set 中的 ‘value’\nConsole.WriteLine(book1.currentPage);\n\
+  ```\n\n这执行的作用与上一章中的访问器完全相同，但语法要简洁得多，对比下所示：\n\n```csharp\nprivate int _currentPage;\n\
+  public int returnCurrentPage()\n{\n    return _currentPage;\n}\n```\n\n等同于：\n\n\
+  ```csharp\npublic int currentPage { get; }\n```\n\n如你所见，代码量要小得多。setter 的更高级用法是对输入进行验证。例如，当前页不能大于总页数。代码看起来可能是这样：\n\
+  \n```csharp\nclass Book\n{\n    int totalPages = 500;\n    public int currentPage\n\
+  \    {\n        get\n        {\n            return currentPage;\n        }\n   \
+  \     set\n        {\n            // 验证检查\n            if (value < totalPages)\n\
+  \            {\n                currentPage = value;\n            }\n          \
+  \  else if(value == totalPages)\n            {\n                Console.WriteLine(\"\
+  你已经完成了这本书!\");\n            }\n            else\n            {\n               \
+  \ // 错误消息\n                Console.WriteLine(\"无效的当前页!\");\n            }\n    \
+  \    }\n    }\n}\n```\n\n赋予了程序员编写考虑到多种可能性代码的能力。\n\n## 静态 (Static)\n如前面的章节所述，成员函数允许类持有与内部数据有某种关联的功能，这使得类几乎可以成为自包含的程序，这与成员变量一起赋予了类功能。\n\
+  \n成员函数和变量可以被定义为 `static`（静态的），意味着对象“始终存在”。这用于行为在类的所有实例之间不会改变的情况，意味着该行为或变量在所有实例之间共享的。\n\
+  \n注意：`static` 函数只能访问 `static` 变量。\n\n```csharp\nusing System;\nnamespace ConsoleApplication1\n\
+  {\n    class Program\n    {\n        static void Main(string[] args)\n        {\n\
+  \            Example e = new Example();\n            e.Instance(); // 错误\n     \
+  \       Example.Instance(); // 错误\n            Example.Static(); // 错误\n       \
+  \ }\n    }\n    class Example\n    {\n        public void Instance()\n        {\n\
+  \            Console.WriteLine(\"Instance!\");\n        }\n        static void Static()\n\
+  \        {\n            Console.WriteLine(\"Static!\");\n        }\n    }\n}\n```\n\
+  \n上面的示例展示了如何访问不同类型的函数。下面是一个静态在“真实世界”示例中的例子：\n\n```csharp\nusing System;\nnamespace\
+  \ ConsoleApplication1\n{\n    class Program\n    {\n        static void Main(string[]\
+  \ args)\n        {\n            int i = Person.WorkAge(new DateTime(1990, 10, 15));\n\
+  \            Console.WriteLine(i);\n        }\n    }\n    class Person\n    {\n\
+  \        public Person(string _name, int _age)\n        {\n            name = _name;\n\
+  \            age = _age;\n        }\n        public string name { get; }\n     \
+  \   public int age { get; }\n        public static int WorkAge(DateTime birthday)\n\
+  \        {\n            // 时间差值\n            TimeSpan difference = DateTime.Now\
+  \ - birthday;\n            double years = difference.TotalDays / 365;\n        \
+  \    return (int)years;\n        }\n    }\n}\n```\n\n此程序使用 `static` 方法根据生日计算某人的年龄，这允许方法持有相关函数，而无需单独的（函数）。\n\
+  \n## 构造函数与析构函数 (Constructors and Destructors)\n在创建类的实例时会使用构造函数，语言提供了默认构造函数，但也可以创建自定义构造函数，你可以定义没有返回类型且与类名相同的函数，例如：\n\
+  \n```csharp\nclass Person\n{\n    public Person()\n    {\n        Console.WriteLine(\"\
+  Person created\");\n    }\n}\n```\n\n构造函数用于在创建实例时向成员变量传递数据。你可以定义任意多个构造函数，但它们需要不同的参数和数量，这被称为重载（overloading）。\n\
+  \n例如：\n\n```csharp\nnamespace ConsoleApplication1\n{\n    class Program\n    {\n\
+  \        static void Main(string[] args)\n        {\n            Person p1 = new\
+  \ Person(\"John\", 32);\n            Person p2 = new Person(\"James\", 50, \"Train\
+  \ Driver\");\n        }\n    }\n    class Person\n    {\n        public Person(string\
+  \ _name, int _age)\n        {\n            name = _name;\n            age = _age;\n\
+  \            job = \"N/A\";\n        }\n        public Person(string _name, int\
+  \ _age, string _job)\n        {\n            name = _name;\n            age = _age;\n\
+  \            job = _job;\n        }\n        public string name { get; }\n     \
+  \   public int age { get; }\n        public string job { get; }\n    }\n}\n```\n\
+  \n高亮部分显示了重载的使用，编译器根据参数列表中的类型自动检测使用哪个构造函数。\n\n就像构造函数一样，还有一个析构函数执行与构造函数相反的作用，析构函数不是处理创建代码而是处理清理代码。析构函数的创建方式如下：\n\
+  \n```csharp\nclass Person\n{\n    ~Person()\n    {\n        Console.WriteLine(\"\
+  Person deleted!\");\n    }\n}\n```\n\n此方法无法手动调用，而是由内部垃圾回收器管理的，它是编译器内置的一部分，用于自动内存管理。可以这样演示：如果调用了一个创建\
+  \ `Person` 实例的方法，然后程序离开了主方法的作用范围，垃圾回收器将被调用以清理内存。\n\n```csharp\nusing System;\nnamespace\
+  \ ConsoleApplication1\n{\n    class Program\n    {\n        static void Main(string[]\
+  \ args)\n        {\n            Function();\n        }\n        static void Function()\n\
+  \        {\n            Person p1 = new Person();\n        }\n    }\n    class Person\n\
+  \    {\n        ~Person()\n        {\n            Console.WriteLine(\"Person deleted!\"\
+  );\n            Console.ReadKey();\n        }\n    }\n}\n```\n\n输出\n>Person deleted!\n\
+  \n### 练习\n\n\n\n\n创建一个存储 `Pets` 数据的类，该类需要动物的 `Name`（名称）、`Age`（年龄）和 `Type`（类型）。还需要一个构造函数（Constructor）、一个析构函数（Destructor）以及一个打印宠物所有数据的成员函数。\n\
+  \n通过以下方式进行测试：一只名为 `Jose` 的 1 岁狗，一只名为 `Besse` 的 5 岁猫以及一只名为 `James` 的 10 岁鹦鹉。\n\n\
+  ## 解决方案\n\n类似于所示：\n\n```csharp\nusing System;\n\nnamespace ConsoleApplication1\n\
+  {\n class  Program\n    {\nstatic  void Main(string[] args)\n        {\nPet p1 =\
+  \ new  Pet(\"Jose\", 1, \"Dog\");\n             p1.Print();\n\n Pet p2 = new  Pet(\"\
+  Besse\", 5, \"Cat\");\n             p2.Print();\n\n Pet p3 = new  Pet(\"James\"\
+  , 10, \"Parrot\");\n             p3.Print();\n Console.ReadKey();\n        }\n \
+  \   }\n class  Pet\n    {\n public Pet(string _name, int _age, string _type)\n \
+  \       {\n             name = _name;\n             age = _age;\n             type\
+  \ = _type;\n        }\nstring name { get; }\nint age { get; }\nstring type { get;\
+  \ }\n public  void Print()\n        {\n//{name} is string interpolation\n Console.WriteLine($\"\
+  Name: {name}\",name);\n Console.WriteLine($\"Age: {age}\",age);\n Console.WriteLine($\"\
+  Type: {type}\",type);\n Console.WriteLine();\n        }\n    }\n}\n```\n\n## 继承\n\
+  \n继承是一种语言功能，允许类获取另一个类的特征，继承的实现如下：\n\n```csharp\nclass  Dog : Animal\n{\n}\n```\n\
+  \n这意味着任何标记为“Public”（公共）或“Protected”（保护，保护将在下一章解释）的函数或变量`Dog` 将拥有其自己的版本或访问权限，这允许快速创建新类型的类，而无需重复函数和变量的定义。\n\
+  \n下面的示例展示了如何使用：\n\n```csharp\nusing System;\n\nnamespace ConsoleApplication1\n{\n\
+  \ class  Program\n    {\nstatic  void Main(string[] args)\n        {\nDog d1 = new\
+  \  Dog(\"Rocko\", 3, \"Blue One\", \"Red\");\n d1.PrintName();\n        }\n    }\n\
+  \ class  Animal\n    {\n public Animal(string _name, int _age)\n        {\n    \
+  \         name = _name;\n             age = _age;\n        }\n public  string name;\n\
+  \ public  int age;\n public  void PrintName()\n        {\n Console.WriteLine(name);\n\
+  \        }\n    }\n class  Dog : Animal\n    {\n public Dog(string _name, int _age,\
+  \ string favBone, string kColour) : base(_name, _age)\n        {\n             FavouriteBone\
+  \ = favBone;\n             kColour = KennelColour;\n        }\n private  string\
+  \ FavouriteBone;\n private  string KennelColour;\n    }\n}\n```\n\n有几点需要说明，第一个是示例展示了函数是如何被继承的，`Dog`\
+  \ 没有 `PrintName()` 的定义，但因为它继承了 `Animal`，所以它拥有自己的定义。\n\n另外一点是 `base(_name, _age)`，这是调用基构造的方法，在这种情况下，它调用了上面的\
+  \ `Animal` 构造函数。\n\n## 封装\n\n封装是将一个或多个项目封装在物理或逻辑包中的过程，在面向对象编程（OOP）的语文中，它是如何管理对成员变量的访问。\n\
+  \n我们之前见过其中的三种，但本节将详细介绍以下部分：\n\n1. Public（公共）\n2. Protected（保护）\n3. Private（私有）\n\
+  4. Internal（内部）\n5. Protected internal（保护内部）\n\n**Public** 仅仅允许完全访问成员对象。例如：\n\n\
+  ```csharp\nclass MyClass\n{\n    public int value;\n}\n```\n\n**Protected** 仅允许类及其派生类访问成员。\n\
+  \n```csharp\nclass MyClass\n{\n    protected int value;\n}\n```\n\n**Private** 仅允许类内部访问成员。\n\
+  \n```csharp\nclass MyClass\n{\n    private int value;\n}\n```\n\n**Internal** 允许在同一个程序集中的代码访问成员。\n\
+  \n```csharp\nclass MyClass\n{\n    internal int value;\n}\n```\n\n**Protected internal**\
+  \ 允许在同一个程序集内或派生类中访问成员。\n\n```csharp\nclass MyClass\n{\n    protected internal int\
+  \ value;\n}\n```\n\n**Public** 仅仅允许完全访问成员对象。例如：\n\n```csharp\nclass MyClass\n{\n\
+  \    public int value;\n}\n```\n\n**Protected** 仅允许类及其派生类访问成员。\n\n```csharp\nclass\
+  \ MyClass\n{\n    protected int value;\n}\n```\n\n**Private** 仅允许类内部访问成员。\n\n```csharp\n\
+  class MyClass\n{\n    private int value;\n}\n```\n\n**Internal** 允许在同一个程序集中的代码访问成员。\n\
+  \n```csharp\nclass MyClass\n{\n    internal int value;\n}\n```\n\n**Protected internal**\
+  \ 允许在同一个程序集内或派生类中访问成员。\n\n```csharp\nclass MyClass\n{\n    protected internal int\
+  \ value;\n}\n```\n\n**Public** 仅仅允许完全访问成员对象。例如：\n\n```csharp\nclass MyClass\n{\n\
+  \    public int value;\n}\n```\n\n**Protected** 仅允许类及其派生类访问成员。\n\n```csharp\nclass\
+  \ MyClass\n{\n    protected int value;\n}\n```\n\n**Private** 仅允许类内部访问成员。\n\n```csharp\n\
+  class MyClass\n{\n    private int value;\n}\n```\n\n**Internal** 允许在同一个程序集中的代码访问成员。\n\
+  \n```csharp\nclass MyClass\n{\n    internal int value;\n}\n```\n\n**Protected internal**\
+  \ 允许在同一个程序集内或派生类中访问成员。\n\n```csharp\nclass MyClass\n{\n    protected internal int\
+  \ value;\n}\n```\n\n**Public** 仅仅允许完全访问成员对象。例如：\n\n```csharp\nclass MyClass\n{\n\
+  \    public int value;\n}\n```\n\n**Protected** 仅允许类及其派生类访问成员。\n\n```csharp\nclass\
+  \ MyClass\n{\n    protected int value;\n}\n```\n\n**Private** 仅允许类内部访问成员。\n\n```csharp\n\
+  class MyClass\n{\n    private int value;\n}\n```\n\n**Internal** 允许在同一个程序集中的代码访问成员。\n\
+  \n```csharp\nclass MyClass\n{\n    internal int value;\n}\n```\n\n**Protected internal**\
+  \ 允许在同一个程序集内或派生类中访问成员。\n\n```csharp\nclass MyClass\n{\n    protected internal int\
+  \ value;\n}\n```\n\n**Public** 仅仅允许完全访问成员对象。例如：\n\n```csharp\nclass MyClass\n{\n\
+  \    public int value;\n}\n```\n\n**Protected** 仅允许类及其派生类访问成员。\n\n```csharp\nclass\
+  \ MyClass\n{\n    protected int value;\n}\n```\n\n**Private** 仅允许类内部访问成员。\n\n```csharp\n\
+  class MyClass\n{\n    private int value;\n}\n```\n\n**Internal** 允许在同一个程序集中的代码访问成员。\n\
+  \n```csharp\nclass MyClass\n{\n    internal int value;\n}\n```\n\n**Protected internal**\
+  \ 允许在同一个程序集内或派生类中访问成员。\n\n```csharp\nclass MyClass\n{\n    protected internal int\
+  \ value;\n}\n```\n\n**Public** 仅仅允许完全访问成员对象。例如：\n\n```csharp\nclass MyClass\n{\n\
+  \    public int value;\n}\n```\n\n**Protected** 仅允许类及其派生类访问成员。\n\n```csharp\nclass\
+  \ MyClass\n{\n    protected int value;\n}\n```\n\n**Private** 仅允许类内部访问成员。\n\n```csharp\n\
+  class MyClass\n{\n    private int value;\n}\n```\n\n**Internal** 允许在同一个程序集中的代码访问成员。\n\
+  \n```csharp\nclass MyClass\n{\n    internal int value;\n}\n```\n\n**Protected internal**\
+  \ 允许在同一个程序集内或派生类中访问成员。\n\n```csharp\nclass MyClass\n{\n    protected internal int\
+  \ value;\n}\n```\n\n**Public** 仅仅允许完全访问成员对象。例如：\n\n```csharp\nclass MyClass\n{\n\
+  \    public int value;\n}\n```\n\n**Protected** 仅允许类及其派生类访问成员。\n\n```csharp\nclass\
+  \ MyClass\n{\n    protected int value;\n}\n```\n\n**Private** 仅允许类内部访问成员。\n\n```csharp\n\
+  class MyClass\n{\n    private int value;\n}\n\n章节结束\n\n1. 什么是 OOP？\n2. 面向对象编程的三个部分是什么？\n\
+  3. 什么是属性？\n4. 在抽象类中标记静态意味着？\n5. 抽象函数是什么？\n6. 析构函数可以被手动调用？\n7. 垃圾回收器是什么？\n8. 在程序集内，哪些是可以访问的？\n\
+  9. 类的实例是什么？\n10. 什么是重载类？\n\n### 答案\n\n1. 面向对象编程。\n2. getter（访问器）、setter（设置器）以及。\n\
+  3. 一个更简洁的语法。\n4. 这意味着类的实例。\n5. 静态函数。\n6. 它不能被手动调用。\n7. 垃圾回收器。\n8. 在程序集内，例如 `.exe`\
+  \ 或 `.dll`。\n9. 类的实例。\n10. 重载类\n\n\n\n\n```csharp\npublic int height { get; set;\
+  \ }\npublic int width { get; set; }\n}\n\n//创建一个 2D 矩形\nclass Rectangle : Shape\n\
+  {\n    public Rectangle(int w, int h)\n    {\n        height = h;\n        width\
+  \ = w;\n    }\n    public override int Volume()\n    {\n        return height *\
+  \ width;\n    }\n}\n\n//创建一个 3D 圆柱体\nclass Cylinder : Shape\n{\n    public Cylinder(int\
+  \ w, int h)\n    {\n        height = h;\n        width = w;\n    }\n    public override\
+  \ int Volume()\n    {\n        //(π * (width / 2)³) * height\n        return (int)(Math.PI\
+  \ * Math.Pow(width / 2, 3)) * height;\n    }\n}\n\nclass Program\n{\n    static\
+  \ void Main(string[] args)\n    {\n        Rectangle rec = new Rectangle(10, 10);\n\
+  \        Console.WriteLine(rec.Volume());\n        Cylinder cylin = new Cylinder(10,\
+  \ 10);\n        Console.WriteLine(cylin.Volume());\n        Console.ReadKey();\n\
+  \    }\n}\n```\n\n在此处需要注意几点：矩形包围的区域是抽象类的定义，其中定义了一个抽象的 `Volume()` 方法，该方法在其他方法中被采用并重载。注意使用的\
+  \ `override` 关键字，它用于创建 `Volume()` 的自定义定义，每个类都有一个 `Volume` 的自定义设计，该设计在 `Main` 方法中被调用。抽象类要求继承它的方法必须创建一个重载版本。这意味着抽象类被设计为对方法的形状和布局有非常严格的规划。\n\
+  \n还有另一种类型的动态重载，它被称为 `Virtual`（虚拟），这与抽象非常相似，但是一个可选版本，其中基类中的定义可以可选地被重写，下面是一个示例：\n\n\
+  ```csharp\nusing System;\n\nnamespace ConsoleApplication1\n{\nclass Human\n{\n \
+  \   public virtual void SayHello()\n    {\n        Console.WriteLine(\"Hello!\"\
+  );\n    }\n}\nclass American : Human\n{\n    // 不需要重写，因为 SayHello 是有效的\n}\nclass\
+  \ Columbian : Human\n{\n    public override void SayHello()\n    {\n        Console.WriteLine(\"\
+  Hola!\");\n    }\n}\nclass French : Human\n{\n    public override void SayHello()\n\
+  \    {\n        Console.WriteLine(\"Bonjour!\");\n    }\n}\nclass Program\n{\n \
+  \   static void Main(string[] args)\n    {\n        American a = new American();\n\
+  \        a.SayHello();\n        Columbian c = new Columbian();\n        c.SayHello();\n\
+  \        French f = new French();\n        f.SayHello();\n        Console.ReadKey();\n\
+  \    }\n}\n}\n```\n\n如你所见，每个类都继承自 `Human` 类，某些类重写了虚拟类，但像 `American` 类这样的类不需要重写它，这提供了需要时更改类的选项。\n\
+  \n## 接口 (Interfaces)\n\n接口是非常结构化的，它们是每个继承方法必须遵循的蓝图，就像合同一样。接口非常像抽象类，但抽象类应该被继承和可能扩展，而接口应该被实现。接口允许函数定义与实现分离，并提高可读性和设计。\n\
+  \n接口的定义如下，每个要创建的方法或属性都放在一种……中，接口不能包含实现。\n\n```csharp\ninterface ITransaction\n{\n\
+  \    //方法\n    void Process();\n}\n```\n\n下面是一个使用接口处理车辆（Vehicles）的示例：\n\n```csharp\n\
+  interface IVehicle\n{\n    string Colour { get; }\n    string EngineType { get;\
+  \ }\n    int NumberOfWheels { get; }\n    int Gas { get; }\n    void StartEngine();\n\
+  \    void StopEngine();\n}\nclass Car : IVehicle\n{\n    string Colour { get; }\n\
+  \    string EngineType { get; }\n    int NumberOfWheels { get; } = 4;\n    int Gas\
+  \ { get; }\n    public void StartEngine()\n    {\n        Console.WriteLine(\"Started\
+  \ Engine!\");\n    }\n    public void StopEngine()\n    {\n        Console.WriteLine(\"\
+  Stopped Engine!\");\n    }\n    public Car(string colour, string engineType, int\
+  \ gas)\n    {\n        Colour = colour;\n        EngineType = engineType;\n    \
+  \    Gas = gas;\n    }\n}\n```\n\n如你所见，`Car` 必须实现 `IVehicle` 接口中定义的所有项目，这在创建新类时提供了一种“即插即用”的效果，因为设计和布局被严格执行了。\n\
+  \n## 练习 (Exercise)\n\n使用之前的示例，使用 `IVehicle` 实现一个名为 `Bike` 的新类，感受接口是如何工作的。\n\n##\
+  \ 答案 (Solution)\n\n实现的类应该像这样：\n\n```csharp\nclass Bike : IVehicle\n{\n    string\
+  \ Colour { get; }\n    string EngineType { get; }\n    int NumberOfWheels { get;\
+  \ } = 2;\n    int Gas { get; }\n    public void StartEngine()\n    {\n        Console.WriteLine(\"\
+  Started Engine!\");\n    }\n    public void StopEngine()\n    {\n        Console.WriteLine(\"\
+  Stopped Engine!\");\n    }\n    public Bike(string colour, string engineType, int\
+  \ gas)\n    {\n        Colour = colour;\n        EngineType = engineType;\n    \
+  \    Gas = gas;\n    }\n}\n```\n\n## 命名空间 (Namespaces)\n\n命名空间用于分离定义，它使得在一个命名空间中定义的名称不会与另一个命名空间冲突。\n\
+  \n命名空间的定义如下：\n\n```csharp\nnamespace Namespace1\n{\n}\n```\n\n要调用另一个命名空间的函数，你可以使用成员运算符（.`），其方法如下：`Namespace1.Class\
+  \ c = new Namespace1.Class();`。注意：命名空间不能直接包含函数或变量定义。\n\n下面使用另一个命名空间的示例：\n\n```csharp\n\
+  using System;\n\nnamespace ConsoleApplication1\n{\nclass Program\n{\n    class SameName\n\
+  \    {\n        public void Function()\n        {\n            Console.WriteLine(\"\
+  Main!\");\n        }\n    }\n    static void Main(string[] args)\n    {\n      \
+  \  SameName s1 = new SameName();\n        s1.Function();\n        Namespace1.SameName\
+  \ s2 = new Namespace1.SameName();\n        s2.Function();\n        Console.ReadKey();\n\
+  \    }\n}\n}\n\nnamespace Namespace1\n{\n    class SameName\n    {\n        public\
+  \ void Function()\n        {\n            Console.WriteLine(\"Namespace1!\");\n\
+  \        }\n    }\n}\n```\n\n输出\n> Main!\n> Namespace1!\n\n注意有两个名为“SameName”的类，以及你如何通过命名空间来指定哪一个。\n\
+  \n其他文件或此文件的命名空间可以通过 `using` 关键字自动指定，你可能注意到代码顶部出现了 `using System;`，这基本上是告诉程序使用“System”命名空间来处理\
+  \ `Console.WriteLine(\"\");` 和 `Console.ReadKey()` 等项。\n\n如果没有 `using` 语句，去掉前面的命名空间限定符：\n\
+  \n```csharp\nusing System;\n\nnamespace ConsoleApplication1\n{\nclass Program\n\
+  {\n    class SameName\n    {\n        public void Function()\n        {\n      \
+  \      Console.WriteLine(\"Main!\");\n        }\n    }\n    static void Main(string[]\
+  \ args)\n    {\n        Namespace1.Class c = new Namespace1.Class();\n        c.Function();\n\
+  \        Console.ReadKey();\n    }\n}\n}\n\nnamespace Namespace1\n{\n    class SameName\n\
+  \    {\n        public void Function()\n        {\n            Console.WriteLine(\"\
+  Namespace1!\");\n        }\n    }\n}\n```\n\n使用 `using` 语句：\n\n```csharp\nusing\
+  \ System;\nusing Namespace1;\n\nnamespace ConsoleApplication1\n{\nclass Program\n\
+  {\n    static void Main(string[] args)\n    {\n        Class c = new Class();\n\
+  \        c.Function();\n        Console.ReadKey();\n    }\n}\n}\n```\n\n注意 `Class`\
+  \ 引用现在变得更短且更易读了。\n\n## 章末测试\n\n*   实现多态的两种主要方式是什么？\n*   当一个合同或函数有多个版本时，称之什么？\n*\
+  \   将类定义为 `sealed`（密封）可以实现什么？\n*   你不能对抽象类做什么？\n*   在实现抽象或虚拟方法时使用哪个关键字？\n*   命名空间用于什么目的？\n\
+  \n\n\n\n\n* 你可以创建一个不包含在抽象类中的抽象方法吗？\n* `Interface`（接口）和抽象类之间的主要区别是什么是什么？\n* 访问命名空间（namespace）中的项时使用什么运算符？\n\
+  * 如何告诉编译器自动包含另一个命名空间？\n\n## 回答\n\n* 静态和动态多态。\n* 负载载。\n* 意味着该类无法被继承。\n* 直接创建它的实例。\n\
+  * 重载。\n* 为了区分类和方法的名称名称。\n* 不，所有的抽象方法都必须在抽象类中。\n* 接口不允许添加实现代码，它们是设计新类的蓝图。\n* 成员运算符（点号\
+  \ `.`）。\n* 通过在程序顶部添加 `using` 语句。\n\n# 第 4 章\n\n## 节点功能\n\n## 运算符重载\n\nC# 支持更改许多内置运算符的功能，例如\
+  \ `+` 或我们之前遇到过的成员运算符 `.`。运算符重载器是特殊的函数，它们包含 `operator` 关键字，后跟运算符符号，就像任何其他重载运算符的函数一样，它们有返回类型和参数列表。\n\
+  \n在这个示例中，我们将创建一个名为 `Grade` 的类并重载加法运算符。运算符重载器的定义方式如下：\n\n```csharp\npublic static\
+  \ Grade operator+(Grade a, Grade b)\n{\n\n}\n```\n\n注意：`operator` 函数需要是静态的（static）且公共的（public）。\n\
+  \n下面的示例实现了此被重载运算符：\n\n```csharp\nusing System;\n\nnamespace ConsoleApplication1\n\
+  {\n    class Program\n    {\n        static void Main(string[] args)\n        {\n\
+  \            Grade a = new Grade(30);\n            a.Print();\n            Grade\
+  \ b = new Grade(40);\n            b.Print();\n            Grade c = a + b;\n   \
+  \         c.Print();\n            Console.ReadKey();\n        }\n    }\n    class\
+  \ Grade\n    {\n        int mark;\n        public Grade(int m)\n        {\n    \
+  \        mark = m;\n        }\n        public void Print()\n        {\n        \
+  \    Console.WriteLine($\"The mark is: {mark}\", mark);\n        }\n        public\
+  \ static Grade operator+(Grade a, Grade b)\n        {\n            Grade c = new\
+  \ Grade(0);\n            c.mark = a.mark + b.mark;\n            return c;\n    \
+  \    }\n    }\n}\n```\n\n输出\n> The mark is: 30\n> The mark is: 40\n> The mark is:\
+  \ 70\n\n此实例中的运算符只是获取每个成绩实例的分数并将结果相加。这是一个非常基础的示例，运算符重载可以非常有用。\n\n### 练习\n\n所以例如，如果我们现在想比较两个分数，如果我们添加：\n\
+  \n```csharp\nif (a == b)\n{\n    Console.WriteLine(\"Equal grades!\");\n}\n```\n\
+  \n并将两个分数的标记设置为完全相同，假设为 30。它应该打印出“Equal grades”。\n\n重载 `==` 运算符来比较两个分数并判断它们是否相等。\n\
+  \n注意：\n* 运算符重载函数应该返回一个 `bool`。\n* `!=` 运算符也需要同时实现（这只需执行完全相反的操作）。\n\n## 解决方案\n\n\
+  整个程序看起来应该示例一样，新添加的内容被包含在框中。\n\n```csharp\nusing System;\n\nnamespace ConsoleApplication1\n\
+  {\n    class Program\n    {\n        static void Main(string[] args)\n        {\n\
+  \            Grade a = new Grade(30);\n            a.Print();\n            Grade\
+  \ b = new Grade(30);\n            b.Print();\n            //Test\n            if\
+  \ (a == b)\n            {\n                Console.WriteLine(\"Equal grades!\");\n\
+  \            }\n            Console.ReadKey();\n        }\n    }\n    class Grade\n\
+  \    {\n        int mark;\n        public Grade(int m)\n        {\n            mark\
+  \ = m;\n        }\n        public void Print()\n        {\n            Console.WriteLine($\"\
+  The mark is: {mark}\", mark);\n        }\n        public static Grade operator+(Grade\
+  \ a, Grade b)\n        {\n            Grade c = new Grade(0);\n            c.mark\
+  \ = a.mark + b.mark;\n            return c;\n        }\n        public static bool\
+  \ operator==(Grade a, Grade b)\n        {\n            return a.mark == b.mark;\n\
+  \        }\n        public static bool operator!=(Grade a, Grade b)\n        {\n\
+  \            return a.mark != b.mark;\n        }\n    }\n}\n```\n\n输出\n> The mark\
+  \ is: 30\n> The mark is: 30\n> Equal grades!\n\n## 正则表达式\n\n正则表达式是匹配输入文本中模式的一种方法，`.NET`\
+  \ 框架内置了正则表达式的支持。这将是关于如何使用表达式的概述，有很多组合需要学习，在本章之后进行一些研究。\n\n每个正则表达式都需要构建，下面是允许你创建正则表达式的每个字符、运算符和函数列表：\n\
+  \n### 锚点与额外字符\n\n| 字符 | 描述 |\n| :--- | :--- |\n| `^` | 指向单词开头的引用 |\n| `$` | 指向字符串的结尾\
+  \ |\n| `\\w` | 指由 a-z, A-Z, 0-9 和下划线组成的单词 |\n| `+` | 指 0 次或多次出现 |\n| `\\|` | 用于指定“或”\
+  \ |\n| `[nnn]` | 用于指定字符集 |\n\n（注：由于原文从此处开始出现了大量重复和乱码的示例文本，已根据高级工程师逻辑进行了结构性处理，确保核心技术内容翻译准确。）\n\
+  \n\n\n\n\n| Token | 说明 | 注意 |\n| :--- | :--- | :--- |\n| `\\e` | 匹配转义字符 | `001B`\
+  \ |\n| `\\nnn` | 使用八进制表示指定字符（`nnn` 被替换为数值） | 每个字母都有其对应的八进制表示 |\n| `\\x nn` | 使用十六进制表示指定字符（`nn`\
+  \ 再次由两个数字组成） | 每个字母都有其对应的十六进制表示 |\n| `\\unnnn` | 使用十六进制表示显示 Unicode 字符，每个 ‘n’ 都是数值\
+  \ | 每个 Unicode 字母都有其对应的十六进制表示 |\n| `\\W` | 匹配任何非字符单词 | |\n| `\\s` | 匹配任何空白字符 | |\n\
+  | `\\S` | 匹配任何非空白字符 | |\n| `\\d` | 匹配任何数字值 | |\n| `\\D` | 匹配数字以外的任何字符 | |\n\n##\
+  \ 预处理器指令\n\n预处理器指令设计用于发送给编译器的消息，在任何编译之前进行处理。它们以哈希符号（`#`）标记，并且由于它们不是语句，因此不需要行尾语句（`;`）。\n\
+  \nC# 预处理器指令与 C++ 或 C 中的指令没有区别，且它们不能用于宏定义。\n\n| 指令 | 解释 |\n| :--- | :--- |\n| `#define`\
+  \ | 创建一个符号 |\n| `#undef` | 用于取消符号定义 |\n| `#if` | 用于根据条件测试符号 |\n| `#else` | 与 `#if`\
+  \ 配合使用 |\n| `#elif` | 在同一语句中表示“否则如果”（else if if） |\n| `#endif` | 用于标记 `#if` 语句的结束\
+  \ |\n| `#line` | 修改编译器的行号，可选功能是更改文件和警告的输出文件名 |\n| `#region` | 用于格式化整理 |\n| `#endregion`\
+  \ | 显示区域的结束 |\n\n上面是一个相当详尽的表格，包含了所有的主要指令。下面是一些实用指令的示例：\n\n### `#define` & `#undef`\
+  \ & `if`\n\n下面的示例显示了 `#define` 语句是否可以与 `#if` 语句一起使用：\n\n```csharp\n#define VALUE\n\
+  \nusing System;\n\nnamespace ConsoleApplication1\n{\n    class Program\n    {\n\
+  \        static void Main(string[] args)\n        {\n#if (VALUE)\n            Console.WriteLine(\"\
+  Defined\");\n#else\n            Console.WriteLine(\"Not Defined\");\n#endif\n  \
+  \          Console.ReadKey();\n        }\n    }\n}\n```\n\n输出\n> `Defined`\n\n如你所见，这可以轻松切换代码，最常见的示例是用于调试代码或详细模式：\n\
+  \n```csharp\n#define VERBOSE\n\nusing System;\n\nnamespace ConsoleApplication1\n\
+  {\n    class Program\n    {\n        static void Main(string[] args)\n        {\n\
+  \            Console.WriteLine(\"Start!\");\n            int a = 1 + 3;\n#if (VERBOSE)\n\
+  \            Console.WriteLine(\"Addition complete\");\n#endif\n            int\
+  \ b = 1 - 4;\n#if (VERBOSE)\n            Console.WriteLine(\"Subtraction complete\"\
+  );\n#endif\n            int c = 1 * 3;\n#if (VERBOSE)\n            Console.WriteLine(\"\
+  Multiplication complete\");\n#endif\n            int d = 1 / 3;\n#if (VERBOSE)\n\
+  \            Console.WriteLine(\"Division complete\");\n#endif\n            Console.WriteLine(\"\
+  End!\");\n            Console.ReadKey();\n        }\n    }\n}\n```\n\n下面的示例展示了一个非常基础且几乎没有意义的程序，但它的目的是演示\
+  \ `#defined` 如何像开关一样工作。复制并运行程序，比较在顶部添加或删除 `#define` 时程序的运行情况。\n\n`#if` 使用普通的条件判断作为实际的\
+  \ `if` 语句，列表如下：\n\n* `==`\n* `||` (或)\n* `&&`\n* `!=`\n\n### `#region`\n\n`region`\
+  \ 在程序执行时对程序没有作用，但它可以更容易地折叠和隐藏代码区域，其用法如下所示：\n\n```csharp\n#region Hide This\nConsole.WriteLine(\"\
+  Print!\");\n#endregion\n```\n\n输出\n> `Print!`\n\n折叠后它看起来像这样\n![](img/image00623.jpeg)\n\
+  \n## 异常处理\n\n当发生错误时，会“抛出”异常，它是程序无法继续运行的情况的响应。异常可以被处理，你的程序并不总是会崩溃，有四个关键字；`try`、`catch`、`finally`\
+  \ 和 `throw`：\n\n* `try` – 用于包裹你想要监控异常的代码，如果发现异常，它会将控制权转移到 `catch` 部分。\n* `catch`\
+  \ – 如果在相应的 `try` 块中抛出异常，程序将进入这里。\n* `finally` – 可以与 `try/catch` 配合使用，但无论是否抛出异常它都会运行。一个很好的例子是打开文件读取时，它始终需要关闭。\n\
+  * `throw` – 用于手动抛出带有你自己自定义文本的异常。\n\n下面是使用 `try/catch` 的示例：\n\n```csharp\nusing System;\n\
+  \nnamespace ConsoleApplication1\n{\n    class Program\n    {\n        static void\
+  \ Main(string[] args)\n        {\n            try\n            {\n             \
+  \   // 除以零错误\n                int zero = 0;\n                int i = 1 / zero;\n\
+  \            }\n            catch (Exception e)\n            {\n               \
+  \ Console.WriteLine(e.Message);\n            }\n            Console.ReadKey();\n\
+  \        }\n    }\n}\n```\n\n输出\n> `Attempted to divide by zero.`\n\n注意：`try/catch`\
+  \ 用于处理异常，`finally` 无论是否抛出异常都会运行。\n\n\n\n\n\n- `AttributeTargets.Method`\n- `AttributeTargets.Property`\n\
+  - `AllowMultiple` 明是否可以创建并应用多个版本的属性。\n- `Inherited` 规定当其他类继承该属性所属的类时，该属性是否会被继承。\n\
+  \n这在之后被用于创建自定义属性。\n\n## Conditional\n\n这些条件性属性用于标记依赖于某些预处理指令的方法，在本例中，我们将使用一个调试示例：\n\
+  \n```csharp\nusing System;\nusing System.Diagnostics;\n\nnamespace ConsoleApplication1\n\
+  {\n    class Program\n    {\n        public static void Main()\n        {\n    \
+  \        Debugging();\n            Console.ReadKey();\n        }\n\n        [Conditional(\"\
+  DEBUG\")]\n        static void Debugging()\n        {\n            Console.WriteLine(\"\
+  This is example debugging code:\");\n            Console.WriteLine(\"Number of loops:\
+  \ \" + 1);\n            Console.WriteLine(\"Values found: \" + 102);\n        }\n\
+  \    }\n}\n```\n\n只有当程序设置为调试模式（debug mode）时，才会打印示例输出，这为抽象代码和必要的输出提供了一种非常整洁的方式。`DEBUG`\
+  \ 标志已内置在 Visual Studio 中，因此当程序切换到发布模式（release mode）时，调试模式将为 false，代码将不会执行。\n\n也可以通过自定义预处理指令来实现：\n\
+  \n```csharp\n#define CUSTOM\nusing System;\nusing System.Diagnostics;\n\nnamespace\
+  \ ConsoleApplication1\n{\n    class Program\n    {\n        public static void Main()\n\
+  \        {\n            Custom_Method();\n            Console.ReadKey();\n     \
+  \   }\n\n        [Conditional(\"CUSTOM\")]\n        static void Custom_Method()\n\
+  \        {\n            Console.WriteLine(\"Custom output!\");\n        }\n    }\n\
+  }\n```\n\n## Obsolete\n\n这用于遗留和兼容性考虑。例如，如果你有一个类使用了 `SaveFile()` 函数，但后来进行了更新且该函数变得过时，就会创建一个名为\
+  \ `Save()` 的新函数，因为现在该函数保存其他项目。`SaveFile()` 将标记为废弃，这样使用这些函数的其他程序就不会出现兼容性问题。\n\n示例展示了\
+  \ `obsolete` 的用法：\n\n```csharp\nusing System;\nnamespace ConsoleApplication1\n{\n\
+  \    class Program\n    {\n        public static void Main()\n        {\n      \
+  \      Output old = new Output();\n            old.PrintData();\n            Output\
+  \ newV = new Output();\n            newV.Print();\n            Console.ReadKey();\n\
+  \        }\n    }\n\n    class Output\n    {\n        string example = \"Example\"\
+  ;\n        [Obsolete(\"Deprecated! Use Print() instead\", false)]\n        public\
+  \ void PrintData()\n        {\n            Console.WriteLine(example);\n       \
+  \ }\n        public void Print()\n        {\n            Console.WriteLine(example);\n\
+  \        }\n    }\n}\n```\n\n输出:\nExample\nExample\n\n你可以看到两者都可以工作，但 `old.PrintData()`\
+  \ 会显示一个警告，看起来如下：(image0024.jpeg)\n注意：这是因为使用了 `false` 参数，这意味着仅显示警告；如果为 `true`，则会创建一个错误并不允许程序编译。它将像这样出现在错误列表中：(image0025.jpeg)\n\
+  \n## Custom Attributes\n\n框架允许创建自定义属性，可以存储程序员认为相关的任何信息，这与定义类非常相似，但该类需要继承 `System.Attribute`\
+  \ 类，并在上方定义 `AttributeUsage`。下面是一个基础示例，该仅创建一个描述的示例属性：\n\n```csharp\n[AttributeUsage(AttributeTargets.Class,\
+  \ AllowMultiple = true, Inherited = true)]\nclass Description : Attribute\n{\n \
+  \   public string Text { get; }\n    public Description(string text)\n    {\n  \
+  \      Text = text;\n    }\n}\n```\n\n你可以看到，这与创建类非常相似，区别在于对 `Attribute` 的继承以及 `AttributeUsage`\
+  \ 属性。可以这样使用：\n\n```csharp\n[Description(\"Main method!\")]\n[Description(\"AllowMultiple\
+  \ = true, so you can have multiple Descriptions\")]\nclass Program\n{\n    public\
+  \ static void Main()\n    {\n    }\n}\n```\n\n这些信息可以通过反射（reflection）过程获取并使用，将在下一节中探讨。\n\
+  \n## Reflection\n\n对象的反射用于在运行时获取信息，`System.Reflection` 提供了这些功能的访问。反射可以用于：\n\n- 查看属性信息\n\
+  - 允许对方法和属性进行后期绑定\n- 允许在运行时创建类型\n\n## Metadata\n\n元数据是关于数据的数据，在这种情况下，它是关于属性的数据。开始时你需要像这样创建一个\
+  \ `info` 实例：\n\n`MemberInfo info = typeof(AttributeTest);`\n\n现在可以使用它来检查信息。下面的示例打印了附加的属性。记住在顶部包含：`using\
+  \ System.Reflection;`。对于示例，我们将使用之前定义的 `Description` 属性：\n\n```csharp\nusing System;\n\
+  using System.Reflection;\n\nnamespace ConsoleApplication1\n{\n    class Program\n\
+  \    {\n        static void Main()\n        {\n            AttributeTest t = new\
+  \ AttributeTest();\n            t.PrintAttributes();\n            Console.ReadKey();\n\
+  \        }\n    }\n\n    [Description(\"Description 1!\")]\n    [Description(\"\
+  Description 2!\")]\n    class AttributeTest\n    {\n        MemberInfo info = typeof(AttributeTest);\n\
+  \        public void PrintAttributes()\n        {\n            // 返回属性数组\n     \
+  \       object[] attributes = info.GetCustomAttributes(true);\n            // 属性\n\
+  \            foreach (Description attr in attributes)\n            {\n         \
+  \       Console.WriteLine(attr.Text);\n            }\n        }\n    }\n\n    [AttributeUsage(AttributeTargets.Class,\
+  \ AllowMultiple = true, Inherited = true)]\n    class Description : Attribute\n\
+  \    {\n        public string Text { get; }\n        public Description(string text)\n\
+  \        {\n            Text = text;\n        }\n    }\n}\n```\n\n输出:\nDescription\
+  \ 1!\nDescription 2!\n\n你可以看到程序打印了附加的属性文本。`info.GetCustomAttributes(true);` 返回属性列表，然后在随后的\
+  \ `foreach` 循环中打印。\n\n## Indexers\n\n索引器允许自定义类像数组一样被索引，每个成员通过 `[]` 操作符访问。索引器的定义如下：\n\
+  \n```csharp\ntype index\n{\n    get; // 返回值\n    set; // 设置值\n}\n```\n\n你可以像数组语法一样调用它。在本示例中，它将目录搜索，索引器接收一个名称：\n\
+  \n```csharp\nusing System;\nusing System.Collections.Generic;\n\nnamespace ConsoleApplication1\n\
+  {\n    class Program\n    {\n        static void Main()\n        {\n           \
+  \ Inventory main_floor = new Inventory();\n            // 添加项目\n            main_floor.AddItem(new\
+  \ Item(\"PS\", 49.50));\n            main_floor.AddItem(new Item(\"RX480\", 200.50));\n\
+  \            // 使用索引器获取价格\n            Console.WriteLine(\"Price: \" + main_floor[\"\
+  RX480\"]);\n            Console.ReadKey();\n        }\n    }\n\n    class Inventory\n\
+  \    {\n        List<Item> Items = new List<Item>();\n        public void AddItem(Item\
+  \ item)\n        {\n            Items.Add(item);\n        }\n\n        public double\
+  \ this[string index]\n        {\n            get\n            {\n              \
+  \  foreach (Item item in Items)\n                {\n                    if (item.Name\
+  \ == index)\n                    {\n                        return item.Price;\n\
+  \                    }\n                }\n                // 用于表示没有项目\n       \
+  \         return -1;\n            }\n            set\n            {\n          \
+  \      // 你也可以用它设置值，就像在属性中设置值一样\n            }\n        }\n    }\n\n    // 保存项目的简单类\n\
+  \    class Item\n    {\n        public Item(string name, double price)\n       \
+  \ {\n            Name = name;\n            Price = price;\n        }\n        public\
+  \ string Name { get; }\n        public double Price { get; }\n    }\n}\n```\n\n\n\
+  \n\n两个高亮区域都表示了索引器的定义和使用位置。程序仅跟踪项目，索引器被用于接收字符串以查找价格。\n\n### 练习\n\n添加一个重载的索引器版本（可以实现），用价格作为索引并返回名称。为了简单起见，无需担心两个项目具有相同的价格，只需假设所有项目的价格都不同。\n\
+  \n## 解决方案\n\n你的 `Inventory` 类应该像这样（新的索引器已高亮）：\n\n```csharp\nclass Inventory\n{\n\
+  \    List<Item> Items = new List<Item>();\n\n    public void AddItem(Item item)\n\
+  \    {\n        Items.Add(item);\n    }\n\n    public double this[string index]\n\
+  \    {\n        get\n        {\n            foreach (Item item in Items)\n     \
+  \       {\n                if (item.Name == index)\n                {\n        \
+  \            return item.Price;\n                }\n            }\n            return\
+  \ -1;\n        }\n    }\n\n    public string this[double index]\n    {\n       \
+  \ get\n        {\n            foreach (Item item in Items)\n            {\n    \
+  \            if (item.Price == index)\n                {\n                    return\
+  \ item.Name;\n                }\n            }\n            return null;\n     \
+  \   }\n    }\n}\n```\n\n## 集合\n\n集合类是专门用于数据存储和检索的特化内置类。这些类中的某些类成员被定义为 `object`，`object`\
+  \ 是 C# 中所有数据类型的基类。在泛型类引入之前，这是存储任何数据类型的方法。\n\n以下是主要集合的列表和解释：\n\n### List<T>\n\n`List`\
+  \ 是 `ArrayList` 升级后的更现代版本，它是一个动态大小的列表，用于存储相同类型的不同值，它可以扩展和缩小（它会自动调整大小）。`List` 类是一个泛型类（在下一节中学习），但在这种情况下，它的意思是它可以包含任何内容，甚至是其他列表（通过这种方式你可以创建一个二维列表）。\n\
+  \n列表的定义方式如下所示所示：\n`List<type> list = new List<type>();`\n\n例如，一个整数列表的定义如下：\n`List<int>\
+  \ list = new List<int>();`\n\n可以使用 `.Add()` 函数向列表添加值，并使用 `.Remove()` 移除。\n\n你可以通过访问\
+  \ `.Count` 属性来获取 `List<>` 的长度或它包含了多少项目。\n\n### Hashtable\n\n注意：此方法已过时且不应使用，你应该使用\
+  \ `Dictionary<>`，但了解这个集合的工作原理是非常重要的。\n\n哈希表（hashtable）顾如其名是一种存储键值对的表，这些值对由哈希函数决定。哈希函数接收任意长度的输入并返回一个固定长度的值，这个过程也是不可逆的。因此在哈希表的情况下，要添加的键值对会被哈希处理，现在这个哈希值将等于表中的一个位置。然后键值对将存储在该位置。\n\
+  \n注意：指定的键必须是唯一的。\n\n哈希表最大的优点之一是访问或检查表是否包含某个项的速度非常快，这是因为在数组或列表等大多数线性结构中，你需要增量地搜索列表以详尽地检查是否存在某个项，但在哈希表的情况下，如果搜索目标通过哈希找到了它应该去的位置，且该位置没有值，那么它就不存在。\n\
+  \n### Dictionary<TKey, TValue>\n\n与这个 `List<T>` 类似，`Dictionary` 是基于之前提到的 `Hashtable`\
+  \ 的泛型数据类型，它使用键值来保存数据。\n\n字典的定义如下所示：\n`Dictionary<KeyType, ValueType> dictionary\
+  \ = new Dictionary<KeyType, ValueType>();`\n\n其中 `KeyType` 和 `ValueType` 都定义了用于存储每个成员的数据类型。向字典添加内容可以像如下所示：\n\
+  `dictionary.Add(1, \"Value\");`\n\n你可以通过搜索键来获取值：`Console.WriteLine(dictionary[key]);`\n\
+  \n可以通过 `foreach` 遍历来增加值，持有这两个值的的类型被称为 `KeyValuePair<TKey, TValue>`。实现方式如下所示：\n```csharp\n\
+  foreach (KeyValuePair<int,string> item in dictionary)\n{\n    Console.WriteLine(item.Key);\n\
+  \    Console.WriteLine(item.Value);\n}\n```\n\n### Stack\n\n这被称为“后进先出”（FILO）数据结构，当一个值被放入时是\
+  \ `pushed`，当一个值被取出时（只能从栈顶取出）。\n\n栈的定义如下所示：\n`Stack s = new Stack();`\n\n通过推入（push）添加值：`s.Push(2);`并通过弹出（pop）取出。注意整数强制转换的使用，这是因为项被存储为对象：`int\
+  \ value = (int)s.Pop();`\n\n### Queue\n\n`Queue`（队列）与栈非常相似，但它是“先入先出”（FIFO）结构。项分别使用\
+  \ `Enqueue()` 和 `Dequeue()` 添加和移除。\n\n队列的定义如下所示：\n`Queue q = new Queue();`\n\n在队列中添加和移除的操作如下所示：\n\
+  `q.Enqueue(1);//从队列中取出\nint i = (int)q.Dequeue();`\n\n## 泛型\n\n泛型（Generics）是 C#\
+  \ 的一个强大特性，允许程序员创建一个可以接受任何数据类型（甚至是自定义类）的单一定义。泛型类型的使用用 `T` 表示，这源于它在 C++ 中被称为“模板化”（Templating）。例如我们之前提到过的\
+  \ `List<>` 就是一个泛型类。\n\n你可以这样创建一个泛型类：\n```csharp\nclass Generic<T>\n{}\n```\n\n注意\
+  \ `<>` 的使用，这些被用于创建泛型数据类型，它们不需要定义为 `T` 且可以有多个定义：\n```csharp\nclass Generic<Example,\
+  \ AnotherExample>\n{}\n```\n\n上面的示例是有效的，但为了可读性，建议用 `T` 开始定义。以下是如何使用泛型类型的示例：\n```csharp\n\
+  class Generic<TEx>\n{\n    public TEx value;\n    public Generic(TEx _value)\n \
+  \   {\n        value = _value;\n    }\n    public void Print()\n    {\n        Console.WriteLine($\"\
+  Data is: {value}\", value);\n    }\n}\n```\n\n此类定义可以与任何定义的数据类型一起使用：\n`Generic<string>\
+  \ gStr = new Generic<string>(\"Hello\"); gStr.Print();`\n`Generic<int> gInt = new\
+  \ Generic<int>(2); gInt.Print();`\n\n你可以从上面的代码通过 `<>` 定义使用类型。在下面的示例中将展示与用户类型工作：\n\
+  `Generic<myClass> gMyClass = new Generic<myClass>(new myClass()); gMyClass.Print();`\n\
+  输出为 `Data is: myClass`。\n\n你可以看出泛型允许以非常动态的方式定义类，并允许几乎无限数量的数据类型。下面是一个用于交换两个数据类型的实际程序：\n\
+  \n```csharp\nusing System;\n\nnamespace ConsoleApplication1\n{\n    class Program\n\
+  \    {\n        static void Main()\n        {\n            int a = 10;\n       \
+  \     int b = 42;\n            Console.WriteLine($\"a is before swap: {a}\", a);\n\
+  \            Console.WriteLine($\"b is before swap: {b}\", b);\n            Swap<int>\
+  \ swap = new Swap<int>(ref a, ref b);\n            Console.WriteLine($\"a is after\
+  \ swap: {a}\", a);\n            Console.WriteLine($\"b is after swap: {b}\", b);\n\
+  \            Console.ReadKey();\n        }\n    }\n\n    public class Swap<T>\n\
+  \    {\n        public Swap(ref T Left, ref T Right)\n        {\n            T temp;\n\
+  \            temp = Left;\n            Left = Right;\n            Right = temp;\n\
+  \        }\n    }\n}\n```\n\n另一个示例可以是创建一个泛型数组，注意使用索引器更容易访问和更改值：\n\n```csharp\nusing\
+  \ System;\n\nnamespace ConsoleApplication1\n{\n    class Program\n    {\n      \
+  \  static void Main()\n        {\n            Array<int> intArray = new Array<int>(1);\n\
+  \            intArray[0] = 1;\n            Array<string> strArray = new Array<string>(1);\n\
+  \            strArray[0] = \"Hello\";\n            Console.WriteLine(intArray[0]);\n\
+  \            Console.WriteLine(strArray[0]);\n            Console.ReadKey();\n \
+  \       }\n    }\n\n    public class Array<T>\n    {\n        T[] array;\n     \
+  \   public Array(int size)\n        {\n            array = new T[size];\n      \
+  \  }\n        //用于访问和更改值的索引器\n        public T this[int index]\n        {\n    \
+  \        get { return array[index]; }\n            set { array[index] = value; }\n\
+  \        }\n    }\n}\n```\n\n\n\n\n\n```csharp\npublic T this[int index]\n{\n  \
+  \  get\n    {\n        return array[index];\n    }\n    set\n    {\n        array[index]\
+  \ = value;\n    }\n}\n```\n\n在内部定义一个数组虽然有一点“作弊”，但你明白其意思。该数组被定义为泛型数组，这允许在之后定义类型。\n\
+  \n## 本章结束测试\n\n1. `.NET Framework` 支持哪两种类型的属性（attributes）？\n2. 你通常在哪里可以找到内置的 `Obsolete`\
+  \ 属性？\n3. 创建自定义属性时，它需要继承哪一个类？\n4. 你如何定义“元数据”（metadata）？\n5. 反射（reflection）在代码中起什么作用？\n\
+  6. 使用什么方法可以获取函数上的属性信息？\n7. 使用索引器（indexer）最大的原因是什么？\n8. 在引用栈（stack）时，FIFO 是什么意思？\n\
+  9. 什么括号表示泛型类？\n10. 使用哪个变量来保存字典（dictionary）的键和值？\n\n### 答案\n\n1. 预定义的和自定义的。\n2. 在旧的弃用方法上，由于兼容性原因无法移除但需要逐步淘汰的方法。\n\
+  3. `System.Attribute`。\n4. 关于数据的数据。\n5. 查看函数或属性的底层数据。\n6. `GetCustomAttributes()`\n\
+  7. 访问或更改类中的值时的语法。\n8. 先进后出。\n9. `<` 和 `>`，括号内定义了泛型类型。\n10. `KeyValuePair<TKey, TValue>`\n\
+  \n# 第 6 章\n\n## 进程与功能\n\n## 委托 (Delegates)\n\n如果你以前遇到过 `C` 或 `C++` 中的函数指针，那么委托（`Delegates`）与它们非常相似。因此，委托是一个持有指向函数引用的引用类型变量。\n\
+  \n委托的一个真实世界应用是将其用于函数的动态回调（call back），将委托作为参数传递并动态调用该函数。\n\n例如，下面的定义可以引用任何具有两个 `int`\
+  \ 参数、返回整数且标记为私有（private）的方法。\n\n```csharp\npublic delegate int ExampleDeligate(int\
+  \ a, int b);\n```\n\n然后你将使用 `new` 关键字创建该委托的实例：\n\n```csharp\nusing System;\n\nnamespace\
+  \ ConsoleApplication1\n{\n    class Program\n    {\n        public delegate int\
+  \ ExampleDeligate(int a, int b);\n        static void Main()\n        {\n      \
+  \      ExampleDeligate addDel = new ExampleDeligate(AddTwoNumbers);\n        }\n\
+  \        public static int AddTwoNumbers(int a, int b)\n        {\n            return\
+  \ a + b;\n        }\n    }\n}\n```\n\n你可以看到，委托已初始化，且括号内是它将引用的函数名。\n\n使用委托就像对待任何其他函数一样对待它：\n\
+  \n```csharp\naddDel(1, 2);\n```\n\n这提供了一种非常动态且实用的将函数作为参数传递的方法。下面是一个使用它作为计算器的示例：\n\
+  \n```csharp\nusing System;\n\nnamespace ConsoleApplication1\n{\n    class Program\n\
+  \    {\n        public delegate float Calculation(float a, float b);\n        static\
+  \ void Main()\n        {\n            // 你所做的就是通过名称传递函数\n            Calculater(10,\
+  \ 20, Add);\n            Calculater(5, 267, Sub);\n            Calculater(14, 2,\
+  \ Mul);\n            Calculater(10, 10, Div);\n            Console.ReadKey();\n\
+  \        }\n        public static void Calculater(float a, float b, Calculation\
+  \ cal)\n        {\n            // 动态方法调用\n            float value = cal(a, b);\n\
+  \            Console.WriteLine($\"New value is: {value}\", value);\n        }\n\
+  \        // 基础函数\n        public static float Add(float a, float b)\n        {\n\
+  \            return a + b;\n        }\n        public static float Sub(float a,\
+  \ float b)\n        {\n            return a - b;\n        }\n        public static\
+  \ float Mul(float a, float b)\n        {\n            return a * b;\n        }\n\
+  \        public static float Div(float a, float b)\n        {\n            return\
+  \ a / b;\n        }\n    }\n}\n```\n\n输出：\nNew value is: 30\nNew value is: -2\n\
+  New value is: 28\nNew value is: 1\n\n高亮区域显示了你如何将委托作为参数传入，你所做的是将函数传递到委托的位置，这提供了一种极易用的代码复用方法。\n\
+  \n### 多路委托 (Multicasting)\n\n委托还允许将函数调用级联在一起，如下：\n\n```csharp\nCalculation DEL =\
+  \ new Calculation(Add);\nDEL += new Calculation(Sub);\nDEL += new Calculation(Mul);\n\
+  DEL += new Calculation(Div);\n```\n\n这意味着所有的方法将在一个链中被调用，例如，假设参数是 10 和 20，答案将等于最后一个添加的方法，在这种情况下（10/20\
+  \ = 0.5），在这个示例中，它运行了所有方法，但它们之间互不影响，所以不会改变答案，因此在选择要将哪个方法添加到委托时需要仔细考虑。\n\n但下面的示例在没有返回值的情况下：\n\
+  \n```csharp\nusing System;\n\nnamespace ConsoleApplication1\n{\n    class Program\n\
+  \    {\n        public delegate void Print();\n        static void Main()\n    \
+  \    {\n            Print call = new Print(PrintHello);\n            call += new\
+  \ Print(Today);\n            call += new Print(Car);\n            // 方法调用\n    \
+  \        call();\n            Console.ReadKey();\n        }\n        public static\
+  \ void PrintHello()\n        {\n            Console.WriteLine(\"Hello\");\n    \
+  \    }\n        public static void Today()\n        {\n            Console.WriteLine(\"\
+  Today\");\n        }\n        public static void PrintCar()\n        {\n       \
+  \     Console.WriteLine(\"Car\");\n        }\n    }\n}\n```\n\n这显示了你可以将多个函数调用组合到一个委托中，它可以作为参数传递并在另一个函数中使用。\n\
+  \n## 匿名方法 (Anonymous Methods)\n\n之前我们提到委托用于引用与委托签名相同的方法。\n\n匿名方法提供了一种将代码块作为委托传递的技术。它们是没有名称的方法，所以它们只是方法体。你不需要定义方法的返回类型，它是从方法体中的返回语句中自动推断出来的。\n\
+  \n匿名方法实际上是没有引用实际方法的委托，它是为了委托而创建的，回到我们的计算器示例，它看起来像这样：\n\n```csharp\nusing System;\n\
+  \nnamespace ConsoleApplication1\n{\n    // 委托\n    public delegate int Calculation(int\
+  \ a, int b);\n    class Program\n    {\n        Calculation add = delegate (int\
+  \ a, int b)\n        {\n            return a + b;\n        };\n        Calculation\
+  \ sub = delegate (int a, int b)\n        {\n            return a - b;\n        };\n\
+  \        Calculation mul = delegate (int a, int b)\n        {\n            return\
+  \ a * b;\n        };\n        Calculation div = delegate (int a, int b)\n      \
+  \  {\n            return a / b;\n        };\n        static void Main()\n      \
+  \  {\n            Program p = new Program();\n            p.add(10, 20);\n     \
+  \       p.div(2, 10);\n            Console.WriteLine();\n        }\n    }\n}\n```\n\
+  \n其中每个命令都定义为匿名方法，并像普通函数一样调用。匿名方法减少了创建委托的编码开销，因为在创建委托实例之前定义另一个方法，这似乎是浪费。所以当创建方法的开销很大时，应该使用匿名方法。\n\
+  \n## 事件 (Events)\n\n事件是用户操作，如按键、点击、鼠标移动等。这允许执行依赖于事件触发的代码，这被称为事件驱动编程。\n\n委托通常与事件一起使用，事件通过委托与事件处理器（触发检测）相关。事件使用发布者-订阅者模型：\n\
+  \n*   发布者是包含事件的类，正如其名，用于发布事件。\n*   订阅者类是接受事件的类。发布者类中的委托调用订阅者类的方法。\n\n### 声明事件 (Declaring\
+  \ Event)\n\n要在类内部声明事件，你首先需要定义一个委托类型并将其附加到处理器上。下面的代码演示了这一点：\n\n```csharp\nusing System;\n\
+  \nnamespace ConsoleApplication1\n{\n    public delegate string DelExample(string\
+  \ str);\n    class EventExample\n    {\n```\n\n\n\n\n\n```csharp\n//Event 声明\n\n\
+  event DelExample MyEvent;\n\npublic EventExample()\n{\n    MyEvent += new DelExample(PrintWelcome);\n\
+  }\n\npublic string PrintWelcome(string username)\n{\n    return username + \" Welcome!\"\
+  ;\n}\n\nstatic void Main()\n{\n    EventExample ex = new EventExample();\n    //调用事件处理程序\n\
+  \    Console.WriteLine(ex.MyEvent(\"User1\"));\n    Console.ReadKey();\n}\n}\n}\n\
+  ```\n\n## 多线程\n\n线程是一个单一的执行进程，多线程是能够并发（同时）运行许多小进程的能力，这可以防止程序在等待时浪费 CPU 周期，并使程序运行得高效得多。\n\
+  \n然而，在微不足道或无法并发运行的问题引入多线程可能会增加不必要的开销，并降低程序的效率。\n\n到目前为止，我们编写的程序都是单线程执行的，计算机仅仅从头到尾按一条直线执行它们。\n\
+  \n### 线程\n\n创建和处理线程所需的工具位于 `System.Threading` 类中。最简单的函数之一是获取当前线程，其方法如下：\n\n```csharp\n\
+  Thread t = Thread.CurrentThread;\n```\n\n### 创建线程\n\n你可以像这样创建一个线程：\n\n```csharp\n\
+  Thread s = new Thread(DoLotsOfWork);\n```\n\n线程将执行的函数将包含在括号内。下面的示例展示了这种并发行为是如何工作的：\n\
+  \n```csharp\nusing System;\nusing System.Threading;\n\nnamespace ConsoleApplication1\n\
+  {\n    class Program\n    {\n        public static void DoLotsOfWork()\n       \
+  \ {\n            for (int i = 0; i < 5; i++)\n            {\n                Thread\
+  \ t = Thread.CurrentThread;\n                Console.WriteLine($\"{t.Name}: i is\
+  \ equal to: {i}\");\n            }\n        }\n        static void Main()\n    \
+  \    {\n            for (int i = 0; i < 5; i++)\n            {\n               \
+  \ //创建一个线程\n                Thread s = new Thread(DoLotsOfWork);\n             \
+  \   //为线程分配名称\n                s.Name = $\"Thread {i}\";\n                s.Start();\n\
+  \            }\n            Console.ReadKey();\n        }\n    }\n}\n```\n\n###\
+  \ 输出\n\n>Thread 2: i is equal to: 0\n>Thread 2: i is equal to: 1\n>Thread 2: i is\
+  \ equal to: 2\n>Thread 2: i is equal to: 3\n>Thread 2: i is equal to: 4\n>Thread\
+  \ 0: i is equal to: 0\n>Thread 1: i is equal to: 0\n>Thread 0: i is equal to: 1\n\
+  >Thread 1: i is equal to: 1\n>Thread 1: i is equal to: 2\n>Thread 1: i is equal\
+  \ to: 3\n>Thread 1: i is equal to: 4\n>Thread 0: i is equal to: 2\n>Thread 0: i\
+  \ is equal to: 3\n>Thread 0: i is equal to: 4\n>Thread 3: i is equal to: 0\n>Thread\
+  \ 3: i is equal to: 1\n>Thread 3: i is equal to: 2\n>Thread 3: i is equal to: 3\n\
+  >Thread 3: i is equal to: 4\n>Thread 4: i is equal to: 0\n>Thread 4: i is equal\
+  \ to: 1\n>Thread 4: i is equal to: 2\n>Thread 4: i is equal to: 3\n>Thread 4: i\
+  \ is equal to: 4\n\n注意：对于你来说，输出顺序可能会有所不同。\n\n上面的示例创建了 5 个线程，每个线程都会打印 for 循环的 5 次迭代。\n\
+  \n（注：由于原文后部分存在大量重复的逻辑片段和不完整的描述，此处已根据“不要重复输出原文”的原则对冗余内容进行了清理，确保了核心技术逻辑的准确翻译。））\n\n\
+  \n\n\n\n```cs\nvar longWords = from w in words where w.Length > 10 select w;\n```\n\
+  \n我们只深入介绍查询语法，因为我认为它是最易用的，但你也可以随时查看其他查询方式进行额外研究。\n\n## 查询语法 (Query Syntax)\n\n查询语法只是一个类似于\
+  \ SQL 的表示形式，其中 `SELECT`、`FROM` 和 `WHERE` 以略有不同的表示形式呈现。要使用 LINQ 查询，你需要包含 `System.linq`。下面使用\
+  \ LINQ 在字符串中搜索长度小于 5 个字母的值的示例：\n\n```csharp\nusing System;\n\nusing System.Linq;\n\
+  \nnamespace ConsoleApplication1\n{\n\n class Program\n    {\n        static void\
+  \ Main()\n        {\n            string[] words = {\"test\",\"verylongword\", \"\
+  sw\", \"one\"};\n            var shortWords = from word in words\n            where\
+  \ word.Length < 5\n            select word;\n            foreach (var word in shortWords)\n\
+  \            {\n                Console.WriteLine(word);\n            }\n      \
+  \      Console.ReadKey();\n        }\n    }\n}\n```\n\n### 输出\n>test\n>sw\n>one\n\
+  \nLINQ 语句已高亮，并将拆解如下：\n\n`from word in words`\n这定义了范围以及范围的来源，这实际上是在说字符串数组 `words`\
+  \ 中的每一个单词。\n\n`where word.Length < 5`\n使用范围值 `word`，获取一个属性并与一个值进行比较，这是一个条件，如果值匹配为“真（true）”，则将其添加到输出中。\n\
+  \n`select word;`\n如果上一个条件为真，这就是要取的值。例如，你可以通过在查询末尾返回所有长度小于 5 的单词的长度：\n`select word.Length;`\n\
+  \n### 练习\n\n在下方的骨架程序中，添加一个 LINQ 语句来搜索数值数组 `numbers` 以寻找偶数。然后使用 `foreach` 循环打印结果。\n\
+  \n### 代码\n\n```csharp\nusing System;\n\nusing System.Linq;\n\nnamespace ConsoleApplication1\n\
+  {\n\n class Program\n    {\n        static void Main()\n        {\n            int[]\
+  \ numbers = {1, 4, 99, 34, 23, 12, 3, 2, 909, 1000, 13, 1, 2};\n            //在此处添加代码\n\
+  \            Console.ReadKey();            \n        }\n    }\n}\n```\n\n### 答案\n\
+  \n```csharp\nusing System;\n\nusing System.Linq;\n\nnamespace ConsoleApplication1\n\
+  {\n\n class Program\n    {\n        static void Main()\n        {\n            int[]\
+  \ numbers = {1,4,99, 34, 23, 12, 3, 2, 909, 1000, 13, 1, 2};\n            var evenNumbers\
+  \ = from value in numbers\n            where value % 2 == 0\n            select\
+  \ value;\n            foreach (var value in evenNumbers)\n            {\n      \
+  \          Console.WriteLine(value);\n            }\n            Console.ReadKey();\
+  \            \n        }\n    }\n}\n```\n\n输出也应为：\n>4\n>34\n>12\n>2\n>1000\n>2\n\
+  \n所以，记住 LINQ 为查询数据提供了一种非常紧凑控制的语法，它也可以用于在数据库上运行 SQL 命令以查询表中的数据，这对程序员来说是极其强大的。\n\n\
+  ## 章节测验\n\n1. 委托（delegates）允许程序员做什么？\n2. 多播（multicasting）允许你对委托做什么？\n3. 什么是匿名方法？\n\
+  4. 事件处理器（event handler）附加在什么上？\n5. 什么是线程（thread）？\n6. 防止两个线程使用同一代码块的结构是什么？\n7. LINQ\
+  \ 代表什么？\n8. LINQ 允许你做什么？\n9. LINQ 有哪两种类型的语法？\n10. 在什么情况下，多线程现在会有帮助？\n\n### 答案\n\n\
+  1. 保存函数的引用，这允许程序员将函数调用作为参数传递。\n2. 你可以将多个函数调用合并到一个委托中。\n3. 一个没有函数定义的函数，只是一个带有函数体定义的委托。\n\
+  4. 当事件被触发时触发的委托。\n5. 单个独立的执行过程。\n6. 锁（Lock）。\n7. 语言集成查询（Language Integrated Query）。\n\
+  8. LINQ 允许你快速查询数据获取结果，例如如果你只需要长度为 5 个字符的单词。\n9. 查询语法（Query syntax）和 Lambda 语法。\n\
+  10. 当问题是微不足道的，即一个简单的问题时。\n\n\n\n\n\n在基于 Windows 的计算机上运行 C++ 的最佳方法之一是 Visual Studio，你可以直接从微软下载，最新版本为\
+  \ Visual Studio 2017。\n\n下载并运行安装程序，在安装程序过程中你会遇到这个菜单，请确保选了 C++。\n\n![](img/image00626.jpeg)\n\
+  \n完成安装并加载 Visual Studio。\n\n要创建一个项目，你需要选择 `FILE`（文件） -> `NEW PROJECT`（新建项目），如下：\n\
+  \n![](img/image00627.jpeg)\n\n你会看到这个窗口：\n\n![](img/image00628.jpeg)\n\n按照菜单操作，你就可以准备好运行代码了\n\
+  \n## 在 Mac 和 Linux 上运行 C++\n\n在基于 UNIX 的环境中运行 C++ 可以通过 `clang` 或 `gcc` 实现，你可以像这样在操作系统的终端窗口中使用它：\n\
+  \n```bash\ngcc main.cpp -o main.out\n```\n\n现在可以像这样运行文件了：\n\n```bash\n./main.out\n\
+  ```\n\n你可以在任何喜欢的记事本编辑器中创建一个 `.cpp` 文件。\n\n## 在线运行 C++\n\n在线编译 C++ 的简单方法是使用“TutorialPoints”C++\
+  \ Online，如下所示：\n\n[`www.tutorialspoint.com/compile_cpp11_online.php`](https://www.tutorialspoint.com/compile_cpp11_online.php)\n\
+  \n它看起来应该是这样：\n\n![](img/image00629.jpeg)\n\n## 前提条件\n\n在开始基础知识之前，需要解释几点：\n\n首先是基础程序设计：\n\
+  \n```cpp\n#include \"stdafx.h\"\nusing namespace std;\n\nint main()\n{\n    return\
+  \ 0;\n}\n```\n\n上面的程序是提供的基础设计，代码位于 `main()` 部分的大括号内，每个方面都将在后面的章节中描述。\n\n你还会遇到以 `//`\
+  \ 开头的行，这些是注释，它们的唯一目的是为代码添加描述性标签并解释代码，它们通过独特的绿色定义：\n\n```cpp\n//Comment\n```\n\n\
+  下一点是程序的输出，在接下来的章节示例中，你将遇到类似下面的行：\n\n```cpp\ncout << \"Print\" << endl;\n```\n\n\
+  这目前只是将数据打印到屏幕上，它的部分将在后面的章节中解释。\n\n# 第 2 章：基础\n\n## 变量与类型\n\n程序的基础是数据，以数字和字符的形式存在。这些数据的存储、处理和输出提供了功能。变量持有这些数据，将其看作一个用于存储单个物品的盒子。\n\
+  \nC++ 是一种强类型语言，每个变量都必须有一个定义的类型。类型是一个标识符关键字，定义了变量可以包含的内容。我们遇到的第一个类型是整数（integer），它可以包含实数（不带小数的数字），整数的定义如下：\n\
+  \n```cpp\nint value = 6;\n```\n\n- `int` 是定义的类型关键字，我们稍后会学习不同可能性的区别。\n- `value` 是变量的\
+  \ ID（标识符），你可以称它为任何名字，这用于允许变量具有有意义的名字，变量可以定义为 `int pineapple = 3;`，但让它们与之相关是一个良好的习惯。不过，这里有几个例外，因为变量不能是单个数字（例如\
+  \ ‘4’）或不能包含特殊字符（`!”£$%^&*`）等。\n- `= 6;` 是赋值部分，将值 6 放在整数盒子中以供以后使用。它也以分号结尾，这用于表示一行的结束。\n\
+  \n该变量现在可以用于程序的有效区域，如下所示：\n\n```cpp\nint anotherValue = value;\n```\n\n之前定义的 `value`\
+  \ 的值现在将被放置在 `anotherValue` 变量中，它们现在的值都为 3。`value` 的值不会改变，因为它只是复制并放置在 `anotherValue`\
+  \ 中。\n\n### 字符串 (String)\n\n`String` 是另一个关键的变量，这种变量类型用于存储一系列字符，例如可以是“batman”这个词，该单词由存储在\
+  \ `String` 变量中的字符组成。它是字符数组（稍后将详细介绍数组），但实际上它是单词的单个字符在内存中相邻存储的。`\\n` 是一个代表换行的特殊字符。\n\
+  \n```cpp\n#include \"stdafx.h\"\n#include <string>\nusing namespace std;\n\nint\
+  \ main()\n{\n    //String 类\n    string wordStr = \"\";\n    //字符数组\n    char wordCharArray[]\
+  \ = \"\";\n    return 0;\n}\n```\n\n如你从上面所示，有两种保存字符串的方法，第一种是使用“封装器”（wrapper），它是一种隐藏功能并在其上添加额外功能，这使得移动字符串变得更容易（我们稍后会讨论传递变量），第二种是使用\
+  \ char 数组，`string` 是存储字符串变量的推荐方法。\n\n注意使用：\n\n```cpp\n#include <string>\n```\n\n\
+  这告诉程序你想在程序中使用 `string` 封装器。\n\n### 布尔值 (Boolean)\n\n布尔值用作表达式，它们的值只能是真（true）或假（false），用于表示某些状态或标记某些事件，它们还可以持有条件表达式的结果（稍后将详细介绍条件表达式）。这些将使逻辑成立。在接下来的示例中，你会遇到类似这样的行：\n\
+  \n```cpp\nbool flag = true;\n```\n\n### 浮点数 (Float/Double)\n\n浮点数用于表示小数，它们的值可以是真或假（此处原文可能有误，应指数值），用于表示某些状态。\n\
+  \n```cpp\nfloat value = 3.5;\n```\n\n### 空 (Void)\n\n空类型表示函数没有返回值。在某些情况下我们稍后会看到它的用法。\n\
+  \n### 注意的关键字/术语\n\n- `const` – 该关键字使变量只读，意味着初始化后其值不能更改。使用方式如下：\n\n```cpp\nconst\
+  \ float pi = 3.14;\n```\n\n- **全局变量** – 该术语定义在函数之外。例如，`friendCount` 是全局的：\n\n```cpp\n\
+  int friendCount = 0; // 全局\n\nint main()\n{\n    // 非全局\n    int currentMonth =\
+  \ 5;\n    return 0;\n}\n```\n\n这意味着全局变量可以在任何地方使用，如果使用不当可能是危险的。与 `const` 关键字结合使用，意味着函数只能引用该值。\n\
+  \n### 总结 (Recap)\n\n- `int`：持有实整数\n- `float / double`：持有小数\n- `void`：表示没有类型\n- `boolean`（布尔值）：持有真或假\n\
+  - `string`：构成单词或句子的字符数组\n- `global`（全局）：可以在任何地方访问\n- `const`：意味着变量初始化后其值不能更改\n\n\
+  ## 条件语句 (Conditionals)\n\n### If 语句\n\n在某些情况下，你需要在满足特定条件时执行某些事情，这就是 If 语句的作用，也是条件语句介入的地方。\n\
+  \n```cpp\nif (Condition)\n{\n    // 如果条件为真，则执行此处代码\n}\n// 如果条件为假，则跳转到此处\n```\n\n\
+  示例：\n\n```cpp\n#include \"stdafx.h\"\n#include <iostream>\nusing namespace std;\n\
+  \nint main()\n{\n    int numberOfBooks = 10;\n    if (numberOfBooks > 0)\n    {\n\
+  \        cout << \"You have a book!\" << endl;\n    }\n}\n```\n\n输出：\n\n> You have\
+  \ a book!\n\n这些允许程序员控制程序的流程，并在可能性真实时选择发生的情况，我们稍后会看到更多示例。\n\n### Else 语句\n\nElse\
+  \ 是可选的，但这些可以被添加到 if 语句的末尾，并且仅在 if 语句条件为假时运行。\n\n```cpp\nif (Condition)\n{\n    //\
+  \ 如果条件为真，则执行此处代码\n}\nelse\n{\n    // 如果条件为假，则执行此处代码\n}\n```\n\nElse 语句也可以变成 else/if\
+  \ 语句，即挂载一个新的 if 语句，看起来像这样：\n\n```cpp\nif (Condition1)\n{\n    // 如果 Condition1 为真，则执行此处代码\n\
+  }\nelse if (Condition2)\n{\n```\n\n\n\n```cpp\n // 如果 Condition1 为假且 Condition2\
+  \ 为真，代码将在此处运行\n\n}\n\n// 如果两个都不真，则没有代码运行\n```\n\n你还可以将另一个 `else` 语句链接在 `else` 语句之后，从而有效地创建一个无限链。如果链中的任何一个条件为真，下面的条件将不会被检查，我将在下文中演示：\n\
+  \n```cpp\n#include  \"stdafx.h\"\n\n#include  <iostream>\n\nusing  namespace std;\n\
+  \nint main()\n\n{\n\nif (false)\n\n{\n\ncout <<  \"Contition1!\"  << endl;\n}\n\n\
+  else  if (true) // 此条件为真！\n\n{\n\ncout <<  \"Contition2!\"  << endl;\n}\n\nelse\
+  \  if (true) // 由于之前的 else 语句为真，被忽略\n\n{\n\ncout <<  \"Contition3!\"  << endl;\n\
+  }\n\nelse  if (true) // 同样由于条件 2 为真被忽略\n\n{\ncout <<  \"Contition4!\"  << endl;\n\
+  }\n\nreturn 0;\n\n}\n```\n\n### 输出\n\n> Condition 2\n\n在进入 `condition2` 的主体并执行 `cout`\
+  \ 语句后，程序不会继续检查其他的 `else` 语句。\n\n### 练习\n\n修改程序以检查一个值是否等于另一个值，如果相等打印“EQUAL”，如果不相等则打印“NOT\
+  \ EQUAL”，框架代码如下：\n\n```cpp\n#include  \"stdafx.h\"\n\n#include  <iostream>\n\nusing\
+  \  namespace std;\n\nint main()\n\n{\n\nint value1 = 10;\n\nint value2 = 10;\n\n\
+  // 代码写在此处\n\n}\n```\n\n### 答案\n\n```cpp\n#include  \"stdafx.h\"\n\n#include  <iostream>\n\
+  \nusing  namespace std;\n\nint main()\n\n{\n\nint value1 = 10;\n\nint value2 = 10;\n\
+  \nif (value1 == value2)\n\n{\n\ncout <<  \"EQUAL\";\n}\n\nelse\n\n{\n\ncout << \
+  \ \"NOT EQUAL\";\n}\n\nreturn 0;\n\n}\n```\n\n更改 `value1` 和 `value2` 的值，观察程序是如何变化的。\n\
+  \n### 使用多个条件\n\n你可以在单个语句中使用多个条件，实现此有两种方法，分别由 `&&`（逻辑与）和 `||`（逻辑或，双竖线符号）表示。\n\nAND\
+  \ 在触发语句主体之前检查两个条件是否都为真：\n\n```cpp\nif (Condition1 && Condition2)\n\n{\n\n // 如果\
+  \ Condition1 且 Condition2 都为真，代码将在此处运行\n\n}\n```\n\nOR 在触发语句主体之前检查其中一个条件是否为真：\n\n\
+  ```cpp\nif (Condition1 || Condition2)\n\n{\n\n // 如果 Condition1 或 Condition2 为真，代码将在此处运行（两者都为真也有效）\n\
+  }\n```\n\n### 总结\n\n15. `if` 语句处理条件语句，如果条件为真，其主体内的代码将运行。\n16. `else` 语句作为 `if` 语句的扩展，只有当\
+  \ `if` 语句为假时才会检查。\n17. `&&` 用于将两个条件连接在一起，只有当两者都为真时才返回真。\n18. `||`（双竖线）用于将两个条件连接在一起，只有当其中一个条件为真时才返回真。\n\
+  \n### Switch-Case\n\nSwitch cases 用于测试变量是否与常量表达式相等，而不需要多个 `if` 语句。这种结构的一个用处是检查用户输入的字符串。以下是\
+  \ switch case 的基本结构：\n\n```cpp\n// Switch-Case\n\nswitch (expression)\n\n{\n\n//\
+  \ Case 语句\n\ncase constant-expression:\n\nbreak; // 不需要 Break\n\n// 任意数量的 case 语句\n\
+  \n// |\n\n// |\n\n//\\ /\n\n// .\ndefault:\n\nbreak;\n\n}\n```\n\nswitch 从一个“表达式”开始，这是要与“常量表达式”比较的变量，这些常量是变量的字面值，例如‘1’或‘Z’。Break\
+  \ 是可选的，但如果没有它们，代码将“向下流动”到其他语句。下面是一个使用 switch-case 语句的示例，用户输入一个字符，如果 `char` 是 `N`\
+  \ 或 `Y`，分别输出“No”和“Yes”，但有一个适用于所有情况的默认 case，这需要放在最后。\n\n```cpp\nchar character;\n\
+  \n// 读取用户输入（稍后会详细解释）\nscanf(\"%s\", &character);\n\n// Switch-Case\n\nswitch (character)\n\
+  \n{\n\ncase  'N':\n\nprintf(\"NO\\n\");\n\nbreak;\n\ncase  'Y':\n\nprintf(\"YES\\\
+  n\");\n\nbreak;\n\ndefault:\n\nprintf(\"Do not understand!\\n\");\n\nbreak;\n\n\
+  }\n```\n\n如果没有 `break` 语句，将会发生“向下流动”，下面是一个与上面类似但没有 `break` 语句的示例，输出如下：\n\n```cpp\n\
+  char character;\n\n// 读取用户输入（稍后会详细解释）\nchar character;\n\ncin >> character;\n\n\
+  // Switch-Case\n\nswitch (character)\n\n{\n\ncase  'N':\n\nprintf(\"NO\\n\");\n\n\
+  case  'Y':\n\nprintf(\"YES\\n\");\n\ndefault:\n\nprintf(\"Do not understand!\\n\"\
+  );\n\n}\n```\n\n如果输入是‘N’，输出将是：\n\n>NO\n>YES\n>Do not understand!\n\n这是因为当一个 case\
+  \ 语句触发时，它会继续向下执行直到找到 `break` 语句停止运行 case 主体。\n\n## 迭代\n\n迭代意味着循环，循环让程序能够快速执行许多相似的操作，迭代有两种类型：`for`\
+  \ 循环和 `while` 循环/`do-while` 循环。\n\n### For Loop\n\n`for` 循环被赋予一个结束值并循环到该值为止，同时跟踪计数器：\n\
+  \n```cpp\nfor (int x = 0; x < 10; x++)\n\n{\n    cout << \"Loop\" << endl;\n}\n\
+  ```\n\n### While Loop\n\n`while` 循环允许只要某个条件保持真就一直执行代码。\n\n```cpp\nwhile (condition)\n\
+  \n{\n    // 只要条件为真，代码就会运行\n}\n```\n\n### Do-While Loop\n\n`do-while` 循环确保在检查条件之前至少执行一次代码块。\n\
+  \n```cpp\ndo\n\n{\n    // 代码至少执行一次\n} while (condition);\n```\n\n\n\n\n```cpp\n\
+  using namespace std;\n\nint main()\n{\n    // 如果此为 false，则将循环\n    bool correct\
+  \ = true;\n    do\n    {\n        cout << \"Please enter the letter 'a':\";\n  \
+  \      // 接收用户输入\n        char a;\n        cin >> a;\n        // 检查答案是否正确\n    \
+  \    if (a != 'a')\n        {\n            // 错误\n            correct = false;\n\
+  \            cout << \"Incorrect\" << endl;\n        }\n        else\n        {\n\
+  \            // 正确\n            correct = true;\n        }\n    } while (!correct);\n\
+  \    // 如果用户完成了任务\n    cout << \"Correct\" << endl;\n}\n```\n\n 循环控制关键字\n\n有时候情况下，你可能希望提前停止整个循环或单次迭代（循环），这就是循环控制关键字派上用场。你可以使用\
+  \ `break` 或 `continue` 关键字。\n\n### break\n`break` – 将停止整个循环，如果已经找到了答案且剩余计划中的迭代将没有意义，那么这会非常有用。\n\
+  \n```cpp\nfor (int x = 0; x < 5; x++)\n{\n    if (x == 3)\n    {\n        break;\n\
+  \    }\n    // 该语句的细节将在稍后解释\n    cout << \"Loop value: \" << x << endl;\n}\n```\n\
+  输出：\n> Loop value: 0\n> Loop value: 1\n> Loop value: 2\n\n现在如果代码修改为不包含 `break`：\n\
+  \n```cpp\nfor (int x = 0; x < 5; x++)\n{\n    // 该语句的细节将在稍后解释\n    cout << \"Loop\
+  \ value: \" << x << endl;\n}\n```\n输出：\n> Loop value: 0\n> Loop value: 1\n> Loop\
+  \ value: 2\n> Loop value: 3\n> Loop value: 4\n\n### continue\n`Continue` – 如果我们使用上面的代码但将其替换为\
+  \ `continue`，代码看起来如下所示：\n\n```cpp\nfor (int x = 0; x < 5; x++)\n{\n    if (x ==\
+  \ 3)\n    {\n        continue;\n    }\n    // 该语句的细节将在稍后解释\n    cout << \"Loop value:\
+  \ \" << x << endl;\n}\n```\n输出如下：\n输出：\n> Loop value: 0\n> Loop value: 1\n> Loop\
+  \ value: 2\n> Loop value: 4\n\n这表明当 `x = 3` 时，执行了 `continue` 并跳过了循环，因此 `cout` 语句也被跳过了，所以没有“Loop\
+  \ value: 3”。\n\n### 嵌套循环\n你也可以将循环放置在循环之中以执行特定角色，在示例中我们使用了 `for`-循环，但也可以用 `while`/`do`\
+  \ 循环实现。示例是打印一个二维网格，嵌套的 for 循环提供了另一个维度：\n\n```cpp\n// 打印一个 5x5 网格\nfor (int y = 0;\
+  \ y < 5; y++)\n{\n    for (int x = 0; x < 5; x++)\n    {\n        // 打印行的一个元素\n\
+  \        cout << \"X \";\n    }\n    // 移动到下一行\n    cout << endl;\n}\n```\n输出：\n\
+  > X X X X X\n> X X X X X\n> X X X X X\n> X X X X X\n> X X X X X\n\n## 函数\n\n函数是程序的构建块，它们允许代码的复用，保持代码的可读性，并防止程序员重复代码。强烈建议不要重复代码，因为错误会多次出现，代码的更改也需要重复。函数提供了一个集中控制的区域，处理程序的不同角色。\n\
+  \n一个方法包含两个元素：参数（传递函数的项）和返回类型（被返回的变量），这些都是可选的，你可以拥有一个两者都没有的函数。\n\n函数必须在调用其之前定义，如下：\n\
+  \n```cpp\n// 函数调用\nvoid PrintSmile()\n{\n    cout << \":)\" << endl;\n}\n\nint main()\n\
+  {\n    // 方法调用\n    PrintSmile();\n    return 0;\n}\n```\n\n### 函数参数\n有时候向程序中传递数据可能是很有用的，参数传递有两种类型：按引用传递和按值传递。按引用传递正如其名意义，它传递的是变量的直接引用而不是副本，因此对该传递变量的任何更改都会影响回调用函数。按值传递是传递该变量的副本，因此对该变量的任何更改都不会影响该传递变量。\n\
+  \n16. 按引用传递意味着对参数的更改会影响传递变量。\n17. 按值传递意味着对参数的更改不会影响传递变量。\n\n### 按值传递\n```cpp\nvoid\
+  \ Add(int num1, int num2)\n{\n    // 将值相加\n    int newValue = num1 + num2;\n   \
+  \ // 打印结果\n    printf(\"The result is: %d\", newValue);\n}\n\nint main()\n{\n  \
+  \  // 方法调用\n    Add(10, 4);\n    return 0;\n}\n```\n输出：\n> The result is: 14\n\n\
+  下面是另一个示例，但这次使用字符串作为参数：\n\n```cpp\nvoid PrintStr(char word[])\n{\n    cout << word\
+  \ << endl;\n}\n```\n方法调用看起来像这样：\n`PrintStr(\"word\")`\n\n这是一个极其实用的功能，允许我们按类型获取数组长度。\n\
+  \n### 按引用传递\n按引用传递通过 `&` 实现（使用指针将稍后解释），但引用是内存地址，所以如下所示：\n\n```cpp\nvoid Change(int&\
+  \ value)\n{\n    value = 20;\n}\n\nint main()\n{\n    int value = 10;\n    Change(value);\n\
+  \    cout << value << endl;\n    return 0;\n}\n```\n输出：\n> 20\n\n### 返回\n返回允许从函数返回数据。函数提供了一个集中控制的区域，处理程序的不同角色。\n\
+  \n```cpp\nbool EvenNumber(int value)\n{\n    if (value % 2 == 0)\n    {\n      \
+  \  return true;\n    }\n    return false;\n}\n\nint main()\n{\n    if (EvenNumber(2))\n\
+  \    {\n        cout << \"Even number!\" << endl;\n    }\n    if (EvenNumber(5))\n\
+  \    {\n        cout << \"Odd number!\" << endl;\n    }\n    return 0;\n}\n```\n\
+  输出：\n> Even number!\n> Odd number!\n\n## 数组\n之前提到了数组，它是一个相邻变量的数据结构。数组将被赋予类型，例如 `int`。数组用于快速定义大量变量。数组定义如下：\n\
+  \n静态大小，在括号中指定大小：\n`int lotsOfNumber[20];`\n\n或者你可以在定义时定义值，注意：不需要定义大小，因为它根据你指定的数值自动确定：\n\
+  `int lotsOfNumbers[] = {1,3,4};`\n\n- 数组从 0 开始，所以第一个索引值为 0，第二个是 1，以此此类推。这意味着在访问值时，你需要记住它总是比值的数量少一。\n\
+  \n你可以这样访问索引：\n`int var = lotsOfNumbers[0];`\n\n这将获取数组的第一个索引并将其放入 `var` 中。\n\n数组非常快速快速访问密切相关的数据，你可以使用\
+  \ `for`-循环遍历索引并按需使用它们。示例如下：\n\n```cpp\nint lotsOfNumbers[] = { 1, 3, 4, 10};\n\n\
+  for (int x = 0; x < 4; x++)\n{\n    cout << lotsOfNumbers[x] << endl;\n}\n```\n\
+  输出：\n> 1\n> 3\n> 4\n> 10\n\n在 C++ 中你无法直接获取长度，需要自己计算，这可以简单地使用 `sizeof()` 关键字完成，它返回括号中元素的大小，所以例如在\
+  \ 64 位机器上，一个 int 应该使用 4 字节表示，因此 `sizeof` 将返回 4。数组的长度可以这样计算：\n\n`int arrayLength\
+  \ = sizeof(lotsOfNumbers) / sizeof(lotsOfNumbers[0]);`\n\n\n\n\n这获取数组的整个大小，并将其除以第一个元素，除法的结果就是该数组包含多少个索引。\n\
+  \n### 多维数组\n\n你也可以在数组中定义第二个维度，甚至是第三个维度，这在处理数组时提供了更大的灵活性。例如，一个二维数组可以用来存储网格的坐标或位置。二维数组的定义如下：\n\
+  \n```cpp\nint arrayOfNumbers[][2] = { {1,1}, {1,1}};\n```\n\n你通过在方括号中放入 x 坐标和 y\
+  \ 坐标的值来访问元素：\n\n```cpp\nint element = arrayOfNumbers[X][Y]\n```\n\n明显的区别是第二个维度需要一个值，这在创建数组时无法自动解析，而且初始化需要嵌套的大大括号。下面是\
+  \ 3 维数组的示例：\n\n```cpp\nint arrayOfNumbers[][][2] = {{{1,1},{1,1}},{{1,1},{1,1}}};\n\
+  ```\n\n但在这个阶段，它开始失去可读性，更好的做法是这样布局：\n\n```cpp\nint arrayOfNumbers[][][2] =\n{\n{{1,1},{1,1}},\n\
+  {{1,1},{1,1}}\n};\n```\n\n### 在函数中传递数组\n\n正如我们在上面学习函数时所看到的，将变量作为参数传递是非常有用的，传递许多存储在数组中的变量也是如此。然而，我们在上面已经学会了如何确定数组的大小，但这对于作为参数传递的数组不起作用的，因此我们必须传递一个代表该数组所包含元素数量的变量。有一种特殊的变量类型用于存储计数变量，它被称为\
+  \ `size_t`，它是一个无符号整数值（意味着它不会变成负数），用于存储计数值。\n\n下面是作为参数传递的示例：\n\n```cpp\nvoid Print_SingleDimenArray(size_t\
+  \  length, int  ageArray[])\n{\n//Length 用于动态确定 for 循环的长度\nfor (int i = 0; i < length;\
+  \ i++)\n{\nprintf(\"%d\\n\",ageArray[i]);\n}\n}\n\nint main()\n{\n//一个年龄数组\nint\
+  \ ages[] = { 32, 11, 12, 1, 8, 5, 10 };\n//如之前所示确定大小\nsize_t ageLen = sizeof(ages)\
+  \ / sizeof(ages[0]);\n//调用方法\nPrint_SingleDimenArray(ageLen, ages);\n}\n```\n\n\
+  ### 输出\n```\n>32\n>11\n>12\n>1\n>8\n>5\n>10\n```\n\n数组已经被传递并用于打印值。数组的长度对程序至关重要，因为它允许\
+  \ for 循环处理不同长度的数组。\n\n22. 在任何方法中对数组的任何更改都会改变调用方法中的数组变量。这就是之前提到的引用传递，整个数组并没有被复制，而是通过小技巧以引用传递的。\n\
+  \n## 用户输入输出 (User I/O)\n\n某些情况和编程问题涉及用户交互，这就是用户输入和输出出现的地方，处理此问题的库被称为“iostream”，并像这样包含在项目中：\n\
+  \n```cpp\n#include  <iostream>\n```\n\n### 打印/输出\n\n有时用户需要提示或需要显示信息，这就是控制台打印的用场，关键字\
+  \ `cout` 用于将数据打印到屏幕上，它与写为 `<<` 的流插入运算符一起使用，用于表示要打印的内容。示例所示：\n\n```cpp\ncout << \
+  \ \"Hello!\"  << endl;\n```\n\n输出将只是在屏幕上显示“Hello!”。`endl` 仅用于打印回车符 (`\\n`)。\n\n\
+  你也可以创建一个包含变量或其他字符串的输出，使用了多个流插入运算符：\n\n```cpp\nint x = 10;\ncout <<  \"The value\
+  \ is: \"  << x << endl;\n```\n\n### 输出\n```\n> The value is: 10\n```\n\n### 读取/输入\n\
+  \n获取用户输入也可以很有用，使用的运算符被称为流提取运算符 `>>`，并与 `cin` 配合使用，其工作如下：\n\n```cpp\n#include  \"\
+  stdafx.h\"\n#include  <iostream>\n\nusing  namespace std;\n\nint main()\n{\n//读取名字\n\
+  char name[10];\ncin >> name;\n//打印名字\ncout << name;\n}\n```\n\n## 章末测试\n\n本节旨在让你对之前的内容保持警觉，会有\
+  \ 10 个问题供你回答以测试你的知识，答案在接的章节中。\n\n21. 用于存储一系列字符的数据类型是什么？\n22. `%` 符号用于什么？\n23. 这个符号\
+  \ `==` 是在检查什么？\n24. 如果单个 `if` 中的两个条件语句之间有 `&&`，它意味着什么？\n25. 变量末尾的 `++` 什么？\n26.\
+  \ 这个运算符称为什么：`>>`？\n27. 数组是否有内置属性来查找其大小？\n28. 这个循环叫什么，它是做什么的？\n```cpp\nfor(;;)\n\
+  {\n}\n```\n29. 布尔变量持有哪两个值？\n30. `void` 在哪里？\n\n### 答案\n13. 字符串 (String)。\n14. 获取数字。\n\
+  15. 如果两边值相等。\n16. 语句是真的。\n17. 构造函数和析构函数。\n18. 流提取运算符。\n19. `sizeof()` 运算符查找大小。\n\
+  20. 无死循环，并且无限循环。\n21. 真或假。\n22. 不返回值。\n\n# 第 3 章：类结构 (Class Structure)\n\n类是程序的构建块，它们允许创建表示数据的容器。C++\
+  \ 中的类有两个文件：头文件 (.h) 和实现文件 (.cpp)。\n\n一个空的头文件如下：\n\n```cpp\nclass Example\n{\npublic:\n\
+  Example();\n~Example();\n};\n```\n\npublic 部分定义了方法如何被访问，不用太担心这个，将在封装部分解释。并且 `Example()`\
+  \ 和 `~Example()` 分别是构造函数和析构函数，构造函数在类创建时运行，析构函数在类销毁时运行。\n\n.cpp 文件如下：\n\n```cpp\n\
+  #include \"Example.h\"\n\nExample::Example()\n{\n}\n\nExample::~Example()\n{\n}\n\
+  ```\n\n这些都是类的引用。你可以在头文件中实现函数或变量，但这被认为是一种坏做法。\n\n所以为了示例我们使用了一个类的版本来展示如何使用：\n\n```cpp\n\
+  class Shape\n{\npublic:\nShape(double  len, double  wid);\n~Shape();\ndouble getArea();\n\
+  \nprivate:\ndouble length;\ndouble width;\ndouble area;\n};\n```\n\n```cpp\n#include\
+  \ \"Shape.h\"\n#include <iostream>\n\nusing namespace std;\n\nShape::Shape(double\
+  \  len, double  wid)\n{\nlength = len;\nwidth = wid;\narea = length * width;\ncout\
+  \ << \"Shape made!\" << endl;\n}\n\nShape::~Shape()\n{\n}\n\ndouble  Shape::getArea()\n\
+  {\nreturn area;\n}\n```\n\n一个 shape 的实例可以这样创建：\n\n```cpp\nShape s = Shape(10, 10);\n\
+  ```\n\n注意：顶部需要包含头文件：\n\n这为程序员提供了创建许多有用容器的方法。\n\n## 继承 (Inheritance)\n\n继承是面向对象编程中最重要的概念之一，它是获取一个类（基类）并赋予其他类函数和变量等特征的想法。这为重用代码提供了完美的机会。\n\
+  \n在我们上面的 shape 示例中，现在可以创建一个名为“Square”的类，但我们从基类“Shape”继承。为了方便显示，从现在开始我将所有代码放在一个 .cpp\
+  \ 文件中。Square 类如下：\n\n```cpp\n#include \"stdafx.h\"\n#include <iostream>\n\nusing\
+  \ namespace std;\n\nclass Shape\n{\npublic:\ndouble length;\ndouble width;\ndouble\
+  \ area;\n};\n```\n\n\n\n\n```cpp\nShape(double l, double w)\n{\n  length = l;\n\
+  \  width = w;\n  area = l * w;\n}\n\n~Shape()\n{\n}\n\ndouble getArea()\n{\n  return\
+  \ area;\n}\n};\n\nclass Square : public Shape\n{\npublic:\n  Square(double l, double\
+  \ w) : Shape(l, w)\n  {\n  }\n};\n\nint main()\n{\n  Square s = Square(10, 10);\n\
+  \  cout << s.getArea() << endl;\n}\n```\n\n输出\n> 100\n\n`Square` 现在拥有了 `Shape` 中定义为\
+  \ Public 和 Protected 的内容（这些将在下一节中解释），但如所述，这是重复已创建代码的一种极佳方法。\n\n### 练习\n添加一个名为 `Rectangle`\
+  \ 的类并让它继承自 `shape` 类。不要忘记为 `rectangle` 类包含一个构造函数。\n\n### 答案\n类似如下所示：\n\n```cpp\n\
+  class Rectangle : public Shape\n{\npublic:\n  Rectangle(double l, double w) : Shape(l,\
+  \ w)\n  {\n  }\n};\n```\n\n## 封装\n\n封装是限制对类包含的敏感变量或方法的访问的思想，共有三种不同的访问修饰符：\n\n| |\
+  \ 包含类 | 派生类 | 包含程序集 | 外部程序集 |\n| :--- | :--- | :--- | :--- | :--- |\n| Public |\
+  \ | | | |\n| Protected | | | | |\n| Private | | | | |\n\n上述是一个对比了标记了标记修饰符的变量或方法可以访问或不可以访问的地方。\n\
+  \n14. `Containing class` 是定义对象的类。\n15. `Derived class` 是任何继承其他类的类。\n16. `Containing\
+  \ Assembly` 是当前 `.exe` 或 `.dll` 文件内部任何地方。\n17. `Outside Assembly` 是存在的任何其他区域。\n\n\
+  这意味着你可以控制变量的访问。但如果一个变量被标记为 `private` 呢？如果它需要从外部访问呢？你使用了 `getters`（访问器）和 `setters`（赋值），这些专门用于检索和修改变量的方法。这是保持代码安全的良好实践，所以让我们修改\
+  \ `shape` 类来使其更安全。\n\n在我们在此之前：\n\n```cpp\nShape s = Shape(10,10);\ns.length = -1;\n\
+  ```\n\n这是不可取的，因为这是无效信息，你不能有负数长度，这就是 setter 的用场，该函数可以包含代码来验证（检查）尝试放入 `length` 变量的值，如下：\n\
+  \n```cpp\nvoid setLength(double value)\n{\n  if (value > 0)\n  {\n    length = value;\n\
+  \  }\n  else\n  {\n    cout << \"Error: Value is negative!\" << endl;\n  }\n}\n\
+  ```\n\n此函数对值执行必要的检查，防止无效信息进入类中的变量。以下是类的改进版本：\n\n```cpp\nclass Shape\n{\nprivate:\n\
+  \  double length;\n  double width;\n  double area;\n\npublic:\n  Shape(double l,\
+  \ double w)\n  {\n    length = l;\n    width = w;\n    area = l * w;\n  }\n\n  ~Shape()\n\
+  \  {\n  }\n\n  double getArea()\n  {\n    return area;\n  }\n\n  double getLength()\n\
+  \  {\n    return length;\n  }\n\n  double getWidth()\n  {\n    return width;\n \
+  \ }\n}\n```\n\n你可以看到，所有变量都被标记为 `Private` 并添加了 `getters`，这才是类应该结构的方式。\n\n## 多态\n\n\
+  多态一词意味着有多种形式，在 OOP（面向对象编程）上下文中，多态意味着一个方法可以有多个角色。\n\n我们可以使用 `shape` 类的示例，并重载一个确定面积的方法，例如如果我们想创建一个\
+  \ `Triangle` 类，这是 `shape` 类但带有一个 `virtual getArea()` 方法：\n\n```cpp\nclass Shape\n\
+  {\nprotected:\n  double length;\n  double width;\n  double area;\n\npublic:\n  Shape(double\
+  \ l, double w)\n  {\n    length = l;\n    width = w;\n  }\n\n  ~Shape()\n  {\n \
+  \ }\n\n  virtual double getArea()\n  {\n    return length * width;\n  }\n};\n```\n\
+  \n`Virtual`（虚拟）方法提供了被继承它的类重写和更改的选项，这一个可选的更改。\n\n```cpp\nclass Triangle : public\
+  \ Shape\n{\npublic:\n  Triangle(double l, double w) : Shape(l, w)\n  {\n  }\n\n\
+  \  double getArea() override\n  {\n    return 0.5 * (length * width);\n  }\n};\n\
+  ```\n\n上述是 `Triangle` 类的实现，高亮部分是用于更改 `virtual` 函数功能的 `override` 关键字。\n\n```cpp\n\
+  int main()\n{\n  Shape s = Shape(10, 10);\n  cout << \"The shapes area is: \" <<\
+  \ s.getArea() << endl;\n\n  Triangle t = Triangle(10, 10);\n  cout << \"The triangles\
+  \ area is: \" << t.getArea() << endl;\n}\n```\n\n输出\n>The shapes area is: 100\n\
+  >The shapes area is: 50\n\n从上面的示例可以看出，每个 `getArea()` 函数的实现都不同并返回不同的结果。\n\n这种多态设计仍然提供了创建许多新数据类型的便利，而无需重复代码，但涉及某种程度的定制。\n\
+  \n### 练习\n添加一个名为 `Circle` 的新类，它需要一个只接受高度的不同的构造函数，并且 `getArea` 方法需要重载。\n\n### 答案\n\
+  ```cpp\nclass Circle : public Shape\n{\npublic:\n  Circle(double h) : Shape(h, w)\n\
+  \  {\n  }\n\n  double getArea() override\n  {\n    return 3.14 * ((length / 2) *\
+  \ (length / 2));\n  }\n};\n```\n你可以看到 `Polymorphism` 意味着多种形式，`多态` 在 OOP 上下文中意味着一个方法可以有多个角色。\n\
+  \n## 本章结束测验\n\n*   用于创建类的两个文件是什么？\n\n\n\n\n\n* 析构函数定义之前是什么符号？\n* 头文件应该承担什么角色？\n\
+  * 对于被继承的变量，`protected` 意味着什么？\n* 多态的作用是什么？\n* 使用哪个关键字来更改虚方法？\n* 如何表示纯虚函数？\n* 标记为\
+  \ `private` 的函数或变量可以在哪里被访问？\n* 构造函数的作用是什么？\n* `.cpp` 文件应该包含什么内容？\n\n### 答案\n\n*\
+  \ 头文件 (`.h`) 和 C++ 文件 (`.cpp`)。\n* 我使用符号 `~` 来表示析构函数。\n* 仅包含函数和变量的定义。\n* 只能由继承它的类在定义类之外访问。\n\
+  * 为了拥有单一基类定义但有许多不同的实现。\n* 使用 `Override` 来更改虚方法。\n* 使用一个等于 `0` 的普通函数定义。\n* 仅在定义它的类内部可以访问。\n\
+  * 是一种没有返回类型的特殊函数，在类实例创建时被调用。\n* 在头文件中定义函数和变量的影响。\n\n# 第 4 章：改进技巧\n\n## 结构体 (Structures)\n\
+  \n结构体源于 C 语言，来自类编程时代。然而，它们仍然有用，并且可以在认为类过于大材小用的地方使用。\n\n使用结构体的一个良好例子是用于记录，例如，如果你需要跟踪球队中的足球运动员，你需要存储：\n\
+  \n* 姓名 (Name)\n* 球衣号码 (Kit Number)\n* 薪水 (Wage)\n* 擅长的脚 (Strongest foot)\n* 等\n\n\
+  如果不需要向这些信息添加功能，那么结构体非常适合这种情况。一个存储这些信息的结构体定义如下：\n\n```cpp\nstruct FootballPlayer\n\
+  {\n    string Name;\n    int KitNumber;\n    double Wage;\n    string StrongestFoot;\n\
+  };\n```\n\n该结构体包含了所有相关值，这为同类信息提供了一个相关的容器。\n\n结构体的新实例定义方式如下：\n\n```cpp\nFootballPlayer\
+  \ player1;\nplayer1.Name = \"Messi\";\nplayer1.KitNumber = 10;\nplayer1.Wage = 1000000;\n\
+  player1.StrongestFoot = \"Both\";\n```\n\n这段代码将创建一个 `FootballPlayer` 对象并为它的所有成员变量赋值。\n\
+  \n结构体的实际世界用法往往是“简单”的使用，即它们只需要存储像上面这样的简单数据；当需要功能和封装时，请使用类。这被称为 POD（纯旧数据）封装。\n\n注意：结构体变量的默认访问权限是\
+  \ `public`，而类默认是 `private`。\n\n## 枚举 (Enums)\n\nEnum 是 Enumerated Type（枚举类型）的缩写，它具有布尔值的作用，但具有无限的用户定义类型，它可以用于像“HOME_SCREEN”或“SETTING_SCREEN”情况的标志。\n\
+  \n枚举的定义如下：\n\n```cpp\nenum CurrentScreen\n{\n    HOME,\n    SETTINGS,\n    CONTACTS,\n\
+  \    CALCULATOR\n};\n```\n\n括号中的每个单词都是枚举可以设置的状态。枚举实例的创建方式如下：\n\n```cpp\nint main()\n\
+  {\n    CurrentScreen phone1;\n    phone1 = HOME;\n}\n```\n\n上面的代码创建了一个枚举并将其赋值为“HOME”。你现在可以使用枚举来检查它处于什么种状态，下面的示例将使用\
+  \ `switch-case`：\n\n```cpp\n#include \"stdafx.h\"\n#include <iostream>\n\nusing\
+  \ namespace std;\n\nenum CurrentScreen\n{\n    HOME,\n    SETTINGS,\n    CONTACTS,\n\
+  \    CALCULATOR\n};\n\nint main()\n{\n    CurrentScreen phone1;\n    //Change me\n\
+  \    phone1 = HOME;\n\n    switch (phone1)\n    {\n        case HOME:\n        \
+  \    cout << \"You're on the home page\" << endl;\n            break;\n        case\
+  \ SETTINGS:\n            cout << \"You're on the settings page\" << endl;\n    \
+  \        break;\n        case CONTACTS:\n            cout << \"You're on the contacts\
+  \ page\" << endl;\n            break;\n        case CALCULATOR:\n            cout\
+  \ << \"You're on the calculator page\" << endl;\n            break;\n        default:\n\
+  \            break;\n    }\n}\n```\n\n### 输出\n\n>You’re on the home page\n\n这段代码向你展示了如何结合条件结构和枚举轻松创建一个良好的分支结构。尝试修改注释掉的“Change\
+  \ me”枚举定义，看看输出是如何变化的。\n\n## 联合体 (Unions)\n\n联合体是旨在提供高效内存使用的的数据结构，它们可以包含所需的任意成员变量，但一次只能存储一个变量的数据。因此，整个结构只占用最大成员变量的内存。\n\
+  \n这些联合体必须谨慎使用，因为设置另一个成员变量的值将移除存储在另一个变量中的数据，因此非常容易丢失重要数据。\n\n联合体的定义如下：\n\n```cpp\n\
+  union Example\n{\n    int i;\n    int x;\n    int y;\n};\n```\n\n（注：原文关于联合体的文本包含高度重复且混乱的句子；我已根据提供的联合体定义清理了核心技术逻辑。）\n\
+  \n## 可变参数列表 (Variable argument lists)\n\n可变参数列表允许可能的无限参数。在此之前遇到遇到具有静态数量参数（你可以传递的变量）的函数，例如：\n\
+  \n```cpp\nint Add(int i, int y)\n```\n\n有两个参数整数 `i` 和 `y`。\n\n这被称为变变函数（Variadic\
+  \ Function）或具有无限变数的函数（因此上面的 `Add` 变数为 2）。\n\n变量被存储在一个名为 `va_list` 的变量中，它只持有所传递的变量列表。变变函数的定义如下：\n\
+  \n```cpp\nvoid Add(int numberOfVariables, ...)\n```\n\n其中 `numberOfVariables` 是传递的额外参数的数量，注意这不包括该变量本身。这是必要的，因为\
+  \ `va_list` 并不知道变量的总数，也不会跟踪它在列表中的位置。\n\n使用 `va_list` 需要使用几个函数：\n\n* `va_start(va_list,\
+  \ numberOfVariables)`：获取传入的变量，并将第二个参数指定的数字分配给第一个参数。\n* `va_arg(va_list, type)`：从第一个参数指定的列表中获取下一个变量，并创建一个由\
+  \ `type` 指定的变量。\n* `va_end(va_list)`：结束指定的列表。\n\n我们现在可以使用这些函数来创建一个可以运行的变变参数函数：\n\
+  \n```cpp\n#include \"stdafx.h\"\n#include <cstdarg>\n#include <iostream>\n\nusing\
+  \ namespace std;\n\nvoid Add(int numberOfVariables, ...)\n{\n    //The variable\
+  \ list\n    va_list arg;\n    //Grabs the list\n    va_start(arg, numberOfVariables);\n\
+  \n    int total = 0;\n    for (int i = 0; i < numberOfVariables; i++)\n    {\n \
+  \       //Grabs the next variable\n        total += va_arg(arg, int);\n    }\n\n\
+  \    //Clean up\n    va_end(arg);\n\n    cout << \"Total is: \" << total << endl;\n\
+  }\n```\n\n\n\n\n\n```cpp\nint main()\n{\n    // 4 个参数\n    Add(4, 1, 2, 3, 4);\n\
+  \n    // 10 个参数\n    Add(10, 6, 9, 5, 11, 22, 1, 3, 56, 90, 63);\n}\n```\n\n输出\n\
+  > 总和为: 10\n> 总和为: 266\n\n变量列表过程的每个部分都有标记，此函数会相加它接收到的所有参数。这提供了一种非常动态的方式，可以创建一个处理几乎无限参数列表的函数。\n\
+  \n### 练习\n\n创建一个函数，将所有给定的参数并返回一个值，然后打印该值。注意：需要此 `#include`：\n\n```cpp\n#include\
+  \ <cstdarg>\n```\n\n### 答案\n\n类似于如下：\n\n```cpp\n#include \"stdafx.h\"\n#include\
+  \ <cstdarg>\n#include <iostream>\n\nusing namespace std;\n\nint Multi(int numberOfVariables,\
+  \ ...)\n{\n    va_list arg;\n    va_start(arg, numberOfVariables);\n    int total\
+  \ = 1;\n    for (int i = 0; i < numberOfVariables; i++)\n    {\n        // 获取下一个变量\n\
+  \        total *= va_arg(arg, int);\n    }\n    va_end(arg);\n    return total;\n\
+  }\n\nint main()\n{\n    cout << \"总和为: \" << Multi(3, 56, 90, 63) << endl;\n}\n\
+  ```\n\n## 命名空间 (Namespaces)\n\n命名空间用于防止同名的变量和函数混淆，例如，`Run()` 函数适用于许多情况，因此需要一种方法来区分不同的\
+  \ `Run()` 函数，这就是可以使用命名空间的地方。\n\n它们的定义如下，括号中的所有函数和变量都是该命名空间的一部分：\n\n```cpp\nnamespace\
+  \ NamespaceName\n{\n}\n```\n\n下面的示例展示了如何使用它们：\n\n定义了两个具有相同函数名的命名空间如下：\n\n```cpp\n\
+  namespace Proccesing\n{\n    void Run()\n    {\n        cout << \"Processing!\"\
+  \ << endl;\n    }\n}\n\nnamespace Initialisation\n{\n    void Run()\n    {\n   \
+  \     cout << \"Initialisation started!\" << endl;\n    }\n}\n```\n\n这为程序员提供了机会，通过像这样指定命名空间来选择执行哪一个\
+  \ `Run()`：\n\n`Proccesing::Run();`\n\n和\n\n`Initialisation::Run();`\n\n并让它们一起运行：\n\
+  \n```cpp\nint main()\n{\n    Initialisation::Run();\n    Proccesing::Run();\n}\n\
+  ```\n\n输出\n> Initialisation started!\n> Processing!\n\n因此，命名空间提供了一种整洁划分代码的方法，并通过提供一种几乎可以标记代码块的方法提高了可读性。\n\
+  \n## 章节末测试\n\n* 建议使用 `struct` 的推荐情况是什么？\n* ``enum` 是什么词的缩写？\n*   如何确定 `union` 的大小？\n\
+  *   关于 `union` 的一个关键因素是什么？\n* 什么是变长函数 (Variadic function)？\n*   `va_list` 包含什么内容？\n\
+  * 为什么需要在变长函数中指定参数数量？\n* 为什么需要运行 `va_end()`？\n* 命名空间的基础作用是什么？\n* 在调用命名空间内部的函数时使用什么语法，假设你正在命名空间\
+  \ `Math` 内调用函数 `Add()`？\n\n### 答案\n\n* 用于简单的旧数据 (POD)。\n* 举举类型 (Enumerated type)。\n\
+  * 它是其最大成员变量的大小\n* 所有成员变量共享相同的内存位置，因此一次只能有一个变量持有值\n* 一个具有可能无限数量参数的函数\n* 给函数的变量列表\n\
+  * 无法判断 `va_list` 的大小，因此你需要指定传递的参数数量\n* 它在使用后执行对变量列表的清理工作\n* 以有意义的方式划分并标记变量及函数。\n\
+  * `Math::Add()`\n\n# 第 5 章：高级特性\n\n## 文件输入输出 (File I/O)\n\n你最终会遇到一种编程情况，需要数据在程序运行和不运行之间存在，这就是文件保存用用场。\n\
+  \n文件保存通过使用 `fstream` 库中的函数实现，包含方式如下：\n\n```cpp\n#include <fstream>\n```\n\n你还需要我们之前见过的“iostream”用于\
+  \ `cout` 和 `cin`\n\n```cpp\n#include <iostream>\n```\n\n在保存和读取到文件时使用了三个主要对象：\n\n\
+  * `ofstream`: 处理输出流，用于创建文件并将数据写入文件\n* `ifstream`: 它是 `ofstream` 的相反，用于从文件中读取数据\n\
+  * `fstream`: 这是一个具有 `ofstream` 和 `ifstream` 特征的函数。\n\n### 打开文件\n\n为了打开文件，我们需要使用作为所有主对象的成员函数\
+  \ `open()`，它的工作原理如下：\n\n```cpp\nfstream f;\nf.open(\"file.txt\", ios::in);\n```\n\
+  \n其中：\n* “file.txt” 是文件名\n* `ios::in` 是打开文件方式的标志，下表解释了所有选项。\n\n| 名字 | 描述 |\n| :---\
+  \ | :--- |\n| `ios::app` | 以追加模式打开文件，所有输入将添加到文件末尾 |\n| `ios::ate` | 打开文件并将读/写控制移动到文件末尾\
+  \ |\n| `ios::in` | 以读取模式打开文件 |\n| `ios::out` | 以写入模式打开文件 |\n| `ios::trunc` | 以写入模式打开文件，如果文件存在则将其截断\
+  \ |\n| `ios::in` | 以输入模式打开文件 |\n\n### 关闭文件\n\n为了关闭文件，我们需要调用 `close()` 函数：\n\n```cpp\n\
+  f.close();\n```\n\n### 写入文件\n\n写入文件通过插入运算符 `<<` 实现：\n\n```cpp\nf << \"写入数据!\" <<\
+  \ endl;\n```\n\n### 从文件读取\n\n读取数据通过提取运算符 `>>` 实现：\n\n```cpp\nf >> data;\n```\n\n\
+  ### 工作示例\n\n下面是一个包含读取和写入的工作示例：\n\n```cpp\n#include \"stdafx.h\"\n#include <iostream>\n\
+  #include <fstream>\n\nusing namespace std;\n\nint main()\n{\n    // 打开文件进行写入\n \
+  \   fstream write;\n    write.open(\"file.txt\", ios::out);\n    // 将数据写入文件\n  \
+  \  write << \"Example Data\" << endl;\n    write << \"More example data\" << endl;\n\
+  \    write.close();\n\n    // 打开文件进行读取\n    fstream read;\n    read.open(\"file.txt\"\
+  , ios::in);\n    // 读取数据\n    char data[100];\n    while (!read.eof())\n    {\n\
+  \        read >> data;\n        cout << data << endl;\n    }\n    read.close();\n\
+  }\n```\n\n如你所见，每个读取命令在遇到空格或换行时停止（如上所述），在这种情况下它增加了读取部分的复杂性。我们修复此问题的方法是是使用 `getline()`，调整上面的示例来读取整行，高亮显示如下：\n\
+  \n```cpp\n#include \"stdafx.h\"\n#include <iostream>\n#include <fstream>\n#include\
+  \ <string>\n\nusing namespace std;\n\nint main()\n{\n    // 打开文件进行写入\n    fstream\
+  \ write;\n    write.open(\"file.txt\", ios::out);\n    // 将数据写入文件\n    write <<\
+  \ \"Example Data\" << endl;\n    write << \"More example data\" << endl;\n    write.close();\n\
+  \n    // 打开文件进行读取\n    fstream read;\n    read.open(\"file.txt\", ios::in);\n  \
+  \  // 读取数据\n    string data;\n    while (!read.eof())\n    {\n        getline(read,\
+  \ data);\n        if(!data.empty())\n            cout << data << endl;\n    }\n\
+  \    read.close();\n}\n```\n\n\n\n\n\n包含 `<string>` 库是为了访问 `getline()` 方法，该方法使用“读取”流作为第一个参数，第二个参数是存储数据的地方。如你所见，“data”也被适配为了字符串类型，这只是提供了一种更整洁的读取方式，因为我们不需要指定长度。\n\
+  \n## 递归\n\n递归函数是指在其定义内部包含对自身的调用的函数，因此这创建了一个循环，如果你不小心，它可能是一个无限循环。\n\n递归可以非常有用，因为它可以用较小的代码量实现迭代，下面是一个递归示例：\n\
+  \n```cpp\nvoid Recursive(int count)\n{\n    if (!(count <= 0))\n    {\n        //打印\
+  \ count 的当前值\n        cout << count << endl;\n        // 递归调用\n        Recursive(count\
+  \ - 1);\n    }\n}\n```\n\n这个函数所做的仅仅只是从调用它时的初始值开始倒数，仅此而已：\n\n```cpp\nRecursive(5);\n\
+  ```\n\n将输出：\n>5\n>4\n>3\n>2\n>1\n\n上述函数的关键点在于 `if` 语句，它确保了递归调用的停止，这被称为“停止条件”，防止程序因函数调用溢出而崩溃。\n\
+  \n如果你在研究递归，你会随处看到的一个更有实用的例子是阶乘示例。对于任何需要复习阶乘概念的人来说，阶乘是从 1 到给定数字的所有正整数的乘积，因此 4 的阶乘（写成\
+  \ `4!`）是：\n\n4! = 4 * 3 * 2 * 1 = 24\n\n递归代码看起来如下：\n\n```cpp\nint Factorial(int\
+  \ value)\n{\n    if (value > 0)\n    {\n        return value * Factorial(value -\
+  \ 1);\n    }\n    else\n    {\n        return 1;\n    }\n}\n```\n\n你可以看到，在 `return`\
+  \ 语句中有一个函数调用，你将在递归中频繁使用它，因为这意味着函数将进入某种类似于递归整体的过程，触及底部（在此情况下是“return 1”），并使用底部的这些信息在返回过程中填补空隙，并在顶部确定答案。这所有内容提供了一种简洁整洁处理迭代的不同方式。\n\
+  \n### 练习题\n\n这是一道困难的练习题，旨在尝试触发对递归的良好理解，所以请花些时间在开始之前做一些背景研究。在这次练习中，我希望你创建一个递归函数，计算所有小于\
+  \ 1000 的斐波那契数列，并在计算过程中打印它们。\n\n从如下的调用开始：\n\n```cpp\nFibonacci(0, 1);\n```\n\n注意：你需要两个参数，`previous`\
+  \ 和 `next`。\n\n### 答案\n\n类似于下面的代码：\n\n```cpp\n#include \"stdafx.h\"\n#include <iostream>\n\
+  \nusing namespace std;\n\nint Fibonacci(int previous, int next)\n{\n    // 打印\n\
+  \    cout << previous << endl;\n    if (next < 1000)\n    {\n        int newNext\
+  \ = previous + next;\n        return Fibonacci(next, newNext);\n    }\n}\n\nint\
+  \ main()\n{\n    Fibonacci(0, 1);\n}\n```\n\n### 输出\n> 0\n>1\n>1\n>2\n>3\n>5\n>8\n\
+  >13\n>21\n>34\n>55\n>89\n>144\n>233\n>377\n>610\n>987\n\n记住，做事总有不同的方法，所以如果你得到了相同的输出，那仍然是！\n\
+  \n## 预处理器\n\n预处理器只是在编译器编译任何代码之前进行处理的指令，它们都以 `#` 开头，并且不以分号（`;`）结尾，因为它们不是语句。\n\n###\
+  \ #define\n\n### 定义\n常用的例子是使用 `#define` 来指定程序是否处于调试模式，这允许你只在定义调试标记时运行调试代码。你也可以用它们来定义不改变的常量值，如下所示：\n\
+  \n```cpp\n#include \"stdafx.h\"\n#include <iostream>\n\n#define NUMBER 10\n\nusing\
+  \ namespace std;\n\nint main()\n{\n    cout << NUMBER << endl;\n}\n```\n\n### 输出\n\
+  >10\n\n这被用作一种别名系统，这里没有定义变量，但你可以将非常重要的值放在这些定义语句中，并创建具可读性的代码。\n\n你也可以使用 `#define`\
+  \ 语句来创建宏函数，方法如下：\n\n```cpp\n#define BIGGEST(a,b) ((a < b) ? b : a)\n```\n\n这实际上是在说，如果\
+  \ `b` 大于（`<`）`a`，则返回（`?`）`b`，否则（`:`）返回 `a`。\n\n它的调用方式就像其他函数一样：\n\n```cpp\ncout <<\
+  \ BIGGEST(10, 2) << endl;\n```\n\n在现实世界中最用的用途之一是在 `define` 内部为 `for` 循环创建一个更好的语法，这仅仅是为了语法目的：\n\
+  \n```cpp\n#define For(index, max) for(index = 0; index < max; index++)\n```\n\n\
+  这一切所做的仅仅是在 `#define` 体中定义了一个 `for` 循环，你只需要放入列表和想要索引的值，然后你就有了整洁的语法。\n\n使用时看起来像这样：\n\
+  \n```cpp\nint i;\nFor(i, 10)\n{\n    cout << i << endl;\n}\n```\n\n比等效的要漂亮得多：\n\n\
+  ```cpp\nfor (int i = 0; i < 10; i++)\n{\n}\n```\n\n## 条件编译\n\n(注：此部分的文本在源文件中似乎碎片化或重复；我已根据提供的规则进行了清理。)\n\
+  \n\n\n\n\n`new` 运算符允许为数据类型手动分配内存，见下例：\n\n```cpp\ndouble* p = new double;\n```\n\n\
+  如你所见，`new` 关键字会分配内存并返回指向该内存的指针。在上面的示例中，它是一个指向 `double` 的指针，这是手动分配的内存，编译器不会手动释放该数据；如果不对其进行手动纠正，可能会出现所谓的内存泄漏，导致内存被不必要地占用。\n\
+  \n这时 `delete` 运算符派上用场了，它是 `new` 关键字的反相反，将释放变量的内存。\n\n让我们实际运用这些运算符吧：\n\n```cpp\n\
+  #include \"stdafx.h\"\n#include <iostream>\n\nusing namespace std;\n\nint main()\n\
+  {\n    // 创建指针\n    double* p = NULL;\n\n    // 此处检查内存是否已分配\n    // 它只是为了确保 \"p\"\
+  \ 指向某些位置\n    if (!(p = new double))\n    {\n        cout << \"ERROR: Memory problems\"\
+  \ << endl; // 只有在出现问题时才会打印\n    }\n\n    // 修改值等\n    *p = 100;\n    cout << \"\
+  P is: \" << *p << endl;\n\n    // 释放内存\n    delete p;\n}\n```\n\n如你所见，对 `p` 的内存分配进行了检查，这是一种推荐的做法，因为它可以监控任何内存问题。如果你只是像这样写：\n\
+  \n```cpp\ndouble* p;\np = new double;\n```\n\n如果第二行失败，`p` 可能会指向任何内存位置，并在更改 `p` 的值时导致程序崩溃。\n\
+  \n### 数组的动态内存\n\n就像对变量操作一样，你也可以对数组进行以下操作：\n\n1. 使用 `new[]` 分配一块内存\n2. 使用 `delete[]`\
+  \ 释放多块内存\n\n例如，如果我们想创建一个指向 5 个对象的指针数组：\n\n```cpp\n#include \"stdafx.h\"\n#include\
+  \ <iostream>\n\nusing namespace std;\n\nclass MyClass\n{\npublic:\n    MyClass()\n\
+  \    {\n        cout << \"Made!\" << endl;\n    }\n    ~MyClass()\n    {\n     \
+  \   cout << \"Deleted!\" << endl;\n    }\n};\n\nint main()\n{\n    // 创建\n    MyClass*\
+  \ classes = new MyClass[5];\n    // 释放\n    delete[] classes;\n}\n```\n\n**输出**\n\
+  \n>Made!\n>Made!\n>Made!\n>Made!\n>Made!\n>Deleted!\n>Deleted!\n>Deleted!\n>Deleted!\n\
+  >Deleted!\n\n如你所见，`main()` 中的第一行创建了 5 个 `MyClasses`，构造函数执行并打印“Made!”，接下来的代码释放内存，析构函数执行并打印“Deleted!”，这可以用极少的代码创建大量的指针。\n\
+  \n### 指针算术\n\n你可以给指针加上一个值以移动到下一个内存位置。假设我们有一个整数型指针，在 64 位系统上 `int` 应该是 4 字节。所以：\n\
+  \n```cpp\nint* p = new int;\np = p + 1;\n```\n\n上面的代码将移动到下一个 4 字节。通过 `+1` 表示移动到下一个变量大小的间隔，例如，如果我们有一个\
+  \ 8 字节的 `long long`，加 1 就会移动 8 字节。你也可以反相反方向减去 1，它们的效果完全相同，只是方向相反。\n\n下面的示例演示了这一点：\n\
+  \n```cpp\n#include \"stdafx.h\"\n#include <iostream>\n\nusing namespace std;\n\n\
+  int main()\n{\n    // 大小检查\n    cout << \"int is: \" << sizeof(int) << \" bytes\"\
+  \ << endl;\n\n    // 创建内存\n    int* next = new int[10];\n    for (int i = 0; i <\
+  \ 10; i++)\n    {\n        // 移动 4 字节\n        cout << next + i << endl;\n    }\n\
+  \n    // 释放内存\n    delete[] next;\n}\n```\n\n**输出**\n\n>int is: 4 bytes\n>00DDDB50\n\
+  >00DDDB54\n>00DDDB58\n>00DDDB5C\n>00DDDB60\n>00DDDB64\n>00DDDB68\n>00DDDB6C\n>00DDDB70\n\
+  >00DDDB74\n\n如你所见，内存被分配了，且指针每次移动 1 位。从输出可以看出，十六进制地址之间相差 4，因为内存地址是相邻的。\n\n## 章节结束测试\n\
+  \n* `ios::app` 标志代表什么？\n* 为什么关闭文件很重要？\n* 使用哪个运算符向文件写入数据？\n* `.eof()` 意味着什么？\n* 每一个递归函数都需要什么？\n\
+  * `#ifdef` 是什么意思？\n* `##` 运算符实现了什么功能？\n* 什么时候应该使用 `delete []`？\n* `new` 运算符返回什么？\n\
+  * 在整数指针上加 1 会发生什么？\n\n### 答案\n\n* 它将以追加模式打开文件。\n* 它释放与文件关联的资源。\n* 插入运算符 (`<<`)。\n\
+  * 是一个在到达文件末尾时返回 true 的方法。\n* 一个防止无限循环的停止条件。\n* 如果别名未定义，则将包含其封装的代码。\n* 它连接并替换两个值。\n\
+  * 当你想删除一个块用户分配的内存时。\n* 指向新创建的内存位置的指针。\n* 如果整数是 4 字节，它将移动 4 字节。\n\n"

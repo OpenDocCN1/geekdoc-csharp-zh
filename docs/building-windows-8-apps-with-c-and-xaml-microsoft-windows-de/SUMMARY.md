@@ -1,0 +1,2 @@
++   [C# 和 XAML Windows 8 应用构建指南 (Microsoft Windows Development Series)](README.md)
++   [C# 和 XAML Windows 8 应用构建指南 (Microsoft Windows Development Series)](building-windows-8-apps-with-c-and-xaml-microsoft-windows-de_0.md)

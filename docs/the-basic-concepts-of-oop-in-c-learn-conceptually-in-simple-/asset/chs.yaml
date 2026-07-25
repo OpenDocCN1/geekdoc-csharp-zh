@@ -1,0 +1,232 @@
+- "# C# 面向对象基础概念：用简单语言进行概念学习\n\n\n\n![](img/1405.jpg)\n\n\n\n![Image](img/kisspng-microsoft-visual-studio-net-framework-visual-stud-5adab7033e9305.4830596915242831392563.jpeg)\n\
+  \n\n\nCopyright © 2018 by Hani Marzban 版权所有。未经出版者书面许可，不得以任何形式或通过手段（包括复印、录制或其他电子或机械方法）复制、分发或传输本书的内容，但法律允许的批判性评论中的简短引用以及某些其他非商业用途除外。如需许可，请写信至出版者，地址为“权限协调员”，`hani.mrzbn@gmail.com`。\n\
+  \n## 目录\n\n* 前言\n* 引言\n* 对象的概念\n* 对象的属性\n* 行为\n* 方法\n* 字段\n* 访问器\n* 命名空间\n* 类的概念\n\
+  * 结构体的概念\n* 类与结构体的区别\n* 构造函数\n* 析构函数\n* 可重用性\n* 抽象\n* 封装\n* 属性\n* 继承\n* 接口\n* 多态\n\
+  * 实战练习\n* 如何创建类\n* 在 C# 中声明类\n* 在 C# 中声明方法\n* 在 C# 中调用方法\n* 如何使用构造函数\n* 如何使用析构函数\n\
+  * 属性与封装\n* 结构体 Struct\n* \"引用类型”与“值类型”\n* 继承\n* 继承中的构造函数\n* 抽象\n* 静态与非静态类\n* 接口\n\
+  * 多态\n\n## 前言\n\n在各个领域进行研究长期以来一直是作者最喜欢的工作。他决定写一本关于 `C#` 面向对象编程的书，这被认为是最流行的语言之一。本书将帮助读者理解\
+  \ `OOP` 的基础知识，特别是 `NET` 框架。因此，现在让我们通过一个例子来明确对象的定义，并且相信通过依赖不同的例子，实现高水平的 `OOP` 将成为现实。不要忘记“实践是关键的”。我们祝愿亲爱的读者在此方面取得巨大的成功。\n\
+  \n等一下，`hani.mrzbn@gmail.com`\n\n## 引言\n\n读者可能听过关于 `C#` 面向对象编程，但我们在日常生活中与各种类型的对象打交道，例如电脑、手机、电视机。计算机世界的情况也是如此。例如，`OS`\
+  \ 应用被称为媒体播放器、工具栏、窗口以及我们能观察到的东西，这些都是可见的对象；另一方面，还有隐藏的对象，我们看不见，但它们在后台运行，从技术上说，是一堆。我们在现实世界中看到的、感受到的甚至想象到的任何东西都可以被看作一个对象。通常，我们在日常生活中与各种类型的对象打交道，例如电脑、手机、电视机。计算机世界的情况也是如此。例如，`OS`\
+  \ 应用被称为媒体播放器、工具栏、窗口以及我们能观察到的东西，这些都是可见的对象；另一方面，还有隐藏的对象，我们看不见，但它们在后台运行，从技术上说，是一堆。\n\
+  \n等一下，`hani.mrzbn@gmail.com`\n\n等一下，`C#`、`C`、`C++`、`C#`、`NET`、`C#`。\n\n等一下，`hani.mrzbn@gmail.com`\n\
+  \n# 对象的概念\n\n我们在现实世界中看到的、感受到的甚至想象到的任何东西都可以被看作一个对象。通常，我们在日常生活中与各种类型的对象打交道，例如电脑、手机、电视机。计算机世界的情况也是如此。例如，`OS`\
+  \ 应用被称为媒体播放器、工具栏、窗口以及我们能观察到的东西，这些都是可见的对象；另一方面，还有隐藏的对象，我们看不见，但它们在后台运行，从技术上说，是一堆。\n\
+  \n首先，在创建对象之前，我们需要分析对象的本质**属性**和**行为**。假设我们计划构建一个管理图书馆的软件，那么在分析需求后，例如，我们发现要实现的主要的**对象**如下所示：\n\
+  \n1. 图书馆的成员\n2. 图书馆的操作员\n3. 书籍分类\n4. 书\n\n## 对象的属性\n\n等一下，源代码中未提供此节的文本，但我将根据目录和提供的内容（如果有的话维持其结构。\n\
+  \n## 行为\n\n读者可能听过关于 `C#` 面向对象编程，但我们在日常生活中与各种类型的对象打交道，例如电脑、手机、电视机。计算机世界的情况也是如此。例如，`OS`\
+  \ 应用被称为媒体播放器、工具栏、窗口以及我们能观察到的东西，这些都是可见的对象；另一方面，还有隐藏的对象，我们看不见，但它们在后台运行，从技术上说，是一堆。\n\
+  \n## 方法\n\n## 字段\n\n## 访问器\n\n## 命名空间\n\n## 类的概念\n\n## 结构体的概念\n\n## 类与结构体的区别\n\n\
+  ## 构造函数\n\n## 析构函数\n\n## 可重用性\n\n## 抽象\n\n## 封装\n\n## 属性\n\n## 继承\n\n## 接口\n\n##\
+  \ 多态\n\n## 实战练习\n\n## 如何创建类\n\n## 在 C# 中声明类\n\n## 在 C# 中声明方法\n\n## 在 C# 中调用方法\n\n\
+  ## 如何使用构造函数\n\n## 如何使用析构函数\n\n## 属性与封装\n\n## 结构体 Struct\n\n## “引用类型”与“值类型”\n\n##\
+  \ 继承\n\n## 继承中的构造函数\n\n## 抽象\n\n## 静态与非静态类\n\n## 接口\n\n## 多态\n\n\n\n\n请尝试研究其他运行环境，例如小型商店或连锁店。不要急于编写代码，要保持冷静。根据我的经验，首先，你需要完美地学习这些；因此，为了实现这一重要目标，你必须尽可能在纸上进行练习，并记录与不同系统相关的对象的本质属性和行为，直到变得精通。不要害怕在大型系统上尝试，因为这完全`通过将庞大结构的组件分解为小组件`来实现；通过这种方式，有助于你在对象设计方面获得良好的技能水平。\n\
+  \n## 对象的属性\n\n`properties of an object`（对象的属性）是与对象的一系列特征，能够精确地描述它。例如，将人看作一个对象，他/她有许多不同的特征，如眼睛颜色、身高、体重以及描述人的许多其他参数，这些都被称为\
+  \ `properties of a human.`。\n\n## 行为\n\n除了`properties` 外，对象内部还有一系列动作，被称为 `Behaviors`（行为）。让我们快速澄清这一点：如果我们把人看作一个对象；我们可以说“人类可以行走，或人类可以看”，这些都是对象（人）可以执行的\
+  \ `Behaviors`。\n\n## 方法\n\n事实上，方法是使用对象函数的方式。让我们用一个例子来拆解它。想象手机手机作为一个对象，这个对象（手机）内部有一个方法称为\
+  \ `displaying numbers`（显示数字），它会在你的手机屏幕上显示所按的数字。所以，从技术上讲，当手机键盘上按下 `1` 时，这个按钮会调用 `displaying\
+  \ numbers` 方法并发送 `1` 给它，最终，该方法会在屏幕上显示 `1`。如果这还不足够清楚，不要担心，稍后我们将通过实际操作在概念上理解它。\n\n\
+  ## 字段\n\n一个 `field`（字段）是一个普通变量，可以携带不同类型的数据，并被认为是 `class` 的成员。它在 `class` 中声明，并使用\
+  \ `set` 或 `get` 访问器来设置或获取任何值。\n\n## 访问器\n\n简单来说，`set` 和 `get` 是属性，允许程序员为 `class`\
+  \ 中的字段设置或从字段中获取值。我们将在实践练习部分复习它。\n\n## 命名空间\n\n一个 `class` 可以包含大量成员，而 `namespace`（命名空间）内部可以包含许多\
+  \ `classes`。`Namespaces` 包含了不同的预定义 `classes`，让程序员将其用于不同的用途。例如，在 `.NET` 框架中，有一个 `namespace`\
+  \ 包含了连接到数据库（如 `SQL`、`Oracle DB` 等）所需的类。\n\n## 类的概念\n\n事实上，如果不把 `class` 作为原则，对象就毫无意义。让我们解释得更清楚一些：`class`\
+  \ 在这里扮演父类角色，涵盖了从变量到属性、行为、方法等所有内容。换句话说，`class` 由一套为了实现特定目标而设计的规则组成，但为了使其适用，我们必须创建它的副本，这被称为\
+  \ `Instantiation`（实例化）；通过这种方式，字面意思是，你`从一个类创建了一个对象`。\n\n\n\n\n属性（Property）是一种提供灵活机制的成员，用于读取、写入或计算私有字段的值。属性可以像公共数据成员一样被使用。属性封装了私有字段。它提供了\
+  \ getter（`get{}`）来检索底层字段的值，以及 setter（`set{}`）来设置底层字段的值。\n\n#继承\n\n继承在面向对象编程（OOP）范式中起着主要作用。我们应该尽可能地练习这种技术，如果我们这样做，可以很有把握地成为\
+  \ OOP 大师。为了更好地理解这个概念，让我们想象一下：从出生开始，孩子从父母那里继承属性，例如眼睛颜色、头发颜色、肤色、特殊行为等等。OOP 范式中也是如此，但如何实现呢？当我们设计一个实体时，可以将一个类视为父类，实体可以从父类继承一切。继此，就会实现代码的可重用，实体可以继承必要的属性；而不是编写大量的代码，从而减少了代码量并实际上提高了效率。\n\
+  \n## 接口\n\n它与类相似，但正如你可能已经意识到的，与类不同，类不能同时继承两个或多个类，但接口可以无限制地被多次继承，因此我们将在“实际练习”部分尝试一个简单的示例，找出它是如何工作的。\n\
+  \n# 多态性\n\n我们中的许多人对多态感到困扰，我们总是建议他们：“尽管完美地学习了‘继承’，但非常建议通过非常基础的示例来轻松找到该概念。”\n\n我们将讨论多态，并在实际部分尝试基础练习。想象一个办公室，在办公室里：有一位经理、一名办事员和一个秘书，他们的办公室进口了电脑设备。好了，为办事员（clerk）定义了一个类，里面定义了不同的方法，例如“注销（Log\
+  \ out）”、“登录（Log in）”、“支付（Payment）”和“职责（Duty）”。请注意下方“办事员”类中定义的方法的行为。\n\n### 办事员方法的行为\n\
+  \n- `Log in`: 此方法记录进入办公室的时间。\n- `Log out`: 此方法记录离开办公室的时间。\n- `Payment`: 此方法记录每月\
+  \ 900 美元的默认月薪。\n- `Duty`: 此方法记录办事员是否与出口商交过话？\n\n好了，这个方法对办事员来说非常有效，但现在，我们还需要为经理（manager）也定义一个类。我们需要做的是从“办事员”继承一个类并进行细小的更改，因为办事员和经理的行为并不完全相同。因此，请注意下方继承后“经理”类中定义的每个方法的行为。\n\
+  \n### “经理”方法的行为\n\n- `Log in`: 此方法记录进入办公室的时间。\n- `Log out`: 此方法记录离开办公室的时间。\n- `Payment`:\
+  \ 此方法记录每月 3000 美元的默认月薪。\n- `Duty`: 此方法记录经理是否签署了信件？\n\n太棒了，我们希望读者能理解。我们做了什么？很简单，我们通过继承“办事员”类创建了一个名为“经理”的新类，由于这两个类所需的所需的行为并不完全相同，我们确实在“经理”类的\
+  \ `Payment` 和 `Duty` 方法中提交了修改。\n\n## 实际练习\n\n## 如何创建一个类\n\n打开 Visual Studio 软件，然后点击\
+  \ **File（文件）** **New（新建）** **Project（项目）** **Visual C#** **Console Application（控制台应用程序）**，更改项目名称和位置（可选）后，点击“OK（确定）”按钮。（图\
+  \ 1）\n\n![Image](img/Untitled-2.png)\n图 1\n\n![Image](img/Untitled-2-1.png) 太棒了，我们需要向项目中添加一个类，在解决方案管理器窗口中找到项目名称，对其右键点击并按照以下操作：Add\
+  \ Class（添加类）。（图 2）\n图 2\n\n很好，将打开一个如下所示的新窗口，包含不同的项目，但我们需要的是“class（类）”项目，因此首先点击“Visual\
+  \ C# Items”，然后选择“Class（类）”。\n\n最后，也可以更改类的名称，然后点击“Ok（确定）”按钮创建它。（图 3）\n\n![Image](img/Untitled-2-2.png)\
+  \ 是的，我们做到了。我们可以成功地向项目添加类文件。现在，我们可以双击它来打开文件并开始创建不同的类。\n图 3\n图 3\n\n## C# 中类的声明\n\n\
+  `[Access modifier][`class` keyword][ClassName]`*\n\n仔细考虑，“访问修饰符”你需要替换为下面提到的项，\n\n\
+  - `public`: 该类型或成员可以被同一程序集的任何其他代码或引用该程序的另一个程序集的代码访问。\n- `internal`: 该类型或成员可以被同一程序集的任何代码访问，但不能从另一个程序集访问。\n\
+  \n在 `[Access modifier]` 之后，你**必须**放置 `class` 关键字，然后为你的类命名，请查看下面的示例了解它是如何工作的。（使用访问修饰符是可选的）。\n\
+  \n**注意：** 如果未指定访问修饰符，默认是“Internal”。\n\n```csharp\npublic / internal class Customer\n\
+  {\n    // 代码写在这里……\n}\n```\n\n所以，尝试在 C# 中创建一个类来查看它是如何工作的；然而，这是至关重要的。\n\n## C# 中方法的声明\n\
+  \n`[Access modifier][Return type]Method Name`\n\n好了，方法定义在类内部，为此，首先我们需要一个类。假设我们有一个名为\
+  \ `math_operation` 的类，我将在里面创建一个 `sum` 方法。在一切之前，让我们解释一下下方的声明元素。\n\n在 `Access modifier`\
+  \ ，你可以替换下面提到的项：\n\n- `public`: 该类型或成员可以被同一程序集的任何其他代码或引用该程序的另一个程序集的访问。\n- `private`:\
+  \ 该类型或成员仅可以被类内部的代码访问。\n- `protected`: 该类型或成员可以被类内部代码或其派生类的代码访问。\n- `internal`: 该类型或成员可以被同一程序集中的任何代码访问，但不能从另一个程序集访问。\n\
+  - `protected internal`: 该类型或成员可以被其声明程序集中的任何代码或来自另一个程序集的派生类的代码访问。\n- `private protected`:\
+  \ 该类型或成员仅可以被其声明程序集内的类或其派生类的代码访问。\n\n对于 `return type`，如果方法返回任何值，你必须编写数据类型，例如 `int`、`string`\
+  \ 等。否则，返回类型为 `void`，我们需要应用 `void` 关键字。\n\n**注意：** 如果用 `void` 关键字替代 `return type`，你不需要在方法体内编写\
+  \ `return` 关键字，但如果你在 `return type` 中使用了任何数据类型，则需要使用 `return` 关键字。\n\n在 `Method name`\
+  \ 方面，你需要为你的方法设置一个**唯一标识符**与其他标识符区分，记住，它是区分大小的。\n\n在 `Parameter list`（即在两个括号之间），你可以插入不同类型的变量作为方法的**输入**和**输出**。\n\
+  \n好了，回到示例，假设我们有一个名为 `math_opration` 的类，它包含一个名为 `sum` 方法，该方法使用两个参数接收两个数字。请考虑这些元素和它的工作方式。（图\
+  \ 4）。\n\n![Image](img/5.png)\n图 4\n图 4\n\n\n\n\n我们可以成功地创建一个类和一个方法来计算两个数字之和，但我们需要在运行环境中用用它以发现它的工作原理；因此，首先，我们需要创建该类的实例，然后调用该方法。\n\
+  \n## 在 C# 中调用方法\n\n要使用方法，我们需要调用它们。为了实现这一重要点，我们首先应该创建一个包含所需方法的类实例。在这个示例中，我们从 `math_operation`\
+  \ 类创建了一个实例 ![Image](img/6.png)，然后我们将调用预期的方法。请通过下文了解如何做到这一点。（打开 `Program.cs`，然后编写下方所示的代码）\n\
+  \n图 5\n\n图 5\n\n很好，启动项目后，我们将看到如如下所示的结果。（图 6）\n\n![Image](img/7.png)恭喜你，正如我们所看到的，它显示数字“30”作为最终结果，这意味着该方法运行得非常完美，但请记住，这并不是全部的故事，你需要不断地练习基础示例来发现它的工作原理。不要急于去接触大项目，因为我们还是初学者。\n\
+  \n图 6\n\n图 6\n\n## 如何使用构造函数\n\n好了，正如我们提到的，构造函数是不返回任何值的方法。例如，如果我们有一个名为 `car` 的类，它也一定有一个构造函数，也称为\
+  \ `car`。我们注意到，构造函数的主要任务之一是初始化新对象的数据成员。\n\n构造函数的总体结构如下：\n\n`{Access-modifier} {Class-name}([Parameters])`\n\
+  \n```csharp\n{\n\n}\n```\n\n查看一个简单的示例以更好地理解结构。\n\n第 1 ：将以下代码放入类文件中。\n\n```csharp\n\
+  public class car2\n{\n    public string color;\n    public int max_speed;\n    public\
+  \ car ()\n    {\n        color = \"Orange\";\n        max_speed = 200;\n    }\n\
+  }\n```\n\n第 2 ：打开 `Program.cs` 文件并放入以下代码。\n\n```csharp\npublic class Program1\n\
+  {\n    static void Main(string[] args)\n    {\n        car cr = new car();\n   \
+  \     Console.WriteLine(cr.max_speed);\n        Console.WriteLine(cr.colour);\n\
+  \        Console.ReadKey();\n    }\n}\n```\n\n第 3 ：运行程序，让 CLR 输出结果。\n\n第一个输出等于“200”。\n\
+  \n第二个输出等于“Orange”。\n\n好的，让我们追踪这些代码行看看发生了什么。\n\n### #1：定义一个名为 `car` 的公共类。\n\n###\
+  \ #3：在类内部定义一个公共字段，用于存储汽车的颜色。\n\n### #4：在类内部定义一个公共字段，用于存储汽车的最大速度。\n\n### #5：定义一个构造函数，以便设置字段的默认值。\n\
+  \n### #7：设置默认值。\n\n### #8：设置默认值。\n\n### #15：创建一个名为 `cr` 的 car 类实例。\n\n### #16：在\
+  \ MS-DOS 控制台窗口中使用 `Console.WriteLine` 命令行显示 `color` 字段的值。\n\n### #17：在 MS-DOS 控制台窗口中使用\
+  \ `Console.WriteLine` 命令显示 `max_speed` 字段的值。\n\n### #18：获取用户按下的下一个字符或功能键。按下的键将显示在\
+  \ MS-DOS 控制台窗口中。这有助于我们在保持窗口打开的同时观察结果。\n\n我们可能会问自己，既然可以在定义字段时设置它们的默认值，为什么还要使用构造函数呢？很好，这是一个问题，让我们看看为什么？即使我们没有创建构造函数来初始化类或结构体的数据成员，编译器也会这样做，在创建类或结构体后初始化数据成员并调用它。记住，我们可以在类或结构体中同时定义多个带有输入参数的构造函数，这使我们能够为类的每个实例设置不同的值，例如，我们可以拥有五个具有不同值的类实例。我们可以在\
+  \ C# OOP 的高级主题中找到关于此点的更多信息。\n\n## 如何使用析构函数\n\n析构函数是帮助从内存中清理完成对象的方法。然而，垃圾回收语言可以很容易地做到这一点，析构函数不再那么有用，但至少，了解析构函数的功能是有用的。\n\
+  \n查看下例以发现它的工作原理。\n\n第 1 ：将以下代码放入类文件中。\n\n```csharp\nclass print_command\n{\n   \
+  \ public print()\n    {\n        Console.WriteLine (\"This is a constructor\");\n\
+  \    }\n    ~print()\n    {\n        Console.WriteLine (\"This is a destructor\"\
+  );\n    }\n} // 类结束\n```\n\n第 2 ：打开 `Program.cs` 文件并放入以下代码。\n\n```csharp\nclass\
+  \ Program\n{\n    static void Main(string[] args)\n    {\n        print_command\
+  \ prt = new print_command();\n    }\n}\n```\n\n第 3 ：运行程序，让 CLR 输出结果。\n\n第一个输出等于“This\
+  \ is a constructor”。\n\n第二个输出等于“This is a destructor”。\n\n好了，让我们追踪这些代码行看看发生了什么。\n\
+  \n### #1：定义一个名为 `print_command` 的类。\n\n### #3：定义 `print()` 构造函数。\n\n### #5：在构造函数内部使用\
+  \ `Console.WriteLine`。\n\n### #7：使用 `~print()` 定义析构函数。\n\n### #9：在析构函数内部使用 `Console.WriteLine`。\n\
+  \n### #11：类结束。\n\n### #12：定义 `Program` 类。\n\n### #13：定义 `Main(string[] args)` 方法。\n\
+  \n### #16：创建一个名为 `prt` 的 `print_command` 实例。\n\n### #17：关闭 `Main` 方法。\n\n### #18：关闭\
+  \ `Program` 类。\n\n## 属性与封装\n\n这里有一个属性的简化示例。首先，追踪这些代码行：\n\n第 1 ：创建一个名为 `Calculation`\
+  \ 的类。\n\n```csharp\nclass Calculation\n{\n    private int result;\n    public int\
+  \ Age\n    {\n        get { return result; }\n        set { result = value; }\n\
+  \    }\n}\n```\n\n第 2 ：打开 `Program.cs` 文件并放入以下代码。\n\n```csharp\nclass Program\n\
+  {\n    static void Main(string[] args)\n    {\n        Calculation clc=new Calculation();\n\
+  \        clc.Age=50;\n        Console.WriteLine (clc.Age);\n        Console.ReadKey();\n\
+  \    }\n}\n```\n\n第 3 ：运行程序，让 CLR 输出结果。\n\n最终输出等于 43。\n\n好的，很好。让我们看看从第一步到最后一步发生了什么：\n\
+  \n### #1：我们定义了一个名为 `Calculation` 的类。\n\n### #3：由于遵循封装规则，我们必须将 `result` 字段定义为 `private`。这样，该字段对于使用同一类的其他用户的尝试是不可访问的。因此，我们就可以满足在现实意义上非常重要的封装概念。\n\
+  \n### #4：在类内部定义一个属性，名为 `Age`。\n\n### #6：简单来说，这个方法**从私有字段获取值**并在你调用它时将其传递给你。\n\n\
+  ### #7：这个方法为私有字段设置值，记住 `=` 旁边的 `value` 是一个必须的关键字，用于正确地将值放入字段。\n\n\n\n\n快要完了，代码的其他部分（从\
+  \ #10 开始）都在 `Program.cs` 中。\n\n**#14:** 在这里我们需要创建一个名为 `Calculation` 的定义类的实例。好了，我这样做了，并将实例化的类命名为\
+  \ `clc`（你可以使用你喜欢的名称），然后我们就有了一个名为 `clc` 的可用 `Calculation` 类副本。正如你可能意识到的，类不能单独使用，需要通过实例化才能生效。\n\
+  \n**#15:** 将值 `50` 赋值给 `Calculation` 类中名为 `result` 的私有字段。事实上，实际上是它将值 `50` 传递给属性，而属性中的\
+  \ `set` 方法使用 `value` 关键字获取该值，并简单地将其置于名为 `result` 的私有字段中。\n\n**#16:** 这一行读取了 `Calculation`\
+  \ 类中私有字段的可用值。简单来说，这次 `get` 方法从 `Calculation` 类中名为 `result` 的私有字段获取可用值，并将其传递给你，然后接收到的值将减去数字\
+  \ 7。最终，这一行命令 `Console.WriteLine` 在 MS-DOS 控制台窗口中显示结果（获取的值减去数字 7）。\n\n**#17:** 获取用户按下的下一个字符或功能键。按下的键将显示在\
+  \ MS-DOS 控制台窗口中。事实上，它可以帮助我们在保持窗口打开的同时观察最终结果。\n\n## 结构体 (Struct)\n\n让我们通过下方的结构体基本实例来了解其结构。\n\
+  \n### 步骤 1：在类文件中放入以下代码定义一个结构体。\n\n```\n1-struct information\n2-{\n3-public string\
+  \ name;\n4-}\n```\n\n### 步骤 2：创建定义结构体的实例\n\n打开 `Program.cs` 文件，并使用下面的代码创建定义结构体的实例。\n\
+  \n```\n5- public class Program\n6- {\n7- static void Main(string[] args)\n8-  {\n\
+  9-  information TheStruct\n10- TheStruct.name=\"Hani\";\n11-  }\n12- }\n```\n\n\
+  让我们逐行分析代码：\n\n**#1:** 定义一个结构体，你可以使用 `struct` 关键字来实现它。\n\n**#3:** 在结构体中定义一个字符串字段（记住，你不能在结构体内部为该字段赋值，你可以定义它，这是一个规则，我提前说明了）。\n\
+  \n**#9:** 是时候创建一个 `information` 结构体的实例了。所以，我们需要的是先写结构体的名称，然后写对象的名称。\n\n**#10:**\
+  \ 好了，现在我们可以从这里为结构体中定义的字段赋值。\n\n## “引用类型 (Reference Type)” 与“值类型 (Value type)”\n\n\
+  `class` 和 `struct` 之间存在着基础且显著的差异，我们之前提到过。我们应该意识到 `class` 是“引用类型”，而 `struct` 是“值类型”。这意味着什么呢？让我们通过下方的示例来更清楚地理解。\n\
+  \n请注意这段代码；这是一个类的示例，我们需要猜测输出结果。\n\n```\n1-ProgrammingClass student1=new ProgrammingClass\
+  \ ();\n2-student1.score = 20;\n3-ProgrammingClass student2 = student1;\n4-student2.score\
+  \ = 19;\n5-Console.WriteLine (student1.score.ToString ());\n```\n\n是的，输出等于“19”，而不是“20”，但为什么不是“20”呢？这是因为它是引用类型，让我们逐行探索以发现更多信息。\n\
+  \n**#1:** 创建一个名为 `ProgrammingClass` 的类的实例对象 `student1`，该类包含一个名为 `score` 的字段。\n\n\
+  **#2:** 在 `score` 字段中设置值为 `20`。\n\n**#3:** 创建另一个名为 `student2` 的 `ProgrammingClass`\
+  \ 实例对象，并将其赋值为对象 `student1`。请注意，这样做，这两个对象（`student1` 和 `student2`）将链接在一起，它们的值不会相互拷贝；反之，作为一个实例，如果你更改了\
+  \ `student2` 中可用的 `score` 字段的值，那么 `student1` 中存在的 `score` 字段的值将被替换为与 `student2`\
+  \ 相同的值。这就是“引用类型”的简单含义。\n\n**#4:** 在 `student2` 存在的 `score` 字段中设置值为 `19`。\n\n**#5:**\
+  \ 在 MS-DOS 控制台窗口中使用 `Console.WriteLine` 命令显示 `student1` 中可用的 `score` 字段的值。\n\n这就是“引用类型”的概念。现在让我们来看一个结构体的示例，以理解“值类型”的感觉。\n\
+  \n```\n1-ProgrammingStruct student1 ();\n2-student1.score = 20;\n3- ProgrammingStruct\
+  \ student2 = student1;\n4-student2.score = 19;\n5-Console.WriteLine (student1.score.ToString\
+  \ ());\n```\n\n与类不同，这次输出等于“20”，而不是“19”。原因是因为它是值类型，让我们逐行查看它是如何工作的。\n\n**#1:** 创建一个名为\
+  \ `ProgrammingStruct` 的结构体的实例对象 `student1`，它包含一个名为 `score` 的字段。（记住，创建结构体实例时不需要 `new`\
+  \ 关键字）。\n\n**#2:** 在 `score` 字段中设置值为 `20`。\n\n**#3:** 创建另一个名为 `student2` 的 `ProgrammingStruct`\
+  \ 实例对象，并将其赋值为对象 `student1`。请注意，这样做，这两个对象（`student1` 和 `student2`）将链接在一起，它们的值不会相互拷贝；反之，作为一个实例，如果你更改了\
+  \ `student2` 中可用的 `score` 字段的值，那么 `student1` 中存在的 `score` 字段的值将被替换为与 `student2`\
+  \ 相同的值。这就是“引用类型”的简单含义。\n\n**#4:** 在 `student2` 存在的 `score` 字段中设置值为 `19`。\n\n**#5:**\
+  \ 在 MS-DOS 控制台窗口中使用 `Console.WriteLine` 命令显示 `student1` 中可用的 `score` 字段的值。此外，这也是“值类型”的概念。\n\
+  \n## 继承 (Inheritance)\n\n面向对象编程（OOP）范式中的“继承”与现实世界的意思相同。它是最重要、有趣且应用的概念之一。首先，让我们通过一个示例来仔细观察。假设我们有两个不同的类：\n\
+  \n```\n步骤 1：在这里创建类“First”，并在内部放入两个方法（一个私有，一个公共），我们也实现了两个字段（一个私有，一个公共）。\n\n步骤 2：创建一个名为“Second”的类，它继承“First”的成员。记住，现在“Second”类被认为是派生类，而“First”类被认为是基类。要进行继承，我们需要在创建派生类时在类名之间放置\
+  \ `:` 字符，查看最后以获取理解。\n```\n\n很好，现在 `Second` 类继承了 `First` 类的所有内容。为了看到 `Second` 类实现的继承结果，尝试在\
+  \ `Program.cs` 中创建 `Second` 类的实例对象，看看我们得到了什么。\n\n似乎我们只得到了名为 `method1` 的方法和一个名为 `Name`\
+  \ 的字段，但其余部分呢？因为我们还有一个私有字段 `phoneNumber` 和名为 `method2` 的方法。好了，我们必须意识到，除非我们将 `private`\
+  \ 访问修饰符改为 `protected`，否则私有成员不会被继承，然后你就可以在派生类中访问它们了。\n\n为了使用它，我们需要调用它。像往常一样在 `Program.cs`\
+  \ 中这样做。\n\n\n\n\n\n请查看（图 10）并尝试从头追踪发生了什么。\n\n![Image](img/4.jpeg)\n\n我们无法同时继承两个或多个类，这是继承主题中一个非常重要的点，我们必须意识到这一点。\n\
+  \n图 10\n\n图 10\n\n查看下面的示例，\n`class1:class2:class3:class4:class5:class6`\n`class1:class2,class3,class4,class5,class6`\
+  \ \n\n在接下来，我们将介绍继承主题中的构造函数以及如何处理它们。\n\n## 继承中的构造函数\n\n这里有一个模糊的点；它们是构造函数，那么它们呢？我们也可以继承它们吗？答案是“可以”，但不是通常那样。为了清晰起见，让我们参考以下示例。\n\
+  \n第 1 步：创建一个名为 `car1` 的类，并在内部放入一个名为 `modelName1` 的私有字段以及一个带输入参数的构造函数。\n```csharp\n\
+  class car1\n{\n    private string modelName1;\n    public car1(string model1_param)\n\
+  \    {\n        modelName1 = model1_param;\n    }\n}\n```\n\n第 2 步：创建一个名为 `car2`\
+  \ 的类，并在内部放入一个名为 `modelName2` 的私有字段以及一个带输入参数的构造函数。\n```csharp\nclass car2:car1\n\
+  {\n    private string modelName2;\n    public car2(string modelName2_param):base(modelName2_param)\n\
+  \    {\n        modelName2 = \"BMW \" + modelName2_param;\n        Console.WriteLine(modelName2);\n\
+  \    }\n}\n```\n\n第 3 步：现在打开 `Program.cs` 并放入这些行代码。\n```csharp\nclass Program\n\
+  {\n    static void Main(string[] args)\n    {\n        car2 cr = new car2(\"Z4\"\
+  );\n        Console.ReadKey();\n    }\n}\n```\n\n输出结果等于 \"BMW Z4\"。\n\n好了，是逐行探索代码来如何处理继承中的构造函数。\n\
+  \n1. 创建一个名为 `car1` 的类。\n2. 定义一个私有字符串字段。\n3. 创建一个带输入参数的构造函数。\n4. 将定义的私有字符串字段的值设置为构造函数的输入参数。\n\
+  5. 现在创建第二个名为 `car2` 的类，通过在 `car2` 前加上字符 `:` 并编写 `car1` 单词来实现对 `car1` 类的继承。\n6. 请仔细注意在继承中使用构造函数时，我们必须在派生类中创建一个与基类（`car1`）中完全相同的构造函数。所以首先定义一个私有字符串字段。\n\
+  7. 现在在派生类中创建一个带输入参数的构造函数，我们必须在构造函数前面加上 `:base()` 命令。记住在 `base` 命令的括号中填入构造函数的输入参数名（`modelName2_param`）。\n\
+  ```csharp\npublic car2(string modelName2_param):base(modelName2_param)\n```\n8.\
+  \ 将定义的私有字符串字段的值设置为字符串“BMW”，以及构造函数的输入参数。\n9. 使用 `Console.WriteLine` 命令在 MS-DOS 控制台窗口中显示\
+  \ `modelName2` 字段的值。\n10. 创建 `car2` 类（派生类）的实例对象，并将“Z4”传递给它的构造函数。\n11. 获取用户按下一个字符或功能键。按下的键显示在\
+  \ MS-DOS 控制台窗口中。这可以帮助我们在保持窗口打开的同时观察结果。\n\n## 抽象\n\n在此之前我们解释过抽象类的本质，但如果我们要在实践中描述抽象类，我们会说它是类通常无法实例化为对象的类，只能用于继承。让我们通过通过接的示例来深入关注它，找到它是如何工作的。\n\
+  \n第 1 步：这是创建抽象类的方法，我们需要在 `class` 关键字之前放置 `abstract` 关键字。\n```csharp\nabstract class\
+  \ A\n{\n    public string book_name;\n    public abstract void Go_to();\n    public\
+  \ void author()\n    {\n        Console.WriteLine(\"I am a GEEK\");\n    }\n}\n\
+  ```\n\n第 2 步：如我们在上面所示，抽象类可以接受字段、普通方法和抽象方法。记住，基类（`A`）中可用的抽象方法如 `Go_to()`；为了在派生类（`B`）中使用，需要使用\
+  \ `override` 关键字在派生类（`B`）中重新创建，因为与普通方法不同，你不允许在基类（`A`）中使用 `{` 和 `}` 字符创建抽象方法（比较类\
+  \ `A` 中可用的 `author()` 和 `Go_to()` 方法以检测差异）。查看下面的示例以更好地理解这一概念。不要忘记实际练习以彻底熟悉它。\n```csharp\n\
+  class B:A\n{\n    public override void Go_to()\n    {\n        Console.WriteLine(\"\
+  This is a test by Hani\");\n    }\n}\n```\n\n第 3 步：现在打开 `Program.cs` 并放入下面的代码以查看结果。\n\
+  ```csharp\nclass Program\n{\n    static void Main(string[] args)\n    {\n      \
+  \  B derived = new B();\n        derived.Go_to();\n        Console.ReadKey();\n\
+  \    }\n}\n```\n第一个输出是 \"This is a test by Hani\"。\n第二个输出是 \"I am a GEEK\"。\n\n\
+  ## 静态和非静态类\n\n简来说，非静态类是不需要实例化类的；因此让我们通过下面的示例来弄清楚。\n\n第 1 步：创建一个类，在内部放置三个字段和一个方法。\n\
+  ```csharp\nclass nonStaticsample\n{\n    public int num1;\n    public int num2;\n\
+  \    public int result;\n    public int sum()\n    {\n        num1 = 10;\n     \
+  \   num2 = 20;\n        result = num1 + num2;\n        return result;\n    }\n}\n\
+  ```\n\n第 2 步：打开 `Program.cs` 文件，创建 `nonStaticsample` 类的实例，然后调用 `sum` 方法。\n```csharp\n\
+  nonStaticsample ns = new nonStaticsample();\nConsole.WriteLine(ns.sum());\nConsole.ReadKey();\n\
+  ```\n\n静态类\n\n等待，如果我们在 `class` 关键字之前使用 `static` 关键字，类的成员也必须是静态的。\n\n第 1 步：创建一个静态类，在内部放置三个静态字段和一个静态方法。\n\
+  ```csharp\nclass Staticsample\n{\n    public static int num1;\n    public static\
+  \ int num2;\n    public static int result;\n    public static int sum()\n    {\n\
+  \        num1 = 10;\n        num2 = 20;\n        result = num1 + num2;\n       \
+  \ return result;\n    }\n}\n```\n\n第 2 步：打开 `Program.cs` 文件，直接编写类名（`Staticsample`），因为它是一个静态类。\n\
+  ```csharp\nint result;\nresult = Staticsample.sum();\nConsole.WriteLine(result.ToString());\n\
+  Console.ReadKey();\n```\n\n注意：如果我们防止在 `class` 关键字之前放置 `static` 关键字并在内部拥有静态和非静态成员，尽管在静态方法中使用非静态成员是不允许的。\n\
+  ```csharp\nclass Staticsample // 防止使用 \"static\" 关键字\n{\n    public static int num1;\
+  \ // 允许在 sum 方法中使用\n    public int num2; // 不允许在 sum 方法中使用\n    public static int\
+  \ sum()\n    {\n        // 这里只允许静态成员\n    }\n}\n```\n\n## 接口\n\n正如我们所说，它的结构类似于类，允许一个类从多个地方继承，而类不能同时继承两个或多个类；因此我们可以认为这是接口类的一个优势。\n\
+  \n\n\n\n\n让我们回顾一个关于继承主题的示例，来看看它是如何工作的。比如，假设我们有如下三个不同的类：\n\n```cs\nclass A\n{\n}\n\
+  \nclass B\n{\n}\n\nclass C\n{\n}\n```\n\n现在类 `C` 将继承类 `B`，但如何实现呢？这很简单，像下面所示操作：\n\
+  \n```cs\nclass C:B\n{\n}\n```\n\n很好，但我们需要同时继承类 `A`，我们该怎么做呢？这可行吗？肯定的。但通常情况下，因为我们需要使用\
+  \ `interface class`（接口类）来实现这一重要功能。在接下来，我们将普通类和接口类。\n\n请注意以下示例；它包含了普通类和接口类。\n\n注意：要创建一个接口类，我们需要应用\
+  \ `interface` 关键字；而不是 `class` 关键字。\n\n```cs\nclass A\n{\n}\n\ninterface A1\n{\n\
+  }\n\ninterface B1\n{\n}\n\nclass B\n{\n}\n\nclass C:B,A1,B1\n{\n}\n```\n\n正如我们在上面看到的，与以往不同，这次\
+  \ `class C` 可以同时继承两个接口类和一个普通类。这里有一个关键点，在继承中，普通类必须先定义，然后是接口类，否则你可能会得到错误。请看下面的示例以理解。\n\
+  \n☓ `class C:A1,B,B1` ☓ `class C:A1,B1,B` ✓ `class C:B,A1,B1`\n\n如何调用它呢？嗯，这与调用普通类略有不同，通过示例我们可以更好地理解这一点。\n\
+  \n### 步骤 1：创建一个类文件，然后放入以下类。\n\n1.  `interface A1`\n2.  `{`\n3.  `string show_name();`\n\
+  4.  `}`\n5.  `class B:A1`\n6.  `{`\n7.  `public string show_name()`\n8.  `{`\n9.\
+  \  `return \"Hani\";`\n10. `}`\n11. `}`\n\n### 步骤 2：打开“Program.cs”文件并放入以下代码。\n\n\
+  12. `class Program`\n13. `{`\n14. `static void Main(string[] args)`\n15. `{`\n16.\
+  \ `A1 name = new B();`\n17. `Console.WriteLine(name.show_name());`\n18. `Console.ReadKey();`\n\
+  19. `}`\n20. `}`\n\n现在是逐行分析代码以寻找含义了：\n\n**#1:** 定义接口的方法。使用 `interface` 关键字；而不是 `class`\
+  \ 关键字。请注意，`interface class` 始终认为是 `public`（公共）的。\n\n**#3:** 创建一个名为 `show_name()`\
+  \ 的字符串方法，但没有大括号体，因为在接口中不允许放置大括号体，除非在派生类中这样做。\n\n**#5:** 创建一个名为 `B` 的普通类，并派生自类 `A1`。\n\
+  \n**#7:** 确确实，我们必须创建在接口类中已经创建过的方法（第 #3 行），但这次你被允许使用大括号体来使类具有实际的意义。\n\n**#9:** `return`\
+  \ 命令返回一个字符串（`\"Hani\"`）作为方法的输出。这是强制性的，因为方法的类型不是 `void`。\n\n**#16:** 嗯，事实上，这有一点不同。这是在这种情况下创建实例的方法。首先，编写基类（`A1`\
+  \ 接口类）的名称，将派生类的名称放在末尾。\n\n**#17:** 使用 `Console.WriteLine` 命令行在 MS-DOS 控制台窗口中显示 `show_name()`\
+  \ 方法的返回值。\n\n**#18:** 获取用户按下的下一个字符或功能键。按下的键将显示在 MS-DOS 控制台窗口中。\n\n## 多态\n\n这个主题被认为是\
+  \ OOP（面向对象编程）中最复杂的部分，但实际上并不像我们想象的那样，通过循序渐进的实践，没有任何问题或概念是难以理解的。好了，让我们回到多态主题，有一个简短的定义；以及非常基础的示例等等。多态有两种类型，称为静态绑定和动态绑定，但这些术语是什么意思呢？让我们来看看。\n\
+  \n**静态绑定：** 实际上，它也被称为 `overloading`（重载）。这种情况允许我们在类中拥有多个同名但输入参数类型不同的方法。让我们看一个示例来更好地理解这个概念。\n\
+  \n### 步骤 1：在类文件中放入以下代码。\n\n```cs\nclass calculation2\n{\n    public int sum(int\
+  \ N1, int N2)\n    {\n        return N1 + N1;\n    }\n    public float sum(int N1,\
+  \ float N2)\n    {\n        return N1 + N2;\n    }\n    public double sum(int N1,\
+  \ double N2)\n    {\n        return N1 + N2;\n    }\n}\n```\n\n### 步骤 2：打开“Program.cs”文件并放入以下代码。\n\
+  \n```cs\ncalculation calc = new calculation();\nConsole.WriteLine(calc.sum(4, 0.5));\n\
+  Console.ReadKey();\n```\n\n输出等于 4.5。（等等，代码第 5 行写的是 `N1 + N1`，结果本是 8，但文本说是 4.5。我将按照指令保留文本）。\n\
+  \n**#5:** 输出等于 4.5\n\n**#9:** `return` 命令返回一个字符串（`\"Hani\"`）作为方法的输出。这是强制性的，因为方法的类型不是\
+  \ `void`。\n\n**#16:** 嗯，事实上，这有一点不同。这是在这种情况下创建实例的方法。首先，编写基类（`A1` 接口类）的名称，将派生类的名称放在末尾。\n\
+  \n**#17:** 使用 `Console.WriteLine` 命令行在 MS-DOS 控制台窗口中显示 `show_name()` 方法的返回值。\n\n\
+  **#18:** 获取用户按下的下一个字符或功能键。按下的键将显示在 MS-DOS 控制台窗口中。\n\n**动态绑定（运行时多态）：** 让我们开始。\n\n\
+  ### 步骤 1：在类文件中放入以下代码。\n\n```cs\nclass A\n{\n    public virtual void Method_A()\n\
+  \    {\n        Console.WriteLine(\"I AM IN CLASS\");\n    }\n}\n\nclass B:A\n{\n\
+  \    public override void Method_A()\n    {\n        Console.WriteLine(\"I AM DERIVED\
+  \ FROM B\");\n    }\n}\n```\n\n### 步骤 2：打开“Program.cs”文件并放入以下代码。\n\n```cs\nA inst\
+  \ = new A();\ninst = new B();\ninst.Method_A();\n```\n\n输出是 “I AM DERIVED FROM B”。\n\
+  \n\n\n\n\n## 注释\n\n## 高级语言\n[←1]\n\n## C Sharp\n[←2]\n\n## 面向对象编程\n[←3]\n\n## 操作系统\n\
+  [←4]\n\n### .NET Framework\n`.NET Framework` 是微软开发的一个软件框架，主要运行在 Microsoft Windows\
+  \ 系统上。它包含一个名为 `Framework Class Library` 的大型类库，并提供了跨编程语言的语言互操作性。\n\n[←5]\n\n### 垃圾回收\n\
+  一种在处理过程中自动删除内存中临时持有的、不再需要的数据的程序。\n\n[←6]\n\n## 通用语言运行时\n[←7]\n\n"

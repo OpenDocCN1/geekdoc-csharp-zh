@@ -1,0 +1,1735 @@
+- "# C# 设计模式精要：四人帮全部 23 种模式；包括 MVC 在内的 4 种额外模式；三层应用示例；易懂示例\n\n\n\n![](img/cover.jpeg)\n\
+  \n\n\n![](img/00023.jpg)\n\n\n\n\n\n\n\n[www.abilityfirst.co.uk/books](http://www.abilityfirst.co.uk/books)\n\
+  \n\n\n\n\n本书献给“四人帮”（The Gang of Four）。\n\n# 前言\n\n本书是面向对象软件设计模式世界的入门指南。示例和代码片段特意保持简单，以便你能够专注于理解每个模式的概念和应用，而不是费费精力阅读无关的源代码。\n\
+  \n本书假设你至少具备 `C#` 编程语言的基础知识，包括理解封装、继承和多态等术语的含义，并知道如何编写类和接口。读完本书后，你应该能够将这些知识应用于复杂应用程序的设计中，在这些应用中，多个类的对象需要交互以完成特定目标。\n\
+  \n书中描述的模式包含了 Erich Gamma、Richard Helm、Ralph Johnson 和 John Vlissides 的经典巨著《设计模式：可复用面向对象软件的要素》（Addison-Wesley,\
+  \ 1995）中的全部 23 种模式。书中还描述了四个额外的模式，包括模型-视图-控制器（MVC），它现在已成为图形化应用程序的主流。在大多数情况下，每个章节都是独立的，因此你可以按照任何顺序查阅这些模式。不过，建议先阅读第\
+  \ 1 章“什么是设计模式？”，以熟悉共同主题以及这些模式所利用的面向对象原则。\n\n本书还使用了简化的统一建模语言（UML）图来展示构成模式的类是如何结构化的。如果不熟悉\
+  \ UML 图，可能希望在开始之前参考附录 A。\n\n## 预备知识\n\n为了使用本书，你应该对 `C#` 语言和面向对象原则有基本的理解。特别是，你应该知道如何创建类、接口和枚举，并理解封装、继承、组合和多态等术语。\n\
+  \n## 本书的结构\n\n- 第一部分介绍了设计模式的概念，并为贯穿全书共同主题的一些简单核心类奠定了基础。\n- 第二部分描述了 5 种创建模式，即有助于管理对象实例化的模式。\n\
+  - 第三部分描述了 7 种结构模式，即有助于管理类如何组织和相互关系的模式。\n- 第四部分描述了 11 种行为模式，即有助于管理类实际执行操作的模式。\n-\
+  \ 第五部分描述了四个你在实际应用中会发现的额外模式。\n- 第六部分包含一个章节，开发了一个使用了一些常用设计模式的简单 3 层应用程序。\n- 第七部分包含附录，包括对不熟悉\
+  \ UML 的读者提供的统一建模语言（UML）图格式简要说明，以及每个 23 种主要模式的快速参考指南。\n\n## 本书中使用的约定\n\n你需要输入的 `C#`\
+  \ 代码或作为输出显示的结果将以如下的等宽字体所示：\n\n```\nanObject.DoSomething();\nanotherObject.DoThis();\n\
+  ```\n\n通常会提供额外的或修改的代码，其中新内容或更改的部分用**粗体**表示：\n\n```\nanObject.DoSomethingElseInstead();\n\
+  anObject.AlsoDoThis();\nanotherObject.doThis();\n```\n\n类、对象或 `C#` 语句的名称将在文中中使用等宽字体显示，例如\
+  \ `MyClass` 或 `someObject`。\n\n为了简洁起见，书中大多数代码示例都省略了 `using` 和 `namespace` 语句。\n\n\
+  ## 本书的资源\n\n你也可以从我们的网站下载书中所有的 `C#` 源代码：\n\n[`www.abilityfirst.co.uk/books`](http://www.abilityfirst.co.uk/books)\n\
+  \n## 给读者的说明\n\n本书是同一作者的《Java Design Essentials - 第二版》的改编版。部分文本和代码示例可能反映出语言之间的风格和术语差异。非常欢迎读者的反馈。\n\
+  \n# 第一部分：引言\n\n本部分介绍了设计模式的概念，并为贯穿全书共同主题的一些简单核心类奠定了基础。\n\n## 1. 什么是设计模式？\n\n想象你刚刚被分配了设计一个软件系统的任务。你的客户告诉你，他需要建模他的工厂制造的小部件（Gadgets），而且每个小部件都由相同的组件组成，但这些组件对于每种类型的小部件有所不同。他还制造小设备（Gizmos），每个小设备都带有一系列可选配件，可以任意组合。他还需要在每件制造的物品上冲上一个唯一的顺序序列号。\n\
+  \n你该如何设计这些类呢？\n\n很有可能，无论你处于哪个问题领域，以前都有人设计过类似的解决方案。当然，这不一定是针对 Gadgets 和 Gizmos，但在目标和结构上是概念相似的。换句话说，很有可能已经存在一种通用的解决方案或方法，你只需要应用这种方法来解决你的设计困惑即可。\n\
+  \n这就是设计模式的用处。它们描述了软件设计问题的通用解决方案。一旦掌握了模式，你可能会想：“那些 Gadgets 可以使用抽象工厂模式来建模，Gizmos 可以使用装饰器模式来建模，而序列号的生成则可以使用单例模式。”\n\
+  \n## 本书如何使用模式\n\n本书涵盖了经典参考书《设计模式：可复用面向对象软件的要素》（Gamma, 1995）中描述的全部 23 种模式的示例，此外还有四个额外的实用模式，包括模型-视图-控制器（MVC）。\n\
+  \n\n\n\n本书中的每个示例代码都使用了源自业务世界的共同主题，即一家名为 `Foobar Motor Company` 的虚拟车辆制造商。该公司生产各种汽车和面包车，以及用于驱动车辆的引擎。因此，您应该熟悉本介绍中描述的类。\n\
+  \n类层次结构如下：\n\n![](img/00028.jpg)\n\n图 1.1：`IVehicle` 和 `IEngine` 类层次结构\n\n`IVehicle`\
+  \ 和 `IEngine` 是这些层次结构的根接口，每个车辆对象都需要一个对 `IEngine` 对象的引用。`AbstractVehicle` 是实现 `IVehicle`\
+  \ 接口的抽象类，`AbstractEngine` 同样实现了 `IEngine` 接口。对于车辆，我们还有 `AbstractCar` 和 `AbstractVan`，以及作为汽车类型的具体子类\
+  \ `Saloon`、`Coupe` 和 `Sport`。`AbstractVan` 有作为面包车类型的具体子类 `BoxVan` 和 `Pickup`。\n\n\
+  `AbstractEngine` 的具体子类是 `StandardEngine` 和 `TurboEngine`。\n\n尽管层次结构中有许多类，但每个类的代码都刻意保持简单，以便您可以专注于理解设计模式，而不是去解析复杂的代码。为了说明这一点，这里是\
+  \ `IEngine` 接口的源代码：\n\n```csharp\npublic interface IEngine\n{\n    int Size { get;\
+  \ }\n    bool Turbo { get; }\n}\n```\n\n这个简单的接口仅要求属性访问器来返回引擎尺寸（立方厘米）以及是否为涡轮增压。`AbstractEngine`\
+  \ 类如下：\n\n```csharp\npublic abstract class AbstractEngine : IEngine\n{\n    private\
+  \ int size;\n    private bool turbo;\n    public AbstractEngine(int size, bool turbo)\n\
+  \    {\n        this.size = size;\n        this.turbo = turbo;\n    }\n    public\
+  \ virtual int Size\n    {\n        get\n        {\n            return size;\n  \
+  \      }\n    }\n    public virtual bool Turbo\n    {\n        get\n        {\n\
+  \            return turbo;\n        }\n    }\n    public override string ToString()\n\
+  \    {\n        return this.GetType().Name + \" (\" + size + \")\";\n    }\n}\n\
+  ```\n\n这种简化的引擎实现要求在构造函数中提供相应的属性。`ToString()` 方法的实现将产生此类格式的输出：\n\n`StandardEngine\
+  \ (1300)`\n\n`TurboEngine (2000)`\n\n`Equals()` 和 `GetHashCode()` 方法将继承自 `object`，因此使用对象标识性。这是合理的，因为例如，两个独立的\
+  \ 1300cc Standard 引擎在逻辑上是不同的实体，因此应该被这样处理（一个引擎放入一辆车辆，另一个引擎放入另一辆车辆）。\n\n具体子类非常简单：\n\
+  \n```csharp\npublic class StandardEngine : AbstractEngine\n{\n    public StandardEngine(int\
+  \ size) : base(size, false)\n    {\n        // 非涡轮增压\n    }\n}\n\npublic class TurboEngine\
+  \ : AbstractEngine\n{\n    public TurboEngine(int size) : base(size, true)\n   \
+  \ {\n        // 涡轮增压\n    }\n}\n```\n\n现在您已经了解了 `IEngine` 层次结构，我们可以查看一下 `IVehicle`\
+  \ 接口：\n\n```csharp\npublic interface IVehicle\n{\n    IEngine Engine { get; }\n\
+  \    VehicleColour Colour { get; }\n    void Paint(VehicleColour colour);\n}\n```\n\
+  \n一个名为 `VehicleColour` 的辅助枚举定义了每个 `IVehicle` 对象可能具有颜色：\n\n```csharp\npublic enum\
+  \ VehicleColour\n{\n    Unpainted, Blue, Green,\n    Red, Silver, Yellow\n}\n```\n\
+  \n这是 `AbstractVehicle` 类实现 `IVehicle` 的方式：\n\n```csharp\npublic abstract class AbstractVehicle\
+  \ : IVehicle\n{\n    private IEngine engine;\n    private VehicleColour colour;\n\
+  \    public AbstractVehicle(IEngine engine)\n    : this(engine, VehicleColour.Unpainted)\n\
+  \    {\n    }\n    public AbstractVehicle(IEngine engine, VehicleColour colour)\n\
+  \    {\n        this.engine = engine;\n        this.colour = colour;\n    }\n  \
+  \  public virtual IEngine Engine\n    {\n        get\n        {\n            return\
+  \ engine;\n        }\n    }\n    public virtual VehicleColour Colour\n    {\n  \
+  \      get\n        {\n            return colour;\n        }\n    }\n    public\
+  \ virtual void Paint(VehicleColour colour)\n    {\n        this.colour = colour;\n\
+  \    }\n    public override string ToString()\n    {\n        return this.GetType().Name\
+  \ + \" (\" + engine + \", \" + colour + \")\";\n    }\n}\n```\n\n`AbstractVehicle`\
+  \ 中的重载构造函数需要提供一个 `IEngine` 对象和可选的车辆颜色。调用 `ToString()` 的输出将采用这种格式：\n\n`Saloon (StandardEngine\
+  \ (1300), Red)`\n\n`BoxVan (TurboEngine (2200), White)`\n\n`AbstractCar` 和 `AbstractVan`\
+  \ 类只是简单转发到构造函数（显然，真实的类会定义汽车和面包车之间的任何差异）：\n\n```csharp\npublic abstract class AbstractCar\
+  \ : AbstractVehicle\n{\n    public AbstractCar(IEngine engine)\n    : this(engine,\
+  \ VehicleColour.Unpainted)\n    {\n    }\n    public AbstractCar(IEngine engine,\
+  \ VehicleColour colour)\n    : base(engine, colour)\n    {\n    }\n}\n\npublic abstract\
+  \ class AbstractVan : AbstractVehicle\n{\n    public AbstractVan(IEngine engine)\n\
+  \    : this(engine, VehicleColour.Unpainted)\n    {\n    }\n    public AbstractVan(IEngine\
+  \ engine, VehicleColour colour)\n    : base(engine, colour)\n    {\n    }\n}\n```\n\
+  \n具体子类也只是转发到构造函数：\n\n```csharp\npublic class Saloon : AbstractCar\n{\n    public\
+  \ Saloon(IEngine engine)\n    : this(engine, VehicleColour.Unpainted)\n    {\n \
+  \   }\n    public Saloon(IEngine engine, VehicleColour colour)\n    : base(engine,\
+  \ colour)\n    {\n    }\n}\n\npublic class Coupe : AbstractCar\n{\n    public Coupe(IEngine\
+  \ engine)\n    : this(engine, VehicleColour.Unpainted)\n    {\n    }\n    public\
+  \ Coupe(IEngine engine, VehicleColour colour)\n    : base(engine, colour)\n    {\n\
+  \    }\n}\n\npublic class Sport : AbstractCar\n{\n    public Sport(IEngine engine)\n\
+  \    : this(engine, VehicleColour.Unpainted)\n    {\n    }\n    public Sport(IEngine\
+  \ engine, VehicleColour colour)\n    : base(engine, colour)\n    {\n    }\n}\n\n\
+  public class BoxVan : AbstractVan\n{\n    public BoxVan(IEngine engine)\n    : this(engine,\
+  \ VehicleColour.Unpainted)\n    {\n    }\n    public BoxVan(IEngine engine, VehicleColour\
+  \ colour)\n    : base(engine, colour)\n    {\n    }\n}\n\npublic class Pickup :\
+  \ AbstractVan\n{\n    public Pickup(IEngine engine)\n    : this(engine, VehicleColour.Unpainted)\n\
+  \    {\n    }\n    public Pickup(IEngine engine, VehicleColour colour)\n    : base(engine,\
+  \ colour)\n    {\n    }\n}\n```\n\n\n\n\n\n经验表明，某些面向对象的方法比其他方法更灵活。以下是本书中的模式力求遵循的主要原则总结：\n\
+  \n1. **面向接口编程，而不是面向实现编程。** 这里的“接口”是指抽象的通用概念，可以指一个 `C#` 接口或抽象类。为了实现这一点，在声明变量、构造函数和方法参数等时，尽可能使用最通用的类型（例如\
+  \ `interface`）。这样做为运行时使用的实际类型提供了额外的灵活性。\n\n2. **优先使用对象组合而不是继承。** 当一个类与另一个类以某种方式相关联时，你应该区分“是一个”（is\
+  \ a，或“是……的一种类型”）关系和“有一个”（has a）关系。在之前描述的 `IVehicle` 和 `IEngine` 层次结构中，说 `AbstractCar`\
+  \ “是一个” `IVehicle`、`Saloon` “是一个” `AbstractCar` 是正确的。但说 `IVehicle` “是一个” `IEngine`\
+  \ 是错误的，而应该说是 `IVehicle` “有一个”一个 `IEngine`。因此，继承被正当用于用于 `AbstractCar` 和 `Saloon`，而对象组合则用于\
+  \ `IVehicle` 和 `IEngine` 之间。不要受到为了少写一些方法就使用继承的诱。有时，即使“是一个”关系看起来是自然选择，使用“有一个”关系也更灵活。你将在\
+  \ `Decorator` 模式中看到这方面的例子。\n\n3. **保持对象松耦合。** 理想情况下，类应该只对某件事建模，并且只由真正需要的其他对象组成（例如一个\
+  \ `IVehicle` 需要一个 `IEngine`）。问问自己，如果你想在另一个完全不同的应用程序中使用你编写的类，会发生什么？哪些“包袱”（即其他类）也需要被复制？通过将这些减少到最低，你可以让类更具重用性。使用松耦合的模式良好示例是\
+  \ `Observer`。\n\n4. **封装变化的概念。** 如果你写了一个类，其中某些部分对于每个实例都是相同的，但类的另一部分随每个实例变化，考虑将后者提取到自己的类，并由原类引用该类。使用这一原则的模式示例是\
+  \ `Strategy`。\n\n## 通用建议\n\n随着我们详细探索这些模式，上述原则将变得更加明显。你还应该注意到，书中描述的模式为特定问题提供了一种通用方法。修改或调整它们以更好地适应你的特定问题是完全可以的。将多个模式结合起来解决复杂问题也是非常常见的。\n\
+  \n然而，请记住你应该努力保持简单。在读完像这样的书后，很容易认为你必须找到一个模式来解决特定问题，而实际上可能有更简单的解决方案。极端编程（XP）的格言之一是“你将不需要它”，这个理念是认为你应该避免在需要功能之前添加功能，这种哲学也可以应用于模式；要小心仅仅为了应用某种模式就添加不必要的特征。模式不是“万灵妙药”，它们只是你工具箱中的另一组工具，尽管它们是一组不可或缺的工具。\n\
+  \n利用你的知识和经验来判断模式是否适用于你的情况，以及如果适用，你需要调整到什么程度。应用模式可能有益的良好例子是在正在“重构”现有代码时。重构是你改变某些软件的结构但不改变其行为，以提高其可维护性和灵活性。这提供了一个检查代码的好机会，看看模式是否可以提供更好的结构，例如替换条件判断或定义工厂类以辅助对象实例化。\n\
+  \n模式除了 C# 之外还应用于许多编程语言，特别是面向对象的语言，事实上还应用于其他领域，其起源于对架构设计的应用。新的模式正在定期地开发和应用，因此你可以将本书仅视为该主题的一个起点。\n\
+  \n## 第二部分。创建性模式\n\n本部分描述了五种创建性模式，即有助于管理对象实例化的模式。\n\n* **抽象工厂 (Abstract Factory)**：提供一个接口用于创建一组相关或依赖的对象的族，而不指定它们的具体类；\n\
+  * **构建器 (Builder)**：将复杂对象的构建与它的表示分离开，使得相同的构建过程可以创建不同的表示；\n* **工厂方法 (Factory Method)**：定义一个用于创建对象的接口，但让子类决定实例化哪一个类；\n\
+  * **原型模式 (Prototype)**：使用原型实例指定要创建的对象的类型，并通过复制原型来创建新对象；\n* **单例模式 (Singleton)**：确保一个类只允许创建一个对象，并提供单一的访问点。\n\
+  \n### 2. 抽象工厂\n\n**类型**：创建性\n\n**目的**：提供一个接口用于创建一组相关或依赖的对象的族，而不指定它们的具体类。\n\nFoobar\
+  \ 汽车公司生产汽车和面包车，在建造时包括（在许多东西之外）车壳、底盘和窗户玻璃。虽然汽车和面包车都需要所有相同类型的组件，但每种类型的细节取决于它是被作汽车还是面包车。\n\
+  \n换句话之：\n* 汽车的车壳不同于面包车的车壳；\n* 汽车的底盘不同于面包车的底盘；\n* 汽车的玻璃不同于面包车的玻璃。\n\n因此，当我们需要建造一辆车辆时，我们可以认为组件是来自不同的“族”；也就是说，当我们制造汽车时，我们使用一组组件；当制造面包车时，我们使用另一组组件。\n\
+  \n因此，我们可以将组件建模为简单的层次结构，如图所示：\n\n![](img/00038.jpg)\n\n图 2.1 `IBody`、`IChassis` 和\
+  \ `IGlassware` 类层次结构\n\n你可以看到，接口 `IBody` 包含了 `CarBody` 和 `VanBody` 的实现。同样，我们为 `IChassis`\
+  \ 和 `IGlassware` 有类似的独立的层次结构。\n\n`IBody` 层次结构的代码非常简单：\n\n```csharp\npublic interface\
+  \ IBody\n{\n    string BodyParts { get; }\n}\n\npublic class CarBody : IBody\n{\n\
+  \    public virtual string BodyParts\n    {\n        get\n            return \"\
+  Body shell parts for a car\";\n        }\n    }\n}\n\npublic class VanBody : IBody\n\
+  {\n    public virtual string BodyParts\n    {\n        get\n            return \"\
+  Body shell parts for a van\";\n        }\n    }\n}\n```\n\n`IChassis` 层次结构的代码几乎相同：\n\
+  \n```csharp\npublic interface IChassis\n{\n    string ChassisParts { get; }\n}\n\
+  \npublic class CarChassis : IChassis\n{\n    public virtual string ChassisParts\n\
+  \    {\n        get\n            return \"Chassis parts for a car\";\n        }\n\
+  \    }\n}\n\npublic class VanChassis : IChassis\n{\n    public virtual string ChassisParts\n\
+  \    {\n        get\n            return \"Chassis parts for a van\";\n        }\n\
+  \    }\n}\n```\n\n同样，`IGlassware` 层次结构的代码如下：\n\n```csharp\npublic interface IGlassware\n\
+  {\n    string GlasswareParts { get; }\n}\n\npublic class CarGlassware : IGlassware\n\
+  {\n    public virtual string GlasswareParts\n    {\n        get\n            return\
+  \ \"Window glassware for a car\";\n        }\n    }\n}\n\npublic class VanGlassware\
+  \ : IGlassware\n{\n    public virtual string GlasswareParts\n    {\n        get\n\
+  \            return \"Window glassware for a van\";\n        }\n    }\n}\n```\n\n\
+  \n\n\n\n现在我们需要一种方法来获取正确的系列零件（无论是汽车还是面包车），但又不需要在客户端程序每次需要它们时显式地实例化特定类型。为了实现这一目标，我们将定义“工厂”类来为我们完成工作：\n\
+  \n![](img/00042.jpg)\n图 2.2 : 抽象工厂模式\n\n`AbstractVehicleFactory` 类是一个抽象类，它定义了抽象方法\
+  \ `CreateBody()`、`CreateChassis()` 和 `CreateGlassware()`，分别返回一个 `IBody`、`IChassis`\
+  \ 和 `IGlassware` 对象：\n\n```csharp\npublic abstract class AbstractVehicleFactory\n\
+  {\n    public abstract IBody CreateBody();\n    public abstract IChassis CreateChassis();\n\
+  \    public abstract IGlassware CreateGlassware();\n}\n```\n\n具体子类 `CarFactory`\
+  \ 返回特定于汽车家族的对象：\n\n```csharp\npublic class CarFactory : AbstractVehicleFactory\n\
+  {\n    public override IBody CreateBody()\n    {\n        return new CarBody();\n\
+  \    }\n    public override IChassis CreateChassis()\n    {\n        return new\
+  \ CarChassis();\n    }\n    public override IGlassware CreateGlassware()\n    {\n\
+  \        return new CarGlassware();\n    }\n}\n```\n\n具体子类 `VanFactory` 返回特定于面包车家族的对象：\n\
+  \n```csharp\npublic class VanFactory : AbstractVehicleFactory\n{\n    public override\
+  \ IBody CreateBody()\n    {\n        return new VanBody();\n    }\n    public override\
+  \ IChassis CreateChassis()\n    {\n        return new VanChassis();\n    }\n   \
+  \ public override IGlassware CreateGlassware()\n    {\n        return new VanGlassware();\n\
+  \    }\n}\n```\n\n现在，剩下的只需要客户端程序在实例化相应的“工厂”后，它就可以获取正确的零件，而无需指定它们是用于汽车还是面包车：\n\n\
+  ![](img/00064.jpg)\n图 2.3 : 客户端如何使用抽象工厂\n\n```csharp\nstring whatToMake = \"car\"\
+  ; // 或 \"van\"\nAbstractVehicleFactory factory = null;\n// 创建正确的“工厂”...\nif (whatToMake.Equals(\"\
+  car\"))\n{\n    factory = new CarFactory();\n}\nelse\n{\n    factory = new VanFactory();\n\
+  }\n// 创建车辆的组件部分...\n// 这些将全部是汽车零件或全部是面包车零件\nIBody vehicleBody = factory.CreateBody();\n\
+  IChassis vehicleChassis = factory.CreateChassis();\nIGlassware vehicleGlassware\
+  \ = factory.CreateGlassware();\n// 显示我们创建的内容...\nConsole.WriteLine(vehicleBody.BodyParts);\n\
+  Console.WriteLine(vehicleChassis.ChassisParts);\nConsole.WriteLine(vehicleGlassware.GlasswareParts);\n\
+  Console.Read();\n```\n\n因此，你的客户端程序需要知道它正在制造汽车还是面包车，但一旦实例化了正确的工厂，所有创建零件的方法都可以使用一组相同的方法调用来完成。\n\
+  \n抽象工厂模式的主要缺点在于，当你需要添加额外的“产品”时。例如，如果我们现在需要在组件家族中包含灯具，那么除了修改 `AbstractVehicleFactory`、`CarFactory`\
+  \ 和 `VanFactory` 之外，还需要创建一个新的 `ILights` 层级结构（`CarLights` 和 `VanLights`）。\n\n###\
+  \ 3. 构建器 (Builder)\n\n**类型：** 创建型 (Creational)\n\n**目的：** 将复杂对象的构建过程与其表示分离，以便使用相同的构建过程可以创建不同的表示。\n\
+  \nFoobar 公司生产汽车和面包车，每种车的构建过程在细节上有所不同；例如，面包车的车壳包含一个驾驶室区域和一个大型加固存储区域，而轿车则包含一个乘客区域和一个行李区域（即后备箱）。而且，无论构建什么类型的车辆，都有许多必须执行的复杂步骤。\n\
+  \n构建器模式通过将各个步骤分离到构建器层级结构中的独立方法中促进复杂对象的构建，然后使用指挥器（Director）对象按正确的顺序指定所需的步骤。最后，从构建器中获取成品。\n\
+  \n下图显示了这些关系：\n\n![](img/0031.jpg)\n图 3.1 : 构建器\n\n我们从 `VehicleBuilder` 类开始：\n\n\
+  ```csharp\npublic abstract class VehicleBuilder\n{\n    public virtual void BuildBody()\
+  \ {}\n    public virtual void Boot() {}\n    public virtual void BuildChassis()\
+  \ {}\n    public virtual void BuildPassengerArea() {}\n    public virtual void BuildReinforcedStorageArea()\
+  \ {}\n    public virtual void BuildWindows() {}\n    public abstract IVehicle Vehicle\
+  \ {get; }\n}\n```\n\n注意此类如何定义了汽车和面包车的所有“构建”方法，并为每个方法提供了默认的空实现。抽象属性 `Vehicle` 用于返回构建完的车辆。`CarBuilder`\
+  \ 类继承自 `VehicleBuilder` 并重写了相应的方法：\n\n```csharp\npublic class CarBuilder : VehicleBuilder\n\
+  {\n    private AbstractCar carInProgress;\n    public CarBuilder(AbstractCar car)\n\
+  \    {\n        carInProgress = car;\n    }\n    public override void BuildBody()\n\
+  \    {\n        Console.WriteLine(\"building body\");\n    }\n    public override\
+  \ void Boot()\n    {\n        Console.WriteLine(\"building boot\");\n    }\n   \
+  \ public override void BuildChassis()\n    {\n        Console.WriteLine(\"building\
+  \ chassis\");\n    }\n    public override void BuildPassengerArea()\n    {\n   \
+  \     Console.WriteLine(\"building passenger area\");\n    }\n    public override\
+  \ void BuildWindows()\n    {\n        Console.WriteLine(\"building windows\");\n\
+  \    }\n    public override IVehicle Vehicle\n    {\n        get\n        {\n  \
+  \          return carInProgress;\n        }\n    }\n}\n```\n\n注意 `BuildReinforcedStorageArea()`\
+  \ 方法没有被重写，因为它不适用于汽车。`VanBuilder` 类重写了相应的方法来构建面包车：\n\n```csharp\npublic class VanBuilder\
+  \ : VehicleBuilder\n{\n    private AbstractVan vanInProgress;\n    public VanBuilder(AbstractVan\
+  \ van)\n    {\n        vanInProgress = van;\n    }\n    public override void BuildBody()\n\
+  \    {\n        Console.WriteLine(\"building van body\");\n    }\n    public override\
+  \ void BuildChassis()\n    {\n        Console.WriteLine(\"building van chassis\"\
+  );\n    }\n    public override void BuildReinforcedStorageArea()\n    {\n      \
+  \  Console.WriteLine(\"building van storage area\");\n    }\n    public override\
+  \ void BuildWindows()\n    {\n        Console.WriteLine(\"building van windows\"\
+  );\n    }\n    public override IVehicle Vehicle\n    {\n        get\n        {\n\
+  \            return vanInProgress;\n        }\n    }\n}\n```\n\n注意 `Boot()` 和 `BuildPassengerArea()`\
+  \ 方法没有被重写，因为它们不适用于面包车。\n\n`VehicleDirector` 抽象类要求将一个 `VehicleBuilder` 对象传递给其 `Build()`\
+  \ 方法，供子类实现：\n\n```csharp\npublic abstract class VehicleDirector\n{\n    public abstract\
+  \ IVehicle Build(VehicleBuilder builder);\n}\n```\n\n`CarDirector` 类继承自 `VehicleDirector`\
+  \ 并提供了构建汽车的逐步过程：\n\n```csharp\npublic class CarDirector : VehicleDirector\n{\n \
+  \   public override IVehicle Build(VehicleBuilder builder)\n    {\n        builder.BuildChassis();\n\
+  \        builder.BuildBody();\n        builder.BuildPassengerArea();\n        builder.Boot();\n\
+  \        builder.BuildWindows();\n        return builder.Vehicle;\n    }\n}\n```\n\
+  \n`VanDirector` 类提供了构建面包车的逐步过程：\n\n```csharp\npublic class VanDirector : VehicleDirector\n\
+  {\n    public override IVehicle Build(VehicleBuilder builder)\n    {\n        builder.BuildChassis();\n\
+  \        builder.BuildBody();\n        builder.BuildReinforcedStorageArea();\n \
+  \   }\n}\n```\n\n\n\n\n\n```csharp\n        builder.BuildWindows();\n        return\
+  \ builder.Vehicle;\n    }\n}\n```\n\n作为如何使用上述类的示例，假设我们想要构建一辆 `Saloon`（轿车）汽车：\n\n\
+  ```csharp\nAbstractCar car = new Saloon(new StandardEngine(1300));\nVehicleBuilder\
+  \ builder = new CarBuilder(car);\nVehicleDirector director = new CarDirector();\n\
+  Vehicle v = director.Build(builder);\nConsole.WriteLine(v);\nConsole.Read();\n```\n\
+  \n你可以看到，所需的 `Builder` 对象被构造并传递给所需的 `Director` 对象，之后我们调用构建构建产品的方法，然后获取成品。输出应该显示为：\n\
+  \n```\nBuilding car chassis\nBuilding car body\nBuilding car passenger area\nBuilding\
+  \ car boot\nBuilding car windows\nSaloon (StandardEngine (1300), Unpainted)\n```\n\
+  \n### 4. 工厂方法 (Factory Method)\n\n**类型**：创建型\n**目的**：为创建对象定义接口，但由子类来决定实例化哪个类。\n\n\
+  你可能从引言中记得 Foobar Motor 公司制造车辆的以下类层次结构：\n\n![](img/00035.jpg)\n图 4.1 : `IVehicle`\
+  \ 类层次结构\n\n当我们我们需要实例化特定类型的车辆（例如 `Coupe` 跑车）时，定义一个独立的类并由其负责管理实例化通常会更加灵活。这个独立的类被称为工厂（Factory）。\n\
+  \n工厂方法模式定义了一个抽象类作为“工厂”，并在其中包含一个抽象方法，用于确定实例化什么产品（在本例中为车辆）。工厂的具体子类负责做出该决定。以下是工厂方法模式如何与\
+  \ `IVehicle` 类层次结构配合：\n\n![](img/00033.jpg)\n图 4.2 : 工厂方法模式\n\n在上面的图中，我们可以看到我们创建了一个抽象的\
+  \ `VehicleFactory` 类，它有两个具体的子类：`CarFactory` 和 `VanFactory`。让我们来看 `VehicleFactory`\
+  \ 是如何定义的：\n\n```csharp\npublic abstract class VehicleFactory\n{\n    public enum\
+  \ DrivingStyle\n    {\n        Economical, Midrange, Powerful\n    }\n    public\
+  \ virtual IVehicle Build(DrivingStyle style, VehicleColour colour)\n    {\n    \
+  \    IVehicle v = SelectVehicle(style);\n        v.Paint(colour);\n        return\
+  \ v;\n    }\n    // 这就是“工厂方法”\n    protected internal abstract IVehicle SelectVehicle(DrivingStyle\
+  \ style);\n}\n```\n\n`VehicleFactory` 包含 `public` 方法 `Build()`，它接收参数为驾驶风格（`Economical`\
+  \ 经济、`Midrange` 中端或 `Powerful` 动力）以及车辆喷漆的颜色。`Build()` 方法调用 `protected` 抽象方法 `SelectVehicle()`，这就是该模式命名的“工厂方法”。因此，`SelectVehicle()`\
+  \ 的实现被委托给子类，使得每个子类都决定实例化具体的车辆类型。该方法被设为 `protected`，是因为我们只希望子类使用它；它不打算供客户端调用。\n\n\
+  以下是 `CarFactory` 具体子类：\n\n```csharp\npublic class CarFactory : VehicleFactory\n\
+  {\n    protected internal override IVehicle SelectVehicle(DrivingStyle style)\n\
+  \    {\n        if (style == DrivingStyle.Economical)\n        {\n            return\
+  \ new Saloon(new StandardEngine(1300));\n        }\n        else if (style == DrivingStyle.Midrange)\n\
+  \        {\n            return new Coupe(new StandardEngine(1600));\n        }\n\
+  \        else\n        {\n            return new Sport(new TurboEngine(2000));\n\
+  \        }\n    }\n}\n```\n\n如你所见，`SelectVehicle()` 方法的实现使得它能够根据提供的参数精确确定应该实例化并返回哪种类型的汽车。\n\
+  \n`VanFactory` 类似，它使用参数来决定实例化并返回哪种货厢车：\n\n```csharp\npublic class VanFactory : VehicleFactory\n\
+  {\n    protected internal override IVehicle SelectVehicle(DrivingStyle style)\n\
+  \    {\n        if ((style == DrivingStyle.Economical) || (style == DrivingStyle.Midrange))\n\
+  \        {\n            return new Pickup(new StandardEngine(2200));\n        }\n\
+  \        else\n        {\n            return new BoxVan(new TurboEngine(2500));\n\
+  \        }\n    }\n}\n```\n\n客户端程序实例化工厂并调用其 `Build()` 方法：\n\n```csharp\n// 我想要一辆经济型汽车\n\
+  VehicleFactory carFactory = new CarFactory();\nVehicle car = carFactory.Build(DrivingStyle.Economical,\
+  \ VehicleColour.Blue);\nConsole.WriteLine(car);\n\n// 我是一辆货厢车\nVehicleFactory vanFactory\
+  \ = new VanFactory();\nVehicle van = vanFactory.Build(DrivingStyle.Powerful, VehicleColour.White);\n\
+  Console.WriteLine(van);\n```\n\n### 5. 原型 (Prototype)\n\n**类型**：创建型\n**目的**：通过拷贝原型实例来指定要创建的对象类型。\n\
+  \n在本章中假设实例化汽车和货厢车对象是非常耗时的，因此每当我们需要新对象时，都需要一种加速的方法。以下是 `IVehicle` 类和 `AbstractVehicle`\
+  \ 类的回顾：\n\n```csharp\npublic interface IVehicle\n{\n    IEngine Engine { get; }\n\
+  \    VehicleColour Colour { get; }\n    void Paint(VehicleColour colour);\n}\n\n\
+  public abstract class AbstractVehicle : IVehicle\n{\n    private IEngine engine;\n\
+  \    private VehicleColour colour;\n    public AbstractVehicle(IEngine engine) :\
+  \ this(engine, VehicleColour.PAINTED)\n    {\n    }\n    public AbstractVehicle(IEngine\
+  \ engine, VehicleColour colour)\n    {\n        this.engine = engine;\n        this.colour\
+  \ = colour;\n        // ... 后面是耗时的操作\n    }\n    public virtual IEngine Engine\n\
+  \    {\n        get\n        {\n            return engine;\n        }\n    }\n \
+  \   public virtual VehicleColour Colour\n    {\n        get\n        {\n       \
+  \     return colour;\n        }\n    }\n    public virtual void Paint(VehicleColour\
+  \ colour)\n    {\n        this.colour = colour;\n    }\n    public virtual object\
+  \ Clone()\n    {\n        return this.MemberwiseClone();\n    }\n    public override\
+  \ string ToString()\n```\n\n一种改进时间的方法是利用 C# 的克隆功能。因此让 `IVehicle` 接口继承 `ICloneable`\
+  \ 并定义 `Clone()` 方法。它将在 `AbstractVehicle` 中所示定义。一个实用的变体是定义一个静态工厂方法。假设我们在 `VehicleFactory`\
+  \ 中定义了以下 `enum`：\n\n```csharp\npublic enum Category\n{\n    Car,\n    Van\n}\n```\n\
+  \n现在我们在 `VehicleFactory` 中定义了如下所示的静态方法：\n\n```csharp\npublic static IVehicle Make(Category\
+  \ category, DrivingStyle style, VehicleColour colour)\n{\n    VehicleFactory factory\
+  \ = null;\n    if (category == Category.Car)\n    {\n        factory = new CarFactory();\n\
+  \    }\n    else\n    {\n        factory = new VanFactory();\n    }\n    return\
+  \ factory.Build(style, colour);\n}\n```\n\n使用静态方法非常简单：\n\n```csharp\n// 创建一辆红色的跑车\n\
+  Vehicle sporty = VehicleFactory.Make(Category.Car, DrivingStyle.Powerful, VehicleColour.Red);\n\
+  Console.WriteLine(sporty);\n```\n\n这应该输出：\n```\nSport (TurboEngine (2000), Red)\n\
+  ```\n\n\n\n\n\n```csharp\nreturn this.GetType().Name + \" (\" + engine + \", \"\
+  \ + colour + \")\";\n}\n}\n```\n\n`clone()` 方法调用 C# 的 `MemberwiseClone()` 方法来执行对接收对象的克隆。\n\
+  \n`car` 或 `van` 子类都不需要任何更改，因为它们继承自层级根节点的 `IVehicle`。\n\n我们现在将定义一个 `VehicleManager`\
+  \ 类，它将创建初始车辆，我们可以从从中获取克隆：\n\n```csharp\npublic class VehicleManager\n{\n    private\
+  \ IVehicle saloon, coupe, sport, boxVan, pickup;\n    public VehicleManager()\n\
+  \    {\n        // 为了简单起见，所有车辆使用相同的引擎类型...\n        saloon = new Saloon(new StandardEngine(1300));\n\
+  \        coupe = new Coupe(new StandardEngine(1300));\n        sport = new Sport(new\
+  \ StandardEngine(1300));\n        boxVan = new BoxVan(new StandardEngine(1300));\n\
+  \        pickup = new Pickup(new StandardEngine(1300));\n    }\n    public virtual\
+  \ IVehicle CreateSaloon()\n    {\n        return (IVehicle)saloon.Clone();\n   \
+  \ }\n    public virtual IVehicle CreateCoupe()\n    {\n        return (IVehicle)coupe.Clone();\n\
+  \    }\n    public virtual IVehicle CreateSport()\n    {\n        return (IVehicle)sport.Clone();\n\
+  \    }\n    public virtual IVehicle CreateBoxVan()\n    {\n        return (IVehicle)boxVan.Clone();\n\
+  \    }\n    public virtual IVehicle CreatePickup()\n    {\n        return (IVehicle)pickup.Clone();\n\
+  \    }\n}\n```\n\n客户端程序可以如下所示使用 `VehicleManager`：\n\n```csharp\nVehicleManager manager\
+  \ = new VehicleManager();\nVehicle saloon1 = manager.CreateSaloon();\nVehicle saloon2\
+  \ = manager.CreateSaloon();\nVehicle pickup1 = manager.CreatePickup();\n```\n\n\
+  如代码所示，`VehicleManager` 的缺点是它在构造过程中始终会实例化至少一种类型的车辆。如果不需要所有类型的车辆，那么更高效的技术是使用懒加载，仅在第一次需要每种车辆时才实例化。这在下方的修改后的类版本中得到了体现（我们将其称为\
+  \ `VehicleManagerLazy`）：\n\n```csharp\npublic class VehicleManagerLazy\n{\n    private\
+  \ IVehicle saloon, coupe, sport, boxVan, pickup;\n    public VehicleManagerLazy()\n\
+  \    {\n    }\n    public virtual IVehicle CreateSaloon()\n    {\n        if (saloon\
+  \ == null)\n        {\n            saloon = new Saloon(new StandardEngine(1300));\n\
+  \        }\n        return (IVehicle)saloon.Clone();\n    }\n    public virtual\
+  \ IVehicle CreateCoupe()\n    {\n        if (coupe == null)\n        {\n       \
+  \     coupe = new Coupe(new StandardEngine(1300));\n        }\n        return (IVehicle)coupe.Clone();\n\
+  \    }\n    public virtual IVehicle CreateSport()\n    {\n        if (sport == null)\n\
+  \        {\n            sport = new Sport(new StandardEngine(1300));\n        }\n\
+  \        return (IVehicle)sport.Clone();\n    }\n    public virtual IVehicle CreateBoxVan()\n\
+  \    {\n        if (boxVan == null)\n        {\n            boxVan = new BoxVan(new\
+  \ StandardEngine(1300));\n        }\n        return (IVehicle)boxVan.Clone();\n\
+  \    }\n    public virtual IVehicle CreatePickup()\n    {\n        if (pickup ==\
+  \ null)\n        {\n            pickup = new Pickup(new StandardEngine(1300));\n\
+  \        }\n        return (IVehicle)pickup.Clone();\n    }\n}\n```\n\n在返回克隆之前，会进行检查以确保“原型”对象存在，并在必要时对其实例化。从那时起，它将克隆之前实例化的对象。客户端程序可以像以前一样使用\
+  \ `VehicleManagerLazy`：\n\n```csharp\nVehicleManagerLazy manager = new VehicleManagerLazy();\n\
+  Vehicle saloon1 = manager.CreateSaloon();\nVehicle saloon2 = manager.CreateSaloon();\n\
+  Vehicle pickup1 = manager.CreatePickup();\n```\n\n# 6. Singleton\n\n**Type**: Creational\n\
+  **Purpose**: 确保类只有一个实例，并提供一个全局访问点。`Singleton` 模式可以确保只有一个对象被创建，防止其他程序调用 `new`。实现此点的有多种方法，将构造函数设为私有，并提供一个\
+  \ `static` 访问器方法来返回实例。这看起来如下：\n\n```csharp\npublic class SerialNumberGenerator\n\
+  {\n    // 静态成员\n    private static volatile SerialNumberGenerator instance;\n  \
+  \  public static SerialNumberGenerator Instance\n    {\n        get\n        {\n\
+  \            if (instance == null)\n            {\n                instance = new\
+  \ SerialNumberGenerator();\n            }\n            return instance;\n      \
+  \  }\n    }\n    // 实例变量\n    private int count;\n    // 私有构造函数\n    private SerialNumberGenerator()\n\
+  \    {\n    }\n    // 实例方法\n    public virtual int NextSerial\n    {\n        get\n\
+  \        {\n            return ++count;\n        }\n    }\n}\n```\n\n注意 `Instance`\
+  \ 访问器只会实例化对象，并返回相同的实例。构造函数是私有的，以防止程序调用 `new`。单可以这样使用：\n\n```csharp\nConsole.WriteLine(\"\
+  next serial: \" + SerialNumberGenerator.Instance.NextSerial);\nConsole.WriteLine(\"\
+  next serial: \" + SerialNumberGenerator.Instance.NextSerial);\nConsole.WriteLine(\"\
+  next serial: \" + SerialNumberGenerator.Instance.NextSerial);\n```\n\n# 第三部分：结构性模式\n\
+  \n本部分描述了七种结构性模式，即那些有助于管理类组织和相互关系的模式。\n\n- **Adapter（适配器）**：将类的接口转换为客户端期望的接口，使不兼容类能够工作。\n\
+  - **Bridge（桥接）**：将抽象与实现解耦，使其可以独立变化。\n- **Composite（组合）**：将对象组合成树形结构以表示整体关系，让客户端统一对待单个对象和组合。\n\
+  - **Decorator（装饰器）**：动态地为对象附加职责。\n- **Facade（外观）**：为子系统中的接口提供统一接口，通过定义更高层次的接口使子系统更容易使用。\n\
+  - **Flyweight（重量级）**：使用共享高效地支持大量细粒度对象。\n- **Proxy（代理）**：为另一个对象提供代理或占位符以控制对它的访问。\n\
+  \n### 7. Adapter\n\n**Type**: 结构性\n**Purpose**: 将类的接口转换为客户端期望的接口。适配器让不兼容的类能够工作。\n\
+  \n你可能从引言中记得，Foobar 汽车公司为他们的车辆制造引擎。这里是 `IEngine` 层级的回顾：\n\n![](img/00037.jpg)\n图\
+  \ 7.1：`IEngine` 类层级\n\n这里是抽象类 `AbstractEngine` 代码的回顾：\n\n```csharp\npublic abstract\
+  \ class AbstractEngine : IEngine\n{\n    private int size;\n    private bool turbo;\n\
+  \    public AbstractEngine(int size, bool turbo)\n    {\n        this.size = size;\n\
+  \        this.turbo = turbo;\n    }\n    public virtual int Size\n    {\n      \
+  \  get\n```\n\n\n\n```csharp\n{\n            return size;\n        }\n    }\n  \
+  \  public virtual bool Turbo\n    {\n        get\n        {\n            return\
+  \ turbo;\n        }\n    }\n    public override string ToString()\n    {\n     \
+  \   return this.GetType().Name + \" (\" + size + \")\";\n    }\n}\n```\n\n假设我们的客户端程序从一个集合中获取引擎并逐个遍历它们，显示引擎的大小和类型：\n\
+  \n```csharp\nIList<IEngine> engines = new List<IEngine>();\nengines.Add(new StandardEngine(1300));\n\
+  engines.Add(new StandardEngine(1600));\nengines.Add(new TurboEngine(2000));\nforeach\
+  \ (IEngine engine in engines) {\n    Console.WriteLine(engine);\n}\n```\n\n运行上述代码将得到以下显示结果：\n\
+  \n`StandardEngine` (1300)\n`StandardEngine (1600)`\n`TurboEngine (2000)`\n\n在本章中，我们将假设除了两个子类（`StandardEngine`\
+  \ 和 `TurboEngine`）之外，Foobar 还决定使用另一个名为 `SuperGreenEngine` 的引擎类，该类由不同的制造商制造。由于 `SuperGreenEngine`\
+  \ 类由第三方提供，它没有实现我们的 `IEngine` 接口。此外，Foobar 无法访问 C# 源代码，因此无法对其修改，但根据文档已知以下类详细信息：\n\
+  \n*   该类继承自 `object`；\n*   构造函数接受一个作为引擎大小的参数；\n*   有一个 `EngineSize` 属性读取器，返回 `int`\
+  \ 类型的引擎大小；\n*   这些类型的引擎从不采用涡轮增压；\n*   `ToString()` 方法返回格式为 `SUPER ENGINE nnnn` 的字符串（其中\
+  \ nnnn 是引擎大小）。\n\n因此，我们可以看到 `SuperGreenEngine` 使用了不同的方法名来访问引擎大小，并且没有与是否为涡轮增压相关的方法，而且它不在\
+  \ `IEngine` 层次结构中。目前，无法将 `SuperGreenEngine` 的实例添加到报告集合中，即使你可以这样做，方法名也是不同的。\n\n适配器模式提供了一种解决此问题的方法，通过定义一个新类，将我们想要使用的类“适配”为现有类所要求的格式。因此，对于我们的目的，我们将创建一个\
+  \ `SuperGreenEngineAdapter` 类：\n\n![](img/00040.jpg)\n\n图 7.2：适配器类层次结构\n\n适配器的代码如下：\n\
+  \n```csharp\npublic class SuperGreenEngineAdapter : AbstractEngine\n{\n    public\
+  \ SuperGreenEngineAdapter(SuperGreenEngine greenEngine)\n        : base(greenEngine.EngineSize,\
+  \ false)\n    {\n}\n```\n\n请注意上述代码的以下几：\n\n*   我们扩展了正在适配的类；\n*   我们在构造函数中接受了指向被适配类的一个引用；\n\
+  *   构造函数从引用对象中获取必要的状态，并将其传递给父类构造函数。\n\n现在，我们可以在报告集合中包含 `SuperGreenEngine` 对象了（用加粗表示的额外代码）：\n\
+  \n```csharp\nIList<Engine> engines = new List<Engine>();\n\nengines.Add(new StandardEngine(1300));\n\
+  engines.Add(new StandardEngine(1600));\nengines.Add(new TurboEngine(2000));\n//\
+  \ “适配”新的引擎类型...\nSuperGreenEngine greenEngine = new SuperGreenEngine(1200);\nengines.Add(new\
+  \ SuperGreenEngineAdapter(greenEngine));\n// 与之前保持不变...\nforeach (IEngine engine\
+  \ : engines) {\n    Console.WriteLine(engine);\n}\n```\n\n现在的输出应该是：\n\n`StandardEngine\
+  \ (1300)`\n`StandardEngine (1600)`\n`TurboEngine (2000)`\n`SuperGreenEngineAdapter\
+  \ (1200)`\n\n注意输出如何使用了继承自 `AbstractEngine` 的 `ToString()` 方法，而不是 `SuperGreenEngine`\
+  \ 的方法。\n\n#### 适配器的实现变体\n\n我们还算幸运，因为 `AbstractEngine` 和 `SuperGreenEngine` 类的设计使得适配器类很容易在其构造函数内部完成工作。然而，通常情况下，我们需要在适配器的代码内部采取几个额外的步骤，因此这里有一个通用的公式可以使用：\n\
+  \n1.  扩展你正在适配的类（如果是接口，则实现它）；\n2.  在构造函数中指定你正在适配的类，并将其存储在实例变量中；\n3.  对于你正在扩展的类（或实现的接口）中的每个方法，重写它并将其委托给被适配类中的对应方法。\n\
+  \n这是一个通用的适配器类：\n\n```csharp\npublic class ObjectAdapter : AdaptingTo\n{\n    private\
+  \ AdaptingFrom fromObject;\n    public ObjectAdapter(AdaptingFrom fromObject)\n\
+  \    {\n        this.fromObject = fromObject;\n    }\n    // 重写的方法\n    public override\
+  \ void MethodInTo()\n    {\n        fromObject.MethodInFrom();\n    }\n}\n```\n\n\
+  #### 桥接\n\n目的：将抽象与其实现解耦，以便每者都可以独立变化。\n\nFoobar 公司为其车辆制造引擎。以下是 `IEngine` 类回顾：\n\n\
+  ![](img/0037.jpg) 图 8.1：`IEngine` 类\n\n`AbstractEngine` 类的实现正如引言所示，仅存储引擎大小（例如 1600cc）和是否为涡轮增压。为了本目的，该类将得到增强，以允许引擎启动以及增加或减少功率。\n\
+  \n修改后的 `IEngine` 接口和 `AbstractEngine` 类列如下，更改已加粗标记：\n\n```csharp\npublic interface\
+  \ IEngine\n{\n    int Size { get; }\n    bool Turbo { get; }\n    void Start();\n\
+  \    void Stop();\n    void IncreasePower();\n    void DecreasePower();\n}\n\npublic\
+  \ abstract class AbstractEngine : IEngine\n{\n    private int size;\n    private\
+  \ bool turbo;\n    private bool running;\n    private int power;\n    public AbstractEngine(int\
+  \ size, bool turbo)\n    {\n        this.size = size;\n        this.turbo = turbo;\n\
+  \        running = false;\n        power = 0;\n    }\n    public virtual int Size\n\
+  \    {\n        get\n        {\n            return size;\n        }\n    }\n   \
+  \ public virtual bool Turbo\n    {\n        get\n        {\n            return turbo;\n\
+  \        }\n    }\n    public virtual void Start()\n    {\n        running = true;\n\
+  \    }\n    public virtual void Stop()\n    {\n        running = false;\n      \
+  \  power = 0;\n    }\n    public virtual void IncreasePower()\n    {\n        if\
+  \ ((running) && (power < 10))\n        {\n            power++;\n        }\n    }\n\
+  \    public virtual void DecreasePower()\n    {\n        if ((running) && (power\
+  \ > 0))\n        {\n            power--;\n        }\n    }\n}\n```\n\n\n\n\n\n##\
+  \ 图 8.2 : 桥接模式\n\n如图所示，有一个抽象类 `AbstractDriverControls`，它包含两个具体的子类：`StandardControls`\
+  \ 和 `SportControls`：\n\n`AbstractDriverControls` 类要求在构造函数中传递一个 `Engine` 对象，然后将其每个方法都委托给该引擎执行：\n\
+  \n```csharp\npublic class AbstractDriverControls\n{\n    private IEngine engine;\n\
+  \    public AbstractDriverControls(IEngine engine)\n    {\n        this.engine =\
+  \ engine;\n    }\n    public virtual void IgnitionOn()\n    {\n        engine.Start();\n\
+  \    }\n    public virtual void IgnitionOff()\n    {\n        engine.Stop();\n \
+  \   }\n    public virtual void Accelerate()\n    {\n        engine.IncreasePower();\n\
+  \    }\n    public virtual void Brake()\n    {\n        engine.DecreasePower();\n\
+  \    }\n}\n```\n\n`AbstractDriverControls` 的子类可以直接原样使用父类的方法，也可以定义额外的功能。`StandardControls`\
+  \ 类原样使用了 `AbstractDriverControls`：\n\n```csharp\npublic class StandardControls :\
+  \ AbstractDriverControls\n{\n    public StandardControls(IEngine engine) : base(engine)\
+  \ {\n    }\n    // 没有额外函数\n}\n```\n\n而 `SportControls` 类则定义了一个额外的方法：\n\n```csharp\n\
+  public class SportControls : AbstractDriverControls\n{\n    public SportControls(IEngine\
+  \ engine) : base(engine) {\n    }\n    public virtual void AccelerateHard()\n  \
+  \  {\n        Accelerate();\n        Accelerate();\n    }\n}\n```\n\n上述需要注意的重要点是，额外的方法是基于父类的“抽象”而非“实现”（引擎）来编写的。因此，在上面的示例中，`AccelerateHard()`\
+  \ 方法调用了 `AbstractDriverControls` 中定义的 `Accelerate()` 方法。正是这种方法允许抽象和实现在需要时能够独立变化。\n\
+  \n因此，只要引擎符合 `IEngine` 约，我们就可以在不修改驾驶控制类的情况下引入一种全新类型的引擎。相反，我们也可以开发一套新的驾驶控制控制（例如启用语音激活），而无需修改\
+  \ `IEngine` 层次结构中的任何内容。\n\n客户端程序可以使用以下方式使用桥接：\n\n```csharp\nIEngine engine = new\
+  \ StandardEngine(1300);\nStandardControls controls = new StandardControls(engine);\n\
+  controls1.IgnitionOn();\ncontrols1.Accelerate();\ncontrols1.Brake();\ncontrols1.IgnitionOff();\n\
+  // 现在使用运动控制\nSportControls controls2 = new SportControls(engine);\ncontrols2.IgnitionOn();\n\
+  controls2.Accelerate();\ncontrols2.AccelerateHard();\ncontrols2.Brake();\ncontrols2.IgnitionOff();\n\
+  ```\n\n###### 9. 组合模式\n\n**类型：** 结构型\n\n**目的：** 将对象组合成树形结构以表示部分与整体的层次结构。组合允许客户端统一地处理单个对象和对象的组合。\n\
+  \n在 Foobar 汽车公司的车间里，他们使用螺母、螺栓、面板等组件部件制造各种物品。每个单独的组件项都有相关的描述和单位成本，当物品被组装成更大的物品时，其成本就是各个组件部分成本之和。\n\
+  \n组合模式允许我们将单个部件和部件的组合视为相同，从而使它们能够以一致的方式进行处理，并简化代码。类层次结构如下：\n\n![](img/00046.jpg)\n\
+  \n图 9.1 : 组合模式\n\n抽象类 `Item` 定义了针对部件和部件组装的所有可能方法：\n\n```csharp\npublic abstract\
+  \ class Item\n{\n    private string description;\n    private int cost;\n    public\
+  \ Item(string description, int cost)\n    {\n        this.description = description;\n\
+  \        cost = cost;\n    }\n    public virtual string Description\n    {\n   \
+  \     get {\n            return description;\n        }\n    }\n    public virtual\
+  \ int Cost\n    {\n        get {\n            return cost;\n        }\n    }\n \
+  \   public abstract void AddItem(Item item);\n    public abstract void RemoveItem(Item\
+  \ item);\n    public abstract Item[] Items { get; }\n    public override string\
+  \ ToString()\n    {\n        return description + \" (cost \" + Cost + \")\";\n\
+  \    }\n}\n```\n\n上述类为 `Description` 和 `Cost` 访问器提供了默认实现，并定义了抽象的 `AddItem()`、`RemoveItem()`\
+  \ 和 `Items` 访问器。单个部件使用 `Part` 子类进行建模：\n\n```csharp\npublic class Part : Item\n{\n\
+  \    public Part(string description, int cost)\n    : base(description, cost)\n\
+  \    {\n    }\n    // 单位...的空实现\n    public override void AddItem(Item item) {}\n\
+  \    public override void RemoveItem(Item item) {}\n    public override Item[] Items\n\
+  \    {\n        get {\n            return new Item[0];\n        }\n    }\n}\n```\n\
+  \n如你所见，与物品组装相关的方法为空空实现，因为“部件”是可能的最小单元，因此无法像“组装”那样拥有子部件。部件的组装使用 `Assembly` 子类进行建模：\n\
+  \n```csharp\npublic class Assembly : Item\n{\n    private IList<Item> items;\n \
+  \   public Assembly(string description)\n    : base(description, 0)\n    {\n   \
+  \     items = new List<Item>();\n    }\n    public override void AddItem(Item item)\n\
+  \    {\n        items.Add(item);\n    }\n    public override void RemoveItem(Item\
+  \ item)\n    {\n        items.Remove(item);\n    }\n    public override Item[] Items\n\
+  \    {\n        get {\n            return items.ToArray();\n        }\n    }\n \
+  \   // 必须重写 Cost 以累加列表中所有项目的成本\n    public override int Cost\n    {\n        get\
+  \ {\n            int total = 0;\n            foreach (Item item in items)\n    \
+  \        {\n                total += item.Cost;\n            }\n            return\
+  \ total;\n        }\n    }\n}\n```\n\n现在可以使用统一的方式所有的 Item 对象：\n\n```csharp\nItem\
+  \ nut = new Part(\"Nut\", 5);\nItem bolt = new Part(\"Bolt\", 9);\nItem panel =\
+  \ new Part(\"Panel\", 35);\nItem gizmo = new Assembly(\"Gizmo\");\ngizmo.AddItem(panel);\n\
+  gizmo.AddItem(nut);\ngizmo.AddItem(bolt);\nItem widget = new Assembly(\"Widget\"\
+  );\nwidget.AddItem(gizmo);\nwidget.AddItem(nut);\n```\n\n组装已经计算了总成本，而客户端程序不需要知道如何计算。显示这些对象将产生输出：\n\
+  \n`Nut (cost 5)`\n`Bolt (cost 9)`\n`Panel (cost 35)`\n`Gizmo (cost 49)`\n`Widget\
+  \ (cost 54)`\n\n### 10. 装饰器模式\n\n**类型：** 结构型\n\n**目的：** 动态地为对象添加额外的责任。装饰器为扩展功能提供了比继承更灵活的选择。\n\
+  \n你会记得 Foobar 汽车公司的 `IVehicle` 类层次结构：\n\n![](img/00035.jpg)\n\n图 10.1 : `IVehicle`\
+  \ 类层次结构\n\n为了本章，我们将在 `IVehicle` 接口中添加一个名为 `Price` 的额外属性并带有访问器。我们还将修改 `AbstractVehicle`\
+  \ 中的 `ToString()` 方法以包含价格。修改后的接口和类所示，更改部分已加粗标出：\n\n```csharp\npublic interface IVehicle\n\
+  {\n    IEngine Engine { get; }\n    VehicleColour Colour { get; }\n    **int Price\
+  \ { get; }**\n}\n```\n\n\n\n\n\n```csharp\n    void Paint(VehicleColour colour);\n\
+  \n    int Price { get; }\n}\n\npublic abstract class AbstractVehicle : IVehicle\n\
+  {\n    private IEngine engine;\n    private VehicleColour colour;\n    public AbstractVehicle(IEngine\
+  \ engine)\n        : this(engine, VehicleColour.Unpainted)\n    {\n    }\n    public\
+  \ AbstractVehicle(IEngine engine, VehicleColour colour)\n    {\n        this.engine\
+  \ = engine;\n        this.colour = colour;\n    }\n    public virtual IEngine Engine\n\
+  \    {\n        get\n        {\n            return engine;\n        }\n    }\n \
+  \   public virtual VehicleColour Colour\n    {\n        get\n        {\n       \
+  \     return colour;\n        }\n    }\n    public virtual void Paint(VehicleColour\
+  \ colour)\n    {\n        this.colour = colour;\n    }\n    public abstract int\
+  \ Price { get; }\n    public override string ToString()\n    {\n        return this.GetType().Name\
+  \ + \" (\" + engine + \", \" + colour + \", price \" + Price + \")\";\n    }\n}\n\
+  ```\n\n每个具体的子类都根据需要实现了 `Price` get 访问器。例如，`Saloon` 类现在看起来如下（**加粗**部分为更改）：\n\n```csharp\n\
+  public class Saloon : AbstractCar\n{\n    public Saloon(IEngine engine)\n      \
+  \  : this(engine, VehicleColour.Unpainted)\n    {\n    }\n    public Saloon(IEngine\
+  \ engine, VehicleColour colour)\n        : base(engine, colour)\n    {\n    }\n\
+  \    public override int Price\n    {\n        get\n        {\n            return\
+  \ 6000;\n        }\n    }\n}\n```\n\n其他子类的定义类似，且 `Price` get 访问器返回：\n\n*   `Saloon`\
+  \ 对象返回 6,000；\n*   `Coupe` 对象返回 7,000；\n*   `Sport` 对象返回 8,000；\n*   `Pickup` 对象返回\
+  \ 9,000；\n*   `BoxVan` 对象返回 10,000。\n\n当客户购买车辆时，他们可以选择添加任意数量的可选配置。他们可以从空调系统、合金轮毂、真皮座椅、金属漆或卫星导航单元中进行选择。他们可以一个都不选，也可以选择最多五项的任意组合。\n\
+  \n装饰器模式（Decorator）的设计是为了方便添加状态和或行为，而无需修改被添加类的继承层次结构。这是通过定义一个新的层次结构来实现的，该结构本身扩展了主树的根节点。\n\
+  \n下图展示了这一点：\n\n![](img/00049.jpg)\n\n图 10.2：装饰器模式层次结构\n\n从图中可以看到，定义了一个名为 `AbstractVehicleOption`\
+  \ 的新抽象类，它继承自 `AbstractVehicle`。`AbstractVehicleOption` 有五个具体的子类；每个子类对应一个可选选项。`AbstractVehicleOption`\
+  \ 类如下：\n\n```csharp\npublic abstract class AbstractVehicleOption : AbstractVehicle\n\
+  {\n    protected IVehicle decoratedVehicle;\n    public AbstractVehicleOption(IVehicle\
+  \ vehicle)\n        : base(vehicle)\n    {\n        decoratedVehicle = vehicle;\n\
+  \    }\n}\n```\n\n`AbstractVehicleOption` 是抽象的“装饰器”类，它需要指向被装饰的 `IVehicle` 类的引用。每个选项子类都是简单的。它们都重写了\
+  \ `Price` get 访问器，以加上被装饰对象的价格。在 `AirConditionedVehicle` 和 `SatNavVehicle` 类中，我们定义了一个额外的方法：\n\
+  \n```csharp\npublic class AirConditionedVehicle : AbstractVehicleOption\n{\n   \
+  \ public AirConditionedVehicle(IVehicle vehicle)\n        : base(vehicle)\n    {\n\
+  \    }\n    public override int Price\n    {\n        get\n        {\n         \
+  \   return decoratedVehicle.Price + 600;\n        }\n    }\n    public virtual int\
+  \ Temperature\n    {\n        set\n        {\n            // 设置温度的代码...\n      \
+  \  }\n    }\n}\n\npublic class AlloyWheeledVehicle : AbstractVehicleOption\n{\n\
+  \    public AlloyWheeledVehicle(IVehicle vehicle)\n        : base(vehicle)\n   \
+  \ {\n    }\n    public override int Price\n    {\n        get\n        {\n     \
+  \       return decoratedVehicle.Price + 250;\n        }\n    }\n}\n\npublic class\
+  \ LeatherSeatedVehicle : AbstractVehicleOption\n{\n    public LeatherSeatedVehicle(IVehicle\
+  \ vehicle)\n        : base(vehicle)\n    {\n    }\n    public override int Price\n\
+  \    {\n        get\n        {\n            return decoratedVehicle.Price + 1200;\n\
+  \        }\n    }\n}\n\npublic class MetallicPaintedVehicle : AbstractVehicleOption\n\
+  {\n    public MetallicPaintedVehicle(IVehicle vehicle)\n        : base(vehicle)\n\
+  \    {\n    }\n    public override int Price\n    {\n        get\n        {\n  \
+  \          return decoratedVehicle.Price + 750;\n        }\n    }\n}\n\npublic class\
+  \ SatNavVehicle : AbstractVehicleOption\n{\n    public SatNavVehicle(IVehicle vehicle)\n\
+  \        : base(vehicle)\n    {\n    }\n    public override int Price\n    {\n \
+  \       get\n        {\n            return decoratedVehicle.Price + 1500;\n    \
+  \    }\n    }\n    public virtual string Destination\n    {\n        set\n     \
+  \   {\n            // 设置目的的代码\n        }\n    }\n}\n```\n\n要使用这些“装饰器”，我们首先实例化汽车或货车，然后将它们“包裹”在所需的装饰器内部。这是一个示例：\n\
+  \n```csharp\n// 创建一辆蓝色轿车\nIVehicle myCar = new Saloon(new Engine(1300));\nmyCar.Paint(VehicleColour.Blue);\n\
+  // 为车辆添加空调...\nmyCar = new AirConditionedVehicle(myCar);\n// 现在添加合金轮毂...\nmyCar\
+  \ = new AlloyWheeledVehicle(myCar);\n// 现在添加真皮座椅...\nmyCar = new LeatherSeatedVehicle(myCar);\n\
+  // 现在添加金属漆...\nmyCar = new MetallicPaintedVehicle(myCar);\n// 现在添加卫星导航...\nmyCar\
+  \ = new SatNavVehicle(myCar);\n```\n\n如果在每个阶段对 `myCar` 用 `ToString()`，你应该看到如下输出：\n\
+  \n`Saloon (Engine, Blue, price 6000)`\n`AirConditionedVehicle (Saloon (...), price\
+  \ 6600)`\n`AlloyWheeledVehicle (AirConditionedVehicle (Saloon (...), price 6850)`\n\
+  `LeatherSeatedVehicle (AlloyWheeledVehicle (...)), price 8050)`\n`MetallicPaintedVehicle\
+  \ (LeatherSeatedVehicle (...)), price 8800)`\n`SatNavVehicle (MetallicPaintedVehicle\
+  \ (...)), price 10300)`\n\n装饰器模式是优于使用对象组合而非继承的绝佳例子。如果我们尝试使用继承来实现各种车辆选项，将需要创建许多不同的类组合来建模每种组合。\n\
+  \n### 11. 外观模式 (Facade)\n\n**类型**：结构型\n\n**目的**：为子系统中的一组接口提供统一的接口。外观定义了一个更高层次的接口，使得子系统更易使用。\n\
+  \n有时你需要执行一系列步骤来完成特定任务，这通常涉及多个对象。外观模式涉及创建一个单独的对象来简化这些步骤的执行。\n\n例如，当 Foobar 汽车公司准备销售车辆时，他们需要执行多项利用各种对象的步骤。在本章中，我们假设\
+  \ `IVehicle` 接口在引言定义的方法之外还定义了以下额外方法：\n\n```csharp\n// IVehicle 中定义的额外方法...\nvoid\
+  \ CleanInterior();\nvoid CleanExteriorBody();\nvoid PolishWindows();\nvoid TakeForTestDrive();\n\
+  ```\n\n上述方法在 `AbstractVehicle` 中的实现如下：\n\n```csharp\npublic virtual void CleanInterior()\n\
+  {\n```\n\n\n\n\n```csharp\n    Console.WriteLine(\"Cleaning interior...\");\n}\n\
+  \npublic virtual void CleanExteriorBody()\n{\n    Console.WriteLine(\"Cleaning exterior\
+  \ body...\");\n}\n\npublic virtual void PolishWindows()\n{\n    Console.WriteLine(\"\
+  Polishing windows...\");\n}\n\npublic virtual void TakeForTestDrive()\n{\n    Console.WriteLine(\"\
+  Taking for test drive...\");\n}\n```\n\n我们将引入另外两个简单的类，`Registration` 和 `Documentation`：\n\
+  \n```csharp\npublic class Registration\n{\n    private IVehicle vehicle;\n    public\
+  \ Registration(IVehicle vehicle)\n    {\n        this.vehicle = vehicle;\n    }\n\
+  \    public virtual void AllocateLicensePlate()\n    {\n        Console.WriteLine(\"\
+  Allocating license plate...\");\n    }\n    public virtual void AllocateVehicleNumber()\n\
+  \    {\n        Console.WriteLine(\"Allocating vehicle number...\");\n    }\n}\n\
+  \npublic class Documentation\n{\n    public static void PrintBrochure(IVehicle vehicle)\n\
+  \    {\n        Console.WriteLine(\"Printing brochure...\");\n    }\n}\n```\n\n\
+  为了实现该模式，我们将创建一个 `VehicleFacade` 类，该类定义了一个方法，代表我们使用上述类来准备指定的车辆：\n\n![](img/00053.jpg)\n\
+  \n图 11.1 :  Fac 面模式\n\n```csharp\npublic class VehicleFacade\n{\n    public virtual\
+  \ void PrepareForSale(IVehicle vehicle)\n    {\n        Registration reg = new Registration(vehicle);\n\
+  \        reg.AllocateVehicleNumber();\n        reg.AllocateLicensePlate();\n   \
+  \     Documentation.PrintBrochure(vehicle);\n        vehicle.CleanInterior();\n\
+  \        vehicle.CleanExteriorBody();\n        vehicle.PolishWindows();\n      \
+  \  vehicle.TakeForTestDrive();\n    }\n}\n```\n\n客户端程序只需要在 `VehicleFacade` 实例上调用\
+  \ `PrepareForSale()` 方法，因此不需要了解需要执行什么以及还需要哪些其他对象。如果在特殊情况下需要不同的操作，各个方法仍然可以根据需要单独调用。\n\
+  \n### 12. 享用权重模式 (Flyweight)\n\n**类型：** 结构型  \n**目的：** 使用共享来高效地支持大量的细粒度对象。\n\n某些程序需要创建大量特定类型的对象，如果这些对象恰好具有大量状态，那么实例化许多对象会迅速消耗内存。在考虑对象状态时，我们经常注意到，至少部分状态可能可以在一组对象之间共享。\n\
+  \n对于 Foobar 汽车公司，`IEngine` 层次结构就是一个很好的例子：\n\n![](img/00037.jpg)\n\n图 12.1 : `IEngine`\
+  \ 类层次结构\n\n我们对 `IEngine` 的简单实现只定义了两个属性读取：`Size` 和 `Turbo`。假设我们如下实例化了两个引擎：\n\n```csharp\n\
+  Engine engine1 = new StandardEngine(1300);\nEngine engine2 = new StandardEngine(1300);\n\
+  ```\n\n上述操作会在内存中创建两个独立的对象，尽管它们的状态是相同的。这可以被视为它的内部状态；即所有 1300cc 的标准引擎都将为引擎尺寸存储 1300，并为是否涡轮增压存储\
+  \ false。创建数百或数千这样的对象将浪费内存，特别是由于一个更真实的 `Engine` 类需要更多的变量，而这些变量的值也将被共享。\n\n为了本章的目的，`IEngine`\
+  \ 接口将添加另一个方法，称为 `Diagnose()`。这个新方法将一个 `DiagnosticTool` 对象作为其参数，这个参数可以被认为是它的外部状态，因为它的值实际上并没有存储在\
+  \ `Engine` 对象中；它被使用是为了让引擎可以使用它来运行诊断检查。\n\n`DiagnosticTool` 接口如下：\n\n```csharp\n\
+  public interface IDiagnosticTool\n{\n    void RunDiagnosis(object obj);\n}\n```\n\
+  \n`EngineDiagnosticTool` 实现了上述对引擎进行诊断的功能：\n\n```csharp\npublic class EngineDiagnosticTool\
+  \ : IDiagnosticTool\n{\n    public virtual void RunDiagnosis(object obj)\n    {\n\
+  \        Console.WriteLine(\"Starting diagnostic tool for \" + obj);\n        Thread.Sleep(5000);\n\
+  \        Console.WriteLine(\"Engine diagnosis complete\");\n    }\n}\n```\n\n为了模拟长时间运行的过程，该方法暂停了几秒钟。在上述工作的基础上，我们现在可以在\
+  \ `IEngine` 接口中添加一个合适的方法：\n\n```csharp\npublic interface IEngine\n{\n    // 具有内部（即共享）状态的属性\n\
+  \    int Size { get; }\n    bool Turbo { get; }\n    // 具有外部（即非共享）状态的方法\n    void\
+  \ Diagnose(IDiagnosticTool tool);\n}\n```\n\n`AbstractEngine` 中此新方法的实现简单地向 `IDiagnosticTool`\
+  \ 发出回调：\n\n```csharp\npublic virtual void Diagnose(IDiagnosticTool tool) {\n   \
+  \ tool.RunDiagnosis(this);\n}\n```\n\n享用权重模式允许你引用大量相同类型且具有相同状态的对象，但通过实例化所需数量的实际对象来实现。这通常通过分配一个可以共享的对象“池”来，这由一个“享用权重工厂”类来决定。客户端程序仅通过工厂访问引擎：\n\
+  \n![](img/0056.jpg)\n\n图 12.2 : 享用权重模式\n\n`EngineFlyweightFactory` 类如下：\n\n```csharp\n\
+  public class EngineFlyweightFactory\n{\n    private Dictionary<int?, IEngine> standardEnginePool;\n\
+  \    private Dictionary<int?, IEngine> turboEnginePool;\n\n    public EngineFlyweightFactory()\n\
+  \    {\n        standardEnginePool = new Dictionary<int?, IEngine>();\n        turboEnginePool\
+  \ = new Dictionary<int?, IEngine>();\n    }\n    public virtual IEngine GetStandardEngine(int\
+  \ size)\n    {\n        IEngine e = null;\n        if (!standardEnginePool.TryGetValue(size,\
+  \ out e))\n        {\n            e = new StandardEngine(size);\n            standardEnginePool[size]\
+  \ = e;\n        }\n        return e;\n    }\n\n    public virtual IEngine GetTurboEngine(int\
+  \ size)\n    {\n        IEngine e = null;\n        if (!turboEnginePool.TryGetValue(size,\
+  \ out e))\n        {\n            e = new TurboEngine(size);\n            turboEnginePool[size]\
+  \ = e;\n        }\n        return e;\n    }\n}\n```\n\n该类使用了两个字典（一个用于标准引擎，另一个用于涡轮引擎）。每当请求特定类型和尺寸的引擎，如果已经创建了类似的，就会返回而不是实例化一个新的。客户端程序这样使用工厂：\n\
+  \n```csharp\n// 创建享用权重工厂...\nEngineFlyweightFactory factory = new EngineFlyweightFactory();\n\
+  // 创建诊断工具\nIDiagnosticTool tool = new EngineDiagnosticTool();\n// 获取权重对象并对其进行诊断\n\
+  IEngine standard1 = factory.GetStandardEngine(1300);\nstandard1.Diagnose(tool);\n\
+  IEngine standard2 = factory.GetStandardEngine(1300);\nstandard2.Diagnose(tool);\n\
+  IEngine standard3 = factory.GetStandardEngine(1300);\nstandard3.Diagnose(tool);\n\
+  IEngine standard4 = factory.GetStandardEngine(1600);\nstandard4.Diagnose(tool);\n\
+  IEngine standard5 = factory.GetStandardEngine(1600);\nstandard5.Diagnose(tool);\n\
+  \n// 显示对象是共享的\nConsole.WriteLine(standard1.GetHashCode());\nConsole.WriteLine(standard2.GetHashCode());\n\
+  Console.WriteLine(standard3.GetHashCode());\nConsole.WriteLine(standard4.GetHashCode());\n\
+  Console.WriteLine(standard5.GetHashCode());\n```\n\n在上述代码中，变量 `standard1`、standard2`\
+  \ 和 `standard3` 都引用同一个 `IEngine` 对象（因为它们都是 1300cc 的标准引擎）。同样，`standard4` 与 `standard5`\
+  \ 引用同一个对象。当然，在相同对象上多次运行诊断是否值得，取决于具体情况！\n\n\n\n\n如果传递给外部方法（我们示例中的 `IDiagnosticTool`）的参数需要存储，则应该在客户端程序中完成。\n\
+  \n### 13. 代理 (Proxy)\n\n**类型：** 结构型\n\n**目的：** 为另一个对象提供代理或位符，以控制对其访问。\n\n某些方法可能是耗时的，例如那些加载复杂图形组件或需要网络连接的方法。在这些情况下，`Proxy`\
+  \ 模式提供了一个“替代”对象，直到耗时资源完成，从而允许应用程序的其他部分进行加载。\n\n在讨论重量类模式的章节中，`IEngine` 层次结构被增强以定义了额外方法\
+  \ `Diagnose()`。正如你所看到的，`EngineDiagnosticTool` 中 `RunDiagnosis()` 的实现非常缓慢（我们让它睡眠了五秒来模拟这一点），因此我们可能考虑将此运行在独立的线程。\n\
+  \n以下是带有额外方法的 `IEngine` 层次结构回顾：\n\n![](img/00060.jpg)\n\n图 13.1 : `IEngine` 类层次结构\n\
+  \n`Proxy` 模式涉及创建一个与我们代理的对象相同接口的类，在我们例中是 `IEngine`。代理随后将请求转发到内部存储的“真实”对象。客户端只需访问代理：\n\
+  \n![](img/00062.jpg)\n\n图 13.2 : 代理模式\n\n以下是 `EngineProxy` 类的代码：\n\n```csharp\n\
+  public class EngineProxy : IEngine\n{\n    private IEngine engine;\n    public EngineProxy(int\
+  \ size, bool turbo)\n    {\n        if (turbo)\n        {\n            engine =\
+  \ new TurboEngine(size);\n        }\n        else\n        {\n            engine\
+  \ = new StandardEngine(size);\n        }\n    }\n    public virtual int Size\n \
+  \   {\n        get\n        {\n            return engine.Size;\n        }\n    }\n\
+  \    public virtual bool Turbo\n    {\n        get\n        {\n            return\
+  \ engine.Turbo;\n        }\n    }\n    // 此方法是耗时的...\n    public virtual void Diagnose(IDiagnosticTool\
+  \ tool)\n    {\n        Console.WriteLine(\"(Running tool as thread)\");\n     \
+  \   Thread t = new Thread(() => RunDiagnosticTool(tool));\n        t.Start();\n\
+  \        Console.WriteLine(\"EngineProxy diagnose() method finished\");\n    }\n\
+  \    public virtual void RunDiagnosticTool(IDiagnosticTool tool)\n    {\n      \
+  \  tool.RunDiagnosis(this);\n    }\n}\n```\n\n构造函数创建一个 `StandardEngine` 或 `TurboEngine`\
+  \ 对象并将其引用作为实例变量存储。对 `Size` 和 `Turbo` 访问器的调用简单地转发到所引用的引擎对象。对 `Diagnose()` 的调用将启动一个单独的线程运行实际诊断。如果由于某些原因你无法修改源代码，这可能会非常有用。\n\
+  \n# 第四部分 行为模式 (Behavioural Patterns)\n\n此部分描述了十一 种行为模式，即那些帮助管理类实际行为的模式。\n\n- **责任链\
+  \ (Chain of Responsibility)：** 通过给多个对象一个处理请求的机会，避免请求发送者与接收者之间的耦合；\n- **命令 (Command)：**\
+  \ 将请求封装为对象，从而让你能够用不同的请求对客户端进行参数化；\n- **解释器 (Interpreter)：** 定义语言语法的表示；\n- **迭代器\
+  \ (Iterator)：** 提供一种顺序访问聚合对象元素的方法，而不暴露其底层表示；\n- **中介者 (Mediator)：** 定义一个封装一组对象如何交互的对象；\n\
+  - **备忘 (Memento)：** 捕获并外部化对象的状态，以便以后可以恢复到该状态；\n- **观察者 (Observer)：** 定义对象之间的一对多的依赖关系，当一个对象的状态发生变化时，所有依赖对象都会收到通知并更新；\n\
+  - **状态 (State)：** 允许对象在内部状态改变时改变其行为，就像是一个不同的类；\n- **策略 (Strategy)：** 允许客户端更改对象执行函数时使用的算法；\n\
+  - **模板方法 (Template Method)：** 在方法中定义算法的骨架，将某些步骤延迟给子类；\n- **访问者 (Visitor)：** 模拟在不需要实际更改类的情况下向类添加方法。\n\
+  \n# 4. 责任链 (Chain of Responsibility)\n\n**类型：** 行为型\n\n**目的：** 通过给多个对象一个处理的机会，避免请求发送者与接收者之间的耦合。将接收对象链起来并传递请求，直到某个对象处理它为止。\n\
+  \nFoobar 公司每天接收大量邮件，包括服务请求、销售，当然还有不可避免的垃圾邮件。与其专门雇人来筛选每封邮件以确定应该转发到哪个部门，我们的任务是尝试通过分析每封邮件的文本并做出“最佳猜测”来实现这一过程自动化。\n\
+  \n在我们简化的示例中，我们将在邮件文本中搜索关键词，并根据发现的内容进行相应的处理。以下是我们要搜索的词以及它们的处理方式：\n\n- 如果邮件包含 \"viagra\"\
+  、pills\" 或 \"medicines\"，则应转发到垃圾邮件处理器；\n- 如果邮件包含 \"buy\" 或 \"purchase\"，则应转发到销售部；\n\
+  - 如果邮件包含 \"service\" 或 \"repair\"，则应转发到服务部；\n- 如果邮件包含 \"complain\" 或 \"bad\"，则应转发给经理；\n\
+  - 如果邮件不包含上述任何内容，则应转发到通用咨询处。\n\n请注意，只需要一个对象处理请求，因此如果一封特定的邮件同时包含 \"purchase\" 和 \"\
+  repair\"，它将只被转发到销售部。检查关键词的顺序取决于应用程序认为合理的顺序；这样我们试图在邮件到达其他部门之前过滤掉垃圾邮件。\n\n现在只需要一个对象来处理请求，所以如果一封特定的邮件同时包含\
+  \ \"purchase\" 和 \"repair\"，它将只被转发到销售部。现在，我们完全可以在检查关键词时使用一系列 `if...else...` 语句，但那样将不面向对象。责任链模式允许我们定义符合\
+  \ `EmailHandler` 接口的独立“处理器”对象。这使我们能够保持每个处理器的独立性和松耦合。\n\n下图显示了该模式：\n\n![](img/00065.jpg)\n\
+  \n图 14.1 : 责任链模式\n\n`IEmailHandler` 是层次结构顶部的接口：\n\n```csharp\npublic interface IEmailHandler\n\
+  {\n    IEmailHandler NextHandler { set; }\n    void ProcessHandler(string email);\n\
+  }\n```\n\n`NextHandler` 设置器接收另一个 `IEmailHandler` 对象作为参数，代表当当前对象无法处理邮件时调用的处理器。\n\n\
+  `ProcessHandler()` 方法接收邮件文本作为参数并判断它是否能够处理（即是否包含我们感兴趣的关键词之一）。如果活动对象可以处理邮件，则进行处理，否则将其转发给链中的下一个。\n\
+  \n`AbstractEmailHandler` 类实现了 `IEmailHandler` 接口以提供有用的默认功能：\n\n```csharp\npublic\
+  \ abstract class AbstractEmailHandler : IEmailHandler\n{\n    private IEmailHandler\
+  \ nextHandler;\n    public virtual IEmailHandler NextHandler\n    {\n        set\n\
+  \        {\n            nextHandler = value;\n        }\n    }\n    public virtual\
+  \ void ProcessHandler(string email)\n    {\n        bool wordFound = false;\n  \
+  \      // 如果没有匹配的词，则此对象可以处理\n        if (MatchingWords().Length == 0)\n        {\n\
+  \            wordFound = true;\n        }\n        else\n        {\n           \
+  \ // 查找任何匹配的词\n            foreach (string word in MatchingWords())\n          \
+  \  {\n                if (email.IndexOf(word) >= 0)\n                {\n       \
+  \             wordFound = true;\n                    break;\n                }\n\
+  \            }\n        }\n    }\n}\n```\n\n\n\n\n\n```csharp\n// Can we handle\
+  \ email in this object?\n        if (wordFound)\n        {\n            HandleHere(email);\n\
+  \        }\n        else\n        {\n            // Unable to handle here so forward\
+  \ to next in chain\n            nextHandler.ProcessHandler(email);\n        }\n\
+  \    }\n    protected internal abstract string[] MatchingWords();\n    protected\
+  \ internal abstract void HandleHere(string email);\n}\n```\n\n`NextHandler` 方法简单地将参数存储在实例变量中；决策过程在\
+  \ `ProcessHandler()` 中完成。该方法利用了两个 `protected` 辅助方法，这些方法必须由具体的子类来实现：\n\n* `MatchingWords()`\
+  \ 将返回一个该处理器感兴趣的字符串对象数组；\n* `HandleHere()` 只在当对象实际上能够处理该邮件时被调用，并包含了所需的代码。\n\n具体子类的实现非常简单：\n\
+  \n```csharp\npublic class SpamEmailHandler : AbstractEmailHandler\n{\n    protected\
+  \ internal override string[] MatchingWords()\n    {\n        return new string[]\
+  \ { \"viagra\", \"pills\", \"medicines\" };\n    }\n    protected internal override\
+  \ void HandleHere(string email)\n    {\n        Console.WriteLine(\"This is a spam\
+  \ email.\");\n    }\n}\n\npublic class SalesEmailHandler : AbstractEmailHandler\n\
+  {\n    protected internal override string[] MatchingWords()\n    {\n        return\
+  \ new string[] { \"buy\", \"purchase\" };\n    }\n    protected internal override\
+  \ void HandleHere(string email)\n    {\n        Console.WriteLine(\"Email handled\
+  \ by sales department.\");\n    }\n}\n\npublic class ServiceEmailHandler : AbstractEmailHandler\n\
+  {\n    protected internal override string[] MatchingWords()\n    {\n        return\
+  \ new string[] { \"service\", \"repair\" };\n    }\n    protected internal override\
+  \ void HandleHere(string email)\n    {\n        Console.WriteLine(\"Email handled\
+  \ by service department.\");\n    }\n}\n\npublic class ManagerEmailHandler : AbstractEmailHandler\n\
+  {\n    protected internal override string[] MatchingWords()\n    {\n        return\
+  \ new string[] { \"complain\", \"bad\" };\n    }\n    protected internal override\
+  \ void HandleHere(string email)\n    {\n        Console.WriteLine(\"Email handled\
+  \ by manager.\");\n    }\n}\n\npublic class GeneralEnquiriesEmailHandler : AbstractEmailHandler\n\
+  {\n    protected internal override string[] MatchingWords()\n    {\n        return\
+  \ new string[0]; // match anything\n    }\n    protected internal override void\
+  \ HandleHere(string email)\n    {\n        Console.WriteLine(\"Email handled by\
+  \ general.\");\n    }\n}\n```\n\n现在我们需要定义处理器被调用的顺序。对于这个示例，在 `AbstractEmailHandler`\
+  \ 中添加了以下 `static` 方法：\n\n```csharp\npublic static void Handle(string email)\n{\n\
+  \    // Create the handler...\n    IEHandler spam = new SpamEmailHandler();\n  \
+  \  IEHandler sales = new SalesEmailHandler();\n    IEHandler service = new ServiceEmailHandler();\n\
+  \    IEHandler manager = new ManagerEmailHandler();\n    IEHandler general = new\
+  \ GeneralEnquiriesEmailHandler();\n    // Chain together...\n    spam.NextHandler\
+  \ = sales;\n    sales.NextHandler = service;\n    service.NextHandler = manager;\n\
+  \    manager.NextHandler = general;\n    // Start the ball...\n    spam.ProcessHandler(email);\n\
+  }\n```\n\n现在将消息传递给处理器变得如此简单：\n\n```csharp\nString email = \"I need my repaired.\"\
+  ;\nAbstractEmailHandler.handle(email);\n```\n\n这应该产生以下输出：Email handled by service\
+  \ department.\n\n### 15. 命令类型：行为型\n\n#### 目的\n将请求封装为对象，从而允许用不同的请求对客户端进行参数化、队列请求并支持撤销的操作。Foobar\
+  \ 公司制造的车辆都安装了收音机；这通过以下 `Radio` 类进行建模：\n\n```csharp\npublic class Radio\n{\n    public\
+  \ const MinVolume = 0;\n    public const MaxVolume = 10;\n    public const DefaultVolume\
+  \ = 5;\n    private bool switchedOn;\n    private int volume;\n    public Radio()\n\
+  \    {\n        switchedOn = false;\n        volume = DefaultVolume;\n    }\n  \
+  \  public virtual bool On\n    {\n        get\n        {\n            return switchedOn;\n\
+  \        }\n    }\n    public virtual int Volume\n    {\n        get\n        {\n\
+  \            return volume;\n        }\n    }\n    public virtual void SwitchOn()\n\
+  \    {\n        switchedOn = true;\n        Console.WriteLine(\"Radio now on, volume\
+  \ level \" + Volume);\n    }\n    public virtual void SwitchOff()\n    {\n     \
+  \   switchedOn = false;\n        Console.WriteLine(\"Radio now off\");\n    }\n\
+  \    public virtual void VolumeUp()\n    {\n        if (On)\n        {\n       \
+  \     if (Volume < MaxVolume)\n            {\n                volume++;\n      \
+  \          Console.WriteLine(\"Volume up to level \" + Volume);\n            }\n\
+  \        }\n    }\n    public virtual void Down()\n    {\n        if (On)\n    \
+  \    {\n            if (Volume > MinVolume)\n            {\n                volume--;\n\
+  \                Console.WriteLine(\"Volume down to level \" + Volume);\n      \
+  \      }\n        }\n    }\n}\n```\n\n如你所示，该类允许收音机的开启和关闭，只要处于开启状态，就可以在 1 到 10 的范围内每次增加或减少一级音量。一些车辆还带有带有简单升降按钮的电动窗户，如下\
+  \ `ElectricWindow` 类所示：\n\n```csharp\npublic class ElectricWindow\n{\n    private\
+  \ bool open;\n    public ElectricWindow()\n    {\n        open = false;\n      \
+  \  Console.WriteLine(\"Window is closed\");\n    }\n    public virtual bool Open\n\
+  \    {\n        get\n        {\n            return open;\n        }\n    }\n   \
+  \ public virtual bool Closed\n    {\n        get\n        {\n            return\
+  \ (!open);\n        }\n    }\n    public virtual void OpenWindow()\n    {\n    \
+  \    if (Closed)\n        {\n            open = true;\n            Console.WriteLine(\"\
+  Window is now open\");\n        }\n    }\n    public virtual void CloseWindow()\n\
+  \    {\n        if (Open)\n        {\n            open = false;\n            Console.WriteLine(\"\
+  Window is now closed\");\n        }\n    }\n}\n```\n\n每个设备（收音机和电动窗户）都有独立的控制按钮（通常是按钮）来管理其状态。但假设\
+  \ Foobar 汽车公司现在希望在其旗舰车型上引入语音识别，并执行以下操作：\n\n* 如果语音识别系统处于“收音机”模式，那么当它听到“向上”或“向下”时，它会调整收音机音量；\n\
+  * 如果语音识别系统处于“窗户”模式，那么当它听到“向上”或“向下”时，它会关闭或打开驾驶员门窗。\n\n因此，我们需要语音识别系统能够处理 `Radio` 对象或\
+  \ `ElectricWindow` 对象，而这些对象处于完全不同的层级结构中。未来，我们可能还希望它处理其他设备，例如车辆速度或变速箱（例如，听到“向上”时，它将增加\
+  \ 1 英里小时的速度，或者切换到下一个更高的档位）。为了良好的面向对象设计，我们需要将语音识别与它控制的设备隔离离开，使其能够处理任何设备而无需直接知道它们是什么。\n\
+  \n\n\n\n命令模式允许我们通过一个被称为“命令对象”的“中间人”对象，将发出请求的对象与接收请求并执行操作的对象解耦。\n\n在最简单的形式下，这我们需要创建一个包含一个方法的接口（我们将其称为\
+  \ `IVoiceCommand`）：\n\n```csharp\npublic interface IVoiceCommand {\n    void Execute();\n\
+  }\n```\n\n现在，我们需要为我们想要执行的每个操作创建实现该接口的类。例如，为了增大收音机的音量，我们可以创建一个 `VolumeUpCommand`\
+  \ 类：\n\n```csharp\npublic class VolumeUpCommand : IVoiceCommand\n{\n    private\
+  \ Radio radio;\n    public VolumeUpCommand(Radio radio)\n    {\n        this.radio\
+  \ = radio;\n    }\n    public virtual void Execute()\n    {\n        radio.VolumeUp();\n\
+  \    }\n}\n```\n\n该类只需在构造函数中获取一个 `Radio` 对象的引用，并在每次调用 `Execute()` 时调用其 `VolumeUp()`\
+  \ 方法。\n\n同样，我们需要在减小音量时创建一个 `VolumeDownCommand` 类：\n\n```csharp\npublic class VolumeDownCommand\
+  \ : IVoiceCommand\n{\n    private Radio radio;\n    public VolumeDownCommand(Radio\
+  \ radio)\n    {\n        this.radio = radio;\n    }\n    public virtual void Execute()\n\
+  \    {\n        window.VolumeDown();\n    }\n}\n```\n\n控制电动窗的上升和下降移动同样简单：这次我们创建实现\
+  \ `IVoiceCommand` 的类，并传入一个 `ElectricWindow` 对象的引用：\n\n```csharp\npublic class WindowUpCommand\
+  \ : IVoiceCommand\n{\n    private ElectricWindow window;\n    public WindowUpCommand(ElectricWindow\
+  \ window)\n    {\n        this.window = window;\n    }\n    public virtual void\
+  \ Execute()\n    {\n        window.CloseWindow();\n    }\n}\n\npublic class WindowDownCommand\
+  \ : IVoiceCommand\n{\n    private ElectricWindow window;\n    public WindowDownCommand(ElectricWindow\
+  \ window)\n    {\n        this.window = window;\n    }\n    public virtual void\
+  \ Execute()\n    {\n        window.OpenWindow();\n    }\n}\n```\n\n现在，我们将定义一个 `SpeechRecogniser`\
+  \ 类，它只认识 `IVoiceCommand` 对象；它对收音机或电动窗一无所知。\n\n```csharp\npublic class SpeechRecogniser\n\
+  {\n    private ICommand upCommand, downCommand;\n    public virtual void SetCommands(ICommand\
+  \ upCommand, ICommand downCommand)\n    {\n        this.upCommand = upCommand;\n\
+  \        this.downCommand = downCommand;\n    }\n    public virtual void HearUpSpoken()\n\
+  \    {\n        upCommand.Execute();\n    }\n    public virtual void HearDownSpoken()\n\
+  \    {\n        downCommand.Execute();\n    }\n}\n```\n\n我们可以通过图表查看我们创建的内容：\n\n\
+  ![](img/00067.jpg)\n\n图 15.1 : 命令模式\n\n客户端程序现在可以创建 `Radio` 和 `ElectricWindow` 实例，以及它们各自\
+  \ `IVoiceCommand` 实例。然后将命令实例传递给 `SpeechRecogniser` 对象，以便它知道该做什么。我们将首先创建一个 `Radio`、一个\
+  \ `ElectricWindow` 以及它们对应的命令：\n\n```csharp\n// 创建一个收音机及其上/下调命令\nRadio radio = new\
+  \ Radio();\nradio.SwitchOn();\nIVoiceCommand volumeUpCommand = new VolumeUpCommand(radio);\n\
+  IVoiceCommand volumeDownCommand = new VolumeDownCommand(radio);\n\n// 创建一个电动窗及其上/下调命令\n\
+  ElectricWindow window = new ElectricWindow();\nIVoiceCommand windowUpCommand = new\
+  \ WindowUpCommand(window);\nIVoiceCommand windowDownCommand = new WindowDownCommand(window);\n\
+  ```\n\n现在创建一个单一的 `SpeechRecogniser` 对象并设置控制收音机：\n\n```csharp\n// 创建一个语音识别对象\nSpeechRecogniser\
+  \ speechRecogniser = new SpeechRecogniser();\n// 控制收音机\nspeechRecogniser.SetCommands(volumeUpCommand,\
+  \ volumeDownCommand);\nConsole.WriteLine(\"Speech recognition controlling the radio\"\
+  );\nspeechRecogniser.HearUpSpoken();\nspeechRecogniser.HearUpSpoken();\nspeechRecogniser.HearDownSpoken();\n\
+  ```\n\n现在设置同一个 `SpeechRecogniser` 对象来控制窗户：\n\n```csharp\n// 控制电动窗\nspeechRecogniser.SetCommands(windowUpCommand,\
+  \ windowDownCommand);\nConsole.WriteLine(\"Speech recognition will control the window\"\
+  );\nspeechRecogniser.HearDownSpoken();\nspeechRecogniser.HearUpSpoken();\n```\n\n\
+  如果你运行上述所有语句，你应该看到类似下面的输出：\n\n```\nRadio now on, volume level 5\nWindow is closed\n\
+  Speech recognition controlling the radio\nVolume turned up to level 6\nVolume turned\
+  \ up to level 7\nVolume turned down to level 7\nSpeech recognition will control\
+  \ the window\nWindow is now open\nWindow is now closed\n```\n\n#### 命令模式的典型用途\n\n\
+  命令模式最常用的领域之一是 UI 工具包。这些工具包提供了预构建的组件，如图形按钮和菜单项，这些组件不可能知道在什么时候需要做什么，因为那始终取决于具体的应用程序。\n\
+  \n图形化应用的另一个常见方面是提供“撤销”机制。命令模式也用于实现这一点；使用本章的示例，我们会在 `IVoiceCommand` 接口中添加如下方法：\n\n\
+  ```csharp\npublic interface IVoiceCommand\n{\n    void Execute();\n    void undo();\n\
+  }\n```\n\n实现类随后提供撤销上一个操作的代码，在本例中为 `VolumeUpCommand` 类：\n\n```csharp\npublic class\
+  \ VolumeUpCommand : IVoiceCommand {\n    private Radio radio;\n    public VolumeUpCommand(Radio\
+  \ r) {\n        radio = r;\n    }\n    public virtual void execute() {\n       \
+  \ radio.VolumeUp();\n    }\n    public virtual void undo() {\n        radio.VolumeDown();\n\
+  \    }\n}\n```\n\n大多数应用程序会比上面的示例复杂一些，因为需要在执行 `Execute()` 方法之前存储对象的状态，以便在调用 `Undo()`\
+  \ 时恢复该状态。\n\n### 16. 解释器\n\n**类型：** 行为\n\n**目的：** 给定一种语言，定义其语法的表示，以及一个使用该表示来解释语言句子的解释器。\n\
+  \n配备在 Foobar Motor 公司车辆上的卫星导航系统有一种特殊功能，允许用户输入多个城市，并让计算最北、最南、最西或最东，取决于输入的命令字符串。示例命令可能如下：\n\
+  \n`london edinburgh manchester southerly`\n\n上述命令将返回“London”，它是这三个城市中最靠南的。你甚至这样输入命令字符串：\n\
+  \n`london edinburgh manchester southerly aberdeen westerly`\n\n这将首先确定伦敦是最靠南的，然后使用该结果（伦敦）并与\
+  \ Aberdeen 进行比较，告诉你哪一个是最靠西的。在每个“northerly”、“southerly”、“westerly”和“easterly”方向命令之前都可以输入任意数量的城市。\n\
+  \n你可以将上述由城市名称和方向关键词组成的命令字符串看作一种简单的“语言”，它由卫星导航软件进行解释。解释器模式是一种有助于解码这类相对简单语言的方法。\n\n\
+  在查看模式本身之前，我们将创建一个名为 `City` 的类，用于建模我们示例中的核心关注点，即城市的名称、经纬度和经度：\n\n```csharp\npublic\
+  \ class City\n{\n    private string name;\n    private double latitude, longitude;\n\
+  \    public City(string name, double latitude, double longitude)\n    {\n      \
+  \  this.name = name;\n        this.latitude = latitude;\n        this.longitude\
+  \ = longitude;\n    }\n}\n```\n\n\n\n\n```csharp\n}\n    public virtual string Name\n\
+  \    {\n        get\n        {\n            return name;\n        }\n    }\n   \
+  \ public virtual double Latitude\n    {\n        get\n        {\n            return\
+  \ latitude;\n        }\n    }\n    public virtual double Longitude\n    {\n    \
+  \    get\n        {\n            return longitude;\n        }\n    }\n    public\
+  \ override bool Equals(object otherObject)\n    {\n        if (this == otherObject)\n\
+  \        {\n            return true;\n        }\n        if (!(otherObject is City))\n\
+  \        {\n            return false;\n        }\n        City otherCity = (City)otherObject;\n\
+  \        return Name.Equals(otherCity.Name);\n    }\n    public override int GetHashCode()\n\
+  \    {\n        return Name.GetHashCode();\n    }\n    public override string ToString()\n\
+  \    {\n        return Name;\n    }\n}\n```\n\n你会注意到，为了简单起见，纬度和经度存储为 `double` 类型。请注意，对于纬度，正值代表北，负值代表南。同样，经度正值代表东，负值代表西。本章的示例仅包含了少数几个英国城市，它们都位于北纬和西经地区，尽管如果你想使用自己的城市，任何城市都可以运行。\n\
+  \n解释该语言的类结构如下：\n\n![](img/00008.jpg)\n\n图 16.1：解释器模式\n\n解释器模式（Interpreter pattern）与组合模式（Composite\
+  \ pattern）相似，它包含一个接口（或抽象类）以及两种类型的具体子类：一种类型表示单个元素，另一种类型表示重复元素。我们为语言中的每种类型的元素创建一个子类。\n\
+  \n`IExpression` 接口非常简单，仅仅声明了一个返回 `City` 对象的 `Interpret()` 方法：\n\n```csharp\npublic\
+  \ interface IExpression\n{\n    City Interpret();\n}\n```\n\n我们将看到的第一个具体子类是 `CityExpression`，它为命令字符串中识别的每个城市名称创建一个该类的实例。此类需要做的的就是存储对\
+  \ `City` 对象的引用，并在调用 `Interpret()` 时返回该对象：\n\n```csharp\npublic class CityExpression\
+  \ : IExpression\n{\n    private City city;\n    public CityExpression(City city)\n\
+  \    {\n        this.city = city;\n    }\n    public virtual City Interpret()\n\
+  \    {\n        return city;\n    }\n}\n```\n\n处理每个命令（例如 \"northerly\"，最靠北）的类要复杂一些：\n\
+  \n```csharp\npublic class MostNortherlyExpression : IExpression\n{\n    private\
+  \ IList<IExpression> expressions;\n    public MostNortherlyExpression(IList<IExpression>\
+  \ expressions)\n    {\n        this.expressions = expressions;\n    }\n    public\
+  \ virtual City Interpret()\n    {\n        City resultingCity = new City(\"Nowhere\"\
+  , -999.9, -999.9);\n        foreach (IExpression currentExpression in expressions)\n\
+  \        {\n            City currentCity = currentExpression.Interpret();\n    \
+  \        if (currentCity.Latitude > resultingCity.Latitude)\n            {\n   \
+  \             resultingCity = currentCity;\n            }\n        }\n        return\
+  \ resultingCity;\n    }\n}\n```\n\n传递给构造函数的 `IExpression` 对象列表类型将是 `CityExpression`。`Interpret()`\
+  \ 方法会遍历这些每个对象以确定最靠北的城市。`MostSoutherlyExpression` 类非常相似，仅更改了比较逻辑：\n\n```csharp\n\
+  public class MostSoutherlyExpression : IExpression\n{\n    private IList<IExpression>\
+  \ expressions;\n    public MostSoutherlyExpression(IList<IExpression> expressions)\n\
+  \    {\n        this.expressions = expressions;\n    }\n    public virtual City\
+  \ Interpret()\n    {\n        City resultingCity = new City(\"Nowhere\", 999.9,\
+  \ 999.9);\n        foreach (IExpression currentExpression in expressions)\n    \
+  \    {\n            City currentCity = currentExpression.Interpret();\n        \
+  \    if (currentCity.Latitude < resultingCity.Latitude)\n            {\n       \
+  \         resultingCity = currentCity;\n            }\n        }\n        return\
+  \ resultingCity;\n    }\n}\n```\n\n同样，`MostWesterlyExpression` 和 `MostEasterlyExpression`\
+  \ 类计算并返回相应的 `City`：\n\n```csharp\npublic class MostWesterlyExpression : IExpression\n\
+  {\n    private IList<IExpression> expressions;\n    public MostWesterlyExpression(IList<IExpression>\
+  \ expressions)\n    {\n        this.expressions = expressions;\n    }\n    public\
+  \ virtual City Interpret()\n    {\n        City resultingCity = new City(\"Nowhere\"\
+  , 999.9, 999.9);\n        foreach (IExpression currentExpression in expressions)\n\
+  \        {\n            City currentCity = currentExpression.Interpret();\n    \
+  \        if (currentCity.Longitude < resultingCity.Longitude)\n            {\n \
+  \               resultingCity = currentCity;\n            }\n        }\n       \
+  \ return resultingCity;\n    }\n}\n\npublic class MostEasterlyExpression : IExpression\n\
+  {\n    private IList<IExpression> expressions;\n    public MostEasterlyExpression(IList<IExpression>\
+  \ expressions)\n    {\n        this.expressions = expressions;\n    }\n    public\
+  \ virtual City Interpret()\n    {\n        City resultingCity = new City(\"Nowhere\"\
+  , -999.9, -999.9);\n        foreach (IExpression currentExpression in expressions)\n\
+  \        {\n            City currentCity = currentExpression.Interpret();\n    \
+  \        if (currentCity.Longitude > resultingCity.Longitude)\n            {\n \
+  \               resultingCity = currentCity;\n            }\n        }\n       \
+  \ return resultingCity;\n    }\n}\n```\n\n虽然解释器模式本身并不涵盖表达式的解析，但在实践中，我们需要定义一个类来遍历命令字符串（例如\
+  \ \"london edinburgh manchester southerly\"），并创建相应的 `IExpression` 类。这些 `IExpression`\
+  \ 类被放置在一个“语法树”中，该树通常使用后入先出（LIFO）栈来实现的。因此，我们将定义一个 `DirectionalEvaluator` 类来执行此解析，并设置英国城市的示例：\n\
+  \n```csharp\npublic class DirectionalEvaluator\n{\n    private IDictionary<string,\
+  \ City> cities;\n    public DirectionalEvaluator()\n    {\n        cities = new\
+  \ Dictionary<string, City>();\n        cities[\"aberdeen\"] = new City(\"Aberdeen\"\
+  , 57.15, -2.15);\n        cities[\"belfast\"] = new City(\"Belfast\", 54.62, -5.93);\n\
+  \        cities[\"birmingham\"] = new City(\"Birmingham\", 52.42, -1.92);\n    \
+  \    cities[\"dublin\"] = new City(\"Dublin\", 53.33, -6.25);\n        cities[\"\
+  edinburgh\"] = new City(\"Edinburgh\", 55.92, -3.02);\n        cities[\"glasgow\"\
+  ] = new City(\"Glasgow\", 55.83, -4.25);\n        cities[\"london\"] = new City(\"\
+  London\", 51.53, -0.08);\n        cities[\"liverpool\"] = new City(\"Liverpool\"\
+  , 53.42, -3.0);\n        cities[\"manchester\"] = new City(\"Manchester\", 53.5,\
+  \ -2.25);\n        cities[\"southampton\"] = new City(\"Southampton\", 50.9, -1.38);\n\
+  \    }\n    public virtual City Evaluate(string route)\n    {\n        // 定义语法树\n\
+  \        Stack<IExpression> expressionStack = new Stack<IExpression>();\n      \
+  \  // 获取每个标记\n        IList<string> tokens = new List<string>();\n        int fromIndex\
+  \ = 0;\n        bool finished = false;\n        while (!finished)\n        {\n \
+  \           int spaceLocation = route.IndexOf(\" \", fromIndex);\n            if\
+  \ (spaceLocation >= 0)\n            {\n                tokens.Add(route.Substring(fromIndex,\
+  \ spaceLocation - fromIndex));\n                fromIndex = spaceLocation + 1;\n\
+  \            }\n            else\n            {\n                tokens.Add(route.Substring(fromIndex));\n\
+  \                finished = true;\n            }\n        }\n    }\n}\n```\n\n\n\
+  \n\n\n```csharp\nfinished = true;\n}\n}\n// 解析路由字符串中的每个 token\nforeach (string token\
+  \ in SplitTokens(route))\n{\n    // token 是否为识别城市？\n    if (cities.ContainsKey(token))\n\
+  \    {\n        City city = cities[token];\n        expressionStack.Push(new CityExpression(city));\n\
+  \        // token 是否用于寻找最北边的？\n    }\n    else if (token.Equals(\"northerly\"))\n\
+  \    {\n        expressionStack.Push(new MostNortherlyExpression(LoadExpressions(expressionStack)));\n\
+  \        // token 是否用于寻找最南边的？\n    }\n    else if (token.Equals(\"southerly\"))\n\
+  \    {\n        expressionStack.Push(new MostSoutherlyExpression(LoadExpressions(expressionStack)));\n\
+  \        // token 是否用于寻找最西边的？\n    }\n    else if (token.Equals(\"westerly\"))\n\
+  \    {\n        expressionStack.Push(new MostWesterlyExpression(LoadExpressions(expressionStack)));\n\
+  \        // token 是否用于寻找最东边的？\n    }\n    else if (token.Equals(\"easterly\"))\n\
+  \    {\n        expressionStack.Push(new MostEasterlyExpression(LoadExpressions(expressionStack)));\n\
+  \    }\n}\n// 结果值\nreturn expressionStack.Pop().Interpret();\n}\n// 从字符串中获取每个独立的\
+  \ token\nprivate IList<string> SplitTokens(string str)\n{\n    IList<string> tokens\
+  \ = new List<string>();\n    int fromIndex = 0;\n    bool finished = false;\n  \
+  \  while (!finished)\n    {\n        int spaceLocation = str.IndexOf(\" \", fromIndex);\n\
+  \        if (spaceLocation >= 0)\n        {\n            tokens.Add(str.Substring(fromIndex,\
+  \ spaceLocation));\n            fromIndex = spaceLocation + 1;\n        }\n    \
+  \    else\n        {\n            tokens.Add(str.Substring(fromIndex));\n      \
+  \      finished = true;\n        }\n    }\n    return tokens;\n}\nprivate IList<IExpression>\
+  \ LoadExpressions(Stack<IExpression> expressionStack)\n{\n    IList<IExpression>\
+  \ expressions = new List<IExpression>();\n    while (expressionStack.Count > 0)\n\
+  \    {\n        expressions.Add(expressionStack.Pop());\n    }\n    return expressions;\n\
+  }\n```\n\n在 `Evaluate()` 方法中，当解析器检测到方向命令（例如 \"northerly\"）时，它会移除栈中的城市并将它们与命令一起传递给栈。\n\
+  \n请注意，上述使用的 `if...else...` 语句仅仅是为了让本章节集中于 `Interpreter` 模式。更好的方法是使用单独模式模式处理每个 token，如\
+  \ `Chain of Responsibility` 模式定义的那样。\n\n现在剩下的就是让我们的客户端程序利用 `DirectionalEvaluator`\
+  \ 并传递要解释的命令了：\n\n```csharp\n// 创建评估器\nDirectionalEvaluator evaluator = new DirectionalEvaluator();\n\
+  // 这应该输出 \"London\"...\nConsole.WriteLine(evaluator.evaluate(\"london edinburgh\
+  \ manchester southerly\"));\n// 这应该输出 \"Aberdeen\"...\nConsole.WriteLine(evaluator.evaluate(\"\
+  london edinburgh manchester southerly aberdeen westerly\"));\nConsole.Read();\n\
+  ```\n\n17. 迭代器 (Iterator)\n\n**类型：** 行为型 (Behavioural)\n\n**目的：** 提供一种顺序访问聚合对象元素的方法，而不暴露其底层表示形式。\n\
+  \nFoobar 汽车公司想要制作一份列出其销售车辆范围的小册，并将此任务分配给两个不同的程序员，一个提供汽车系列，另一个一个提供货车系列。\n\n编写 `CarRange`\
+  \ 类的程序员决定在内部使用 `IList` 对象存储范围：\n\n```csharp\npublic class CarRange\n{\n    private\
+  \ IList<IVehicle> cars;\n    public CarRange()\n    {\n        cars = new List<IVehicle>();\n\
+  \        // 定义可用的车型范围\n        cars.Add(new Saloon(new StandardEngine(1300)));\n\
+  \        cars.Add(new Saloon(new StandardEngine(1600)));\n        cars.Add(new Coupe(new\
+  \ StandardEngine(2000)));\n        cars.Add(new Sport(new TurboEngine(2500)));\n\
+  \    }\n    public virtual IList<IVehicle> Range\n    {\n        get\n        {\n\
+  \            return cars;\n        }\n    }\n}\n```\n\n从上面可以看出，该程序员提供了一个返回 `IList`\
+  \ 集合对象的 `Range` 访问器。\n\n另一个程序员在编写 `VanRange` 类时决定用数组存储货车，因此他的 `Range` 访问器返回一个数组：\n\
+  \n```csharp\npublic class VanRange\n{\n    private IVehicle[] vans;\n    public\
+  \ VanRange()\n    {\n        vans = new IVehicle[3];\n        // 定义可用的货车范围\n   \
+  \     vans[0] = new BoxVan(new StandardEngine(1300));\n        vans[1] = new BoxVan(new\
+  \ StandardEngine(1600));\n        vans[2] = new Pickup(new TurboEngine(2500));\n\
+  \    }\n    public virtual IVehicle[] Range\n    {\n        get\n        {\n   \
+  \         return vans;\n        }\n    }\n}\n```\n\n这种方法的问题是两个类中的内部表示都被暴露了。更好的方法是让\
+  \ `CarRange` 和 `VanRange` 类都提供一个 `GetEnumerator()` 方法，这样在保持一致性的同时，就不需要暴露内部表示。\n\n\
+  对于 `CarRange`，额外的方法如下：\n\n```csharp\npublic IEnumerator<IVehicle> GetEnumerator()\n\
+  {\n    return cars.GetEnumerator();\n}\n```\n\n对于 `VanRange`，额外的方法需要从数组转换：\n\n```csharp\n\
+  public IEnumerator<IVehicle> GetEnumerator()\n{\n    return ((IEnumerable<IVehicle>)vans).GetEnumerator();\n\
+  }\n```\n\n现在我们可以用一致的方式处理汽车和货车：\n\n```csharp\nConsole.WriteLine(\"=== Our Cars=\"\
+  );\nCarRange carRange = new CarRange();\nPrintIterator(carRange.GetEnumerator());\n\
+  Console.WriteLine(\"=== Our Vans=\");\nVanRange vanRange = new VanRange();\nPrintIterator(vanRange.GetEnumerator());\n\
+  ```\n\n```csharp\nprivate static void PrintIterator(IEnumerator iter)\n{\n    while\
+  \ (iter.MoveNext())\n    {\n        Console.WriteLine(iter.Current);\n    }\n}\n\
+  ```\n\n'foreach' 循环\n\n书中的其他章节章节使用了 `foreach` 语句，为上述操作提供了一种整洁的替代方案，如下：\n\n```csharp\n\
+  Console.WriteLine(\"=== Our Cars=\");\nCarRange carRange = new CarRange();\nforeach\
+  \ (IVehicle currentVehicle in carRange.Range)\n{\n    Console.WriteLine(currentVehicle);\n\
+  }\nConsole.WriteLine(\"=== Our Vans=\");\nVanRange vanRange = new VanRange();\n\
+  foreach (IVehicle currentVehicle in vanRange.Range)\n{\n    Console.WriteLine(currentVehicle);\n\
+  }\n```\n\n18. 中介者 (Mediator)\n\n**类型：** 行为型 (Behavioural)\n\n**目的：** 定义一个封装一组对象如何交互的对象。中介者通过防止对象之间进行显式的相互引用来促进松耦合，并允许你独立地改变它们的交互方式。\n\
+  \nFoobar 汽车公司展望未来车辆可以自动驾驶。这当然涉及到各种组件（点火、变速箱、加速器和刹车等）被共同控制并以各种方式交互。例如：\n\n*   在点火之前，变速箱、加速器和刹车不工作（我们假设手刹已生效）；\n\
+  *   当加速时，应禁用刹车；\n*   当刹车时，应禁用加速器；\n*   根据车辆速度挂入合适的挡位。\n\n\n\n\n这一切都应该自动发生，这样驾驶员就可以尽情欣赏！（我们假设车辆可以感知自己的位置以避免碰撞等）。\n\
+  \n我们自然会创建一些类来建模单个组件，因此将会有一个 `Ignition`（点火）类、`Gearbox`（变速箱）类、`Accelerator`（油门）类和一个\
+  \ `Brake`（刹车）类。但我们也看到它们之间存在一些复杂的相互作用，而我们的面向对象的设计原则之一就是保持类之间的松耦合。\n\n中者模式通过定义一个独立的类（中者）来帮助解决这个问题，该中者了解各个组件类，并负责管理它们之间的相互作用。每个组件类也知道中者类，但这是它们之间唯一的耦合。在示例中，我们将中者类命名为\
+  \ `EngineManagementSystem`（发动机管理系统）。\n\n我们可以通过下面的图示看到这些连接：\n\n![](img/00010.jpg)\n\
+  \n图 18.1：中者模式\n\n双向通信是通过每个组件类的构造函数实现的，每个构造函数都接受一个中者对象的引用（这样它们就可以向其发送消息），并向中者注册自身（这样它们就可以从中者接收消息）。但每个组件类对任何其他组件类一无知；它们只知道中者。\n\
+  \n我们可以通过查看 `Ignition` 类看到这一点：\n\n```csharp\npublic class Ignition\n{\n    private\
+  \ EngineManagementSystem mediator;\n    private bool on;\n    // 构造函数接受中者作为参数\n\
+  \    public Ignition(EngineManagementSystem mediator)\n    {\n        this.mediator\
+  \ = mediator;\n        on = false;\n        // 向中者注册；\n        mediator.RegisterIgnition(this);\n\
+  \    }\n    public virtual void Start()\n    {\n        on = true;\n        mediator.IgnitionTurnedOn();\n\
+  \        Console.WriteLine(\"Ignition turned on\");\n    }\n    public virtual void\
+  \ Stop()\n    {\n        on = false;\n        mediator.IgnitionTurnedOff();\n  \
+  \      Console.WriteLine(\"Ignition turned off\");\n    }\n    public virtual bool\
+  \ On\n    {\n        get\n        {\n            return on;\n        }\n    }\n\
+  }\n```\n\n注意构造函数是如何建立双向通信的，以及执行事件的方法是如何通知中者这些事件的。\n\n`Gearbox` 类应用了相同的原理：\n\n```csharp\n\
+  public class Gearbox\n{\n    private EngineManagementSystem mediator;\n    private\
+  \ bool enabled;\n    private Gear currentGear;\n    // 构造函数接受中者作为参数\n    public\
+  \ Gearbox(EngineManagementSystem mediator)\n    {\n        this.mediator = mediator;\n\
+  \        enabled = false;\n        currentGear = Gear.Neutral;\n        mediator.RegisterGearbox(this);\n\
+  \    }\n    public virtual void Enable()\n    {\n        enabled = true;\n     \
+  \   mediator.GearboxEnabled();\n        Console.WriteLine(\"Gearbox enabled\");\n\
+  \    }\n    public virtual void Disable()\n    {\n        enabled = false;\n   \
+  \     mediator.GearboxDisabled();\n        Console.WriteLine(\"Gearbox disabled\"\
+  );\n    }\n    public virtual bool Enabled\n    {\n        get\n        {\n    \
+  \        return enabled;\n        }\n    }\n    public virtual Gear Gear\n    {\n\
+  \        set\n        {\n            if (Enabled && (Gear != value))\n         \
+  \   {\n                currentGear = value;\n                mediator.GearChanged();\n\
+  \                Console.WriteLine(\"Now \" + Gear + \" gear\");\n            }\n\
+  \        }\n        get\n        {\n            return currentGear;\n        }\n\
+  \    }\n}\n```\n\n`Gearbox` 使用的 `Gear` `enum` 如下：\n\n```csharp\npublic enum Gear\n\
+  {\n    Neutral,\n    First,\n    Second,\n    Third,\n    Fourth,\n    Fifth,\n\
+  \    Reverse\n}\n```\n\n`Accelerator` 和 `Brake` 类遵循相似的过程：\n\n```csharp\npublic class\
+  \ Accelerator\n{\n    private EngineManagementSystem mediator;\n    private bool\
+  \ enabled;\n    private int speed;\n    // 构造函数接受中者作为参数\n    public Accelerator(EngineManagementSystem\
+  \ mediator)\n    {\n        this.mediator = mediator;\n        enabled = false;\n\
+  \        speed = 0;\n        mediator.RegisterAccelerator(this);\n    }\n    public\
+  \ virtual void Enable()\n    {\n        enabled = true;\n        mediator.AcceleratorEnabled();\n\
+  \        Console.WriteLine(\"Accelerator enabled\");\n    }\n    public virtual\
+  \ void Disable()\n    {\n        enabled = false;\n        mediator.AcceleratorDisabled();\n\
+  \        Console.WriteLine(\"Accelerator disabled\");\n    }\n    public virtual\
+  \ bool Enabled\n    {\n        get\n        {\n            return enabled;\n   \
+  \     }\n    }\n    public virtual void AccelerateToSpeed(int speed)\n    {\n  \
+  \      if (Enabled)\n        {\n            this.speed = speed;\n            Console.WriteLine(\"\
+  Speed now \" + Speed);\n        }\n    }\n    public virtual int Speed\n    {\n\
+  \        get\n        {\n            return speed;\n        }\n    }\n}\n```\n\n\
+  ```csharp\npublic class Brake\n{\n    private EngineManagementSystem mediator;\n\
+  \    private bool enabled;\n    private bool applied;\n    // 构造函数接受中者作为参数\n   \
+  \ public Brake(EngineManagementSystem mediator)\n    {\n        this.mediator =\
+  \ mediator;\n        enabled = false;\n        applied = false;\n        mediator.RegisterBrake(this);\n\
+  \    }\n    public virtual void Enable()\n    {\n        enabled = true;\n     \
+  \   mediator.BrakeEnabled();\n        Console.WriteLine(\"Brakes\");\n    }\n  \
+  \  public virtual void Disable()\n    {\n        enabled = false;\n        mediator.BrakeDisabled();\n\
+  \        Console.WriteLine(\"Brakes\");\n    }\n    public virtual bool Enabled\n\
+  \    {\n        get\n        {\n            return enabled;\n        }\n    }\n\
+  \    public virtual void Apply()\n    {\n        if (Enabled)\n        {\n     \
+  \       applied = true;\n            mediator.BrakePressed();\n            Console.WriteLine(\"\
+  Now braking\");\n        }\n    }\n    private void Release()\n    {\n        if\
+  \ (Enabled)\n        {\n            applied = false;\n        }\n    }\n}\n```\n\
+  \n现在我们需要 `EngineManagementSystem` 类来担任中者。它将持有每个组件类的引用，并带有允许与中者注册的方法。它还有处理各个组件发生特定事件时的相互作用的方法：\n\
+  \n```csharp\npublic class EngineManagementSystem\n{\n    private Ignition ignition;\n\
+  \    private Gearbox gearbox;\n    private Accelerator accelerator;\n    private\
+  \ Brake brake;\n    private int currentSpeed;\n    public EngineManagementSystem()\n\
+  \    {\n        currentSpeed = 0;\n    }\n    // 与中者注册的方法\n    public virtual void\
+  \ RegisterIgnition(Ignition ignition)\n    {\n        this.ignition = ignition;\n\
+  \    }\n    public virtual void RegisterGearbox(Gearbox gearbox)\n    {\n      \
+  \  this.gearbox = gearbox;\n    }\n    public virtual void RegisterAccelerator(Accelerator\
+  \ accelerator)\n    {\n        this.accelerator = accelerator;\n    }\n    public\
+  \ virtual void RegisterBrake(Brake brake)\n    {\n        this.brake = brake;\n\
+  \    }\n    // 处理对象相互作用的方法\n    public virtual void IgnitionTurnedOn()\n    {\n\
+  \        gearbox.Enable();\n        accelerator.Enable();\n        brake.Enable();\n\
+  \    }\n    public virtual void IgnitionTurnedOff()\n    {\n        gearbox.Disable();\n\
+  \        accelerator.Disable();\n        brake.Disable();\n    }\n    public virtual\
+  \ void GearboxEnabled()\n    {\n    }\n}\n```\n\n\n\n\n```csharp\nConsole.WriteLine(\"\
+  EMS now controlling the gearbox\");\n}\n\npublic virtual void GearboxDisabled()\n\
+  {\n    Console.WriteLine(\"EMS no longer controlling the gearbox\");\n}\n\npublic\
+  \ virtual void GearChanged()\n{\n    Console.WriteLine(\"EMS disengaging revs while\
+  \ gear changing\");\n}\n\npublic virtual void AcceleratorEnabled()\n{\n    Console.WriteLine(\"\
+  EMS now controlling the accelerator\");\n}\n\npublic virtual void AcceleratorDisabled()\n\
+  {\n    Console.WriteLine(\"EMS no longer controlling the accelerator\");\n}\n\n\
+  public virtual void AcceleratorPressed()\n{\n    brake.Disable();\n    while (currentSpeed\
+  \ < accelerator.Speed)\n    {\n        currentSpeed++;\n        Console.WriteLine(\"\
+  Speed currentlt \" + currentSpeed);\n        // 根据速度设置档位\n        if (currentSpeed\
+  \ <= 10)\n        {\n            gearbox.Gear = Gear.First;\n        }\n       \
+  \ else if (currentSpeed <= 20)\n        {\n            gearbox.Gear = Gear.Second;\n\
+  \        }\n        else if (currentSpeed <= 30)\n        {\n            gearbox.Gear\
+  \ = Gear.Third;\n        }\n        else if (currentSpeed <= 50)\n        {\n  \
+  \          gearbox.Gear = Gear.Fourth;\n        }\n        else\n        {\n   \
+  \         gearbox.Gear = Gear.Fifth;\n        }\n    }\n    brake.Enable();\n}\n\
+  \npublic virtual void BrakeEnabled()\n{\n    Console.WriteLine(\"EMS now controlling\
+  \ the brake\");\n}\n\npublic virtual void BrakeDisabled()\n{\n    Console.WriteLine(\"\
+  EMS no longer controlling the brake\");\n}\n\npublic virtual void BrakePressed()\n\
+  {\n    accelerator.Disable();\n    currentSpeed = 0;\n}\n\npublic virtual void BrakeReleased()\n\
+  {\n    box.Gear = Gear.First;\n    accelerator.Enable();\n}\n```\n\n#### 常见用途\n\n\
+  `Mediator`（中介者）模式的一种常见用途是管理对话框上图形组件之间的交互。这通常涉及按钮、文本字段等何时应该启用或禁用，或者在组件之间传递数据。请注意，可能可以使用\
+  \ `Observer`（观察者）模式代替 `Mediator` 来进一步降低耦合性。这意味着组件类（例如 `Ignition` 等）不需要持有对中介者的引用，而是触发事件。那么，`EngineSystem`\
+  \ 类将成为组件类的观察者，并能够在它们上调用消息。\n\n# 19. 备 emento（备录者模式）\n\n**类型**：行为型（Behavioral）\n\n\
+  **目的**：在不违反封装性的情况下，捕获并外部化对象的内部状态，以便稍后恢复。\n\nFoobar 公司的车辆在仪表盘上自然安装有一个速度表，它不仅记录当前速度，还记录之前的速度。现在需要将状态存储在外部（例如可以将其集成到货车的记录仪中）。然而，`Speedometer`\
+  \ 类中的一个实例变量没有访问器（getter）；为了遵守封装和数据隐藏，它被正确地声明为 `private`。我们还希望遵循一个类不应承担多个职责的原则，因此我们不想在类中内置状态保存机制。我们该如何捕获对象的状态呢？\n\
+  \n本章将介绍两种方法，每种方法都有优缺点。在两种情况下，我们都使用一个独立的类来执行状态保存，我们将其命名为 `SpeedometerMemento`。该类接收需要外部化的\
+  \ `Speedometer` 对象的引用：\n\n![](img/00013.jpg)\n\n图 19.1：Memento 模式\n\n#### 方法 1：使用内部可见性（internal\
+  \ visibility）\n\n当指定访问修饰符 `internal` 时，意味着它仅对同一程序集中的类可见。因此，我们可以将 `Speedometer` 类及其相关的备录类放在它们自己的程序集中，并将后者命名为\
+  \ `SpeedometerMemento`。\n\n这是简单的 `Speedometer` 类：\n\n```csharp\nnamespace AssemblyNamespace\n\
+  {\n    public class Speedometer\n    {\n        // 正常的私有可见性，但有访问方法...\n        private\
+  \ int currentSpeed;\n        // 内部可见性且没有访问方法...\n        internal int previousSpeed;\n\
+  \n        public Speedometer()\n        {\n            currentSpeed = 0;\n     \
+  \       previousSpeed = 0;\n        }\n\n        public virtual int CurrentSpeed\n\
+  \        {\n            set\n            {\n                previousSpeed = currentSpeed;\n\
+  \                currentSpeed = value;\n            }\n        }\n    }\n}\n```\n\
+  \n`SpeedometerMemento` 类存在于同一个程序集中。它保存 `Speedometer` 对象的状态：\n\n```csharp\nnamespace\
+  \ AssemblyNamespace\n{\n    internal class SpeedometerMemento\n    {\n        public\
+  \ int currentSpeed;\n        public int previousSpeed;\n\n        public SpeedometerMemento(Speedometer\
+  \ speedometer)\n        {\n            this.currentSpeed = speedometer.CurrentSpeed;\n\
+  \            this.previousSpeed = speedometer.previousSpeed;\n        }\n\n    \
+  \    public void Restore(Speedometer speedometer)\n        {\n            speedometer.CurrentSpeed\
+  \ = this.currentSpeed;\n            // 注意：previousSpeed 是内部的，因此在这里可以访问\n       \
+  \ }\n    }\n}\n```\n\n\n\n\n\n```cs\npublic class Speedometer\n{\n    private int\
+  \ currentSpeed;\n    private int previousSpeed;\n    public Speedometer() {\n  \
+  \      currentSpeed = 0;\n        previousSpeed = 0;\n    }\n    public virtual\
+  \ int CurrentSpeed {\n        set {\n            previousSpeed = currentSpeed;\n\
+  \            currentSpeed = value;\n        }\n        get\n        {\n        \
+  \    return currentSpeed;\n        }\n    }\n    // Only defined to help testing...\n\
+  \    public virtual int PreviousSpeed {\n        get\n        {\n            return\
+  \ previousSpeed;\n        }\n    }\n}\n```\n\n`SpeedometerMemento` 类现在使用对象序列化来实现状态保存和恢复：\n\
+  \n```cs\npublic class SpeedometerMemento\n{\n    public SpeedometerMemento(Speedometer\
+  \ speedometer)\n    {\n        // Serialize...\n        Stream stream = File.Open(\"\
+  speedometer.ser\", FileMode.Create);\n        BinaryFormatter formatter = new BinaryFormatter();\n\
+  \        formatter.Serialize(stream, speedometer);\n        stream.Close();\n  \
+  \  }\n    public virtual Speedometer RestoreState()\n    {\n        // Deserialize...\n\
+  \        Speedometer speedo;\n        Stream stream = File.Open(\"speedometer.ser\"\
+  , FileMode.Open);\n        BinaryFormatter formatter = new BinaryFormatter();\n\
+  \        speedo = (Speedometer)formatter.Deserialize(stream);\n        stream.Close();\n\
+  \        return speedo;\n    }\n}\n```\n\n我们可以检查发现这与第一种方法相同，唯一的区别是 `RestoreState()`\
+  \ 方法现在返回恢复后的对象引用：\n\n```cs\nSpeedometer speedo = new Speedometer();\nspeedo.CurrentSpeed\
+  \ = 50;\nspeedo.CurrentSpeed = 100;\nConsole.WriteLine(\"Current speed: \" + speedo.CurrentSpeed);\n\
+  Console.WriteLine(\"Previous speed: \" + speedo.previousSpeed);\n// Save the state\
+  \ of 'speedo'...\nSpeedometerMemento memento = new SpeedometerMemento(speedo);\n\
+  // Change the state of 'speedo'...\nspeedo.CurrentSpeed = 80;\nConsole.WriteLine(\"\
+  After setting to 80...\");\nConsole.WriteLine(\"Current speed: \" + speedo.CurrentSpeed);\n\
+  Console.WriteLine(\"Previous speed: \" + speedo.previousSpeed);\n// Restore the\
+  \ state of 'speedo'...\nConsole.WriteLine(\"Now restoring state...\");\nspeedo =\
+  \ memento.RestoreState();\nConsole.WriteLine(\"Current speed: \" + speedo.CurrentSpeed);\n\
+  Console.WriteLine(\"Previous speed: \" + speedo.previousSpeed);\n```\n\n运行上述代码得到的输出与第一种方法相同。这种方法的主要缺点是向磁盘文件写入和从文件中读取的速度要慢得多。请注意，虽然我们能够再次将所有字段设为\
+  \ `private`，但获取了序列化文件的人仍然可能使用十六进制编辑器来更改数据。\n\n### 20. 观察者模式 (Observer)\n\n类型：行为型\n\
+  \n目的：在对象之间定义一种一对多的依赖关系，当一个对象的状态发生变化时，所有依赖者都会自动更新。Foobar 公司决定，每当超过特定速度时，应该向驾驶员发出警报。他们预计根据当前速度可能还需要发生其他事情（例如自动变速箱选择合适的挡位）。但他们意识到需要保持对象的松散耦合，因此自然不希望\
+  \ `Speedometer` 类对监视器或变速箱（或其他任何对行驶速度感兴趣的类）有直接了解。观察者模式允许在“主体”（感兴趣的对象；我们的示例中为 `Speedometer`）和它的“观察者”（在发生事情时需要通知的任何其他类）之间建立松散耦合。由于这是面向对象系统中非常常见的需求，C#\
+  \ 库包含了能够实现该模式的机制。其中之一是利用 `EventHandler` 类：“主体”（`Speedometer`）可以有多个观察者，每当发生事件时，每个观察者都会收到通知。`Speedometer`\
+  \ 类如下所示：\n\n```cs\npublic class Speedometer\n{\n    public EventHandler ValueChanged;\n\
+  \    private int currentSpeed;\n    public Speedometer()\n    {\n        speed =\
+  \ 0;\n    }\n    public virtual int CurrentSpeed\n    {\n        set\n        {\n\
+  \            currentSpeed = value;\n            // 告诉所有观察者，让他们知道值已经改变了...\n    \
+  \        OnValueChanged();\n        }\n        get\n        {\n            return\
+  \ currentSpeed;\n        }\n    }\n    protected void OnValueChanged()\n    {\n\
+  \        if (ValueChanged != null)\n        {\n            ValueChanged(this, EventArgs.Empty);\n\
+  \        }\n    }\n}\n```\n\n`SpeedMonitor` 类使用了 `ValueChanged`：\n\n```cs\npublic\
+  \ class SpeedMonitor\n{\n    public const int SpeedToAlert = 70;\n    public SpeedMonitor(Speedometer\
+  \ speedo)\n    {\n        speedo.ValueChanged += ValueHasChanged;\n    }\n    private\
+  \ void ValueHasChanged(object sender, EventArgs e )\n    {\n        Speedometer\
+  \ speedo = (Speedometer)sender;\n        if (speedo.CurrentSpeed > SpeedToAlert)\n\
+  \        {\n            Console.WriteLine(\"** 警报 ** 速度太快了！ (\" + speedo.CurrentSpeed\
+  \ + \")\");\n        }\n        else\n        {\n            Console.WriteLine(\"\
+  ... 平稳运行 ... (\" + speedo.CurrentSpeed + \")\");\n        }\n    }\n}\n```\n\n客户端程序只需将\
+  \ `SpeedMonitor` 引用传递给 `Speedometer` 实例：\n\n```cs\n// 创建一个速度表......\nSpeedometer\
+  \ speedo = new Speedometer();\n// 创建一个监视器...\nSpeedMonitor monitor = new SpeedMonitor(speedo);\n\
+  // 以不同的速度行驶...\nspeedo.CurrentSpeed = 50;\nspeedo.CurrentSpeed = 70;\nspeedo.CurrentSpeed\
+  \ = 40;\nspeedo.CurrentSpeed = 100;\nspeedo.CurrentSpeed = 69;\n```\n\n运行上述代码将得到以下输出：\n\
+  ... 平稳运行 ... (50)\n** 警报 ** 速度太快了！ (70)\n... 平稳运行 ... (40)\n** 警报 ** 速度太快了！ (100)\n\
+  ... 平稳运行 ... (69)\n\n观察者模式真正的威力在于，任何类型的类只要实现了 `Observer` 接口现在都可以成为监视器，而无需对 `Speedometer`\
+  \ 进行任何修改。让我们创建一个自动变速箱的模拟：\n\n```cs\npublic class AutomaticGearbox\n{\n    public\
+  \ AutomaticGearbox(Speedometer speedo)\n    {\n        speedo.ValueChanged += ValueHasChanged;\n\
+  \    }\n    private void ValueHasChanged(object sender, EventArgs e )\n    {\n \
+  \       Speedometer speedo = (Speedometer)sender;\n        if (speedo.CurrentSpeed\
+  \ <= 10)\n        {\n            Console.WriteLine(\"进入一挡\");\n        }\n     \
+  \   else if (speedo.CurrentSpeed <= 20)\n        {\n            Console.WriteLine(\"\
+  进入二挡\");\n        }\n        else if (speedo.CurrentSpeed <= 30)\n        {\n  \
+  \          Console.WriteLine(\"进入三挡\");\n        }\n        else\n        {\n  \
+  \          Console.WriteLine(\"进入四挡\");\n        }\n    }\n}\n```\n\n我们的客户端程序现在只需只需将其添加为额外的观察者，并同样获得速度变化的通知：\n\
+  \n`AutomaticGearbox auto = new AutomaticGearbox(speedo);`\n\n### 21. 状态模式 (State)\n\
+  \n类型：行为型\n\n目的：允许对象在其内部状态发生变化时改变其行为。对象看起来改变了它的类。\n\n\n\n\nFoobar 汽车公司的每辆车都配备了数字时钟，显示当前的日期和时间。这些值需要经常重置（例如在更换电池后），通过仪表盘上的特定旋钮来实现。当首次按下旋钮时，可以设置“年份”值。向左旋转旋钮（即逆时针方向）会显示上一个年份，而向右旋转则向向前一年。当再次按下旋钮时，年份值变为“已设置”，随后设置过程会自动允许设置“月份”值，同样通过通过旋钮进行适当的向左或右移动来实现。\n\
+  \n这一过程持续日期、小时和分钟。以下是事件流程的总结：\n\n*   当首次按下旋钮时，时钟进入设置年份的“设置”模式；\n*   如果向左旋转旋钮，则年份值减\
+  \ 1；\n*   如果向右旋转旋钮，则年份值加 1；\n*   当按下旋钮时，年份变为已设置，时钟进入设置月份的“设置”模式；\n*   如果向左旋转旋钮，则月份值减\
+  \ 1；\n*   如果向右旋转旋钮，则月份值加 1；\n*   当按下旋钮时，月份变为已设置，时钟进入设置日期的“设置”模式；\n*   如果向左旋转旋钮，则日期值减\
+  \ 1；\n*   如果向右旋转旋钮，则日期值加 1；\n*   当按下旋钮时，日期变为已设置，时钟进入设置小时的“设置”模式；\n*   如果向左旋转旋钮，则小时值减\
+  \ 1；\n*   如果向右旋转旋钮，则小时值加 1；\n*   当按下旋钮时，小时变为已设置，时钟进入设置分钟的“设置”模式；\n*   如果向左旋转旋钮，则分钟值减\
+  \ 1；\n*   如果向右旋转旋钮，则分钟值加 1；\n*   当按下旋钮时，分钟变为已设置，时钟进入“完成设置”模式；\n*   如果再次按下旋钮，则显示完整的选定日期和时间。\n\
+  \n从上述步骤可以清楚，当旋转或按下旋钮时，日期和时间的不同部分会被设置，并且这些部分之间存在转换。在编写类来实现此功能时，一种简单的方法是使用一个`mode`变量并在每个方法中使用一系列\
+  \ `if...else...` 语句，看起来可能如下：\n\n```csharp\n// 不要这样做！ \n\npublic void RotateKnobLeft()\n\
+  {\n    if (mode == YearMode)\n    {\n        year--;\n    }\n    else if (mode ==\
+  \ MonthMode)\n    {\n        month--;\n    }\n    else if (mode == DayMode)\n  \
+  \  {\n        day--;\n    }\n    else if (mode == HourMode)\n    {\n        hour--;\n\
+  \    }\n    else if (mode == MinuteMode)\n    {\n        minute--;\n    }\n}\n```\n\
+  \n上述代码的问题在于，`if...else...` 条件必须在每个动作方法中（例如 ` `RotateKnobRight()`、`PushKnob()` 等）重复出现。除了让代码看起来臃肿之外，它也难以维护，因为如果我们现在需要记录秒，就需要修改类的多个部分。\n\
+  \n状态模式允许建立一个层级结构，允许实现我们时钟设置示例所需的状态转换。我们将创建一个 `ClockSetup` 类，通过接口 `IClockSetupState`\
+  \ 初始化状态，该接口为每个单独的状态都有实现类：\n\n![](img/00015.jpg)\n\n图 21.1：状态模式\n\n`IClockSetupState`\
+  \ 接口定义了处理状态更改的方法，以及可以提供用户指令并返回实际选择值的方法：\n\n```csharp\npublic interface IClockSetupState\n\
+  {\n    void PreviousValue();\n    void NextValue();\n    void SelectValue();\n \
+  \   string Instructions { get; }\n    int SelectedValue { get; }\n}\n```\n\n首先查看\
+  \ `YearSetupState`，你会注意到它在构造函数中接收一个 `ClockSetup` 对象的引用（在设计模式语言中被称为其“上下文”），并管理年份的设置。特别注意\
+  \ `SelectValue()` 方法中它是如何内部转换到不同状态的：\n\n```csharp\nclass YearSetupState : ClockSetup\n\
+  {\n    private ClockSetup clockSetup;\n    private int year;\n    public YearSetupState(ClockSetup\
+  \ clockSetup)\n    {\n        this.clockSetup = clockSetup;\n        year = DateTime.Now.Year;\n\
+  \    }\n    public virtual void PreviousValue()\n    {\n        year--;\n    }\n\
+  \    public virtual void NextValue()\n    {\n        year++;\n    }\n    public\
+  \ virtual void SelectValue()\n    {\n        Console.WriteLine(\"Year to \" + year);\n\
+  \        clockSetup.State = clockSetup.MonthState;\n    }\n    public virtual string\
+  \ Instructions\n    {\n        get\n        {\n            return \"Please set the\
+  \ year...\";\n        }\n    }\n    public virtual int SelectedValue\n    {\n  \
+  \      get\n        {\n            return year;\n        }\n    }\n}\n```\n\n其他的日期和时间状态遵循类似的过程，每个在需要时转换到下一个状态：\n\
+  \n```csharp\nclass MonthSetupState : ClockSetup\n{\n    private ClockSetup clockSetup;\n\
+  \    private int month;\n    public MonthSetupState(ClockSetup clockSetup)\n   \
+  \ {\n        this.clockSetup = clockSetup;\n        month = DateTime.Now.Month;\n\
+  \    }\n    public virtual void PreviousValue()\n    {\n        if (month > 1)\n\
+  \        {\n            month--;\n        }\n    }\n    public virtual void NextValue()\n\
+  \    {\n        if (month < 12)\n        {\n            month++;\n        }\n  \
+  \  }\n    public virtual void SelectValue()\n    {\n        Console.WriteLine(\"\
+  Month set to \" + month);\n        clockSetup.State = clockSetup.DayState;\n   \
+  \ }\n    public virtual string Instructions\n    {\n        get\n        {\n   \
+  \         return \"Please set the month...\";\n        }\n    }\n    public virtual\
+  \ int SelectedValue\n    {\n        get\n        {\n            return month;\n\
+  \        }\n    }\n}\n\nclass DaySetupState : ClockSetup\n{\n    private ClockSetup\
+  \ clockSetup;\n    private int day;\n    public DaySetupState(ClockSetup clockSetup)\n\
+  \    {\n        this.clockSetup = clockSetup;\n        day = DateTime.Now.Day;\n\
+  \    }\n    public virtual void PreviousValue()\n    {\n        if (day > 1)\n \
+  \       {\n            day--;\n        }\n    }\n    public virtual void NextValue()\n\
+  \    {\n        if (day < System.DateTime.DaysInMonth(new DateTime().Year, new DateTime().Month))\n\
+  \        {\n            day++;\n        }\n    }\n    public virtual void SelectValue()\n\
+  \    {\n        Console.WriteLine(\"Day set to \" + day);\n        clockSetup.State\
+  \ = clockSetup.HourSetupState;\n    }\n    public virtual string Instructions\n\
+  \    {\n        get\n        {\n            return \"Please set the day...\";\n\
+  \        }\n    }\n    public virtual int SelectedValue\n    {\n        get\n  \
+  \      {\n            return day;\n        }\n    }\n}\n\nclass HourSetupState :\
+  \ ClockSetup\n{\n    private ClockSetup clockSetup;\n    private int hour;\n   \
+  \ public HourSetupState(ClockSetup clockSetup)\n    {\n        this.clockSetup =\
+  \ clockSetup;\n        hour = DateTime.Now.Hour;\n    }\n    public virtual void\
+  \ PreviousValue()\n    {\n        if (hour > 0)\n        {\n            hour--;\n\
+  \        }\n    }\n    public virtual void NextValue()\n    {\n        if (hour\
+  \ < 23)\n        {\n            hour++;\n        }\n    }\n}\n```\n\n\n\n\n\n```csharp\n\
+  \    public virtual void SelectValue()\n    {\n        Console.WriteLine(\"Hour\
+  \ set to \" + hour);\n        clockSetup.State = clockSetup.MinuteSetupState;\n\
+  \    }\n    public virtual string Instructions\n    {\n        get\n        {\n\
+  \            return \"Please set the hour...\";\n        }\n    }\n    public virtual\
+  \ int SelectedValue\n    {\n        get\n        {\n            return hour;\n \
+  \       }\n    }\n}\npublic class MinuteSetupState : ClockSetupState\n{\n    private\
+  \ ClockSetup clockSetup;\n    private int minute;\n    public MinuteSetupState(ClockSetup\
+  \ clockSetup)\n    {\n        this.clockSetup = clockSetup;\n        minute = DateTime.Now.Minute;\n\
+  \    }\n    public virtual void PreviousValue()\n    {\n        if (minute > 0)\n\
+  \        {\n            minute--;\n        }\n    }\n    public virtual void NextValue()\n\
+  \    {\n        if (minute < 59)\n        {\n            minute++;\n        }\n\
+  \    }\n    public virtual void SelectValue()\n    {\n        Console.WriteLine(\"\
+  Minute set to \" + minute);\n        clockSetup.State = clockSetup.FinishedSetupState;\n\
+  \    }\n    public virtual string Instructions\n    {\n        get\n        {\n\
+  \            return \"Please set the minute...\";\n        }\n    }\n    public\
+  \ virtual int SelectedValue\n    {\n        get\n        {\n            return minute;\n\
+  \        }\n    }\n}\n```\n\n这只剩下 `FinishedSetupState` 类，它不需要转换到不同的状态：\n\n```csharp\n\
+  public class FinishedSetupState : ClockSetupState\n{\n    private ClockSetup clockSetup;\n\
+  \    public FinishedSetupState(ClockSetup clockSetup)\n    {\n        this.clockSetup\
+  \ = clockSetup;\n    }\n    public virtual void PreviousValue()\n    {\n       \
+  \ Console.WriteLine(\"Ignored...\");\n    }\n    public virtual void NextValue()\n\
+  \    {\n        Console.WriteLine(\"Ignored...\");\n    }\n    public virtual void\
+  \ SelectValue()\n    {\n        DateTime selectedDate = clockSetup.SelectedDate;\n\
+  \        Console.WriteLine(\"Date to: \" + selectedDate);\n    }\n    public virtual\
+  \ string Instructions\n    {\n        get\n        {\n            return \"Press\
+  \ knob to view date...\";\n        }\n    }\n    public virtual int SelectedValue\n\
+  \    {\n        get\n        {\n            throw System.NotSupportedException(\"\
+  Clock finished\");\n        }\n    }\n}\n```\n\n如前提到的，“上下文”类是 `ClockSetup`，它持有对每个状态的引用，并将操作转发给当前状态：\n\
+  \n```csharp\npublic class ClockSetup\n{\n    // 设置可能处于的各种状态...\n    private IClockSetupState\
+  \ yearState;\n    private IClockSetupState monthState;\n    private IClockSetupState\
+  \ dayState;\n    private IClockSetupState hourState;\n    private IClockSetupState\
+  \ minuteState;\n    private IClockSetupState finishedState;\n    // 我们当前处于的状态...\n\
+  \    private IClockSetupState currentState;\n    public ClockSetup()\n    {\n  \
+  \      yearState = new YearSetupState(this);\n        monthState = new MonthSetupState(this);\n\
+  \        dayState = new DaySetupState(this);\n        hourState = new HourSetupState(this);\n\
+  \        minuteState = new MinuteSetupState(this);\n        finishedState = new\
+  \ FinishedSetupState(this);\n        // 初始状态设置为年份\n        State = yearState;\n\
+  \    }\n    public virtual IClockSetupState State\n    {\n        set\n        {\n\
+  \            currentState = value;\n            Console.WriteLine(currentState.Instructions);\n\
+  \        }\n    }\n    public virtual void RotateKnobLeft()\n    {\n        currentState.PreviousValue();\n\
+  \    }\n    public virtual void RotateKnobRight()\n    {\n        currentState.NextValue();\n\
+  \    }\n    public virtual void PushKnob()\n    {\n        currentState.SelectValue();\n\
+  \    }\n    public virtual IClockSetupState YearSetup\n    {\n        get\n    \
+  \    {\n            return yearState;\n        }\n    }\n    public virtual IClockSetupState\
+  \ MonthSetup\n    {\n        get\n        {\n            return monthState;\n  \
+  \      }\n    }\n    public virtual IClockSetupState DaySetup\n    {\n        get\n\
+  \        {\n            return dayState;\n        }\n    }\n    public virtual IClockSetupState\
+  \ HourSetup\n    {\n        get\n        {\n            return hourState;\n    \
+  \    }\n    }\n    public virtual IClockSetupState MinuteSetup\n    {\n        get\n\
+  \        {\n            return minuteState;\n        }\n    }\n    public virtual\
+  \ IClockSetupState FinishedSetupState\n    {\n        get\n        {\n         \
+  \   return finishedState;\n        }\n    }\n    public virtual DateTime SelectedDate\n\
+  \    {\n        get\n        {\n            return new DateTime(yearState.SelectedValue,\
+  \ monthState.SelectedValue, dayState.SelectedValue, hourState.SelectedValue, minuteState.SelectedValue,\
+  \ 0);\n        }\n    }\n}\n```\n\n我们可以像这样模拟用户的示例操作：\n\n```csharp\nClockSetup clockSetup\
+  \ = new ClockSetup();\n// 设置从 'year' 状态开始\nclockSetup.RotateKnobRight();\nclockSetup.PushKnob();\
+  \ // 增加 1 年\n// 设置现在应该处于 'month' 状态\nclockSetup.RotateKnobRight();\nclockSetup.RotateKnobRight();\n\
+  clockSetup.PushKnob(); // 增加 2 个月\n// 设置现在应该处于 'day' 状态\nclockSetup.RotateKnobRight();\n\
+  clockSetup.RotateKnobRight();\nclockSetup.RotateKnobRight();\nclockSetup.PushKnob();\
+  \ // 增加 3 天\n// 设置现在应该处于 'hour' 状态\nclockSetup.RotateKnobLeft();\nclockSetup.RotateKnobLeft();\n\
+  clockSetup.PushKnob(); // 减少 2 小时\n// 设置现在应该处于 'minute' 状态\nclockSetup.RotateKnobRight();\n\
+  clockSetup.PushKnob(); // 增加 1 分钟\n// 设置现在应该处于 'finished' 状态\nclockSetup.PushKnob();\
+  \ // 显示选定的日期\n```\n\n\n\n\n有两个实现类：`StandardGearboxStrategy` 和 `SportGearboxStrategy`：\n\
+  \n```csharp\npublic class StandardGearboxStrategy : IGearboxStrategy\n{\n    public\
+  \ virtual void EnsureCorrectGear(IEngine engine, int speed)\n    {\n        int\
+  \ engineSize = engine.Size;\n        bool turbo = engine.Turbo;\n        // 一些复杂的代码来确定正确的齿位\n\
+  \        // 根据 engineSize, turbo & speed 等进行设置\n        // ... 省略 ...\n        Console.WriteLine(\"\
+  Working out correct gear at \" + speed + \"mph for a STANDARD gearbox\");\n    }\n\
+  }\n\npublic class SportGearboxStrategy : IGearboxStrategy\n{\n    public virtual\
+  \ void EnsureCorrectGear(IEngine engine, int speed)\n    {\n        int engineSize\
+  \ = engine.Size;\n        bool turbo = engine.Turbo;\n        // 一些复杂的代码来确定正确的齿位\n\
+  \        // 根据 engineSize, turbo & speed 等进行设置\n        // ... 省略 ...\n        Console.WriteLine(\"\
+  Working out correct gear at \" + speed + \"mph for a SPORT gearbox\");\n    }\n\
+  }\n```\n\n我们的 `AbstractCar` 类被定义为持有对接口类型的引用（即 `IGearboxStrategy`），并提供访问器方法以便切换不同的策略。还有一个\
+  \ `Speed` 属性设置器，它会将操作委托给当前生效的策略。相关代码已用**粗**标记：\n\n```csharp\npublic abstract class\
+  \ AbstractCar : AbstractVehicle\n{\n    private IGearboxStrategy gearboxStrategy;\n\
+  \    public AbstractCar(IEngine engine)\n        : this(engine, VehicleColour.Unpainted)\n\
+  \    {\n    }\n    public AbstractCar(IEngine engine, VehicleColour colour)\n  \
+  \      : base(engine, colour)\n    {\n        // 以标准齿箱模式开始（更省油）\n        gearboxStrategy\
+  \ = new StandardGearboxStrategy();\n    }\n    // 允许更改齿箱策略...\n    public virtual\
+  \ IGearboxStrategy IGearboxStrategy\n    {\n        set\n        {\n           \
+  \ gearboxStrategy = value;\n        }\n        get\n        {\n            return\
+  \ gearboxStrategy;\n        }\n    }\n    public virtual int Speed\n    {\n    \
+  \    set\n        {\n            // 委托给当前生效的策略...\n            gearboxStrategy.EnsureCorrectGear(Engine,\
+  \ value);\n        }\n    }\n}\n```\n\n客户端程序只需要设置所需的策略：\n\n```csharp\nAbstractCar\
+  \ myCar = new Sport(new StandardEngine(2000));\nmyCar.Speed = 20;\nmyCar.Speed =\
+  \ 40;\nConsole.WriteLine(\"Switching on mode gearbox...\");\nmyCar.IGearboxStrategy\
+  \ = new SportGearboxStrategy();myCar.Speed = 20;\nmyCar.Speed = 40;\n```\n\n这应该产生以下输出：\n\
+  ```\nWorking out correct gear at 20mph for a STANDARD gearbox\nWorking out correct\
+  \ gear at 40mph for a STANDARD gearbox\nSwitching on mode gearbox...\nWorking out\
+  \ correct gear at 20mph for a SPORT gearbox\nWorking out correct gear at 40mph for\
+  \ a SPORT gearbox\n```\n\n### 23. 模板方法 (Template Method)\n\n类型：行为型 (Behavioural)\n\
+  \n目的：在方法中定义算法的骨架，并将某些步骤延迟给子类。模板方法允许子类在不改变算法结构的情况下重新定义算法的某些步骤。\n\nFoobar 公司制造的每辆车辆都需要制作少量的小手册并提供给买家，例如《所有手册》和《保养记录》。手册的制作遵循相同的步骤\
+  \ set，但每种类型的手册可能需要以不同的方式执行每个步骤。\n\n模板方法模式允许定义一个或多个抽象方法，这些方法通过“模板方法”进行调用。简单的层级结构如下：images/0007.jpg\n\
+  \n#### 图 23.1：模板方法模式\n\n`AbstractletPrinter` 类定义了几个 `protected` 方法和一个使用这些抽象方法的 `public`\
+  \ “模板方法”：\n\n```csharp\npublic abstract class AbstractPrinter\n{\n    protected\
+  \ abstract int PageCount { get; }\n    protected abstract void PrintFrontCover();\n\
+  \    protected abstract void PrintOfContents();\n    protected abstract void PrintPage(int\
+  \ pageNumber);\n    protected abstract void PrintIndex();\n    protected abstract\
+  \ void PrintBackCover();\n    // 这是模板方法\n    public void Print()\n    {\n      \
+  \  PrintFrontCover();\n        PrintOfContents();\n        for (int i = 1; i <=\
+  \ PageCount; i++)\n        {\n            PrintPage(i);\n        }\n        PrintIndex();\n\
+  \        PrintBackCover();\n    }\n}\n```\n\n每个具体子类现在都需要为抽象方法提供实现，例如下面的 `SaloonBooklet`\
+  \ 类：\n\n```csharp\npublic class SaloonBooklet : AbstractPrinter\n{\n    protected\
+  \ override int PageCount\n    {\n        get\n        {\n            return 100;\n\
+  \        }\n    }\n    protected override void PrintFrontCover()\n    {\n      \
+  \  Console.WriteLine(\"Printing front cover for Saloon booklet\");\n    }\n    protected\
+  \ override void PrintOfContents()\n    {\n        Console.WriteLine(\"Printing table\
+  \ of contents for Saloon booklet\");\n    }\n    protected override void PrintPage(int\
+  \ pageNumber)\n    {\n        Console.WriteLine(\"Printing page \" + pageNumber\
+  \ + \" for Saloon booklet\");\n    }\n    protected override void PrintIndex()\n\
+  \    {\n        Console.WriteLine(\"Printing index for Saloon booklet\");\n    }\n\
+  \    protected override void PrintBackCover()\n    {\n        Console.WriteLine(\"\
+  Printing back cover for Saloon booklet\");\n    }\n}\n```\n\n`ServiceHistoryBooklet`\
+  \ 非常相似：\n\n```csharp\npublic class ServiceHistoryBooklet : AbstractPrinter\n{\n\
+  \    protected override int PageCount\n    {\n        get\n        {\n         \
+  \   return 12;\n        }\n    }\n    protected override void PrintFrontCover()\n\
+  \    {\n        Console.WriteLine(\"Printing front cover for service history booklet\"\
+  );\n    }\n    protected override void PrintOfContents()\n    {\n        Console.WriteLine(\"\
+  Printing table of contents for service history booklet\");\n    }\n    protected\
+  \ override void PrintPage(int pageNumber)\n    {\n        Console.WriteLine(\"Printing\
+  \ page \" + pageNumber + \" for service history booklet\");\n    }\n    protected\
+  \ override void PrintIndex()\n    {\n        Console.WriteLine(\"Printing index\
+  \ for service history booklet\");\n    }\n    protected override void PrintBackCover()\n\
+  \    {\n        Console.WriteLine(\"Printing back cover for service history booklet\"\
+  );\n    }\n}\n```\n\n虽然从模式的角度来看，抽象方法必须是 `protected` 并不是必需的，但通常这是分配最合适的访问级别，因为它们仅用于被重写，而不是供客户端对象直接调用。\n\
+  \n此外注意，从“模板方法”中调用的某些方法不是抽象的但提供了默认实现是完全可以的。但当至少有一个抽象方法被调用时，它就符合模板模式的定义。\n\n客户端程序只需要实例化所需的具体类并调用\
+  \ `Print()` 方法：\n\n```csharp\nConsole.WriteLine(\"About to print a booklet for Saloon\
+  \ cars\");\nAbstractPrinter saloonBooklet = new SaloonBooklet();\nsaloonBooklet.Print();\n\
+  \nConsole.WriteLine(\"About to print a service history booklet\");\nAbstractPrinter\
+  \ serviceBooklet = new ServiceHistoryBooklet();\nserviceBooklet.Print();\n\nConsole.Read();\n\
+  ```\n\n### 24. 访问者 (Visitor)\n\n类型：行为型 (Behavioural)\n\n\n\n\n#### 目的\n表示在对象结构元素上执行的方法。访问者模式（Visitor）允许你在不更改操作的元素类的情况下定义一个新方法。\n\
+  \n有时，类层次结构及其代码会变得非常庞大，但我们知道未来的需求是不可避免的。Foobar 汽车公司的一个例子是 `IEngine` 层次结构，如下所示：\n\n\
+  ![](img/00037.jpg)\n\n图 24.1：`IEngine` 类层次结构\n\n实际上，`AbstractEngine` 类中的代码可能由许多单独组件组成，例如\
+  \ `camshaft`（凸轮）、`piston`（活塞）、一些 `sparkplugs`（火花塞）等。如果我们需要添加遍历这些组件的功能，自然的方法是直接向\
+  \ `AbstractEngine` 添加一个方法。但也许我们知道将来会有许多此类新需求，而我们并不希望直接向层次结构中不断添加方法？\n\n访问者模式允许我们只向类层次结构中添加一个额外的方法，用以便在不进行任何进一步更改的情况下添加许多不同类型的新功能。这是通过一种被称为“双分派发”（double-dispatch）的技术实现的，其中被调的方法向调用者对象发布一个回调。\n\
+  \n该技术首先需要定义一个接口，我们称之为 `IEngineVisitor`：\n\n```csharp\npublic interface IEngineVisitor\n\
+  {\n    void Visit(Camshaft camshaft);\n    void Visit(IEngine engine);\n    void\
+  \ Visit(Piston piston);\n    void Visit(SparkPlug sparkPlug);\n}\n```\n\n我们还会定义一个名为\
+  \ `IVisitable` 的接口，包含一个 `AcceptEngineVisitor()` 方法：\n\n```csharp\npublic interface\
+  \ IVisitable\n{\n    void AcceptEngineVisitor(IEngineVisitor visitor);\n}\n```\n\
+  \n你在之前的章节中已经过的 `IEngine` 接口（尽管我们在本章中对其进行了轻微修改）。`Camshaft`、`Piston` 和 `SparkPlug`\
+  \ 类都非常简单，如下：\n\n```csharp\npublic class Camshaft : IVisitable\n{\n    public void\
+  \ AcceptEngineVisitor(IEngineVisitor visitor)\n    {\n        visitor.Visit(this);\n\
+  \    }\n}\n\npublic class Piston : IVisitable\n{\n    public void AcceptEngineVisitor(IEngineVisitor\
+  \ visitor)\n    {\n        visitor.Visit(this);\n    }\n}\n\npublic class SparkPlug\
+  \ : IVisitable\n{\n    public void AcceptEngineVisitor(IEngineVisitor visitor)\n\
+  \    {\n        visitor.Visit(this);\n    }\n}\n```\n\n如你所见，这些类都定义了一个名为 `AcceptEngineVisitor()`\
+  \ 的方法，它接收一个 `IEngineVisitor` 对象作为参数。该方法所做的调用传入的 `IEngineVisitor` 的 `Visit()` 方法，并传回对象实例。\n\
+  \n我们修改后的 `IEngine` 接口现在扩展了 `IVisitable`：\n\n```csharp\npublic interface IEngine\
+  \ : IVisitable\n{\n    int Size { get; }\n    int Turbo { get; }\n}\n```\n\n因此，`AbstractEngine`\
+  \ 类需要实现这个新方法，在这种情况下，该方法遍历各个组件（凸轮、活塞、火花塞），并在每个组件上调用 `AcceptEngineVisitor()`：\n\n\
+  ```csharp\npublic abstract class AbstractEngine : IEngine\n{\n    private int size;\n\
+  \    private bool turbo;\n    private Camshaft camshaft;\n    private Piston piston;\n\
+  \    private SparkPlug[] sparkPlugs;\n    public AbstractEngine(int size, bool turbo)\n\
+  \    {\n        this.size = size;\n        this.turbo = turbo;\n        // 创建凸轮、活塞和\
+  \ 4 个火花塞...\n        camshaft = new Camshaft();\n        piston = new Piston();\n\
+  \        sparkPlugs = new SparkPlug[]{new SparkPlug(), new SparkPlug(), new SparkPlug(),\
+  \ new SparkPlug()};\n    }\n    public virtual int Size\n    {\n        get\n  \
+  \      {\n            return size;\n        }\n    }\n    public virtual bool Turbo\n\
+  \    {\n        get\n        {\n            return turbo;\n        }\n    }\n  \
+  \  public virtual void AcceptEngineVisitor(IEngineVisitor visitor)\n    {\n    \
+  \    // 访问每个组件...\n        camshaft.AcceptEngineVisitor(visitor);\n        piston.AcceptEngineVisitor(visitor);\n\
+  \        foreach (SparkPlug eachPlug in sparkPlugs)\n        {\n            eachPlug.AcceptEngineVisitor(visitor);\n\
+  \        }\n        // 现在访问接收者...\n        visitor.Visit(this);\n    }\n    public\
+  \ override string ToString()\n    {\n        return this.GetType().Name + \" (\"\
+  \ + size + \")\";\n    }\n}\n```\n\n现在我们将创建一个 `IEngineVisitor` 的实际实现，这样你就可以看到如何轻松地为引擎添加功能，而无需对任何引擎类进行任何进一步更改。我们要做的第一件事是定义一些附加到引擎上的智能装置，它可以自动检查每个组件并诊断任何故障。因此，我们定义了\
+  \ `EngineDiagnostics` 类：\n\n```csharp\npublic class EngineDiagnostics : IEngineVisitor\n\
+  {\n    public virtual void Visit(Camshaft camshaft)\n    {\n        Console.WriteLine(\"\
+  正在诊断凸轮\");\n    }\n    public virtual void Visit(IEngine engine)\n    {\n      \
+  \  Console.WriteLine(\"正在诊断引擎\");\n    }\n    public virtual void Visit(Piston piston)\n\
+  \    {\n        Console.WriteLine(\"正在诊断活塞\");\n    }\n    public virtual void Visit(SparkPlug\
+  \ sparkPlug)\n    {\n        Console.WriteLine(\"正在诊断单个火花塞\");\n    }\n}\n```\n\n\
+  我们还想打印引擎中每种类型组件的数量，因此我们还有一个 `EngineInventory` 类：\n\n```csharp\npublic class EngineInventory\
+  \ : IEngineVisitor\n{\n    private int camshaftCount;\n    private int pistonCount;\n\
+  \    private int sparkPlugCount;\n    public EngineInventory()\n    {\n        camshaftCount\
+  \ = 0;\n        pistonCount = 0;\n        sparkPlugCount = 0;\n    }\n    public\
+  \ virtual void Visit(Camshaft camshaft)\n    {\n        camshaftCount++;\n    }\n\
+  \    public virtual void Visit(IEngine engine)\n    {\n        Console.WriteLine(\"\
+  引擎有: \" + camshaftCount +\" 凸轮(s), \" + pistonCount + \" 活塞(s), 和 \" + sparkPlugCount\
+  \ + \" 火花塞(s)\");\n    }\n    public virtual void Visit(Piston piston)\n    {\n\
+  \        pistonCount++;\n    }\n    public virtual void Visit(SparkPlug sparkPlug)\n\
+  \    {\n        sparkPlugCount++;\n    }\n}\n```\n\n下面的图总结了所有这些类是如何交互的：\n\n![](img/00009.jpg)\n\
+  \n图 24.2：访问者模式\n\n客户端程序现在需要在 `IEngine` 实例上调用 `AcceptEngineVisitor()` 方法，传入适当的 `IEngineVisitor`\
+  \ 对象：\n\n```csharp\n// 创建一个引擎...\nIEngine engine = new StandardEngine(1300);\n\n\
+  // 对引擎运行诊断...\nengine.AcceptEngineVisitor(new EngineDiagnostics());\n```\n\n上述操作将产生以下输出：\n\
+  \n`正在诊断凸轮`\n`正在诊断活塞`\n`正在诊断单个火花塞`\n`正在诊断单个火花塞`\n`正在诊断单个火花塞`\n`正在诊断单个火花塞`\n`正在诊断引擎`\n\
+  \n并获取库存（使用相同的 `IEngine` 实例）：\n\n```csharp\n// 对引擎运行清单...\nengine.AcceptEngineVisitor(new\
+  \ EngineInventory());\n```\n\n输出应显示：\n\n`引擎有: 1 凸轮(s), 1 活塞(s), 和 4 火花塞(s)`\n\n\
+  # 第五部分 其他实用的模式\n\n本部分介绍了四种你在实际应用中可能会发现非常有用的模式：\n\n- **空对象（Null Object）**：定义一个允许处理空值的类；\n\
+  - **简单工厂（Simple Factory）**：委托对象的实例化；\n- **模型-视图-控制器（Model View Controller）**：将用户界面组件的屏幕表示与其底层数据和功能分离；\n\
+  - **分层（Layers）**：将应用程序划分为不同的模块级，并按层次级进行通信。\n\n25. 空对象\n\n\n\n\n\n正如任何 C# 程序员很快发现的，软件测试经常会抛出\
+  \ `NullReferenceException` 消息。有时，解决此问题的方法是在执行操作之前专门针对 `null` 进行测试，这给程序员增加了额外的负担。\n\
+  \n假设一个车辆的仪表盘包含三个警告灯槽位（例如用于机油低位或刹车液低位）。某辆特定的车辆可能只使用其中两盏灯，而第三个槽位为空，在 C# 中用 `null`\
+  \ 表示。遍历这些槽位需要特定的测试以防止抛出 `NullReferenceException`：\n\n```csharp\n// OilLevelLight\
+  \ & BrakeFluidLight are each types of IWarningLight\nIWarningLight[] lights = new\
+  \ IWarningLight[3];\nlights[0] = new OilLevelLight();\nlights[1] = new BrakeFluidLight();\n\
+  lights[2] = null; // empty slot\n\nforeach (IWarningLight currentLight in lights)\n\
+  {\n    if (currentLight != null)\n    {\n        currentLight.TurnOn();\n      \
+  \  currentLight.TurnOff();\n        Console.WriteLine(currentLight.On);\n    }\n\
+  }\n```\n\n一种可以帮助避免对 `null` 测试的方法是在类层次结构中创建一个“空对象”（null object）类。该类将实现相同的接口，但不执行任何实际功能，如图所示：\n\
+  \n![](img/00011.jpg)\n图 25.1 : 空对象模式\n\n`IWarningLight` 接口定义了方法 `TurnOn()`、`TurnOff()`\
+  \ 以及属性 `On` 的 get 访问器：\n\n```csharp\npublic interface IWarningLight\n{\n    void\
+  \ TurnOn();\n    void TurnOff();\n    bool On { get; }\n}\n```\n\n`OilLevelLevel`\
+  \ 和 `BrakeFluidLevel` 类分别实现 `IWarningLight` 接口，并提供用于开启或关闭指示灯的适当代码：\n\n```csharp\n\
+  public class OilLevelLight : IWarningLight\n{\n    private bool on;\n    public\
+  \ virtual void TurnOn()\n    {\n        on = true;\n        Console.WriteLine(\"\
+  Oil level light ON\");\n    }\n    public virtual void TurnOff()\n    {\n      \
+  \  on = false;\n        Console.WriteLine(\"Oil level light OFF\");\n    }\n   \
+  \ public virtual bool On\n    {\n        get\n        {\n            return on;\n\
+  \        }\n    }\n}\n\npublic class BrakeFluidLight : IWarningLight\n{\n    private\
+  \ bool on;\n    public virtual void TurnOn()\n    {\n        on = true;\n      \
+  \  Console.WriteLine(\"Brake fluid light ON\");\n    }\n    public virtual void\
+  \ TurnOff()\n    {\n        on = false;\n        Console.WriteLine(\"Brake fluid\
+  \ light OFF\");\n    }\n    public virtual bool On\n    {\n        get\n       \
+  \ {\n            return on;\n        }\n    }\n}\n```\n\n对于空对象模式，我们还创建了一个 `NullObjectLight`\
+  \ 类，它实现了 `IWarningLight` 接口但不执行任何实际处理：\n\n```csharp\npublic class NullObjectLight\
+  \ : IWarningLight\n{\n    public virtual void TurnOn()\n    {\n        // Do nothing...\n\
+  \    }\n    public virtual void TurnOff()\n    {\n        // Do nothing...\n   \
+  \ }\n    public virtual bool On\n    {\n        get\n        {\n            return\
+  \ false;\n        }\n    }\n}\n```\n\n现在我们的客户端代码可以被简化了，因为只要我们使用空对象，就不需要测试槽位是否为 `null`：\n\
+  \n```csharp\nIWarningLight[] lights = new IWarningLight[3];\nlights[0] = new OilLevelLight();\n\
+  lights[1] = new BrakeFluidLight();\nlights[2] = new NullObjectLight(); // empty\
+  \ slot\n\n// No need to test for null\nforeach (IWarningLight currentLight in lights)\n\
+  {\n    currentLight.TurnOn();\n    currentLight.TurnOff();\n    Console.WriteLine(currentLight.On);\n\
+  }\n```\n\n注意，对于空 getter 方法，需要返回任何看似合理的值；因此上述 `On` 属性 getget 访问器返回 `false`，因为它代表一个非扩展状态。\n\
+  \n## 简单工厂\n\n在本书的主体部分，我们查看了工厂方法模式（Factory Method）和抽象工厂模式（Abstract Factory）。简单工厂模式是将对象的实例化委托给特定类（即“工厂”）的常用手段。我们在此处假设\
+  \ Foobar 公司生产两种类型的变速箱：自动变速箱和手动变速箱。客户端程序可能需要根据条件创建其中一种，如下代码所示（假设类定义在一个类内部）：\n\n```csharp\n\
+  Gearbox selectedGearbox = null;\nif (typeWanted.Equals(\"automatic\"))\n{\n    selectedGearbox\
+  \ = new AutomaticGearbox();\n}\nelse if (typeWanted.Equals(\"manual\"))\n{\n   \
+  \ selectedGearbox = new ManualGearbox();\n}\n// Do something with selectedGearbox...\n\
+  ```\n\n虽然上面的代码可以工作，但如果有多个客户端程序需要执行类似的选择会怎样？我们必须在每个客户端程序中重复 `if...else...` 语句，如果随后生产了新类型的变速箱，我们必须追踪每一个使用该\
+  \ `if...else...` 块的地方。\n\n记住封装变化概念的原则，相反我们可以将选择和实例化过程委托给专门为此目的创建的特定类（即“工厂”）。然后客户端程序程序使用工厂的\
+  \ `Create()` 方法，如下图所示：\n\n![](img/00012.jpg)\n图 26.1 : 简单工厂模式\n\n简单示例中的抽象类 `Gearbox`\
+  \ 定义了一个无参数构造函数：\n\n```csharp\npublic abstract class Gearbox\n{\n}\n```\n\n`AutomaticGearbox`\
+  \ 和 `ManualGearbox` 类分别扩展了 `Gearbox` 以实现各自类型：\n\n```csharp\npublic class AutomaticGearbox\
+  \ : Gearbox\n{\n    public AutomaticGearbox()\n    {\n        Console.WriteLine(\"\
+  New automatic gearbox created\");\n    }\n}\n\npublic class ManualGearbox : Gearbox\n\
+  {\n    public ManualGearbox()\n    {\n        Console.WriteLine(\"New manual gearbox\
+  \ created\");\n    }\n}\n```\n\n现在我们需要创建一个 `GearboxFactory` 类，它能够实例化相应的 `Gearbox`：\n\
+  \n```csharp\npublic class GearboxFactory\n{\n    public enum Type\n    {\n     \
+  \   Automatic, Manual\n    }\n    public static Gearbox Create(Type type)\n    {\n\
+  \        if (type == Type.Automatic)\n        {\n            return new AutomaticGearbox();\n\
+  \        }\n        else\n        {\n            return new ManualGearbox();\n \
+  \       }\n    }\n}\n```\n\n`Create()` 方法负责选择和实例化，从而隔离了每个客户端程序的重复代码。我们将该方法设置为 `static`\
+  \ 纯是为了方便，并不是该模式的要求。\n\n客户端程序现在通过工厂获取变速箱类型：\n\n```csharp\n// Create an automatic\
+  \ gearbox\nGearbox auto = GearboxFactory.Create(GearboxFactory.Type.Automatic);\n\
+  \n// Create a manual gearbox\nGearbox manual = GearboxFactory.Create(GearboxFactory.Type.Manual);\n\
+  ```\n\n## 模型视图控制器 (Model View Controller)\n\nFoobar 汽车公司的卫星导航系统包含了当前位置的视觉显示、行驶方向以及当前速度的指示。还有一个输入设备；用于设置目的地等。一个完整的仿真远出了本书的范围，因此我们将使用一个非常简化的界面，仅允许您设置行驶方向（北、南、西、东）和当前速度，而不考虑任何道路等。\n\
+  \n用户界面看起来如下：\n\n![](img/00029.jpg)\n图 27.1 : 卫星导航用户界面\n\n\n\n\n如你所见，上方有改变方向的按钮和一个用于调整速度的旋转器。屏幕底部的“反馈（Feedback）”部分会根据你的选择自动调整。请注意，每当你点击其中一个方向按钮时，该按钮就会被禁用，而之前选中的按钮将重新启用。程序初始时指向北方向，但速度为零。\n\
+  \n这是一个非常简单的程序，完全可以在单个类中完成编码。但随着图形应用程序变得越来越复杂，分离程序的各个部分将极大地简化开发和维护。\n\n# 模型-视图-控制器模式\
+  \ (Model View Controller Pattern)\n\n模型-视图-控制器模式（通常缩写 `MVC`）是实现组成部分之间更松耦合的方法，也是图形应用程序中一种经过验证的方法。在\
+  \ GUI 应用程序中通常有三个部分在起：\n\n1.  **“模型”（Model）**：这是“数据”（即状态）以及相关的应用程序或“业务”逻辑。在我们的示例中，它包含了当前方向和当前速度的值，以及更新和返回这些值的方法。\n\
+  2.  **“视图”（View）**：这是图形化显示，如图 27.1 所示，当模型以某种方式改变状态时，它会自动根据需要更新自己。\n3.  **“控制器”（Controller）**：这部分响应所有用户输入（按钮点击、控制旋转器等），并与模型和视图建立联系。\n\
+  \n上述三个部分中的每一个都将位于一个独立的类中，可以可视化如下：\n\n![](img/00014.jpg)\n\n图 27.2：模型-视图-控制器模式\n\n\
+  这些类以以下方式相互关联：\n\n*   `SatNavModel` 包含设置和获取方向与速度的方法。它是“可观察的”（参见第 20 章），每当方向或速度发生变化时，它都会通知感兴趣的观察者，但它对任何其他类都没有直接了解；\n\
+  *   `SatNavView` 定义了图形形状和用户界面显示。它持有对 `SatNavModel` 的引用，以便它可以监听模型的状态变化，并根据需要查询其状态，以保持显示自动更新；\n\
+  *   `SatNavController` 持有对 `SatNavModel` 和 `SatNavView` 的引用。它处理按钮点击和速度旋转器的移动，更新模型并在需要时与视图建立联系。\n\
+  \n正如书中描述的其他模式一样，`MVC` 的结构方式存在多种变体，上述方法可以描述为“经典”方法。C# 通常使用 `MVC` 的一种修改版本，其中视图和控制器合并并在单个类中，但为了本书的目的，我们将使用完整的三类分离法来介绍这种模式。\n\
+  \n## 模型：SatNavModel\n\n我们将从模型开始，在我们的案例中，模型是 `SatNavModel` 类。该类被编码为对视图或控制器都不进行直接了解，因此可以在不进行任何更改的情况下，将其插入到各种其他应用程序中。\n\
+  \n```cs\npublic class SatNavModel\n{\n    // 我们可以移动的方向\n    public enum TravelDirection\n\
+  \    {\n        Still, North, South, East, West\n    }\n    // 改变处理器\n    public\
+  \ event EventHandler ModelChanged;\n    // 当前方向和速度\n    private TravelDirection\
+  \ CurrentDirection;\n    private int CurrentSpeed;\n    public SatNavModel()\n \
+  \   {\n        CurrentDirection = TravelDirection.North;\n        CurrentSpeed =\
+  \ 0;\n    }\n    public virtual TravelDirection Direction\n    {\n        set\n\
+  \        {\n            if (value != CurrentDirection)\n            {\n        \
+  \        CurrentDirection = value;\n                if (ModelChanged != null)\n\
+  \                {\n                    ModelChanged(this, EventArgs.Empty);\n \
+  \               }\n            }\n        }\n        get\n        {\n          \
+  \  return CurrentDirection;\n        }\n    }\n    public virtual int Speed\n  \
+  \  {\n        set\n        {\n            if (value != CurrentSpeed)\n         \
+  \   {\n                CurrentSpeed = value;\n                if (ModelChanged !=\
+  \ null)\n                {\n                    ModelChanged(this, EventArgs.Empty);\n\
+  \                }\n            }\n        }\n        get\n        {\n         \
+  \   return CurrentSpeed;\n        }\n    }\n}\n```\n\n如你所见，与其他类的唯一联系是通过其观察者实现的（我们使用\
+  \ `EventHandler` 事件对象来方便这一点）。每当方向或速度被修改时，其观察者（也称为监听器）就会收到通知。\n\n图形显示是由 `SatNavView`\
+  \ 类使用标准组件完成的。它在构造函数中获取 `SatNavModel` 的引用，以便将其注册为模型的观察者。每当检测到模型变化时，就会调用 `HandleModelChanged()`\
+  \ 方法，使视图更新其显示。还有其他方法允许 UI 控件被观察（例如，通过控制器）。\n\n```cs\npublic partial class SatNavView\
+  \ : Form\n{\n    private SatNavModel model;\n    public event EventHandler ViewControlActivated;\n\
+  \    public SatNavView(SatNavModel model)\n    {\n        InitializeComponent();\n\
+  \        this.model = model;\n        this.model.ModelChanged += HandleModelChanged;\n\
+  \    }\n    private void SatNavView_Load(object sender, EventArgs e)\n    {\n  \
+  \      northButton.Enabled = false;\n        feedbackLabel.Text = \"你正指向 \" + model.Direction\
+  \ + \" 但尚未移动。请使用按钮和速度控制\";\n    }\n    public void HandleModelChanged(Object sender,\
+  \ EventArgs args)\n    {\n        feedbackLabel.Text = \"方向: \" + model.Direction\
+  \ + \", 速度: \" + model.Speed;\n    }\n    private void eastButton_Click(object sender,\
+  \ EventArgs e)\n    {\n        if (ViewControlActivated != null)\n        {\n  \
+  \          ControlEventArgs args = new ControlEventArgs();\n            args.direction\
+  \ = SatNavModel.TravelDirection.East;\n            ViewControlActivated(this, args);\n\
+  \        }\n    }\n    private void northButton_Click(object sender, EventArgs e)\n\
+  \    {\n        if (ViewControlActivated != null)\n        {\n            ControlEventArgs\
+  \ args = new ControlEventArgs();\n            args.direction = SatNavModel.TravelDirection.North;\n\
+  \            ViewControlActivated(this, args);\n        }\n    }\n    private void\
+  \ southButton_Click(object sender, EventArgs e)\n    {\n        if (ViewControlActivated\
+  \ != null)\n        {\n            ControlEventArgs args = new ControlEventArgs();\n\
+  \            args.direction = SatNavModel.TravelDirection.South;\n            ViewControlActivated(this,\
+  \ args);\n        }\n    }\n    private void westButton_Click(object sender, EventArgs\
+  \ e)\n    {\n        if (ViewControlActivated != null)\n        {\n            ControlEventArgs\
+  \ args = new ControlEventArgs();\n            args.direction = SatNavModel.TravelDirection.West;\n\
+  \            ViewControlActivated(this, args);\n        }\n    }\n    private void\
+  \ speedControl_ValueChanged(object sender, EventArgs e)\n    {\n        if (ViewControlActivated\
+  \ != null)\n        {\n            ControlEventArgs args = new ControlEventArgs();\n\
+  \            args.speed = (int)speedControl.Value;\n            ViewControlActivated(this,\
+  \ args);\n        }\n    }\n    internal void enableAllowedButtons()\n    {\n  \
+  \      // 所有方向按钮\n        eastButton.Enabled = true;\n        northButton.Enabled\
+  \ = true;\n        southButton.Enabled = true;\n        westButton.Enabled = true;\n\
+  \        // 禁用当前方向按钮\n        if (model.Direction == SatNavModel.TravelDirection.East)\n\
+  \        {\n            eastButton.Enabled = false;\n        }\n    }\n}\n```\n\n\
+  \n\n\n```csharp\nelse if (model.Direction == SatNavModel.TravelDirection.North)\n\
+  {\n    northButton.Enabled = false;\n}\nelse if (model.Direction == SatNavModel.TravelDirection.South)\n\
+  {\n    southButton.Enabled = false;\n}\nelse if (model.Direction == SatNavModel.TravelDirection.West)\n\
+  {\n    westButton.Enabled = false;\n}\n\n} // 用于改变方向或速度的嵌套类\npublic class ControlEventArgs\
+  \ : EventArgs\n{\n    public SatNavModel.TravelDirection direction;\n    public\
+  \ int speed;\n}\n```\n\n`SatNavController` 类负责处理用户输入，在这种情况下，用户输入可以是点击方向按钮之一，也可以移动速度调节旋器。为了响应用户输入，需要更新\
+  \ Model 状态，因此在构造函数中同时存在对 `SatNavView` 和 `SatNavModel` 的引用。该类设置自己来监听用户输入并做出相应的反应：\n\
+  \n```csharp\npublic class SatNavController\n{\n    // 需要同时对 model 和 view 的引用\n \
+  \   private SatNavModel model;\n    private SatNavView view;\n    public SatNavController(SatNavModel\
+  \ model, SatNavView view)\n    {\n        this.model = model;\n        this.view\
+  \ = view;\n        this.view.ViewControlActivated += HandleViewControlActivated;\n\
+  \    }\n    public void HandleViewControlActivated(Object sender, EventArgs args)\n\
+  \    {\n        SatNavView.ControlEventArgs satnavArgs = (SatNavView.ControlEventArgs)args;\n\
+  \        if (satnavArgs.direction != SatNavModel.TravelDirection.Still)\n      \
+  \  {\n            model.Direction = satnavArgs.direction;\n            view.enableAllowedButtons();\n\
+  \        }\n        else\n        {\n            model.Speed = satnavArgs.speed;\n\
+  \        }\n    }\n}\n```\n\n现在运行该应用程序只需从 `Program.cs` 实例化上述类：\n\n```csharp\n//\
+  \ 创建 MVC 类\nSatNavModel model = new SatNavModel();\nSatNavView view = new SatNavView(model);\n\
+  SatNavController controller = new SatNavController(model, view);\nApplication.Run(view)\n\
+  ```\n\n### 28. 层 (Layers)\n\n随着应用程序变得越来越大，它们的管理可能会变得困难，大量的互连会导致耦合性增加。层（Layers）模式通过将应用程序划分为层次结构中的两个或多个层来解决这个问题，每层只与其直接下方的层进行通信。这种方法有助于应用程序模块化，并有助于降低类之间的耦合性。\n\
+  \n#### 客户端-服务器（2 级）架构\n\n层模式的一个简单示例是客户端-服务器模型，其中“客户端”（例如 Web 浏览器）与“服务器”（例如 Web 服务器）通信以查看网页：\n\
+  \n![](img/00002.jpg)\n\n图 28.1：客户端-服务器架构\n\n在图 28.1 中，你可以看到浏览器向 Web 服务器发送请求，服务器返回一个响应（例如网页）。如果你想象客户端和服务器分别位于自己的命名空间中，上述内容将如下所示：\n\
+  \n![](img/00016.jpg)\n\n图 28.2：客户端-服务器架构\n\n从图 28.2 中可以推断出 `client` 命名空间持有对 `server`\
+  \ 命名空间的引用。`layer`（层）和 `tier`（级）这两个术通常互换使用，但“layer”更准确地指代逻辑划分，而“tier”指代物理划分。\n\n\
+  #### 3 级架构\n\n客户端-服务器架构的一个常见扩展是需要访问数据的情况，因此添加了第三层：\n\n![](img/00003.jpg)\n\n图 28.3：3\
+  \ 级架构\n\n图 28.3 显示了浏览器向服务器发送请求，服务器转而向数据库发送请求。如下所示：\n\n![](img/00018.jpg)\n\n图 28.4：3\
+  \ 级架构\n\n从图 28.4 中你可以看到 `client` 命名空间持有对 `server` 命名空间的引用，服务器转与 `database` 通信。这种方法有助于隐藏每一层的复杂性。\n\
+  \n## VI. 实践中的设计模式\n\n这部分由一个章节组成，展示了一个演示书中描述的某些模式的小型应用程序。所示的模式有：\n\n*   层 (Layers)\n\
+  *   单例 (Singleton)\n*   外观模式 (Faade)\n*   工厂 (Factory)\n*   观察者 (Observer)\n*  \
+  \ 策略 (Strategy)\n\n### 29. 示例 3 级应用程序\n\n本章开发了一个小型示例 3 级应用程序，该程序使用了常用的设计模式。该应用程序显示了从\
+  \ Foobar 公司生产线产下的引擎列表（这意味着列表可能会多次显示相同的引擎类型和尺寸），并提供了构建新引擎以及将数据保存/恢复到持久化存储器中的功能。请注意，这并非设计用于生产级软件；为了关注模式，代码已经经过了简化。\n\
+  \n完成后的应用程序如下：\n\n![](img/00020.jpg)\n\n图 29.1：引擎管理表单\n\n每当点击 Build Engine（构建引擎）按钮时，都会出现对话框，允许你创建一个所选类型和尺寸的新引擎并将其添加到列表中：\n\
+  \n![](img/00022.jpg)\n\n图 29.2：构建引擎对话框\n\nSave（保存）按钮将列表数据存储到磁盘上的文件中，Restore（恢复）按钮将把列表数据替换为最近保存的值。\n\
+  \n该应用程序将使用 3 级架构设计，采用层模式，包括用户界面层、业务模型层和数据库层。每层的类将存储在 `Business` 和 `Database` 命名空间中，根命名空间用于用户界面。每层只与其下一层的层进行通信，如下所示：\n\
+  \n![](img/00024.jpg)\n\n图 29.3：作为命名空间的 3 级层模式\n\n#### 数据库层\n\n从 `Database` 命名空间开始，我们将一个对象称为\
+  \ `Entity`。由于数据库表通常具有主键，我们将使用单例模式定义 `EntityKeyGenerator` 类：\n\n```csharp\nnamespace\
+  \ Database\n{\n    [Serializable]\n    class EntityKeyGenerator\n    {\n       \
+  \ // 静态成员\n        private static volatile EntityKeyGenerator instance;\n      \
+  \  public static EntityKeyGenerator Instance\n    }\n}\n```\n\n\n\n\n\n```csharp\n\
+  {\n    get\n    {\n        if (instance == null)\n        {\n            instance\
+  \ = new EntityKeyGenerator();\n        }\n        return instance;\n    }\n}\n//\
+  \ 实例变量\nprivate int nextKey;\n// 私有构造函数\nprivate EntityKeyGenerator()\n{\n}\n//\
+  \ 实例方法\nvirtual int NextKey\n{\n    return ++nextKey;\n}\n``````\n\n#### EntityKeyGenerator\
+  \ 和 EntityTable\n\n为任何 `IEngine` 实体生成下一个唯一键，只需要调用：\n\n`EntityKeyGenerator.Instance.NextKey;`\n\
+  \n我们现在将定义一个简单的 `EntityTable` 类，它可以存储一个以顺序数字 ID 为键的对象字典：\n\n```csharp\nnamespace\
+  \ Database\n{\n    [Serializable]\n    public class EntityTable\n    {\n       \
+  \ private EntityKeyGenerator keyGenerator;\n        private IDictionary<int?, object>\
+  \ entities;\n        [field:NonSerialized] public event EventHandler EntityTableItemAdded;\n\
+  \        [field:NonSerialized] public event EventHandler EntityTableRestored;\n\
+  \        internal EntityTable(EntityKeyGenerator keyGenerator)\n        {\n    \
+  \        this.keyGenerator = keyGenerator;\n            entities = new Dictionary<int?,\
+  \ object>();\n        }\n        internal virtual object GetByKey(int? key)\n  \
+  \      {\n            return entities[key];\n        }\n        internal virtual\
+  \ ICollection<object> All()\n        {\n            return entities.Values;\n  \
+  \      }\n        internal virtual int? AddEntity(object value)\n        {\n   \
+  \         int? key = keyGenerator.NextKey;\n            entities[key] = value;\n\
+  \            EntityAddedEventArgs args = new EntityAddedEventArgs();\n         \
+  \   args.objectAdded = value;\n            if (EntityTableItemAdded != null)\n \
+  \           {\n                EntityTableItemAdded(this, args);\n            }\n\
+  \            return key;\n        }\n        internal virtual void Restore(EntityTable\
+  \ restoredTable)\n        {\n            entities.Clear();\n            foreach\
+  \ (KeyValuePair<int?, object> pair in restoredTable.entities)\n            {\n \
+  \               entities.Add(pair.Key, pair.Value);\n            }\n        }\n\
+  \        // 用于实体添加事件的嵌套类\n        public class EntityAddedEventArgs : EventArgs\n\
+  \        {\n            public object objectAdded;\n        }\n    }\n}\n```\n\n\
+  请注意以下几：\n\n- 构造函数需要一个 `EntityKeyGenerator` 对象，它可以使用它为此特定类型生成下一个键；\n- 实体存储在以整数（表示主键）为键的字典中，其值将\
+  \ `object`。这允许该类存储任何对象类型，从而实现松耦合；\n- 提供了方法来返回所有实体，或者在提供键时仅返回单个实体；\n- `AddEntity()`\
+  \ 方法在将实体添加到字典后，会生成并返回下一个键；\n- `Restore()` 方法将数据替换为参数提供的数据\n\n将数据保存到磁盘可以通过对象序列化或通过创建\
+  \ CSV 格式的文件来实现。这表明可以使用策略模式（Strategy pattern），以便切换不同的处理方法。`AbstractEntityStrategy`\
+  \ 类提供了定义它的基类：\n\n```csharp\nnamespace Database\n{\n    abstract class AbstractEntityStrategy\n\
+  \    {\n        virtual string GetFileName(EntityTable table)\n        {\n     \
+  \       return table.GetType().Name;\n        }\n        internal abstract string\
+  \ FileSuffix { get; }\n        internal abstract void Save(EntityTable table);\n\
+  \        internal abstract EntityTable Restore(EntityTable table);\n    }\n}\n```\n\
+  \n`EntitySerializationStrategy` 类扩展了上述类以实现所需的方法：\n\n```csharp\nnamespace Database\n\
+  {\n    class EntitySerializationStrategy : AbstractEntityStrategy\n    {\n     \
+  \   internal override string FileSuffix\n        {\n            get\n          \
+  \  {\n                return \".ser\";\n            }\n        }\n        internal\
+  \ override void Save(EntityTable table)\n        {\n            Stream stream =\
+  \ File.Open(GetFileName(table) + FileSuffix, FileMode.Create);\n            BinaryFormatter\
+  \ formatter = new BinaryFormatter();\n            formatter.Serialize(stream, table);\n\
+  \            stream.Close();\n        }\n        internal override EntityTable Restore(EntityTable\
+  \ table)\n        {\n            Stream stream = File.Open(GetFileName(table) +\
+  \ FileSuffix, FileMode.Open);\n            BinaryFormatter formatter = new BinaryFormatter();\n\
+  \            EntityTable restoredTable = (EntityTable)formatter.Deserialize(stream);\n\
+  \            stream.Close();\n            return restoredTable;\n        }\n   \
+  \ }\n}\n```\n\n`EntityCSVStrategy` 类同样可以编写为使用 CSV 格式的文件，尽管代码在这里省略了：\n\n```csharp\n\
+  namespace Database\n{\n    class EntityCSVStrategy : AbstractEntityStrategy\n  \
+  \  {\n        internal override string FileSuffix\n        {\n            get\n\
+  \            {\n                return \".csv\";\n            }\n        }\n   \
+  \     internal override void Save(EntityTable table)\n        {\n            //\
+  \ 以 CSV 格式保存表数据的代码（省略）\n        }\n        internal override EntityTable Restore(EntityTable\
+  \ table)\n        {\n            // 从 CSV 恢复数据\n            return table;\n    \
+  \    }\n    }\n}\n```\n\n为了简化任何需要数据库的命名空间（在本例中为 `Business` 命名空间）的工作，将有一个单一访问点。这提供了数据库的高级视图，隐藏了内部结构并促进了松耦合。与单例模式（Singleton\
+  \ pattern）结合外观模式（Facade pattern）提供了单一访问点，如下所示：\n\n```csharp\nnamespace Database\n\
+  {\n    [Serializable]\n    public class Facade\n    {\n        // 静态成员\n       \
+  \ private static Facade instance;\n        public static Facade Instance\n     \
+  \   {\n            get\n            {\n                if (instance == null)\n \
+  \               {\n                    instance = new Facade();\n              \
+  \  }\n                return instance;\n            }\n        }\n        // 实例变量\n\
+  \        private EntityTable engines;\n        private AbstractEntityStrategy persistenceStrategy;\n\
+  \        public EventHandler EngineAdded;\n        public EventHandler EnginesRestored;\n\
+  \        // 私有构造函数\n        private Facade()\n        {\n            engines = new\
+  \ EntityTable(EntityKeyGenerator.Instance);\n            engines.EntityTableItemAdded\
+  \ += HandleAdded;\n            engines.EntityTableRestored += HandleinesRestored;\n\
+  \            // 设置使用的持久化策略\n            //（可能从某处的配置获取）\n            persistenceStrategy\
+  \ = new EntitySerializationStrategy();\n        }\n        // 实例方法\n        public\
+  \ virtual object[] AllEngines\n        {\n            get\n            {\n     \
+  \           return engines.All.ToArray();\n            }\n        }\n        public\
+  \ virtual object GetEngine(int? key)\n        {\n            return engines.GetByKey(key);\n\
+  \        }\n        public virtual int? AddEngine(object engine)\n        {\n  \
+  \          return engines.AddEntity(engine);\n        }\n\n        private void\
+  \ HandleAdded(object sender, EntityAddedEventArgs e)\n        {\n            EngineAdded?.Invoke(this,\
+  \ e);\n        }\n        private void HandleinesRestored(object sender, EventArgs\
+  \ e)\n        {\n            EnginesRestored?.Invoke(this, e);\n        }\n    }\n\
+  }\n``````\n\n\n\n\n```csharp\n        public virtual void SaveEngines()\n      \
+  \  {\n            persistenceStrategy.Save(engines);\n        }\n        public\
+  \ virtual void RestoreEngines()\n        {\n            EntityTable restoredEngines\
+  \ = persistenceStrategy.Restore(engines);\n            engines.Restore(restoredEngines);\n\
+  \        }\n        public void HandleEngineAdded(Object sender, EventArgs args)\n\
+  \        {\n            if (EngineAdded != null)\n            {\n              \
+  \  EngineAdded(sender, args);\n            }\n        }\n        public void HandleEnginesRestored(Object\
+  \ sender, EventArgs args)\n        {\n            if (EnginesRestored != null)\n\
+  \            {\n                EnginesRestored(sender, args);\n            }\n\
+  \        }\n    }\n}\n```\n\n注意以下几点：\n\n- 该类是一个单例（Singleton），因为调用它的命名空间应该使用一个 `Facade`\
+  \ 对象；\n- 该类持有 `EntityTable` 对象来存储引擎，并提供了获取所有或其中一个引擎的方法，以及添加新引擎的方法。如果你的系统也管理车辆，那么也会有相应的变量和方法；\n\
+  - 假设使用了序列化持久化策略，但你可以看到使用替代策略是多简单；\n\n现在可以显示包含 `Database` 命名空间类的分层图：\n\n![](img/00051.jpg)\n\
+  \n图 29.4 : 带有 Facade 类的 Database 命名空间\n\n注意业务层是如何通过 `DatabaseFacade` 对象进行通信的。这样做的效果是将\
+  \ `Database` 命名空间的复杂性隐藏在 Facade 之后。\n\n#### 业务层\n\n进入 `Business` 命名空间，它主要由在本书中使用的\
+  \ `IEngine` 层次结构组成：\n\n![](img/00037.jpg)\n\n图 29.5 : `IEngine` 层次结构\n\n为了方便引擎对象被序列化，`AbstractEngine`\
+  \ 的类定义需要指定对象是可化的：\n\n```csharp\nnamespace Business\n{\n    [Serializable]\n    public\
+  \ abstract class AbstractEngine : IEngine\n    {\n... 省略了类的其余部分 ...\n    }\n```\n\
+  \n其他类保持不变，只是它们现在当然位于名为 `Business` 的命名空间中。\n\n由于存在两种类型的引擎（标准型和涡轮型），创建一个工厂类（Factory\
+  \ class）来根据提供的参数创建正确类型的对象将非常有用。为此，在 `Business` 命名空间中定义一个新类 `EngineFactory`：\n\n\
+  ```csharp\nnamespace Business\n{\n    class EngineFactory\n    {\n        public\
+  \ enum Type\n        {\n            Standard,\n            Turbo\n        }\n  \
+  \      public static IEngine Create(EngineFactory.Type type, int size)\n       \
+  \ {\n            if (type == Type.Standard)\n            {\n                return\
+  \ new StandardEngine(size);\n            }\n            else\n            {\n  \
+  \              return new TurboEngine(size);\n            }\n        }\n       \
+  \ public static IEngine Create(int size, bool turbo)\n        {\n            return\
+  \ EngineFactory.Create(turbo ? Type.Turbo : Type.Standard, size);\n        }\n \
+  \       private EngineFactory()\n        {\n        }\n    }\n}\n```\n\n注意 `Create()`\
+  \ 方法是 `static` 的并且经过重载，因此客户端可以提供 `enum` 值或 `boolean` 值。就像在数据库层所的那样，`Business` 命名空间将有自己的\
+  \ facade，在此例中为 `BusinessFacade`：\n\n```csharp\nnamespace Business\n{\n    [Serializable]\n\
+  \    public class BusinessFacade\n    {\n        // 静态成员\n        private static\
+  \ volatile BusinessFacade instance;\n        public static BusinessFacade Instance\n\
+  \        {\n            get\n            {\n                if (instance == null)\n\
+  \                {\n                    instance = new BusinessFacade();\n     \
+  \           }\n                return instance;\n            }\n        }\n    \
+  \    // 实例变量\n        public event EventHandler EngineAdded;\n        public event\
+  \ EventHandler EnginesRestored;\n        // 私有构造函数\n        private BusinessFacade()\n\
+  \        {\n            DatabaseFacade.Instance.EngineAdded += HandleEngineAdded;\n\
+  \            DatabaseFacade.Instance.EnginesRestored += HandleEnginesRestored;\n\
+  \        }\n        // 实例方法\n        public virtual string[] EngineTypes\n     \
+  \   {\n            get\n            {\n                return Enum.GetNames(typeof(EngineFactory.Type));\n\
+  \            }\n        }\n        public virtual object[] AllEngines\n        {\n\
+  \            get\n            {\n                return DatabaseFacade.Instance.AllEngines;\n\
+  \            }\n        }\n        public virtual object AddEngine(object type,\
+  \ int size)\n        {\n            EngineFactory.Type engineType;\n           \
+  \ if (type is string)\n            {\n                engineType = (EngineFactory.Type)Enum.Parse(typeof(EngineFactory.Type),\
+  \ (string)type);\n            }\n            else\n            {\n             \
+  \   engineType = (EngineFactory.Type)type;\n            }\n            IEngine engine\
+  \ = EngineFactory.Create(size, (engineType == EngineFactory.Type.Turbo));\n    \
+  \        DatabaseFacade.Instance.AddEngine(engine);\n            return engine;\n\
+  \        }\n        public virtual void SaveEngines()\n        {\n            DatabaseFacade.Instance.SaveEngines();\n\
+  \        }\n        public virtual void RestoreEngines()\n        {\n          \
+  \  DatabaseFacade.Instance.RestoreEngines();\n        }\n        public void HandleEngineAdded(Object\
+  \ sender, EventArgs args)\n        {\n            if (EngineAdded != null)\n   \
+  \         {\n                EngineAdded(sender, args);\n            }\n       \
+  \ }\n        public void HandleEnginesRestored(Object sender, EventArgs args)\n\
+  \        {\n            if (EnginesRestored != null)\n            {\n          \
+  \      EnginesRestored(sender, args);\n            }\n        }\n    }\n}\n```\n\
+  \n注意以下几点：\n\n- 这些方法委托给相应的 `DatabaseFacade` 方法；\n- `AllEngines` getter 和 `AddEngine()`\
+  \ 方法的类型是 `object` 而不是 `IEngine`。这意味着 `Business` 层与用户界面层松耦合，使得后者不依赖于前者的实现细节。用户界面可以使用\
+  \ `object` 类的 `ToString()` 方法获取显示在列表中的信息。\n\n现在可以显示包含 `Business` 命名空间类的分层图：\n\n\
+  ![](img/00055.jpg)\n\n图 29.6 : 带有 Facade 类的 Business 命名空间\n\n#### 用户界面层\n\n用户界面层包含一个\
+  \ `ManageEngines` 类，它显示了一个可滚引擎列表和一些按钮：\n\n```csharp\npublic partial class ManageEngines\
+  \ : Form\n{\n    public ManageEngines()\n    {\n        InitializeComponent();\n\
+  \        BusinessFacade.Instance.EngineAdded += HandleEngineAdded;\n        BusinessFacade.Instance.EnginesRestored\
+  \ += HandleEnginesRestored;\n    }\n    private void ManageEngines_Load(object sender,\
+  \ EventArgs e)\n    {\n        // 创建一些示例数据（通过事件添加到列表）\n        BusinessFacade.Instance.AddEngine(EngineFactory.Type.Standard,\
+  \ 1300);\n        BusinessFacade.Instance.AddEngine(EngineFactory.Type.Standard,\
+  \ 1600);\n        BusinessFacade.Instance.AddEngine(EngineFactory.Type.Standard,\
+  \ 2000);\n        BusinessFacade.Instance.AddEngine(EngineFactory.Type.Turbo, 2500);\n\
+  \    }\n    private void buildEngineButton_Click(object sender, EventArgs e)\n \
+  \   {\n        Form buildEngineForm = new BuildEngineForm();\n    }\n}\n```\n\n\n\
+  \n\n```csharp\nbuildEngineForm.ShowDialog(this);\n\n    }\n    public void HandleEngineAdded(Object\
+  \ sender, EventArgs args)\n    {\n        EntityTable.EntityAddedEventArgs entityArgs\
+  \ = (EntityTable.EntityAddedEventArgs)args;\n        enginesList.Items.Add(entityArgs.objectAdded.ToString());\n\
+  \    }\n    public void HandleEnginesRestored(Object sender, EventArgs args)\n \
+  \   {\n        enginesList.Clear();\n        foreach (object engine in BusinessFacade.Instance.AllEngines)\n\
+  \        {\n            enginesList.Items.Add(engine.ToString());\n        }\n \
+  \   }\n    private void saveButton_Click(object sender, EventArgs e)\n    {\n  \
+  \      BusinessFacade.Instance.SaveEngines();\n    }\n    private void restoreButton_Click(object\
+  \ sender, EventArgs e)\n    {\n        BusinessFacade.Instance.RestoreEngines();\n\
+  \    }\n}\n```\n\n`Build Engine` 按钮创建并显示了一个 `BuildEngineForm` 对象，如下所示：\n\n```csharp\n\
+  public partial class BuildEngineForm : Form\n{\n    public BuildEngineForm()\n \
+  \   {\n        InitializeComponent();\n    }\n    private void BuildEngineForm_Load(object\
+  \ sender, EventArgs e)\n    {\n        // 加载引擎类型组合框\n        object[] engineTypes\
+  \ = BusinessFacade.Instance.EngineTypes;\n        foreach (object obj in engineTypes)\n\
+  \        {\n            typeCombo.Items.Add(obj.ToString());\n        }\n      \
+  \  typeCombo.SelectedIndex = 0;\n        // 加载引擎尺寸组合框\n        sizeCombo.Items.Add(1300);\n\
+  \        sizeCombo.Items.Add(1600);\n        sizeCombo.Items.Add(2000);\n      \
+  \  sizeCombo.Items.Add(2500);\n        sizeCombo.SelectedIndex = 0;\n    }\n   \
+  \ private void cancelButton_Click(object sender, EventArgs e)\n    {\n        this.Close();\n\
+  \    }\n    private void okButton_Click(object sender, EventArgs e)\n    {\n   \
+  \     BusinessFacade.Instance.AddEngine(typeCombo.SelectedItem, (int)sizeCombo.SelectedItem);\n\
+  \        this.Close();\n    }\n}\n```\n\n`OK` 按钮调用适当的 `BusinessFacade` 方法来根据你所选的标准添加引擎。在主列表面板上，`Save`\
+  \ 和 `Restore` 按钮也会对 `BusinessFacade` 对象的方法进行相应的调用，以便保存或恢复当前显示的数据。\n\n# 第 VII 部分附录\n\
+  \n本部分包含附录，包括对不熟悉 UML 的读者关于统一建模语言（UML）图格式的简要说明，以及对 23 种主要模式的快速参考。\n\n### 附录 A. UML\
+  \ 图\n\n本书使用简化版的统一建模语言（UML）图来阐述书中书中模式的类层次结构和用法。每个独立的类都显示为一个带有三个水平区域的边界矩形，顶部区域包含类名，中间部分包含任何相关的状态（即实例变量），第三部分包含协议（即方法）。\n\
+  \n#### 类型表示\n\n抽象类、接口和抽象方法用斜体文本表示。下图显示了每种类型和方法的示例：\n\n![](img/00004.jpg)\n\n图 A.1：普通类（左侧），抽象类（中间），接口（右侧）\n\
+  \n在书中，任何属性和相关的实例变量将显示在“状态”部分。“方法”部分将只显示相关方法，而不是属性的 getter 或 setter。除非另有说明，否则你可以假设所有列出的方法都是\
+  \ `public` 的。\n\n#### 继承表示\n\n继承通过类之间的线条连接表示，并带有一个空心三角形指向被继承的类或正在实现的接口。实线表示类，虚线表示接口连接：\n\
+  \n![](img/00006.jpg)\n\n图 A.2：扩展类（左侧和中间），实现接口（右侧）\n\n#### 组合与使用表示\n\n当一个类“使用”另一个类时（即持有它的引用），这通过一个指向被使用类的开放箭头的虚线来表示。使用通常通过作为实例变量，或者通过向使用对象的构造函数或方法传递引用，或者通过实例化被使用的对象来实现。在下面的图中，每个\
+  \ `ClassA` 实例都持有或获取指向 `ClassB` 实例的引用：\n\n![](img/00021.jpg)\n\n图 A.3：`ClassA` 使用\
+  \ `ClassB`\n\n#### 代码片段\n\n在有用的地方，代码片段将显示在通过虚线连接到类的灰色框中：\n\n![](img/000058.jpg)\n\
+  \n图 A.4：代码片段 'Client' 以及其他类\n\n如果类矩形显示为灰色，这是为了美观考虑将其与其他类分开，以下示例说明了：\n\n![](img/00019.jpg)\n\
+  \n图 A.5：灰色的 Client 类\n\n### 附录 B. 设计模式快速参考\n\n本附录提供了 23 种主要模式的字母顺序快速参考。请注意，许多模式使用了抽象类或接口。在大多数情况下，这些是可交换的，且取决于选择。\n\
+  \n#### 抽象工厂 (Abstract Factory)\n**类型：** 创建型\n**目的：** 提供一个接口用于创建相关或依赖对象的族，而无需指定它们的具体类。\n\
+  **示例用法：** 通常用于为不同的外观生成“小部件（widgets）”。\n**后果：** 隔离了具体类。允许交换族。提高了产品之间的一致性。\n\n![](img/00030.jpg)\n\
+  \n* `AbstractFactory` 定义了一个用于创建抽象对象的方法的接口；\n* `ConcreteFactory1` 和 `ConcreteFactory2`\
+  \ 负责实例化产品族（例如，`ConcreteFactory1` 创建 `ProductA1` 和 `ProductB1`）；\n* `AbstractProductA`\
+  \ 和 `AbstractProductB` 定义了每个类型产品的接口；\n* 客户端程序只使用由 `AbstractFactory` `AbstractProductA`\
+  \ 和 `AbstractProductB` 定义的接口。\n\n#### 适配器 (Adapter)\n**类型：** 结构型\n**目的：** 将类的接口转换为客户端期望接口。适配器让由于接口不兼容而无法共同工作的类能够工作。\n\
+  **示例用法：** 独立兼容类的集成。\n**后果：** 一个适配器可以与许多适配器工作。\n\n![](img/00032.jpg)\n\n* `IT` 指客户端程序所需的接口；\n\
+  * `Adapter` 是客户端用于转发请求到 `Adaptee` 的类；\n* `Adaptee` 是需要适配的类。\n\n#### 桥接 (Bridge)\n\
+  **类型：** 结构型\n**目的：** 将抽象与其实现解耦，以便它们可以独立变化。\n**示例用法：** GUI 框架和持久化框架。\n**后果：** 实现没有永久绑定到接口，并且可以在运行时进行切换。\n\
+  \n![](img/00034.jpg)\n\n* `IAbstraction` 是接口的抽象；\n* `ConcreteClass` 实现 `IAbstraction`\
+  \ 接口并持有 `IImplementor` 的引用。它根据 `IImplementor` 提供实现；\n* `IImplementor` 是实现接口，可能与\
+  \ `IAbstraction` 接口完全不同；\n* `ConcreteImplementor1` 和 `ConcreteImplementor2` 实现 `IImplementor`\
+  \ 接口。\n\n#### 构建器 (Builder)\n**类型：** 创建型\n\n\n\n\n\n# 构建模式 (Builder)\n**目的**：将复杂对象的构建过程与其表示分离，使得相同的构建过程可以创建不同的表示。\n\
+  \n**示例用法**：当创建一个对象需要多个步骤时非常有用用。\n\n**影响**：允许产品内部表示的变化。隔离了构建与表示过程。\n\n![](img/00036.jpg)\n\
+  \n* `IBuilder` 定义了一个用于创建“产品”对象各个部分的接口；\n* `ConcreteBuilder` 逐步创建并组装“产品”部分，并提供一个方法在组装期间或之后检索该产品；\n\
+  * `Director` 控制实际的组装过程。\n\n#### 责任链模式 (Chain of Responsibility)\n**类型**：行为型\n\n\
+  **目的**：通过赋予多个对象处理请求的机会，避免将请求发送者与其接收者耦合。将接收对象链起来，并将请求沿链传递，直到某个对象处理它为止。\n\n**示例用法**：当有多个对象可以处理请求，且预先不知道处理者时。\n\
+  \n**影响**：并不是每个请求都需要被处理，或者某个请求可能需要由多个处理器处理。\n\n![](img/00019.jpg)\n\n* `IHandler`\
+  \ 定义了一个处理请求的接口；\n* `ConcreteHandler1` 和 `ConcreteHandler2` 分别决定它们是否可以处理该请求，或者应该将其传递给后继者。\n\
+  \n客户端程序将请求发送给链中的第一个对象。\n\n#### 命令模式 (Command)\n**类型**：行为型\n\n**目的**：将请求封装为对象，从而允许你对客户端参数化不同的请求、队列或记录请求，并支持撤销操作。\n\
+  \n**示例用法**：UI 控制，如菜单项和工具栏按钮。撤销/重做机制。\n\n**影响**：努力将调用操作的对象与执行操作的对象分离。\n\n![](img/00039.jpg)\n\
+  \n* `ICommand` 是执行操作的接口；\n* `ConcreteCommand` 在 `Receiver` 上执行操作；\n* `Invoker` 请求执行命令；\n\
+  * `Receiver` 知道如何执行这些操作。\n\n#### 组合模式 (Composite)\n**类型**：结构型\n\n**目的**：将对象组合成树形结构以表示部分与整体的层次结构。组合允许客户端以统一的方式处理单个对象和对象的组合。\n\
+  \n**示例用法**：图形组件层次结构等等。\n\n**影响**：简单对象可以组合成复杂的装配，并通过公共接口进行所有处理。添加新组件应该是简单的。\n\n![](img/00041.jpg)\n\
+  \n* `IComponent` 是同时用于叶子节点和组合对象的接口；\n* `LeafComponent` 定义了没有子对象的对象；\n* `CompositeComponent`\
+  \ 定义了可能有子对象的。\n\n#### 装饰器模式 (Decorator)\n**类型**：结构型\n\n**目的**：动态地给对象附加额外的职责。装饰器为通过子类扩展功能提供了灵活的替代方案。\n\
+  \n**示例用法**：GUI 工具包、文件和对象输入/输出流（例如缓冲）。\n\n**影响**：比直接继承更灵活，并可以减少所需的类数量。\n\n![](img/00043.jpg)\n\
+  \n* `IComponent` 定义了可以动态添加职责的对象的接口；\n* `ConcreteComponent` 实现 `IComponent` 接口；\n\
+  * `Decorator` 维护对 `IComponent` 对象的引用，并定义了一个与 `IComponent` 匹配的接口；\n* `AddedStateDecorator`\
+  \ 和 `AddedBehaviourDecorator` 分别通过添加额外的实例变量和/或方法来装饰 `IComponent`。\n\n#### Facade\
+  \ 模式 (Facade)\n**类型**：结构型\n\n**目的**：为子系统中的一组接口提供统一的接口。门面定义了一个更高层的接口，使得子系统更容易使用。\n\
+  \n**示例用法**：通过单个“门面”对象来简化对多个对象的访问。\n\n**影响**：需要创建一个新类作为“门面”。\n\n![](img/00045.jpg)\n\
+  \n* `Facade` 定义了为其他类提供简化接口的类；\n* `SomeClassA` 等是各种类，无论它们是否相关联。\n\n#### 方法工厂模式 (Factory\
+  \ Method)\n**类型**：创建型\n\n**目的**：定义一个创建对象的接口，但让子类决定实例化哪一类。\n\n**示例用法**：当你无法预测要创建的特定对象类型时，或者你想要本地化关于创建哪个类的知识时。\n\
+  \n**影响**：减少了客户端使用 `new` 来实例化对象的需要。\n\n![](img/00047.jpg)\n\n* `IProduct` 定义了要创建的产品的接口；\n\
+  * `ConcreteProduct` 是特定产品的实现；\n* `Factory` 声明了返回 `IProduct` 对象的工厂方法；\n* `ConcreteFactory`\
+  \ 实现 `Factory` 中定义的工厂方法，以返回 `IProduct` 的实例。\n\n#### 权重类模式 (Flyweight)\n**类型**：结构型\n\
+  \n**目的**：使用共享来高效地支持大量的细粒度对象。\n\n**示例用法**：文本/图形编辑器等。\n\n**影响**：通过共享共享状态节省内存。\n\n\
+  ![](img/00048.jpg)\n\n* `IFlyweight` 定义了重量级对象通过其作用于外部状态的接口；\n* `ConcreteFlyweight`\
+  \ 实现 `IFlyweight` 并存储内部状态。必须是共享的；\n* `FlyweightFactory` 通过“池”机制创建和管理重量对象。\n\n客户端程序维护对通过工厂获取的重量对象的引用。\n\
+  \n#### 解释器模式 (Interpreter)\n**类型**：行为型\n\n**目的**：给定一种语言，定义其语法的表示方式，以及一个使用该表示来解释语言中句子的解释器。\n\
+  \n**示例用法**：简单语法和微语言处理。\n\n**影响**：不适用于复杂的语法和语言处理。\n\n![](img/00050.jpg)\n\n* `AbstractExpression`\
+  \ 定义了解元素的抽象方法；\n* `TerminalExpression` 扩展 `AbstractExpression` 用于终止表达式的语言元素；\n*\
+  \ `NonTerminalExpression` 扩展 `AbstractExpression` 用于表达式部分的语言元素；\n* `Context` 是被解析的对象（例如语法或语言）。\n\
+  \n#### 迭代器模式 (Iterator)\n**类型**：行为型\n\n**目的**：提供一种在不暴露底层表示的情况下访问聚合对象元素的方法。\n\n**示例用法**：任何需要顺序处理集合或对象值数组的地方。\n\
+  \n**影响**：`for-each` 语法简化了用法。\n\n![](img/00052.jpg)\n\n* `IIterator` 定义了迭代器的接口；\n\
+  * `ConcreteIterator` 实现 `IIterator` 以执行 `IAggregate` 中每个元素的处理；\n* `IAggregate` 定义了待处理集合的接口；\n\
+  * `ConcreteAggregate` 实现实际的集合。\n\n#### 中介者模式 (Mediator)\n**类型**：行为型\n\n**目的**：定义一个封装一组对象如何交互的对象。中介者通过保持对象不显式相互引用来促进松耦合，并允许独立地改变它们的交互。\n\
+  \n**示例用法**：控制 UI 组件的对话框等。\n\n**影响**：中介者可以定义为使用观察者模式来监控组件。\n\n![](img/00054.jpg)\n\
+  \n* `IMediator` 定义了与 `IColleague` 对象通信的接口；\n* `ConcreteMediator` 实现 `IMediator`\
+  \ 接口并执行通信；\n* `IColleague` 定义了需要与 `IMediator` 通信的组件接口；\n* `ConcreteColleague1` 和\
+  \ `ConcreteColleague2` 实现 `IColleague` 接口，并与 `IMediator` 通信，无需无需任何其他同事。\n\n####\
+  \ 备忘模式 (Memento)\n**类型**：行为型\n\n**目的**：在不违反封装的情况下，捕获并外部化对象的内部状态，以便以后可以恢复到该状态。\n\n\
+  **示例用法**：撤销/重做处理、数据库事务等。\n\n\n\n\n\n### 后果\n封装了源对象外部的状态存储，但在内存或性能方面可能代价高昂。\n\n![](img/00057.jpg)\n\
+  \n* `Originator`（生成器）创建 `Memento` 对象并使用它恢复自己的状态；\n* `Memento`（备备）存储 `Originator`\
+  \ 的状态；\n* `Caretaker`（照顾者）保存备备。\n\n### Observer\n**类型**：行为型\n\n**目的**：定义对象之间一对多的依赖关系，当一个对象的状态改变时，所有依赖对象都会收到通知并自动更新。\n\
+  \n**示例用法**：GUI 控制、事件等。\n\n**后果**：通过通用接口解耦类。\n\n![](img/00059.jpg)\n\n* `Observable`（可观察者）定义了注册观察者并通知事件的机制；\n\
+  * `ConcreteObservable`（具体可观察者）为特定的主题类扩展 `Observable`；\n* `IObserver`为感兴趣的类定义接口；\n\
+  * `ConcreteObserver`（具体观察者）为特定的感兴趣类实现 `IObserver`。\n\n### Prototype\n**类型**：创建型\n\
+  \n**目的**：使用原型实例指定要创建的对象类型，并通过复制原型来创建新对象。\n\n**示例用法**：当克隆比实例化更容易或更快时。\n\n**后果**：在某些情况下，克隆可能会变得困难。\n\
+  \n![](img/00061.jpg)\n\n* `IPrototype`定义了一个可以“克隆”自的接口；\n* `ConcretePrototype`（具体原型）执行自我克隆。\n\
+  \n客户端程序通过请求原型进行自我克隆来创建新对象。\n\n### Proxy\n**类型**：结构型\n\n**目的**：为另一个对象提供代理或占位符以控制对它的访问。\n\
+  \n**示例用法**：网络连接、安全代理等。\n\n**后果**：性能可能下降。\n\n![](img/00063.jpg)\n\n* `ISubject`定义了需要通过代理访问的接口；\n\
+  * `RealSubject`（真实主体）定义了 `Proxy` 代表的实际对象；\n* `Proxy`（代理）维护对 `RealSubject` 的引用，以便代表其执行操作。\n\
+  \n### Singleton\n**类型**：创建型\n\n**目的**：确保一个类只允许创建一个对象，并为其提供单一访问点。\n\n**示例用法**：日志文件、配置设置等。\n\
+  \n**后果**：经常被过度使用、难以子类、可能导致紧耦合。\n\n![](img/00005.jpg)\n\n* `Singleton`（单例）定义了一个 `private`\
+  \ 构造函数以及一个 `public` 类（即 `static`）方法作为获取实例的唯一手段。\n\n注意，此书在大多数情况下建议使用 `enum` 来实现单例模式。\n\
+  \n### State\n**类型**：行为型\n\n**目的**：允许对象在内部状态改变时改变其行为。对象似乎改变了它的类。\n\n**示例用法**：UI 形状组件等。\n\
+  \n**后果**：将特定状态的行为局部化并分离不同状态的行为。\n\n![](img/00066.jpg)\n\n* `IState`定义了在 `Handle()`\
+  \ 方法中处理不同状态的接口；\n* `ConcreteStateA` 和 `ConcreteStateB`为每个独立状态实现 `IState` 接口；\n*\
+  \ `Context`（上下文）持有 `IState` 对象的引用以请求特定状态。\n\n### Strategy\n**类型**：行为型\n\n**目的**：定义一组算法，封装每一个算法并使它们可以互换。策略允许算法独立于使用它的客户端。\n\
+  \n**示例用法**：需要更改算法。\n\n**后果**：可能需要向每个策略传递数据。\n\n![](img/00068.jpg)\n\n* `IStrategy`定义了算法的接口；\n\
+  * `ConcreteStrategyA` 和 `ConcreteStrategyB`为特定算法实现 `IStrategy`；\n* `Context`持有正在使用的\
+  \ `IStrategy` 的引用。\n\n### Template Method\n**类型**：行为型\n\n**目的**：在方法中定义算法的骨架，将某些步骤延迟给子类。模板方法允许子类在不改变算法结构的情况下重新定义算法的某些步骤。\n\
+  \n**示例用法**：当算法的步骤可以用不同的方式执行时。\n\n**后果**：应该防止模板方法被重写。\n\n![](img/00025.jpg)\n\n*\
+  \ `AbstractClass`（抽象类）定义了不可重写的 `TemplateMethod()`，该方法调用在子类中定义的系列抽象方法；\n* `Subclass1`\
+  \ 和 `Subclass2`  `AbstractClass` 以定义由 `TemplateMethod()` 调每个抽象方法的代码。\n\n### Visitor\n\
+  **类型**：行为型\n\n**目的**：表示在对象结构元素上执行的方法。访问者模式允许你定义一个新方法，而无需更改对其操作的元素类。\n\n**示例用法**：需要在结构中的不同类型上执行相似的操作，或作为一种在不进行大量修改的情况下添加功能的手段。\n\
+  \n**后果**：添加新的访问对象可能需要修改访问者。\n\n![](img/00001.jpg)\n\n* `IVisitor`定义了一个接口，声明了访问每种可访问\
+  \ `IElement` 的方法；\n* `ConcreteVisitor1` 和 `ConcreteVisitor2`为每个可以访问的元素实现 `IVisitor`\
+  \ 接口；\n* `IElement`定义了所有可访问类类的接口；\n* `ConcreteElementA` 和 `ConcreteElementB`为每个可以访问的类实现\
+  \ `IElement` 接口。\n* `ObjectStructure`（对象结构）包含对所有可访问对象的引用，以便对它们进行迭代。\n\n### 附录 C\
+  \ 参考文献\n\nBeck, Kent. Extreme programming explained; Embrace Change. Reading, MA.\n\
+  Bevis, Kent. Extreme programming explained; Embrace Change. Reading, MA.\nBevis,\
+  \ Kent. Extreme programming explained; Embrace Change. Reading, MA.\nBloch, Joshua.\
+  \ Effective Java: programming language. River, NJ.\nCooper, James. Java patterns:\
+  \ a tutorial. River, NJ.\nCooper, Lindsey, et al. Software development with Java.\
+  \ Corte, CA:\nFowler, Martin. Refactoring: improving the design of existing code.\
+  \ River, NJ.\nFowler, Martin, and Kendall Scott. UML distilled: a brief guide to\
+  \ standard object modeling. River, NJ.\nFreeman, Eric, et al. Head first design\
+  \ patterns. Sebastopol, CA:\nGamma, Erich, et al. Design patterns: elements of reusable\
+  \ object-oriented. River, NJ:\nGilbert, Stephen, and Bill McCarty. Software engineering\
+  \ with objects. Milton, The University:\nLangr, Jeff. Java style: patterns for implementation.\
+  \ River, NJ.\n\n### 目录\n\n基础\n\n# 前言\n##### 先验知识\n\n## 1. 什么是设计模式？\n##### 本书如何使用模式](index_split_005.html_filepos10910\n\
+  ##### 如何分类](index_split_005.html_filepos29902\n##### 设计模式中的共同原则](index_split_005.html_filepos30820\n\
+  ##### 一些一般建议](index_split_005.html_filepos33860\n\n### 第二部分 创建型模式](index_split_006.html_filepos36012\n\
+  \n### 2. 抽象工厂\n##### 使用静态工厂方法](index_split_009.html_filepos72664\n\n#### 5. 原型\n\
+  \n\n\n\n\n# 6. 单例模式\n\n## 第三部分 结构型模式\n\n### 7. 适配器模式\n#### 实现适配器的变体\n#### 8. 桥接模式\n\
+  ###### 9. 组合模式\n### 10. 装饰器模式\n### 11. 外外观模式\n### 12. 享权重模式\n### 13. 代理模式\n\n##\
+  \ 第四部分 行为模式\n\n### 14. 责任链模式\n### 15. 命令模式\n#### 命令模式的典型用途\n### 16. 解释器模式\n### 17.\
+  \ 迭代器模式\n#### 'for-each' 循环\n### 18. 中者模式\n#### 用途\n### 19. 备忘模式\n#### 方法 1：使用内部可见性\n\
+  #### 方法 2：对象序列化\n### 20. 观察者模式\n### 21. 状态模式\n### 22. 策略模式\n### 23. 模板方法模式\n###\
+  \ 24. 访问者模式\n\n## 第五部分 其他实用模式\n\n### 25. 空对象模式\n### 26. 简单工厂模式\n### 27. 模型-视图控制器\
+  \ (MVC)\n### 28. 分层架构\n#### 客户端-服务器（二层）架构\n#### 三层架构\n\n## 第六部分 设计模式的实践\n\n### 29.\
+  \ 三层应用示例\n#### 数据库层\n#### 业务逻辑层\n#### 用户界面层\n\n## 第七部分 附录\n\n### 附录 A UML 图图\n####\
+  \ 表示类型\n#### 表示继承\n#### 表示组合与使用\n#### 代码片段\n#### 客户端和其他类\n\n### 附录 B 设计模式参考\n####\
+  \ 抽象工厂\n#### 适配器\n#### 桥接模式\n#### 构建者模式\n#### 责任链模式\n#### 命令模式\n#### 组合模式\n####\
+  \ 装饰器模式\n#### 外外观模式\n#### 方法工厂\n#### 享权重模式\n#### 解释器模式\n#### 迭代器模式\n#### 中者模式\n\
+  #### 备忘模式\n#### 观察者模式\n#### 原型模式\n#### 代理模式\n#### 单例模式\n#### 状态模式\n#### 策略模式\n####\
+  \ 模板方法模式\n#### 访问者模式\n\n### 附录 C 参考文献\n\n"

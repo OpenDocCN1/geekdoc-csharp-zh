@@ -1,0 +1,1722 @@
+- fmt: '
+
+    ![](Images/cover00016.jpeg)
+
+    ![](Images/image00015.jpeg)
+
+
+    # Programming Languages C# - How To Ranking: How To Learn Your First Programming
+    Language
+
+
+    ## Introduction
+
+
+    Microsoft''s `C#` programming language keeps on sliding in the most recent SlashData
+    utilization report out for Q3 2020.
+
+
+    That report is the "Designer Economics State of the Developer Nation, nineteenth
+    Edition," just distributed by research firm SlashData, which presently fixes `C#`
+    at No. 6 in utilization, behind `JavaScript`, `Python`, `Java`, `C/C++` and `PHP`.
+    One year prior, `C#` was at No. 4, and in Q2 2017 it was at No. 3.
+
+
+    While the language is encountering development in utilization, "The way that `C#`
+    lost three spots in the positioning of language networks during the most recent
+    three years is generally clarified by its more slow development contrasted with
+    `C/C++` and `PHP`," SlashData said. The organization estimates utilization basically
+    by means of inquiries on its proceeding with series of reviews led like clockwork.
+
+
+    Recently, `C#` didn''t passage so well in the eighteenth version of the review,
+    when SlashData said the language it "is by all accounts losing its edge in work
+    area improvement - perhaps because of the development of cross-stage apparatuses
+    dependent on web advancements." The organization says exactly the same thing in
+    the new report.
+
+
+    In a positioning of the size of programming language networks, `C#` is supposed
+    to be utilized by nearly 6 million engineers, up from 5.8 million in the past
+    version of the report.
+
+
+    Different features of the report identified with the size of programming language
+    networks include:
+
+
+    * `JavaScript` is the most famous programming language by a long shot, with 12.4M
+    engineers universally utilizing it.
+
+    * `Python` presently tallies 9M clients, in the wake of adding 2.2M net new designers
+    in the previous year alone, outclassing `Java` toward the start 2020.
+
+    * `Kotlin` is one of the quickest developing language networks, having expanded
+    more than twofold in size since the end 2017.
+
+    * "Quick outperformed `Kotlin` in fame this year, subsequent to drawing in marginally
+    more net new designers in the main portion of 2020 (400k versus 300k). Since `Swift`
+    turned into the default language for advancement across all Apple stages, the
+    selection of `Objective C` has been diminishing consistently. This eliminate from
+    the Apple application environment is additionally coordinated by a critical drop
+    in the position of `Objective C`, from 10th to twelfth spot," the report said.
+
+
+    Different features of the report not identified with programming dialects include:
+
+
+    * Four out of ten engineers report that they need greater adaptability in working
+    hours/responsibility as a result of COVID-19.
+
+    * Joint effort apparatuses and stages are the main specialized requirement for
+    engineers.
+
+    * By far most of expert engineers (over 80%) are engaged with `DevOps` somehow.
+
+    * Ceaseless mix (`CI`) and persistent organization (`CD`) are two of the most
+    widely recognized `DevOps` rehearses, however just one of every four designers
+    utilize both to completely robotize their work process.
+
+    * Designers like teaming up and communicating with the open-source local area
+    more than adding to opensource projects.
+
+    * Estimating and backing/documentation overwhelm engineers'' dynamic interaction
+    while embracing a cloud innovation, however valuing is by a long shot the main
+    justification dismissal.
+
+    * Arising advancements, for example, `AR` and `VR` are not completely captivating
+    OSS standards.
+
+    * Little change in commitment and reception rates show that `DevOps` has arrived
+    at development. `Mist/edge` figuring is acquiring foothold among designers drew
+    in with the subject, yet generally speaking commitment is low.
+
+
+    The nineteenth Developer Economics worldwide review wave ran from June to August
+    2020 and arrived at in excess of 17,000 designers in 159 nations. The report is
+    accessible for nothing at the connection above after giving enrollment data.
+
+
+    # How To Learn Your First Programming Language
+
+
+    Writing computer programs is an exceptionally helpful and remunerating diversion.
+    There are not many preferable sentiments over when somebody sees you utilizing
+    a program you lashed together to make your life simpler and says that it looks
+    truly valuable. The vast majority have, sooner or later in their lives, truly
+    needed to have the option to accomplish something on their PC or telephone and
+    been not able to. Assuming you know a programming language, there is regularly
+    a reasonable possibility that you can compose a program to achieve that task yourself.
+    While there are an enormous number of programming dialects, a considerable lot
+    of them have a great deal of likenesses; this implies that once you learn one
+    language very well, by and large you will actually want to get another one far
+    speedier.
+
+
+    ## Cutoffs
+
+
+    One thing that all new developers should come to term with is the measure of time
+    learning a programming language takes. In spite of the fact that when you have
+    become a specialist you will actually want to compose numerous projects rapidly,
+    you should recall that numerous projects have taken entire groups of master engineers
+    a very long time to make. So comprehend that knowing a programming language or
+    even a few isn''t sufficient to think of a portion of the more unpredictable projects
+    you have seen. Try not to view this new pastime as an approach to save yourself
+    a ton of cash, as composing your own rendition of a large portion of the projects
+    that you need to pay for the time being will be out of your scope.
+
+
+    The main thing that another software engineer has to know is that the "Get the
+    hang of Programming in 24 hours" kind of books are basically false. A more precise
+    title would be "Pick up Programming in 10,000 hours". On the off chance that you
+    put 24 hours or seven days into learning a language you won''t make the following
+    `Windows` or another, cutting edge game. It is feasible to figure out how to compose
+    a program shortly, and actually all you need to get familiar with another dialect
+    is your number one crawler, yet you won''t be a specialist. The best way to turn
+    into a specialist is similar as learning the violin; the appropriate response
+    is practice, practice and practice.
+
+
+    ## Choosing Your First Language
+
+
+    Generally the main language a programming rookie learns is either `Visual Basic`
+    or `Python`. The principal thing to comprehend is that these two dialects are
+    altogether different. The least complex difference is one of cost. `Python` is
+    absolutely free; you can begin composing python now with simply a content manager
+    on your PC, however in case you are on Windows, you will likely have to introduce
+    it first. Anyway Visual Basic, frequently abridged to `VB`, is both free and not
+    free. On the potential gain, `VB` can be less difficult for novices to learn in
+    light of the fact that it permits you to assemble the interfaces (the piece of
+    the program the client will see) by relocating the various parts similar as planning
+    it in some fundamental workmanship application.
+
+
+    The variant of `VB` novices learn is generally `Visual Basic 6`, however this
+    is somewhat obsolete and has been ended. So nowadays the variant learned is regularly
+    `VB.NET` which can be extensively less basic for novices. `VB.NET` should be created
+    inside what we call an `IDE` (Integrated Development Environment); this is fundamentally
+    an uncommon program you use to compose different projects.
+
+    '
+  raw: '
+
+
+    ![](Images/cover00016.jpeg)
+
+
+    ![](Images/image00015.jpeg)
+
+
+    ## Programming Languages C# - How To Ranking: How To Learn Your First Programming
+    Language
+
+
+    ### **Introduction**
+
+
+    Microsoft''s C# programming language keeps on sliding in the most recent
+
+
+    SlashData utilization report out for Q3 2020.
+
+
+    That report is the "Designer Economics
+
+
+    State of the Developer Nation, nineteenth Edition," just distributed by research
+    firm SlashData, which presently fixes C# at No. 6 in
+
+
+    utilization, behind JavaScript, Python, Java, C/C++ and PHP. One year prior, C#
+    was at No. 4, and in Q2 2017 it was at No. 3.
+
+
+    While the language is encountering development in utilization, "The way that C#
+    lost three spots in the
+
+
+    positioning of language networks during the most recent three years is generally
+    clarified by its more slow
+
+
+    development contrasted with C/C++ and PHP," SlashData said.
+
+
+    The organization estimates utilization basically by means of inquiries on its
+    proceeding with series of reviews led
+
+
+    like clockwork.
+
+
+    Recently, C# didn''t passage so well in the eighteenth version of the review,
+    when SlashData said the language it "is
+
+
+    by all accounts losing its edge in work area improvement - perhaps because of
+    the development of cross-stage
+
+
+    apparatuses dependent on web advancements." The organization says exactly the
+    same thing in the new
+
+
+    report.
+
+
+    In a positioning of the size of programming language networks, C# is supposed
+    to be utilized by nearly 6 million engineers, up from 5.8 million in the past
+    version of the report.
+
+
+    Different features of the report identified with the size of programming language
+    networks include:
+
+
+    JavaScript is the most famous programming language by a long shot, with 12.4M
+    engineers universally utilizing it.
+
+
+    Python presently tallies 9M clients, in the wake of adding 2.2M net new designers
+    in the previous year alone, outclassing Java toward the start 2020.
+
+
+    Kotlin is one of the quickest developing language networks, having expanded more
+    than twofold in size since the end 2017.
+
+
+    "Quick outperformed Kotlin in fame this year, subsequent to drawing in marginally
+    more net new designers in the main portion of 2020 (400k versus
+
+
+    300k). Since Swift turned into the default language for advancement across all
+    Apple stages, the selection of
+
+
+    Objective C has been diminishing consistently. This eliminate from the
+
+
+    Apple application environment is additionally coordinated by a critical drop in
+    the position of Objective C, from 10th to twelfth spot," the report said.
+
+
+    Different features of the report not identified with programming dialects include:
+
+
+    Four out of ten engineers report that they need greater adaptability in working
+    hours/responsibility as a result
+
+
+    of COVID-19.
+
+
+    Joint effort apparatuses and stages are the main specialized requirement for engineers.
+
+
+    By far most of expert engineers (over 80%) are engaged with DevOps somehow.
+
+
+    Ceaseless mix (CI) and persistent organization (CD) are two of the most widely
+    recognized DevOps rehearses,
+
+
+    however just one of every four designers utilize both to completely robotize their
+    work process.
+
+
+    Designers like teaming up and communicating with the open-source local area more
+    than adding to opensource projects.
+
+
+    Estimating and backing/documentation overwhelm engineers'' dynamic interaction
+    while embracing a cloud innovation, however valuing is by a long shot the main
+    justification
+
+
+    dismissal.
+
+
+    Arising advancements, for example, AR and VR are not completely captivating OSS
+    standards.
+
+
+    Little change in commitment and reception rates show that DevOps has arrived at
+    development. Mist/edge figuring is acquiring foothold among designers drew in
+    with the subject, yet generally speaking commitment is low.
+
+
+    The nineteenth Developer Economics worldwide review wave ran from June to August
+    2020 and arrived at in excess of 17,000 designers in 159 nations. The
+
+
+    report is accessible for nothing at the connection above after giving enrollment
+    data.
+
+
+    # **How To Learn Your First Programming Language**
+
+
+    Writing computer programs is an exceptionally helpful and remunerating diversion.
+    There are not many preferable sentiments over when somebody sees you utilizing
+    a program
+
+
+    you lashed together to make your life simpler and says that it looks truly valuable.
+    The vast majority have, sooner or later in their lives, truly
+
+
+    needed to have the option to accomplish something on their PC or telephone and
+    been not able to. Assuming you know a
+
+
+    programming language, there is regularly a reasonable possibility that you can
+    compose a program to achieve
+
+
+    that task yourself. While there are an enormous number of programming dialects,
+    a considerable lot of them have
+
+
+    a great deal of likenesses; this implies that once you learn one language very
+    well, by and large you will actually
+
+
+    want to get another one far speedier.
+
+
+    Cutoff points
+
+
+    One thing that all new developers should come to term with is the measure of time
+    learning a programming
+
+
+    language takes. In spite of the fact that when you have become a specialist you
+    will actually want to compose numerous projects rapidly, you should recall that
+
+
+    numerous projects have taken entire groups of master engineers a very long time
+    to make. So comprehend that
+
+
+    knowing a programming language or even a few isn''t sufficient to think of a portion
+    of the more unpredictable
+
+
+    projects you have seen. Try not to view this new pastime as an approach to save
+    yourself a ton of cash, as composing
+
+
+    your own rendition of a large portion of the projects that you need to pay for
+    the time being will be out of your scope.
+
+
+    The main thing that another software engineer has to know is that the "Get the
+    hang of Programming in 24 hours"
+
+
+    kind of books are basically false. A more precise title would be "Pick up Programming
+    in 10,000 hours". On the off chance that you put 24 hours or seven days into learning
+    a language you won''t make the following Windows or another, cutting edge game.
+    It is feasible to figure out how to compose a
+
+
+    program shortly, and actually all you need to get familiar with another dialect
+
+
+    is your number one web crawler, yet you won''t be a specialist. The best way to
+    turn into a specialist is similar as learning the violin; the appropriate response
+    is practice, practice and practice some more.
+
+
+    Choosing Your First Language
+
+
+    Since we have inspected the limits and taken care of a portion of the more ridiculous
+    assumptions, those of you actually needing to figure out how to code will be glad
+    to realize that writing
+
+
+    computer programs is certifiably not something hard to begin learning and won''t
+    expect you to pay out tremendous
+
+
+    amounts of cash. In case you are perusing this article on-line, you as of now
+    have the assets to begin for certain dialects, so let us think about what your
+
+
+    first language should be.
+
+
+    Generally the main language a programming rookie learns is either Visual Basic
+    or Python. The principal thing to comprehend is that these two
+
+
+    dialects are altogether different. The least complex distinction is one of cost.
+    Python is absolutely free; you can begin composing python now with simply a content
+    manager on your PC, however
+
+
+    in case you are on Windows, you will likely have to introduce it first. Anyway
+    Visual Basic, frequently abridged to
+
+
+    VB, is both free and not free. On the potential gain, VB can be less difficult
+    for newbies to learn in light of the fact
+
+
+    that it permits you to assemble the interfaces (the piece of the program the client
+    will see) by relocating the various parts similar as planning it in some fundamental
+    workmanship application.
+
+
+    The variant of VB novices learn is generally Visual Basic 6, however this is somewhat
+    obsolete and has been ended. So nowadays the variant learned
+
+
+    is regularly VB.NET which can be extensively less basic for novices.
+
+
+    VB.NET should be created inside what we call an IDE (Integrated Development Environment);
+    this is fundamentally an uncommon program
+
+
+    you use to compose different projects.'
+  toc: []
+  trans: '
+
+
+    ![](img/cover00016.jpeg)
+
+    ![](img/image00015.jpeg)
+
+
+    # 编程语言 C# - 如何排名：如何学习你的第一种编程语言
+
+
+    ## 引言
+
+
+    微软的 `C#` 编程语言在最新的 2020 年第三季度 SlashData 使用率报告中持续下滑。
+
+
+    该报告是是由研究机构 SlashData 发行的《第十九版全球开发者国家经济状况报告》，该机构目前将 `C#` 的使用率排在第 6 位，落后 `JavaScript`、`Python`、`Java`、`C/C++`
+    和 `PHP`。一年前，`C#` 排名第 4，而在 2017 年第二季度曾位列第 3。
+
+
+    SlashData 表示，“尽管该语言在利用率上有所增长，但 `C#` 在过去三年中在语言网络排名中下降三名的原因通常是因为其与 `C/C++` 和 `PHP`
+    相比发展速度较慢。”该机构主要通过其定期进行的一系列审查中的调查来估算使用率。
+
+
+    最近，`C#` 在第 18 版审查中的表现并不理想，SlashData 表示该语言“在工作领域改进方面显然正在失去优势 - 可能是因为依赖网络技术进展的跨平台工具的发展。”该机构在新报告中表达了同样的观点。
+
+
+    在编程语言网络规模的排名中，`C#` 的使用人数预计接近 600 万工程师，高于上一版报告的 580 万。
+
+
+    报告中与编程语言网络规模相关的不同特征包括：
+
+
+    *   `JavaScript` 远之是最著名的编程语言，全球有 1240 万工程师在使用它。
+
+    *   `Python` 目前拥有 900 万用户，仅在过去一年内就增加了 220 万名新开发者，在 2020 年初超过了 `Java`。
+
+    *   `Kotlin` 是增长最快的语言网络之一，自 2017 年底以来其规模扩大了一倍多。
+
+    *   “今年，`Go` 在知名度上超过了 `Kotlin`，因为它在 2020 年的大部分时间里吸引了略多一点的新开发者（40 万对比 30 万）。自从
+    `Swift` 成为所有 Apple 平台开发的默认语言后，`Objective C` 的选择一直在不断减少。这种对 Apple 应用环境的退出导致了 `Objective
+    C` 排名的大幅下降，从第 10 名降至第 12 名，”报告提到。
+
+
+    报告中与编程语言无关的不同特征包括：
+
+
+    *   十个工程师中有四位报告由于 COVID-19，他们在工作/责任方面需要更大的灵活性。
+
+    *   协作工具和平台是工程师主要的专业需求。
+
+    *   到为止，大多数专业工程师（80% 以上）以某种方式参与了 `DevOps`。
+
+    *   持续集成 (`CI`) 和持续交付 (`CD`) 是两个广为人知的 `DevOps` 实践，但每四个开发者中仅有一人使用两者来完全自动化其工作流程。
+
+    *   开发者更喜欢与开源社区合作和交流，而不是参与开源项目。
+
+    *   在采用云技术时，估算和支持/文档占据了工程师的互动时间，但价值绝对是拒绝的主要理由。
+
+    *   新兴技术（例如 `AR` 和 `VR`）尚未完全吸引 OSS（开源）标准。
+
+    *   投入和接受率的变化很小，表明 `DevOps` 已经成熟。`Mist/edge` 计算在对该主题感兴趣的开发者中正在取得立，但总体参与度很低。
+
+
+    第十九届全球开发者经济调查于 2020 年 6 月至 8 月进行，涵盖了 159 个国家的 17,000 多名开发者。该报告可以在提交数据后通过上述链接免费获取。
+
+
+    # 如何学习你的第一种编程语言
+
+
+    编写计算机程序是一项非常有益且有回报的爱好。当看到有人使用你编写的程序让他们的生活变得简单，并说这看起来真的很有价值时，没有什么比这更令人感觉良好的了。大多数人在一生中的某个阶段都切切需要在他们的电脑或手机上完成某些任务但却无法做到。假设你熟悉某门编程语言，那么你很有可能自己就能写一个程序来完成该任务。虽然有大量的编程语言，但其中有很多许多相似之处；这意味着一旦你精通了其中一种语言，基本上你学习另一种语言的速度会快得多。
+
+
+    ## 局限性
+
+
+    所有新开发者都应该理解的一点是学习编程语言所需的时间。尽管当你成为专家后，你会想要快速编写许多项目，但请记住，许多项目花费了整组资深工程师很长时间来完成。所以请理解，了解一门甚至几门编程语言并不足以让你考虑到你见过的那些更不可预测的项目。不要把这项新爱好看作是节省大笔资金的方法，因为目前，你那些可能需要付钱的大部分项目编写你自己的版本将超出你的能力范围。
+
+
+    另一个软件工程师需要知道的要点是，那些“24 小时精通编程”的书基本上是假的。更准确的标题应该是“在 10,000 小时内学会编程”。如果你投入 24 小时或七天来学习一种语言，你不会做出下一个
+    `Windows` 或其他尖端游戏。在短期内学会编写程序是可能的，实际上你熟悉另一种语言只需要你的首选编辑器，但你还称不上专家。成为专家的最好方法类似于学习小提琴；正确的答案是练习、练习、练习。
+
+
+    ## 选择你的第一种语言
+
+
+    通常编程初学者学习的主要语言是 `Visual Basic` 或 `Python`。需要理解的主要点是这两种语言完全不同。最简单的区别是成本。`Python`
+    是完全免费的；你现在只需使用电脑上的内容管理器就可以开始编写 python，但如果你在 Windows 上，你可能需要先引入它。然而 Visual Basic（通常缩写为
+    `VB`）既免费也不免费。在潜在收益方面，`VB` 对初学者来说可能更容易学习，因为它允许你通过移动各个部分来组装界面（客户看到的部分），就像在某些基础工作应用程序中设计一样。
+
+
+    初学者学习的 `VB` 版本通常是 `Visual Basic 6`，但它已经过时并停止支持了。因此现在学习的版本通常是 `VB.NET`，这对初学者可能简单得多。`VB.NET`
+    应该在我们所谓的 `IDE`（集成开发环境）中创建。
+
+
+    '
+- fmt: "\nThey likewise exist for Python, however their utilization is absolutely\
+    \ discretionary. The free VB.NET IDE is called `Visual Studio Express`. At the\
+    \ hour of composing, the most recent adaptation is `Visual Studio Express 2010`.\
+    \ Tragically, by utilizing the free form of the IDE you are confined with what\
+    \ you can do, and any projects you make can't be economically sold on. Remorsefully,\
+    \ the full paid variant of the IDE isn't modest, and presumably not fitting for\
+    \ a specialist, however luckily to learn VB the free form is sufficient. By and\
+    \ by, not very many business programs are created in VB nowadays, however the\
+    \ `Visual Studio` IDE permits you to utilize numerous different dialects. The\
+    \ commonality you will create by utilizing it will likewise permit you to utilize\
+    \ the force of the IDE for advancement in numerous different dialects. Some will\
+    \ contend that pretty much every language can be created in a content manager\
+    \ and that they are by a wide margin the most adaptable manner by which to code.\n\
+    \nWhile this is actually evident (and I do recommend attempting advancement in\
+    \ a content tool to analyze once you improve), I would emphatically prompt learning\
+    \ your first language with a legitimate IDE.\n\nWhile customarily, individuals\
+    \ learn Python or VB first and these are for the most part what is instructed\
+    \ at schools, I would not recommend both of these. I'm of the assessment that\
+    \ your first language should keep on being valuable to you one it has effectively\
+    \ helped you gain proficiency with the basics of programming. On the off chance\
+    \ that I needed to suggest one of these for rookies, it would be `VB.NET` as normal\
+    \ the most unpredictable piece of writing computer programs is the graphical side\
+    \ of things and in `VB.NET` this is extremely straightforward because of the intuitive\
+    \ interface. These two dialects are regularly utilized as presentations as they\
+    \ are exceptionally open minded toward botches, and permit you to become positive\
+    \ about programming standards without stressing over a ton of the more intricate\
+    \ issue.\n\nFor those fearless spirits among you, I would really recommend Java\
+    \ as your first language, despite the fact that it tends to be perplexing, and\
+    \ is accordingly not a typical decision for a first language. `Java` programs\
+    \ are diverse to most others in that they don't run on your PC. The client downloads\
+    \ `Java`, then, at that point your code runs on what is known as a `VM` (`Virtual\
+    \ Machine`). This implies that your code runs in an uncommon spot `Java` sets\
+    \ available - a phony duplicate of your PC - and handles the interpretation of\
+    \ this to the genuine machine for you. This implies that `Java` programs are \"\
+    crossstage\", implying that they will generally run on Windows, Mac, Linux and\
+    \ most other working frameworks.\n\n`Java` is a decent language to learn, as it\
+    \ is extremely far and wide and helpful. Moreover, it is extremely amazing, and\
+    \ is accessible for nothing for the two specialists and business employments.\
+    \ Nonetheless, as opposed to `VB` and `Python`, it doesn't endure botches and\
+    \ expects you to be quite certain about everything. It is additionally an article\
+    \ situated programming language, which is an extremely perplexing issue which\
+    \ I will momentarily attempt to sum up. Dialects like `Python` and `VB` are what\
+    \ is known as procedural dialects, implying that the lines of code are arrived\
+    \ behind schedule after another, while `Java` is an article arranged language.\
+    \ object situated programming is a term tossed around a ton these days in the\
+    \ programming scene, and keeping in mind that not generally suitable it is by\
+    \ and large thought to be a smart thought.\n\nAt the most essential level, an\
+    \ article situated program is about objects. An item is an \"launch\" of a `class`.\
+    \ A `class` is an outline used to depict something like a feline. The `class`\
+    \ contains both the information about the feline like its name, age and proprietor\
+    \ just as \"strategies\" which are basically activities the feline can perform,\
+    \ like miaow. An occurrence of the class `feline`-would give you a specific feline.\
+    \ Be that as it may, this isn't a `Java` instructional exercise, so in case you\
+    \ are adequately fearless to try different things with `Java` you will go over\
+    \ this yourself in more detail. It is important that `VB.NET` and `Python` both\
+    \ have support for object-arranged turn events, and `Java` can possibly be utilized\
+    \ procedurally, however these are not the dialects' essential proposed utilizes\
+    \ and are not regularly utilized. In the event that you didn't comprehend that\
+    \ correlation, don't stress over it to an extreme. Item direction is difficult\
+    \ to get your head around, yet any essential `Java` or other article situated\
+    \ language instructional exercise will make them comprehend everything in that\
+    \ section.\n\nA last explanation `Java` is a decent first language is that it\
+    \ is comparable from multiple points of view to `Javascript`, which is a completely\
+    \ unique class of language. `Javascript` is a prearranging language (as is `Python`),\
+    \ and learning `Java` will mean you comprehend `Javascript` sensibly well. The\
+    \ thing that matters is between prearranging dialects and typical programming\
+    \ dialects is outside the extent of this article, however as a huge speculation\
+    \ scripts are for the most part utilized for mechanized undertakings while programs\
+    \ are utilized intuitively by clients. This isn't absolutely obvious, as the two\
+    \ kinds of language are utilized for the two undertakings and most web programs\
+    \ are implicit `Javascript`.\n\nWith respect to the real language you pick, it\
+    \ is altogether dependent upon you. Some might pick the conventional fledgling\
+    \ dialects or be bold and test with `Java`. Some of you may as of now have your\
+    \ eye on a language or extravagant one of the more expert dialects like `Scheme`\
+    \ or `Prolog`. Whatever your decision, the manner in which you will figure out\
+    \ how to program is something very similar.\n\n IDEs, Yes or No?\n\nA large number\
+    \ of the perfectionists say that IDEs are an ill-conceived notion, and are loaded\
+    \ with pointless apparatus and menus that occupy plate room and time to learn.\
+    \ While this is valid, I feel that an IDE is certainly beneficial. Numerous individuals\
+    \ offer free IDEs, like `Eclipse` and `Netbeans`, for the more well known dialects.\
+    \ There is likewise `Visual Studio`, which I referenced already; it is extremely\
+    \ natural, exceptionally amazing and it supports numerous dialects (much as `Netbeans`\
+    \ and `Eclipse` do). On the off chance that you decided to utilize `Java` I would\
+    \ propose `Netbeans`, as there is a bundled adaptation of `Netbeans` with the\
+    \ `JDK` (`Java Development Kit`). Most dialects need a `SDK` (`Software Development\
+    \ Kit`) to work with them, and getting it introduced appropriately and connected\
+    \ to the IDE is regularly the hardest piece of the system. `Visual Studio` as\
+    \ of now accompanies the improvement packs set up, which makes life simpler, however\
+    \ different dialects like `Java` and `Python` can be very difficult to set up\
+    \ appropriately. This is the reason I recommended the `Netbeans` + `JDK` group\
+    \ for those trying different things with `Java`, as it handles the unpredictable\
+    \ set up for you, which will save you long stretches of misery.\n\n# How To Use\
+    \ Top-level Programs In C#\n\nExploit the new high level assertions in `C# 9.0\
+    \ to wipe out standard code and make your projects more decipherable, viable,\
+    \ and productive.\n\nWhen composing programs in the `C#` programming language,\
+    \ you perpetually need to compose a great deal of standard code — in any event,\
+    \ for basic control center applications. Envision that you need to think of some\
+    \ code to test whether a library or an API is working appropriately. You may compose\
+    \ a control center application to achieve this, however you're regardless compelled\
+    \ to keep standard `C#` semantics. You should compose your code inside the `Main`\
+    \ strategy.\n\nHigh level projects, another idea presented in `C# 9.0`, permit\
+    \ you to compose code for straightforward projects without the need to compose\n"
+  raw: 'They likewise exist for Python, however their utilization is absolutely discretionary.
+    The free VB.NET IDE is
+
+
+    called Visual Studio Express. At the hour of composing, the most recent adaptation
+    is Visual Studio Express
+
+
+    2010\. Tragically, by utilizing the free form of the IDE you are confined with
+    what you can do, and any projects you
+
+
+    make can''t be economically sold on. Remorsefully, the full paid variant of the
+    IDE isn''t modest, and presumably
+
+
+    not fitting for a specialist, however luckily to learn VB the free form is sufficient.
+    By and by, not very many business programs are created in VB
+
+
+    nowadays, however the Visual Studio IDE permits you to utilize numerous different
+    dialects. The commonality you
+
+
+    will create by utilizing it will likewise permit you to utilize the force of the
+    IDE for advancement in numerous different dialects. Some will contend that pretty
+    much every language can be created in a content manager and that they are by a
+    wide margin the most adaptable manner by which to code.
+
+
+    While this is actually evident (and I do recommend attempting advancement in a
+    content tool to analyze once you improve), I would emphatically prompt
+
+
+    learning your first language with a legitimate IDE.
+
+
+    While customarily, individuals learn Python or VB first and these are for the
+    most part what is instructed at schools, I would not recommend both of these.
+
+
+    I''m of the assessment that your first language should keep on being valuable
+    to you one it has effectively helped you
+
+
+    gain proficiency with the basics of programming. On the off chance that I needed
+    to suggest one of these for
+
+
+    rookies, it would be VB.NET as normal the most unpredictable piece of writing
+
+
+    computer programs is the graphical side of things and in VB.NET this is extremely
+    straightforward because of the intuitive interface. These two dialects are regularly
+    utilized as presentations as they are exceptionally open minded toward botches,
+    and permit you to become positive about programming standards without stressing
+    over a ton of the more intricate issue.
+
+
+    For those fearless spirits among you, I would really recommend Java as your first
+    language, despite the fact that it
+
+
+    tends to be perplexing, and is accordingly not a typical decision for a first
+    language. Java programs are
+
+
+    diverse to most others in that they don''t run on your PC. The client downloads
+    Java, then, at that point your code runs on what is known as a VM (Virtual
+
+
+    Machine). This implies that your code runs in an uncommon spot Java sets available
+    - a phony duplicate of your PC
+
+
+    - and handles the interpretation of this to the genuine machine for you. This
+
+
+    implies that Java programs are "crossstage", implying that they will generally
+    run on Windows, Mac, Linux and most other working frameworks.
+
+
+    Java is a decent language to learn, as it is extremely far and wide and helpful.
+    Moreover, it is extremely amazing, and is accessible for nothing for the two
+
+
+    specialists and business employments. Nonetheless, as opposed to VB and Python,
+    it doesn''t endure botches and expects you to be quite certain about
+
+
+    everything. It is additionally an article situated programming language, which
+    is an extremely perplexing issue which I
+
+
+    will momentarily attempt to sum up. Dialects like Python and VB are what is known
+    as procedural dialects, implying that the lines of code are arrived behind schedule
+    after another, while Java is an article arranged language. objectsituated advancement
+    is a term tossed
+
+
+    around a ton these days in the programming scene, and keeping in mind that not
+    generally suitable it is by
+
+
+    and large thought to be a smart thought.
+
+
+    At the most essential level, an article situated program is about objects. An
+    item is an "launch" of a "class". A class is an outline used to depict something
+
+
+    like a feline. The class contains both the information about the feline like its
+    name, age and proprietor just as "strategies" which are basically activities the
+    feline can perform, like
+
+
+    miaow. An occurrence of the class "feline" would give you a specific feline. Be
+    that as it may, this isn''t a Java instructional exercise, so in case you are
+
+
+    adequately fearless to try different things with Java you will go over this yourself
+    in more detail. It is important
+
+
+    that VB.NET and Python both have support for object-arranged turn of events, and
+    Java can possibly be utilized
+
+
+    procedurally, however these are not the dialects'' essential proposed utilizes
+    and are not regularly utilized. In the event that you didn''t comprehend that
+    correlation, don''t stress over it to an extreme. Item direction is difficult
+    to get your head around, yet any essential
+
+
+    Java or other article situated language instructional exercise will make them
+    comprehend everything in that section.
+
+
+    A last explanation Java is a decent first language is that it is comparable from
+    multiple points of view to Javascript, which is a completely unique class of language.
+    Javascript is a prearranging
+
+
+    language (as is Python), and learning Java will mean you comprehend Javascript
+    sensibly well. The thing that matters is between prearranging dialects and typical
+    programming dialects is
+
+
+    outside the extent of this article, however as a huge speculation scripts
+
+
+    are for the most part utilized for
+
+
+    mechanized undertakings while programs are utilized intuitively by clients. This
+    isn''t absolutely obvious, as the two kinds of language are utilized for the two
+    undertakings and most web programs are implicit Javascript.
+
+
+    With respect to the real language you pick, it is altogether dependent upon you.
+    Some might pick the conventional fledgling dialects or be bold and test with Java.
+    Some of you may as of now
+
+
+    have your eye on a language or extravagant one of the more expert
+
+
+    dialects like Scheme or Prolog. Whatever your decision, the manner in which you
+    will figure out how to program is something very similar. IDEs, Yes or No?
+
+
+    A large number of the perfectionists say that IDEs are an ill-conceived notion,
+    and are loaded with pointless
+
+
+    apparatuses and menus that occupy plate room and time to learn. While this is
+    valid, I feel that an IDE is certainly
+
+
+    beneficial. Numerous individuals offer free IDEs, like Eclipse and Netbeans, for
+    the more well known dialects. There is likewise Visual Studio, which I
+
+
+    referenced already; it is extremely natural, exceptionally amazing and it upholds
+    numerous dialects (much as Netbeans and Eclipse do). On the off chance that you
+    decided to utilize Java I would propose Netbeans, as there is a bundled adaptation
+    of Netbeans with the
+
+
+    JDK (Java Development Kit). Most dialects need a SDK (Software Development Kit)
+    to work with them,
+
+
+    and getting it introduced appropriately and connected to the IDE is regularly
+
+
+    the hardest piece of the system. Visual Studio as of now accompanies the improvement
+    packs set up, which makes life simpler, however different dialects like Java and
+    Python can be very difficult to set up appropriately. This is the reason I recommended
+    the
+
+
+    Netbeans + JDK group for those trying
+
+
+    different things with Java, as it handles
+
+
+    the unpredictable set up for you, which
+
+
+    will save you long stretches of misery.
+
+
+    # **How To Use Top-level Programs In C#**
+
+
+    Exploit the new high level assertions in C# 9.0 to wipe out standard code and
+
+
+    make your projects more decipherable, viable, and productive.
+
+
+    When composing programs in the C# programming language, you perpetually need to
+    compose a great deal of
+
+
+    standard code — in any event, for basic control center applications. Envision
+    that you need to think of some code to test whether a library or an API is working
+    appropriately. You may compose a control center application to achieve this, however
+    you''re regardless compelled to keep standard C#
+
+
+    semantics. You should compose your code inside the Main strategy.
+
+
+    High level projects, another idea presented in C# 9.0, permit you to compose code
+    for straightforward projects sans the need to compose'
+  toc: []
+  trans: '
+
+    Python 中同样存在这些工具，然而，它们的利用完全取决于个人意愿。免费的 VB.NET IDE 被称为 `Visual Studio Express`。在编写时，最新的版本是
+    `Visual Studio Express 2010`。遗憾的是，使用该 IDE 的免费版，你的功能将受到限制，而且你创建的任何项目都无法进行商业化出售。遗憾的是，该
+    IDE 的完整付费版并不便宜，而且可能不适合专业人士，但幸运的是，学习 VB 使用免费版就足够了。随着时间的推移，现在不再有很多商业程序是用 VB 开发的，但
+    `Visual Studio` IDE 允许你使用许多不同的语言。你使用它时创建的通用性也将允许你利用 IDE 的力量在许多不同的语言中进行开发。有些人人会认为，几乎每种语言都可以在内容管理器中创建，而且它们无疑是编写代码最灵活的方式。
+
+
+    虽然这实际上是显而易见的（而且我建议你在提高水平后尝试在内容工具中开发以分析），但我强烈建议你用一个正版 IDE 学习你的第一门语言。
+
+
+    虽然通常情况下，人们会先学习 Python 或 VB，而这些大部分是学校教授的内容，但我并不建议学习这两者。我认为，你的第一门语言在它有效地帮助你掌握编程基础之后，应该对你继续保持价值。如果我必须为新手建议其中一种，那将是
+    `VB.NET`，因为理所当然，计算机程序最不可预测的部分是图形化部分，而在 `VB.NET` 中，由于直观的界面，这非常简单。这两种语言经常被用作演示，因为它们对错误非常宽容，并允许你在不担心许多更复杂问题的情况下，对编程标准建立信心。
+
+
+    对于你们中那些无畏的灵魂 来说，我真的推荐将 `Java` 作为你的第一门语言，尽管它倾向于复杂，因此不是一个作为第一门语言的典型选择。`Java` 程序与其他大多数程序的不同之处在于，它们并不运行在你的
+    PC 上。客户端下载 `Java`，然后，你的代码运行在所谓的 `VM`（`Virtual Machine`，虚拟机）上。这意味着你的代码运行在 `Java`
+    提供的特殊区域——你电脑的虚拟副本——并为你处理将其映射到真实机器的解释。这意味着 `Java` 程序是“跨平台”的，意味着它们通常可以在 Windows、Mac、Linux
+    以及大多数其他工作框架上运行。
+
+
+    `Java` 是一门值得学习的语言，因为它非常广泛且有用。此外，它是非常奇人的，并且对于专业人士和商业工作来说是免费的。然而，与 `VB` 和 `Python`
+    不同，它不容忍错误，并要求你对一切都非常确定。它还是一种面向对象的编程语言，这是一个非常复杂的问题，我将简要尝试总结一下。像 `Python` 和 `VB`
+    这样的语言被称为过程化语言，意味着代码行是按顺序一个接一个，而 `Java` 是一种面向对象的语言。面向对象编程是如今编程领域被频繁提到的术语，尽管并非完全适用，但很大程度上被认为是一个明智的主意。
+
+
+    在最基层，面向对象的程序是关于对象的。一个对象是 `class`（类）的“实例”。一个 `class` 是一个用来描述像猫之类的对象的蓝图。`class`
+    包含了关于猫的信息，如它的名字、年龄和所有者，也包含了“策略”（这些基本上是猫可以执行的活动，如喵喵）。`feline` 类的实例将给你一只特定的猫。尽管如此，这并不是一个
+    `Java` 练习，所以如果你足够勇敢去用 `Java` 尝试不同的事物，你将自己更详细地学习这一点。`VB.NET` 和 `Python` 都都支持面向对象的开发事件，而
+    `Java` 可以以过程化的方式使用。
+
+    '
+- fmt: "\nstandard code. High level projects are an incredible new element that permits\
+    \ you to compose cleaner, more limited, and less difficult code. You can exploit\
+    \ high level projects to investigate groundbreaking thoughts. This article talks\
+    \ about how you can function with high level projects in `C# 9.0`. To work with\
+    \ the code models gave in this article, you ought to have `Visual Studio 2019`\
+    \ introduced in your framework. On the off chance that you don't as of now have\
+    \ a duplicate, you can download `Visual Studio 2019` here.\n\nNote that `C# 9.0`\
+    \ is accessible in `Visual Studio 2019` form `16.9 Preview 1` or later, and in\
+    \ the `.NET 5.0 SDK`.\n\n## Make a .NET Core console application project in Visual\
+    \ Studio\n\nFor one thing, we should make a `.NET Core` console application project\
+    \ in Visual Studio. Accepting `Visual Studio 2019` is introduced in your framework,\
+    \ follow the means laid out underneath to make another `.NET Core` console application\
+    \ project in `Visual Studio`.\n\nDispatch the `Visual Studio` IDE. Snap on \"\
+    Make new task.\"\n\nIn the \"Make new undertaking\" window, select \"Control center\
+    \ App (.NET Core)\" from the rundown of layouts showed.\n\nSnap Next.\n\nIn the\
+    \ \"Arrange your new task\" window, determine the name and area for the new venture.\n\
+    \nSnap Create. We'll utilize this undertaking to work with high level projects\
+    \ in the ensuing areas of this article.\n\n## High level program model in C# 9.0\n\
+    \nWe should take a gander at a previously, then after the fact illustration of\
+    \ how high level projects can dispose of standard code. Before high level proclamations\
+    \ in `C# 9.0`, this is the negligible code you'd compose for a control center\
+    \ application:\n\n```csharp\nusing System;\nnamespace IDG_Top_Level_Programs_Demo\n\
+    {\n    class Program\n    {\n        static void Main(string[] args)\n       \
+    \ {\n            Console.WriteLine(\"Hello World!\");\n        }\n    }\n}\n```\n\
+    \nWhen working with `C# 9.0`, we can keep away from the clamor and exploit high\
+    \ level projects to compose our code in a lot easier way. The accompanying code\
+    \ piece shows how you can exploit high level explanations to refactor the above\
+    \ code:\n\n[ Learn how driving CIOs are rethinking IT. Download CIO's new Think\
+    \ Tank report today! ]\n\n```csharp\nusing System;\nConsole.WriteLine(\"Hello\
+    \ World!\");\n```\n\nRegardless, when the program is executed, you'll see the\
+    \ string \"Hi World!\" showed at the control center window.\n\n## Use strategies\
+    \ in high level projects in C# 9.0\n\nYou can utilize techniques with high level\
+    \ projects. The following is a code model that represents how you can utilize\
+    \ strategies with high level projects.\n\n```csharp\nSystem.Console.WriteLine(DisplayMessage(\"\
+    Joydip!\"));\nSystem.Console.Read();\nstatic string DisplayMessage(string name)\n\
+    { \n    return \"Hi, \" + name;\n}\n```\n\nAt the point when you execute the above\
+    \ program, you should see the yield \"Hi, Joydip!\" show up in the control center\
+    \ window:\n\n## Use classes in high level projects in C# 9.0\n\nYou can likewise\
+    \ utilize classes, structs, and enums in high level projects. The accompanying\
+    \ code scrap outlines how you can utilize classes in high level projects.\n\n\
+    ```csharp\nSystem.Console.WriteLine(new Author().DisplayMessage(\"Joydip!\"));\n\
+    System.Console.Read();\npublic class Author\n{\n    public string DisplayMessage(string\
+    \ name)\n    {\n        return \"Hi, \" + name;\n    }\n}\n```\n\nAt the point\
+    \ when you execute the above program, the yield will be like Figure 1.\n\n## How\
+    \ high level projects work in C# 9.0\n\nAll in all, how high level projects work\
+    \ precisely? What occurs in the background? High level projects are basically\
+    \ a compiler highlight. In the event that you don't compose the standard code,\
+    \ the compiler will create it for you.\n\nRefer to the accompanying piece code\
+    \ we composed before.\n\n```csharp\nusing System;\nConsole.WriteLine(\"Hello World!\"\
+    );\n```\n\nThe code showed underneath (created utilizing the `SharpLab` online\
+    \ instrument) shows what the compiler produced code would resemble:\n\n```csharp\n\
+    using System;\nusing System.Diagnostics;\nusing System.Reflection;\nusing System.Runtime.CompilerServices;\n\
+    using System.Security; using System.Security.Permissions;\n[assembly: CompilationRelaxations(8)]\n\
+    [assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]\n[assembly: Debuggable(DebuggableAttribute.DebuggingModes.Default\
+    \ | DebuggableAttribute.DebuggingModes.DisableOptimizations | DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints\
+    \ | DebuggableAttribute.DebuggingModes.EnableEditAndContinue)] [assembly: SecurityPermission(SecurityAction.RequestMinimum,\
+    \ SkipVerification = true)]\n[assembly: AssemblyVersion(\"0.0.0.0\")]\n[module:\
+    \ UnverifiableCode]\n[CompilerGenerated]\ninternal static class <Program>$\n{\
+    \ \n    private static void <Main>$(string[] args)\n    {\n        Console.WriteLine(\"\
+    Hello World!\");\n    }\n}\n```\n\nIn the event that you take a gander at the\
+    \ compiler-produced code, you'll see the `[CompilerGenerated]` trait on top of\
+    \ the static class created by the compiler. High level projects are an incredible\
+    \ new element in `C# 9.0`, whereby the compiler consequently creates the standard\
+    \ code for you in the background. High level projects are incredible for straightforward\
+    \ projects that don't have such a large number of records and conditions. Note\
+    \ that just one document in your application might utilize high level proclamations;\
+    \ in any case the compiler tosses a blunder.\n"
+  raw: 'standard code. High level projects are an incredible new element that permits
+    you to compose cleaner, more limited, and less difficult code. You can exploit
+    high level projects to investigate
+
+
+    groundbreaking thoughts. This article talks about how you can function with high
+    level projects in C# 9.0\. To work with the code models gave in this article,
+    you ought to have Visual
+
+
+    Studio 2019 introduced in your framework. On the off chance that you don''t as
+    of now have a duplicate, you can download Visual Studio 2019 here.
+
+
+    Note that C# 9.0 is accessible in Visual Studio 2019 form 16.9 Preview 1 or later,
+    and in the .NET 5.0 SDK.
+
+
+    Make a .NET Core console application project in Visual Studio
+
+
+    For one thing, we should make a .NET Core console application project in Visual
+    Studio. Accepting Visual Studio
+
+
+    2019 is introduced in your framework, follow the means laid out underneath to
+    make another .NET Core console application project in Visual Studio.
+
+
+    Dispatch the Visual Studio IDE. Snap on "Make new task."
+
+
+    In the "Make new undertaking" window, select "Control center App (.NET Core)"
+    from the rundown of layouts showed.
+
+
+    Snap Next.
+
+
+    In the "Arrange your new task" window, determine the name and area for the new
+    venture.
+
+
+    Snap Create. We''ll utilize this undertaking to work with high level projects
+    in the ensuing
+
+
+    areas of this article.
+
+
+    High level program model in C# 9.0
+
+
+    We should take a gander at a previously, then after the fact illustration of how
+    high level projects can dispose of standard code. Before high level proclamations
+    in C# 9.0, this
+
+
+    is the negligible code you''d compose for a control center application:
+
+
+    utilizing System; namespace
+
+
+    IDG_Top_Level_Programs_Demo
+
+
+    {
+
+
+    class Program
+
+
+    {
+
+
+    static void Main(string[] args)
+
+
+    {
+
+
+    Console.WriteLine("Hello World!"); }
+
+
+    }
+
+
+    }
+
+
+    When working with C# 9.0, we can keep away from the clamor and exploit high level
+    projects to compose our code
+
+
+    in a lot easier way. The accompanying code piece shows how you can exploit high
+    level explanations to refactor the above code:
+
+
+    [ Learn how driving CIOs are rethinking IT. Download CIO''s new Think Tank report
+    today! ]
+
+
+    utilizing System;
+
+
+    Console.WriteLine("Hello World!");
+
+
+    Regardless, when the program is executed, you''ll see the string "Hi World!" showed
+    at the control center window.
+
+
+    Use strategies in high level projects in C# 9.0
+
+
+    You can utilize techniques with high level projects. The following is a code model
+    that represents how you can utilize strategies with high level projects.
+
+
+    System.Console.WriteLine(DisplayMes sage("Joydip!"));
+
+
+    System.Console.Read();
+
+
+    static string DisplayMessage(string name)
+
+
+    { return "Hi, " + name;
+
+
+    }
+
+
+    At the point when you execute the above program, you should see the yield "Hi,
+    Joydip!" show up in the control center window:
+
+
+    Use classes in high level projects in C# 9.0
+
+
+    You can likewise utilize classes, structs, and enums in high level projects. The
+    accompanying code scrap outlines how you can utilize classes in high level projects.
+
+
+    System.Console.WriteLine(new Author().DisplayMessage("Joydip!"));
+
+
+    System.Console.Read();
+
+
+    public class Author
+
+
+    {
+
+
+    public string DisplayMessage(string name)
+
+
+    {
+
+
+    return "Hi, " + name;
+
+
+    }
+
+
+    }
+
+
+    At the point when you execute the above program, the yield will be like Figure
+    1.
+
+
+    How high level projects work in C# 9.0
+
+
+    All in all, how high level projects work precisely? What occurs in the background?
+    High level projects are basically a compiler highlight. In the event that you
+    don''t compose the standard code, the compiler will create it for you.
+
+
+    Allude to the accompanying piece code we composed before.
+
+
+    utilizing System;
+
+
+    Console.WriteLine("Hello World!");
+
+
+    The code showed underneath (created utilizing the SharpLab online
+
+
+    instrument) shows what the compilerproduced code would resemble.
+
+
+    utilizing System;
+
+
+    utilizing System.Diagnostics;
+
+
+    utilizing System.Reflection;
+
+
+    utilizing
+
+
+    System.Runtime.CompilerServices;
+
+
+    utilizing System.Security; utilizing System.Security.Permissions;
+
+
+    [assembly: CompilationRelaxations(8)]
+
+
+    [assembly:
+
+
+    RuntimeCompatibility(WrapNonExcept ionThrows = true)]
+
+
+    [assembly:
+
+
+    Debuggable(DebuggableAttribute.Debu ggingModes.Default |
+
+
+    DebuggableAttribute.DebuggingModes. DisableOptimizations |
+
+
+    DebuggableAttribute.DebuggingModes. IgnoreSymbolStoreSequencePoints | DebuggableAttribute.DebuggingModes.
+    EnableEditAndContinue)] [assembly:
+
+
+    SecurityPermission(SecurityAction.Req uestMinimum, SkipVerification = true)]
+
+
+    [assembly:
+
+
+    AssemblyVersion("0.0.0.0")]
+
+
+    [module: UnverifiableCode]
+
+
+    [CompilerGenerated]
+
+
+    interior static class <Program>$
+
+
+    { private static void <Main>$(string[] args)
+
+
+    {
+
+
+    Console.WriteLine("Hello World!");
+
+
+    }
+
+
+    }
+
+
+    In the event that you take a gander at the compiler-produced code, you''ll see
+    the [CompilerGenerated] trait on top of the static class created by the compiler.
+    High level projects are an incredible new element in C# 9.0, whereby the compiler
+    consequently creates the standard code for you in the background. High level projects
+    are
+
+
+    incredible for straightforward projects that don''t have such a large number of
+    records and conditions. Note that just one document in your application might
+
+
+    utilize high level proclamations; in any case the compiler tosses a blunder.
+
+
+    One disadvantage to high even out programs is that, in case you''re new to C#,
+    you probably won''t have the option
+
+
+    to get what''s going on in the code in the background. A superior way for novices
+    to learn C# will utilize the Main technique, and staying away from high
+
+
+    level explanations until you see how the Main strategy functions. However, the
+    individuals who have dominated Main
+
+
+    will discover high level explanations an extremely valuable easy route.
+
+
+    The most effective method to accomplish more in C#:
+
+
+    The most effective method to utilize design coordinating in C#
+
+
+    Instructions to work with read-just assortments in C#
+
+
+    The most effective method to work with static mysterious capacities in C# 9
+
+
+    The most effective method to work with record types in C#
+
+
+    The most effective method to utilize implied and express administrators in C#
+
+
+    Singleton versus static classes in C#
+
+
+    Instructions to log information to the Windows Event Log in C# Instructions to
+    utilize ArrayPool and MemoryPool in C#
+
+
+    Instructions to utilize the Buffer class in C#
+
+
+    Instructions to utilize HashSet in C#
+
+
+    Instructions to utilize named and discretionary boundaries in C#
+
+
+    Instructions to benchmark C# code utilizing BenchmarkDotNet Instructions to utilize
+    familiar interfaces and strategy binding in C#
+
+
+    Instructions to unit test static strategies in C#
+
+
+    Instructions to refactor God protests in C#
+
+
+    # **How To Use Closures In C#**
+
+
+    Exploit terminations in C# — including unknown techniques, agents, and lambda
+    articulations— to make your code strong, proficient, coherent, and
+
+
+    simpler to keep up with.
+
+
+    Terminations are frequently connected with utilitarian programming dialects.
+
+
+    Terminations interface a capacity to its referring to climate, permitting the
+    capacity to get to non-neighborhood
+
+
+    factors. In C#, terminations are upheld utilizing unknown strategies, lambda articulations,
+    and representatives.
+
+
+    I have examined mysterious strategies and
+
+
+    [ Also on InfoWorld: What''s new in Microsoft .NET 6 ]
+
+
+    This article discusses how we can function with terminations utilizing unknown
+    techniques, lambda
+
+
+    articulations, and delegates in C#. To work with the code models gave in this
+    article, you ought to have Visual Studio 2019 introduced in your framework. On
+    the off chance that you don''t as of now have a duplicate, you can download
+
+
+    Visual Studio 2019 here.
+
+
+    Make a control center application project in Visual Studio
+
+
+    For one thing, we should make a .NET Core console application project in Visual
+    Studio. Accepting Visual Studio
+
+
+    2019 is introduced in your framework, follow the means illustrated beneath to
+    make another .NET Core console application project.
+
+
+    Dispatch the Visual Studio IDE.
+
+
+    Snap on "Make new venture."
+
+
+    In the "Make new venture" window, select "Control center App (.NET'
+  toc: []
+  trans: "\n标准代码。顶级项目（High level projects）是一项非常不起的新特性，允许你编写更整洁、更简洁且更简单的代码。你可以利用顶级项目来探索突破性的思想。本文将介绍如何在\
+    \ `C# 9.0` 中运行顶级项目。为了运行本文中提供的代码模型，你的框架中应该已经引入了 `Visual Studio 2019`。如果你还没有该版本，可以在此处下载\
+    \ `Visual Studio 2019`。\n\n请注意，`C# 9.0` 在 `Visual Studio 2019` 的 `16.9 Preview\
+    \ 1` 或更高版本，以及 `.NET 5.0 SDK` 中可用。\n\n## 在 Visual Studio 中创建 .NET Core 控制台应用程序项目\n\
+    \n首先，我们需要在 Visual Studio 中创建一个 `.NET Core` 控制台应用程序项目。假设你的框架中已引入 `Visual Studio\
+    \ 2019`，请按照下面的步骤在 `Visual Studio` 中创建另一个 `.NET Core` 控制台应用程序项目。\n\n启动 `Visual\
+    \ Studio` IDE。点击“创建新项目（Make new task）”。\n\n在“新建项目”窗口中，从显示的布局列表中选择“控制台应用 (.NET\
+    \ Core)”。\n\n点击“下一步”。\n\n在“配置你的新项目”窗口中，确定新项目的名称和位置。\n\n点击“创建”。我们将利用此项目在本文的后续部分中使用顶级项目。\n\
+    \n## C# 9.0 中的顶级程序模型\n\n我们应该先看一个关于顶级项目如何处理标准代码的示例。在 `C# 9.0` 引入顶级语句之前，这是你为控制台应用编写的基础性代码：\n\
+    \n```csharp\nusing System;\nnamespace IDG_Top_Level_Programs_Demo\n{\n    class\
+    \ Program\n    {\n        static void Main(string[] args)\n        {\n       \
+    \     Console.WriteLine(\"Hello World!\");\n        }\n    }\n}\n```\n\n在使用 `C#\
+    \ 9.0` 时，我们可以避免繁琐的操作，并利用顶级项目以更简单的方式编写代码。下面的代码段展示了如何利用顶级语句来重构上述代码：\n\n[ 了解首席信息官如何重新思考\
+    \ IT。即刻下载 CIO 最新的智库报告！ ]\n\n```csharp\nusing System;\nConsole.WriteLine(\"Hello\
+    \ World!\");\n```\n\n无论如何，当程序运行时，你会在控制台窗口看到显示“Hi World!”字符串。\n\n## 在 C# 9.0 顶级项目中使用语句\n\
+    \n你可以在顶级项目中使用语句。下面是一个代码模型，展示了你如何在顶级项目中使用语句。\n\n```csharp\nSystem.Console.WriteLine(DisplayMessage(\"\
+    Joydip!\"));\nSystem.Console.Read();\nstatic string DisplayMessage(string name)\n\
+    { \n    return \"Hi, \" + name;\n}\n```\n\n当你执行上述程序时，你应该会在控制台窗口看到输出结果“Hi, Joydip!”：\n\
+    \n## 在 C# 9.0 顶级项目中使用类\n\n你同样可以在顶级项目中使用类、结构体和枚举。下面的代码片段概述了你如何在顶级项目中使用类。\n\n```csharp\n\
+    System.Console.WriteLine(new Author().DisplayMessage(\"Joydip!\"));\nSystem.Console.Read();\n\
+    public class Author\n{\n    public string DisplayMessage(string name)\n    {\n\
+    \        return \"Hi, \" + name;\n    }\n}\n```\n\n当你执行上述程序时，输出结果将如图 1 所示。\n\n\
+    ## C# 9.0 中顶级项目的工作原理\n\n总而言之，顶级项目具体是如何运作的？后台发生了什么？顶级项目基本上是编译器的一个特性。如果你没有编写标准代码，编译器将为你创建它。\n\
+    \n参考我们之前编写的后续代码。\n\n```csharp\nusing System;\nConsole.WriteLine(\"Hello World!\"\
+    );\n```\n\n下面显示的代码（使用 `SharpLab` 在线工具创建）展示了编译器生成的代码样式：\n\n```csharp\nusing System;\n\
+    using System.Diagnostics;\nusing System.Reflection;\nusing System.Runtime.CompilerServices;\n\
+    using System.Security; using System.Security.Permissions;\n[assembly: CompilationRelaxations(8)]\n\
+    [assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]\n[assembly: Debuggable(DebuggableAttribute.DebuggingModes.Default\
+    \ | DebuggableAttribute.DebuggingModes.DisableOptimizations | DebuggableAttribute.DebuggingModes.IgnoreSymbolStoreSequencePoints\
+    \ | DebuggableAttribute.DebuggingModes.EnableEditAndContinue)] [assembly: SecurityPermission(SecurityAction.RequestMinimum,\
+    \ SkipVerification = true)]\n[assembly: AssemblyVersion(\"0.0.0.0\")]\n[module:\
+    \ UnverifiableCode]\n[CompilerGenerated]\ninternal static class <Program>$\n{\
+    \ \n    private static void <Main>$(string[] args)\n    {\n        Console.WriteLine(\"\
+    Hello World!\");\n    }\n}\n```\n\n如果你查看编译器生成的代码，你会发现编译器创建的静态类上方带有 `[CompilerGenerated]`\
+    \ 标记。顶级项目是 `C# 9.0` 中一项非常不起的新特性，通过它编译器会在后台自动为你创建标准代码。顶级项目对于没有大量记录和逻辑的简单项目非常有用。请注意，你的应用程序中只能有一个文件使用顶级语句；否则，编译器会报错。\n"
+- fmt: "\nCore)\" from the rundown of layouts showed.\n\nSnap Next.\n\nIn the \"Design\
+    \ your new undertaking\" window, indicate the name and area for the new venture.\n\
+    \nSnap Create.\n\nWe'll utilize this venture to outline the utilization of unknown\
+    \ techniques, lambdas, and representatives as terminations in the ensuing segments\
+    \ of this article.\n\n## Delegates in C#\n\nA delegate as a five star work in\
+    \ C# is characterized as a five star work containing free factors bound in the\
+    \ lexical climate. The C# programming language regards the five star work like\
+    \ it were a top notch information type. This implies that you can allot the capacity\
+    \ to a variable, conjure it, or pass it around similarly you work with some other\
+    \ top notch information type.\n\nA delegate is a specific kind of capacity that\
+    \ is inherently connected to the climate where it is referred to. Accordingly,\
+    \ terminations can utilize factors relating to the referring climate, regardless\
+    \ of these qualities being outside the extent of the delegate.\n\n[ Learn how\
+    \ driving CIOs are rehashing IT. Download CIO's new Think Tank report today! ]\n\
+    \n### Basic delegate models in C#\n\nYou can compose a delegate utilizing an unknown\
+    \ technique as displayed in the code bit given underneath:\n\n```csharp\nFunc<string,\
+    \ string> someFunc = delegate (string someVariable) return \"Hi World!\";\n```\n\
+    \nThen again you can make a delegate utilizing a lambda work as displayed in the\
+    \ code bit beneath:\n\n```csharp\nFunc<string, string> someFunc = someVariable\
+    \ => \"Hi World!\";\n```\n\nNote that both of the above code scraps make a strategy\
+    \ that acknowledges a string as a boundary and returns another string. Here's\
+    \ the way you can summon both of these terminations we just made:\n\n```csharp\n\
+    string str = someFunc(\"This is a demo\");\n```\n\nHow about we take a gander\
+    \ at another model. The code piece given underneath makes a whole number worth\
+    \ in a non-nearby factor named `x`.\n\n```csharp\nint x = 10;\nAction conclusion\
+    \ = delegate Console.WriteLine(\"The worth of the non-nearby factor x is: {0}\"\
+    , x);\nconclusion();\n```\n\nHere's the way you can do the very same thing utilizing\
+    \ a lambda articulation:\n\n```csharp\nint x = 10;\nAction conclusion = () =>\n\
+    {\n    Console.WriteLine(\"The worth of the non-neighborhood variable x is: {0}\"\
+    , x);\n};\nconclusion();\n```\n\nIn the two cases, the yield will show up precisely\
+    \ as shown in Figure 1 underneath.\n\n### Delegates catch factors, not qualities\n\
+    \nSince a delegate is bound to the climate in which it is pronounced, it can reference\
+    \ out-of-scope factors and items from inside its body. Here is a model that outlines\
+    \ this:\n\n```csharp\nint x = 10;\nAction a = delegate {\n    Console.WriteLine($\"\
+    The worth of x is: {x}\"); \n};\na();\n```\n\nAt the point when you execute the\
+    \ above code, the yield will show up at the control center window as displayed\
+    \ in Figure 2.\n\nThe accompanying code bit shows that the mysterious technique\
+    \ is bound to factors in the parent strategy body, not qualities.\n\n```csharp\n\
+    int x = 10;\nAction a = delegate {\n    Console.WriteLine($\"The worth of x is:\
+    \ {x}\"); \n};\nx = 100;\na();\n```\n\nAt the point when you execute the above\
+    \ code, the yield will show up as displayed in Figure 3. Note that the mysterious\
+    \ capacity returns 10, not 100.\n\n### How do C# terminations work?\n\nAt the\
+    \ point when the C# compiler recognizes a representative that frames a conclusion\
+    \ that is moved past the current degree, the agent and its related neighborhood\
+    \ factors are elevated to a compiler-created class. From that point, it simply\
+    \ takes a little compiler sorcery to move between occasions of the compiler-created\
+    \ class, guaranteeing that each time the representative is conjured, a capacity\
+    \ on this class is called. Once there could be presently not any references to\
+    \ the occurrence of this class, the case is trash gathered by the GC similarly\
+    \ different cases are gathered.\n\nThe following is an illustration of a compiler-produced\
+    \ class made on arrangement of a code piece that contains terminations. `[CompilerGenerated]`\n\
+    \n```csharp\nprivate fixed class <>c__DisplayClass0_0\n{\n    public int x;\n\
+    \    inner void <M>b__0()\n    {\n        Console.WriteLine(string.Format(\"The\
+    \ worth of x is: {0}\", x)); \n    } \n}\n```\n\nFor a lambda to stay \"callable,\"\
+    \ the factors it references should endure even after the capacity wherein they\
+    \ have been characterized has got done with executing. To accomplish this, C#\
+    \ draws on classes. Thus, when a lambda work gets to a variable that is characterized\
+    \ inside a capacity, that variable is extricated and put inside another class\
+    \ created by the compiler. That is by and large how a conclusion functions!\n\n\
+    ## MALINA PRONTO\n"
+  raw: 'Core)" from the rundown of layouts showed.
+
+
+    Snap Next.
+
+
+    In the "Design your new undertaking" window, indicate the name and area for the
+    new venture.
+
+
+    Snap Create.
+
+
+    We''ll utilize this venture to outline the utilization of unknown techniques,
+    lambdas, and representatives as terminations in the ensuing segments of this article.
+
+
+    A conclusion as a five star work in C# A conclusion is characterized as a five
+    star work containing free factors bound in the lexical climate. The C#
+
+
+    programming language regards the five star work like it were a top notch
+
+
+    information type. This implies that you can allot the capacity to a variable,
+    conjure it, or pass it around similarly you work with some other top notch information
+    type.
+
+
+    A conclusion is a specific kind of capacity that is inherently connected to
+
+
+    the climate where it is referred to. Accordingly, terminations can utilize
+
+
+    factors relating to the referring to climate, regardless of these qualities being
+    outside the extent of the conclusion.
+
+
+    [ Learn how driving CIOs are rehashing IT. Download CIO''s new Think Tank report
+    today! ]
+
+
+    Basic conclusion models in C#
+
+
+    You can compose a conclusion utilizing an unknown technique as displayed in the
+    code bit given underneath. Func<string, string> someFunc = delegate (string someVariable)
+    return "Hi World!"; };
+
+
+    Then again you can make a conclusion utilizing a lambda work as displayed in the
+    code bit beneath.
+
+
+    Func<string, string> someFunc = someVariable => "Hi World!";
+
+
+    Note that both of the above code scraps make a strategy that acknowledges a string
+    as a boundary and returns another string. Here''s the way you can summon both
+    of these terminations we just made:
+
+
+    string str = someFunc("This is a demo");
+
+
+    How about we take a gander at another model. The code piece given underneath makes
+    a whole number worth in a non-nearby factor named x.
+
+
+    int x = 10;
+
+
+    Activity conclusion = delegate Console.WriteLine("The worth of the non-nearby
+    factor x is: {0}", x);
+
+
+    };
+
+
+    conclusion();
+
+
+    Here''s the way you can do the very same thing utilizing a lambda articulation:
+
+
+    int x = 10; Activity conclusion = () =>
+
+
+    {
+
+
+    Console.WriteLine("The worth of the non-neighborhood variable x is: {0}", x);
+
+
+    };
+
+
+    conclusion();
+
+
+    In the two cases, the yield will show up precisely as shown in Figure 1 underneath.
+
+
+    Terminations catch factors, not qualities
+
+
+    Since a conclusion is bound to the climate in which it is pronounced, it can reference
+    out-of-scope factors and items
+
+
+    from inside its body. Here is a model that outlines this:
+
+
+    int x = 10;
+
+
+    Activity a = delegate {
+
+
+    Console.WriteLine($"The worth of x is: {x}"); };
+
+
+    a();
+
+
+    At the point when you execute the above code, the yield will show up at the control
+    center window as displayed
+
+
+    in Figure 2.
+
+
+    The accompanying code bit shows that the mysterious technique is bound to factors
+    in the parent strategy body, not
+
+
+    qualities.
+
+
+    int x = 10;
+
+
+    Activity a = delegate {
+
+
+    Console.WriteLine($"The worth of x is: {x}"); };
+
+
+    x = 100;
+
+
+    a();
+
+
+    At the point when you execute the above code, the yield will show up as displayed
+    in Figure 3\. Note that the mysterious capacity returns 10, not 100.
+
+
+    How do C# terminations work?
+
+
+    At the point when the C# compiler recognizes a representative that frames
+
+
+    a conclusion that is moved past the current degree, the agent and its related
+    neighborhood factors are elevated to a compiler-created class. From that point,
+    it simply takes a little compiler sorcery to move between occasions of the compiler-created
+    class, guaranteeing that each time the representative is conjured, a capacity
+    on this class is called. Once there could be presently not any references to the
+    occurrence of this class, the case is trash gathered by the GC similarly different
+    cases are gathered.
+
+
+    The following is an illustration of a compiler-produced class made on arrangement
+    of a code piece that
+
+
+    contains terminations. [CompilerGenerated]
+
+
+    private fixed class <>c__DisplayClass0_0
+
+
+    {
+
+
+    public int x;
+
+
+    inner void <M>b__0()
+
+
+    {
+
+
+    Console.WriteLine(string.Format("The worth of x is: {0}", x)); } }
+
+
+    For a lambda to stay "callable," the factors it references should endure even
+    after the capacity wherein they have been characterized has got done with executing.
+    To accomplish this, C# draws on classes. Thus, when a lambda
+
+
+    work gets to a variable that is characterized inside a capacity, that variable
+    is extricated and put inside
+
+
+    another class created by the compiler. That is by and large how a conclusion functions!
+
+
+    ## **MALINA PRONTO**'
+  toc: []
+  trans: "\n布局概览显示了 Core )\"。\n\nSnap Next。\n\n在“设计你的新项目”窗口中，指定新项目的名称和区域。\n\nSnap\
+    \ Create。\n\n我们将利用此项目在本文的后续章节中概述匿名方法、lambda 表达式和代表方法（terminations）的用法。\n\n## C#\
+    \ 中的委托 (Delegates)\n\nC# 中的委托（delegate）被描述为包含绑定在词法作用域（lexical climate）中的自由因素的方法。C#\
+    \ 编程语言将委托视为一种顶级数据类型。这意味着你可以像处理其他顶级数据类型一样，将能力分配给变量、实例化它或在它们之间传递。\n\n委托是一种特定的能力类型，它本质上与它引用的环境相关联。因此，委托可以使用与引用环境相关的因素，无论这些因素是否超出了委托的作用范围。\n\
+    \n[ 了解领先首席信息官（CIOs）如何重塑 IT。。立即下载 CIO 最新的智库报告！ ]\n\n### C# 中的基本委托模型\n\n你可以像下面的代码段所示，使用匿名方法来组合委托：\n\
+    \n```csharp\nFunc<string, string> someFunc = delegate (string someVariable) return\
+    \ \"Hi World!\";\n```\n\n同样，你可以像下面的代码段所示，使用 lambda 表达式来创建委托：\n\n```csharp\nFunc<string,\
+    \ string> someFunc = someVariable => \"Hi World!\";\n```\n\n注意，上面的两个代码片段都创建了一个接受字符串作为边界并返回另一个字符串的方法。以下是调用我们刚刚创建的这两个方法的方法：\n\
+    \n```csharp\nstring str = someFunc(\"This is a demo\");\n```\n\n我们来看另一个模型。下面的代码段在一个名为\
+    \ `x` 的非局部（non-nearby）因素中创建一个整数值。\n\n```csharp\nint x = 10;\nAction conclusion\
+    \ = delegate Console.WriteLine(\"The worth of the non-nearby factor x is: {0}\"\
+    , x);\nconclusion();\n```\n\n以下是使用 lambda 表达式实现相同操作的方法：\n\n```csharp\nint x =\
+    \ 10;\nAction conclusion = () =>\n{\n    Console.WriteLine(\"The worth of the\
+    \ non-neighborhood variable x is: {0}\", x);\n};\nconclusion();\n```\n\n在这两种情况下，输出将完全如下方图\
+    \ 1 所示。\n\n### 委托捕获的是因素，而不是属性\n\n由于委托绑定到它声明的环境，因此它可以引用作用域之外的因素以及体内部的项。以下是一个描述此点的模型：\n\
+    \n```csharp\nint x = 10;\nAction a = delegate {\n    Console.WriteLine($\"The\
+    \ worth of x is: {x}\"); \n};\na();\n```\n\n当执行上述代码时，输出将如图 2 所示出现在控制台窗口。\n\n随后的代码段显示，匿名方法绑定到父方法体中的因素，而不是属性。\n\
+    \n```csharp\nint x = 10;\nAction a = delegate {\n    Console.WriteLine($\"The\
+    \ worth of x is: {x}\"); \n};\nx = 100;\na();\n```\n\n当执行上述代码时，输出将如图 3 所示。注意，匿名方法返回的是\
+    \ 10，而不是 100。\n\n### C# 方法是如何工作的？\n\n当 C# 编译器识别出一个定义了超出当前层级方法的代表方法时，该代理及其相关的环境因素会被提升到编译器创建的类中。从那时起，只需一点编译器魔法即可在编译器创建的类的实例之间移动，确保每次实例化委托时，都会调用该类上的一个能力。一旦不再对该类的实例有任何引用，该实例就会像其他情况一样被\
+    \ GC 回收。\n\n以下是一个根据包含方法的代码片段生成的编译器生成的类示例。`[CompilerGenerated]`\n\n```csharp\n\
+    private fixed class <>c__DisplayClass0_0\n{\n    public int x;\n    inner void\
+    \ <M>b__0()\n    {\n        Console.WriteLine(string.Format(\"The worth of x is:\
+    \ {0}\", x)); \n    } \n}\n```\n\n为了让 lambda 保持“可调用性”，它引用的因素在声明它们的方法执行完毕后仍应保持存在。为了实现这一点，C#\
+    \ 依赖于类。因此，当 lambda 表达式访问在方法内部声明的变量时，该变量会被提取并放在由编译器创建的另一个类中。这大致就是方法的工作原理！\n\n##\
+    \ MALINA PRONTO\n"

@@ -1,0 +1,28 @@
+name: Visual C#.NET： Windows Forms Programming with C#
+name_cn: Visual C#.NET：C# Windows Forms 编程
+slug: visual-cnet-windows-forms-programming-with-c
+toc:
+- - '#'
+  - '# 第一章：#C 编程语言快速指南'
+- - '##'
+  - 数据类型 类型和变量
+- - '##'
+  - 历史和配置
+- - '##'
+  - 数据转换
+- - '##'
+  - 变体
+- - '##'
+  - 有趣的特性
+- - '##'
+  - 委托和事件
+- - '##'
+  - 第二章：NET Framework
+- - '##'
+  - 第三章：从 C# 开始
+- - '##'
+  - 第四章：Lambda 表达式和查询
+- - '##'
+  - 第五章：使用和处理事件
+- - '##'
+  - 第六章：面向对象编程

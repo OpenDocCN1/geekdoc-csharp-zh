@@ -1,0 +1,1468 @@
+- fmt: '
+
+    ![](rsrc7.jpg)
+
+    '
+  raw: '
+
+
+    ![](rsrc7.jpg)'
+  toc: []
+  trans: '
+
+
+    ![](img/rsrc7.jpg)
+
+    '
+- fmt: "\n# Introduction\n\n## What is C#\nToday's world is full of programming languages\
+    \ with a variety of resources and purposes. This is undoubtedly what C# is. It\
+    \ is a modern object-oriented programming language, developed in 2000 by Anders\
+    \ Helsberg at Microsoft. C# is often seen as a hybrid that takes the best of C\
+    \ and C++ to create a modern language; it aims to integrate computing power into\
+    \ C++ with the ease of programming Basic.\n\n## Why C-Sharp was created\nYou might\
+    \ wonder why a new language was created, despite the existence of other software\
+    \ entities, for similar purposes, such as Java! In fact, it was initially established\
+    \ as a competition for Java; Sun (which Oracle later purchased) did not want to\
+    \ make changes to Java, so Microsoft chose to create its own language instead.\
+    \ In general, C# has features similar to those in Java. C# has grown very fast\
+    \ since it was created and this is of course under the broad support of Microsoft\
+    \ to help it gain its place today.\n\n## What is the origin of the term “C #\"\
+    \nIts term C# is derived from the `#` which indicates a single-point increase.\
+    \ This is perhaps the language of creativity that the programming world and the\
+    \ music world bring! C# is often pronounced in English as “C Sharp”.\n\n## Main\
+    \ uses of C#\nIn fact, in short, almost anything! You can use C# to create Windows\
+    \ applications, client-server applications, database applications, and much more…\
+    \ Their diverse uses can be distinguished as:\n\n### Windows Application Development\n\
+    Considering .NET support on Windows, C# is now the first choice for every developer\
+    \ to build Windows applications. New versions of Windows (Windows 8 / Windows\
+    \ 10) have strongly helped this adoption the vast majority of third-party applications\
+    \ are written in the Windows Store by C#. Although the Windows Store did not achieve\
+    \ the success and fame achieved by both the App Store and Google Play, it will\
+    \ undoubtedly shape the future of the distribution of Windows applications, so\
+    \ C# has a bright future on Windows.\n\n### Create web applications typically\
+    \ via:\n- WebForms (part of the .NET Web Applications framework included)\n- MVC\
+    \ (an architectural style commonly used to develop web applications)\n\n### Mobile\
+    \ devices and smartphones\nWhen it comes to smartphones, C# is constantly growing.\
+    \ `Xamarin` leads the way in this area, offering tools for all major mobile platforms,\
+    \ as well as many other platforms that provide a lot of useful resources on how\
+    \ develop mobile phone in C#. Microsoft also has a long history of supporting\
+    \ C# on mobile devices; it recently released an update to Visual Studio 2013 that\
+    \ supports generic applications - developed side-by-side for both desktops and\
+    \ Windows.\n\n### The games\nC# is widely used to create games with the `Unity`\
+    \ game engine, the most popular game engine today, with more than a third of the\
+    \ world's best games made, and nearly 770 million active users of games created\
+    \ with it. Unity is also powered in virtual reality, with 90% of all Samsung Gear\
+    \ devices and 53% of all Oculus VR games developed with it. C# is a hugely popular\
+    \ tool for creating these apps, so it offers a great choice for any programmer\
+    \ hoping to break into the gamaking world, or anyone interested in virtual reality.\
+    \ C# is flexible enough to run TCP/IP servers, and Raspberry Pi.\n\n## C# Features\n\
+    - Easy to learn, but complex tasks!\n- C# has many features that make learning\
+    \ easier.\n- The structure of C# is, of course, very expressive, but simple and\
+    \ easy to learn.\n- C# construction simplifies many complexities of C++.\n- C#\
+    \ is relatively easy to read.\n- In addition, C# processes most of the complex\
+    \ details of the device so that you can focus on the purpose of programming rather\
+    \ than worrying about small details.\n- C# is also a statically written language,\
+    \ so the code is checked before being converted into an application, which makes\
+    \ it easier to find errors, which can be especially useful for beginners.\n\n\
+    # Chapter One: #C Programming Language Quick Guide\n\nC# is an elegant, object-oriented\
+    \ programming language with type-safe data types that enables developers to build\
+    \ secure, robust applications running on the .NET framework.\n\n## Data types\
+    \ Types and Variables\n### Syntax\n```csharp\n// Single-line comments start with\
+    \ two slashes like this\n/// * Multiline comments are placed between the tag above\
+    \ and the tag below it\n/// /This xml comment is used to generate external documentationOr\
+    \ to provide context-specific assistance in an IDE integrated development environment.\n\
+    /// <param name = \"firstParam\"> to document the Parameter function which is\
+    \ the firstParam parameter of this comment </ param>\n/// <returns> Information\
+    \ about the return value of the / returns> function\n// public void MethodOrClassOrOtherWithParsableHelp\
+    \ (string firstParam) {}\n```\n### Specifies the Namespaces that this code will\
+    \ use\nThe namespaces below are all part of the .NET Framework Classes.\n\n###\
+    \ Framework Class Library\n```csharp\nusing System;\nusing System.Collections.Generic;\n\
+    using System.Dynamic;\nusing System.Linq;\nusing System.Net;\nusing System.Threading.Tasks;\n\
+    using System.IO;\nusing System.Data.Entity;\n```\nThis namespace is not included\
+    \ in the standard library: In order to use the library above you will need to\
+    \ add a reference to the NuGet package manager can do: `Install-Package`.\n\n\
+    ### Namespaces\nNamespaces define fields to organize the codes into Packages or\
+    \ Modules. To use the namespace defined below in another code, we add `Learning.CSharp`\
+    \ statement. Each `cs` file must contain at least a `class` has the same file\
+    \ name.\n\n```csharp\nnamespace Learning.CSharp\npublic class LearnCSharp\n{Basic\
+    \ wording: you can skip to “interesting features” if you have already written\
+    \ code in Java or C++\npublic static void Syntax ()\n{\n// To write a new line,\
+    \ use Console.WriteLine\nConsole.WriteLine (\"Hello\");\n// To write statements\
+    \ on the same line as Console.Write\nConsole.WriteLine (\"Integer:\" + 3.14 +\"\
+    Boolean:\" + true);\n}\n}\n```\n\n## History and configuration\n### Data structures\n\
+    Types and Variables\nDefine the variables as `<type> <name>`\n\n- **byte**: integer\
+    \ (negative or positive) on 8 bits (between 128 and 127). `byte foo = 100;`\n\
+    - **Byte**: a normal (positive only) number on 8 bits (between 0 and 255). `byte\
+    \ foo = 100;`\n- **Short**: 16-bit integer or natural number True is confined\
+    \ between -32768 and 32767. `short foo = 10000;`\n- **ushort**: short is confined\
+    \ between 0 and 65535. `ushort foo = 10000;`\n- **int**: integer or normal 32-bit\
+    \ length. `int foo = 1; // (-2147483648 <= int <= 2147483647)`\n- **uint**: int\
+    \ or normal 32-bit length. `uint foo = 1; // (0 <= uint <= 4294967295)`\n- **Long**:\
+    \ integer or normal 64-bit length. `long foo = 100000L; // (-9223372036854775808\
+    \ <= long <= 9223372036854775807)`\n- **ulong**: ulong 64-bit length. `ulong foo\
+    \ = 10000L; // (0 <= ulong <= 18446744073709551615)`\n- **Double**: IEEE 754 64-bit\
+    \ floating point precision. `double foo = 123.4; // Resolution: 15-16 digits`\n\
+    - **Float**: 32-bit IEEE 754 Floating Point. `float foo = 234.5f; // Accuracy:\
+    \ 7 digits`\n- **Decimal**: 128-bit data type, higher accuracy than floating-point\
+    \ data types suitable for financial and monetary accounts. `decimal foo = 150.3m;`\n\
+    - **Boolean**: true & false. `bool foo = true; // or false`\n- **Char**: A 16-bit\
+    \ data type that stands for Unicode. `char foo = 'A';`\n- **Strings**: Contrast\
+    \ all previous data types that are types for data values, a string, is a type\
+    \ of reference, meaning it can take the value null. `string foo = \"\\\" escape\
+    \ \\\"quotes and add \\n (new lines) and \\t (tabs)\";`\n\n### Native strings\
+    \ of Verbatim String\nYou can use the `@` sign in front of a string to redeem\
+    \ all the characters in the string.\n```csharp\nstring path = \"C: \\\\ Users\
+    \ \\\\ User \\\\ Desktop\";\nstring verbatimPath = @\"C: \\ Users \\ User \\ Desktop\"\
+    ;\nConsole.WriteLine(path == verbatimPath); // => true\n```\nYou can distribute\
+    \ a string of characters on more than one line with the `@` symbol to redeem the\
+    \ \"place\" tag (\"twice\").\n```csharp\nstring bazString = @\"Here's some stuffon\
+    \ a new line! \"\" Wow! \"\", The masses cried \";\n```\nUse the `const` keyword\
+    \ to make the variable static and not editable and calculate the static values\
+    \ during compile time.\n```csharp\nconst int HoursWorkPerWeek = 9001;\n```\n\n\
+    ### Lists\nMatrices - The first element starts at 0 and the matrix metric must\
+    \ be defined when it is defined.\n```csharp\n<datatype> [] <var name> = new <datatype>[<array\
+    \ size>]\n```\nThe `intArray` matrix in the following example contains 10 numbers:\n\
+    ```csharp\nint[] intArray = new int[10];\n```\nAnother way to define and configure\
+    \ an array:\n```csharp\nint[] y = {9000, 1000, 1337};\n```\nArrange elements of\
+    \ an array - access an element:\n```csharp\nConsole.WriteLine (\"intArray @ 0:\"\
+    \ + intArray[0]);\n```\nArrays are adjustable.\n```csharp\nintArray[1] = 1;\n\
+    ```\nLists are used more than arrays because of their flexibility and the definition\
+    \ of a list is as follows:\n```csharp\nList<datatype> <var name> = new List<datatype>()\n\
+    List<int> list = new List<int>{9000, 1000, 1337}; // Specify the initial values\n\
+    ```\nThe lists have no initial values and must first add a value before the item\
+    \ can be accessed:\n```csharp\nlist.Add(1);\nConsole.WriteLine(\"list @ 0:\" +\
+    \ list[0]);\n```\n\n### Factors\nOperators:\n```csharp\nint i1 = 1, i2 = 2; //\
+    \ Abbreviation to define several variables at once\n```\nClear calculations:\n\
+    ```csharp\nConsole.WriteLine(i1 + i2 - 7); // => 3\n```\nThe scale is Modulo:\n\
+    ```csharp\nConsole.WriteLine(\"1 % 3\"); // => 2\n```\nComparison factors:\n```csharp\n\
+    Console.WriteLine(\"3 == 2\"); // => false\nConsole.WriteLine(\"3 != 2\"); //\
+    \ => true\nConsole.WriteLine(\"3 > 2\"); // => true\nConsole.WriteLine(\"3 <=\
+    \ 2\"); // => false\nConsole.WriteLine(\"3 >= 2\"); // => true\nConsole.WriteLine(\"\
+    3 < 2\"); // => false\n```\nBitwise comparison operators:\n`~`: Single complement\
+    \ factor (if the bit contains 0 converts it to 1, and it contains one converts\
+    \ it to zero)\n`>>`: Shift the bits to the left\n`<<`: Offset bits to the right\n\
+    `&`: Factor “and” makes sense\n`^`: Non-universal logical factor\n`|`: Inclusive\
+    \ OR\n\nIncrementation:\n```csharp\nint i = 0;\nConsole.WriteLine(\"\\n-> Increment\
+    \ / Decrementation\");\nConsole.WriteLine(i++); // Prints \"0\", i = 1; Increase\
+    \ after me\nConsole.WriteLine(+i); // Prints \"2\", i = 2; Before me\nConsole.WriteLine(i--);\
+    \ // Prints \"2\", i = 1; Decrease after me\nConsole.WriteLine(--i); // Prints\
+    \ \"0\", i = 0; Decrease before me\n```\n\n### Control structures\n```csharp\n\
+    Console.WriteLine(\"\\n-> Control Structures\");\nint j = 10;\nif (j == 10)\n\
+    {\n    Console.WriteLine (\"I printed\");\n}\nelse if (j > 10)\n{\n    Console.WriteLine(\"\
+    I't\");\n}\nelse\n{\n    Console.WriteLine(\"I also don't\");\n}\n```\nTriple\
+    \ factors\n```csharp\nint toCompare = 17;\nstring isTrue = toCompare == 17 ? \"\
+    True\" : \"False\";\n```\n\n### For Each loop\nA foreach iteration loop can be\
+    \ used to pass through any Object that performs the `IEnumerable` or `IEnumerable<T>`.\
+    \ All aggregate types (arrays, lists, dictionaries…) are implemented within the\
+    \ Net framework. (`ToCharArray()` can be omitted from the instruction below, because\
+    \ String implements the `IEnumerable` interface)\n```csharp\nforeach (char character\
+    \ in \"Hello World\".ToCharArray())\n{// Pass on all characters in the chain\n\
+    }\n```\n\n### Switch instruction\nSwitch works with byte, short, char, and int\
+    \ data types as well as with Enum data types (below), String and a few special\
+    \ classes that encapsulate basic data types: Character, Byte, Short, and Integer.\n\
+    ```csharp\nint month = 3;\nstring monthString;\nswitch (month)\n{\ncase 1:\n \
+    \   monthString = \"January\";\n    break;\ncase 2:\n    monthString = \"February\"\
+    ;\n    break;\ncase 3:\n    monthString = \"March\";\n    break;\n// More than\
+    \ one procedure can be performed in each case, but you cannot add a procedure\
+    \ within a state without adding a break instruction; Before the next case (if\
+    \ you want to do this, you will need to add the goto case x statement after the\
+    \ action)\ncase 6:\ncase 7:\ncase 8:\n    monthString = \"Summer time !!\";\n\
+    \    break;\ndefault:\n    monthString = \"Some other month\";\n    break;\n}\n\
+    ```\n\n## Data conversion\nConvert the String charset string to the Integer number\n\
+    An `Exception` will appear if the conversion failed\n```csharp\nint.Parse (\"\
+    123\"); // We get the numerical version of the string \"123\"\n```\nWhen using\
+    \ the `TryParse` function to convert the data type, the conversion value will\
+    \ be the initial value of the data type. In the case of numbers, the initial value\
+    \ is 0.\n```csharp\nint tryInt;\nif (int.TryParse (\"123\", out tryInt)) // The\
+    \ function returns a Boolean value\n    Console.WriteLine (tryInt); // 123\n```\n\
+    Converts numbers to strings\nThe `Convert` class includes a number of methods\
+    \ to facilitate conversion:\n```csharp\nConvert.ToString(123);\n```\n\n## Varieties\n\
+    Algebra data types\ndecimal number 15 to get a value of type `int`\n```csharp\n\
+    long x = (int)15;\n```\n\n## Interesting features\n### Keyword “yield”\nThe use\
+    \ of `yield` indicates that the function in which keyword appears to have a repetition\
+    \ property (that is, the function can be used with `foreach` loop)\n```csharp\n\
+    public static IEnumerable<int> YieldCounter(int limit = 10)\n{\n    for (var i\
+    \ = 0; i < limit; i++)\n        yield return i;\n}\n```\n`yield return` can be\
+    \ used more than once in the same function\n```csharp\npublic static IEnumerable<int>\
+    \ ManyCounter()\n{\n    yield return 0;\n    yield return 1;\n    yield return\
+    \ 2;\n    yield return 3;\n}\n```\nYou can also use “yield break” to stop repeating\
+    \ the next function returns half of the values between 0 and limit\n```csharp\n\
+    public static IEnumerable<int> YieldCounterWithBreak(int limit = 10)\n{\n    for\
+    \ (var i = 0; i < limit; i++)\n    {\n        if (i > limit / 2) yield break;\n\
+    \        yield return i;\n    }\n}\n```\n\n### Optional transactions\nMethod signatures(3,\
+    \ 1, 3, \"Some\", \"Extra\", \"Strings\")\n```csharp\nMethod signatures(3, another:\
+    \ 3); // Set the parameter value directly, exceeding the optional parameters\n\
+    ```\n\n### Floating species\nCall the SetDefault function defined above\n```csharp\n\
+    var phonebook = new Dictionary <string, string> () {{\"Sarah\", \"212 555 5555\"\
+    } // Add an address to the address book\n```\n```csharp\nConsole.WriteLine (SetDefault\
+    \ <string, string>(phonebook, \"Shaun\", \"No Phone\")); // No Phone\n```\nYou\
+    \ can not select TKey and TValue since they can be deduced automatically\n```csharp\n\
+    Console.WriteLine (SetDefault (phonebook, \"Sarah\", \"No Phone\")); // 212 555\
+    \ 555\n```\n\n### Dealing with errors\n```csharp\ntry\n{\n    var fun = Penny.CreateWithGears(6);\
+    \ // Will not be executed because CreateGears causes an Exception\n}\ncatch (Exception\
+    \ ex) // Capture all other exceptions\n{\n    Console.WriteLine(\"It hit\", ex);\
+    \ throw; // Another pickup keeps the callstack\n}\nfinally\n{ // try or catch\
+    \ is executed after }\n```\n\n### Resource Management\n```csharp\nusing (StreamWriter\
+    \ writer = new StreamWriter(\"log.txt\"))\n{\n    writer.WriteLine(\"Nothing here\"\
+    );\n} // All resources are discarded after\n```\n\n### Parallel programming\n\
+    ### Parallel with ASPARALLEL\n```csharp\nvar words = new List<string>{\"dog\"\
+    , \"cat\", \"pony\"};\nParallel.ForEach(words, new ParallelOptions {DegreeOfParallelism\
+    \ = 4}, word =>\n{\n    Console.WriteLine(word);\n});\n```\nRunning this code\
+    \ will result in multiple outputs because each thread is completed at a different\
+    \ time.\n\n### LINQ\nLinking a data store to objects of class `IQueryable<T>`\
+    \ Example: `LinqToSql` associates objects with a database, `LinqToXml` associates\
+    \ objects with an XML document.\n```csharp\nvar db = new BikeRepository();\n```\n\
+    Implementation is delayed, which is good when dealing with databases\n```csharp\n\
+    var filter = db.Bikes.Where(b => b.HasTags); // no query run\nif (42 > 6) // You\
+    \ can still add filters, even those conditional; suitable for Advanced Search\n\
+    \    filter = filter.Where(b => b.IsBroken); // no query\nvar query = filter.OrderBy(b\
+    \ => b.Wheels).ThenBy(b => b.Name).Select(b => b.Name); // still no run\nThe query\
+    \ works now, but you only get results when you pass them\n```csharp\nforeach (string\
+    \ bike in query)\n    Console.WriteLine(result);\n```\n\n## Delegation and Events\n\
+    ### Delegate is a reference to a child\nTo make a reference to the `Increment`\
+    \ function, we begin by defining a delegation with the same signature, ie it does\
+    \ not take any data and returns a number of type `int`.\n```csharp\npublic delegate\
+    \ int IncrementDelegate();\n```\n### The event can also be used to trigger delegation\n\
+    Create an event with authorization type\n```csharp\npublic static event IncrementDelegate\
+    \ MyEvent;\nstatic void Main(string[] args)\n{\n    Skinning to the Increment\
+    \ child by initiating delegation and passing a given is the child itself\n   \
+    \ IncrementDelegate inc = new IncrementDelegate(Increment);\n    Console.WriteLine(inc());\
+    \ // => 1\n\n    // Authorizations can be installed with +\n    IncrementDelegate\
+    \ composedInc = inc;\n    composedInc += inc;\n    composedInc += inc;\n    //\
+    \ The composedInc delegate will perform the Increment child three times\n    Console.WriteLine(composedInc());\
+    \ // => 4\n\n    // Sign up for the event using delegation\n    MyEvent += new\
+    \ IncrementDelegate(Increment);\n    MyEvent += new IncrementDelegate(Increment);\n\
+    \    // Trigger the event, that is the execution of all authorizations shared\
+    \ in that event\n    Console.WriteLine(MyEvent()); // => 6\n}\n```\n\n# Chapter\
+    \ II: NET Framework\n\n### About this chapter\nThe .NET Framework is the .NET\
+    \ Framework. From Microsoft's most popular frameworks, from the first beta in\
+    \ late 2000 to the current 4.6, there have been significant improvements that\
+    \ made the programming languages that work with it. The .NET Framework is the\
+    \ core entity on which applications depend. It provides the means for such applications\
+    \ to access files, manipulate databases, and other basic tasks. The .NET Framework\
+    \ was designed from the outset to run on any operating system or any available\
+    \ hardware. Although Microsoft has only supported this framework on Windows, have\
+    \ been independent attempts to migrate it to Linux via an open source mono project.\
+    \ Xamarin, which was acquired by Microsoft less than month ago. It is enough to\
+    \ know that this framework consists of two main sections: Common Runtime (CLR)-\
+    \ The Framework Class Library is called FCL.\n\n### Main sections of the framework\n\
+    We'll talk a little bit about the two main parts of the .NET Framework as well\
+    \ as the C# Compiler.\n\n### Common Implementation Environment\nIt is the environment\
+    \ that executes programs written in dot net languages, and forms an incubator\
+    \ for these programs by isolating them from the hardware of the device you are\
+    \ working on. You can compare it to the Java Virtual Machine. CLR is available\
+    \ by default on most Windows operating systems (with variants) such as Windows\
+    \ XP, Windows 7, Windows 8, Windows 10, Windows Phone.\n\n### FCL Framework Class\
+    \ Library\nThis huge library contains thousands of classes that allow us to accomplish\
+    \ any task that comes to mind. From regular expressions, to network communications,\
+    \ to popular Internet protocols such as HTTP, etc., FCL, in turn, consists of\
+    \ several sub-libraries. One library helps us develop Windows applications, another\
+    \ allows us to develop web applications using ASP.NET technology, select what\
+    \ you need according to your business requirements. The FCL library also contains\
+    \ a sub-library called Base Class Library, or BCL. This library contains basic\
+    \ classes that work with all applications created using other libraries, regardless\
+    \ of their type.\n\n### C# Compiler\nIn order to implement the programs we write\
+    \ with C#, we need a C# Compiler. This translator is included by default with\
+    \ the framework. The translator converts the code in C# into code written in a\
+    \ language known as Microsoft Intermediate Language (MSIL). This is a low-level\
+    \ intermediate language, similar to the Assembly language. In fact, the CLR will\
+    \ execute the instructions written in MSIL. The CLR environment does not need\
+    \ to know the programming language in which the program was originally written\
+    \ and is the main feature that allows the programmer to write in any programming\
+    \ language that supports dotnet. As long as the programming language has an MSIL-compliant\
+    \ interpreter, there is no problem. This was the case with other programming languages\
+    \ such as Basic .NET, #F and even Python through IronPython. See the following\
+    \ illustration:\n![](rsrcNH.jpg)\n\n### How does the program execute using CLR?\n\
+    (Detailed explanation provided in text above)\n\n### Conclusion\n(Detailed conclusion\
+    \ provided in the text above)\n\n# Chapter III: Get started with C-Sharp\n\n##\
+    \ The first program\n### A simple program to add two integers\n```csharp\nusing\
+    \ System;\nnamespace HelloWorld\n{\n    class Program\n    {\n        static void\
+    \ Main(string[] args)\n        {\n            Console.WriteLine (\"Hello World!\"\
+    );\n        }\n    }\n}\n```\n### More optimized program to add two numbers\n\
+    ```csharp\nusing System;\nnamespace SumTwoNumbers\n{\n    class Program\n    {\n\
+    \        static void Main(string[] args)\n        {\n            int a;\n    \
+    \        int b;\n            int c;\n            a = 3;\n            b = 4;\n\
+    \            c = a + b;\n            Console.WriteLine (\"3 plus 4 equals:\" +\
+    \ c.ToString());\n        }\n    }\n}\n```\n\n# Chapter IV: Lambda expressions\
+    \ and Linq queries\n\n### Lambda expressions\nLambda expressions - allows you\
+    \ to write codes on the same line\n```csharp\nFunc<int, int> square = (x) => x\
+    \ * x; // The last element of T is the return value\nConsole.WriteLine(square(3));\
+    \ // 9\n```\n\n### Linq queries\nTo take advantage of Linq, you must add the `System.Linq`\
+    \ range using the reserved word `using`. The best way to understand Linq is through\
+    \ a simple application example, in the `Lesson15_01` program we will use the `Student`\
+    \ class we used in a previous lesson but will make minor modifications, as we\
+    \ separate the name of the student FirstName from his nickname LastName, in addition\
+    \ to adding a new field named `Id` of type int, Which is the student's number:\n\
+    ```csharp\nclass Student\n{\n    public int Id { get; set; }\n    public string\
+    \ FirstName { get; set; }\n    public string LastName { get; set; }\n    public\
+    \ int Mark { get; set; }\n}\n```\n\n# Chapter V: Use and handle Events\n\n###\
+    \ Relationship between Events and Delegates\nDelegate is a reference to a child\n\
+    To make a reference to the `Increment` function, we begin by defining a delegation\
+    \ with the same signature, ie it does not take any data and returns a number of\
+    \ type `int`.\n```csharp\npublic delegate int IncrementDelegate();\n```\nThe event\
+    \ can also be used to trigger delegation.\nCreate an event with authorization\
+    \ type\n```csharp\npublic static event IncrementDelegate MyEvent;\n```\n\n###\
+    \ Anonymous Methods\nAnonymous functions are a feature that allows the code to\
+    \ be significantly shortened. From its name, it appears such functions have no\
+    \ name, but only an object containing the code to be executed.\n```csharp\nMyEvent\
+    \ += delegate (string message)\n{\n    Console.WriteLine(message);\n};\n```\n\n\
+    # Chapter VI: Object Oriented Programming\n\nC# is pure object oriented programming\
+    \ language. Everything you see in C# is an object.\n\n## Object Oriented Programming\n\
+    This lesson will be a little theoretical, but understanding it correctly is vital\
+    \ for programming with C#. To be realistic, this lesson is a very simplified approach\
+    \ to this important and huge subject and can in no way be considered a reference\
+    \ for object-oriented programming. After reading this lesson, you will gain the\
+    \ necessary knowledge to distinguish between classes and objects and understand\
+    \ their relationship, in addition to understanding the basic principles of packaging\
+    \ to understand what is and what being, hear from this story: we follow the so\
+    \ called human category This category defines the advantages every person should\
+    \ have. For example, everyone has a name, height weight color of eyes and a distinctive\
+    \ thumbprint that distinguishes them from any other being. The class defines these\
+    \ attributes, and the object has these attributes with its own set of values.\
+    \ For example, the human being may be happy, 180 cm tall, black in color and also\
+    \ has its own thumbprint. We call these attributes the properties, the class defines\
+    \ the properties, and the object has these properties. Furthermore, the class\
+    \ also defines particular behaviors or actions specific to human beings, for example,\
+    \ walking, running, and laughter. Often every individual expresses these behaviors\
+    \ in a sensitive manner. We all have a different style of laughter.\n\n## Encapsulation\n\
+    Encapsulation is a fundamental principle of object-oriented programming, is one\
+    \ of the reasons for the emergence of this concept. This principle determines\
+    \ that we are not supposed to be familiar with the internal functioning of the\
+    \ object. What concerns us is to use the object to achieve the desired purpose\
+    \ regardless of its details. Consider the following example: When we drive the\
+    \ car and want to increase its speed, we simply press the tread. I don't think\
+    \ anyone is interested in the mechanical mechanism behind the pressure. The car\
+    \ encapsulates the internal details behind the car's speed. The car in this example\
+    \ is object. The speed increase is the behavioral method. Another example we often\
+    \ see as we walk through the stations and lounges is hot drink machines. Standing\
+    \ in front of the machine we enter the money and then press a specific button\
+    \ to get the hot drink we want. Usually we don't care about the internal details\
+    \ when we press a button. The machine encapsulates the internal details of the\
+    \ preparation process. If the machine is modified to change the way a hot drink\
+    \ is made to make it better and more delicious, it will never affect the way the\
+    \ machine is handled. We will only notice this adjustment after we taste the drink\
+    \ and notice the difference in taste.\n\n## Inheritance\nInheritance is one of\
+    \ the most important forms of reuse of software components, as the new variety\
+    \ makes use of the pre-existing components in the \"inherited\" class and makes\
+    \ certain modifications to suit it. Instead of creating a new class from scratch,\
+    \ we can create a class that relies on another class and takes advantage of its\
+    \ pre-existing characteristics and behaviors then adapts or adds them. We call\
+    \ the main class from which we inherit the father class. The class that performs\
+    \ the inheritance is called the son or the derived class. To install the idea,\
+    \ let's take the following example. There are three types of people in schools:\
+    \ students, teachers, and administrators. We can build a generic class that represents\
+    \ anyone who works at the school. We can build on this class when we want to create\
+    \ more \"specialty\" varieties. Such as the Student, the Teacher, and the Staff.\
+    \ Each class inherits from the parent class SchoolMember and each automatically\
+    \ has the same characteristics as the class within the SchoolMember class.\n\n\
+    Heredity moves us from the more general form of SchoolMember to the more specific\
+    \ form such as Student. In fact, it was possible to follow the process of inheritance\
+    \ from the category Staff, and there is the Department of guidance and there is\
+    \ the Secretariat and management and others, each of which can inherit from the\
+    \ category Staff.\n\n### Polymorphism\nAssuming that we want to build a program\
+    \ that simulates the transitional movement of several species of animals for a\
+    \ biological study. Both Fish, Bird, and Frog are inherited from the `Animal`\
+    \ variety that represents any animal. Assuming that the animal class contains\
+    \ a behavior called `move`, it is known that this behavior will automatically\
+    \ be present in any class that inherits from the animal class. Each category of\
+    \ Fish, Bird and Frog expresses the move differently. The fish may travel by swimming\
+    \ one meter when calling the `move` function. The bird can fly 10 meters at each\
+    \ call to the `move`, and finally the frog can jump 20 centimeters whenever the\
+    \ `move` is called.\n"
+  raw: '![](rsrc7.jpg)[Introduction](#part0001.xhtml_toc8_Introduction)[What is c
+    #](#part0001.xhtml_toc0_What_is_c__)[Why C-Sharp was created](#part0001.xhtml_a160)[What
+    is the origin of the term “C #”](#part0001.xhtml_toc2_What_is_the_origin_of_the_term__C___)[Main
+    uses of C #](#part0001.xhtml_toc3_Main_uses_of_C__)[*  Windows Application Development:](#part0001.xhtml_a163)[*
+    Create web applications typically via:](#part0001.xhtml_a164)[*    the games:](#part0001.xhtml_a165)[*
+    C # Features](#part0001.xhtml_a166)[Chapter One](#part0001.xhtml_toc9_Chapter_One)[#C
+    Programming Language Quick Guide](#part0001.xhtml_toc34__C_Programming_Language_Quick_Guide)[Data
+    types Types and Variables](#part0001.xhtml_a169)[History and configuration](#part0001.xhtml_toc11_History_and_configuration)[Data
+    structures](#part0001.xhtml_a16B)[Lists](#part0001.xhtml_a16C)[Factors](#part0001.xhtml_toc14_Factors)[Bitwise
+    comparison operators](#part0001.xhtml_toc15_Bitwise_comparison_operators)[Incrementation](#part0001.xhtml_a16F)[Control
+    structures](#part0001.xhtml_a16G)[For Each loop](#part0001.xhtml_a16H)[Switch
+    instruction](#part0001.xhtml_a16J)[Data conversion](#part0001.xhtml_toc20_Data_conversion)[Varieties](#part0001.xhtml_a16M)[Interesting
+    features](#part0001.xhtml_toc22_Interesting_features)[Keyword “yield”](#part0001.xhtml_a16P)[Optional
+    transactions](#part0001.xhtml_toc24_Optional_transactions)[Floating species](#part0001.xhtml_toc25_Floating_species)[Call
+    the SetDefault function defined above](#part0001.xhtml_toc26_Call_the_SetDefault_function_defined_above)[Dealing
+    with errors](#part0001.xhtml_toc27_Dealing_with_errors)[Resource Management](#part0001.xhtml_toc28_Resource_Management)[Parallel
+    programming](#part0001.xhtml_a16W)[Parallel with ASPARALLEL](#part0001.xhtml_a16X)[LINQ](#part0001.xhtml_a16Y)[Delegation
+    and Events](#part0001.xhtml_toc32_Delegation_and_Events)[Delegate is a reference
+    to a child](#part0001.xhtml_toc33_Delegate_is_a_reference_to_a_child)[Chapter
+    II](#part0001.xhtml_a171)[NET Framework](#part0001.xhtml_a172)[About this chapter](#part0001.xhtml_a173)[Main
+    sections of the framework](#part0001.xhtml_a174)[Common Implementation Environment](#part0001.xhtml_a175)[FCL
+    Framework Class Library](#part0001.xhtml_toc39_FCL_Framework_Class_Library)[C
+    # Compiler](#part0001.xhtml_a177)[How does the program execute using CLR?](#part0001.xhtml_toc41_How_does_the_program_execute_using_CLR_)[Conclusion](#part0001.xhtml_a179)[Chapter
+    III](#part0001.xhtml_a17A)[Get started with C-Sharp](#part0001.xhtml_a17B)[The
+    first program](#part0001.xhtml_toc45_The_first_program)[A simple program to add
+    two integers](#part0001.xhtml_a17D)[More optimized program to add two numbers](#part0001.xhtml_toc47_More_optimized_program_to_add_two_numbers)[Chapter
+    IV](#part0001.xhtml_a17F)[Lambda expressions and Linq queries](#part0001.xhtml_toc54_Lambda_expressions_and_Linq_queries)[Lambda
+    expressions](#part0001.xhtml_a17H)[Linq queries](#part0001.xhtml_a17J)[Supportive
+    exercises](#part0001.xhtml_a17K)[Conclusion](#part0001.xhtml_a17M)[Chapter V](#part0001.xhtml_toc55_Chapter_V)[Use
+    and handle Events](#part0001.xhtml_toc60_Use_and_handle_Events)[Relationship between
+    Events and Delegates](#part0001.xhtml_toc56_Relationship_between_Events_and_Delegates)[Anonymous
+    Methods Anonymous Methods](#part0001.xhtml_a17S)[Supportive exercises](#part0001.xhtml_toc58_Supportive_exercises)[Conclusion](#part0001.xhtml_toc59_Conclusion)[Chapter
+    VI](#part0001.xhtml_a17V)[Object Oriented Programming](#part0001.xhtml_toc67_Object_Oriented_Programming)[General
+    principles of the object-oriented concept](#part0001.xhtml_a17X)[Encapsulation](#part0001.xhtml_toc63_Encapsulation)[Inheritance](#part0001.xhtml_toc64_Inheritance)[Polymorphism](#part0001.xhtml_a180)[Conclusion](#part0001.xhtml_a181)IntroductionToday''s
+    world is full of programming languages ​​with a variety of resources and purposes.This
+    is undoubtedly what C Sharp isWhat is c #It is a modern object-oriented programming
+    language, developed in 2000 by Anders Hejlsberg at Microsoft, a general purpose
+    language designed to develop applications on Microsoft''s core operating systems
+    and requires the .NET framework on Windows to work.C # is often seen as a hybrid
+    that takes the best of C and C ++ to create a modern language; it is a vector
+    language; it aims to integrate computing power into C ++ with the ease of programming
+    Visual Basic.Although the .NET framework supports many other programming languages,
+    C # Sharp has become one of the most common languages.Why C-Sharp was createdYou
+    might wonder, as anyone who wants to see at least, why you created such a new
+    language, despite the existence of other software entities, and for similar purposes,
+    such as Java!In fact, it was initially established as a competition for Java;
+    Sun (which Oracle later purchased) did not want Microsoft to make changes to Java,
+    so Microsoft chose to create its own language instead. In general, C # has features
+    similar to those in Java.C # has grown very fast since it was first created, and
+    this is of course under the broad support of Microsoft to help it gain its place
+    today.It is now one of the most popular programming languages ​​in the world!What
+    is the origin of the term “C #”Its term C # is derived from the “#” switch, which
+    indicates a single half-point increase. This is perhaps the language of creativity
+    that the programming world and the music world bring!C # is often pronounced in
+    English as “C Sharp”,Main uses of C #In fact, in short, almost anything! You can
+    use C # to create Windows applications, client-server applications, database applications,
+    and much more… 3Their diverse uses can be distinguished as follows:*  Windows
+    Application Development:- Considering .NET support on Windows, C # is now the
+    first choice for every developer to build Windows applications.- New versions
+    of Windows (Windows 8 / Windows 10) have strongly helped this “adoption”; the
+    vast majority of third-party applications are written in the Windows Store by
+    C #.- Although the Windows Store did not achieve the success and fame achieved
+    by both the App Store and Google Play, but it will undoubtedly shape the future
+    of the distribution of Windows applications, so C # has a bright future on Windows.*
+    Create web applications typically via:- WebForms (part of the .NET Web Applications
+    framework included with Visual Studio).- MVC (an architectural style commonly
+    used to develop web applications).- Mobile devices and smartphones: When it comes
+    to smartphones, C # is constantly growing.- Xamarin leads the way in this area,
+    offering tools for all major mobile platforms, as well as many other platforms
+    that provide a lot of useful resources on how to “develop mobile phone in C #”.-
+    Microsoft also has a long history of supporting C # on mobile devices; it recently
+    released an update to Visual Studio 2013 that supports “generic applications”
+    - applications developed side-by-side for both desktops and Windows.*    the games:C
+    # is widely used to create games with the Unity game engine, the most popular
+    game engine today, with more than a third of the world''s best games made, and
+    nearly 770 million active users of games created with it.Unity is also powered
+    in virtual reality, with 90% of all Samsung Gear devices and 53% of all Oculus
+    Rift VR games developed with it.C # is a hugely popular tool for creating these
+    apps, so it offers a great choice for any programmer hoping to break into the
+    game-making world, or anyone interested in virtual reality.C # is flexible enough
+    to run TCP / IP servers, and Raspberry Pi.* C # Features- Easy to learn, but complex
+    tasks!- C # has many features that make learning easier.- The structure of C #
+    is, of course, very expressive, but simple and easy to learn.- C # construction
+    simplifies many complexities of C ++.- C # is relatively easy to read.- In addition,
+    C # processes most of the complex details of the device so that you can focus
+    on the purpose of programming rather than worrying about small details.- C # is
+    also a statically written language, so the code is checked before being converted
+    into an application, which makes it easier to find errors, which can be especially
+    useful for beginners.Chapter One#C Programming Language Quick GuideC # is an elegant,
+    object-oriented programming language with type-safe data types that enables developers
+    to build secure, robust applications running on the .NET framework.// Single-line
+    comments start with two slashes like this /// *Multiline comments are placed between
+    the tag above and the tag below it* /This xml comment is used to generate external
+    documentationOr to provide context-specific assistance in an IDE integrated development
+    environment./// <param name = "firstParam"> to document the Parameter function
+    which is the firstParam parameter of this comment </ param>/// <returns> Information
+    about the return value of the / returns> function// public void MethodOrClassOrOtherWithParsableHelp
+    (string firstParam) {}Specifies the Namespaces that this code will useThe namespaces
+    below are all part of the .NET Framework Classes.Framework Class Libraryusing
+    System;using System.Collections.Generic;using System.Dynamic;using System.Linq;using
+    System.Net;using System.Threading.Tasks;using System.IO;This namespace is not
+    included in the standard library:using System.Data.Entity;In order to use the
+    library above you will need to add a reference to the .dll file that the NuGet
+    package manager can do: Install-Package EntityFrameworkNamespaces define fields
+    to organize the codes into Packages or Modules. To use the namespace defined below
+    in another code, we add the Learning.CSharp statement to the namespaces used.namespace
+    Learning.CSharp{Each cs file must contain. At least a Class class has the same
+    file name. You can opt out of this condition, but it''s better for the source
+    codepublic class LearnCSharp{Basic wording: You can skip to “interesting features”
+    if you have already written code in Java or C ++public static void Syntax (){//
+    To write a new line, use Console.WriteLineConsole.WriteLine ("Hello World");Console.WriteLine
+    ("Integer:" + 10 +"Double:" + 3.14 +"Boolean:" + true);// To write statements
+    on the same line as Console.Write useConsole.Write ("Hello");Console.Write ("World");Data
+    types Types and VariablesDefine the variables as <type> <name>Sbyte - integer
+    (negative or positive) on 8 bits (between 128 and 127)sbyte fooSbyte = 100;Byte
+    - a normal (positive only) number on 8 bits (between 0 and 255)byte fooByte =
+    100;Short - a 16-bit integer or natural numberTrue short is confined between -32,768
+    and 32,767Normal ushort is confined between 0 and 65,535short fooShort = 10000;ushort
+    fooUshort = 10000;An integer fooInt or a normal fooUint 32-bit lengthint fooInt
+    = 1; // (-2,147,483,648 <= int <= 2,147,483,647)uint fooUint = 1; // (0 <= uint
+    <= 4,294,967,295)Long fooLong integer or normal fooUlong 64-bit lengthlong fooLong
+    = 100000L; // (-9,223,372,036,854,775,808 <= long <= 9,223,372,036,854,775,807)ulong
+    fooUlong = 100000L; // (0 <= ulong <= 18,446,744,073,709,551,615)The default type
+    of numbers is int or uint depending on the length of the number. The letter L
+    behind the number indicates that the number type is long or ulongDouble - IEEE
+    754 64-bit floating point precisiondouble fooDouble = 123.4; // Resolution: 15-16
+    digitsFloat - 32-bit IEEE 754 Floating Pointfloat fooFloat = 234.5f; // Accuracy:
+    7 digitsThe f character behind the number indicates that the number type is FloatDecimal
+    - 128-bit data type, higher accuracy than other floating-point data types suitable
+    for financial and monetary accountsdecimal fooDecimal = 150.3m;// Boolean - true
+    & falsebool fooBoolean = true; // or falseChar - A 16-bit data type that stands
+    for Unicode`char fooChar = ''A'';Strings - Contrast all previous data types that
+    are types for data valuesString, a string, is a type of reference, meaning it
+    can take the value nullstring fooString = "\" escape \ "quotes and add \ n (new
+    lines) and \ t (tabs)";Console.WriteLine (fooString);Each character of a string
+    can be accessed by its order in the stringchar charFromString = fooString [1];
+    // => ''e''Cannot modify character strings; fooString [1] = false X Compare strings
+    with the CurrentCulture property value defined in the standard library to represent
+    the language used in the system, ignoring the case of IgnoreCasestring.Compare
+    (fooString, "x", StringComparison.CurrentCultureIgnoreCase);Initialize string
+    characters depending on sprintfstring fooFs = string.Format ("Check Check, {0}
+    {1}, {0} {1: 0.0}", 1, 2);History and configurationDateTime fooDate = DateTime.Now;Console.WriteLine
+    (fooDate.ToString ("hh: mm, dd MMM yyyy"));Native strings of Verbatim StringYou
+    can use the @ sign in front of a string to redeem all the characters in the stringstring
+    path = "C: \\ Users \\ User \\ Desktop";string verbatimPath = @ "C: \ Users \
+    User \ Desktop";Console.WriteLine (path == verbatimPath); // => trueYou can distribute
+    a string of characters on more than one line with the @ symbol to redeem the "place"
+    tag ("twice")string bazString = @ "Here''s some stuffon a new line! "" Wow! "",
+    The masses cried ";Use the const keyword to make the variable static and not editable
+    and calculate the static values ​​during compile timeconst int HoursWorkPerWeek
+    = 9001;Data structuresMatrices - The first element starts at 0 and the matrix
+    metric must be defined when it is defined.; <datatype> [] <var name> = new <datatype>
+    [<array size>]The intArray matrix in the following example contains 10 numbersint
+    [] intArray = new int [10];Another way to define and configure an arrayint []
+    y = {9000, 1000, 1337};Arrange elements of an array - access an elementConsole.WriteLine
+    ("intArray @ 0:" + intArray [0]);Arrays are adjustable.intArray [1] = 1;ListsLists
+    are used more than arrays because of their flexibility and the definition of a
+    list is as follows:; List <datatype> <var name> = new List <datatype> ()List <int>
+    intList = new List <int> ();List <string> stringList = new List <string> ();List
+    <int> z = new List <int> {9000, 1000, 1337}; // Specify the initial values ​​of
+    the menu itemsThe <> signs are used for generics - see the Great Features sectionThe
+    lists have no initial values ​​and you must first add a value before the item
+    can be accessedintList.Add (1);Console.WriteLine ("intList @ 0:" + intList [0]);Other
+    Infrastructure You Should Review:Queues / StacksDictionariesHashSetRead-only collectionsTuples
+    (.NET version 4 and above)FactorsConsole.WriteLine ("\ n → Operators");int i1
+    = 1, i2 = 2; // Abbreviation to define several variables at onceClear calculationsConsole.WriteLine
+    (i1 + i2 - i1 * 3/7); // => 3The scale is ModuloConsole.WriteLine ("11% 3 =" +
+    (11% 3)); // => 2Comparison factorsConsole.WriteLine ("3 == 2?" + (3 == 2)); //
+    => falseConsole.WriteLine ("3! = 2?" + (3! = 2)); // => trueConsole.WriteLine
+    ("3> 2?" + (3> 2)); // => trueConsole.WriteLine ("3 <2?" + (3 <2)); // => falseConsole.WriteLine
+    ("2 <= 2?" + (2 <= 2)); // => trueConsole.WriteLine ("2> = 2?" + (2> = 2)); //
+    => trueBitwise comparison operators~ Single complement factor (if the bit contains
+    0 converts it to 1, and if it contains one converts it to zero)>> Shift the bits
+    to the left<< Offset bits to the right& Factor “and” makes sense^ Non-universal
+    logical factor exclusive| Inclusive ORIncrementationint i = 0;Console.WriteLine
+    ("\ n-> Inc / Dec-rementation");Console.WriteLine (i ++); // Prints "0", i = 1\.
+    Increase after meConsole.WriteLine (++ i); // Prints "2", i = 2\. Growing before
+    meConsole.WriteLine (i--); // Prints "2", i = 1\. Dimension after meConsole.WriteLine
+    (- i); // Prints "0", i = 0\. Decrease before meControl structuresConsole.WriteLine
+    ("\ n-> Control Structures");The control structure if else follows the method
+    of writing control structures in Cint j = 10;if (j == 10){Console.WriteLine ("I
+    get printed");}else if (j> 10){Console.WriteLine ("I don''t");}else{Console.WriteLine
+    ("I also don''t");}Triple factorsA simple if else control structure can be written
+    as follows:<condition>? <true>: <false>int toCompare = 17;string isTrue = toCompare
+    == 17? "True": "False";While loop is iterativeint fooWhile = 0;while (fooWhile
+    <100){// The loop is repeated 100 times, from the value 0 to the value 99fooWhile
+    ++;}Do .. While loop is iterativeint fooDoWhile = 0;do{The loop is set to repeat
+    100 times, from 0 to 99Start iteration 100 times, fooDoWhile 0-> 99if (false)continue;
+    // Exceed current refiningfooDoWhile ++;if (fooDoWhile == 50)break; // Stop the
+    episode completely, get out} while (fooDoWhile <100);Loop for Iterative Formula:for
+    (<start_statement>; <conditional>; <step>){}for (int fooFor = 0; fooFor <10; fooFor
+    ++){// The loop is repeated 10 times, from 0 to 9}For Each loopA foreach iteration
+    loop can be used to pass through any Object object that performs the IEnumerable
+    or <IEnumerable <TAll aggregate types (arrays, lists, dictionaries…) are implemented
+    within the Net framework.(ToCharArray () can be omitted from the instruction below,
+    because String implements the IEnumerable interface)foreach (char character in
+    "Hello World" .ToCharArray ()){// Pass on all characters in the chain}Switch instructionSwitch
+    works with byte, short, char, and int data types as well as with Enum data types
+    (below), String and a few special classes that encapsulate basic data types: Character,
+    Byte, Short, and Integer.int month = 3;string monthString;switch (month){case
+    1:monthString = "January";break;case 2:monthString = "February";break;case 3:monthString
+    = "March";break;More than one procedure can be performed in each case, but you
+    cannot add a procedure within a state without adding a break instruction; Before
+    the next case (if you want to do this, you will need to add the goto case x statement
+    after the action)case 6:case 7:case 8:monthString = "Summer time !!";break;default:monthString
+    = "Some other month";break;}Convert between data types and typecastingData conversionConvert
+    the String charset string to the Integer numberAn Exception will appear if the
+    conversion failedint.Parse ("123"); // We get the numerical version of the string
+    "123"When using the TryParse function to convert the data type, the conversion
+    value will be the initial value of the data type. In the case of numbers, the
+    initial value is 0int tryInt;if (int.TryParse ("123", out tryInt)) // The function
+    returns a Boolean valueConsole.WriteLine (tryInt); // 123Converts numbers to stringsThe
+    Convert class includes a number of methods to facilitate conversionConvert.ToString
+    (123);ortryInt.ToString ();Algebra data typesAlgebra decimal number 15 to get
+    a value of type intAnd then subtract the implicitly obtained value to get the
+    long typelong x = (int) 15M;}VarietiesSee the definitions at the end of the filepublic
+    static void Classes (){See Define objects at the end of the fileUse the new keyword
+    to initiate an itemBicycle trek = new Bicycle ();Call the children of the objecttrek.SpeedUp
+    (3); // Always go through the setter and getter methodstrek.Cadence = 100;The
+    ToString child is used to display the value of the objectConsole.WriteLine ("trek
+    info:" + trek.ToString ());Initiation of a new object of the class PennyFarthingPennyFarthing
+    funbike = new PennyFarthing (1, 10);Console.WriteLine ("funbike info:" + funbike.ToString
+    ());Console.Read ();} // End of the main functionConsole entry. Applications running
+    via Terminal must have a portlet that is a primary childpublic static void Main
+    (string [] args){OtherInterestingFeatures ();}Interesting featuresInitial signatures
+    of childrenpublic // field of viewstatic // Allows direct calling of class without
+    passing objectsint // Returned data type,MethodSignatures (int maxCount, // The
+    first variable is numericalint count = 0, // The initial value is 0, used if a
+    variable is not passed to the functionint another = 3,params string [] otherParams
+    // Receives all other variables passed to the function){return -1;}The names of
+    the functions can be identical, as long as the signatures are different and each
+    function is different from the other except in the returned data type is not uniquepublic
+    static void MethodSignatures (ref int maxCount, // Pass parameters by reference,
+    not valueout int count){The parameter passed in the count variable will contain
+    a value of 15 outside this functioncount = 15; // out must be assigned before
+    finishing the function}GenericsThe TKey and TValue classes are specified by the
+    user who calls this function and this function mimics SetDefault''s work in Pythonpublic
+    static TValue SetDefault <TKey, TValue> (IDictionary <TKey, TValue> dictionary,TKey
+    key,TValue defaultItem){TValue result;if (! dictionary.TryGetValue (key, out result))return
+    dictionary [key] = defaultItem;return result;}You can restrict objects that can
+    be passed to the functionpublic static void IterateAndPrint <T> (T toPrint) where
+    T: IEnumerable <int>{Since class T implements IEnumerable, we can pass through
+    its elements using foreachforeach (var item in toPrint)// The element is of type
+    intConsole.WriteLine (item.ToString ());}Keyword “yield”The use of yield indicates
+    that the function in which this keyword appears appears to have a repetition property
+    (that is, the function can be used with the foreach loop)public static IEnumerable
+    <int> YieldCounter (int limit = 10){for (var i = 0; i <limit; i ++)yield return
+    i;}We can call the above function as followspublic static void PrintYieldCounterToConsole
+    (){foreach (var counter in YieldCounter ())Console.WriteLine (counter);}Yield
+    return can be used more than once in the same functionpublic static IEnumerable
+    <int> ManyYieldCounter (){yield return 0;yield return 1;yield return 2;yield return
+    3;}You can also use “yield break” to stop repeatingThe next function returns half
+    of the values ​​between 0 and limitpublic static IEnumerable <int> YieldCounterWithBreak
+    (int limit = 10){for (var i = 0; i <limit; i ++){if (i> limit / 2) yield break;yield
+    return i;}}public static void OtherInterestingFeatures (){Optional transactionsMethodSignatures
+    (3, 1, 3, "Some", "Extra", "Strings");MethodSignatures (3, another: 3); // Set
+    the parameter value directly, exceeding the optional parametersPass the parameters
+    by reference, and return the Out parameterBY REF AND OUT PARAMETERSint maxCount
+    = 0, count; // Transactions passed by reference must contain a valueMethodSignatures
+    (ref maxCount, out count);Extension methodsint i = 3;i.Print (); // defined belowTypes
+    that accept a Nullable types, suitable for communicating with databases, returned
+    values, and any value data type (that is, not a class) can make it accept null
+    values ​​by typing? After him<type>? <var name> = <value>int? nullable = null;
+    // Acronym for Nullable <int>Console.WriteLine ("Nullable variable:" + nullable);bool
+    hasValue = nullable.HasValue; // true boolean true if not equal to nullTwo interrogative
+    question marks ?? These are abbreviations to specify an initial value if the variable
+    is empty. Give it an initial valueint notNullable = nullable ?? 0; // 0? This
+    tag is a parameter to verify the null valuenullable? .Print (); // Use the Print
+    () extension if the variable nullable is different from nullVariables implicit
+    type - You can let the Compiler specify the type of variable:var magic = "magic
+    is a string, at compile time, so you still get type safety";; magic = 9 The value
+    9 will not be assigned to the magic variable because it contains a string of charactersFloating
+    speciesvar phonebook = new Dictionary <string, string> () {{"Sarah", "212 555
+    5555"} // Add an address to the address book};Call the SetDefault function defined
+    aboveConsole.WriteLine (SetDefault <string, string> (phonebook, "Shaun", "No Phone"));
+    // No PhoneYou can not select TKey and TValue since they can be deduced automaticallyConsole.WriteLine
+    (SetDefault (phonebook, "Sarah", "No Phone")); // 212 555 5555Anonymous functions
+    Lambda expressions - allows you to write codes on the same lineFunc <int, int>
+    square = (x) => x * x; // The last element of T is the return valueConsole.WriteLine
+    (square (3)); // 9Dealing with errorstry{var funBike = PennyFarthing.CreateWithGears
+    (6);It will not be executed because CreateWithGears causes an Exception exceptionstring
+    some = "";if (true) some = null;some.ToLower (); // Cause the NullReferenceException
+    exception}catch (NotSupportedException){Console.WriteLine ("Not so much fun now!");}catch
+    (Exception ex) // Capture all other exceptions{throw new ApplicationException
+    ("It hit the fan", ex);// throw; // Another pickup keeps the callstack rubble
+    call}// catch {} // Capture everything without dealing with exceptionsfinally{//
+    try or catch is executed after}Resource ManagementYou can easily manage available
+    resources where most objects that use unused resources (files, peripheral context,
+    etc.) execute the IDisposable interfaceUsing the command disposes of IDisposable
+    objectsusing (StreamWriter writer = new StreamWriter ("log.txt")){writer.WriteLine
+    ("Nothing suspicious here");}All resources are discarded after the implementation
+    of this code, even if they cause an exceptionParallel programmingvar words = new
+    List <string> {"dog", "cat", "horse", "pony"};Parallel.ForEach (words,new ParallelOptions
+    () {MaxDegreeOfParallelism = 4},word =>{Console.WriteLine (word);});Running this
+    code will result in multiple outputs because each thread is completed at a different
+    time. Below are examples of outputscat dog horse ponydog horse pony catDynamic
+    objects (great for working with other programming languages)dynamic student =
+    new ExpandoObject ();student.FirstName = "First Name";You don''t need to define
+    a class first, but you can add functions (the function below returns a string
+    and receives a string)student.Introduce = new Func <string, string> ((introduceTo)
+    => string.Format ("Hey {0}, this is {1}", student.FirstName, introduceTo));Console.WriteLine
+    (student.Introduce ("Beth"));Most collections implement the <IQUERYABLE> T interface,
+    which provides many useful functionsvar bikes = new List <Bicycle> (); // bicyclesbikes.Sort
+    (); // Arranges the listbikes.Sort ((b1, b2) => b1.Wheels.CompareTo (b2.Wheels));
+    // Sorts the list based on the number of wheelsvar result = bikes.Where (b =>
+    b.Wheels> 3) // Filtration and filtering.Where (b => b.IsBroken && b.HasTassles).Select
+    (b => b.ToString ()); //var sum = bikes.Sum (b => b.Wheels);Adds the number of
+    wheels in the entire list and creates a list of Implicit objects based on some
+    characteristics of the bicyclevar bikeSummaries = bikes.Select (b => new {Name
+    = b.Name, IsAwesome =! b.IsBroken && b.HasTassles});It''s hard to explain here,
+    but you get the data type before you finish the instructions, as the bank can
+    implicitly work on the types aboveforeach (var bikeSummary in bikeSummaries.Where
+    (b => b.IsAwesome))Console.WriteLine (bikeSummary.Name);Parallel with ASPARALLELWe
+    mix LINQ and parallel processesvar threeWheelers = bikes.AsParallel (). Where
+    (b => b.Wheels == 3) .Select (b => b.Name);It will happen in parallel. The dendrites
+    are created automatically and the results will be divided between themA great
+    way to work with a huge data set if you have a lot of coresLINQLinking a data
+    store to objects of class <IQueryable <TExample: LinqToSql associates objects
+    with a database, LinqToXml associates objects with an XML documentvar db = new
+    BikeRepository ();Implementation is delayed, which is good when dealing with databasesvar
+    filter = db.Bikes.Where (b => b.HasTassles); // no query runif (42> 6) // You
+    can still add filters, even those conditional; suitable for Advanced Searchfilter
+    = filter.Where (b => b.IsBroken); // no query runvar query = filter.OrderBy (b
+    => b.Wheels).ThenBy (b => b.Name).Select (b => b.Name); // still no query runThe
+    query works now, but you only get results when you pass themforeach (string bike
+    in query)Console.WriteLine (result);}} // End of LearnCSharpYou can add other
+    items in the cs file.public static class Extensions{Accessories of the Extensionspublic
+    static void Print (this object obj){Console.WriteLine (obj.ToString ());}}Delegation
+    and Eventspublic class DelegateTest{public static int count = 0;public static
+    int Increment (){// Increase the counter and return the resultreturn ++ count;}Delegate
+    is a reference to a childTo make a reference to the Increment function, we begin
+    by defining a delegation with the same signature, ie it does not take any data
+    and returns a number of type intpublic delegate int IncrementDelegate ();The Event
+    event can also be used to trigger delegationCreate an event with authorization
+    typepublic static event IncrementDelegate MyEvent;static void Main (string []
+    args){Skinning to the Increment child by initiating delegation and passing a given
+    is the child itselfIncrementDelegate inc = new IncrementDelegate (Increment);Console.WriteLine
+    (inc ()); // => 1Authorizations can be installed with +IncrementDelegate composedInc
+    = inc;composedInc + = inc;composedInc + = inc;The composedInc delegate will perform
+    the Increment child three timesConsole.WriteLine (composedInc ()); // => 4Sign
+    up for the event using delegationMyEvent + = new IncrementDelegate (Increment);MyEvent
+    + = new IncrementDelegate (Increment);Trigger the event, that is, the execution
+    of all authorizations shared in that eventConsole.WriteLine (MyEvent ()); // =>
+    6}}Chapter IINET FrameworkThe .NET Framework is the .NET Framework. From Microsoft''s
+    most popular frameworks, from the first beta in late 2000 to the current 4.6,
+    there have been significant improvements that have made the programming languages
+    ​​that work with it rich and contemporary.The .NET Framework is the core entity
+    on which applications depend on their tasks. It provides the means for such applications
+    to access files, manipulate HTTP, access and manipulate databases, and other basic
+    tasks that a computer application may need. The .NET Framework was designed from
+    the outset to run on any operating system or any available hardware. Although
+    Microsoft has only supported this framework on Windows, there have been independent
+    attempts to migrate it to Linux via an open source mono project. . Xamarin, which
+    was acquired by Microsoft less than a month ago, was able to do so by relying
+    on an open source mono project. .C # is the basic programming language within
+    the .NET Framework and has kept up with its development since the first release.
+    It has undoubtedly seen significant improvements and useful features that combine
+    the power and flexibility to develop a wide range of software applications, including
+    desktop applications, ASP.NET web applications, Web services applications such
+    as WCF (Windows Communication Foundation) and even smart device applications that
+    It works on Windows Phone or runs on other systems such as Android and iOS through
+    the Xamarin platform.We will not get into the fine details of the .NET Framework
+    architecture to make this series as simple as possible. It is enough to know that
+    this framework consists of two main sections:Common Common Runtime (CLR).- The
+    Framework Class Library is called FCL.About this chapterIn this chapter, we will
+    learn to write applications using C # in a simplified and seamless manner through
+    Console Applications. My favorite reason for these applications is that they allow
+    you to focus on learning the same language without distracting many aspects Other
+    apps like Windows desktop apps, for example, though we''ll talk a little bit about
+    them in the last lesson.Main sections of the frameworkWe''ll talk a little bit
+    about the two main parts of the .NET Framework as well as the C # Compiler, so
+    that we have a clear picture of how .NET applications work.Common Implementation
+    EnvironmentIt is the environment that executes programs written in dot net languages,
+    and forms an incubator for these programs by isolating them from the hardware
+    hardware of the device you are working on. You can compare it to the Java Virtual
+    Machine. It is responsible for managing the resources needed by the program in
+    its work, especially memory. This environment manages the creation of objects
+    that the program needs, and eliminates them when they are no longer needed.CLR
+    is available by default on most Windows operating systems (with variants of versions)
+    such as Windows XP, Windows 7, Windows 8, Windows 10, Windows Phone, and Windows
+    Server (for most versions).FCL Framework Class LibraryThis huge library contains
+    thousands of classes that allow us to accomplish any task that comes to mind.
+    From regular expressions, to network communications, to popular Internet protocols
+    such as HTTP, FTP, etc., and access to databases.FCL, in turn, consists of several
+    sub-libraries. One library helps us develop Windows desktop applications, another
+    allows us to develop web applications using ASP.NET technology, a library that
+    allows the creation of WCF applications and so on. That is, you will not need
+    to deal with the entire FCL library, but you will select what you need according
+    to your business requirements. The FCL library also contains a sub-library called
+    the Base Class Library, or BCL. This library contains basic classes that work
+    with all applications created using other libraries, regardless of their type.C
+    # CompilerIn order to implement the programs we write with C-Sharp, we need a
+    C # Compiler. This translator is included by default with the offline framework.
+    The translator converts the code in C-Sharp code into code written in a language
+    known as Microsoft Intermediate Language (MSIL). This is a low-level intermediate
+    language, similar to the famous Assembly language. In fact, the CLR will execute
+    the instructions written in MSIL. The CLR environment does not need to know the
+    programming language in which the program was originally written and is the main
+    feature that allows the programmer to write in any programming language that supports
+    DotNet. As long as the programming language has an MSIL-compliant interpreter,
+    there is no problem. This was the case with other programming languages ​​such
+    as Visual Basic .NET, #F and even Python through IronPython. See the following
+    illustration:![](rsrcNH.jpg)How does the program execute using CLR?The C-Sharp
+    code is usually placed in separate files, each with the cs extension. The compiler
+    then reads these files called source code files and converts the C-Sharp code
+    into MSIL and makes it into an executable file (MyApp.exe). In the previous figure).
+    When executing the program, CLR reads the code within the executable file, which
+    is in MSIL, and executes it by converting it into native code intended for the
+    computer processor on which the program is currently running.All of this work
+    is done very quickly. The conversion to native code takes place only for the first
+    time, after which the program takes advantage of the great speed provided by these
+    original instructions when implemented.The above scenario explains why .NET programs
+    can work on any operating system or hardware. The process of writing code in any
+    .NET language and then converting it to Microsoft''s MSIL is completely separate
+    from the operating system and the hardware on which the program will work. One
+    of the most striking examples of this is the software written in C-Sharp for smart
+    device operating systems via the Xamarin platform that we mentioned earlier. The
+    company''s main work is to produce a separate CLR environment for each operating
+    system such as Android and iOS, allowing programs written in C-Sharp to exit the
+    Windows "bottle" if you will.What''s more, Microsoft recently produced a special,
+    lightweight version of Windows 10 called Windows 10 IoT for the Internet of Things.
+    This OS can be installed seamlessly on the popular Raspberry Pi for IoT applications,
+    which means opening applications written in C-Sharp language to work on this device
+    and thus enter into this important and promising field.ConclusionC-Sharp is a
+    modern language with a promising future in business. It is the primary language
+    used to write various types of computer applications within the framework of the
+    .NET Framework. They are smooth and familiar in structure, but need a little patience
+    in learning them. In later lessons, we will discuss how to write simple but progressive
+    programs so that you are familiar with the fundamentals of this wonderful language.Chapter
+    IIIGet started with C-SharpYou can implement the programs in this series (as mentioned
+    in the introduction) in two different ways:The first is to download and install
+    the Microsoft Visual Studio 2015 Community free development environment. This
+    environment provides great services for the developer and greatly facilitates
+    the process of writing programs. You can take advantage of the advanced debugging
+    features provided by the attached debugger within this environment. You can download
+    your free version here.The second method is to use the NET Fiddle site. Which
+    provides the advantage of executing the programs you write on its own server,
+    and then shows you the output of the program, without even having a Windows operating
+    system.The first programWe will start with a practical example to quickly explore
+    the language. Start Visual Studio 2015 Community and from the File menu choose
+    the New> Project command.From the New Project window, choose from the left section
+    #Visual C and from the right section choose Console Application. Type HelloWorld
+    under the Name field in the bottom section, then press the OK button. See the
+    following illustration:![](rsrcP7.jpg)Depending on the display settings you have
+    chosen, the image may look slightly different.Visual Studio will create this application
+    and open a specially prepared file called Program.cs. Clear the entire contents
+    of this file and copy the following code into it:using System;namespace HelloWorld{class
+    Program{static void Main (string [] args){Console.WriteLine ("Hello World!");}}}Press
+    Ctrl + F5 together to begin the build process and get the phrase Hello World!
+    In the program output (or from the Debug menu> Start Without Debugging). Although
+    the previous program is very simple, it contains a lot of new concepts that we
+    will deal in succession in this series.This program begins by defining the domain
+    name namespace (line 3) named HelloWorld, which is the same name that we provided
+    to the program, we will talk about the names of domains in a later lesson, but
+    it is enough to know now that the names of the names are a way to organize classes
+    into logically related groups. Next comes the definition of a new class named
+    Program (line 5). Any program written in C Sharp needs an entry point to start.
+    The entry point must be a method named Main (line 7), the functions are usually
+    within classes, you just need to understand the function as a function in other
+    programming languages. A part of the code that can be called to execute a specific
+    function in the program and may return a value or not return anything. The phrase
+    in line 9 is a standard code phrase in C-Sharp. The function of this statement
+    is to call the WriteLine child of the Console class and pass the text "! Hello
+    World" to it to show the text! Hello World in the program output.Any code statement
+    in C-Sharp must end with a semicolon (;), and the code statement may be just a
+    dependent call or be a reference to a variable, or it may be a combination between
+    them.If you have previous knowledge of programming languages ​​such as C, C ++,
+    or Java, you will notice that the syntax of the C Sharp language is very similar
+    to the syntax of these languages. For example, incubators {} are used to specify
+    the start and end of the method, class and namespace. They even form the limits
+    of any software structure in C-Sharp, such as repetitive phrases. For example,
+    look at line 6 to find the incubator "{" for the Program class and line 12 to
+    find the closing incubator "}". It should also be noted that C Sharp is case-sensitive
+    as in C, C ++, and Java.NoteYou can use the F6 key in the Visual Studio environment
+    (or from the Build> Build Solution menu) to build the program without running
+    it (execute) from the code and get an executable from it that has the exe extension
+    if the program does not contain any error.A simple program to add two integersLet
+    us now work on a more practical program. We will write a program that combines
+    two integers and shows the result to the user. Follow the same steps that we performed
+    in the previous program to create a new program named SumTwoNumbers, copy the
+    following code contents to the Program.cs file:using System;namespace SumTwoNumbers{class
+    Program{static void Main (string [] args){int a;int b;int c;a = 3;b = 4;c = a
+    + b;Console.WriteLine ("3 plus 4 equals:" + c.ToString ());}}}This simple program
+    introduces the concept of declaring and dealing with variables. In lines 9 through
+    11 we have declared three variables a, b, and c of type int.Each variable must
+    be declared in C Sharp before using it in the program. Note that a variable is
+    declared by its type and hence its name. The int variable can accommodate any
+    integer (without a decimal point) between -2147,483,648 and 2,147,483,647\. Note
+    that we have assigned values ​​3 and 4 to variables a and b respectively, in lines
+    13 and 14\. We are adding and assigning the variable c on line 16\. On line 18,
+    we display a message to the user.A variable can be assigned a value directly when
+    declared. For example, values ​​3 and 4 can be assigned to variables a and b respectively,
+    when declared:int a = 3;int b = 4;A single statement statement can also be used
+    to declare several variables at the same time. For example, the previous variables
+    a, b and c could be declared in one software statement as follows:int a, b, c;In
+    fact, there are two types of variables supported by DotNet. Value types and reference
+    types. We''ll talk about them later.The int type is a value type. At least one
+    assignment to a value variable must be performed before reading it. Otherwise
+    we will get an error. Try deleting the code statement on line 16 responsible for
+    assigning the value of the sum to the variable c. Run the program and you will
+    get the following error:Use of unassigned local variable ''c''This is because
+    we tried to read variable c in line 18 without assigning any value to it.The code
+    statement on line 18 is responsible for displaying the message to the user as
+    mentioned above. You''ll notice that we''ve passed the following expression to
+    the WriteLine function:"3 plus 4 equals:" + c.ToString ()A programmatic expression
+    is a concept found in almost all programming languages, and is simply the result
+    of a software operation using one or more operator operators, or a call to a function
+    or a combination between them. We call expression processing by expression evaluation.
+    The factor used here is the combining factor (+), and you may be surprised why
+    I call it the combining factor, although it is similar to the normal addition
+    factor that combines two numbers together (see line 16). This is due to the type
+    of operands on both ends. You can easily notice that the left operand is the text:"3
+    plus 4 equals:"The right coefficient is:c.ToString ()This is also text because
+    the ToString function is called from the variable c originally defined as an int
+    variable. But calling this function from variable c leads to the textual representation
+    of the numeric value within it. If the variable c holds the numerical value of
+    7, the ToString function returns the text "7", which the + operator combines with
+    the text preceding it to be the result of the expression as a whole:"3 plus 4
+    equals: 7"This text will be passed to the WriteLine function to display to the
+    user.I think you have begun to understand how to access and recall the functions
+    in C-Sharp. We use the name of the class (or object as we will see later) that
+    contains the function to be called followed by a period and then the name of the
+    desired function, and then bracketing passes between the arguments required by
+    the function if necessary.More optimized program to add two numbersWe have learned
+    many new concepts from the previous two programs. But you may have noticed from
+    the previous two-digit program that the program is a bit rigid. It combines two
+    predetermined numbers. In this upgraded version of the program, we will receive
+    the two numbers to be collected from the user and then perform the combination
+    of them and present the result to the user, with some additional improvements.Create
+    a new project named EnhancedSumTwoNumbers and replace the contents of the Program.cs
+    file with the following code:using System;namespace EnhancedSumTwoNumbers{class
+    Program{static void Main (string [] args){string str1, str2, result;double num1,
+    num2, sum;// prompt user to get input for first value.Console.Write ("Input first
+    number:");str1 = Console.ReadLine ();// prompt user to get input for second value.Console.Write
+    ("Input second number:");str2 = Console.ReadLine ();// convert the input values
+    ​​to double numbers.num1 = double.Parse (str1);num2 = double.Parse (str2);// perform
+    sum operation.sum = num1 + num2;/ * concatenate strings to form outputmessage
+    which contains the result. * /result = num1.ToString () + "+" + num2.ToString
+    () + "=" + sum.ToString ();Console.WriteLine (result);}}}Run the program by pressing
+    Ctrl + F5 together. The program will first ask you to enter the value of the first
+    issue. Enter the desired value and press Enter. The program will then ask you
+    to enter the second number. Enter it and press Enter. The program will then display
+    the desired result as an appropriate message.This version of the Numbers collection
+    contains several improvements:Our program now supports adding decimal numbers
+    by declaring double variables (see line 10). Double is the type that accepts double-precision
+    floating-point numbers. The range of numbers he accepts falls between ± 5.0 *
+    10-324 up to ± 1.7 * 10308.The program user can enter the numbers to be collected
+    directly from the keyboard, through the Console ReadLine (see lines 13 and 16).
+    This function stops the execution of the program and the user waits to enter a
+    value and press Enter to continue the program.We have added annotations within
+    the program. These comments are not taken care of by the translator, and their
+    function is to make the code readable and easy to understand and modify later.
+    In fact, the process of writing comments is an art in itself, and I would recommend
+    that every programmer practice it in any programming language. In fact, it is
+    not required to write code comments before every code statement. C-Sharp supports
+    two types of comments: line-level comments, where compiler ignores everything
+    to the right of the two characters //. And comments that span multiple lines,
+    where the translator ignores the content between the / * and * symbols. See lines
+    12, 16, 20 and 24 for line-level comments, and lines 27 and 28 for multiple-line
+    comments.We used the Write function instead of the WriteLine function (see lines
+    13 and 17), because we want the program to ask the user to enter the value on
+    the same line as the message and not on a separate line. The Write function displays
+    the scrolled text and does not update a new line. The WriteLine child exhibits
+    the same behavior as the Write child, but moves to a new line after the text is
+    displayed. You can try replacing the WriteLine function with the Write function
+    to see the difference.We have formed the text to display to the user on a separate
+    line (line 29) and assigned this text to the result variable of type string. The
+    goal of this is to make the code clean, clear and easy to read. The string is
+    a reference type and is used to express text.However, there are some flaws that
+    we have not addressed that may cause the program to stop working:The values ​​entered
+    by the user by the ReadLine function are considered text values. To be treated
+    as numbers that accept a decimal point, they must be converted into double values.
+    We can do this easily with the Parse function of the double class. This function
+    accepts a text value to return to us a double representation. But the question
+    here is what if the user accidentally enters the text value abc for the first
+    number? When program execution reaches line 21, Parse will convert the value of
+    "abc" to double numeric representation, which cannot be the case, so Parse will
+    throw an exception that will cause the program to stop working immediately! We
+    will talk about exceptions in a later lesson. However, this problem can be solved
+    in two different ways, which we will talk about later in this series. But the
+    point is that you never trust user input.Chapter IVLambda expressions and Linq
+    queriesLinq is a relatively new technology in Sea Sharp and in DotNet languages
+    ​​in general. This technique allows complex query operations to extract data smoothly
+    and easily because of its familiar form as we will see later in this lesson.Linq
+    has many forms:Linq to Objects: Handles data in program memory.Linq To XML: Handles
+    text data in XML format.Linq To SQL: It is a technique for obtaining data from
+    a SQL Server. In fact, this technology has been abandoned despite its modernity,
+    in favor of a newer and more advanced technology, the Entity Framework.This lesson
+    also talks about Lambda expressions, a useful feature that greatly facilitates
+    the work of programmers. In this lesson, you will look at the first form of Linq,
+    the use of Linq with Objects. But before that, let''s talk a little bit about
+    Lambda''s expressions.Lambda expressionsYou can imagine Lambda expressions as
+    small, non-noun functions that perform simple calculations, and can return a result.
+    In fact, delegates can encapsulate Lambda expressions under certain conditions.
+    We will take a simple example of how to deal with it. Look at the following code:class
+    Program{delegate int Square (int x);static void Main (string [] args){Square square
+    = (x) => x * x;int result = square (5);}}In the previous code, we declared Square,
+    which requires one argument of type int and returns a value of the same type.
+    This placeholder is supposed to encapsulate the functions that create an integer
+    box. If you look at the main function, you will declare in the first line the
+    square variable of the placeholder type, where we assign the following:(x) =>
+    x * xThe previous expression is the Lambda expression because there is an arrow
+    <= within it. Understanding this expression is simple. It asks for a single argument
+    (x) to the left of the arrow, multiplying the value of this argument by itself:
+    x * x To the right of the arrow, this expression returns the value of x multiplied
+    by itself. What is remarkable is that we have assigned this expression to a variable
+    of type Square. This is because the previous Lambda expression corresponds to
+    the square placeholder in that it needs a single argument of type int and returns
+    a value of the same type. In Lambda, however, we did not explain the type of intermediary
+    or the type of return value! No problem, the type of scrolling medium is automatically
+    extracted.As another example of using the Lambda expression, you can type an expression
+    that requires two arguments but does not return any value. Look at the following
+    code:class Program{delegate void SumAndPrinting (int a, int b);static void Main
+    (string [] args){SumAndPrinting sumAndPrnt = (a, b) => Console.WriteLine (a +
+    b);sumAndPrnt (3, 4);}}The SumAndPrinting placeholder now accepts two int arguments,
+    but does not return any value (void). Look at the expression Lambda how it became:(a,
+    b) => Console.WriteLine (a + b)Notice how arguments in parentheses are separated
+    by normal intervals without specifying types. You can also notice that this expression
+    is the task of adding the two arguments and printing to the screen without returning
+    any value.Note: We can do without the parentheses in Lambda expression, if we
+    want to pass only one argument. Like:x => x * xLinq queriesTo take advantage of
+    Linq, you must add the System.Linq name range using the reserved word using. The
+    best way to understand Linq is through a simple application example, in the Lesson15_01
+    program we will use the Student class that we used in a previous lesson but will
+    make some minor modifications, as we separate the name of the student FirstName
+    from his nickname LastName, in addition to adding a new field named Id of type
+    int, Which is the student''s number:class Student{public int Id {get; set; }public
+    string FirstName {get; set; }public string LastName {get; set; }public int Mark
+    {get; set; }}We will create 10 objects of the Student class and store them in
+    a public group> List> Student and then perform some tricks using Linq. The goal
+    of this program is to filter out these students so that we get students who have
+    a score greater than 60\. Lesson15_01 will contain new but useful ideas so be
+    prepared:using System;using System.Collections.Generic;using System.Linq;namespace
+    Lesson15_01{class Student{public int Id {get; set; }public string FirstName {get;
+    set; }public string LastName {get; set; }public int Mark {get; set; }}class Program{static
+    void Main (string [] args){List <Student> studentsList = new List <Student> (){new
+    Student {Id = 1, FirstName = "Ahmad", LastName = "Morad", Mark = 80},new Student
+    {Id = 2, FirstName = "Husam", LastName = "Sayed", Mark = 75},new Student {Id =
+    3, FirstName = "Nour", LastName = "Hasan", Mark = 65},new Student {Id = 4, FirstName
+    = "Bssel", LastName = "Shamma", Mark = 30},new Student {Id = 5, FirstName = "Ahmad",
+    LastName = "Khatib", Mark = 90},new Student {Id = 6, FirstName = "Maryam", LastName
+    = "Burhan", Mark = 95},new Student {Id = 7, FirstName = "Sarah", LastName = "Burhan",
+    Mark = 100}new Student {Id = 8, FirstNameRun the previous program to get a shape
+    similar to the following:![](rsrcW6.jpg)Notice how the program in the second list
+    excludes students with scores below or equal to 60\. Compare the two lists and
+    discover the excluded items.The program starts in the Main function by creating
+    10 Student-type objects that represent the data of ten students and immediately
+    assigning these objects to the existing StudentsList group (lines 19 to 31). Striking
+    here is how to create each of these objects. Look at line 21, for example:new
+    Student {Id = 1, FirstName = "Ahmad", LastName = "Morad", Mark = 80}This is an
+    abbreviated form for creating a Student object. The structure of the Student class
+    will certainly be called. This form of direct creation and attribution is very
+    useful (I use it a lot in my own programs) as it greatly reduces the lines of
+    code.The program will then print out the list that we just created for clarification
+    by calling the static function PrintList (line 35) as follows:PrintList (studentsList);We
+    passed this full list of studentsList. The declaration of the static function
+    is in lines between 48 and 56 and we will talk about it shortly.Line 38 contains
+    a code statement that uses a Linq query:IEnumerable <Student> students = from
+    student in studentsListwhere student.Mark> 60select student;The Linq query is
+    to the right of the attribution operator (=), and in fact if you have a look at
+    SQL, this query is familiar to you. Let us now focus only on this query:from student
+    in studentsListwhere student.Mark> 60select studentThe query starts with the reserved
+    word from followed by a new variable name that you can name any name you want.
+    I chose the student name because I found it expressive. After the new variable
+    name we find the reserved word in and then the name of the group to which we want
+    to apply the query. So we can read the first line of the query as follows:"For
+    each student element that exists within the studentsList group".The second line
+    begins with the reserved word where it is optional and may not be written, and
+    allows you to write a condition that can be applied to the elements of the studentsList
+    group. For our example, you chose to apply the condition:where student.Mark> 60That
+    is, I want every student to have a score greater than 60.The third line, select
+    student, tells Linq what the data we want to get is the result of the query execution.
+    In our example, we want to get the set of each element that is a Student object.As
+    a result of executing the preceding query, the students variable will contain
+    a reference to a group object that fulfills the <IEnumerable <Student interface.A
+    Linq query can produce a reference to a group object that fulfills the <IQueryable>
+    Student interface, but this topic is beyond the scope of the lesson.In fact, more
+    complex terms can be used, for example, if we want to have all students with grades
+    between 60 and 90, for example, using the && factor as follows:from student in
+    studentsListwhere student.Mark> = 60 && student.Mark <= 90select studentWe can
+    also sort the data by student ID, firstName, lastName, or a combination of it,
+    using the Linq orderby:from student in studentsListwhere student.Mark> = 60 &&
+    student.Mark <= 90orderby student.FirstName, student.LastNameselect studentThe
+    preceding query will arrange items that match the condition in the where section
+    by name and then by nickname. In fact, there are many powerful features of Linq
+    queries that this lesson cannot mention.The PrintList function (lines 50 to 58)
+    is limited to printing a table for the list we are passing as an intermediary.
+    Note that the only argument it accepts is the <IEnumerable> Student interface
+    so we can pass any argument to it that holds a reference to an object of any class
+    that achieves this interface, including of course the <List <Student class. The
+    only new thing about this function is to use it for a different format in tabular
+    data. See line 52\. The formatting text is: "{0, -5} {1, -15} {2, -15} {3, -10}"
+    This formatted text allows the data to be displayed neatly tabular on the screen.
+    {0, -5} The median of position 0 (from the WriteLine function) is displayed in
+    a 5-width field with left alignment. The format {1, -15} allows the position 1
+    argument to be displayed within a 15-width field with left alignment as well.
+    Removing the minus sign (-) from the previous two formats will become right-aligned.Want
+    more excitement? Add the following line to line 43 of the previous program (that
+    is, after the statement that uses the Linq query):double average = students.Average
+    (s => s.Mark);This statement uses the Average function of the variable that contains
+    the list of students after filtering as we know it. As its name implies, this
+    function calculates the rate of student objects within students. But how will
+    the Average function know which field will calculate the average? The solution
+    is to use the Lambda expression that requires one argument (s) to represent the
+    Student object, and returns the value of the Mark property:s => s.MarkThe function
+    will use this expression to pass on all elements within the students group to
+    get their respective scores using the previous Lambda expression and then calculate
+    the average, so that the program assigns it to the average variable, which is
+    obviously double. After executing the preceding statement and assuming that the
+    basic version of the Lesson15_01 program was used, the average value will be 77.5,
+    which is the average of students with grades greater than 60.Everything we offer
+    may sound nice and enjoyable, but you won''t really enjoy these great features
+    of Linq and Lambda Expressions unless you use them in your own programs. I use
+    these features in my programs, and I won''t imagine how happy I am when I extract
+    data from a database or web service that may contain hundreds or thousands of
+    raw data, and then apply it to Linq''s magic recipes and get what I want by writing
+    just one statement. !Supportive exercisesExercise 1Make an adjustment to the Lesson15_01
+    program so that we get all students with scores below 50.Exercise 2Make another
+    modification to Lesson15_01 so that we get all students whose first letter is
+    "A".(Tip: One suggested solution is to use the StartWith child of the FirstName
+    text property of the student object, as follows:student.FirstName.StartsWith ("A")After
+    the word where in the Linq query).ConclusionIn this lesson, we introduced Lambda
+    expressions and Linq queries. We have designed several programs that demonstrate
+    these two important programming techniques using C-Sharp. You will encounter both
+    of them a lot in your software life, and you will be happy to use them because
+    of the great shortcut you get in the code, as well as the high-level performance
+    that you will not be able to keep up with your traditional code.Chapter VUse and
+    handle EventsWhen you''re working on your PC, even on your smartphone, or maybe
+    your smartwatch. You use events thousands of times. An event is a beautiful way
+    to express an emergency event to a software object. This may be an emergency mouse
+    click, or a touch on the screen of your smartphone. Or a keystroke from my keyboard
+    as I write this article, or it is an emergency that expresses an internal state
+    within the operating system. In short, there are too many different or potential
+    sources of events.Relationship between Events and DelegatesEvents depend entirely
+    on deputies. In fact, it is a way to refine it! Let''s borrow the Car class from
+    Lesson13_02 from the previous lesson:public class Car{public delegate void SpeedNotificatoinDelegate
+    (string message);private SpeedNotificatoinDelegate speedNotificationHandler;public
+    void RegisterWithSpeedNotification (SpeedNotificatoinDelegate handler){this.speedNotificationHandler
+    = handler;}public int CurrentSpeed ​​{get; set; }public int MaxSpeed ​​{get; set;
+    }public Car (){CurrentSpeed ​​= 0;MaxSpeed ​​= 100;}public Car (int maxSpeed,
+    int currentSpeed){CurrentSpeed ​​= currentSpeed;MaxSpeed ​​= maxSpeed;}public
+    void Accelerate (int delta){CurrentSpeed ​​+ = delta;if (CurrentSpeed> MaxSpeed){if
+    (this.speedNotificationHandler! = null){string msg = string.Format ("You exceed
+    the maximum speed! (Current = {0}, Max = {1})",CurrentSpeed, MaxSpeed);speedNotificationHandler
+    (msg);}}}}In Exercise 2 of the previous lesson, I asked you to modify the Car
+    class to replace RegisterWithSpeedNotification. After making this modification,
+    the Car class will look like this:public class Car{public delegate void SpeedNotificatoinDelegate
+    (string message);public SpeedNotificatoinDelegate speedNotificationHandler;public
+    int CurrentSpeed ​​{get; set; }public int MaxSpeed ​​{get; set; }public Car (){CurrentSpeed
+    ​​= 0;MaxSpeed ​​= 100;}public Car (int maxSpeed, int currentSpeed){CurrentSpeed
+    ​​= currentSpeed;MaxSpeed ​​= maxSpeed;}public void Accelerate (int delta){CurrentSpeed
+    ​​+ = delta;if (CurrentSpeed> MaxSpeed){if (this.speedNotificationHandler! = null){string
+    msg = string.Format ("You exceed the maximum speed! (Current = {0}, Max = {1})",CurrentSpeed,
+    MaxSpeed);speedNotificationHandler (msg);}}}}This class will work perfectly, as
+    we can assign a placeholder to the speedNotificationHandler field from outside
+    the Car class as follows:Car car = new Car (100, 0);car.speedNotificationHandler
+    = new Car.SpeedNotificatoinDelegate (OnExceedMaxSpeedHandler);The problem here
+    is that the speedNotificationHandler field has become completely exposed, so that
+    it is possible to call the function enveloped by this placeholder, from outside
+    the Car class, and this is a violation of an important principle in object-oriented
+    programming, Encapsulation. No one should be able to call the function that the
+    previous field encapsulates only from within the Car class, because the attorney
+    assigned to that field expresses an internal state within the Car class that is
+    exceeding the maximum speed.Sea Sharp provides us with a practical and elegant
+    solution to this problem of using events. For the previous Car class (after modification)
+    it is enough to name the speedNotificationHandler field with the reserved word
+    event to become an event that can only be called from within the Car class. But
+    there will be little difference in the way parliamentarians attribute to this
+    field. Lesson14_01 contains the new version of the Car class with a minor modification
+    under the Main function to support the use of events:using System;namespace Lesson14_01{public
+    class Car{public delegate void SpeedNotificatoinDelegate (string message);public
+    event SpeedNotificatoinDelegate speedNotificationHandler;public int CurrentSpeed
+    ​​{get; set; }public int MaxSpeed ​​{get; set; }public Car (){CurrentSpeed ​​=
+    0;MaxSpeed ​​= 100;}public Car (int maxSpeed, int currentSpeed){CurrentSpeed ​​=
+    currentSpeed;MaxSpeed ​​= maxSpeed;}public void Accelerate (int delta){CurrentSpeed
+    ​​+ = delta;if (CurrentSpeed> MaxSpeed){if (this.speedNotificationHandler! = null){string
+    msg = string.Format ("You exceed the maximum speed! (Current = {0}, Max = {1})",CurrentSpeed,
+    MaxSpeed);speedNotificationHandler (msg);}}}}class Program{static void Main (string
+    [] args){Car car = new Car (100, 0);car.speedNotificationHandler + = new Car.SpeedNotificatoinDelegate
+    (OnExceedMaxSpeedHandler);for (int i = 0; i <5; i ++){Console.WriteLine ("Increasing
+    speed by 30");car.Accelerate (30);}}static void OnExceedMaxSpeedHandler (string
+    message){Console.WriteLine (message);}}}See how we put the reserved event event
+    after the word public in declaring the speedNotificationHandler field on line
+    9\. Please also note the modification in line 49 to how the new placeholder is
+    assigned to the speedNotificationHandler field:car.speedNotificationHandler +
+    = new Car.SpeedNotificatoinDelegate (OnExceedMaxSpeedHandler);Notice how we used
+    the = () operator instead of the (=) operator. In fact, using the (=) operator
+    in this case will cause an error while compiling the program.But what is the benefit
+    of the factor (= +)? This work is of great benefit, in which several MPs (and
+    thus several functions) can be registered within the speedNotificationHandler
+    event at the same time. Which means a phrase like the one in line 37:speedNotificationHandler
+    (msg);This will result in a call to any placeholder (and therefore any child)
+    registered in the speedNotificationHandler event sequentially, taking into account
+    the order in which these deputies were recorded in the speedNotificationHandler
+    event using the = + operator. The OnExceedMaxSpeedHandler function is called an
+    event handler.Now we will go further and change the event registration statement
+    on line 49 to look like this:car.speedNotificationHandler + = OnExceedMaxSpeedHandler;Note
+    here that we have removed the expression that creates an object from the SpeedNotificatoinDelegate
+    placeholder, and instead placed the OnExceedMaxSpeedHandler function name immediately
+    after the operator (= +). In fact, the C-Sharp compiler is smart enough to know
+    that it should automatically create a new object from the SpeedNotificatoinDelegate
+    placeholder that encapsulates the OnExceedMaxSpeedHandler function. If you run
+    the program you will get the same expected output.Note: Deputies also have the
+    advantage of multiple registration using the = + operator. But this feature is
+    used more with events.Anonymous Methods Anonymous MethodsAnonymous functions are
+    a feature that allows the code to be significantly shortened. From its name, it
+    appears that no such functions have a name, but only an object containing the
+    code to be executed. As a simple example of anonymous functions, we will modify
+    the previous Lesson14_01 program to use a non-named function instead of the OnExceedMaxSpeedHandler
+    function. This amendment would be in line 49 to read as follows:car.speedNotificationHandler
+    + = delegate (string message){Console.WriteLine (message);};Note here that we
+    have used the reserved word delegate after operator = + and then the arguments
+    accepted by this function and then the object of the child surrounded by the incubator.
+    The only thing missing is the name of the function. Obviously, the definition
+    of this anonymous function must match the definition of the placeholder on which
+    the speedNotificationHandler event was declared. The OnExceedMaxSpeedHandler function
+    can now be eliminated. See the full Lesson14_02 program:using System;namespace
+    Lesson14_02{public class Car{public delegate void SpeedNotificatoinDelegate (string
+    message);public event SpeedNotificatoinDelegate speedNotificationHandler;public
+    int CurrentSpeed ​​{get; set; }public int MaxSpeed ​​{get; set; }public Car (){CurrentSpeed
+    ​​= 0;MaxSpeed ​​= 100;}public Car (int maxSpeed, int currentSpeed){CurrentSpeed
+    ​​= currentSpeed;MaxSpeed ​​= maxSpeed;}public void Accelerate (int delta){CurrentSpeed
+    ​​+ = delta;if (CurrentSpeed> MaxSpeed){if (this.speedNotificationHandler! = null){string
+    msg = string.Format ("You exceed the maximum speed! (Current = {0}, Max = {1})",CurrentSpeed,
+    MaxSpeed);speedNotificationHandler (msg);}}}}class Program{static void Main (string
+    [] args){Car car = new Car (100, 0);car.speedNotificationHandler + = delegate
+    (string message){Console.WriteLine (message);};for (int i = 0; i <5; i ++){Console.WriteLine
+    ("Increasing speed by 30");car.Accelerate (30);}}}}Note: There is a ready placeholder
+    in the FCL library called EventHandler that provides support for new events that
+    we define, so we don''t have to declare a new placeholder every time we want to
+    declare a new event. The EventHandler placeholder encapsulates any function that
+    requires two arguments, the first of which is the object that represents the object
+    that issued the event, and the second of the EventArgs, an object that contains
+    some additional information about the event.Supportive exercisesExercise 1Let
+    us have the following category:class Counter{private int currentValue = 0;public
+    void Increase (){currentValue ++;}public void Decrease (){currentValue--;}}Edit
+    this class so that it declares the Notification event that is triggered when the
+    currentValue field value is only a multiple of 5.(Hint: negative numbers are not
+    a multiple of 5\. A number 5 is a multiple of the same).Exercise 2Modify the previous
+    Lesson14_02 program to completely replace the SpeedNotificatoinDelegate placeholder,
+    so you can use the ReadH placeholder EventHandler instead.(Tip: You will need
+    to modify the arguments passed to the event handler to match the arguments that
+    the EventHandler placeholder needs)ConclusionIn this lesson we learned about Events.
+    This is an important technology on which desktop applications rely primarily,
+    as well as other types of applications such as web applications, mobile applications,
+    and any type of applications that require internal interaction with the operating
+    system or external with the user.Chapter VIObject Oriented ProgrammingC Sharp
+    is pure object oriented programming language. Everything you see in C Sharp is
+    an object.This lesson will be a little theoretical, but understanding it correctly
+    is vital for programming with C-Sharp. To be realistic, this lesson is a very
+    simplified approach to this important and huge subject and can in no way be considered
+    a reference for object-oriented programming. After reading this lesson, you will
+    gain the necessary knowledge to distinguish between classes and objects and understand
+    their relationship. In addition to understanding the basic principles of genetics
+    and packaging.To understand what is and what is being, hear me from this story:
+    we humans follow the so-called human category. This category defines the advantages
+    that every person should have. For example, everyone has a name, height, weight
+    and color of eyes and a distinctive thumbprint that distinguishes it from any
+    other human being. The human class defines these preceding attributes, so that
+    each human object of this class has such attributes but with its own set of values.
+    For example, the human being is a human being whose name may be happy, 180 cm
+    tall, black in color and a distinctive thumbprint.This human being is different
+    from another human being, Ammar, 175 cm tall, brown in color, and also has his
+    own distinctive thumbprint, and so on. We call these attributes the properties,
+    the class defines the properties, and the object object has these properties,
+    but with a set of values ​​that distinguish it from another object.In other words,
+    the human class also defines particular behaviors or actions specific to human
+    beings. For example, there are behaviors of walking, running, and laughter. Often
+    every individual expresses these behaviors in a privacy-sensitive manner. We all
+    have a different style of laughter. Each of us also has a different way of walking
+    and running, it has distinguished a person who does not see his face through walking
+    only and this is very likely. Such behaviors are termed programming in functions.
+    The human class defines the existence of such behaviors and every human being
+    is free to express such behaviors as he or she desires.A function in programming
+    includes code that is executed when called. This child typically handles and handles
+    other properties and children within the same object. We call the functions and
+    properties of class members and there are other members that we will address in
+    the following lessons.General principles of the object-oriented conceptThere are
+    hundreds of articles and books that talk about the concept of the object from
+    different perspectives. But it is enough to know now that there are two basic
+    principles that should be enjoyed by any programming language that supports the
+    concept of two object orientation: Encapsulation and Inheritance. Another important
+    concept based on heredity is polymorphism.EncapsulationIt is a fundamental principle
+    of object-oriented programming, and is one of the reasons for the emergence of
+    this concept. This principle determines that we are not supposed to be familiar
+    with the internal functioning of the object. What concerns us is to use the object
+    and achieve the desired purpose regardless of its internal details. Consider the
+    following simple example:When we drive the car and want to increase its speed,
+    we simply press the tread. I don''t think anyone is interested in the mechanical
+    mechanism behind the pressure on the tread. What is needed is to only increase
+    the speed of the car without paying attention to the interior details. The car
+    encapsulate the internal mechanical details behind the car''s speed. The car in
+    this example is an Object. The speed increase is the behavioral method of the
+    car being.Another example we often see as we walk through the streets, train stations
+    and lounges is hot drink machines. Standing in front of the machine we enter the
+    money and then press a specific button to get the hot drink we want. Usually we
+    don''t care about the internal details that happen inside the machine when we
+    press a button to get a cup of coffee. The machine here is an object, and the
+    process of getting a cup of coffee is the behavior of the method. This machine
+    encapsulates the internal details of the preparation process, all we do is press
+    the button and then we get the desired output. If the machine is modified to change
+    the way a hot drink is made to make it better and more delicious, it will never
+    affect the way the machine is handled to get the same drink.We will only notice
+    this adjustment after we taste the drink and notice the difference in taste.InheritanceInheritance
+    is one of the most important forms of reuse of software components, as the new
+    variety makes use of the pre-existing components within the "inherited" class
+    and makes certain modifications to suit it specifically. Instead of creating a
+    new class from scratch, we can create a class that relies on another class and
+    takes advantage of its pre-existing characteristics and behaviors and then adapts
+    or adds them. We call the main class from which we inherit the father class. The
+    class that performs the inheritance is called the son or the derived class.To
+    install the idea, let''s take the following example. There are three basic types
+    of people in schools: students, teachers, and administrators. We can build a generic
+    class that represents anyone who works at the school.We can build on this class
+    when we want to create more "specialty" varieties. Such as the Student, the Teacher,
+    and the Staff. Each class inherits from the parent class SchoolMember and each
+    automatically has the same characteristics as the class within the SchoolMember
+    class.![](rsrc15D.jpg)It is clear that the Student class is more specific than
+    the SchoolMember class. In addition to the features in SchoolMember, it has its
+    own unique characteristics. For example, it may contain the property that reflects
+    the current grade and the general behavior of the student. Etc.) and WeeklyHours,
+    which represent the number of weekly teaching hours assigned. The same concept
+    applies exactly to the Staff category, which is the school administrative staff.Heredity
+    moves us from the more general form of SchoolMember to the more specific form
+    such as Student. In fact, it was possible to follow the process of inheritance
+    from the category Staff, there is the Department of guidance and there is the
+    Secretariat and management and others, each of which can inherit from the category
+    Staff.PolymorphismAssuming that we want to build a program that simulates the
+    transitional movement of several species of animals for a biological study.Both
+    Fish, Bird, and Frog are inherited from the Animal variety that represents any
+    animal.Assuming that the animal class contains a behavior called a move, it is
+    known that this behavior will automatically be present in any class that inherits
+    from the animal class. Each category of Fish, Bird and Frog expresses the move
+    differently. The fish may travel by swimming one meter when calling the Move function.
+    The bird can fly 10 meters at each call to the move, and finally the frog can
+    jump 20 centimeters whenever the move is called. The Move function, which is defined
+    within the Animal category, can be expressed in various forms within the categories
+    of children, Fish, Bird and Frog, each according to their needs.![](rsrc15P.jpg)ConclusionIn
+    this lesson we are introduced to the general concept of object-oriented programming
+    and we deal with packaging where the internal details of the work mechanism do
+    not concern us. Inheritance related to the concept of reuse and the transition
+    from the general (father) to the allocator (son). In addition to the formal pluralism
+    that allows us to acquire behaviors dedicated to the varieties of children in
+    line with their nature.'
+  toc: []
+  trans: "\n\n# 引言\n\n## 什么是 C#\n今天的世界充斥着各种资源和用途的编程语言。C# 无疑也是如此。它是一种现代的面向对象的编程语言，由\
+    \ Anders Helsberg 在 2000 年在微软开发。C# 通常被视为一种混合体，它吸取了 C 和 C++ 的优点来创建一种现代语言；其目标是将\
+    \ C++ 的计算能力与 Basic 编程的易用性相结合。\n\n## 为什么创建 C-Sharp\n你可能会想，在已经存在 Java 这样具有相似用途的其它软件实体的情况下，为什么还要创建一个新语言呢？事实上，它最初是作为\
+    \ Java 的竞争对手而建立的；Sun 公司（后被 Oracle 收购）不想对 Java 进行任何更改，因此微软选择创建自己的语言。总来说，C# 具有与\
+    \ Java 相似的特征。C# 自诞生以来增长得非常快，这当然无疑归功于微软的广泛支持，帮助它在今天占据了一席之地。\n\n## “C#”术语的起源是什么？\n\
+    C# 这个术语源于 `#` 符号，它表示单点递增。这也许是编程世界和音乐世界带来的富有创造力的语言！C# 在英语中通常读作“C Sharp”。\n\n##\
+    \ C# 的主要用途\n事实上，简而言之，几乎无不利！你可以使用 C# 创建 Windows 应用程序、客户端/服务器应用程序、数据库应用程序等……它们多样的用途可以归类为：\n\
+    \n### Windows 应用程序开发\n考虑到 Windows 上的 .NET 支持，C# 现在是每位开发者构建 Windows 应用程序的首选。Windows\
+    \ 的新版本（Windows 8 / Windows 10）极大地促进了这种采用，绝大多数第三方应用程序是在 Windows Store 中用 C# 编写的。虽然\
+    \ Windows Store 没有获得像 App Store 和 Google Play 那样的成功和名誉，但无疑将塑造 Windows 应用程序分发的未来，因此\
+    \ C# 在 Windows 上有光的前景。\n\n### 通常通过以下方式创建 Web 应用：\n- WebForms（包含在内的 .NET Web 框架的一部分）\n\
+    - MVC（一种用于开发 Web 应用的架构风格）\n\n### 移动设备和智能手机\n提到智能手机，C# 正在不断增长。`Xamarin` 在这一领域领先，为所有主要的移动平台提供工具，以及许多其他关于如何使用\
+    \ C# 开发手机的有用资源。微软在移动设备上支持 C# 也有悠久的历史；它最近发布了 Visual Studio 2013 的更新，支持为桌面和 Windows\
+    \ 同时开发的通用应用程序。\n\n### 游戏\nC# 广泛用于使用 `Unity` 游戏引擎创建游戏，它是目前最流行的游戏引擎，世界上超过三分之一的顶级游戏由它制作，用它创建的游戏有近\
+    \ 7.7 亿活跃用户。Unity 也应用于虚拟现实，90% 的三星 Gear 设备和 53% 的 Oculus VR 游戏都是用它开发的。C# 是创建这些应用程序的非常流行的工具，因此为任何希望进入游戏制作世界的程序员或任何对虚拟现实感兴趣的人提供了极佳的选择。C#\
+    \ 足够灵活，可以运行 TCP/IP 服务器和树莓派。\n\n## C# 特性\n- 易于学习，但处理复杂任务！\n- C# 有许多让学习变得更容易特性。\n\
+    - C# 的结构当然非常有表现力，但简单且易学习。\n- C# 的构造简化了 C++ 的许多复杂性。\n- C# 相对易读。\n- 此外，C# 处理了设备的大多数复杂细节，这样你就可以专注于编程目的而不是担心小细节。\n\
+    - C# 也是一种静态编写的语言，因此代码在转换为应用程序之前会经过检查，这使得更容易发现错误，对初学者可能特别有用。\n\n# 第一章：#C 编程语言快速指南\n\
+    \nC# 是一种优雅的面向对象的编程语言，具有类型安全的数据类型，允许开发者构建运行在 .NET 框架上的安全、健壮应用程序。\n\n## 数据类型 类型和变量\n\
+    ### 语法\n```csharp\n// 单行注释以两个斜杠开头，如下\n/// * 多行注释放置在上方标签和下方标签之间\n/// /此 xml 注释用于生成外部文档或在\
+    \ IDE 集成开发环境中提供特定上下文的帮助。\n/// <param name = \"firstParam\">记录参数函数，它是此注释的 firstParam\
+    \ 参数 </param>\n/// <returns> 关于 /returns> 函数返回值的信息\n// public void MethodOrClassOrOtherWithParsableHelp\
+    \ (string firstParam) {}\n```\n### 指定此代码将将使用的命名空间\n下面的命名空间都是 .NET Framework 类的一部分。\n\
+    \n### 框架类库\n```csharp\nusing System;\nusing System.Collections.Generic;\nusing\
+    \ System.Dynamic;\nusing System.Linq;\nusing System.Net;\nusing System.Threading.Tasks;\n\
+    using System.IO;\nusing System.Data.Entity;\n```\n此命名空间未包含在标准库中：为了使用上面的库，你需要添加\
+    \ NuGet 包管理器的引用，可以执行：`Install-Package`。\n\n### 命名空间\n命名空间定义字段将代码组织成包或模块。为了在另一个代码中使用下面定义的命名空间，我们添加\
+    \ `Learning.CSharp` 语句。每个 `cs` 文件必须至少包含一个与文件名相同的 `class`。\n\n```csharp\nnamespace\
+    \ Learning.CSharp\npublic class LearnCSharp\n{\n// 基础用语：如果你已经在 Java 或 C++ 中写过代码，可以跳过到“有趣的特性”\n\
+    public static void Syntax ()\n{\n// 写入一个新行，使用 Console.WriteLine\nConsole.WriteLine\
+    \ (\"Hello\");\n// 在同一行写入语句\nConsole.WriteLine (\"Integer:\" + 3.14 +\"Boolean:\"\
+    \ + true);\n}\n```\n\n## 历史和配置\n### 数据结构\n类型和变量\n定义变量为 `<type> <name>`\n\n- **byte**:\
+    \ 整数（正或负），8 位（-128 到 127）。`byte foo = 100;`\n- **Byte**: 仅正数数字，8 位（0 到 255）。`byte\
+    \ foo = 100;`\n- **Short**: 16 位整数或自然数，范围 -32768 到 32767。`short foo = 10000;`\n\
+    - **ushort**: 范围 0 到 65535。`ushort foo = 10000;`\n- **int**: 整数，32 位长度（-2147483648\
+    \ 到 2147483647）。`int foo = 1;`\n- **uint**: 无符号整数，32 位长度（0 到 4294967295）。`uint\
+    \ foo = 1;`\n- **Long**: 整数，64 位长度（-9223372036854775808 到 9223372036854775807）。`long\
+    \ foo = 100000L;`\n- **ulong**: 无符号整数，64 位长度（0 到 18446744073709551615）。`ulong\
+    \ foo = 10000L;`\n- **Double**: 64 位浮点精度。`double foo = 123.4;`\n- **Float**: 32\
+    \ 位浮点。`float foo = 23.4f;`\n- **Decimal**: 128 位数据类型，精度高于浮点类型，适用于财务和货币账户。`decimal\
+    \ foo = 150.3m;`\n- **Boolean**: 真假。`bool foo = true;`\n- **Char**: 代表 Unicode\
+    \ 的 16 位数据类型。`char foo = 'A';`\n- **Strings**: 引用类型。`string foo = \"\\\"quotes\
+    \ and add \\n and \\t\";`\n\n### 字面字符串\n可以在字符串前面使用 `@` 符号来转义字符串中的所有字符。\n```csharp\n\
+    string path = \"C:\\\\Users\\\\Desktop\";\nstring verbatimPath = @\"C:\\Users\\\
+    Desktop\";\nConsole.WriteLine(path == verbatimPath); // => true\n```\n你可以使用 `@`\
+    \ 符号分行分布字符串来转义“位置”。\n```csharp\nstring bazString = @\"Here's some stuff\non a\
+    \ new line! Wow!\";\n```\n使用 `const` 关键字使变量静态且不可编辑，并在编译时计算静态值。\n```csharp\nconst\
+    \ int HoursWorkPerWeek = 90;\n```\n\n### 列表\n矩阵 - 第一个元素从 0 开始，在定义时必须定义矩阵大小。\n\
+    ```csharp\n<datatype> [] <name> = new <datatype>[<array size>]\n```\n示例中的 `intArray`\
+    \ 矩阵包含 10 个数字：\n```csharp\nint[] intArray = new int[10];\n```\n另一种定义和配置数组的方法：\n\
+    ```csharp\nint[] y = {9000, 1000, 1337};\n```\n排列数组元素 - 访问一个元素：\n```csharp\nConsole.WriteLine\
+    \ (\"intArray @ 0:\" + intArray[0]);\n```\n数组是可调整的。\n```csharp\nintArray[1] =\
+    \ 1;\n```\n列表比数组使用更多，是因为它们的灵活性，列表的定义如下：\n```csharp\nList<datatype> <name> = new\
+    \ List<datatype>()\nList<int> list = new List<int>{9000, 1000, 1337}; // 指定初始值\n\
+    ```\n列表没有初始值，在访问项目之前必须先添加值：\n```csharp\nlist.Add(1);\nConsole.WriteLine(\"list\
+    \ @ 0:\" + list[0]);\n```\n\n### 因子\n运算符：\n```csharp\nint i1 = 1, i2 = 2; // 一次定义多个变量的简写\n\
+    ```\n清晰计算：\n```csharp\nConsole.WriteLine(i1 + i2 - 7); // => 3\n```\n取模运算：\n```csharp\n\
+    Console.WriteLine(\"1 % 3\"); // => 2\n```\n比较因子：\n```csharp\nConsole.WriteLine(\"\
+    3 == 2\"); // => false\nConsole.WriteLine(\"3 != 2\"); // => true\nConsole.WriteLine(\"\
+    3 > 2\"); // => true\nConsole.WriteLine(\"3 <= 2\"); // => false\nConsole.WriteLine(\"\
+    3 >= 2\"); // => true\nConsole.WriteLine(\"3 < 2\"); // => false\n```\n位比较运算符：\n\
+    `~`: 取反码因子（如果位为 0 则转为 1）\n`>>`: 右移\n`<<`: 左移\n`&`: “与”因子\n`^`: 逻辑异或因子\n`|`: 包含“或”\n\
+    \n增减：\n```csharp\nint i = 0;\nConsole.WriteLine(\"\\n-> 增 / 减\");\nConsole.WriteLine(i++);\
+    \ // 输出 \"0\", i = 1; 增后\nConsole.WriteLine(+i); // 输出 \"2\", i = 2; 增前\nConsole.WriteLine(i--);\
+    \ // 输出 \"2\", i = 1; 减后\nConsole.WriteLine(--i); // 输出 \"0\", i = 0; 减前\n```\n\
+    \n### 控制结构\n```csharp\nConsole.WriteLine(\"\\n-> Control 结构\");\nint j = 10;\n\
+    if (j == 10)\n{\n    Console.WriteLine (\"printed\");\n}\nelse if (j > 10)\n{\n\
+    \    Console.WriteLine(\"t\");\n}\nelse\n{\n    Console.WriteLine(\"\");\n}\n\
+    ```\n三元因子\n```csharp\nint toCompare = 17;\nstring isTrue = toCompare == 17 ? \"\
+    True\" : \"False\";\n```\n\n### For Each\nforeach 循环用于遍历任何聚合类型（数组、列表、字典……），在 .NET\
+    \ 框架内实现。\n```csharp\nforeach (char character in \"Hello World\".ToCharArray())\n\
+    {// 遍历字符串中的所有字符\n}\n```\n\n### Switch 指令\nSwitch 适用于 byte、char 和 int 类型，也适用于 Enum\
+    \ 类型（下方）。\n```csharp\nint month = 3;\nstring monthString;\nswitch (month)\n{\n\
+    case 1:\n    monthString = \"January\";\n    break;\ncase 2:\n    monthString\
+    \ = \"February\";\n    break;\ncase 3:\n    monthString = \"March\";\n    break;\n\
+    // 在每个 case 中可以执行多个过程，但如果不加 break 指令，将进入下一个 case（如果你想这样做，需要添加 goto statement）\n\
+    case 6:\ncase 7:\ncase 8:\n    monthString = \"Summer time !!\";\n    break;\n\
+    default:\n    monthString = \"Some other month\";\n    break;\n}\n```\n\n## 数据转换\n\
+    字符串整数\n如果转换失败会出现 `Exception`\n```csharp\nint.Parse (\"123\"); // 获取字符串 \"123\"\
+    \ 的数字版本\n```\n使用 `TryParse` 函数转换类型时，转换值是类型的初始值。数字的情况下，初始值为 0。\n```csharp\nint\
+    \ tryInt;\nif (int.TryParse (\"123\", out tryInt)) // 函数返回布尔值\n    Console.WriteLine\
+    \ (tryInt); // 123\n```\n将数字转换为字符串\n`Convert` 类包含许多方法以便转换：\n```csharp\nConvert.ToString(123);\n\
+    ```\n\n## 变体\n代数数据类型\n数字 15 获取 `int` 类型的值\n```csharp\nlong x = (int)15;\n```\n\
+    \n## 有趣的特性\n### 关键字 “yield”\n`yield` 的使用表示该的函数具有重复属性（即函数可以与 `foreach` 循环一起使用）\n\
+    ```csharp\npublic static IEnumerable<int> YieldCounter(int limit = 10)\n{\n  \
+    \  for (var i = 0; i < limit; i++)\n        yield return i;\n}\n```\n`yield return`\
+    \ 在同一个函数中使用多次\n```csharp\npublic static IEnumerable<int> ManyCounter()\n{\n  \
+    \  yield return 0;\n    yield return 1;\n    yield return 2;\n    yield return\
+    \ 3;\n}\n```\n你也可以使用“yield break”停止重复，下一个函数返回 0 到 limit 之间一半的值。\n```csharp\npublic\
+    \ static IEnumerable<int> YieldCounterWithBreak(int limit = 10)\n{\n    for (var\
+    \ i = 0; i < limit; i++)\n    {\n        if (i > limit / 2) yield break;\n   \
+    \     yield return i;\n    }\n}\n```\n\n### 可选事务\n方法签名(3, 1, 3, \"Some\", \"Extra\"\
+    , \"Strings\")\n```csharp\nMethod signatures(3, another: 3); // 直接设置参数值，超过了可选参数\n\
+    ```\n\n### 浮点种类\n调用上面定义的 SetDefault 函数\n```csharp\nvar phonebook = new Dictionary\
+    \ <string, string> () {{\"Sarah\", \"212 555 5555\"} // 向地址簿添加地址\n```\n```csharp\n\
+    Console.WriteLine (SetDefault <string, string>(phonebook, \"Sarah\")); // No Phone\n\
+    ```\n你可以选择 TKey 和 TValue，因为它们可以自动推断。\n```csharp\nConsole.WriteLine (SetDefault\
+    \ (phonebook, \"Sarah\")); // 212 555 555\n```\n\n### 处理错误\n```csharp\ntry\n{\n\
+    \    var fun = Penny.CreateWithGears(6); // 将执行，因为 CreateGears 会导致异常\n}\ncatch\
+    \ (Exception ex) // 捕获所有异常\n{\n    Console.WriteLine(\"It hit\", ex); // 堆栈跟踪\n\
+    }\nfinally // 在 try 或 catch 后执行\n{\n}\n```\n\n### 资源管理\n```csharp\nusing (StreamWriter\
+    \ writer = new StreamWriter(\"log.txt\"))\n{\n    writer.WriteLine(\"Nothing here\"\
+    );\n} // 所有资源在后丢弃\n\n### 并行编程\n使用 Parallel \n```csharp\nvar words = new List<string>{\"\
+    dog\", \"cat\", \"pony\"};\nParallel.ForEach(words, new ParallelOptions {DegreeOfParallelism\
+    \ = 4}, word =>\n{\n    Console.WriteLine(word);\n});\n```\n运行此代码会导致每个线程在不同的时间完成。\n\
+    \n### LINQ\n将数据链接到 `IQueryable<T>` 对象：`LinqToSql` 关联数据库，`LinqToXml` 关联 XML 文档。\n\
+    ```csharp\nvar db = new Repository();\n```\n实现是延迟的，当处理数据库时很好。\n```csharp\nvar\
+    \ filter = db.Where(b => b.HasTags); // 搜索\nvar query = filter.OrderBy(b => b.Name).Select(b\
+    \ => b.Name); // 仍然运行，但只有当你传递它们时才会获得结果\n```\n```csharp\nforeach (string bike in\
+    \ query)\n    Console.WriteLine(result);\n```\n\n## 委托和事件\n### 委托是到 `Increment`\
+    \ 函数的引用\n为了引用函数，我们通过定义具有相同签名的委托开始，返回类型为 `int`。\n```csharp\npublic delegate int\
+    \ IncrementDelegate();\n```\n 事件也可以用于触发委托\n创建一个授权类型的事件\n```csharp\npublic static\
+    \ event IncrementDelegate MyEvent;\nstatic void Main(string[] args)\n{\n    //\
+    \ 通过实例化委托来传递传递\n    IncrementDelegate inc = new IncrementDelegate(Increment);\n\
+    \    // 组合 inc 将执行 Increment 三次\n    Console.WriteLine(inc()); // => 1\n\n   \
+    \ // 使用委托注册事件\n    MyEvent += new IncrementDelegate(Increment);\n    MyEvent +=\
+    \ new IncrementDelegate(Increment);\n    // 触发事件，这是事件中共享的所有授权的执行\n    Console.WriteLine(MyEvent());\
+    \ // => 6\n}\n\n# 第二章：NET Framework\n\n### 关于本章\n.NET Framework 是 .NET 框架。从微软最流行的框架从\
+    \ 2000 年底的 beta 到现在的 4.6，已经有了显著改进，使得与其工作的编程语言得到了提升。.NET Framework 是应用程序依赖的核心实体。它提供了此类应用程序访问文件、操作数据库和其他基本任务的方法。.NET\
+    \ Framework 从一开始就被设计为运行在任何操作系统或可用硬件上。尽管微软只在 Windows 上支持此框架，但已有尝试通过开源 mono 项目将其迁移到\
+    \ Linux。Xamarin 在不到一个月前被微软收购。足够知道框架由两个主要部分组成：通用运行时 (CLR)-框架类库被称为 FCL。\n\n### 框架的主要部分\n\
+    我们将简单介绍 .NET Framework 的两个主要部分以及 C# 编译器。\n\n### 通用执行环境\n它是运行 dotnet 语言编写程序的环境，并通过将它们与你正在工作的硬件隔离来为这些程序形成孵化器。你可以将其与\
+    \ Java 虚拟机比较。CLR 默认适用于大多数 Windows 操作系统（变体），如 Windows XP、Windows 7、Windows 8、Windows\
+    \ 10、Windows Phone。\n\n### FCL 框架类库\n这个巨大的库包含数千个类，允许我们完成脑海中的任何任务。从正则表达式到网络通信，到\
+    \ HTTP 等流行的网络协议，FCL 反而由几个子库组成。一个库帮助我们开发 Windows 应用程序，另一个允许我们使用 ASP.NET 技术开发 Web\
+    \ 应用程序，根据你的业务需求选择你需要的。FCL 库还包含一个名为基类库（BCL）的子库。该库包含与使用其它库创建的所有应用程序工作的的基础类，无论其类型如何。\n\
+    \n### C# 编译器\n为了实现我们用 C# 编写的程序，我们需要一个 C# 编译器。这个翻译器默认包含在框架中。翻译器将 C# 代码转换为名为微软中间语言\
+    \ (MSIL) 的语言编写的代码。这是一种低级中间语言，类似于汇编语言。事实上，CLR 将执行在 MSIL 中的指令。CLR 不需要知道编写 MSIL 的编程语言，这是允许程序员在任何支持\
+    \ dotnet 的编程语言中编写的主要特性。只要有 MSIL 兼容的解释器就没有问题。见以下插图：![](img/src.jpg)\n\n### 程序如何使用\
+    \ CLR 执行\n（上方提供了详细解释）\n\n### 结论\n（上方提供了详细结论）\n\n# 第三章：从 C# 开始\n\n## 第一个程序\n###\
+    \ 添加整数的简单程序\n```csharp\nusing System;\nnamespace HelloWorld\n{\n    class Program\n\
+    \    {\n        static void Main(string[] args)\n        {\n            Console.WriteLine\
+    \ (\"Hello World!\");\n        }\n    }\n}\n```\n\n### 添加数字的优化程序\n```csharp\n\
+    using System;\nnamespace SumTwoNumbers\n{\n    class Program\n    {\n        static\
+    \ void Main(string[] args)\n        {\n            int a;\n            int b;\n\
+    \            int c;\n            a = 3;\n            b = 4;\n            c = a\
+    \ + b;\n            Console.WriteLine (\"3 plus 4 equals:\" + c.ToString());\n\
+    \        }\n    }\n```\n\n# 第四章：Lambda 表达式和查询\n\n### Lambda 表达式\nLambda 表达式 允许你在同一行编写代码\n\
+    ```csharp\nFunc<int, int> square = (x) => x * x; // 返回值\nConsole.WriteLine(square(3));\
+    \ // 9\n```\n\n### 查询\n利用 Linq 必须添加 `System.Linq`。理解 Linq 的最佳方法是通过一个简单的应用程序示例，在\
+    \ `Lesson15_01` 程序中：\n```csharp\nclass Student\n{\n    public int Id { get; set;\
+    \ }\n    public string FirstName { get; set; }\n    public string LastName { get;\
+    \ set; }\n    public int Mark { get; set; }\n}\n```\n\n# 第五章：使用和处理事件\n\n### 事件与委托的关系\n\
+    委托是到 `Increment` 函数的引用，通过定义具有相同签名的委托开始，它不接受任何数据并返回一个 `int` 类型的结果。\n```csharp\n\
+    public delegate int IncrementDelegate();\n```\n 事件也可以用于触发委托\n创建一个授权类型的事件\n```csharp\n\
+    public static event IncrementDelegate MyEvent;\n```\n\n### 匿名方法\n匿名函数是一种显著缩短代码的功能。从名字上看，这样的函数没有名字，但只有一个包含执行代码的对象。\n\
+    ```csharp\nMyEvent += delegate (string message)\n{\n    Console.WriteLine(message);\n\
+    };\n```\n\n# 第六章：面向对象编程\n\nC# 是纯面向对象编程语言。你在 C# 中看到的每一个都是对象。\n\n## 面向对象编程\n本节有点理论，但正确理解它对于使用\
+    \ C# 编程至关重要。现实来说，本节是对这个重要且巨大主题的一种非常简单的方法，并不能被视为面向对象编程的参考。阅读本节后，你将获得区分类和对象的必要知识，并理解它们的关系，此外理解封装的基本原理以理解什么是什么是。听听这个故事：我们遵循所谓的人类类别，这个类别定义了每个人应该拥有的优点。例如，每个人都有名字、身高、眼睛颜色和一个与任何其他人区分的独特指纹。类定义了这些属性，对象拥有这些属性对应的一组值。例如，人类可能是快乐的，身高\
+    \ 180 厘米，黑色，自己的自己的纹我们。这些这些这些属性，类定义这些属性，对象拥有这些属性。此外，类还定义了人类特定的行为或动作，例如步行、跑步和笑。通常每个人都以敏感的方式表达这些行为。我们都有不同的笑。\n\
+    \n## 封装\n封装是面向对象编程的基本原理，是这个概念出现的原因之一。该原则规定我们不应该熟悉对象的内部工作机制。我们关心的是使用对象来实现所需的目的，无论细节如何。考虑以下示例：当我们开车并想增加速度时，我们只需踩踏板。我不认为有人对压力背后的机械机制感兴趣。汽车封装了速度背后的内部细节。示例中的汽车是对象。速度增加是行为方法。另一个我们在走过车站和休息室时经常看到的例子是热饮机。站在机器前，我们投入钱，然后按下特定的按钮获取我们想要的热饮。通常我们不在按下按钮时不关心内部细节。机器封装了准备过程的内部细节。如果机器被修改以改变制作热饮的方式使其更好更好喝，它永远不会影响操作机器。我们只在品尝饮料后才会注意到这种调整。\n\
+    \n"

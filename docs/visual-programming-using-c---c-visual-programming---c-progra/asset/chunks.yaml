@@ -1,0 +1,3035 @@
+- fmt: "\n![](Image00017.jpg)\n\nFor soft copy visit www.cs.aagasc.edu.in\n\n![](Image00000.jpg)\
+    \ VISUAL PROGRAMMING USING C#\n\n# MODULE– I\n\nIntroduction - C, C++, Objective-C,\
+    \ Java and C#\n- Extensible Markup Language (XML)\n- Introduction to Microsoft\
+    \ .NET\n- The .NET Framework and the Common Language Runtime\n- Introduction to\
+    \ Object Technology\n- Introduction to C# Applications\n- Creating a Simple Application\
+    \ in Visual C# Express\n- Formatting Text with `Console.Write` and `Console.WriteLine`\n\
+    - Another C# Application: Adding Integers – Arithmetic\n- Decision Making: Equality\
+    \ and Relational Operators\n- Strings and Characters.\n\n## Introduction to C\
+    \ & C++\n\nC is a high-level structured oriented programming language, used in\
+    \ general purpose programming, developed by Dennis Ritchie at AT&T Bell Labs,\
+    \ the USA between 1969 and 1973.\n\nIn 1988, the American National Standards Institute\
+    \ (ANSI) had formalized the C language. C was invented to write UNIX operating\
+    \ system. C is a successor of 'Basic Combined Programming Language' (BCPL) called\
+    \ B language. Linux OS, PHP, and MySQL are written in C. C has been written in\
+    \ assembly language. Simula (1967)\n\nThe very first object-oriented programming\
+    \ language C++ (1983) The first object-oriented programming language in the C\
+    \ family of languages Java (1995) Sun's object-oriented programming language C#\
+    \ (2001) programming language\n\n## Java\n\nJava is a general purpose, high-level\
+    \ programming Microsystems. The Java programming language was developed by a small\
+    \ team of engineers, known as the Green Team, who initiated the language in 1991\\\
+    . Later, in 2009, Oracle Corporation acquired Sun Microsystems and took ownership\
+    \ of two key Sun software assets: Java and Solaris. In 2006 Sun started to make\
+    \ Java available under the GNU General Public License (GPL). Oracle continues\
+    \ this project called Open-JDK Sun Microsystems was acquired by the Oracle Corporation\
+    \ in 2010\\. Oracle has now the steermanship for Java.\n\nMicrosoft's object-oriented\
+    \ language developed by Sun\n\n## What is XML?\n\n- XML stands for eXtensible\
+    \ Markup Language\n- XML is a markup language much like HTML\n- XML was designed\
+    \ to store and transport data\n- XML was designed to be self-descriptive\n\n###\
+    \ XML Simplifies Things\n\n- It simplifies data sharing\n- It simplifies data\
+    \ transport\n- It simplifies platform changes\n- It simplifies data availability\n\
+    \nMany computer systems contain data in incompatible formats. Exchanging data\
+    \ between incompatible systems (or upgraded systems) is a time-consuming task\
+    \ for web developers. Large amounts of data must be converted, and incompatible\
+    \ data is often lost.\n\nXML stores data in plain text format. This provides a\
+    \ software- and hardwareindependent way of storing, transporting, and sharing\
+    \ data. XML also makes it easier to expand or upgrade to new operating systems,\
+    \ new applications, or new browsers, without losing data. With XML, data can be\
+    \ available to all kinds of \"reading machines\" like people, computers, voice\
+    \ machines, news feeds, etc.\n\n## Introduction to C#\n\nC# was created at Microsoft\
+    \ late in the 1990s and was part of Microsoft’s overall .NET strategy. It was\
+    \ first released in its alphaversion in the middle of 2000\\. C#’s chief architect\
+    \ was Anders Hejlsberg.\n\n## .NET Framework\n\nIt defines two very important\
+    \ entities.\n\nThe first is the Common Language Runtime. This is the system that\
+    \ manages the execution of your program. Along with other benefits, the Common\
+    \ Language Runtime is the part of the .NET Framework that enables programs to\
+    \ be portable, supports mixed-language programming, and provides for security.\n\
+    \nThe second entity is the .NET class library. This library gives your program\
+    \ access to the runtime environment. For example, if you want to perform I/O,\
+    \ such as displaying something on the screen, you will use the .NET class library\
+    \ to do it.\n\nThe `Common Language Runtime (CLR)` manages the execution of .NET\
+    \ code. It is the job of the CLR to translate the intermediate code into executable\
+    \ code when a program is run. Microsoft Intermediate Language is turned into executable\
+    \ code using a JIT compiler. JITstands for ―just in time.‖ The process works like\
+    \ this: When a .NET program is executed, the CLR activates the JIT compiler. The\
+    \ JIT compiler converts (Microsoft Intermediate Language) MSIL into native code\
+    \ on a demand basis, as each part of your program is needed.\n\n### Functions\
+    \ of .NET CLR\n\n- Convert code into CLI\n- Exception handling\n- Type safety\n\
+    - Memory management (using the Garbage Collector)\n- Security\n- Improved performance\n\
+    - Language independency\n- Platform independency\n- Architecture independency\n\
+    \n### Components of .NET CLR\n\nThe key components of CLR includes the following:\n\
+    \n- Class Loader - Used to load all classes at run time.\n- MSIL to Native code\
+    \ - The Just In Time (JTI) compiler will convert MSIL code into native code.\n\
+    - Code Manager - It manages the code at run time.\n- Garbage Collector - It manages\
+    \ the memory. Collect all unused objects and deallocate them to reduce memory.\n\
+    - Thread Support - It supports multithreading of our application.\n- Exception\
+    \ Handler - It handles exceptions at run time.\n\n### Benefits of .NET CLR\n\n\
+    The runtime provides the following benefits:\n\n- Performance improvements.\n\
+    - The ability to easily use components developed in other languages.\n- Extensible\
+    \ types provided by a class library.\n- Language features such as inheritance,\
+    \ interfaces, and overloading for object-oriented programming.\n- Support for\
+    \ explicit free threading that allows creation of multithreaded, scalable applications.\n\
+    - Support for structured exception handling.\n- Support for custom attributes.\n\
+    - Garbage collection.\n- Use of delegates instead of function pointers for increased\
+    \ type safety and security.\n\n![](Image00001.jpg) ## Object-Oriented Programming\n\
+    \nAt the center of C# is object-oriented programming (OOP). The object-oriented\
+    \ methodology is inseparable from C#, and all C# programs are, at least to some\
+    \ extent, object-oriented. Becauseof its importance to C#, it is useful to understand\
+    \ OOP’s basic principles before you write a simple C# program.\n\nEncapsulation\
+    \ is a programming mechanism that binds together code and the data it manipulates,\
+    \ and keeps both safe from outside interference and misuse. In an objectoriented\
+    \ language, code and data can be bound together in such a way a selfcontained\
+    \ black box is created.\n\nPolymorphism (from Greek, meaning ―many forms‖) is\
+    \ the quality that allows one interface to access a general class of actions.\
+    \ A simple example of polymorphism is found in the steering wheel of an automobile.\
+    \ The steering wheel (the interface) is the same, no matter what type of actual\
+    \ steering mechanism is used.\n\nInheritance is the process by which one object\
+    \ can acquire the properties of another object. This is important because it supports\
+    \ the concept of hierarchical classification. If you think about it, most knowledge\
+    \ is made manageable by hierarchical (that is, top-down) classifications.\n\n\
+    ## Visual Studio IDE(Integrated Development Environment)\n\nVisual Studio is Microsoft’s\
+    \ integrated programming environment. It lets us edit, compile, run, and debug\
+    \ a C# program, all without leaving its well thought-out environment. Visual Studio\
+    \ offers convenience and helps manage your programs. It is most effective for\
+    \ larger projects,\n\n## New C# Project\n\nCreate a new, empty C# project by selecting\
+    \ File | New Project. Next, select Empty Project.\n\nVisual C# - Project\n\n-\
+    \ Console Application\n- Windows Forms Application\n\n- Console Application\n\n\
+    This application of C# program shows the output in command window. ## Example\n\
+    \n```\nclass MyClass {\n    static void Main() {\n        Console.Write(\"Welcome\"\
+    );\n    }\n}\n```\n\nWhere `Console.Write()` method is used to display output\
+    \ on screen `Console.ReadLine()` method is used to read data at run time ## Data\
+    \ Types\n\n## The following table shows the supported data types, including\n\n\
+    storage sizes and ranges. `byte` (1), `Boolean` (true / false), `integer` (+/**\n"
+  raw: '
+
+
+    ![](Image00017.jpg)
+
+
+    **For soft copy visit www.cs.aagasc.edu.in**
+
+
+    ![](Image00000.jpg) **VISUAL PROGRAMMING USING C#
+
+
+    MODULE– I**
+
+
+    Introduction - C, C++, Objective-C, Java and C# - Extensible Markup Language (XML)
+    - Introduction to Microsoft .NET - The .NET Framework and the Common Language
+    Runtime Introduction to Object Technology - Introduction to C# Applications -
+    Creating a Simple Application in Visual C# Express - Formatting Text with Console.Write
+    and Console. WriteLine - Another C# Application: Adding Integers
+
+
+    – Arithmetic - Decision Making: Equality and Relational Operators– Strings and
+    Characters.
+
+
+    **Introduction to C & C++**
+
+
+    C is a high-level structured oriented programming language, used in general purpose
+    programming, developed by Dennis Ritchie at AT&T Bell Labs, the USA between 1969
+    and 1973.
+
+
+    In 1988, the American National Standards Institute (ANSI) had formalized the C
+    language. C was invented to write UNIX operating system. C is a successor of ''Basic
+    Combined Programming Language'' (BCPL) called B language. Linux OS, PHP, and MySQL
+    are written in C. C has been written in assembly language. Simula (1967)
+
+
+    The very first object-oriented programming language C++ (1983) The first object-oriented
+    programming language in the C family of languages Java (1995) Sun''s object-oriented
+    programming language C# (2001) programming language
+
+
+    **Java**
+
+
+    Java is a general purpose, high-level programming Microsystems. The Java programming
+    language was developed by a small team of engineers, known as the Green Team,
+    who initiated the language in 1991\. Later, in 2009, Oracle Corporation acquired
+    Sun Microsystems and took ownership of two key Sun software assets: Java and Solaris.
+    In 2006 Sun started to make Java available under the GNU General Public License
+    (GPL). Oracle continues this project called Open-JDK Sun Microsystems was acquired
+    by the Oracle Corporation in 2010\. Oracle has now the steermanship for Java.
+
+
+    Microsoft''s object-oriented
+
+
+    language developed by Sun
+
+
+    What is XML?
+
+
+     XML stands for eXtensible Markup Language  XML is a markup language much like
+    HTML  XML was designed to store and transport data  XML was designed to be self-descriptive
+
+
+    XML Simplifies Things
+
+
+     It simplifies data sharing  It simplifies data transport  It simplifies platform
+    changes  It simplifies data availability
+
+
+    Many computer systems contain data in incompatible formats. Exchanging data between
+    incompatible systems (or upgraded systems) is a time-consuming task for web developers.
+    Large amounts of data must be converted, and incompatible data is often lost.
+
+
+    XML stores data in plain text format. This provides a software- and hardwareindependent
+    way of storing, transporting, and sharing data. XML also makes it easier to expand
+    or upgrade to new operating systems, new applications, or new browsers, without
+    losing data. With XML, data can be available to all kinds of "reading machines"
+    like people, computers, voice machines, news feeds, etc.
+
+
+    **Introduction to C#**
+
+
+    C# was created at Microsoft late in the 1990s and was part of Microsoft’s overall
+    .NET strategy. It was first released in its alphaversion in the middle of 2000\.
+    C#’s chief architect was Anders Hejlsberg.
+
+
+    **.NET Framework**
+
+
+    It defines two very important entities.
+
+
+    The first is the Common Language Runtime. This is the system that manages the
+    execution of your program. Along with other benefits, the Common Language Runtime
+    is the part of the .NET Framework that enables programs to be portable, supports
+    mixed-language programming, and provides for security.
+
+
+    The second entity is the .NET class library. This library gives your program access
+    to the runtime environment. For example, if you want to perform I/O, such as displaying
+    something on the screen, you will use the .NET class library to do it.
+
+
+    **The Common Language Runtime (CLR)** manages the execution of .NET code. It is
+    the job of the CLR to translate the intermediate code into executable code when
+    a program is run. Microsoft Intermediate Language is turned into executable code
+    using a JIT compiler. JITstands for ―just in time.‖ The process works like this:
+    When a .NET program is executed, the CLR activates the JIT compiler. The JIT compiler
+    converts (Microsoft Intermediate Language) MSIL into native code on a demand basis,
+    as each part of your program is needed.
+
+
+    ## **Functions of .NET CLR**
+
+
+     Convert code into CLI
+
+
+     Exception handling
+
+
+     Type safety
+
+
+     Memory management (using the Garbage Collector)  Security
+
+
+     Improved performance
+
+
+     Language independency  Platform independency  Architecture independency
+
+
+    ## **Components of .NET CLR**
+
+
+    The key components of CLR includes the following:
+
+
+     Class Loader - Used to load all classes at run time.
+
+
+     MSIL to Native code - The Just In Time (JTI) compiler will convert MSIL code
+    into native code.
+
+
+     Code Manager - It manages the code at run time.
+
+
+     Garbage Collector - It manages the memory. Collect all unused objects and deallocate
+    them to reduce memory.
+
+
+     Thread Support - It supports multithreading of our application.
+
+
+     Exception Handler - It handles exceptions at run time.
+
+
+    ## **Benefits of .NET CLR**
+
+
+    The runtime provides the following benefits:
+
+
+     Performance improvements.
+
+
+     The ability to easily use components developed in other languages.
+
+
+     Extensible types provided by a class library.
+
+
+     Language features such as inheritance, interfaces, and overloading for object-oriented
+
+
+    programming.
+
+
+     Support for explicit free threading that allows creation of multithreaded, scalable
+    applications.  Support for structured exception handling.
+
+
+     Support for custom attributes.
+
+
+     Garbage collection.
+
+
+     Use of delegates instead of function pointers for increased type safety and
+    security.
+
+
+    ![](Image00001.jpg) **Object-Oriented Programming**
+
+
+    At the center of C# is object-oriented programming (OOP). The object-oriented
+    methodology is inseparable from C#, and all C# programs are, at least to some
+    extent, object-oriented. Becauseof its importance to C#, it is useful to understand
+    OOP’s basic principles before you write even a simple C# program.
+
+
+    Encapsulation is a programming mechanism that binds together code and the data
+    it manipulates, and keeps both safe from outside interference and misuse. In an
+    objectoriented language, code and data can be bound together in such a way that
+    a selfcontained black box is created.
+
+
+    Polymorphism (from G reek, meaning ―many forms‖) is the quality that allows one
+    interface to access a general class of actions. A simple example of polymorphism
+    is found in the steering wheel of an automobile. The steering wheel (the interface)
+    is the same, no matter what type of actual steering mechanism is used.
+
+
+    Inheritance is the process by which one object can acquire the properties of another
+    object. This is important because it supports the concept of hierarchical classification.
+    If you think about it, most knowledge is made manageable by hierarchical (that
+    is, top-down) classifications.
+
+
+    **Visual Studio IDE(Integrated Development Environment)**
+
+
+    Visual Studio is Microsoft’s integrated programming environment. It lets us edit,
+    compile, run, and debug a C# program, all without leaving its well thought-out
+    environment. Visual Studio offers convenience and helps manage your programs.
+    It is most effective for larger projects,
+
+
+    **New C# Project**
+
+
+    Create a new, empty C# project by selecting File | New Project. Next, select Empty
+    Project.
+
+
+    Visual C# - Project
+
+
+    Console Application
+
+
+    Windows Forms Application
+
+
+    Console Application
+
+
+    This application of C# program shows the output in command window. **Example**
+
+
+    ## class MyClass { static void Main() { Console.Write(―Welcome‖); } }
+
+
+    Where Console.Write() method is used to display output on screen Console.ReadLine()
+    method is used to read data at run time **Data Types**
+
+
+    ## The following table shows the supported data types, including
+
+
+    storage sizes and ranges. **byte (1), Boolean (true / false), integer (+/**'
+  toc: []
+  trans: "\n\n![](img/Image00017.jpg)\n\n访问电子版请访问 www.cs.aagasc.edu.in\n\n![](img/Image00000.jpg)\
+    \ 使用 C# 进行视觉化编程\n\n# 模块 – I\n\n 导言 - C, C++, Objective-C, Java 和 C#\n- 可扩展标记语言\
+    \ (XML)\n- Microsoft .NET 导言\n- .NET 框架与通用语言运行时 (CLR)\n- 对象技术简介\n- C# 应用程序简介\n\
+    -在 Visual C# Express 中创建简单的应用程序\n- 使用 `Console.Write` 和 `Console.WriteLine` 格式化文本\n\
+    - 另一个 C# 应用程序：整数相加 – 算术\n- 决策制定：等号运算符和关系运算符\n- 字符串与字符。\n\n## C 与 C++ 导言\n\nC 是一种高级结构化面向对象的编程语言，用于通用编程，由\
+    \ Dennis Ritchie 在 1969 年至 1973 年间在美国 AT&T 贝尔实验室开发。\n\n1988 年，美国国家标准学会 (ANSI)\
+    \ 将 C 语言正式化。C 的发明是为了编写 UNIX 操作系统。C 是“基本组合编程语言”(BCPL) B 语言的继者。Linux 操作系统、PHP 和\
+    \ MySQL 都是用 C 编写的。C 曾用汇编语言编写。Simula (1967)\n\n第一种面向对象的编程语言 C++ (1983) C 语言族中第一种面向对象的编程语言\
+    \ Java (1995) Sun 的面向对象编程语言 C# (2001) 编程语言\n\n## Java\n\nJava 是一种通用的、高级编程语言。Java\
+    \ 编程语言由一个名为“绿色团队”(Green Team) 的工程师小组开发，他们在 1991 年启动了该语言。随后在 2009 年，甲骨文公司 (Oracle\
+    \ Corporation) 收购了 Sun Microsystems，并获得了两个关键 Sun 软件资产的所有权：Java 和 Solaris。2006\
+    \ 年，Sun 开始根据 GNU 通用公共许可证 (GPL) 下提供 Java。甲骨文继续了这个名为 Open-JDK 的项目。Sun Microsystems\
+    \ 于 2010 年被甲骨文公司收购。现在 Oracle 拥有 Java 的管理权。\n\n由 Sun 开发的微软面向对象语言\n\n## 什么是 XML？\n\
+    \n- XML 代表可扩展标记语言 (Extensible Markup Language)\n- XML 是一种类似于 HTML 的标记语言\n- XML\
+    \ 设计用于存储和传输数据\n- XML 设计为是自描述的\n\n### XML 简化了事情\n\n- 它简化了数据共享\n- 它简化了数据传输\n- 它简化了平台变更\n\
+    - 它简化了数据可用性\n\n许多计算机系统包含不兼容的数据。在不兼容系统（或升级后的系统）之间交换数据对于 Web 开发人员来说是一项耗时的任务。大量数据必须转换，且不兼容的数据经常丢失。\n\
+    \nXML 以纯文本格式存储数据。这提供了一种独立于软件和硬件的数据存储、传输和共享方式。XML 还更容易扩展或升级到新的操作系统、新应用程序或新浏览器，而不会丢失数据。\n\
+    \n## C# 导言\n\nC# 是由 Sun 开发的微软面向对象语言。C# 在 1990 年代后期由 Anders Helsberg 创建，他是 C# 的首席架构师。\n\
+    \n## .NET 框架\n\n.NET Framework 定义了两个重要的实体。第一个是通用语言运行时 (CLR)，它是执行程序的系统。第二个是 .NET\
+    \ 类库，它提供了面向对象编程的便利。.NET 类库允许程序在运行时访问。通用语言运行时 (CLR) 管理程序的执行。通过 JIT 编译器（即时编译）将 MSIL\
+    \ 转换为可执行代码。JIT 代表“即时”(just in time)。\n\n### CLR 的功能\n\nCLR 具有：\n\n- 代码转换\n- 异常处理\n\
+    - 类型安全\n- 性能\n- 平台独立性\n- 独立性\n\n### CLR 的组件\n\nCLR 的关键组件包括：\n\n- 类加载器 - 在运行时加载所有类。\n\
+    - MSIL 到原生代码 - 即时编译器 (JIT) 将 MSIL 转换为原生代码。\n- 代码管理器 - 在运行时管理代码。\n- 垃圾回收器 - 管理并释放内存。\n\
+    - 线程支持 - 支持多线程。\n- 异常处理程序 - 在运行时处理异常。\n\n### CLR 的优势\n\n运行时提供了以下益处：\n\n- 性能提升。\n\
+    - 轻松使用其他语言开发的组件。\n- 支持继承、接口和重载等语言特性。\n- 支持显式线程，用于创建可扩展的应用程序。\n- 支持结构化异常处理。\n-\
+    \ 支持自定义属性。\n- 垃圾回收。\n- 使用委托提高类型安全性和安全性。\n\n![](img/00001.jpg) 面向对象编程\n\nC# 的核心是面向对象编程\
+    \ (OOP)。面向对象方法论与 C# 不可分，所有的 C# 程序在某种程度上都是面向对象的。由于其对 C# 的重要，在编写简单的 C# 程序之前理解 OOP\
+    \ 基本原理是有用的。\n\n封装是将代码与其操作的数据结合的机制，并使其不受外部干扰和误用。在面向对象的语言中，可以将代码和数据结合，创建一个黑盒。\n\n\
+    多态（源自希腊语，意为“多种形式”）允许一个接口访问通用类。多态的一个简单例子是汽车的方向盘。无论使用什么类型的转向机制，方向盘（接口）都是相同的。\n\n\
+    继承是一个对象获取另一个对象属性的过程。这很重要，因为它支持层级分类的概念。如果你想一下，大多数知识通过层级（即自上而下）分类变得易于管理。\n\n## Visual\
+    \ Studio IDE (集成开发环境)\n\nVisual Studio 是微软的集成开发环境。它允许我们在不离开其良好环境的情况下编辑、编译、运行和调试\
+    \ C# 程序。Visual Studio 提供了便利并有助于管理程序。它对于较大的项目最为有效。\n\n## 新 C# 项目\n\n通过选择“文件 | 新项目”创建一个新的空\
+    \ C# 项目。接下来，选择“空项目”。\n\nVisual C# - 项目\n\n- 控制台应用程序\n- Windows Forms 应用程序\n\n\
+    - 控制台应用程序\n\n此 C# 程序在命令窗口中显示输出。 示例\n\n```\nclass MyClass {\n    static void Main()\
+    \ {\n        Console.Write(\"Welcome\");\n    }\n}\n```\n\n其中 `Console.Write()`\
+    \ 方法用于在屏幕上显示输出，`Console.ReadLine()` 方法在运行时读取数据 ## 数据类型\n\n## 下表显示了支持的数据类型，包括存储大小和范围。`byte`\
+    \ (1), `Boolean` (true / false), `integer` (+/**\n\n"
+- fmt: "\n**`32,767)`, `long` (10 digit integer), `single` (4 bytes float), `double`\
+    \ (8 bytes float), `decimal` (14 bytes 29 digit integer), `date` ( year 1 to 9999),\
+    \ `string`**\n\n![](Image00002.gif)\n\n| Data type | Storage size | Range |\n\
+    | :--- | :--- | :--- |\n| `byte` | 1 byte | 0 to 255 |\n| `boolean` | 2 bytes\
+    \ | `True` or `False` |\n| `integer` | 2 bytes | -32,768 to 32,767 |\n| `long`\
+    \ (long integer) | 4 bytes | +/- 10 Digit Integer |\n| `longlong` (longlong integer)\
+    \ | 8 bytes | +/- 19 Digit Integer |\n| `single` (single-precision floating[4\
+    \ bytespoint)] | -3.4 E38 to -1.4E-45 |\n| `double` (double-precision floating\
+    \ 8 bytes point) | -1.7E308 to-4.9E-324 for negative values; 4.9E-324 to 1.7E308\
+    \ for positive values |\n| `currency` (scaled integer) | 8 bytes | +/- 15 Digits\
+    \ |\n| `decimal` | 14 bytes | +/-29 Digits |\n| `date` | 8 bytes | January 1,\
+    \ 100 to December 31, 9999 |\n| `object` | 4 bytes | Any `Object` reference |\n\
+    | `string` (variable-length) | 10 bytes + string length | 0 to approximately 2\
+    \ billion |\n| `string` (fixed-length) | Length of string | 1 to approximately\
+    \ 65,400 `variant` (with numbers) |\n\n## **Arithmetic Operators**\n\n- `+` Addition\n\
+    - `−` Subtraction\n- `*` Multiplication\n- `/` Division\n\nUsing the above arithmetic\
+    \ operators we can do lot of calculation in c-sharp language.\n\n```csharp\nint\
+    \ num1, num2, add;\nnum1 = Convert.ToInt32(Console.ReadLine());\nnum2 = Convert.ToInt32(Console.ReadLine());\n\
+    add = num1 + num2;\nConsole.Write(add);\n```\n\n## **Relational Operators**\n\n\
+    | Operator | Meaning |\n| :--- | :--- |\n| `<` | Less than |\n| `<=` | Less than\
+    \ or equal to |\n| `>` | Greater than |\n| `>=` | Greater than or equal to |\n\
+    | `==` | Equal to |\n| `!=` | Not equal to |\n\n16 bytes Any numeric value up\
+    \ to the range of a `Double`\n\n```csharp\nint a, b, c;\na = 2;\nb = 3;\nif(a\
+    \ < b)\nConsole.WriteLine(\"a is less than b\");\n```\n\nThe above code test a\
+    \ is less than b and show the result.\n\n## **String and Characters**\n\nThe common\
+    \ practice is to use the `string` keyword to declare a string variable. The `String`\
+    \ class has methods to clone a string, compare strings, concatenate strings, and\
+    \ copy strings. This class also provides methods to find a substring in a string,\
+    \ find the index of a character or substring, replace characters, spilt a string,\
+    \ trim a string, and add padding to a string. The `string` class also provides\
+    \ methods to convert a string characters to uppercase or lowercase.\n\n```csharp\n\
+    string fname, lname;\nfname = \"Rowan\";\nlname = \"Atkinson\";\nfname.Length\
+    \ .ToCharArray() .Empty\n.Substring(index)\n```\n\n- returns number of character\
+    \ in the given string\n- it convert the given string into character array\n- it\
+    \ check the given string is empty\n- returns sub string from the given index\n\
+    - `.Join(string,string)` - combine two strings\n\n`+` operator also used to combile\
+    \ more than one strings.\n\n```csharp\nstring authorDetails = firstName + \" \"\
+    \ + lastName + \" is \" + age + \" years\";\n```\n\nThe `char` data type represents\
+    \ a character in .NET. In .NET, text is stored as a sequential read-only collection\
+    \ of `Char` objects. There is no null-terminating character at the end of a C#\
+    \ string; therefore a C# string can contain any number of embedded null characters\
+    \ (`'\\0'`).\n\n```csharp\nchar ch=’A’;\nchar[] chars = { 'M', 'a', 'h', 'e',\
+    \ 's', 'h' };\n```\n\n## **Factorial program in C#**\n\n```csharp\nusing System;\n\
+    \npublic class FactorialExample\n{\n    public static void Main(string[] args)\n\
+    \    {\n        int i,fact=1,number;\n        Console.Write(\"Enter any Number:\
+    \ \");\n        number= int.Parse(Console.ReadLine());\n        for(i=1;i<=number;i++){\n\
+    \            fact=fact*i;\n        }\n        Console.Write(\"Factorial of \"\
+    \ +number+\" is: \"+fact); \n    }\n}\n```\n\nOutput:\nEnter any Number: 6\nFactorial\
+    \ of 6 is: 720\n\n## **MODULE– II**\n\nIntroduction to Classes and Objects – Introduction\
+    \ - Classes, Objects, Methods, Properties and Instance Variables - Declaring a\
+    \ Class with a Method and Instantiating an Object of a Class - Declaring a Method\
+    \ with a Parameter - UML Class Diagram with a Property Software Engineering with\
+    \ Properties and set and get Accessors - Initializing Objects with Constructors\
+    \ - Floating-Point Numbers and Type decimal Control Statements\n\n## **Classes,\
+    \ Objects, Methods, Properties and Instance Variables**\n\nLet’s begin with a\
+    \ simple drive a car, someone has to design it. A car typically begins as engineering\
+    \ drawings, similar to the blueprints used to design a house. These engineering\
+    \ drawings include the design for an accelerator pedal to make the car go faster.\
+    \ The pedal ―hides‖ the complex mechanisms that actually make the car go faster,\
+    \ just as the brake pedal ―hides‖ the mechanisms that slow the car and the steering\
+    \ wheel ―hides‖ the mechanisms that turn the car.\n\nThis enables people with\
+    \ little or no knowledge of how engines work to drive a car easily.\n\n## **Methods**\n\
+    \nNow let’s use our car example to introduce the key progr am to introduce the\
+    \ key progr am methods. This enables people with little or no knowledge of how\
+    \ engines work to drive a car easily.\n\n## **Classes**\n\nIn C#, we begin by\
+    \ creating an application called a class. The class describes the tasks. For example,\
+    \ a class that represents a bank account might contain one method to deposit money\
+    \ in an account, another to withdraw money from an account and a third to inquire\
+    \ what the current balance is.\n\nThus far, we’ve used the car nalogy to introduce\
+    \ classes, objects and methods. In additionto a car’s capabilities, it also has\
+    \ attributes, such as its color, the number of doors, the amount of gas in its\
+    \ tank, its current speed and its total miles driven (i.e., its odometer reading).\n\
+    \n## **Method Calls**\n\nWhen you drive a car, pressing its gas pedal sends a\
+    \ message to the car to perform a task. Similarly, you send messages to an object—each\
+    \ message is known as a method call and tells a method of the object to perform\
+    \ its task.\n\n## **Attributes**\n\nIn the above class `pid` and `pname` are the\
+    \ member variable, `show()` is the method.\n\n```csharp\npublic class Product\n\
+    {\n    public int pid;\n    public string pname;\n    public Product()\n    {\n\
+    \        pid = 40;\n        pname = \"Lux\";\n    }\n    public void show()\n\
+    \    {\n        Console.WriteLine(pid);\n        Console.WriteLine(pname);\n \
+    \   }\n\n    static void Main(string[] args)\n    {\n        Product p = new Product();\n\
+    \        p.show();\n        p.pid = 34;\n        p.pname = \"Hai\";\n        Console.ReadKey();\n\
+    \    }\n}\n```\n\n**Declaring a method with parameter**\n\n```csharp\nvoid add(int\
+    \ a, int b)\n{\n    int c;\n    c = a + b;\n    Console.WriteLine(c);\n}\n```\n\
+    \n## **UML Class Diagram**\n\nThe UML class diagram models class, which has a\
+    \ constructor that has a name parameter of type string. Like operations, the UML\
+    \ models constructors in the third compartment of a class in a class diagram.\
+    \ Class diagrams basically represent the object-oriented view of a system, which\
+    \ is static in nature.\n\n**Bank Account**\n+ Owner : String +Balance : Decimal\
+    \ + deposit()\nwithdrawal()\n\n**Dependency**\n\nA dependency means the relation\
+    \ between two or more classes in which a change in one may force changes in the\
+    \ other. However, it will always create a weaker relationship. Dependency indicates\
+    \ that one class depends on another.\n\n**Customer Bank**\n"
+  raw: '**32,767), long (10 digit integer), single (4 bytes float), double (8 bytes
+    float), decimal (14 bytes 29 digit integer), date ( year 1 to 9999), string**
+
+
+    ![](Image00002.gif)  **Data type Storage size Range
+
+
+    byte** 1 byte 0 to 255
+
+
+    **boolean** 2 bytes **True** or **False
+
+
+    integer** 2 bytes
+
+
+    -32,768 to 32,767
+
+
+    **long** (long integer) 4 bytes +/- 10 Digit Integer
+
+
+    **longlong** (longlong integer) 8 bytes +/- 19 Digit Integer **single** (single-precision
+    floating[4 bytespoint)]
+
+
+    -3.4 E38 to -1.4E-45
+
+
+    **double**
+
+
+    (double-precision floating
+
+
+    8 bytes point)
+
+
+    -1.7E308 to-4.9E-324 for negative values; 4.9E-324 to 1.7E308 for positive values
+
+
+    **currency** (scaled integer) 8 bytes +/- 15 Digits **decimal** 14 bytes +/-29
+    Digits
+
+
+    **date** 8 bytes January 1, 100 to December 31, 9999
+
+
+    **object** 4 bytes
+
+
+    Any **Object** reference
+
+
+    **Data type Storage size Range**
+
+
+    **string** (variable-length) 10 bytes + string length
+
+
+    0 to approximately 2 billion
+
+
+    **string** (fixed-length) Length of string 1 to approximately 65,400 **variant**
+    (with numbers)
+
+
+    ## **Arithmetic Operators**
+
+
+    + Addition
+
+
+    − Subtraction
+
+
+    * Multiplication
+
+
+    / Division
+
+
+    Using the above arithmetic operators we can do lot of calculation in c-sharp language.
+
+
+    int num1, num2, add;
+
+
+    num1 = Convert.ToInt32(Console.ReadLine());
+
+
+    num2 = Convert.ToInt32(Console.ReadLine());
+
+
+    add = num1 + num2;
+
+
+    Console.Write(add);
+
+
+    ## **Relational Operators**
+
+
+    Operator Meaning
+
+
+    < Less than
+
+
+    <= Less than or equal to
+
+
+    > Greater than
+
+
+    >= Greater than or equal to
+
+
+    = = Equal to
+
+
+    != Not equal to
+
+
+    16 bytes Any numeric value up to the range of a **Double**
+
+
+    int a, b, c;
+
+
+    a = 2;
+
+
+    b = 3;
+
+
+    if(a < b)
+
+
+    Console.WriteLine("a is less than b");
+
+
+    The above code test a is less than b and show the result.
+
+
+    ## **String and Characters**
+
+
+    The common practice is to use the string keyword to declare a string variable.
+    The String class has methods to clone a string, compare strings, concatenate strings,
+    and copy strings. This class also provides methods to find a substring in a string,
+    find the index of a character or substring, replace characters, spilt a string,
+    trim a string, and add padding to a string. The string class also provides methods
+    to convert a string characters to uppercase or lowercase.
+
+
+    string fname, lname;
+
+
+    fname = "Rowan";
+
+
+    lname = "Atkinson";
+
+
+    fname.Length .ToCharArray() .Empty
+
+
+    .Substring(index)
+
+
+    - returns number of character in the given string
+
+
+    - it convert the given string into character array
+
+
+    - it check the given string is empty
+
+
+    - returns sub string from the given index
+
+
+    .Join(string,string) - combine two strings
+
+
+    + operator also used to combile more than one strings.
+
+
+    string authorDetails = firstName + " " + lastName + " is " + age + " years";
+
+
+    The char data type represents a character in .NET. In .NET, text is stored as
+    a sequential read-only collection of Char objects. There is no null-terminating
+    character at the end of a C# string; therefore a C# string can contain any number
+    of embedded null characters (''\0'').
+
+
+    char ch=’A’;
+
+
+    char[] chars = { ''M'', ''a'', ''h'', ''e'', ''s'', ''h'' };
+
+
+    **Factorial program in C#**
+
+
+    using System;
+
+
+    public class FactorialExample
+
+
+    {
+
+
+    public static void Main(string[] args)
+
+
+    {
+
+
+    int i,fact=1,number;
+
+
+    Console.Write("Enter any Number: ");
+
+
+    number= int.Parse(Console.ReadLine());
+
+
+    for(i=1;i<=number;i++){
+
+
+    fact=fact*i;
+
+
+    }
+
+
+    Console.Write("Factorial of " +number+" is: "+fact); }
+
+
+    }
+
+
+    Output
+
+
+    Enter any Number: 6
+
+
+    Factorial of 6 is: 720
+
+
+    **MODULE– II**
+
+
+    Introduction to Classes and Objects – Introduction - Classes, Objects, Methods,
+    Properties and Instance Variables - Declaring a Class with a Method and Instantiating
+    an Object of a Class - Declaring a Method with a Parameter - UML Class Diagram
+    with a Property Software Engineering with Properties and set and get Accessors
+    - Initializing Objects with Constructors - Floating-Point Numbers and Type decimal
+    Control Statements
+
+
+    ## **Classes, Objects, Methods, Properties and Instance Variables**
+
+
+    Let’s begin with a simple drive a car, someone has to design it. A car typically
+    begins as engineering drawings, similar to the blueprints used to design a house.
+    These engineering drawings include the design for an accelerator pedal to make
+    the car go faster. The pedal ―hides‖ the complex mechanisms that actually make
+    the car go faster, just as the brake pedal ―hides‖ the mechanisms that slow the
+    car and the steering wheel ―hides‖ the mechanisms that turn the car.
+
+
+    This enables people with little or no knowledge of how engines work to drive a
+    car easily.
+
+
+    ## **Methods**
+
+
+    Now let’s use our car example to introduce the key progr amming concepts of this
+    section. Performing a task in an application requires a method. The method describes
+    the mechanisms that actually perform its tasks. The method hides from its user
+    the complex tasks that it performs, just as the accelerator pedal of a car hides
+    from the driver the complex mechanisms of making the car go faster.
+
+
+    ## **Classes**
+
+
+    In C#, we begin by creating an application unit called a class to house (among
+    otherthings) a method, just as a car’s engineering drawings house (among other
+    things) the design of an accelerator pedal. In a class, you provide one or more
+    methods that are designedto perform the class’s tasks.
+
+
+    For example, a class that represents a bank account might contain one method to
+    deposit money in an account, another to withdraw money from an account and a third
+    to inquire what the current account balance is. Objects Just as you cannot drive
+    an engineering drawing of a car, you cannot ―drive‖ a class. Just as someone has
+    to build a car from its engineering drawings before you can actually drive it,
+    you must build an object of a class before you can make an application perform
+    the tasks the class describes. That’s one reason C# is known as an object-oriented
+    programming language.
+
+
+    ## **Method Calls**
+
+
+    When you drive a car, pressing its gas pedal sends a message to the car to perform
+    a task make the car go faster. Similarly, you send messages to an object—each
+    message is known as a method call and tells a method of the object to perform
+    its task.
+
+
+    ## **Attributes**
+
+
+    Thus far, we’ve used the car a nalogy to introduce classes, objects and methods.
+    In additionto a car’s capabilities, it also has many attributes, such as its color,
+    the number of doors, the amount of gas in its tank, its current speed and its
+    total miles driven (i.e., its odometer reading).
+
+
+    **Declaration of Class and Methods**
+
+
+    Let us see the following example show the simple object with class Product
+
+
+    {
+
+
+    public int pid;
+
+
+    public string pname; public Product()
+
+
+    {
+
+
+    pid = 40;
+
+
+    pname = "Lux"; }
+
+
+    public void show()
+
+
+    {
+
+
+    Console.WriteLine(pid); Console.WriteLine(pname);
+
+
+    }
+
+
+    static void Main(string[] args)
+
+
+    {
+
+
+    Product p = new Product();
+
+
+    p.show();
+
+
+    p.pid = 34;
+
+
+    ^(p.pname = "Hai"; Where p is thep.show(); instance variable) Console.ReadKey();
+
+
+    }
+
+
+    }
+
+
+    In the above class pid and pname are the member variable, show() is the method.
+    **Declaring a method with parameter**
+
+
+    void add(int a, int b)
+
+
+    {
+
+
+    int c;
+
+
+    c = a + b;
+
+
+    Console.WriteLine(c);
+
+
+    }
+
+
+    ## Adding the Constructor to Class Product **UML Class Diagram**
+
+
+    The UML class diagram models class, which has a constructor that has a name parameter
+    of type string. Like operations, the UML models constructors in the third compartment
+    of a class in a class diagram. Class diagrams basically represent the object-oriented
+    view of a system, which is static in nature.
+
+
+    **Bank Account** + Owner : String +Balance : Decimal deposit()
+
+
+    withdrawal()
+
+
+    In the above diagram Bank Account is the class, owner and balance are the member
+    variable deposit() and withdrawal() are the member function. +) sign— preceded
+    by
+
+
+    the word ―property‖ i
+
+
+    Dependency
+
+
+    A dependency means the relation between two or more classes in which a change
+    in one may force changes in the other. However, it will always create a weaker
+    relationship. Dependency indicates that one class depends on another.
+
+
+    **Customer Bank**'
+  toc: []
+  trans: "\n\n**`32,767)`, `long` (10 位整数), `single` (4 字节浮点数), `double` (8 字节浮点数),\
+    \ `decimal` (14 字节 29 位整数), `date` (年份 1 到 9999), `string` (字符串)**\n\n![](img/Image00002.gif)\n\
+    \n| 数据类型 | 存储大小 | 范围 |\n| :--- | :--- | :--- |\n| `byte` | 1 字节 | 0 到 255 |\n\
+    | `boolean` | 2 字节 | `True` 或 `False` |\n| `integer` | 2 字节 | -32,768 到 32,767\
+    \ |\n| `long` (整数) | 4 字节 | +/- 10 位整数 |\n| `longlong` (长整数) | 8 字节 | +/- 19 位整数\
+    \ |\n| `single` (单精度浮点数[4 字节]) | -3.4 E38 到 -1.4E-45 |\n| `double` (双精度浮点数 8 字节)\
+    \ | 负值 -1.7E308 到 -4.9E-324；正值 4.9E-324 到 1.7E308 |\n| `currency` (比例缩小整数) | 8\
+    \ 字节 | +/- 15 位 |\n| `decimal` | 14 字节 | +/- 29 位 |\n| `date` | 8 字节 | 1000 年\
+    \ 1 月 1 日至 9999 年 12 月 31 日 |\n| `object` | 4 字节 | 任意 `Object` 引用 |\n| `string`\
+    \ (变变长度) | 10 字节 + 字符串长度 | 0 到约 20 亿 |\n| `string` (固定长度) | 字符串长度 | 1 到约 65,400\
+    \ 个 `variant`（带数字） |\n\n## **算术运算符**\n\n- `+` 加法\n- `−` 减法\n- `*` 乘法\n- `/` 除法\n\
+    \n使用上述算术运算符，我们可以在 c-sharp 语言中进行许多计算。\n\n```csharp\nint num1, num2, add;\nnum1\
+    \ = Convert.ToInt32(Console.ReadLine());\nnum2 = Convert.ToInt32(Console.ReadLine());\n\
+    add = num1 + num2;\nConsole.Write(add);\n```\n\n## **关系运算符**\n\n| 运算符 | 含义 |\n\
+    | :--- | :--- |\n| `<` | 小于 |\n| `<=` | 小于等于 |\n| `>` | 大于 |\n| `>=` | 大于等于 |\n\
+    | `==` | 等于 |\n| `!=` | 不等于 |\n\n16 bytes 直到 `Double` 范围内的任意数值\n\n```csharp\n\
+    int a, b, c;\na = 2;\nb = 3;\nif(a < b)\nConsole.WriteLine(\"a is less than b\"\
+    );\n```\n\n上述代码测试了 a 是否小于 b 并显示结果。\n\n## **字符串与字符**\n\n通常做法是使用 `string` 关键字来声明字符串变量。`String`\
+    \ 类拥有克隆字符串、比较字符串、拼接字符串和复制字符串的方法。该类还提供了在字符串中查找子字符串、查找字符或子字符串索引、替换字符、分割字符串、修剪字符串以及为字符串添加填充的方法。`string`\
+    \ 类还提供了将字符串字符转换为大写或小写的方法。\n\n```csharp\nstring fname, lname;\nfname = \"Rowan\"\
+    ;\nlname = \"Atkinson\";\nfname.Length .ToCharArray() .Empty\n.Substring(index)\n\
+    ```\n\n- 返回给定字符串中字符的数量\n- 它将给定字符串转换为字符数组\n- 它检查给定字符串是否为空\n- 从给定索引返回子字符串\n- `.Join(string,string)`\
+    \ - 并两个字符串\n\n`+` 运算符也用于组合多个字符串。\n\n```csharp\nstring authorDetails = firstName\
+    \ + \" \" + lastName + \" is \" + age + \" years\";\n```\n\n`char` 数据类型表示 .NET\
+    \ 中的一个字符。在 .NET 中，文本被存储为顺序的只读 `Char` 对象集合。C# 字符串的末尾没有空终止符；因此，C# 字符串可以包含任意数量的嵌入式空字符（`'\\\
+    0'`）。\n\n```csharp\nchar ch=’A’;\nchar[] chars = { 'M', 'a', 'h', 'e', 's', 'h'\
+    \ };\n```\n\n## **C# 阶乘程序**\n\n```csharp\nusing System;\n\npublic class FactorialExample\n\
+    {\n    public static void Main(string[] args)\n    {\n        int i,fact=1,number;\n\
+    \        Console.Write(\"Enter any Number: \");\n        number= int.Parse(Console.ReadLine());\n\
+    \        for(i=1;i<=number;i++){\n            fact=fact*i;\n        }\n      \
+    \  Console.Write(\"Factorial of \" +number+\" is: \"+fact); \n    }\n}\n```\n\n\
+    输出：\nEnter any Number: 6\nFactorial of 6 is: 720\n\n## **第二模块**\n\n类与对象介绍 – 导言\
+    \ - 类、对象、方法、属性和实例变量 - 声明带有方法的类并实例化类的对象 - 声明带有参数的方法 - 带有属性和使用 set/get 访问器的 UML\
+    \ 类图 软件工程\n\n## **类、对象、方法、属性和实例变量**\n\n通常做法是使用 `string` 关键字来声明字符串变量。`String` 类拥有克隆字符串、比较字符串、拼接字符串和复制字符串的方法。该类还提供了在字符串中查找子字符串、查找字符或子字符串索引、替换字符、分割字符串、修剪字符串以及为字符串添加填充的方法。`string`\
+    \ 类还提供了将字符串字符转换为大写或小写的方法。\n\n```csharp\nstring fname, lname;\nfname = \"Rowan\"\
+    ;\nlname = \"Atkinson\";\nfname.Length .ToCharArray() .Empty\n.Substring(index)\n\
+    ```\n\n- 返回给定字符串中字符的数量\n- 它将给定字符串转换为字符数组\n- 它检查给定字符串是否为空\n- 从给定索引返回子字符串\n- `.Join(string,string)`\
+    \ - 并两个字符串\n\n`+` 运算符也用于组合多个字符串。\n\n```csharp\nstring authorDetails = firstName\
+    \ + \" \" + lastName + \" is \" + age + \" years\";\n```\n\n`char` 数据类型表示 .NET\
+    \ 中的一个字符。在 .NET 中，文本被存储为顺序的只读 `Char` 对象集合。C# 字符串的末尾没有空终止符；因此，C# 字符串可以包含任意数量的嵌入式空字符（`'\\\
+    0'`）。\n\n```csharp\nchar ch=’A’;\nchar[] chars = { 'M', 'a', 'h', 'e', 's', 'h'\
+    \ };\n```\n\n## **C# 阶乘程序**\n\n```csharp\nusing System;\n\npublic class FactorialExample\n\
+    {\n    public static void Main(string[] args)\n    {\n        int i,fact=1,number;\n\
+    \        Console.Write(\"Enter any Number: \");\n        number= int.Parse(Console.ReadLine());\n\
+    \        for(i=1;i<=number;i++){\n            fact=fact*i;\n        }\n      \
+    \  Console.Write(\"Factorial of \" +number+\" is: \"+fact); \n    }\n}\n```\n\n\
+    输出：\nEnter any Number: 6\nFactorial of 6 is: 720\n\n## **第二模块**\n\n类与对象介绍 – 导言\
+    \ - 类、对象、方法、属性和实例变量 - 声明带有方法的类并实例化类的对象 - 声明带有参数的方法 - 带有属性和使用 set/get 访问器的 UML\
+    \ 类图 软件工程\n\n## **类、对象、方法、属性和实例变量**\n\n通常做法是使用 `string` 关键字来声明字符串变量。`String` 类拥有克隆字符串、比较字符串、拼接字符串和复制字符串的方法。该类还提供了在字符串中查找子字符串、查找字符或子字符串索引、替换字符、分割字符串、修剪字符串以及为字符串添加填充的方法。`string`\
+    \ 类还提供了将字符串字符转换为大写或小写的方法。\n\n```csharp\nstring fname, lname;\nfname = \"Rowan\"\
+    ;\nlname = \"Atkinson\";\nfname.Length .ToCharArray() .Empty\n.Substring(index)\n\
+    ```\n\n- 返回给定字符串中字符的数量\n- 它将给定字符串转换为字符数组\n- 它检查给定字符串是否为空\n- 从给定索引返回子字符串\n- `.Join(string,string)`\
+    \ - 并两个字符串\n\n`+` 运算符也用于组合多个字符串。\n\n```csharp\nstring authorDetails = firstName\
+    \ + \" \" + lastName + \" is \" + age + \" years\";\n```\n\n`char` 数据类型表示 .NET\
+    \ 中的一个字符。在 .NET 中，文本被存储为顺序的只读 `Char` 对象集合。C# 字符串的末尾没有空终止符；因此，C# 字符串可以包含任意数量的嵌入式空字符（`'\\\
+    0'`）。\n\n```csharp\nchar ch=’A’;\nchar[] chars = { 'M', 'a', 'h', 'e', 's', 'h'\
+    \ };\n```\n\n## **C# 阶乘程序**\n\n```csharp\nusing System;\n\npublic class FactorialExample\n\
+    {\n    public static void Main(string[] args)\n    {\n        int i,fact=1,number;\n\
+    \        Console.Write(\"Enter any Number: \");\n        number= int.Parse(Console.ReadLine());\n\
+    \        for(i=1;i<=number;i++){\n            fact=fact*i;\n        }\n      \
+    \  Console.Write(\"Factorial of \" +number+\" is: \"+fact); \n    }\n}\n```\n\n\
+    输出：\nEnter any Number: 6\nFactorial of 6 is: 720\n\n## **第二模块**\n\n类与对象介绍 – 导言\
+    \ - 类、对象、方法、属性和实例变量 - 声明带有方法的类并实例化类的对象 - 声明带有参数的方法 - 带有属性和使用 set/get 访问器的 UML\
+    \ 类图 软件工程\n\n## **方法**\n\n在 C# 中，我们通过创建一个类来开始。类描述了任务。例如，一个类可能包含存款的方法、取款的方法以及查询余额的方法。到为止，我们使用了汽车的示例来引入类、对象和方法。\n\
+    \n## **类**\n\n现在我们使用带有 `string` 类型的构造器来引入方法。\n\n## **UML 类图**\n\nUML 类图模型类，其构造器有一个类型为\
+    \ string 的名称参数。与操作一样，UML 在类图中类的第三个区域中模型构造器。类图基本上表示了系统的面向对象视图，其本质上是静态的。\n\n**Bank\
+    \ Account**\n+ Owner : String +Balance : Decimal + deposit()\nwithdrawal()\n\n\
+    **依赖**\n\n依赖意味着两个或多个类之间的关系，其中一个类的变化可能会强制另一个类发生变化。然而，它始终会创建一个更弱的关系。依赖表示一个类依赖于另一个类。\n\
+    \n**Customer Bank**\n\n"
+- fmt: "\n# Software Engineering with Properties and set and get Accessors\n\nUsing\
+    \ properties as described earlier in this chapter would seem to violate the notion\
+    \ of private data. Although providing a property with `get` and `set` accessors\
+    \ may appear to be the same as making its corresponding instance variable public,\
+    \ this is not the case. A public instance variable can be read or written by any\
+    \ property or method in the program. If an instance variable is private, the client\
+    \ code can access the instance variable only indirectly through the class’s non-private\
+    \ properties or methods. This allows the class to control the manner in which\
+    \ the data is set or returned. For example, `get` and `set` accessors can translate\
+    \ between the format of the data stored in the private instance variable and the\
+    \ format of the data preferred by the client.\n\n## Control Structures\n\nNormally,\
+    \ statements in an application are executed one after the other in the order in\
+    \ which they’re written—this process is called sequential execution. Various C#\
+    \ statements enable you to specify that the next statement to execute is not necessarily\
+    \ the next one in sequence—this is called transfer of control.\n\n![](Image00003.jpg)\n\
+    \nIt contains two action states that represent actions to perform. Each action\
+    \ state contains an action expression—for example, \"add grade to total\" or \"\
+    add 1 to counter\"—that specifies an action to perform. Other actions might include\
+    \ calculations or input/output operations. The arrows in the activity diagram\
+    \ represent transitions, which indicate the order in which the actions occur.\n\
+    \n### if Single-Selection Statement\n\nApplications use selection statements to\
+    \ choose among alternative courses of action. For example, suppose that the passing\
+    \ grade on an exam is 60.\n\n```csharp\nif ( grade >= 60 )\nConsole.WriteLine(\"\
+    Passed\");\n```\n\nThe above C# statement determines whether the condition `grade\
+    \ >= 60` is true or false. If the condition is true, \"Passed\" is displayed,\
+    \ and the next C# statement in order is performed. If the condition is false,\
+    \ the output statement is ignored, and the next C# statement in order is performed.\n\
+    \n![](Image00004.jpg)\n\n### if…else Double-Selection Statement\n\nThe `if` single-selection\
+    \ statement performs an indicated action only when the condition is true; otherwise,\
+    \ the action is skipped. The `if…else` double-selection statement allows you to\
+    \ specify an action to perform when the condition is true and a different action\
+    \ when the condition is false.\n\n```csharp\nif ( grade >= 60 )\nConsole.WriteLine(\"\
+    Passed\");\nelse\nConsole.WriteLine(\"Failed\");\n```\n\nFor example, the C# statement\
+    \ displays \"Passed\" if `grade >= 60` is true, but displays \"Failed\" if `grade\
+    \ < 60` is true. In either case, after displaying occurs, the next statement in\
+    \ sequence is performed. The body of the `else` part is also indented. Whatever\
+    \ indentation convention you choose should be applied consistently throughout\
+    \ your applications. It’s difficult to read applications that do not obey uniform\
+    \ spacing conventions.\n\n![](Image00005.jpg) Conditional Operator (?:)\n\nC#\
+    \ provides the conditional operator `?:`, which can be used in place of an `if…else`\
+    \ statement. This is C#’s only ternary operator—it takes three operands. Together,\
+    \ the operands and the `?:` symbols form a conditional expression. The first operand\
+    \ (to the left of the `?`) is a boolean expression (i.e., an expression that evaluates\
+    \ to a `bool`-type value—true or false), the second operand (between the `?` and\
+    \ `:`) is the value of the conditional expression if the boolean expression is\
+    \ true and the third operand (to the right of the `:`) is the value of the conditional\
+    \ expression if the boolean expression is false.\n\n```csharp\nConsole.WriteLine(\
+    \ grade >= 60 ? \"Passed\" : \"Failed\");\n```\n\nFor example, the statement displays\
+    \ the value of `WriteLine`’s conditional-expression argument. The conditional\
+    \ expression in the preceding statement evaluates to the string \"Passed\" if\
+    \ the boolean expression `grade >= 60` is true and evaluates to the string \"\
+    Failed\" if the boolean expression is false.\n\n## Nested if…else Statements\n\
+    \n![](Image00006.gif)\n\nAn application can test multiple cases by placing `if…else`\
+    \ statements inside other `if…else` statements to create nested `if…else` statements.\
+    \ For example, the following nested `if…else` statement displays A for exam grades\
+    \ greater than or equal to 90, B for grades in the range 80 to 89, C for grades\
+    \ in the range 70 to 79, D for grades in the range 60 to 69 and F for all other\
+    \ grades:\n\n```csharp\nif ( grade >= 90 )\nConsole.WriteLine(\"A\");\nelse\n\
+    if ( grade >= 80 )\nConsole.WriteLine(\"B\");\nelse\nif ( grade >= 70 )\nConsole.WriteLine(\"\
+    C\");\nelse\nif ( grade >= 60 )\nConsole.WriteLine(\"D\");\nelse\nConsole.WriteLine(\"\
+    F\");\n```\n\n**MODULE– III**\n\nClasses and Objects: A Deeper Look – Introduction\
+    \ - Controlling Access to Members - Referring to the Current Object’s Members\
+    \ with the `this` Reference – Indexers - Default and Parameterless Constructors–\
+    \ Composition - Garbage Collection and Destructors- static Class Members - Data\
+    \ Abstraction and Encapsulation – Object Initializers– Delegates Object-Oriented\
+    \ Programming: Inheritance - Polymorphism, Interfaces and Operator Overloading-Exception\
+    \ Handling\n\n## Controlling Access to Members\n\nWe can use the following access\
+    \ modifiers to specify the accessibility of a type or member:\n\n`public`: The\
+    \ type or member can be accessed by any other code in the same assembly or another\
+    \ assembly that references it.\n\n`private`: The type or member can be accessed\
+    \ only by code in the same class or struct.\n\n`protected`: The type or member\
+    \ can be accessed by code in the same class or in a class that is derived from\
+    \ that class.\n\n`internal`: The type or member can be accessed by any code in\
+    \ the same assembly, but not from another assembly.\n\nClass members (including\
+    \ nested classes and structs) can be declared with any of the six types of access.\
+    \ Struct members cannot be declared as `protected` because structs do not support\
+    \ inheritance.\n\n## This Reference\n\nThe `this` keyword refers to the current\
+    \ instance of the class and is also used as a modifier of the first parameter\
+    \ of an extension method.\n\n```csharp\npublic class Employee\n{\n    private\
+    \ string alias;\n    private string name;\n\n    public Employee(string name,\
+    \ string alias)\n    {\n        // Use this to qualify the members of the class\n\
+    \        // instead of the constructor parameters.\n        this.name = name;\n\
+    \        this.alias = alias;\n    }\n}\n```\n\nTo qualify members hidden by similar\
+    \ names, for example:\n\n## Default and Parameterless Constructors\n\nThe compiler\
+    \ will not create a default constructor for a class that explicitly declares at\
+    \ least one constructor. In this case, if you want to be able to invoke the constructor\
+    \ with no arguments, we must declare a parameterless constructor, a default constructor,\
+    \ a parameterless constructor is invoked with empty parentheses.\n\n```csharp\n\
+    class Product\n{\n    public int pid;\n    public string pname;\n\n    // Empty\
+    \ or Parameterless constructor\n    public Product()\n    {\n    }\n\n    public\
+    \ Product(int pid=10,string pname=\"Hammam\")\n    {\n        this.pid = pid;\n\
+    \        this.pname = pname;\n    }\n\n    public void show()\n    {\n       \
+    \ Console.WriteLine(pid);\n        Console.WriteLine(pname);\n    }\n\n    static\
+    \ void Main(string[] args)\n    {\n        Product p = new Product();\n      \
+    \  p.show();\n        p.pid = 34;\n        Product p2 = new Product(23);\n   \
+    \     p2.show();\n        Console.ReadKey();\n    }\n}\n```\n\nIn `p2` instance\
+    \ `pid` takes 23 and `pname` takes default value from the constructor.\n\n###\
+    \ **Garbage Collection and Destructors**\n"
+  raw: '### **Software Engineering with Properties and set and get Accessors**
+
+
+    Using properties as described earlier in this chapter would seem to violate the
+    notion of private data. Although providing a property with get and set accessors
+    may appear to be the same as making its corresponding instance variable public,
+    this is not the case. A public instance variable can be read or written by any
+    property or method in the program. If an instance variable is private, the client
+    code can access the instance variable only indirectlythrough the class’s non-private
+    properties or methods. This allows the class to control the manner in which the
+    data is set or returned. For example, get and set accessors can translate between
+    the format of the data stored in the private instance variable and the format
+    of the data preferred by the client.
+
+
+    ## **Control Structures**
+
+
+    Normally, statements in an application are executed one after the other in the
+    order inwhich they’re written—this process is called sequential execution. Various
+    C# statements enable you to specify that the next statement to execute is not
+    necessarily the next one in sequence—this is called transfer of control.
+
+
+    ![](Image00003.jpg)
+
+
+    It contains two action states that represent actions to perform. Each action state
+    contains an action expression—for example, ―add grade to total‖ or ―add 1 to counter‖—that
+    specifies an action to perform. Other actions might include calculations or input/output
+    operations. The arrows in the activity diagram represent transitions, which indicate
+    the order in which the actions occur.
+
+
+    ### **if Single-Selection Statement**
+
+
+    Applications use selection statements to choose among alternative courses of action.
+    For example, suppose that the passing grade on an exam is 60.
+
+
+    **if** ( grade >= **60** )
+
+
+    Console.WriteLine( **"Passed"** );
+
+
+    The above C# statement determines whether the condition grade >= 60 is true or
+    false. If the condition is true, "Passed" is displayed, and the next C# statement
+    in order is performed. If the condition is false, the output statement is ignored,
+    and the next C# statement in order is performed.
+
+
+    ![](Image00004.jpg)
+
+
+    ### **if…else Double-Selection Statement**
+
+
+    The if single-selection statement performs an indicated action only when the conditionis
+    true; otherwise, the action is skipped. The if…else double-selection statement
+    allows you to specify an action to perform when the condition is true and a different
+    action when the condition is false.
+
+
+    **if** ( grade >= **60** )
+
+
+    Console.WriteLine( **"Passed"** );
+
+
+    **else**
+
+
+    Console.WriteLine( **"Failed"** );
+
+
+    For example, the C# statement displays "Passed" if grade >= 60 is true, but displays
+    "Failed" if grade < 60 is true. In either case, after displaying occurs, the next
+    statement in sequence is performed. The body of the else part is also indented.
+    Whatever indentation convention you choose should be applied consistently throughout
+    your applications. It’s difficult to read applications that do not obey uniform
+    spacing conventions.
+
+
+    ![](Image00005.jpg) **Conditional Operator (?:)**
+
+
+    C# provides the conditional operator (?:), which can be used in place of an if…else
+    statement. This is C#’s only ternary operator—it takes three operands. Together,
+    the operands and the ?: symbols form a conditional expression. The first operand
+    (to the left of the ?) is a boolean expression (i.e., an expression that evaluates
+    to a bool-type value—true or false), the second operand (between the ? and :)
+    is the value of the conditional expression if the boolean expression is true and
+    the third operand (to the right of the :) is the value of the conditional expression
+    if the boolean expression is false.
+
+
+    Console.WriteLine( grade >= **60** ? **"Passed"** : **"Failed"** );
+
+
+    For example, the statementdisplays the value of WriteLine’s conditional- expression
+    argument. The conditional expression in the preceding statement evaluates to the
+    string "Passed" if the boolean expression grade >= 60 is true and evaluates to
+    the string "Failed" if the boolean expression is false.
+
+
+    ## **Nested if…else Statements**
+
+
+    ![](Image00006.gif)
+
+
+    An application can test multiple cases by placing if…else statements inside other
+    if…else statements to create nested if…else statements. For example, the following
+    nested if…else statement displays A for exam grades greater than or equal to 90,
+    B for grades in the range 80 to 89, C for grades in the range 70 to 79, D for
+    grades in the range 60 to 69 and F for all other grades:
+
+
+    **if** ( grade >= **90** )
+
+
+    Console.WriteLine( **"A"** );
+
+
+    **else
+
+
+    if** ( grade >= **80** )
+
+
+    Console.WriteLine( **"B"** );
+
+
+    **else
+
+
+    if** ( grade >= **70** )
+
+
+    Console.WriteLine( **"C"** ); **else**
+
+
+    **if** ( grade >= **60** )
+
+
+    Console.WriteLine( **"D"** ); **else**
+
+
+    Console.WriteLine( **"F"** );
+
+
+    **MODULE– III**
+
+
+    Classes and Objects: A Deeper Look – Introduction - Controlling Access to Members
+    - Referringto the Current Object’s Members with the this Reference – Indexers
+    - Default and Parameterless Constructors– Composition - Garbage Collection and
+    Destructors- static Class Members - Data Abstraction and Encapsulation – Object
+    Initializers– Delegates Object-Oriented Programming: Inheritance - Polymorphism,
+    Interfaces and Operator Overloading-Exception Handling
+
+
+    ## **Controlling Access to Members**
+
+
+    We can use the following access modifiers to specify the accessibility of a type
+    or member
+
+
+    **public :** The type or member can be accessed by any other code in the same
+    assembly or another assembly that references it.
+
+
+    **private:** The type or member can be accessed only by code in the same class
+    or struct. **protected:** The type or member can be accessed only by code in the
+    same class, or in a class that is derived from that class.
+
+
+    **Internal:** The type or member can be accessed by any code in the same assembly,
+    but not from another assembly.
+
+
+    Class members (including nested classes and structs) can be declared with any
+    of the six types of access. Struct members cannot be declared as protected because
+    structs do not support inheritance.
+
+
+    ## **This** Reference
+
+
+    # The **this** keyword refers to the current instance of the class and is also
+    used as a
+
+
+    modifier of the first parameter of an extension method.
+
+
+    **public class Employee
+
+
+    {**
+
+
+    **private string alias; private string name;**
+
+
+    **public Employee(string name, string alias) {
+
+
+    // Use this to qualify the members of the class // instead of the constructor
+    parameters. this.name = name;
+
+
+    this.alias = alias;
+
+
+    }
+
+
+    }**
+
+
+     To qualify members hidden by similar names, for example:
+
+
+    ## **Default and Parameterless Constructors**
+
+
+    The compiler will not create a default constructor for a class that explicitly
+    declares at least one constructor. In this case, if you want to be able to invoke
+    the constructor with no arguments, we must declare a parameterless constructor,
+    a default constructor, a parameterless constructor is invoked with empty parentheses.
+
+
+    class Product {
+
+
+    public int pid;
+
+
+    public string pname; Empty or Parameterless constructor
+
+
+    public Product() {
+
+
+    } public Product(int pid=10,string pname="Hammam") {
+
+
+    this.pid = pid;
+
+
+    this.pname = pname; }
+
+
+    public void show()
+
+
+    {
+
+
+    Console.WriteLine(pid); Console.WriteLine(pname);
+
+
+    }
+
+
+    static void Main(string[] args)
+
+
+    {
+
+
+    Product p = new Product(); p.show();
+
+
+    p.pid = 34;
+
+
+    Product p2 = new Product(23); p2.show();
+
+
+    Console.ReadKey();
+
+
+    }
+
+
+    }
+
+
+    In p2 instance pid takes 23 and pname takes default value from the constructor.
+
+
+    ### **Garbage Collection and Destructors**'
+  toc: []
+  trans: "\n\n# 使用属性以及 get 和 set 访问器的软件工程\n\n使用本章早些描述的属性似乎违反了私有数据的概念。虽然提供带有 `get`\
+    \ 和 `set` 访问器的属性看起来与将其相应的实例变量设为公共相同，但事实并非如此。公共实例变量可以被程序中的任何属性或方法读取或写入。如果实例变量是私有的，客户端代码只能通过类的非私有属性或方法间接访问该实例变量。这允许类控制数据设置或返回的方式。例如，`get`\
+    \ 和 `set` 访问器可以在私有实例变量中存储的数据格式与客户端偏好的数据格式之间进行转换。\n\n## 控制结构\n\n通常情况下，应用程序中的语句按照其编写顺序一个接一个执行——这一过程被称为顺序执行。各种\
+    \ C# 语句允许你指定下一个要执行的语句不一定是顺序上的下一个语句——这被称为控制转移。\n\n![](img/Image00003.jpg)\n\n它包含两个表示要执行的操作的动作状态。每个动作状态都包含一个动作表达式——例如，“向总分中添加分数”或“向计数器加\
+    \ 1”——它指定了要执行的操作。其他操作可能包括计算或输入输出操作。活动图中的箭头表示转换，指示了动作发生的顺序。\n\n### if 单选择语句\n\n\
+    应用程序使用选择语句在备选的方案之间进行选择。例如，假设考试的及格分是 60。\n\n```csharp\nif ( grade >= 60 )\nConsole.WriteLine(\"\
+    Passed\");\n```\n\n上述 C# 语句确定条件 `grade >= 60` 为真为假。如果条件为真，则显示“Passed”，并执行顺序上的下一个\
+    \ C# 语句。如果条件为假，则忽略输出语句，并执行顺序上的下一个 C# 语句。\n\n![](img/Image00004.jpg)\n\n### if…else\
+    \ 双选择语句\n\n`if` 单选择语句仅在条件为真时执行执行指定的动作；否则，将跳过该动作。`if…else` 双选择语句允许你在条件为真时指定一个动作，并在条件为假时指定另一个不同的动作。\n\
+    \n```csharp\nif ( grade >= 60 )\nConsole.WriteLine(\"Passed\");\nelse\nConsole.WriteLine(\"\
+    Failed\");\n```\n\n例如，如果 `grade >= 60` 为真，C# 语句将显示“Passed”，但如果 `grade < 60` 为真，则显示“Failed”。在任何情况下，显示完成后，都会执行顺序上的下一个语句。`else`\
+    \ 部分体也进行了缩进。无论你选择何种缩进规范，都应该始终应用于整个应用程序。不遵守统一间距规范的应用程序很难阅读。\n\n![](img/Image00005.jpg)\
+    \ 条件运算符 (?:)\n\nC# 提供了条件运算符 `?:`，它可以替代 `if…else` 语句。这是 C# 唯一的三元运算符——它接受三个操作数。操作数与\
+    \ `?:` 符号共同组成一个条件表达式。第一个操作数（`?` 的左侧）是一个布尔表达式（即评估结果为 `bool` 类型值——真或假的表达式），第二个操作数（在\
+    \ `?` 和 `:` 之间）是布尔表达式为真时条件表达式的值，第三个操作数（`:` 的右侧）是布尔表达式为假时条件表达式的值。\n\n```csharp\n\
+    Console.WriteLine( grade >= 60 ? \"Passed\" : \"Failed\");\n```\n\n例如，该语句显示 `WriteLine`\
+    \ 的条件表达式参数的值。前一个语句中的条件表达式如果布尔表达式 `grade >= 60` 为真，则于字符串 \"Passed\"，如果布尔表达式为假，则于字符串\
+    \ \"Failed\"。\n\n## 嵌套 if…else 语句\n\n![](img/Image00006.gif)\n\n应用程序可以通过将 `if…else`\
+    \ 语句放在其他 `if…else` 语句内部创建创建嵌套 `if…else` 语句来测试多种情况。例如，以下嵌套 `if…else` 语句对于大于等于 90\
+    \ 的考试成绩显示 A，对于 80 到 89 之间的成绩显示 B，对于 70 到 79 之间的成绩显示 C，对于 60 到 69 之间的成绩显示 D，对于所有其他成绩显示\
+    \ F：\n\n```csharp\nif ( grade >= 90 )\nConsole.WriteLine(\"A\");\nelse\nif ( grade\
+    \ >= 80 )\nConsole.WriteLine(\"B\");\nelse\nif ( grade >= 70 )\nConsole.WriteLine(\"\
+    C\");\nelse\nif ( grade >= 60 )\nConsole.WriteLine(\"D\");\nelse\nConsole.WriteLine(\"\
+    F\");\n```\n\n**模块– III**\n\n类与对象：深入探讨 - 引言 - 控制成员的访问 - 使用 `this` 引用引用当前对象的成员\
+    \ - 索引器 - 默认和无参数构造函数–组合 - 垃圾收集与析构函数- 静态类成员 - 数据抽象与封装 – 对象初始化器– 委托 面对象编程：继承 - 多态、接口和运算符重载-异常处理\n\
+    \n## 控制成员的访问\n\n我们可以使用以下访问修符来指定类型或成员的可访问性：\n\n`public`：类型或成员可以被同一程序集中的任何其他代码或引用它的另一个程序集访问。\n\
+    \n`private`：类型或成员只能被同一类或结构体的代码访问。\n\n`protected`：类型或成员可以被同类或派生类的代码访问。\n\n`internal`：类型或成员可以被同一程序集中的代码访问，但不能从另一个程序集访问。\n\
+    \n类成员（包括嵌套类）可以使用六种访问类型进行声明。结构体成员不能声明为 `protected`，因为结构体不支持继承。\n\n## Reference\n\
+    \n`this` 关键字指向类的实例，并作为扩展方法的第一个参数的修饰。\n\n```csharp\npublic class Employee\n{\n\
+    \    private string alias;\n    private string name;\n\n    public Employee(string\
+    \ name, string alias)\n    {\n        // 使用 this 来限定类的成员\n        // 而不是构造函数参数。\n\
+    \        this.name = name;\n        this.alias = alias;\n    }\n}\n```\n\n为了限定被同名隐藏的成员，例如：\n\
+    \n## 默认和无参数构造函数\n\n对于声明了至少一个构造函数的类，编译器不会创建默认构造函数。在这种情况下，如果你希望能够无参数调用构造函数，我们必须声明一个无参数构造函数，默认构造函数，无参数构造函数通过空括号调用。\n\
+    \n```csharp\nclass Product\n{\n    public int pid;\n    public string pname;\n\
+    \n    // 空或无参数构造函数\n    public Product()\n    {\n    }\n\n    public Product(int\
+    \ pid=10,string pname=\"Hammam\")\n    {\n        this.pid = pid;\n        this.pname\
+    \ = pname;\n    }\n\n    public void show()\n    {\n        Console.WriteLine(pid);\n\
+    \        Console.WriteLine(pname);\n    }\n\n    static void Main(string[] args)\n\
+    \    {\n        Product p = new Product();\n        p.show();\n        p.pid =\
+    \ 34;\n        Product p2 = new Product(23);\n        p2.show();\n        Console.ReadKey();\n\
+    \    }\n}\n```\n\n在 `p2` 实例中，`pid` 取 23，`pname` 取构造函数的默认值。\n\n"
+- fmt: "\nThe Common Language Runtime (`CLR`) performs automatic memory management\
+    \ by using a garbage collector to reclaim the memory occupied by objects that\
+    \ are no longer in use, so the memory can be used for other objects. When there\
+    \ are no more references to an object, the object becomes eligible for destruction.\
+    \ Every object has a special member, called a destructor, that is invoked by the\
+    \ garbage collector to perform termination housekeeping on an object before the\
+    \ garbage collector reclaims theobject’s memory. A destructor is declared like\
+    \ a parameterless constructor, except that its name is the class name, preceded\
+    \ by a tilde (`~`), and it has no access modifier in its header.After the garbage\
+    \ collector calls the object’s destructor, the object becomes eligible for garbage\
+    \ collection.\n\n```csharp\n~ Product()\n{\n\n}\n```\n\nA problem with the garbage\
+    \ collector is that it doesn’t guarantee that it will perform its tasks at a specified\
+    \ time. Therefore, the garbage collector may call the destructor any time after\
+    \ the object becomes eligible for destruction, and may reclaim the memory any\
+    \ time after the destructor executes.\n\n### Static Members\n\nEvery object has\
+    \ its own copy of all the instance variables of the class. In certain cases, only\
+    \ one copy of a particular variable should be shared by all objects of a class.\
+    \ A static variable is used in such cases. A static variable represents class-wide\
+    \ information—all objects of the class share the same piece of data. The declaration\
+    \ of a static variable begins with the keyword `static`.\n\n```csharp\npublic\
+    \ class Employee {\n    public static int count = 0; // number of objects in memory\n\
+    \n    public static void showLine()\n    {\n        Console.WriteLine(―------------------------------------------―);\n\
+    \    }\n}\n```\n\nIn the above example `count` is the static variable `showLine()`\
+    \ is the static function.\n\n### Data Abstraction and Encapsulation\n\nClasses\
+    \ normally hide the details of their implementation from their clients. The abstract\
+    \ member has no detailed coding. This will be code later in program.\n\nIt is\
+    \ used to display only necessary and essential features of an object to outside\
+    \ the world.Means displaying what is necessary and encapsulate the unnecessary\
+    \ things to outside the world.Hiding can be achieved by using `private` access\
+    \ modifiers.\n\nLets have a look of this code!\n\n```csharp\nabstract class animal\
+    \ {\n    public abstract void eat(); \n    public void sound()\n    {\n      \
+    \  Console.WriteLine(\"dog can sound\");\n    }\n}\n```\n\nIn the above class\
+    \ `animal` is the generic class in which different kinds of animal takes different\
+    \ food. The `eat()` method is the abstract method that will code later. The method\
+    \ overriding could be done by putting the keyword `new` before that overridden\
+    \ method.\n\n```csharp\nclass dog : animal\n{\n    public override void eat()\
+    \ { \n        Console.WriteLine(\"dog can eat\"); \n    }\n}\n```\n\nThe above\
+    \ `dog` class we override the `eat()` method.\n\n### Encapsulation\n\nEncapsulation\
+    \ is defined 'as the process of enclosing one or more items within a physical\
+    \ or logical package'. Encapsulation, in object oriented programming methodology,\
+    \ prevents access to implementation details. Abstraction and encapsulation are\
+    \ related features in object oriented programming.\n\n### Inheritance\n\nInheritance\
+    \ allows us to define a class in terms of another class, which makes it easier\
+    \ to create and maintain an application. This also provides an opportunity to\
+    \ reuse the code functionality and speeds up implementation time. This existing\
+    \ class is called the base class, and the new class is referred to as the derived\
+    \ class. In the following class `Rectangle` is the Base class and `Tabletop` is\
+    \ the Derived class.\n\n```csharp\nclass Rectangle {\n    //member variables\n\
+    \    protected double length; protected double width;\n\n    public Rectangle(double\
+    \ l, double w) { \n        length = l;\n        width = w;\n    }\n\n    public\
+    \ double GetArea() {\n        return length * width;\n    }\n\n    public void\
+    \ Display() {\n        Console.WriteLine(\"Length: {0}\", length);\n        Console.WriteLine(\"\
+    Width: {0}\", width);\n        Console.WriteLine(\"Area: {0}\", GetArea()); \n\
+    \    }\n}//end class Rectangle\n\nclass Tabletop : Rectangle {\n    private double\
+    \ cost;\n\n    public Tabletop(double l, double w) : base(l, w) { }\n\n    public\
+    \ double GetCost() {\n        double cost;\n        cost = GetArea() * 70;\n \
+    \       return cost;\n    }\n\n    public void Display() {\n        base.Display();\n\
+    \        Console.WriteLine(\"Cost: {0}\", GetCost()); \n    }\n}\n```\n\n### Polymorphism\n\
+    \nThe word polymorphism means having many forms. In object-oriented programming\
+    \ paradigm, polymorphism is often expressed as 'one interface, multiple functions'.\n\
+    \nPolymorphism can be static or dynamic. In `static polymorphism`, the response\
+    \ to a function is determined at the compile time. In `dynamic polymorphism`,\
+    \ it is decided at run-time.\n\n### Static Polymorphism\n\nThe mechanism of linking\
+    \ a function with an object during compile time is called early binding. It is\
+    \ also called static binding. C# provides two techniques to implement static polymorphism.\
+    \ They are −\n\n- Function overloading\n- Operator overloading\n\n```csharp\n\
+    class Printdata {\n    void print(int i) {\n        Console.WriteLine(\"Printing\
+    \ \", i );\n    }\n    void print(double f) {\n        Console.WriteLine(\"Printing\
+    \ \" , f);\n    }\n    void print(string s) {\n        Console.WriteLine(\"Printing\
+    \ \", s);\n    }\n\n    static void Main(string[] args) {\n        Printdata p\
+    \ = new Printdata();\n        // Call print to print integer\n        p.print(5);\n\
+    \        // Call print to print float\n        p.print(500.263);\n        // Call\
+    \ print to print string\n        p.print(\"Hello C++\");\n        Console.ReadKey();\n\
+    \    }\n}\n```\n\nIn the above example we written the `print()` function for integer,\
+    \ float and string data.\n\n### Dynamic Polymorphism\n\nC# allows you to create\
+    \ abstract classes that are used to provide partial class implementation of an\
+    \ interface. Implementation is completed when a derived class inherits from it.\
+    \ Abstract classes contain abstract methods, which are implemented by the derived\
+    \ class. The derived classes have more specialized functionality.\n\nHere are\
+    \ the rules about abstract classes:\n\n- We cannot create an instance of an abstract\
+    \ class\n- We cannot declare an abstract method outside an abstract class\n\n\
+    ```csharp\nabstract class Shape {\n    public abstract int area();\n}\n\nclass\
+    \ Rectangle: Shape {\n    private int length;\n    private int width;\n\n    public\
+    \ Rectangle(int a = 0, int b = 0) { \n        length = a;\n        width = b;\n\
+    \    }\n\n    public override int area () {\n        // The method area() present\
+    \ in base class as a abstract member. \n        // That will be redefined in derived\
+    \ class called dynamic polymorphism.\n        Console.WriteLine(\"Rectangle class\
+    \ area :\");\n        return (width * length);\n    }\n\n    static void Main(string[]\
+    \ args) {\n        Rectangle r = new Rectangle(10, 7);\n        double a = r.area();\n\
+    \        Console.WriteLine(\"Area: {0}\",a);\n        Console.ReadKey();\n   \
+    \ }\n}\n```\n\n### MODULE IV: Graphical User Interfaces with Windows Forms\n\n\
+    - Introduction - Windows Forms\n- Control Properties and Layout - Labels, TextBoxes\
+    \ and Buttons - GroupBoxes and Panels - CheckBoxes and RadioButtons - NumericUpDown\
+    \ Control - Mouse-Event Handling-Keyboard-Event Handling– various controls - Multiple\
+    \ Document Interface (MDI) Windows - Visual Inheritance - User-Defined Controls\n\
+    \nNear the top of the window, there’s a menu bar containing the menus File, Edit,\
+    \ View, Project, Build, Debug, Data, Tools, Window, and Help. Below the menu bar\
+    \ is a tool bar of buttons, each with a defined task, such as creating a new project\
+    \ or opening an existing project. There are two tabs below the tool bar—these\
+    \ present information in a tabbed view and allow users to switch between them.\n\
+    \n#### Control Description\n\n**Label** - Labels are one of the most frequently\
+    \ used C# control. We can use the Label control to display text in a set location\
+    \ on the page.\n\n```csharp\nlabel1.Text = \"This is my first Label\";\n\nIn addition\
+    \ to display an image using the Image property, or a combination of the ImageIndex\
+    \ and ImageList properties.\n\nlabel1.Image = Image.FromFile(\"C:\\\\testimage.jpg\"\
+    );\n```\n"
+  raw: 'The Common Language Runtime (CLR) performs automatic memory management by
+    using a garbage collector to reclaim the memory occupied by objects that are no
+    longer in use, so the memory can be used for other objects. When there are no
+    more references to an object, the object becomes eligible for destruction. Every
+    object has a special member, called a destructor, that is invoked by the garbage
+    collector to perform termination housekeeping on an object before the garbage
+    collector reclaims theobject’s memory. A destructor is declared like a parameterless
+    constructor, except that its name is the class name, preceded by a tilde (~),
+    and it has no access modifier in its header.After the garbage collector calls
+    the object’s destructor, the object becomes eligible for garbage collection.
+
+
+    ~ public Product()
+
+
+    {
+
+
+    }
+
+
+    A problem with the garbage collector is t hat it doesn’t guarantee that it will
+    perform its tasks at a specified time. Therefore, the garbage collector may call
+    the destructor any
+
+
+    time after the object becomes eligible for destruction, and may reclaim the memory
+    any time after the destructor executes.
+
+
+    ### **static Class Members**
+
+
+    Every object has its own copy of all the instance variables of the class. In certain
+    cases, only one copy of a particular variable should be shared by all objects
+    of a class. A static variable is used in such cases. A static variable represents
+    class wide information—all objects of the class share the same piece of data.
+    The declaration of a static variable begins with the keyword static.
+
+
+    public class Employee {
+
+
+    public static int count = 0; // number of objects in memory
+
+
+    public static void showLine()
+
+
+    {
+
+
+    Console.WriteLine(―------------------------------------------―); }
+
+
+    }
+
+
+    In the above example count is the static variable showLine() is the static function.
+
+
+    ### **Data Abstraction and Encapsulation**
+
+
+    Classes normally hide the details of their implementation from their clients.
+    The abstract member has no detailed coding. This will be code later in program.
+
+
+    It is used to display only necessary and essential features of an object to ouside
+    the world.Means displaying what is necessary and encapsulate the unnecessary things
+    to outside the world.Hiding can be achieved by using "private" access modifiers.
+
+
+    Lets have a look of this code!
+
+
+    abstract class animal {
+
+
+    public abstract void eat(); public void sound()
+
+
+    {
+
+
+    Console.WriteLine("dog can sound");
+
+
+    }
+
+
+    }
+
+
+    In the above class animal is the generic class in which different kinds of animal
+    takes different food. The eat() method is the abstract method that will code later.
+    The method overriding could be done by putting the keyword ''new'' before that
+    overridden method.
+
+
+    class dog : animal
+
+
+    {
+
+
+    public override void eat() { Console.WriteLine("dog can eat"); }
+
+
+    }
+
+
+    The above dog class we override the eat() method.
+
+
+    ## **Encapsulation** is defined ''as the process of enclosing one or more items
+    within a
+
+
+    physical or logical package''. Encapsulation, in object oriented programming methodology,
+    prevents access to implementation details. Abstraction and encapsulation are related
+    features in object oriented programming.
+
+
+    ## **Inheritance**
+
+
+    Inheritance allows us to define a class in terms of another class, which makes
+    it easier to create and maintain an application. This also provides an opportunity
+    to reuse the code functionality and speeds up implementation time. This existing
+    class is called the base class, and the new class is referred to as the derived
+    class. In the following class Rectangle is the Base class and Tabletop is the
+    Derived class
+
+
+    class Rectangle {
+
+
+    //member variables
+
+
+    protected double length; protected double width;
+
+
+    public Rectangle(double l, double w) { length = l;
+
+
+    width = w;
+
+
+    }
+
+
+    public double GetArea() {
+
+
+    return length * width;
+
+
+    }
+
+
+    public void Display() {
+
+
+    Console.WriteLine("Length: {0}", length);
+
+
+    Console.WriteLine("Width: {0}", width);
+
+
+    Console.WriteLine("Area: {0}", GetArea()); }
+
+
+    }//end class Rectangle
+
+
+    class Tabletop : Rectangle {
+
+
+    private double cost;
+
+
+    public Tabletop(double l, double w) : base(l, w) { }
+
+
+    public double GetCost() {
+
+
+    double cost;
+
+
+    cost = GetArea() * 70;
+
+
+    return cost;
+
+
+    }
+
+
+    public void Display() {
+
+
+    base.Display();
+
+
+    Console.WriteLine("Cost: {0}", GetCost()); }
+
+
+    }
+
+
+    ## Polymorphism
+
+
+    The word polymorphism means having many forms. In object-oriented programming
+    paradigm, polymorphism is often expressed as ''one interface, multiple functions''.
+
+
+    Polymorphism can be static or dynamic. In **static polymorphism** , the response
+    to a function is determined at the compile time. In **dynamic polymorphism** ,
+    it is decided at run-time.
+
+
+    ## **Static Polymorphism**
+
+
+    The mechanism of linking a function with an object during compile time is called
+    early binding. It is also called static binding. C# provides two techniques to
+    implement static polymorphism. They are −
+
+
+     Function overloading
+
+
+     Operator overloading
+
+
+    class Printdata {
+
+
+    void print(int i) {
+
+
+    Console.WriteLine("Printing ", i );
+
+
+    }
+
+
+    void print(double f) {
+
+
+    Console.WriteLine("Printing " , f);
+
+
+    }
+
+
+    void print(string s) {
+
+
+    Console.WriteLine("Printing ", s);
+
+
+    }
+
+
+    static void Main(string[] args) {
+
+
+    Printdata p = new Printdata();
+
+
+    // Call print to print integer p.print(5);
+
+
+    // Call print to print float p.print(500.263);
+
+
+    // Call print to print string
+
+
+    p.print("Hello C++");
+
+
+    Console.ReadKey();
+
+
+    }
+
+
+    }
+
+
+    In the above example we written the print() function for integer, float and string
+    data.
+
+
+    ## **Dynamic Polymorphism**
+
+
+    C# allows you to create abstract classes that are used to provide partial class
+    implementation of an interface. Implementation is completed when a derived class
+    inherits from it. Abstract classes contain abstract methods, which are implemented
+    by the derived class. The derived classes have more specialized functionality.
+
+
+    Here are the rules about abstract classes −
+
+
+     We cannot create an instance of an abstract class
+
+
+     We cannot declare an abstract method outside an abstract class
+
+
+    abstract class Shape {
+
+
+    public abstract int area();
+
+
+    }
+
+
+    class Rectangle: Shape {
+
+
+    private int length;
+
+
+    private int width;
+
+
+    public Rectangle( int a = 0, int b = 0) { length = a;
+
+
+    width = b;
+
+
+    }
+
+
+    public override int area () {
+
+
+    The method area() present in base class Shape as a abstract member. That will
+    be redefined in derived class called dynamic polymorphism.
+
+
+    Console.WriteLine("Rectangle class area :"); return (width * length);
+
+
+    }
+
+
+    static void Main(string[] args) {
+
+
+    Rectangle r = new Rectangle(10, 7); double a = r.area();
+
+
+    Console.WriteLine("Area: {0}",a); Console.ReadKey();
+
+
+    } }
+
+
+    **MODULE– IV**
+
+
+    Graphical User Interfaces with Windows Forms – Introduction - Windows Forms
+
+
+    - Control Properties and Layout - Labels, TextBoxes and Buttons - GroupBoxes and
+    Panels - CheckBoxes and RadioButtons - NumericUpDown Control - Mouse-Event Handling-
+    Keyboard-Event Handling– Menus- various controls - Multiple Document Interface
+    (MDI) Windows - Visual Inheritance - User-Defined Controls.
+
+
+    **Graphical User Interfaces**
+
+
+    Near the top of the window, there’s a menu bar containing the menus File, Edit,
+    View, Project, Build, Debug, Data, Tools, Window, and Help. Below the menu bar
+    is a tool bar of buttons, each with a defined task, such as creating a new project
+    or opening an existing project. There are two tabs below the tool bar—these present
+    information in a tabbed view and allow users to switch between them.
+
+
+    These controls form a user-friendly interface through which you have been interacting
+    with the IDE.
+
+
+    ![](Image00007.gif)  ntrol Description
+
+
+    **Label** - Labels are one of the most frequently used C# control. We can use
+    the Label control to display text in a set location on the page.
+
+
+    label1.Text = "This is my first Label";
+
+
+    In addition to display an image using the Image property, or a combination of
+    the ImageIndex and ImageList properties.
+
+
+    label1.Image = Image.FromFile("C:\\testimage.jpg");'
+  toc: []
+  trans: "\n通用语言运行时（`CLR`）通过使用垃圾回收器执行自动内存管理，回收不再使用的对象所占用的内存，以便该内存供其他对象使用。当一个对象不再有任何引用时，该对象就可以被销毁了。每个对象都有一个特殊的成员，称为析构函数，它由垃圾回收器在回收对象内存之前调用，用于对对象执行终止清理工作。析构函数的声明方式与无参数构造函数类似，区别是它的名称是类名并以波浪号（`~`）开头，且其头部没有访问修饰符。在垃圾回收器调用对象的析构函数后，该对象就可以进行垃圾回收了。\n\
+    \n```csharp\n~ Product()\n{\n\n}\n```\n\n垃圾回收器的一个问题是，它不保证会在指定的时间执行任务。因此，垃圾回收器可以在对象变为可销毁后的任何时间调用析构函数，并可以在析构函数执行后的任何时间回收内存。\n\
+    \n### 静态成员\n\n每个对象都拥有类中所有实例变量的副本。在某些情况下，某个特定变量的拷贝应该由类的所有对象共享。在这种情况下，使用静态变量。静态变量代表类范围的信息——类的所有对象共享同一份数据。静态变量的声明以关键字\
+    \ `static` 开头。\n\n```csharp\npublic class Employee {\n    public static int count\
+    \ = 0; // 内存中的对象数量\n\n    public static void showLine()\n    {\n        Console.WriteLine(―------------------------------------------);\n\
+    \    }\n}\n```\n\n在上面的示例中，`count` 是静态变量，`showLine()` 是静态函数。\n\n### 数据抽象与封装\n\n\
+    类通常会向客户端隐藏其实现细节。抽象成员没有详细的代码。这些代码将在程序的后部分编写。\n\n它用于向外部世界只显示对象的必要且核心的特征。这意味着显示必要的内容，并将不必要的内容封装在外部。可以通过使用\
+    \ `private` 访问修饰符来实现隐藏。\n\n让我们来看这段代码！\n\n```csharp\nabstract class animal {\n\
+    \    public abstract void eat(); \n    public void sound()\n    {\n        Console.WriteLine(\"\
+    dog can sound\");\n    }\n}\n```\n\n在上面的类中，`animal` 是通用类，不同种类的动物吃不同的食物。`eat()`\
+    \ 方法是抽象方法，稍后编写。方法重写可以通过在被重写的方法之前放置关键字 `new` 来完成。\n\n```csharp\nclass dog : animal\n\
+    {\n    public override void eat() { \n        Console.WriteLine(\"dog can eat\"\
+    ); \n    }\n}\n```\n\n在上面的 `dog` 类中重写了 `eat()` 方法。\n\n### 封装\n\n封装定义为“将一个或多个项目封装在一个物理或逻辑包中的过程”。在面向对象编程方法中，封装防止了对实现细节的访问。抽象和封装是面向对象编程的相关特征。\n\
+    \n### 继承\n\n继承允许我们根据另一个类来定义类，这使得创建和维护应用程序变得更容易。这还提供了重用代码功能的机会并加快了实现速度。现有的类被称为基类，新类被称为派生类。在下面的类中，`Rectangle`\
+    \ 是基类，`Tabletop` 是派生类。\n\n```csharp\nclass Rectangle {\n    //成员变量\n    protected\
+    \ double length; protected double width;\n\n    public Rectangle(double l, double\
+    \ w) { \n        length = l;\n        width = w;\n    }\n\n    public double GetArea()\
+    \ {\n        return length * width;\n    }\n\n    public void Display() {\n  \
+    \      Console.WriteLine(\"Length: {0}\", length);\n        Console.WriteLine(\"\
+    Width: {0}\", width);\n        Console.WriteLine(\"Area: {0}\", GetArea()); \n\
+    \    }\n}//end class Rectangle\n\nclass Tabletop : Rectangle {\n    private double\
+    \ cost;\n\n    public Tabletop(double l, double w) : base(l, w) { }\n\n    public\
+    \ double GetCost() {\n        double cost;\n        cost = GetArea() * 70;\n \
+    \       return cost;\n    }\n\n    public void Display() {\n        base.Display();\n\
+    \        Console.WriteLine(\"Cost: {0}\", GetCost()); \n    }\n}\n```\n\n### 多态\n\
+    \n多态一词意味着有许多形式。在面向对象编程范式中，多态通常表示为“一个接口，多个函数”。\n\n多态可以是静态的或动态的。在`静态多态`中，对函数的响应在编译时确定。在`动态多态`中，它在运行时决定。\n\
+    \n### 静态多态\n\n在编译期间将函数与对象绑定的机制称为早期绑定。它也称为静态绑定。C# 提供了两种实现静态多态的技术。它们是——\n\n- 函数重载\n\
+    - 运算符重载\n\n```csharp\nclass Printdata {\n    void print(int i) {\n        Console.WriteLine(\"\
+    Printing \", i );\n    }\n    void print(double f) {\n        Console.WriteLine(\"\
+    Printing \" , f);\n    }\n    void print(string s) {\n        Console.WriteLine(\"\
+    Printing \", s);\n    }\n\n    static void Main(string[] args) {\n        Printdata\
+    \ p = new Printdata();\n        // 调用 print 打印整数\n        p.print(5);\n      \
+    \  // 调用 print 打印浮点数\n        p.print(500.263);\n        // 调用 print 打印字符串\n \
+    \       p.print(\"string\");\n    }\n}\n```\n\n在上面的示例中，我们为整数、浮点数和字符串编写了 `print()`\
+    \ 函数。\n\n### 动态多态\n\nC# 允许你创建抽象类来提供接口的部分实现。当派生类继承它时完成实现。抽象类包含抽象方法，由派生类实现。派生类具有更多专门的功能。\n\
+    \n关于抽象类的规则如下：\n\n- 我们无法创建抽象类的实例\n- 我们不能在抽象类之外声明抽象方法\n\n```csharp\nabstract class\
+    \ Shape {\n    public abstract int area();\n}\n\nclass Rectangle: Shape {\n  \
+    \  private int length;\n    private int width;\n\n    public Rectangle(int a =\
+    \ 0, int b = 0) {\n        length = a;\n        width = b;\n    }\n\n    public\
+    \ override int area () {\n        // area 方法在基类中作为抽象成员存在\n        // 在派生类中重写，称为动态多态。\n\
+    \        Console.WriteLine(\"Rectangle class area :\");\n        return (width\
+    \ * length);\n    }\n\n    static void Main(string[] args) {\n        Rectangle\
+    \ r = new Rectangle(10, 7);\n        double a = r.area();\n        Console.WriteLine(\"\
+    Area: {0}\",a);\n        Console.ReadKey();\n    }\n}\n```\n\n### 第四部分：使用 Windows\
+    \ Forms 图用户界面\n\n- 简介 - Windows Forms\n- 控件属性与布局 - 标签、文本框和按钮 - 组框和面板 - 复选框和单选框\
+    \ - NumericUpDown 控件 - 鼠标事件处理-键盘事件处理–各种控件 - 多文档界面 (MDI)  - 视觉继承 - 自定义控件\n\n在窗口顶部有一个菜单栏，包含文件、编辑、视图、项目、生成、调试、数据、工具、窗口和帮助菜单。菜单栏下方是工具栏按钮，每个按钮都有定义好的任务，如创建新项目或打开现有项目。工具栏下方有两个标签——这些以标签页视图显示信息并允许用户在之间切换。\n\
+    \n#### 控件描述\n\n**Label** - Label 是 C# 中最常用的控件之一。我们可以使用 Label 控件在页面的固定位置显示文本。\n\
+    \n```csharp\nlabel1.Text = \"这是我的第一个标签\";\n```\n\n此外可以使用 Image 属性显示图像，或者使用 ImageIndex\
+    \ 和 ImageList 属性的组合。\n\n```csharp\nlabel1.Image = Image.FromFile(\"C:\\\\testimage.jpg\"\
+    );\n```\n"
+- fmt: "\n### **TextBox** - Enables the user to enter data via the keyboard. It can\
+    \ also be used to display editable or uneditable text. For displaying a text in\
+    \ a `TextBox` control , you can code like this.\n\n```cs\ntextBox1.Text = \"welcome\
+    \ to our college\";\n```\n\n### **Button** - Windows Forms controls are reusable\
+    \ components that encapsulate user interface functionality and are used in client\
+    \ side Windows applications. A button is a control, which is an interactive component\
+    \ that enables users to communicate with an application. The `Button` class inherits\
+    \ directly from the `ButtonBase` class. A `Button` can be clicked by using the\
+    \ mouse, `ENTER` key, or `SPACEBAR` if the button has focus.\n\n```cs\nbutton1.Text\
+    \ = \"Click Here\";\n```\n\n### **CheckBox** - Specifies an option that can be\
+    \ selected (checked) or unselected (not checked).\n\n![](Image00008.jpg) `checkBox1.Text\
+    \ = \"Net-informations.com\";`\n\n```cs\ncheckBox1.ThreeState = true;\n```\n\n\
+    ### **ComboBox** - Provides a drop-down list of items from which the user can\
+    \ make a selection either by clicking an item in the list or by typing in a box.\n\
+    \n```cs\ncomboBox1.Items.Add(\"Sunday\");\ncomboBox1.Items.Add(\"Monday\");\n\
+    comboBox1.Items.Add(\"Tuesday\");\n```\n\n### **ListBox** - Provides a list of\
+    \ items from which the user can make a selection by clicking one or more items.\n\
+    \n```cs\nlistBox1.Items.Add(\"Sunday\");\nlistBox1.Items.Add(\"Monday\");\nlistBox1.Items.Add(\"\
+    Tueday\");\n```\n\n### **Radio Button** - A radio button or option button enables\
+    \ the user to select a single option from a group of choices when paired with\
+    \ other `RadioButton` controls. When a user clicks on a radio button, it becomes\
+    \ checked, and all other radio buttons with same group become unchecked.\n\n![](Image00009.jpg)\n\
+    \n`radioButton1.Checked = true;`\n\n### **NumericUpDown** - A `NumericUpDown`\
+    \ control allows users to provide a spin (up/down) interface to move through pre-defined\
+    \ numbers using up and down arrows. For example `cud` is the `NumericUpDown` control.\n\
+    \n```cs\ncud.Maximum = 100 \ncud.Minimum = 0 \ncud.Value = 10;\n```\n\n### **C#\
+    \ Mouse Events**\nAn essential aspect of Windows programming is the use of the\
+    \ mouse.\n\n- **Click**: This event occurs when the mouse button is released,\
+    \ typically before the `MouseUp` event. The handler for this event receives an\
+    \ argument of type `EventArgs`. Handle this event when you only need to determine\
+    \ when a click occurs.\n- **MouseClick**: This event occurs when the user clicks\
+    \ the control with the mouse. The handler for this event receives an argument\
+    \ of type `MouseEventArgs`. Handle this event when you need to get information\
+    \ about the mouse when a click occurs.\n- **DoubleClick**: This event occurs when\
+    \ the control is double-clicked. The handler for this event receives an argument\
+    \ of type `EventArgs`. Handle this event when you only need to determine when\
+    \ a double-click occurs.\n- **MouseDoubleClick**: This event occurs when the user\
+    \ double-clicks the control with the mouse. The handler for this event receives\
+    \ an argument of type `MouseEventArgs`. Handle this event when you need to get\
+    \ information about the mouse when a double-click occurs.\n- **MouseDown**: This\
+    \ event occurs when the mouse pointer is over the control and the user presses\
+    \ a mouse button. The handler for this event receives an argument of type `MouseEventArgs`.\n\
+    - **MouseEnter**: This event occurs when the mouse pointer enters the border or\
+    \ client area of the control, depending on the type of control. The handler for\
+    \ this event receives an argument of type `EventArgs`.\n- **MouseHover**: This\
+    \ event occurs when the mouse pointer stops and rests over the control. The handler\
+    \ for this event receives an argument of type `EventArgs`.\n- **MouseLeave**:\
+    \ This event occurs when the mouse pointer leaves the border or client area of\
+    \ the control, depending on the type of the control. The handler for this event\
+    \ receives an argument of type `EventArgs`.\n- **MouseMove**: This event occurs\
+    \ when the mouse pointer moves while it is over a control. The handler for this\
+    \ event receives an argument of type `MouseEventArgs`.\n- **MouseUp**: This event\
+    \ occurs when the mouse pointer is over the control and the user releases a mouse\
+    \ button. The handler for this event receives an argument of type `MouseEventArgs`.\n\
+    - **MouseWheel**: This event occurs when the user rotates the mouse wheel while\
+    \ the control has focus. The handler for this event receives an argument of type\
+    \ `MouseEventArgs`. You can use the `Delta` property of `MouseEventArgs` to determine\
+    \ how far the mouse has scrolled.\n\n### **MouseEventArgs Class**\nThis gives\
+    \ us information about what has just happened with the mouse. There is a constructor,\
+    \ but it does not seem useful.\n\n**Properties: (all \"get\" only)**\n- `X` =\
+    \ x-coordinate of the mouse (integer)\n- `Y` = y-coordinate of the house (integer)\n\
+    - `Location` = location of the mouse (`Point`, hence an x-y pair)\n- `Button`\
+    \ = which mouse button was pressed (a member of the `MouseButtons` enumeration:\
+    \ `Left`, `Right`, `Middle`, `None`, etc.)\n- `Clicks` = number of times the button\
+    \ was pressed and released (integer)\n- `Delta` = the number of notches (\"detents\"\
+    ) by which the mouse has been rotated (integer)\n\nWe will need a using statement\
+    \ for `System.Windows.Forms`. In the `InitializeComponent` method, we need a line:\n\
+    \n`this.MouseDown += new MouseEventHandler(this.Form_MouseDown);`\n\nThe event\
+    \ handler might look like this:\n\n```cs\nprivate void Form_MouseDown(object sender,\
+    \ MouseEventArgs e) {\n    switch (e.Button)\n    {\n        case MouseButtons.Left:\n\
+    \            MessageBox.Show(\"Left Button Click\");\n            break;\n   \
+    \     case MouseButtons.Right:\n            MessageBox.Show(\"Right Button Click\"\
+    );\n            break;\n        default:\n            break;\n    }\n}\n```\n\n\
+    ### **Keyboard Events**\nThere are three key events:\n\n- **KeyDown**: This event\
+    \ is raised once when a user presses a key. The second argument of the event handler\
+    \ is type `EventArgs`.\n- **KeyPress**: This event is raised when the key or keys\
+    \ pressed result in a character. For instance, \"Shift\" plus \"a\" produces the\
+    \ character \"A\". If the keys are held down, the `KeyPress` event may be repeated,\
+    \ as in \"AAAAAAAAA\". The second argument of the event handler is type `KeyPressEventArgs`.\n\
+    - **KeyUp**: This event is raised when a key is released. The second argument\
+    \ of the event handler is type `KeyEventArgs`.\n\nThus the sequence of events\
+    \ is: `KeyDown`, `KeyPress`, `KeyUp`. In the Designer file, we need a line to\
+    \ attach the handler to the event:\n\n`this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyDemo_KeyDown);`\n\
+    \n### **C# Menu Control**\nA Menu on a Windows Form is created with a `MainMenu`\
+    \ object, which is a collection of `MenuItem` objects. `MainMenu` is the container\
+    \ for the Menu structure of the form and menus are made of `MenuItem` objects\
+    \ that represent individual parts of a menu.\n\n![](Image00010.jpg)\n\nWe can\
+    \ add menus to Windows Forms at design time by adding the `MainMenu` component\
+    \ and then appending menu items to it using the Menu Designer. After drag the\
+    \ `MenuStrip` on your form you can directly create the menu items by type a value\
+    \ into the \"Type Here\" box on the menubar part of your form. From the following\
+    \ picture you can understand how to create each menu items on mainmenu object.\n\
+    \n![](Image00011.jpg)\n\n### **Other Controls**\n\n- **Font Dialog Box**: Font\
+    \ dialog box represents a common dialog box that displays a list of fonts that\
+    \ are currently installed on the system.\n- **OpenFile Dialog Box**: The `OpenFileDialog`\
+    \ component allows users to browse the folders of their computer or any computer\
+    \ on the network and select one or more files to open. The dialog box returns\
+    \ the path and name of the file the user selected in the dialog box.\n- **Print\
+    \ Dialog Box**: A user can use the Print dialog box to select a printer, configure\
+    \ it, and perform a print job. Print dialog boxes provide an easy way to implement\
+    \ Print and Print Setup dialog boxes in a manner consistent with Windows standards.\n\
+    \n### **Implementing an MDI Form**\n"
+  raw: '**TextBox** - Enables the user to enter data via the keyboard. It can also
+    be used to display editable or uneditable text. For displaying a text in a TextBox
+    control , you can
+
+
+    code like this.
+
+
+    textBox1.Text = "welcome to our college";
+
+
+    **Button** - Windows Forms controls are reusable components that encapsulate user
+    interface functionality and are used in client side Windows applications. A button
+    is a control, which is an interactive component that enables users to communicate
+    with an application. The Button class inherits directly from the ButtonBase class.
+    A Button can be clicked by using the mouse, ENTER key, or SPACEBAR if the button
+    has focus.
+
+
+    button1.Text = "Click Here";
+
+
+    **CheckBox** Specifies an option that can be selected (checked) or unselected
+    (not checked).
+
+
+    ![](Image00008.jpg) checkBox1.Text = "Net-informations.com";
+
+
+    checkBox1.ThreeState = true;
+
+
+    **ComboBox** Provides a drop-down list of items from which the user can make a
+    selection either by clicking an item in the list or by typing in a box.
+
+
+    comboBox1.Items.Add("Sunday");
+
+
+    comboBox1.Items.Add("Monday");
+
+
+    comboBox1.Items.Add("Tuesday");
+
+
+    **ListBox** Provides a list of items from which the user can make a selection
+    by clicking one or more items.
+
+
+    listBox1.Items.Add("Sunday");
+
+
+    listBox1.Items.Add("Monday");
+
+
+    listBox1.Items.Add("Tueday");
+
+
+    **Radio Button** A radio button or option button enables the user to select a
+    single option from a group of choices when paired with other RadioButton controls.
+    When a user clicks on a radio button, it becomes checked, and all other radio
+    buttons with same group become unchecked.
+
+
+    ![](Image00009.jpg)
+
+
+    radioButton1.Checked = true; **NumericUpDown** A NumericUpDown control allows
+    users to provide a spin (up/down) interface to move through pre-defined numbers
+    using up and down arrows.
+
+
+    For example **cud** is the **NumericUpDown** control
+
+
+    cud.Maximum = 100 cud.Minimum = 0 cud.Value = 10;
+
+
+    **C# Mouse Events**
+
+
+    An essential aspect of Windows programming is the use of the mouse.
+
+
+     Click
+
+
+    This event occurs when the mouse button is released, typically before the MouseUp
+    event. The handler for this event receives an argument of type EventArgs. Handle
+    this event when you only need to determine when a click occurs.
+
+
+     MouseClick
+
+
+    This event occurs when the user clicks the control with the mouse. The handler
+    for this event receives an argument of type MouseEventArgs. Handle this event
+    when you need to get information about the mouse when a click occurs.
+
+
+     DoubleClick
+
+
+    This event occurs when the control is double-clicked. The handler for this event
+    receives an argument of type EventArgs. Handle this event when you only need to
+    determine when a double-click occurs.
+
+
+     MouseDoubleClick
+
+
+    This event occurs when the user double-clicks the control with the mouse. The
+    handler for this event receives an argument of type MouseEventArgs. Handle this
+    event when you need to get information about the mouse when a double-click occurs.
+
+
+     MouseDown
+
+
+    This event occurs when the mouse pointer is over the control and the user presses
+    a mouse button. The handler for this event receives an argument of type MouseEventArgs.
+
+
+     MouseEnter
+
+
+    This event occurs when the mouse pointer enters the border or client area of the
+    control, depending on the type of control. The handler for this event receives
+    an argument of type EventArgs.
+
+
+    [] MouseHover
+
+
+    This event occurs when the mouse pointer stops and rests over the control. The
+    handler for this event receives an argument of type EventArgs.
+
+
+     MouseLeave
+
+
+    This event occurs when the mouse pointer leaves the border or client area of the
+    control, depending on the type of the control. The handler for this event receives
+    an argument of type EventArgs.
+
+
+     MouseMove
+
+
+    This event occurs when the mouse pointer moves while it is over a control. The
+    handler for this event receives an argument of type MouseEventArgs.
+
+
+    [] MouseUp
+
+
+    This event occurs when the mouse pointer is over the control and the user releases
+    a mouse button. The handler for this event receives an argument of type MouseEventArgs.
+
+
+     MouseWheel
+
+
+    This event occurs when the user rotates the mouse wheel while the control has
+    focus. The handler for this event receives an argument of type MouseEventArgs.
+    You can use the Delta property of MouseEventArgs to determine how far the mouse
+    has scrolled.
+
+
+    **MouseEventArgs Class**
+
+
+    This gives us information about what has just happened with the mouse.
+
+
+    There is a constructor, but it does not seem useful.
+
+
+    Properties: (all "get" only)
+
+
+     X = x-coordinate of the mouse (integer)
+
+
+     Y = y-coordinate of the house (integer)
+
+
+     Location = location of the mouse (Point, hence an x-y pair)
+
+
+     Button = which mouse button was pressed (a member of the MouseButtons
+
+
+    enumeration: Left, Right, Middle, None, etc.)
+
+
+     Clicks = number of times the button was pressed and released (integer)  Delta
+    = the number of notches ("detents") by which the mouse has been
+
+
+    rotated (integer)
+
+
+    We will need a using statement for System.Windows.Forms.
+
+
+    In the InitializeComponent method, we need a line:
+
+
+    **this.MouseDown += new MouseEventHandler(this.Form_MouseDown);**
+
+
+    The event handler might look like this:
+
+
+    private void Form_MouseDown(object sender, MouseEventArgs e) {
+
+
+    switch (e.Button)
+
+
+    {
+
+
+    case MouseButtons.Left:
+
+
+    MessageBox.Show("Left Button Click");
+
+
+    break;
+
+
+    case MouseButtons.Right:
+
+
+    MessageBox.Show("Right Button Click");
+
+
+    break;
+
+
+    default:
+
+
+    break;
+
+
+    }
+
+
+    }
+
+
+    **Keyboard Events
+
+
+    There are three key events:**
+
+
+     **KeyDown**
+
+
+    This event is raised once when a user presses a key.
+
+
+    The second argument of the event handler is of type KeyEventsArgs.
+
+
+     **KeyPress**
+
+
+    This event is raised when the key or keys pressed result in a character. For instance,
+    "Shift" plus "a" produces the character "A".
+
+
+    If the keys are held down, the KeyPress event may be generated repeated, as in
+    "AAAAAAAAA".
+
+
+    The second argument of the event handler is of type KeyPressEventsArgs.
+
+
+     **KeyUp**
+
+
+    This event is raised when a key is released.
+
+
+    The second argument of the event handler is of type KeyEventsArgs.
+
+
+    Thus the sequence of events is: KeyDOwn, KeyPress, KeyUp.
+
+
+    In the Designer file, we need a line to attach the handler to the event:
+
+
+    this.KeyDown +=
+
+
+    new System.Windows.Forms.KeyEventHandler(this.KeyDemo_KeyDown);
+
+
+    **C# Menu Control**
+
+
+    A Menu on a Windows Form is created with a MainMenu object, which is a collection
+    of MenuItem objects. MainMenu is the container for the Menu structure of the form
+    and menus are made of MenuItem objects that represent individual parts of a menu.
+
+
+    ![](Image00010.gif)
+
+
+    We can add menus to Windows Forms at design time by adding the MainMenu component
+    and then appending menu items to it using the Menu Designer.
+
+
+    After drag the Menustrip on your form you can directly create the menu items by
+    type a value into the "Type Here" box on the menubar part of your form. From the
+    following picture you can understand how to create each menu items on mainmenu
+    Object.
+
+
+    ![](Image00011.gif) **Other Controls**
+
+
+    **Font Dialog Box**
+
+
+    Font dialog box represents a common dialog box that displays a list of fonts that
+    are currently
+
+
+    installed on the system.
+
+
+    **OpenFile Dialog Box**
+
+
+    The OpenFileDialog component allows users to browse the folders of their computer
+    or any computer on the network and select one or more files to open. The dialog
+    box returns the path and name of the file the user selected in the dialog box.
+
+
+    **Print Dialog Box**
+
+
+    A user can use the Print dialog box to select a printer, configure it, and perform
+    a print job. Print dialog boxes provide an easy way to implement Print and Print
+    Setup dialog boxes in a manner consistent with Windows standards.
+
+
+    ### **Implementing an MDI Form**'
+  toc: []
+  trans: "\n\n### **TextBox** - 允许用户通过键盘输入数据。它也可以用于显示可编辑或不可编辑的文本。要在 `TextBox` 控件中显示文本，你可以这样编写：\n\
+    \n```cs\ntextBox1.Text = \"welcome to our college\";\n```\n\n### **Button** -\
+    \ Windows Forms 控件是封装了用户界面功能的可用组件，用于客户端 Windows 应用程序。按钮是一种控件，它是一种交互式组件，允许用户与应用程序进行通信。`Button`\
+    \ 类直接继承自 `ButtonBase` 类。用户可以使用鼠标、`ENTER` 键或在按钮获得焦点时的 `SPACEBAR`（空格键）点击按钮。\n\n\
+    ```cs\nbutton1.Text = \"Click Here\";\n```\n\n### **CheckBox** - 指定一个可以选中（勾选）或取消选中（未勾选）的选项。\n\
+    \n![](img/Image00008.jpg) `checkBox1.Text = \"Net-informations.com\";`\n\n```cs\n\
+    checkBox1.ThreeState = true;\n```\n\n### **ComboBox** - 提供一个项目列表，用户可以通过点击列表中的项目或在框中输入内容来选择一个项目。\n\
+    \n```cs\ncomboBox1.Items.Add(\"Sunday\");\ncomboBox1.Items.Add(\"Monday\");\n\
+    comboBox1.Items.Add(\"Tuesday\");\n```\n\n### **ListBox** - 提供一个项目列表，用户可以通过点击一个或多个项目来做出选择。\n\
+    \n```cs\nlistBox1.Items.Add(\"Sunday\");\nlistBox1.Items.Add(\"Monday\");\nlistBox1.Items.Add(\"\
+    Tueday\");\n```\n\n### **Radio Button** - 单选按钮（或选项按钮）与其他 `RadioButton` 控件配对使用时，允许用户从一组选择中选择单个选项。当用户点击单选按钮时，它将变为选中状态，所有同组的其他单选按钮将变为未选中状态。\n\
+    \n![](img/Image00009.jpg)\n\n`radioButton1.Checked = true;`\n\n### **NumericUpDown**\
+    \ - `NumericUpDown` 控件允许用户提供一个旋钮（向上/向下）界面，通过向上和向下箭头遍历预定义的数字。例如 `cud` 就是一个 `NumericUpDown`\
+    \ 控件。\n\n```cs\ncud.Maximum = 100 \ncud.Minimum = 0 \ncud.Value = 10;\n```\n\n\
+    ### **C# Mouse Events**\nWindows 编程的一个重要方面方面是鼠标的使用。\n\n- **Click**: 此事件在释放鼠标按钮时发生，通常在\
+    \ `MouseUp` 事件之前。该事件的处理程序接收一个类型为 `EventArgs` 的参数。当你只需要确定何时发生点击时，请处理此事件。\n- **MouseClick**:\
+    \ 此事件在用户用鼠标点击控件时发生。该事件的处理程序接收一个类型为 `MouseEventArgs` 的参数。当你需要在点击发生时获取有关鼠标的信息时，请处理此事件。\n\
+    - **DoubleClick**: 此事件在双击控件时发生。该事件的处理程序接收一个类型为 `EventArgs` 的参数。当你只需要确定何时发生双击时，请处理此事件。\n\
+    - **MouseDoubleClick**: 此事件在用户用鼠标双击控件时发生。该事件的处理程序接收一个类型为 `MouseEventArgs` 的参数。当你需要在双击发生时获取有关鼠标的信息时，请处理此事件。\n\
+    - **MouseDown**: 此事件在鼠标指针位于控件上且用户按下鼠标按钮时发生。该事件的处理程序接收一个类型为 `MouseEventArgs` 的参数。\n\
+    - **MouseEnter**: 此事件在鼠标指针进入控件的边界或客户区域时发生，取决于控件的类型。该事件的处理程序接收一个类型为 `EventArgs`\
+    \ 的参数。\n- **MouseHover**: 此事件在鼠标指针停止并停留在控件上时发生。该事件的处理程序接收一个类型为 `EventArgs` 的参数。\n\
+    - **MouseLeave**: 此事件在鼠标指针离开控件的边界或客户区域时发生，取决于控件的类型。该事件的处理程序接收一个类型为 `EventArgs`\
+    \ 的参数。\n- **MouseMove**: 此事件在鼠标指针在控件上移动时发生。该事件的处理程序接收一个类型为 `MouseEventArgs` 的参数。\n\
+    - **MouseUp**: 此事件在鼠标指针位于控件上且用户释放鼠标按钮时发生。该事件的处理程序接收一个类型为 `MouseEventArgs` 的参数。\n\
+    - **MouseWheel**: 此事件在控件拥有焦点时用户旋转鼠标轮时发生。该事件的处理程序接收一个类型为 `MouseEventArgs` 的参数。你可以使用\
+    \ `MouseEventArgs` 的 `Delta` 属性来确定鼠标滚动了多少距离。\n\n### **MouseEventArgs Class**\n\
+    这为我们提供了关于鼠标刚刚发生了什么的信息。它有一个构造函数，但似乎并不好用。\n\n**属性：（仅限 \"get\")**\n- `X` = 鼠标的 x\
+    \ 坐标（整数）\n- `Y` = 鼠标的 y 坐标（整数）\n- `Location` = 鼠标的位置（`Point`，因此是一个 x-y 对）\n- `Button`\
+    \ = 按下了哪个鼠标按钮（`MouseButtons` 枚举的成员：`Left`、`Right`、`Middle`、`None` 等）\n- `Clicks`\
+    \ = 按钮按下并释放的次数（整数）\n- `Delta` = 鼠标旋转的刻度数（整数）\n\n我们需要为 `System.Windows.Forms` 使用\
+    \ `using` 语句。在 `InitializeComponent` 方法中，我们需要一行：\n\n`this.MouseDown += new MouseEventHandler(this.Form_MouseDown);`\n\
+    \n事件处理程序可能像这样：\n\n```cs\nprivate void Form_MouseDown(object sender, MouseEventArgs\
+    \ e) {\n    switch (e.Button)\n    {\n        case MouseButtons.Left:\n      \
+    \      MessageBox.Show(\"Left Click\");\n            break;\n        case MouseButtons.Right:\n\
+    \            MessageBox.Show(\"Right Click\");\n            break;\n        default:\n\
+    \            break;\n    }\n}\n```\n\n### **Keyboard Events**\n有三种键盘事件：\n\n- **KeyDown**:\
+    \ 当用户按下按键时触发此事件一次。处理程序接收一个类型为 `EventArgs` 的参数。\n- **KeyPress**: 当按键或按键组合产生字符时触发此事件。例如，“Shift”加上“a”产生字符“A”。如果按住按键，`KeyPress`\
+    \ 事件可能会重复，如“AAAAAAAAA”。处理程序接收一个类型为 `KeyPressEventArgs` 的参数。\n- **KeyUp**: 当释放按键时触发此事件。处理程序接收一个类型为\
+    \ `KeyEventArgs` 的参数。\n\n因此事件的顺序为：`KeyDown`、`KeyPress`、KeyUp`。在设计文件中，我们需要一行将处理程序绑定到事件：\n\
+    \n`this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.KeyDemo_KeyDown);`\n\
+    \n### **C# Menu Control**\nWindows Form 上的菜单通过 `MainMenu` 对象创建，它是 `MenuItem` 对象的集合。`MainMenu`\
+    \ 是表单菜单结构的容器，菜单由代表菜单部分的 `MenuItem` 对象组成。\n\n![](img/Image00010.jpg)\n\n我们可以在设计时通过添加\
+    \ `MainMenu` 组件并使用菜单设计器向其追加菜单项为 Windows Forms 添加菜单。将 `MenuStrip` 拖到表单后，你可以在表单菜单栏部分的框中输入值来直接创建菜单项。从下面的图中你可以了解如何在主菜单对象上创建每个菜单项。\n\
+    \n![](img/Image00011.jpg)\n\n### **其他控件**\n\n- **字体对话框**: 字体对话框是一个常用的对话框，显示系统当前安装的字体列表。\n\
+    - **打开文件对话框**: `OpenFileDialog` 组件允许用户浏览计算机或网络上任何计算机的文件夹，并选择一个或多个打开的文件。对话框返回用户在对话框中选择的文件路径和名称。\n\
+    - **打印对话框**: 用户可以使用打印对话框选择打印机、配置打印并执行打印作业。打印对话框提供了一种以符合 Windows 标准实现打印和打印设置对话框的方法。\n\
+    \n### **实现 MDI 表单**\n\n"
+- fmt: "\nA Multiple Document Interface (MDI) programs can display multiple child\
+    \ windows inside them. This is in contrast to single document interface (SDI)\
+    \ applications, which can manipulate only one document at a time. Visual Studio\
+    \ Environment is an example of Multiple Document Interface (MDI) and notepad is\
+    \ an example of an SDI application. MDI applications often have a `Window` menu\
+    \ item with submenus for switching between windows or documents.\n\n![](Image00012.gif)\
+    \ Any windows can become an MDI parent, if you set the `IsMdiContainer` property\
+    \ to `True`. `IsMdiContainer = true;`\n\nCreate a new C# project, then you will\
+    \ get a default form `Form1`. Then add two mnore forms in the project (`Form2`,\
+    \ `Form3`). Create a Menu on your form and call these two forms on menu click\
+    \ event. Follow this small step by step walkthrough to make a small MDI application.\n\
+    \n1. Goto `File->New->Blank Solution`\n2. Select `Visual C# Projects` in `Project\
+    \ Types`\n3. Select `WindowsApplication` in `Templates`\n4. Type for eg. `myBestMDI`\
+    \ in the `Name` textbox\n5. By Clicking the browse button select the location\
+    \ & Click `OK`\n\n### Creating the Main MDI Form(frmMDIMain) to Act as a Container\n\
+    \n1. In the `View->Solution Explorer` click `Form1` only once\n2. Locate the property\
+    \ `FileName` and type `\"frmMDIMain.cs\"`\n3. In the `Solution Explorer` now doubleclick\
+    \ `frmMDIMain`\n4. Locate the property `(Name)` and type `\"frmMDIMain\"`\n5.\
+    \ Locate the property `Text` and type `\"This is the Parent\"`\n6. Locate the\
+    \ property `IsMDIContainer` and set it to `true`\n7. Locate the property `WindowState`\
+    \ and set it to `Maximized`\n\n### Creating the Child form (frmMChild) to Demonstrate\
+    \ Multiple Instance\n\n1. Goto `Project Menu-Add Windows Forms` & type `frmMChild`\n\
+    2. In the `Solution Explorer` now doubleclick `frmMChild`\n3. Locate the property\
+    \ `Text` and type `\"This is the Multi Instance Child\"`\n4. Locate the property\
+    \ `size` & set it to `568, 464`\n\n### MODULE– V\n\nDatabases and LINQ - Introduction\
+    \ - relational Databases - LINQ to SQL – Querying a Database with LINQ - Dynamically\
+    \ Binding Query Results - Retrieving Data from Multiple Tables with LINQ - Creating\
+    \ a Master/Detail View Application Tools and Web Resources Case Study\n\n####\
+    \ What is LINQ?\n\nLINQ (Language Integrated Query) is uniform query syntax in\
+    \ `C#` and `VB.NET` to retrieve data from different sources and formats. It is\
+    \ integrated in `C#` or `VB`, thereby eliminating the mismatch between programming\
+    \ languages and databases, as well as providing a single querying interface for\
+    \ different types of data sources.\n\nFor example, SQL is a Structured Query Language\
+    \ used to save and retrieve data from a database. In the same way, LINQ is a structured\
+    \ query syntax built in `C#` and `VB.NET` to retrieve data from different data\
+    \ sources such as collections, `ADO.Net DataSet`, `XML Docs`, web service and\
+    \ `MS SQL Server` and other databases.\n\nThe following example demonstrates a\
+    \ simple LINQ query that gets all strings from an array which contains 'a'.\n\n\
+    ![](Image00013.jpg) LINQ Usage\n\nLINQ queries return results as objects. It enables\
+    \ you to uses object-oriented approach on the result set and not to worry about\
+    \ transforming diffent formats of results into objects.\n\n![](Image00014.jpg)\n\
+    \n```\n// Data source\nstring[] names = {\"Bill\", \"Steve\", \"James\", \"Mohan\"\
+    \ };\n\n// LINQ Query\nvar myLinqQuery = from nm in names where nm.Contains('a')\n\
+    select nm;\n\n// Query execution\nforeach(var nm in myLinqQuery) Console.Write(nm\
+    \ + \" \");\n```\n\n#### Standard Query & Operators\n\nStandard Query Operators\
+    \ in LINQ are actually extension methods for the `IEnumerable<T>` and `IQueryable<T>`\
+    \ types. They are defined in the `System.Linq.Enumerable` and `System.Linq.Queryable`\
+    \ classes. There are over 50 standard query operators available in LINQ that provide\
+    \ different functionalities like filtering, sorting, grouping, aggregation, concatenation,\
+    \ etc.\n\n![](Image00015.jpg) Standard Query Operators in Query Syntax\n\n####\
+    \ Standard Query Operators in Method Syntax\n\n![](Image00016.jpg) Standard query\
+    \ operators in query syntax is converted into extension methods at compile time,\
+    \ so both are same.\n\n**OrderBy**\n\nOrderBy sorts the values of a collection\
+    \ in ascending or descending order. It sorts the collection in ascending order\
+    \ by default because ascending keyword is optional here. Use descending keyword\
+    \ to sort collection in descending order.\n\n```csharp\nIList<Student> studentList\
+    \ = new List<Student>() {\n    new Student() { StudentID = 1, StudentName = \"\
+    John\", Age = 18 },\n    new Student() { StudentID = 2, StudentName = \"Steve\"\
+    , Age = 15 },\n    new Student() { StudentID = 3, StudentName = \"Bill\", Age\
+    \ = 25 },\n    new Student() { StudentID = 4, StudentName = \"Ram\" , Age = 20\
+    \ },\n    new Student() { StudentID = 5, StudentName = \"Ron\" , Age = 19 } \n\
+    };\n\nvar orderByResult = from s in studentList orderby s.StudentName select s;\n\
+    \nConsole.WriteLine(\"Ascending Order:\");\nforeach (var std in orderByResult)\n\
+    \    Console.WriteLine(std.StudentName);\n```\n**Output**\nAscending Order:\n\
+    Bill\nJohn\nRam\nSteve\nRon\n\n**GroupBy**\n\nThe GroupBy operator returns a group\
+    \ of elements from the given collection based on some key value.\n\n```csharp\n\
+    var groupedResult = from s in studentList\ngroup s by s.Age;\n\n//iterate each\
+    \ group\nforeach (var ageGroup in groupedResult)\n{\n    Console.WriteLine(\"\
+    Age Group: {0}\", ageGroup.Key); //Each group has a key\n    foreach(Student s\
+    \ in ageGroup) // Each group has inner collection\n    {\n        Console.WriteLine(\"\
+    Student Name: {0}\", s.StudentName);\n    }\n}\n```\n**Output**\nAge Group: 18\n\
+    Student Name: John\nStudent Name: Bill\nAge Group: 15\nStudent Name: Steve\n...As\
+    \ you can see in the above example, you can iterate the group using a `foreach`\
+    \ loop, where each group contains a key and inner collection. The following figure\
+    \ shows the result in debug view. Notice that each group will have a property\
+    \ name on which group is performed. In the above example, we used `Age` to form\
+    \ a group so each group will have `Age` property name instead of `Key` as a property\
+    \ name.\n\n```csharp\n// Student collection\nIList<Student> studentList = new\
+    \ List<Student>() {\n    new Student() { StudentID = 1, StudentName = \"John\"\
+    , Age = 18 },\n    new Student() { StudentID = 2, StudentName = \"Steve\", Age\
+    \ = 15 },\n    new Student() { StudentID = 3, StudentName = \"Bill\", Age = 25\
+    \ },\n    new Student() { StudentID = 4, StudentName = \"Ram\" , Age = 20 },\n\
+    \    new Student() { StudentID = 5, StudentName = \"Ron\" , Age = 19 }\n};\n\n\
+    IList<Standard> standardList = new List<Standard>() {\n    new Standard(){ StandardID\
+    \ = 1, StandardName=\"Standard 1\"},\n    new Standard(){ StandardID = 2, StandardName=\"\
+    Standard 2\"},\n    new Standard(){ StandardID = 3, StandardName=\"Standard 3\"\
+    }\n};\n\nvar innerJoinResult = studentList.Join(// outer sequence\n    standardList,\
+    \ // inner sequence\n    student => student.StandardID, // outerKeySelector\n\
+    \    standard => standard.StandardID, // innerKeySelector\n    (student, standard)\
+    \ => new // result selector\n    {\n        StudentName = student.StudentName,\
+    \ StandardName = standard.StandardName\n    });\n\nforeach (var obj in innerJoinResult)\n\
+    {\n    Console.WriteLine(\"{0} - {1}\", obj.StudentName, obj.StandardName);\n\
+    }\n```\n**Output**\nJohn - Standard 1\nSteve - Standard 1\nBill - Standard 2\n\
+    Ram - Standard 2\n"
+  raw: 'A Multiple Document Interface (MDI) programs can display multiple child windows
+    inside them. This is in contrast to single document interface (SDI) applications,
+    which can manipulate only one document at a time. Visual Studio Environment is
+    an example of Multiple Document Interface (MDI) and notepad is an example of an
+    SDI application. MDI applications often have a Window menu item with submenus
+    for switching between windows or documents.
+
+
+    ![](Image00012.gif) Any windows can become an MDI parent, if you set the IsMdiContainer
+    property to True. **IsMdiContainer = true;**
+
+
+    Create a new C# project, then you will get a default form Form1 . Then add two
+    mnore forms in the project (Form2 , Form 3) . Create a Menu on your form and call
+    these two forms on menu click event. Follow this small step by step walkthrough
+    to make a small MDI application.
+
+
+    1\. Goto File->New->Blank Solution
+
+
+    2\. Select Visual C# Projects in Project Types
+
+
+    3\. Select WindowsApplication in Templates
+
+
+    4\. Type for eg. myBestMDI in the Name textbox
+
+
+    5\. By Clicking the browse button select the location & Click OK
+
+
+    **Creating the Main MDI Form(frmMDIMain) to Act as a Container**
+
+
+    1\. In the View->Solution Explorer click Form1 only once
+
+
+    2\. Locate the property FileName and type "frmMDIMain.cs"
+
+
+    3\. In the Solution Explorer now doubleclick frmMDIMain
+
+
+    4\. Locate the property (Name) and type "frmMDIMain"
+
+
+    5\. Locate the property Text and type "This is the Parent"
+
+
+    6\. Locate the property IsMDIContainer and set it to true
+
+
+    7\. Locate the property WindowState and set it to Maximized
+
+
+    **Creating the Child form (frmMChild) to Demonstrate Multiple Instance**
+
+
+    1\. Goto Project Menu-Add Windows Forms & type frmMChild
+
+
+    2\. In the Solution Explorer now doubleclick frmMChild
+
+
+    3\. Locate the property Text and type "This is the Multi Instance Child"
+
+
+    4\. Locate the property size & set it to 568, 464
+
+
+    **MODULE– V**
+
+
+    Databases and LINQ - Introduction - relational Databases - LINQ to SQL – Querying
+    a Database with LINQ - Dynamically Binding Query Results - Retrieving Data from
+    Multiple Tables with LINQ - Creating a Master/Detail View Application Tools and
+    Web Resources Case Study
+
+
+    **What is LINQ?**
+
+
+    LINQ (Language Integrated Query) is uniform query syntax in C# and VB.NET to retrieve
+    data from different sources and formats. It is integrated in C# or VB, thereby
+    eliminating the mismatch between programming languages and databases, as well
+    as providing a single querying interface for different types of data sources.
+
+
+    LINQ (Language Integrated Query) is uniform query syntax in C# and VB.NET to retrieve
+    data from different sources and formats. It is integrated in C# or VB, thereby
+    eliminating the mismatch between programming languages and databases, as well
+    as providing a single querying interface for different types of data sources.
+
+
+    For example, SQL is a Structured Query Language used to save and retrieve data
+    from a database. In the same way, LINQ is a structured query syntax built in C#
+    and VB.NET to retrieve data from different types of data sources such as collections,
+    ADO.Net DataSet, XML Docs, web service and MS SQL Server and other databases.
+
+
+    The following example demonstrates a simple LINQ query that gets all strings from
+    an array which contains ''a''.
+
+
+    ![](Image00013.jpg)  LINQ Usage
+
+
+    LINQ queries return results as objects. It enables you to uses object-oriented
+    approach on the result set and not to worry about transforming diffent formats
+    of results into objects.
+
+
+    ![](Image00014.jpg)
+
+
+    // Data source
+
+
+    string[] names = {"Bill", "Steve", "James", "Mohan" };
+
+
+    // LINQ Query
+
+
+    var myLinqQuery = from nm in names where nm.Contains(''a'')
+
+
+    select nm;
+
+
+    // Query execution
+
+
+    foreach(var nm in myLinqQuery) Console.Write(nm + " ");
+
+
+    ## **Standard Query & Operators**
+
+
+    Standard Query Operators in LINQ are actually extension methods for the IEnumerable<T>
+    and IQueryable<T> types. They are defined in the System.Linq.Enumerable and
+
+
+    System.Linq.Queryable classes. There are over 50 standard query operators available
+    in LINQ that provide different functionalities like filtering, sorting, grouping,
+    aggregation, concatenation, etc.
+
+
+    ![](Image00015.jpg)  Standard Query Operators in Query Syntax
+
+
+    ## **Standard Query Operators in Method Syntax**
+
+
+    ![](Image00016.jpg) Standard query operators in query syntax is converted into
+    extension methods at compile time, so both are same.
+
+
+    **OrderBy**
+
+
+    OrderBy sorts the values of a collection in ascending or descending order. It
+    sorts the collection in ascending order by default because ascending keyword is
+    optional here. Use descending keyword to sort collection in descending order.
+
+
+    **IList<Student> studentList = new List<Student>() {
+
+
+    new Student() { StudentID = 1, StudentName = "John", Age = 18 } , new Student()
+    { StudentID = 2, StudentName = "Steve", Age = 15 } , new Student() { StudentID
+    = 3, StudentName = "Bill", Age = 25 } ,**
+
+
+    **new Student() { StudentID = 4, StudentName = "Ram" , Age = 20 } , new Student()
+    { StudentID = 5, StudentName = "Ron" , Age = 19 } };**
+
+
+    **var orderByResult = from s in studentList orderby s.StudentName select s;**
+
+
+    **Console.WriteLine("Ascending Order:");
+
+
+    foreach (var std in orderByResult)**
+
+
+    **Console.WriteLine(std.StudentName);** **Output**
+
+
+    Ascending Order:
+
+
+    Bill
+
+
+    John
+
+
+    Ram
+
+
+    Ron
+
+
+    Steve
+
+
+    ## **GroupBy**
+
+
+    The GroupBy operator returns a group of elements from the given collection based
+    on some key value.
+
+
+    var groupedResult = from s in studentList
+
+
+    group s by s.Age;
+
+
+    //iterate each group
+
+
+    foreach (var ageGroup in groupedResult)
+
+
+    {
+
+
+    Console.WriteLine("Age Group: {0}", ageGroup.Key); //Each group has a key
+
+
+    foreach(Student s in ageGroup) // Each group has inner collection Console.WriteLine("Student
+    Name: {0}", s.StudentName); }
+
+
+    Output
+
+
+    AgeGroup: 18
+
+
+    StudentName: John
+
+
+    StudentName: Bill
+
+
+    AgeGroup: 21
+
+
+    StudentName: Steve
+
+
+    StudentName: Abram
+
+
+    AgeGroup: 20
+
+
+    StudentName: Ram
+
+
+    As you can see in the above example, you can iterate the group using a ''foreach''
+    loop, where each group contains a key and inner collection. The following figure
+    shows the result in debug view. Notice that each group will have a property name
+    on which group is performed. In the above example, we have used Age to form a
+    group so each group will have "Age" property name instead of "Key" as a property
+    name.
+
+
+    // Student collection
+
+
+    IList<Student> studentList = new List<Student>() {
+
+
+    new Student() { StudentID = 1, StudentName = "John", Age = 18, StandardID = 1
+    } , new Student() { StudentID = 2, StudentName = "Steve", Age = 21, StandardID
+    = 1 } , new Student() { StudentID = 3, StudentName = "Bill", Age = 18, StandardID
+    = 2 } , new Student() { StudentID = 4, StudentName = "Ram" , Age = 20, StandardID
+    = 2 } , new Student() { StudentID = 5, StudentName = "Ron" , Age = 21 }
+
+
+    };
+
+
+    IList<Standard> standardList = new List<Standard>() {
+
+
+    new Standard(){ StandardID = 1, StandardName="Standard 1"}, new Standard(){ StandardID
+    = 2, StandardName="Standard 2"}, new Standard(){ StandardID = 3, StandardName="Standard
+    3"}
+
+
+    };
+
+
+    var innerJoinResult = studentList.Join(// outer sequence
+
+
+    standardList, // inner sequence
+
+
+    student => student.StandardID, // outerKeySelector
+
+
+    standard => standard.StandardID, // innerKeySelector
+
+
+    (student, standard) => new // result selector
+
+
+    {
+
+
+    StudentName = student.StudentName, StandardName = standard.StandardName });
+
+
+    foreach (var obj in innerJoinResult)
+
+
+    {
+
+
+    Console.WriteLine("{0} - {1}", obj.StudentName, obj.StandardName);
+
+
+    }
+
+
+    }
+
+
+    Output
+
+
+    John - Standard 1
+
+
+    Steve - Standard 1
+
+
+    Bill - Standard 2
+
+
+    Ram - Standard 2'
+  toc: []
+  trans: "\n\n多文档界面（MDI）程序可以在其内部显示多个子窗口。这与单文档界面（SDI）应用程序形成对比，后者一次只能操作一个文档。Visual Studio\
+    \ 环境是多文档界面（MDI）的示例，而记事本是 SDI 应用的示例。MDI 应用通常包含一个 `Window`（窗口）菜单项，并带有用于切换窗口或文档的子菜单。\n\
+    \n![](img/Image00012.gif) 只要你将 `IsMdiContainer` 属性设置为 `True`，任何窗口都可以成为 MDI 父容器。`IsMdiContainer\
+    \ = true;`\n\n创建一个新的 C# 项目，然后你将获得一个默认表单 `Form1`。接下在项目中添加另外两个表单（`Form2`、`Form3`）。在你的表单上创建一个菜单，并在菜单点击事件中调用这两个表单。按照这个简单的分步指南创建一个小型\
+    \ MDI 应用程序。\n\n1. 转到 `File->New->Blank Solution`\n2. 在 `Project Types` 中选择 `Visual\
+    \ C# Projects`\n3. 在 `Templates` 中选择 `WindowsApplication`\n4. 在 `Name` 框中输入例如\
+    \ `myBestMDI`\n5. 点击浏览按钮选择位置并点击 `OK`\n\n### 创建主 MDI 表单(frmMDIMain) 作为容器\n\n1.\
+    \ 在 `View->Solution Explorer` 中仅点击一次 `Form1`\n2. 找到属性 `FileName` 并输入 `\"frmMDIMain.cs\"\
+    `\n3. 在 `Solution Explorer` 中现在双击 `frmMDIMain`\n4. 找到属性 `(Name)` 并输入 `\"frmMDIMain\"\
+    `\n5. 找到属性 `Text` 并输入 `\"This is the Parent\"`\n6. 找到属性 `IsMDIContainer` 并将其设置为\
+    \ `true`\n7. 找到属性 `WindowState` 并将其设置为 `Maximized`\n\n### 创建子表单 (frmMChild) 以演示多个实例\n\
+    \n1. 转到 `Project Menu-Add Windows Forms` 并输入 `frmMChild`\n2. 在 `Solution Explorer`\
+    \ 中现在双击 `frmMChild`\n3. 找到属性 `Text` 并输入 `\"This is the Multi Instance Child\"\
+    `\n4. 找到属性 `size` 并将其设置为 `568, 464`\n\n### 模块– V\n\n数据库与 LINQ - 简介 - 关系型数据库 -\
+    \ LINQ to SQL - 使用 LINQ 查询数据库 - 动态绑定查询结果 - 使用 LINQ 从多个表中检索数据 - 创建主从视图应用程序 工具与网络资源\
+    \ 案例研究\n\n#### 什么是 LINQ？\n\nLINQ（语言集成查询）是 `C#` 和 `VB.NET` 中的统一查询语法，用于从不同的源和格式检索数据。它集成在\
+    \ `C#` 或 `VB` 中，消除了编程语言与数据库之间的不匹配，并为不同类型的数据源提供了单一的查询接口。\n\n例如，SQL 是一种用于从数据库保存和检索数据的结构化查询语言。同样，LINQ\
+    \ 是构建在 `C#` 和 `VB.NET` 中的结构化查询语法，用于从不同的数据源（集合、`ADO.Net DataSet`、`XML Docs`、Web\
+    \ 服务和 `MS SQL Server` 以及其他数据库）\n\n下面的示例演示了一个简单的 LINQ 查询，从包含 'a' 的数组中获取所有字符串。\n\
+    \n![](img/Image00013.jpg) LINQ Usage\n\nLINQ 查询以对象形式返回结果。它允许你对结果集使用面向对象的方法，而无需担心将不同格式的结果转换成对象。\n\
+    \n![](img/Image00014.jpg)\n\n```\n// Data source\nstring[] names = {\"Bill\",\
+    \ \"Steve\", \"James\", \"Mohan\" };\n\n// LINQ Query\nvar myLinqQuery = from\
+    \ nm in names where nm.Contains('a')\nselect nm;\n\n// Query execution\nforeach(var\
+    \ nm in myLinqQuery) Console.Write(nm + \" \");\n```\n\n#### 标准查询与运算符\n\nLINQ\
+    \ 中的标准查询运算符实际上是针对 `IEnumerable<T>` 和 `IQueryable<T>` 类型的扩展方法。它们定义在 `System.Linq.Enumerable`\
+    \ 和 `System.Linq.Queryable` 类中。LINQ 提供了 50 多个标准查询运算符，提供过滤、排序、分组、聚合、连接等不同功能。\n\n\
+    ![](img/Image00015.jpg) 查询语法中的标准查询运算符\n\n#### 方法语法中的标准查询运算符\n\n![](img/Image00016.jpg)\
+    \ 查询语法中的标准查询运算符在编译时会被转换为扩展方法，因此两者是相同的。\n\n**OrderBy**\n\nOrderBy 按升序或降序对集合的值。它默认按升序排序集合，因为这里的\
+    \ ascending 关键字是可选的。使用 descending 关键字按降序排序集合。\n\n```csharp\nIList<Student> studentList\
+    \ = new List<Student>() {\n    new Student() { StudentID = 1, StudentName = \"\
+    John\", Age = 18 },\n    new Student() { StudentID = 2, StudentName = \"Steve\"\
+    , Age = 15 },\n    new Student() { StudentID = 3, StudentName = \"Bill\", Age\
+    \ = 25 },\n    new Student() { StudentID = 4, StudentName = \"Ram\" , Age = 20\
+    \ },\n    new Student() { StudentID = 5, StudentName = \"Ron\" , Age = 19 } \n\
+    };\n\nvar orderByResult = from s in studentList orderby s.StudentName select s;\n\
+    \nConsole.WriteLine(\"Ascending Order:\");\nforeach (var std in orderByResult)\n\
+    \    Console.WriteLine(std.StudentName);\n```\n**Output**\nAscending Order:\n\
+    Bill\nJohn\nRam\nSteve\n\n**GroupBy**\n\nGroupBy 运算符根据某些键值从给定集合返回元素组。\n\n```csharp\n\
+    var groupedResult = from s in studentList\ngroup s by s.Age;\n\n//iterate each\
+    \ group\nforeach (var ageGroup in groupedResult)\n{\n    Console.WriteLine(\"\
+    Age Group: {0}\", ageGroup.Key); //每个组有一个键\n    foreach(Student s in ageGroup)\
+    \ //每个组有一个内部集合\n    {\n        Console.WriteLine(\"Student Name: {0}\", s.StudentName);\n\
+    \    }\n}\n```\n**Output**\nAge Group: 18\nStudent Name: John\nAge Group: 15\n\
+    Student Name: Steve\n...正如上面的示例所示，可以使用 `foreach` 循环遍历组，每个组包含一个键和一个内部集合。下图显示了调试视图中的结果。注意每个组具有执行分组的属性名。在上面的示例中，我们使用\
+    \ `Age` 来分组，因此每个组将具有 `Age` 属性名而不是 `Key` 属性名。\n\n```csharp\n// Student collection\n\
+    IList<Student> studentList = new List<Student>() {\n    new Student() { StudentID\
+    \ = 1, StudentName = \"John\", Age = 18 },\n    new Student() { StudentID = 2,\
+    \ StudentName = \"Steve\", Age = 15 },\n    new Student() { StudentID = 3, StudentName\
+    \ = \"Bill\", Age = 25 },\n    new Student() { StudentID = 4, StudentName = \"\
+    Ram\" , Age = 20 },\n    new Student() { StudentID = 5, StudentName = \"Ron\"\
+    \ , Age = 19 }\n};\n\nIList<Standard> standardList = new List<Standard>() {\n\
+    \    new Standard(){ StandardID = 1, StandardName=\"Standard 1\"},\n    new Standard(){\
+    \ StandardID = 2, StandardName=\"Standard 2\"},\n    new Standard(){ StandardID\
+    \ = 3, StandardName=\"Standard 3\"}\n};\n\nvar innerJoinResult = studentList.Join(//\
+    \ 外部序列\n    standardList, // 内部序列\n    student => student.StandardID, // 外部键选择器\n\
+    \    standard => standard.StandardID, // 内部键选择器\n    (student, standard) => new\
+    \ // 结果选择器\n    {\n        StudentName = student.StudentName, StandardName = standard.StandardName\n\
+    \    });\n\nforeach (var obj in innerJoinResult)\n{\n    Console.WriteLine(\"\
+    {0} - {1}\", obj.StudentName, obj.StandardName);\n}\n```\n**Output**\nJohn - Standard\
+    \ 1\nSteve - Standard 1\nBill - Standard 2\nRam - Standard 2\n\n"

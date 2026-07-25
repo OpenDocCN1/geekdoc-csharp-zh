@@ -1,0 +1,124 @@
+name: An introduction to the microsoft bot framework create facebook and skype chatbots
+  using microsoft visual studio and C# ： (This book covers the Microsoft Bot Frameword
+  Preview Edition)
+name_cn: Microsoft Bot Framework 入门指南：使用 Microsoft Visual Studio 和 C# 创建 Facebook
+  和 Skype 聊天机器人（本书涵盖了 Microsoft Bot Framework 预览版）
+slug: an-introduction-to-the-microsoft-bot-framework-create-facebo
+toc:
+- - '#'
+  - Microsoft Bot Framework 入门指南：使用 Microsoft Visual Studio 和 C# 创建 Facebook 和 Skype
+    聊天机器人（本书涵盖了 Microsoft Bot Framework 预览版）
+- - '#'
+  - 第 1 章：理解
+- - '##'
+  - 什么是 Microsoft Bot Framework?
+- - '#'
+  - 第 2 章：创建一个 Hello World! 机器人
+- - '##'
+  - 创建 Hello World! 机器人
+- - '##'
+  - 使用 Bot Emulator
+- - '##'
+  - 保存用户数据
+- - '##'
+  - 发布机器人
+- - '#'
+  - 第 3 章：使用 FormFlow
+- - '##'
+  - 流程演示
+- - '##'
+  - 创建项目
+- - '##'
+  - 测试应用程序
+- - '##'
+  - 保存数据
+- - '#'
+  - 第 4 章：使用 Dialogs
+- - '##'
+  - 流程演示
+- - '##'
+  - 创建应用程序
+- - '##'
+  - 测试应用程序
+- - '##'
+  - Dialog 提示 (Prompts)
+- - '#'
+  - 第 5 章：使用图片、轮播和按钮
+- - '##'
+  - Hero Card
+- - '##'
+  - Carousel（轮播图）
+- - '##'
+  - 对话中的富卡片附件 (Rich Card Attachments In Dialogs)
+- - '##'
+  - 在 Dialog 类中创建 Hero Card
+- - '##'
+  - 创建可复用的 Hero Card
+- - '#'
+  - 第 6 章：选择 Entity Framework 6.x。
+- - '##'
+  - 将记录到数据库
+- - '##'
+  - 在 Dialog 类中记录消息
+- - '##'
+  - 测试数据库记录代码
+- - '##'
+  - 查看数据
+- - '##'
+  - 记录高分
+- - '##'
+  - 更新 ADO.NET 实体数据模型
+- - '##'
+  - 修改代码以记录高分
+- - '##'
+  - 显示高分
+- - '##'
+  - 测试代码
+- - '##'
+  - 发布使用数据库的 Bot Framework 应用程序
+- - '#'
+  - 第 7 章：实现语言理解智能服务 (LUIS)
+- - '##'
+  - 创建 LUIS 应用程序
+- - '##'
+  - 更新 Bot 应用程序
+- - '##'
+  - 实现高分
+- - '#'
+  - 第 8 章：使用 Direct Line API 调用 Microsoft Bot Framework
+- - '##'
+  - 配置 Direct Line 连接器
+- - '##'
+  - 创建 Web 应用程序
+- - '#'
+  - 第 9 章：使用 Application Insights 监控你的 Bot
+- - '##'
+  - 启用 Application Insights
+- - '##'
+  - 调试应用程序
+- - '##'
+  - 使用 Bot Emulator
+- - '##'
+  - 自定义
+- - '##'
+  - Application Insights API
+- - '##'
+  - Application Insights 门户
+- - '##'
+  - 监控已发布的应用程序
+- - '#'
+  - 第 10 章：创建 Skype 机器人
+- - '##'
+  - 发布机器人
+- - '##'
+  - '在 Bot Connector 中注册机器人 '
+- - '##'
+  - 配置回调 URL 和验证 Token
+- - '##'
+  - 获取 Page Token
+- - '##'
+  - 配置 Microsoft Bot Connector
+- - '##'
+  - 与机器人聊天
+- - '##'
+  - 关于作者
